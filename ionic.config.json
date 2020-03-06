@@ -1,0 +1,7 @@
+{
+  "name": "lifeplusinsurance",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
