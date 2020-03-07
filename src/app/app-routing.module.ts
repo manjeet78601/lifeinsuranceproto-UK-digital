@@ -1,15 +1,28 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 const routes: Routes = [
   {
+    path: 'welcome',
+    component: WelcomeComponent
+  },
+  {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: '/welcome',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'auth',
+    loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
+  },
+  {
+    path: 'personal-details',
+    loadChildren: () => import('./pages/personal-details/personal-details.module').then( m => m.PersonalDetailsPageModule)
+  },
+  {
+    path: 'health-details',
+    loadChildren: () => import('./pages/health-details/health-details.module').then( m => m.HealthDetailsPageModule)
   }
 ];
 
