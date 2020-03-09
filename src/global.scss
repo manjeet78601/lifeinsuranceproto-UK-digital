@@ -39,7 +39,7 @@ header {
     }
 }
 
-p, h1 ,h2 ,h3 ,h4, h5, h6, div {
+p, h1 ,h2 ,h3 ,h4, h5, h6 {
     color: #5a5a5a;
 } 
 
@@ -71,6 +71,7 @@ p, h1 ,h2 ,h3 ,h4, h5, h6, div {
     box-shadow: none;
     width: 100%;
     font-family: "Lato";
+    margin-bottom: 10px;
 
       .mat-card-title, .mat-card-content{
           color: #fff;
