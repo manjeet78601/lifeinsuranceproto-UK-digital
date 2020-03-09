@@ -24,3 +24,63 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import "./theme/variables.scss";
+
+.wrapper {
+    padding: 20px;
+}
+header {
+    text-align: center;
+    h1{
+        font-family: 'Lato' !important;
+        font-size:  16px !important;
+        font-weight: bold !important;
+    }
+}
+
+p, h1 ,h2 ,h3 ,h4, h5, h6, div {
+    color: #5a5a5a;
+} 
+
+.radio-group {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+  }
+  
+.radio-button {
+    margin: 5px;
+}
+.full-width {
+    width: 100%;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding-top: 0.5em !important;
+}
+
+.que-label {
+      font-size: 18px;
+      font-weight: bold;
+      color: #5a5a5a;
+  }
+  
+  .card-gray {
+    background-color: #585858;
+    border-radius: 10px;
+    box-shadow: none;
+    width: 100%;
+    font-family: "Lato";
+
+      .mat-card-title, .mat-card-content{
+          color: #fff;
+      }
+      .mat-card-title {
+          font-size: 18px;
+          font-weight: bold;
+      }
+      .mat-card-content {
+          font-size: 12px;
+      }
+  }
+  

@@ -1,9 +1,92 @@
+<!-- Header -->
 <ion-header>
   <ion-toolbar>
     <ion-title>PersonalDetails</ion-title>
   </ion-toolbar>
 </ion-header>
+<!-- End of Header -->
 
+<!-- Personal Information -->
 <ion-content>
+  <section  class="wrapper">
+    <section *ngIf="state == 1" fxLayout="column" fxLayoutAlign="center center">
+        <header>
+            <h1>TELL US ABOUT YOURSELF. <br /> LETS START WITH THE</h1>
+        </header>
 
+        <form>
+            <mat-label>Name:</mat-label>
+            <mat-form-field class="full-width" appearance="outline">
+                <input matInput placeholder="Your name here" >
+            </mat-form-field>
+
+            <mat-label>E-mail:</mat-label>
+            <mat-form-field class="full-width" appearance="outline">
+                <input type="email" matInput placeholder="Your Email here">
+            </mat-form-field>
+
+            <mat-label>Date of Birth:</mat-label>
+            <mat-form-field class="full-width" appearance="outline">
+                <input matInput [matDatepicker]="picker" placeholder="_ _ /_ _ /_ _ _ _">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-label>Gender</mat-label>
+            <mat-form-field class="full-width" appearance="outline">
+                <select matNativeControl required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </mat-form-field>
+        </form>
+    </section>
+
+    <section *ngIf="state == 2" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
+        <form>
+            <div>
+                <label class="que-label">ARE YOU A US CITIZEN OR PERMANENT RESIDENT?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group">
+                    <mat-radio-button color="primary" class="radio-button" value="yes">
+                        Yes
+                    </mat-radio-button>
+
+                    <mat-radio-button color="primary" class="radio-button" value="no">
+                        No
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div>
+                <label class="que-label">DO YOU HAVE SPOUSE OR SIGNIFICANT OTHER?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group">
+                    <mat-radio-button color="primary" class="radio-button" value="yes">
+                        Yes
+                    </mat-radio-button>
+
+                    <mat-radio-button color="primary" class="radio-button" value="no">
+                        No
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+                
+        </form>
+        <mat-card class="card-gray" fxLayout="column" fxLayoutAlign="center center">
+            <mat-card-title>
+                Quick Tip
+            </mat-card-title>
+            <mat-card-content>
+                dummy text
+            </mat-card-content>
+        </mat-card>
+
+    </section>
+
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button mat-flat-button color="primary" (click)="goBack(state)">BACK</button>
+        <button mat-flat-button color="accent" (click)="goNext(state)">NEXT</button>
+    </div>
+</section>
 </ion-content>
+<!-- End of Personal Information -->

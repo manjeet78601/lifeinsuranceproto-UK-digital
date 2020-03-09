@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-personal-details',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalDetailsPage implements OnInit {
 
+  state: number = 1;
+
   constructor() { }
 
   ngOnInit() {
+  
+  }
+
+  goNext(state){
+    this.state = state + 1;
+  }
+
+  goBack(state){
+    this.state = state - 1;
   }
 
 }
