@@ -16,12 +16,17 @@ export class HeaderComponent implements OnInit {
     {
       title : 'Health Details',
       url   : '/health-details',
-      icon  : 'chatboxes'
+      icon  : 'home'
     },
     {
       title : 'Login',
       url   : '/auth',
-      icon  : 'contacts'
+      icon  : 'home'
+    },
+    {
+      title : 'Facial-Identity',
+      url   : '/facial-identity',
+      icon  : 'home'
     },
   ];
   constructor(private menu: MenuController) { }

@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './sharedModules/material.module';
+import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MaterialModule } from './sharedModules/material.module';
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
