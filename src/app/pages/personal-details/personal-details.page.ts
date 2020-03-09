@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+
 
 @Component({
   selector: 'app-personal-details',
@@ -8,19 +10,50 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class PersonalDetailsPage implements OnInit {
 
-  state: number = 1;
-
+  state = 1;
+  personalInfoForm: FormGroup;
+  personalQuestForm: FormGroup;
   constructor() { }
 
   ngOnInit() {
-  
+    this.personalInfoForm = new FormGroup(
+      {
+        fname: new FormControl('', [
+          Validators.required
+        ]),
+        email: new FormControl('',
+        [
+          Validators.required,
+          Validators.email
+        ]),
+        dob: new FormControl('',
+        [
+          Validators.required
+        ]),
+        gender: new FormControl('',
+        [
+          Validators.required
+        ])
+      }
+    );
+
+    this.personalQuestForm = new FormGroup(
+      {
+        isUsCitizen: new FormControl('', [
+          Validators.required
+        ]),
+        haveSpouse: new FormControl('', [
+          Validators.required
+        ])
+      }
+    );
   }
 
-  goNext(state){
+  goNext(state) {
     this.state = state + 1;
   }
 
-  goBack(state){
+  goBack(state) {
     this.state = state - 1;
   }
 

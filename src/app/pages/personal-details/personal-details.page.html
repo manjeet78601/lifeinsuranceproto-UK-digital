@@ -14,27 +14,28 @@
             <h1>TELL US ABOUT YOURSELF. <br /> LETS START WITH THE</h1>
         </header>
 
-        <form>
+        <form [formGroup]="personalInfoForm">
             <mat-label>Name:</mat-label>
             <mat-form-field class="full-width" appearance="outline">
-                <input matInput placeholder="Your name here" >
+                <input matInput placeholder="Your name here" formControlName="fname" 
+                [errorStateMatcher]="matcher">
             </mat-form-field>
 
             <mat-label>E-mail:</mat-label>
             <mat-form-field class="full-width" appearance="outline">
-                <input type="email" matInput placeholder="Your Email here">
+                <input type="text" matInput placeholder="Your Email here" formControlName="email">
             </mat-form-field>
 
             <mat-label>Date of Birth:</mat-label>
             <mat-form-field class="full-width" appearance="outline">
-                <input matInput [matDatepicker]="picker" placeholder="_ _ /_ _ /_ _ _ _">
+                <input matInput [matDatepicker]="picker" placeholder="_ _ /_ _ /_ _ _ _" formControlName="dob">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
 
             <mat-label>Gender</mat-label>
             <mat-form-field class="full-width" appearance="outline">
-                <select matNativeControl required>
+                <select matNativeControl formControlName="gender">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
@@ -44,10 +45,10 @@
     </section>
 
     <section *ngIf="state == 2" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
-        <form>
+        <form [formGroup]="personalQuestForm">
             <div>
                 <label class="que-label">ARE YOU A US CITIZEN OR PERMANENT RESIDENT?</label>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group">
+                <mat-radio-group  class="radio-group" formControlName="isUsCitizen">
                     <mat-radio-button color="primary" class="radio-button" value="yes">
                         Yes
                     </mat-radio-button>
@@ -59,7 +60,7 @@
             </div>
             <div>
                 <label class="que-label">DO YOU HAVE SPOUSE OR SIGNIFICANT OTHER?</label>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group">
+                <mat-radio-group class="radio-group" formControlName="haveSpouse">
                     <mat-radio-button color="primary" class="radio-button" value="yes">
                         Yes
                     </mat-radio-button>
@@ -71,7 +72,7 @@
             </div>
                 
         </form>
-        <mat-card class="card-gray" fxLayout="column" fxLayoutAlign="center center">
+        <mat-card class="card-gray" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
             <mat-card-title>
                 Quick Tip
             </mat-card-title>
@@ -83,9 +84,9 @@
     </section>
 
 
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" >
         <button mat-flat-button color="primary" (click)="goBack(state)">BACK</button>
-        <button mat-flat-button color="accent" (click)="goNext(state)">NEXT</button>
+        <button mat-flat-button color="accent" (click)="goNext(state)" [disabled]="(state === 1 && personalInfoForm.invalid) || (state === 2 && personalQuestForm.invalid)">NEXT</button>
     </div>
 </section>
 </ion-content>
