@@ -9,18 +9,18 @@ import { MenuController } from '@ionic/angular';
 export class HeaderComponent implements OnInit {
   navigate = [
     {
-      title : 'Home',
-      url   : '/home',
+      title : 'Personal Details',
+      url   : '/personal-details',
       icon  : 'home'
     },
     {
-      title : 'Chat',
-      url   : '/chat',
+      title : 'Health Details',
+      url   : '/health-details',
       icon  : 'chatboxes'
     },
     {
-      title : 'Contacts',
-      url   : '/contacts',
+      title : 'Login',
+      url   : '/auth',
       icon  : 'contacts'
     },
   ];

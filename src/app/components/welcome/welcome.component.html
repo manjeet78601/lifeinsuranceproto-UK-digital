@@ -1,7 +1,7 @@
 
-<ion-header>  
-  <ion-toolbar>  
-    <ion-buttons slot="end" color="primary">  
+<ion-header  >  
+  <ion-toolbar transparent>  
+    <ion-buttons slot="end" color="dark">  
       <ion-menu-button></ion-menu-button>  
     </ion-buttons>  
     <ion-title>  
@@ -9,7 +9,13 @@
     </ion-title>  
   </ion-toolbar>  
 </ion-header>
-<ion-content>
-  <ion-title>Welcome</ion-title>
-  <ion-button [routerLink]="['/auth']">Begin</ion-button>
-</ion-content>
+
+  <ion-content class="card-background-page" fullscreen>
+
+    <ion-card class="m-0">
+      <img src="../../assets/img/welcome-p-img.png"/>
+      <div class="card-title">WELCOME TO LIFE+</div>
+      <div class="card-subtitle">DISCOVER <br>HE RIGHT QUOTE</div>
+    </ion-card>
+  </ion-content>
+
