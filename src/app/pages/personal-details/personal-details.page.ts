@@ -8,19 +8,18 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class PersonalDetailsPage implements OnInit {
 
-  state: number = 1;
+  state = 1;
 
   constructor() { }
 
   ngOnInit() {
-  
   }
 
-  goNext(state){
+  goNext(state) {
     this.state = state + 1;
   }
 
-  goBack(state){
+  goBack(state) {
     this.state = state - 1;
   }
 
