@@ -96,3 +96,47 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
       width: 340px;
   }
   
+  .signin-btn, .scan-btn {
+    height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1 !important;
+    width: 30%;
+    background-color:#C1C1C1;
+    color: #fff;
+    border: none !important;
+    &.mat-stroked-button:disabled{
+        color: #fff !important;
+        opacity: 0.5;
+    }
+  }
+  .col-blk{
+      color: #000000;
+  }
+  .col-darkgrey{
+      color:#5A5A5A;
+  }
+  .fs-12{
+    font-size: 12px;
+  }
+  .fs-14{
+      font-size: 14px;
+  }
+  .fs-16{
+    font-size: 16px;
+  }
+  .fs-18{
+    font-size: 18px;
+  }
+  .lh-05{
+    line-height: 0.5;
+  }
+  .font-bold{
+  font-weight: 500;
+  }
+  .mt-20{
+      margin-top: 20px;
+  }
+  .mt-50 {
+    margin-top: 50px;
+  }

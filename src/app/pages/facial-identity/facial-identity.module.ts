@@ -4,20 +4,23 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AuthPageRoutingModule } from './auth-routing.module';
+import { FacialIdentityPageRoutingModule } from './facial-identity-routing.module';
 import { MaterialModule } from '../../sharedModules/material.module';
 import { SharedModule } from '../../sharedModules/shared.module';
-import { AuthPage } from './auth.page';
+
+import { FacialIdentityPage } from './facial-identity.page';
+import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule,
     IonicModule,
     MaterialModule,
-    AuthPageRoutingModule
+    SharedModule,
+    FacialIdentityPageRoutingModule
   ],
-  declarations: [AuthPage]
+  providers: [Camera],
+  declarations: [FacialIdentityPage]
 })
-export class AuthPageModule {}
+export class FacialIdentityPageModule {}

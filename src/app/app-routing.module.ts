@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'location',
     loadChildren: () => import('./pages/location/location.module').then( m => m.LocationPageModule)
+  },
+  {
+    path: 'facial-identity',
+    loadChildren: () => import('./pages/facial-identity/facial-identity.module').then( m => m.FacialIdentityPageModule)
   }
 ];
 
