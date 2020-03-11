@@ -9,7 +9,6 @@ import { LocationPageRoutingModule } from './location-routing.module';
 import { LocationPage } from './location.page';
 import { MaterialModule } from 'src/app/sharedModules/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   imports: [
@@ -21,6 +20,6 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     FlexLayoutModule,
   ],
   declarations: [LocationPage],
-  providers: [Geolocation]
+  providers: []
 })
 export class LocationPageModule {}

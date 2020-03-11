@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterContentInit, NgZone } from '@angular/core';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocationService } from 'src/app/services/location.service';
+import {} from 'google-maps';
 
 declare var google;
 @Component({
@@ -19,15 +19,16 @@ export class LocationPage implements OnInit {
   }
 
   searchZipCode(zipCode) {
-    // tslint:disable-next-line:radix
-    let selectedZipCode = this.locationService.getCoordsByZipCode( parseInt(zipCode) );
+    const selectedZipCode = this.locationService.getCoordsByZipCode(
+      parseInt(zipCode)
+      );
     console.log(selectedZipCode);
     this.initMap(selectedZipCode);
   }
 
   initMap(zipObj) {
-    let coords = new google.maps.LatLng(zipObj.lat, zipObj.long);
-    let mapOptions: google.maps.MapOptions = {
+    const coords = new google.maps.LatLng(zipObj.lat, zipObj.long);
+    const mapOptions: google.maps.MapOptions = {
       center: coords,
       zoom: 12,
       mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -35,10 +36,11 @@ export class LocationPage implements OnInit {
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
-    let marker: google.maps.Marker = new google.maps.Marker({
-      maps: this.map,
-      position: coords
-    });
+    let marker: google.maps.Marker = new google.maps.Marker(
+       {
+        maps: this.map,
+        position: coords
+      });
     marker.setMap(this.map);
 
 
