@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>location</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header>
+      <h1>let’s find someone <br/>in your area</h1>
+    </header>
+
+    <ion-card class="map-card">
+      <div #map id="map"></div>
+    </ion-card>
+    
+  </section>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      
+    <mat-form-field appearance="outline">
+      <input matInput type="text" placeholder="ENTER YOUR ZIP CODE" [(ngModel)]="zipCode">
+    </mat-form-field>
+  <button mat-flat-button color="accent" (click)="searchZipCode(zipCode)">SEARCH</button>
+</div>
+</ion-content>

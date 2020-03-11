@@ -4,15 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 @NgModule({
- imports:      [ 
+ imports:      [
      CommonModule,
       FormsModule,
       MaterialModule,
       FlexLayoutModule
-      
      ],
- exports:      [ 
-     CommonModule, 
+ exports:      [
+     CommonModule,
      FormsModule,
      MaterialModule,
      FlexLayoutModule
