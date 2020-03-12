@@ -1,9 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>coverage-details</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<!-- Header -->
+<ion-header>  
+  <ion-toolbar>  
+    <ion-buttons slot="start" >
+      <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" color="dark">  
+      <ion-menu-button color="dark"></ion-menu-button>  
+    </ion-buttons>  
+    <ion-title>  
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>  
+  </ion-toolbar>  
+</ion-header> 
+<!-- End of Header -->
 <ion-content>
   <section class="wrapper" *ngIf="state==1" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="20px">
     <label class="que-label">It takes us about 4-6 weeks to<br/>
@@ -15,7 +24,11 @@
     </label>
 
     <div class="mt-50" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
-      <mat-checkbox *ngFor="let item of coverageResponsePeriod"> {{ item }}</mat-checkbox>
+      <mat-radio-group class="radio-group" fxLayout="column" [(ngModel)]="resPeriod">
+        <mat-radio-button color="primary" class="radio-button" [value]="item" *ngFor="let item of coverageResponsePeriod" style="display: block;">
+          {{ item }}
+      </mat-radio-button>
+      </mat-radio-group>
     </div>
 
   </section>
@@ -36,7 +49,8 @@
         [thumbLabel]="thumbLabel"
         [tickInterval]="getSliderTickInterval()"
         [(ngModel)]="value"
-        [vertical]="vertical">
+        [vertical]="vertical"
+        [(ngModel)]="coverageSlider">
     </mat-slider>
       </div>
 
@@ -54,8 +68,9 @@
   </section>
 
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlexAlign="flex-end" class="align-item-bottom">
-    <button mat-flat-button color="primary" (click)="goBack(state)">BACK</button>
-    <button mat-flat-button color="accent" (click)="goNext(state)" >NEXT</button>
+    <button mat-flat-button class="nav-btn" (click)="goBack(state)">BACK</button>
+    <button mat-flat-button class="nav-btn" (click)="goNext(state)"
+    [disabled]="(state === 1 && !resPeriod) || (state === 2 && !coverageSlider)" >NEXT</button>
 </div>
 
 </ion-content>

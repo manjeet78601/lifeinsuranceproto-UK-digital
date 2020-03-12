@@ -5,13 +5,13 @@
         <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
       </ion-buttons>
       <ion-buttons slot="end" color="dark">  
-        <ion-menu-button></ion-menu-button>  
+        <ion-menu-button color="dark"></ion-menu-button>  
       </ion-buttons>  
       <ion-title>  
-        life+
+        <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
       </ion-title>  
     </ion-toolbar>  
-  </ion-header>
+  </ion-header> 
 <!-- End of Header -->
 
 <!-- Personal Information -->
@@ -36,14 +36,15 @@
 
             <mat-label>Date of Birth:</mat-label>
             <mat-form-field class="full-width" appearance="outline">
-                <input matInput [matDatepicker]="picker" placeholder="_ _ /_ _ /_ _ _ _" formControlName="dob">
+                <input matInput [matDatepicker]="picker" [max]="endDate" placeholder="_ _ /_ _ /_ _ _ _" formControlName="dob">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
 
             <mat-label>Gender</mat-label>
             <mat-form-field class="full-width" appearance="outline">
-                <select matNativeControl formControlName="gender">
+                <select matNativeControl formControlName="gender" placeholder="Select gender">
+                    <option value="" selected disabled>Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
@@ -97,9 +98,9 @@
     </section>
 
 
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" >
-        <button mat-flat-button color="primary" (click)="goBack(state)">BACK</button>
-        <button mat-flat-button color="accent" (click)="goNext(state)" [disabled]="(state === 1 && personalInfoForm.invalid) || (state === 2 && personalQuestForm.invalid)">NEXT</button>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button mat-flat-button  class="nav-btn" (click)="goBack(state)">BACK</button>
+        <button mat-flat-button class="nav-btn" (click)="goNext(state)" [disabled]="(state === 1 && personalInfoForm.invalid) || (state === 2 && personalQuestForm.invalid)">NEXT</button>
     </div>
 </section>
 </ion-content>

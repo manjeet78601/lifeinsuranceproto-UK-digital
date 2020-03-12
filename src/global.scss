@@ -106,18 +106,19 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
     width: 100%;
   }
   
-  .signin-btn, .scan-btn {
+  .signin-btn, .scan-btn, .nav-btn {
     height: 32px;
     text-align: center;
     vertical-align: middle;
     line-height: 1 !important;
-    width: 30%;
+    width: 45%;
     background-color:#C1C1C1;
     color: #fff;
     border: none !important;
     &.mat-stroked-button:disabled{
         color: #fff !important;
         opacity: 0.5;
+        cursor: not-allowed;
     }
   }
   .col-blk{
@@ -154,3 +155,9 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
     align-self: flex-end;
     margin-top: auto;
   }
+  .mat-form-field-appearance-legacy,.mat-form-field-appearance-outline{
+    .mat-form-field-infix {
+      margin-left: 5px;
+    }
+  } 
+  

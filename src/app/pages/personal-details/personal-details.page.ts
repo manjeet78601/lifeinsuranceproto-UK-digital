@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class PersonalDetailsPage implements OnInit {
   state = 1;
   personalInfoForm: FormGroup;
   personalQuestForm: FormGroup;
-  constructor() { }
+  endDate: Date = new Date();
+  constructor( private router: Router) { }
 
   ngOnInit() {
     this.personalInfoForm = new FormGroup(
@@ -50,11 +52,21 @@ export class PersonalDetailsPage implements OnInit {
   }
 
   goNext(state) {
-    this.state = state + 1;
+    if ( state === 1 ) {
+      this.state = state + 1;
+    } else {
+      this.router.navigate(['./health-details']);
+    }
+
   }
 
   goBack(state) {
-    this.state = state - 1;
+    if ( state === 2 ) {
+      this.state = state - 1;
+    } else {
+      this.router.navigate(['/facial-identity']);
+    }
+
   }
 
 }

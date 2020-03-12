@@ -1,13 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>location</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<!-- Header -->
+<ion-header>  
+  <ion-toolbar>  
+    <ion-buttons slot="start" >
+      <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" color="dark">  
+      <ion-menu-button color="dark"></ion-menu-button>  
+    </ion-buttons>  
+    <ion-title>  
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>  
+  </ion-toolbar>  
+</ion-header> 
+<!-- End of Header -->
 <ion-content>
   <section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <header>
-      <h1>let’s find someone <br/>in your area</h1>
+      <h1>LET'S FIND SOMEONE <br/>IN YOUR AREA</h1>
     </header>
 
     <ion-card class="map-card">
