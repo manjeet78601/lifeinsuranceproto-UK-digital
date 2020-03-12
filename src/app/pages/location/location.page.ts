@@ -26,13 +26,6 @@ export class LocationPage implements OnInit {
     this.initMap();
   }
 
-<<<<<<< HEAD
-  searchZipCode(zipCode) {
-    const selectedZipCode = this.locationService.getCoordsByZipCode(parseInt(zipCode));
-    console.log(selectedZipCode);
-    this.initMap(selectedZipCode);
-  }
-=======
 initMap() {
     let service;
     const sydney = new google.maps.LatLng(40.714, -74.012);
@@ -41,7 +34,6 @@ initMap() {
 
     this.map = new google.maps.Map(
         this.mapElement.nativeElement, {center: sydney, zoom: 15});
->>>>>>> 914494b98ecc01a090f8e1201e074430a04c0677
 
     const request = {
       query: 'life insurance in zipcode 10286',
@@ -89,16 +81,7 @@ initMap() {
   //     mapTypeId: google.maps.MapTypeId.ROADMAP
   //   };
 
-<<<<<<< HEAD
-    const marker: google.maps.Marker = new google.maps.Marker(
-       {
-        maps: this.map,
-        position: coords
-      });
-    marker.setMap(this.map);
-=======
   //   this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
->>>>>>> 914494b98ecc01a090f8e1201e074430a04c0677
 
   //   // tslint:disable-next-line:prefer-const
   //   let marker: google.maps.Marker = new google.maps.Marker(
