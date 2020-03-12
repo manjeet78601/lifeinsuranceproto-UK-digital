@@ -24,6 +24,6 @@ export class AuthPage implements OnInit {
     });
   }
   onFormsubmit(formName: string) {
-    this.router.navigate(['/facial-identity']);
+    this.router.navigate(['/location']);
   }
 }
