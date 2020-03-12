@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>coverage-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="wrapper" *ngIf="state==1" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="20px">
+    <label class="que-label">It takes us about 4-6 weeks to<br/>
+       get back to you with quotes<br/> 
+       after this application and<br/>
+       medical testing is submitted. So<br/>
+      that we could help you, how<br/>
+       soon to you need coverage?
+    </label>
+
+    <div class="mt-50" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
+      <mat-checkbox *ngFor="let item of coverageResponsePeriod"> {{ item }}</mat-checkbox>
+    </div>
+
+  </section>
+
+  <section class="wrapper" *ngIf="state==2" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="20px">
+    <label class="que-label">How much do I need<br/> 
+      to be covered?
+    </label>
+      <mat-label class="fs-12">Most financial planners suggest <br/>
+        10x-15x of your income.
+      </mat-label>
+
+      <div class="lightgray-card">
+        <mat-slider
+        [max]="max"
+        [min]="min"
+        [step]="step"
+        [thumbLabel]="thumbLabel"
+        [tickInterval]="getSliderTickInterval()"
+        [(ngModel)]="value"
+        [vertical]="vertical">
+    </mat-slider>
+      </div>
+
+  </section>
+
+  <section class="wrapper" *ngIf="state==3" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="20px">
+    <label class="que-label">For how long would you like to be covered?</label>
+    <div class="mt-50">
+      <mat-radio-group  class="radio-group" formControlName="coveragePeriod" fxLayout="column">
+        <mat-radio-button color="primary" class="radio-button" [value]="item" *ngFor="let item of coveragePeriodArr">
+            {{item}}
+        </mat-radio-button>
+        </mat-radio-group>
+    </div>
+  </section>
+
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlexAlign="flex-end" class="align-item-bottom">
+    <button mat-flat-button color="primary" (click)="goBack(state)">BACK</button>
+    <button mat-flat-button color="accent" (click)="goNext(state)" >NEXT</button>
+</div>
+
+</ion-content>

@@ -28,7 +28,7 @@
 @import "./theme/variables.scss";
 
 .wrapper {
-    padding: 20px;
+    padding: 40px 20px;
 }
 header {
     text-align: center;
@@ -95,6 +95,16 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
       height: 184px;
       width: 340px;
   }
+  .mat-checkbox-layout {
+    .mat-checkbox-label{
+      font-size: 14px;
+    }
+  } 
+  .lightgray-card{
+    background-color:  #f4f4f4;
+    padding: 40px 0;
+    width: 100%;
+  }
   
   .signin-btn, .scan-btn {
     height: 32px;
@@ -139,4 +149,8 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
   }
   .mt-50 {
     margin-top: 50px;
+  }
+  .align-item-bottom {
+    align-self: flex-end;
+    margin-top: auto;
   }
