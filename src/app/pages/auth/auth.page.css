@@ -1,0 +1,25 @@
+.login-form {
+  padding-top: 25px;
+}
+
+.mat-tab-label .mat-tab-label-active {
+  border-radius: 25px;
+  border: 1px solid;
+  background: lightgray;
+}
+
+.mat-ink-bar {
+  visibility: hidden;
+}
+
+.signup-header {
+  margin-top: 30px;
+}
+
+ion-icon {
+  width: 2em;
+  height: 2em;
+  padding: 0 2px;
+  margin-top: 20px;
+}
+/*# sourceMappingURL=auth.page.css.map */
