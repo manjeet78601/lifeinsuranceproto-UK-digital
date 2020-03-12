@@ -1,28 +1,32 @@
+<!-- Header -->
 <ion-header>  
   <ion-toolbar>  
     <ion-buttons slot="start" >
       <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end" color="dark">  
-      <ion-menu-button></ion-menu-button>  
+      <ion-menu-button color="dark"></ion-menu-button>  
     </ion-buttons>  
     <ion-title>  
-      life+
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
     </ion-title>  
   </ion-toolbar>  
 </ion-header>
+<!-- End of Header -->
 <ion-content>
-  <section  class="wrapper ion-text-center">
+  <section  class="wrapper-auth ion-text-center">
     <section fxLayout="column" fxLayoutAlign="center center">
           <mat-tab-group>
-            <mat-tab label="SIGN UP"> 
+            <mat-tab label="SIGN IN"> 
               <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onFormsubmit('login')">
                 <mat-form-field class="full-width">
                   <input formControlName="lname" matInput type="text" placeholder="Username" value="">
+                  <mat-icon matPrefix>account_circle</mat-icon>
                 </mat-form-field>
     
                 <mat-form-field class="full-width">
                   <input formControlName="password" matInput type="password" placeholder="Password" value="">
+                  <mat-icon matPrefix>lock</mat-icon>
                 </mat-form-field>
                 
                   <div class="mt-20"> 
@@ -35,7 +39,7 @@
             <ion-icon ios="logo-google" md="logo-google"></ion-icon>
             </mat-tab>
             
-            <mat-tab label="SIGN IN"> 
+            <mat-tab label="SIGN UP"> 
               <header class="mt-30">
                 <p class="fs-18 col-darkgrey font-bold m-30">LETS GET STARTED</p>
                 <p class="fs-14 col-blk lh-05">CREATE AN ACCOUNT</p>
@@ -43,14 +47,17 @@
               <form class="signup-form mt-50" [formGroup]="signupForm" (ngSubmit)="onFormsubmit('signup')">
                 <mat-form-field class="full-width" appearance="outline">
                     <input formControlName="signupName" matInput placeholder="Email" >
+                    <mat-icon matPrefix>email</mat-icon>
                 </mat-form-field>
 
                 <mat-form-field class="full-width" appearance="outline">
                     <input formControlName="signupPwd" type="password" matInput placeholder="Password">
+                    <mat-icon matPrefix>lock</mat-icon>
                 </mat-form-field>
 
                 <mat-form-field class="full-width" appearance="outline">
                   <input formControlName="signupconfirmPwd" type="password" matInput placeholder="Confirm Password">
+                  <mat-icon matPrefix>lock</mat-icon>
                </mat-form-field>
 
                <div class="mt-20"> 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-facial-identity',
@@ -8,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FacialIdentityPage implements OnInit {
 
-  constructor(private camera) { }
+  constructor(
+    private camera: Camera,
+    private router: Router
+    ) { }
   capturedSnapURL: string;
 
   cameraOptions = {
@@ -25,9 +29,14 @@ export class FacialIdentityPage implements OnInit {
     // this.camera.DestinationType.DATA_URL gives base64 URI
     const base64Image = 'data:image/jpeg;base64,' + imageData;
     this.capturedSnapURL = base64Image;
+    this.router.navigate(['/personal-details']);
   }, (err) => {
     alert(err);
     // Handle error
+    this.router.navigate(['/personal-details']);
   });
+ }
+ onSkip(): void {
+  this.router.navigate(['/personal-details']);
  }
 }
