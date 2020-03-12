@@ -1,21 +1,103 @@
-
-<ion-header  >  
-  <ion-toolbar transparent>  
-    <ion-buttons slot="end" color="dark">  
-      <ion-menu-button></ion-menu-button>  
-    </ion-buttons>  
-    <ion-title>  
+<ion-header>
+  <ion-toolbar transparent>
+    <ion-buttons slot="end" color="dark">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
       life.
-    </ion-title>  
-  </ion-toolbar>  
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
 
-  <ion-content class="card-background-page" fullscreen>
 
-    <ion-card class="m-0">
-      <img src="../../assets/img/welcome-p-img.png"/>
-      <div class="card-title">WELCOME TO LIFE+</div>
-      <div class="card-subtitle">DISCOVER <br>HE RIGHT QUOTE</div>
-    </ion-card>
-  </ion-content>
+<!-- First Content  -->
+<ion-content>
 
+  <section class="wrapper ion-text-center">
+    <section fxLayout="column">
+
+      <div>
+        <img src="" alt="img1" />
+      </div>
+      <mat-card-subtitle class="mt-50">HELLO THERE</mat-card-subtitle>
+      <mat-card-title class="mt-20">Life Insurance For The <br/> Morden Family</mat-card-title>
+      <mat-card-content class="mt-20">
+        <p>
+          To help protect your family and prepare your <br/> family for life’s events, you need coverage that <br/>fits comfortably
+          in your budget and adapts to <br/>your changing lifestyle, income and needs.
+        </p>
+      </mat-card-content>
+
+    </section>
+    <mat-divider></mat-divider>
+
+
+    <!-- step one and two -->
+    <section fxLayout="column">
+      <mat-card-subtitle class="mt-50">LIFE INSURANCE SIMPLIFIED, PERSONALIZED</mat-card-subtitle>
+      <mat-card-title class="mt-20">Let Us Help You Plan Your <br/>Family’s Future.</mat-card-title>
+      <mat-card-content class="mt-20 ">
+        <p>
+          We’ll walk you through the process and help <br/>you prioritze what’s best for you and yours.<br/> Our plans are
+          flexible, afforadble and as easy<br/> to understand as 1, 2, 3, 4.
+        </p>
+      </mat-card-content>
+      <!-- One and Two -->
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
+          <img alt="img1" class="mt-20" />
+          <button mat-flat-button class=" btn-color">STEP ONE</button>
+          <p class="btn-details">Calculate how<br> much coverage<br> your family needs.</p>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
+          <img alt="img1" class="mt-20" />
+          <button mat-flat-button class="btn-color">STEP TWO</button>
+          <p class="btn-details">Customize a Plan<br> based on your<br> holist view.</p>
+        </div>
+      </div>
+      <!-- three and Four -->
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
+          <img alt="img1" class="mt-50" />
+          <button mat-flat-button >STEP THREE</button>
+          <p class=" btn-details">Term vs Prem:<br> What's best for<br> you?</p>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
+          <img alt="img1" class="mt-20" />
+          <button mat-flat-button >STEP FOUR</button>
+          <p class=" btn-details">Compare Quotes.</p>
+        </div>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <!-- Section 3 -->
+    <section fxLayout="column" class="mt-20 mb-30">
+      <mat-card-subtitle class="mt-50">EVERY FAMILY IS DIFFERENT</mat-card-subtitle>
+      <mat-card-title class="mt-20">SEE How We've Helped <br> Families Like Yours.</mat-card-title>
+      <mat-card-content class="mt-20">
+        <mat-label class="que-label">I am a : </mat-label>
+        <mat-form-field appearance="outline">
+          <mat-label>Select Marital/Parental Status</mat-label>
+          <mat-select matNativeControl>
+            <mat-option>None</mat-option>
+            <mat-option value="option1">Married</mat-option>
+            <mat-option value="option2">Single</mat-option>
+            <mat-option value="option3">Umarried</mat-option>
+            <mat-option value="option3">Divorced</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-content>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-20">
+          <img src="" alt="img1" class="mt-20 img-responsive" />
+          <button mat-flat-button class=" mt-20">READ MORE</button>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-20">
+          <img src="" alt="img1" class="mt-20 img-responsive" />
+          <button mat-flat-button class="mt-20 ">READ MORE</button>
+        </div>
+      </div>
+    </section>
+  </section>
+</ion-content>
+<!-- End of the Home Page content -->
