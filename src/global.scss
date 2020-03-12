@@ -127,6 +127,7 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
   .col-darkgrey{
       color:#5A5A5A;
   }
+  
   .fs-12{
     font-size: 12px;
   }
@@ -148,9 +149,18 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
   .mt-20{
       margin-top: 20px;
   }
+  .mt-10{
+      margin-top:10px;
+  }
   .mt-50 {
     margin-top: 50px;
   }
+  .mb-20{
+      margin-bottom: 20px;
+  }
+  .mb-30{
+    margin-bottom: 30px;
+}
   .align-item-bottom {
     align-self: flex-end;
     margin-top: auto;

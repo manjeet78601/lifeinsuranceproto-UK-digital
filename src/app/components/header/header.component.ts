@@ -24,6 +24,11 @@ export class HeaderComponent implements OnInit {
       icon  : 'home'
     },
     {
+      title : 'Location',
+      url   : '/location',
+      icon  : 'home'
+    },
+    {
       title : 'Facial-Identity',
       url   : '/facial-identity',
       icon  : 'home'

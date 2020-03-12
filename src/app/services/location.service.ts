@@ -30,7 +30,7 @@ export class LocationService {
   ];
 
   getCoordsByZipCode(zipCode) {
-    let zip = this.zipCodes.find(res => res.zipCode === zipCode);
+    const zip = this.zipCodes.find(res => res.zipCode === zipCode);
     console.log(zip);
     return zip;
   }
