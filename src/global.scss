@@ -160,7 +160,34 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
   .mb-30{
     margin-bottom: 30px;
 }
+.mb-70{
+    margin-bottom: 70px;
+}
   .align-item-bottom {
     align-self: flex-end;
     margin-top: auto;
   }
+
+  // footer 
+
+  .footer-p-40{
+    padding: 40px;
+}
+  .fl-footer-content{
+    font-family:Proxima Soft;
+    font-size:12px;
+    width:118px;
+     height:32px;
+     margin-bottom: 30px;
+    
+  }
+  .fr-footer-content{
+    float:right;
+    font-family:Proxima Soft;
+    font-size:12px;
+    width:126;
+    height:16px;
+    margin-bottom: 30px;
+  }
+
+
