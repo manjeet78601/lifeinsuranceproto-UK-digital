@@ -19,9 +19,7 @@ export class LocationPage implements OnInit {
   }
 
   searchZipCode(zipCode) {
-    const selectedZipCode = this.locationService.getCoordsByZipCode(
-      parseInt(zipCode)
-      );
+    const selectedZipCode = this.locationService.getCoordsByZipCode(parseInt(zipCode));
     console.log(selectedZipCode);
     this.initMap(selectedZipCode);
   }
@@ -36,7 +34,7 @@ export class LocationPage implements OnInit {
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
-    let marker: google.maps.Marker = new google.maps.Marker(
+    const marker: google.maps.Marker = new google.maps.Marker(
        {
         maps: this.map,
         position: coords
