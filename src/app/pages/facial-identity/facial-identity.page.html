@@ -1,0 +1,32 @@
+<ion-header>  
+  <ion-toolbar>  
+    <ion-buttons slot="start" >
+      <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" color="dark">  
+      <ion-menu-button></ion-menu-button>  
+    </ion-buttons>  
+    <ion-title>  
+      life+
+    </ion-title>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <section  class="wrapper ion-text-center">
+    <section fxLayout="column" fxLayoutAlign="center center">
+      <header class="mt-30">
+        <p class="fs-18 col-darkgrey font-bold m-30">Now Let’s scan to auto fill</p>
+      </header>
+      <mat-card class="camera-section">
+        <ion-img [src]="capturedSnapURL"></ion-img>
+      </mat-card>
+      <div class="mt-20"> 
+        <button class="scan-btn" mat-stroked-button (click)="onScan($event)"><strong>SCAN</strong></button>
+      </div>
+      <div> 
+        <button mat-button class="col-blk">SKIP</button>
+      </div>
+    </section>
+  </section>
+</ion-content>

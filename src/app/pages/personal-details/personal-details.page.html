@@ -1,9 +1,17 @@
 <!-- Header -->
-<ion-header>
-  <ion-toolbar>
-    <ion-title>PersonalDetails</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-header>  
+    <ion-toolbar>  
+      <ion-buttons slot="start" >
+        <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end" color="dark">  
+        <ion-menu-button></ion-menu-button>  
+      </ion-buttons>  
+      <ion-title>  
+        life+
+      </ion-title>  
+    </ion-toolbar>  
+  </ion-header>
 <!-- End of Header -->
 
 <!-- Personal Information -->
@@ -76,8 +84,13 @@
             <mat-card-title>
                 Quick Tip
             </mat-card-title>
-            <mat-card-content>
-                dummy text
+            <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                <p>You aren’t required to apply with 
+                    your partner, But if you do, here are some benefits.</p> 
+                <p>Save time by scheduling your medical exam 
+                    at the same time.</p>
+                <p>Don’t forget to see how policies for both of you 
+                    will fit into your monthly budget</p>
             </mat-card-content>
         </mat-card>
 

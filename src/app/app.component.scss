@@ -117,3 +117,8 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.main-content {
+  min-height: calc(100vh - 197px);
+  //padding: 40px 40px 0 40px;
+}

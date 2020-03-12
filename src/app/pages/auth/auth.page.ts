@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +10,7 @@ import { ReactiveFormsModule, Validators, FormBuilder, FormGroup } from '@angula
 export class AuthPage implements OnInit {
   loginForm: FormGroup;
   signupForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -23,6 +24,6 @@ export class AuthPage implements OnInit {
     });
   }
   onFormsubmit(formName: string) {
-
+    this.router.navigate(['/facial-identity']);
   }
 }
