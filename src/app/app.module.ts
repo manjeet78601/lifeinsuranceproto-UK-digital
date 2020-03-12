@@ -34,7 +34,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   providers: [
     StatusBar,
     SplashScreen,
-    Camera,
+   // Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

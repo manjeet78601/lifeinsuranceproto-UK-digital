@@ -9,7 +9,7 @@ import { MaterialModule } from '../../sharedModules/material.module';
 import { SharedModule } from '../../sharedModules/shared.module';
 
 import { FacialIdentityPage } from './facial-identity.page';
-import { Camera } from '@ionic-native/camera/ngx';
+// import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   imports: [
@@ -20,7 +20,9 @@ import { Camera } from '@ionic-native/camera/ngx';
     SharedModule,
     FacialIdentityPageRoutingModule
   ],
-  providers: [Camera],
+  providers: [
+  //   Camera
+  ],
   declarations: [FacialIdentityPage]
 })
 export class FacialIdentityPageModule {}
