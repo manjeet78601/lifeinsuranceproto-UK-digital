@@ -55,7 +55,7 @@ export class PersonalDetailsPage implements OnInit {
     if ( state === 1 ) {
       this.state = state + 1;
     } else {
-      this.router.navigate(['./health-details']);
+      this.router.navigate(['./coverage-details']);
     }
 
   }

@@ -23,7 +23,9 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@capacitor/android": "^1.5.1",
     "@capacitor/core": "1.5.1",
+    "@capacitor/ios": "^1.5.1",
     "@ionic-native/camera": "^5.22.0",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/geolocation": "^5.22.0",
@@ -33,6 +35,7 @@
     "@types/google-maps": "^3.2.2",
     "@types/googlemaps": "^3.39.3",
     "cordova": "^9.0.0",
+    "cordova-android": "^8.1.0",
     "cordova-browser": "6.0.0",
     "cordova-ios": "5.1.1",
     "cordova-plugin-camera": "git+https://github.com/apache/cordova-plugin-camera.git",
@@ -85,7 +88,8 @@
     },
     "platforms": [
       "ios",
-      "browser"
+      "browser",
+      "android"
     ]
   }
 }

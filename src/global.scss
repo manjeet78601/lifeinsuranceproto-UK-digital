@@ -198,3 +198,19 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
     }
   } 
   
+//content
+.content {
+  min-height: calc(100vh - 197px);
+  //padding: 40px 40px 0 40px;
+}
+//footer
+.footer {
+  height: 141px;
+  background-color: #272727;
+  color: white;
+  padding: 30px;
+
+  .lp-f-txt {
+      font-size: 9px;
+  }
+}

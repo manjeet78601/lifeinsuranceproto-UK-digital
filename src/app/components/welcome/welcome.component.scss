@@ -35,11 +35,12 @@
 .m-0{
   margin: 0;
 }
-img{
+.img-circle{
   border-radius:50%;
   width:150px;
   height:150px;
-  
+  background-color: gray;
+  display: inline-block;
 }
 .align-content-center {
   padding: 20px 0;
