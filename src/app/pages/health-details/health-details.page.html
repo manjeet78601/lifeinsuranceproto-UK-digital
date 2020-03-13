@@ -14,9 +14,169 @@
 </ion-header> 
 <!-- End of Header -->
 <ion-content>
-<section class="content">
+  <section  class="wrapper content">
+    <!--Section 1-->
+    <section *ngIf="state == 1" fxLayoutAlign="start" fxLayout="column" >
+          <h1 class="que-label">NEXT, WE NEED SOME BASIC HEALTH DETAILS. </h1>
+      <p>These questions help us find accurate quotes
+        at each insurance company.</p>
+        <form [formGroup]="basicHealthDetailsForm">
+     <!-- <div fxLayout="row" >
+      <div>
+      <mat-form-field appearance="outline" class="width-73" >
+        <mat-label>Height</mat-label>
+        <div fxLayout="row">
+          <input matInput type="number" formControlName="height">
+        <mat-select>
+          <mat-option value="option">Centimeter</mat-option>
+          <mat-option value="option">Foot</mat-option>
+        </mat-select>
+        </div>
+      </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="width-73" >
+          <mat-label>Weight</mat-label>
+          <div fxLayout="row">
+            <input matInput type="number" formControlName="weight">
+          <mat-select>
+            <mat-option value="option">Pounds</mat-option>
+            <mat-option value="option">Kilograms</mat-option>
+          </mat-select>
+          </div>
+        </mat-form-field>
+      </div>
+     </div> -->
+     <div>
+      <mat-label style="display: block;">Height</mat-label>
+      <div fxLayout="row" fxLayoutGap="10px">
+       <mat-form-field appearance="outline" class="w-40">
+         <input matInput type="text" placeholder="Height" formControlName="height">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-40">
+         <mat-select placeholder="Unit">
+           <mat-option value="cms" selected>cms</mat-option>
+           <mat-option value="ft">ft</mat-option>
+         </mat-select>
+        </mat-form-field>
+      </div>
+     </div>
 
-</section>
+     <div>
+      <mat-label style="display: block;">Weight</mat-label>
+      <div fxLayout="row" fxLayoutGap="10px">
+       <mat-form-field appearance="outline" class="w-40">
+         <input matInput type="text" placeholder="Weight" formControlName="weight">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-40">
+         <mat-select placeholder="Unit">
+           <mat-option value="pounds" selected>Pounds</mat-option>
+           <mat-option value="option">Kgs</mat-option>
+         </mat-select>
+        </mat-form-field>
+      </div>
+     </div>
+    
+     
+      <div>
+        <h1 class="que-label">HAVE YOU USED ANY TOBACCO PRODUCTS IN LAST 5 YEARS?</h1>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group" formControlName="usedTobacco">
+          <mat-radio-button color="primary" class="radio-button" value="yes" >
+              Yes
+          </mat-radio-button>
+    
+          <mat-radio-button color="primary" class="radio-button" value="no" >
+              No
+          </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <h1 class="que-label">HAVE YOU USED ANY MARIJUANA PRODUCTS IN THE LAST 5 YEARS</h1>
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group" formControlName="usedMarijuana">
+        <mat-radio-button color="primary" class="radio-button" value="yes">
+            Yes
+        </mat-radio-button>
+    
+        <mat-radio-button color="primary" class="radio-button" value="no">
+            No
+        </mat-radio-button>
+    </mat-radio-group>
+    </div>
+    </form>
+    
+    </section>
+    
+    <!--Section 2 -->
+    <section *ngIf="state == 2" fxLayout="column" fxLayoutAlign="center start">
+      <div >
+        
+              <h1 class="que-label">HAVE YOU EVER BEEN TREATED FOR AND/OR TAKEN MEDICATION FOR ANY OF THE FOLLOWING?
+              </h1>
+         
+      </div>
+      <form fxLayout="column" fxLayoutGap="10px">
+          
+        <mat-checkbox *ngFor="let item of medicationList" [value]="item" (change)="getCheckboxValue($event)"> {{item}} </mat-checkbox>
+                  <!-- <input type="checkbox" (click)="getCheckboxValue(medication)"> {{ medication }} -->
+
+      </form>
+    </section>
+    
+    
+    <!--Section 3-->
+    <section *ngIf="state == 3" fxLayoutAlign="center center" fxLayout="column" class="wrapper">
+      <header>
+          <h1 class="que-label">PLEASE TELL US MORE ABOUT YOUR MEDICAL INFORMATION</h1>
+      </header>
+     <mat-form-field class="full-width" appearance="fill">
+      <textarea class="txtArea" matInput placeholder="Add your comment"></textarea>
+     </mat-form-field>
+      
+          
+    </section>
+    
+    
+    <!--Section 4-->
+    <section *ngIf="state == 4" fxLayout="column" fxLayoutAlign="center start" class="wrapper">
+      <form [formGroup]="section4Form">
+      <div>
+          <h1 class="que-label">DO YOU HAVE ANY PARENTS OR SIBLINGS WHO HAD HEART ATTACKS, STROKES, CANCER, DIABETES,
+              OR KIDNEY DISEASE
+              BEFORE AGE 70?</h1>
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group" formControlName="parentHavingAttack">
+              <mat-radio-button color="primary" class="radio-button" value="yes">
+                  Yes
+              </mat-radio-button>
+    
+              <mat-radio-button color="primary" class="radio-button" value="no">
+                  No
+              </mat-radio-button>
+          </mat-radio-group>
+      </div>
+    
+      <div>
+          <h1 class="que-label">HAVE YOU HAD YOUR DRIVER’S LICENSE SUSPENDED OR REVOKED, OF HAD MORE THAN ONE TICKET OR
+              ACCIDENT IN THE PAST
+              5 YEARS? </h1>
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group" formControlName="haveDriverLicense" >
+              <mat-radio-button color="primary" class="radio-button" value="yes">
+                  Yes
+              </mat-radio-button>
+    
+              <mat-radio-button color="primary" class="radio-button" value="no">
+                  No
+              </mat-radio-button>
+          </mat-radio-group>
+      </div>
+    </form>
+    </section>
+    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="20px">
+      <button  class="nav-btn" (click)="goBack(state)" mat-stroked-button >BACK</button>
+      <button mat-stroked-button class="nav-btn"  (click)="goNext(state)" [disabled]="(state === 1 && basicHealthDetailsForm.invalid) || (state === 2 && checkboxArray.length==0)
+       || (state === 4 && section4Form.invalid)" >NEXT</button>
+       
+    </div>
+    </section>
 <!-- Footer -->
 <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
   <ion-text class="align-item-bottom">

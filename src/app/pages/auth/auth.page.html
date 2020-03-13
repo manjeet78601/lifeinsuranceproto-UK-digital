@@ -22,11 +22,13 @@
                 <mat-form-field class="full-width">
                   <input formControlName="lname" matInput type="text" placeholder="Username" value="">
                   <mat-icon matPrefix>account_circle</mat-icon>
+                  <mat-error>Invalid username</mat-error>
                 </mat-form-field>
     
                 <mat-form-field class="full-width">
                   <input formControlName="password" matInput type="password" placeholder="Password" value="">
                   <mat-icon matPrefix>lock</mat-icon>
+                  <mat-error>Invalid password</mat-error>
                 </mat-form-field>
                 
                   <div class="mt-20"> 
@@ -48,6 +50,7 @@
                 <mat-form-field class="full-width" appearance="outline">
                     <input formControlName="signupName" matInput placeholder="Email" >
                     <mat-icon matPrefix>email</mat-icon>
+                    <mat-error>Invalid email</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="full-width" appearance="outline">
@@ -59,7 +62,11 @@
                   <input formControlName="signupconfirmPwd" type="password" matInput placeholder="Confirm Password">
                   <mat-icon matPrefix>lock</mat-icon>
                </mat-form-field>
-
+               <span class="mat-error err" 
+               *ngIf="(signupForm.controls.signupPwd.dirty && signupForm.controls.signupconfirmPwd.dirty)
+                && (signupForm.controls.signupPwd.value != signupForm.controls.signupconfirmPwd.value)">
+                Password doesnt match
+              </span>
                <div class="mt-20"> 
                 <button type="submit" class="signin-btn" mat-stroked-button [disabled]="!signupForm.valid" ><strong>SIGN UP</strong></button>
               </div>

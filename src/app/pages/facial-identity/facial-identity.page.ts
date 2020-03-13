@@ -29,14 +29,14 @@ export class FacialIdentityPage implements OnInit {
     // this.camera.DestinationType.DATA_URL gives base64 URI
     const base64Image = 'data:image/jpeg;base64,' + imageData;
     this.capturedSnapURL = base64Image;
-    this.router.navigate(['/personal-details']);
+    this.router.navigate(['/personal-details/1']);
   }, (err) => {
     alert(err);
     // Handle error
-    this.router.navigate(['/personal-details']);
+    this.router.navigate(['/personal-details/1']);
   });
  }
  onSkip(): void {
-  this.router.navigate(['/personal-details']);
+  this.router.navigate(['/personal-details/0']);
  }
 }

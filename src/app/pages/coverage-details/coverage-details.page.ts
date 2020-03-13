@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-coverage-details',
@@ -30,16 +31,26 @@ export class CoverageDetailsPage implements OnInit {
     '25 years',
     'Permanently'
   ];
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit() {
   }
   goNext(state) {
-    this.state = state + 1;
+    if (state !== 3) {
+      this.state = state + 1;
+    } else {
+      this.router.navigate(['/quatation']);
+    }
+
   }
 
   goBack(state) {
-    this.state = state - 1;
+    if (state !== 1) {
+      this.state = state - 1;
+    } else {
+      this.router.navigate(['/health-details']);
+    }
+
   }
   getSliderTickInterval(): number | 'auto' {
     if (this.showTicks) {
