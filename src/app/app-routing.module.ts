@@ -32,14 +32,19 @@ const routes: Routes = [
     path: 'facial-identity',
     loadChildren: () => import('./pages/facial-identity/facial-identity.module').then( m => m.FacialIdentityPageModule)
   },
-  // {
-  //   path: 'locate-lab',
-  //   loadChildren: () => import('./pages/locate-lab/locate-lab.module').then( m => m.LocateLabPageModule)
-  // },
+   //{
+   //  path: 'locate-lab',
+   // loadChildren: () => import('./pages/locate-lab/locate-lab.module').then( m => m.LocateLabPageModule)
+  //},
   {
     path: 'coverage-details',
     loadChildren: () => import('./pages/coverage-details/coverage-details.module').then( m => m.CoverageDetailsPageModule)
+  },
+  {
+    path: 'quotation',
+    loadChildren: () => import('./pages/quotation/quotation.module').then( m => m.QuotationPageModule)
   }
+
 ];
 
 @NgModule({
