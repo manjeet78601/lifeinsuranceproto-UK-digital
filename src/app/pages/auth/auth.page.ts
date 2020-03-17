@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PasswordValidation } from './../../sharedModules/eqaul-value-validator';
+// import { PasswordValidation } from './../../sharedModules/eqaul-value-validator';
 
 @Component({
   selector: 'app-auth',
@@ -22,8 +22,7 @@ export class AuthPage implements OnInit {
       signupName: ['', [Validators.required, Validators.email]],
       signupPwd: ['', Validators.required],
       signupconfirmPwd: ['', Validators.required, Validators]
-    },
-    {validator: PasswordValidation.MatchPassword});
+    });
   }
   onFormsubmit(formName: string) {
     this.router.navigate(['/facial-identity']);

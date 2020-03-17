@@ -8,16 +8,11 @@ const routes: Routes = [
     component: WelcomeComponent
   },
   {
-    path: '',
-    redirectTo: '/welcome',
-    pathMatch: 'full'
-  },
-  {
     path: 'auth',
     loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
   },
   {
-    path: 'personal-details/:id',
+    path: 'personal-details',
     loadChildren: () => import('./pages/personal-details/personal-details.module').then( m => m.PersonalDetailsPageModule)
   },
   {
@@ -39,8 +34,12 @@ const routes: Routes = [
   {
     path: 'location',
     loadChildren: () => import('./pages/location/location.module').then( m => m.LocationPageModule)
-  }
-
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'welcome'
+  },
 ];
 
 @NgModule({
