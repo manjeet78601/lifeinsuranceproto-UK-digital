@@ -8,16 +8,11 @@ const routes: Routes = [
     component: WelcomeComponent
   },
   {
-    path: '',
-    redirectTo: '/welcome',
-    pathMatch: 'full'
-  },
-  {
     path: 'auth',
     loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
   },
   {
-    path: 'personal-details/:id',
+    path: 'personal-details',
     loadChildren: () => import('./pages/personal-details/personal-details.module').then( m => m.PersonalDetailsPageModule)
   },
   {
@@ -43,8 +38,12 @@ const routes: Routes = [
   {
     path: 'quotation',
     loadChildren: () => import('./pages/quotation/quotation.module').then( m => m.QuotationPageModule)
+  },
+  {
+    path: '',
+    redirectTo: '/welcome',
+    pathMatch: 'full'
   }
-
 ];
 
 @NgModule({

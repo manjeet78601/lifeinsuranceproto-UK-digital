@@ -4,6 +4,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DataAnalyticsService, CategoryName, PageName, Action, PersonalDetailLabel } from 'src/app/services/data-analytics.service';
 
 
 @Component({
@@ -26,7 +27,8 @@ export class PersonalDetailsPage implements OnInit {
     private router: Router,
     private userService: UserService,
     private actRoute: ActivatedRoute,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    private dataAnalytics: DataAnalyticsService
   ) { }
 
   ngOnInit() {
@@ -85,6 +87,7 @@ export class PersonalDetailsPage implements OnInit {
 
   goNext(state) {
     if (state === 1) {
+      this.dataAnalytics.trackAnalyticData(CategoryName.PERSONLINFO, Action.CLICK, PersonalDetailLabel.NEXT);
       this.state = state + 1;
     } else {
       this.router.navigate(['./health-details']);
