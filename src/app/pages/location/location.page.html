@@ -1,55 +1,9 @@
-<!-- Header -->
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button text="" color='dark'>
-        <ion-icon name="arrow-back"></ion-icon>
-      </ion-back-button>
-    </ion-buttons>
-    <ion-buttons slot="end" color="dark">
-      <ion-menu-button color="dark"></ion-menu-button>
-    </ion-buttons>
-    <ion-title fxLayout="row" fxLayoutAlign="center center">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
-    </ion-title>
+    <ion-title>location</ion-title>
   </ion-toolbar>
 </ion-header>
-<!-- End of Header -->
+<div #mapElement id="map"></div>
 <ion-content>
-  <section class="content">
-    <section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <header>
-        <h1>LET'S FIND SOMEONE <br />IN YOUR AREA</h1>
-      </header>
 
-      <ion-card class="map-card">
-        <div #map id="map"></div>
-      </ion-card>
-
-    </section>
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-
-      <mat-form-field appearance="outline" style="width: 40%;">
-        <input matInput type="text" placeholder="ENTER YOUR ZIP CODE" [(ngModel)]="zipCode">
-      </mat-form-field>
-      <button mat-flat-button class="nav-btn" (click)="searchZipCode(zipCode)">SEARCH</button>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="center center">
-      <button mat-flat-button class="nav-btn" (click)="navigateToNextPage()">NEXT</button>
-    </div>
-  </section>
-  <!-- Footer -->
-  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
-    <ion-text class="align-item-bottom">
-      <ion-label class="fl-footer-content">
-         77 Water St 8th Floor,<br/> Manhattan, NY 10005
-     </ion-label>
-   </ion-text>
-   <ion-text class="align-item-bottom">
-     <ion-label class="fl-footer-content">
-      Copyright Life+ © 2020
-     </ion-label>
-   </ion-text>
-  </footer>
-  <!-- End of footer -->
 </ion-content>
