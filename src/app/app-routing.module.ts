@@ -20,17 +20,9 @@ const routes: Routes = [
     loadChildren: () => import('./pages/health-details/health-details.module').then( m => m.HealthDetailsPageModule)
   },
   {
-    path: 'location',
-    loadChildren: () => import('./pages/location/location.module').then( m => m.LocationPageModule)
-  },
-  {
     path: 'facial-identity',
     loadChildren: () => import('./pages/facial-identity/facial-identity.module').then( m => m.FacialIdentityPageModule)
   },
-   //{
-   //  path: 'locate-lab',
-   // loadChildren: () => import('./pages/locate-lab/locate-lab.module').then( m => m.LocateLabPageModule)
-  //},
   {
     path: 'coverage-details',
     loadChildren: () => import('./pages/coverage-details/coverage-details.module').then( m => m.CoverageDetailsPageModule)
@@ -40,9 +32,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/quotation/quotation.module').then( m => m.QuotationPageModule)
   },
   {
+<<<<<<< HEAD
     path: '',
     redirectTo: '/welcome',
     pathMatch: 'full'
+=======
+    path: 'location',
+    loadChildren: () => import('./pages/location/location.module').then( m => m.LocationPageModule)
+>>>>>>> 91fbb7f0bdc9da65f9f6c737ad28fe1e90688c1e
   }
 ];
 

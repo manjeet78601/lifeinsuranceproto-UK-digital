@@ -1,18 +1,19 @@
-
- <!-- Header -->
- <ion-header>  
-  <ion-toolbar>  
-    <ion-buttons slot="start" >
-      <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+<!-- Header -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="end" color="dark">  
-      <ion-menu-button color="dark"></ion-menu-button>  
-    </ion-buttons>  
-    <ion-title fxLayout="row" fxLayoutAlign="center center">  
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" >
-    </ion-title>  
-  </ion-toolbar>  
-</ion-header> 
+    <ion-buttons slot="end" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title fxLayout="row" fxLayoutAlign="center center">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 <!-- End of Header -->
 
 
@@ -23,7 +24,7 @@
     <section fxLayout="column">
 
       <div>
-        <img src="../../assets/img/circleImg1.png" alt="img1"  class="circled-img"/>
+        <img src="../../assets/img/circleImg1.png" alt="img1" class="circled-img" />
       </div>
       <mat-card-subtitle class="mt-50">HELLO THERE</mat-card-subtitle>
       <mat-card-title class="mt-20">Life Insurance For The <br/> Morden Family</mat-card-title>
@@ -58,14 +59,14 @@
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
           <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20 circled-img" />
           <button mat-flat-button class="btn-color">STEP TWO</button>
-          <p class="btn-details">Customize a Plan<br> based on your<br> holist view.</p>
+          <p class="btn-details">Customize a Plan<br> based on your<br> holistic view.</p>
         </div>
       </div>
       <!-- three and Four -->
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
           <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-50 circled-img" />
-          <button mat-flat-button >STEP THREE</button>
+          <button mat-flat-button>STEP THREE</button>
           <p class=" btn-details">Term vs Prem:<br> What's best for<br> you?</p>
         </div>
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
@@ -86,10 +87,11 @@
           <mat-label>Select Marital/Parental Status</mat-label>
           <mat-select matNativeControl>
             <mat-option>None</mat-option>
-            <mat-option value="option1">Married</mat-option>
-            <mat-option value="option2">Single</mat-option>
-            <mat-option value="option3">Umarried</mat-option>
-            <mat-option value="option3">Divorced</mat-option>
+            <mat-option value="option1">Single</mat-option>
+            <mat-option value="option2">Single Parent</mat-option>
+            <mat-option value="option3">Married</mat-option>
+            <mat-option value="option4">UnMarried</mat-option>
+            <mat-option value="option5">Divorced</mat-option>
           </mat-select>
         </mat-form-field>
       </mat-card-content>
@@ -103,22 +105,24 @@
           <button mat-flat-button class="mt-20 ">READ MORE</button>
         </div>
       </div>
+
+
+
     </section>
   </section>
   <!-- Footer -->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">
-         77 Water St 8th Floor,<br/> Manhattan, NY 10005
-     </ion-label>
-   </ion-text>
-   <ion-text class="align-item-bottom">
-     <ion-label class="fl-footer-content">
-      Copyright Life+ © 2020
-     </ion-label>
-   </ion-text>
+        77 Water St 8th Floor,<br/> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
   </footer>
   <!-- End of footer -->
 </ion-content>
 <!-- End of the Home Page content -->
-

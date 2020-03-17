@@ -39,7 +39,7 @@ export class CoverageDetailsPage implements OnInit {
     if (state !== 3) {
       this.state = state + 1;
     } else {
-      this.router.navigate(['/quatation']);
+      this.router.navigate(['/quotation']);
     }
 
   }

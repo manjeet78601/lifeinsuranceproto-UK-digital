@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocationService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
   zipCodes = [
     {
       zipCode: 48834,
@@ -34,5 +35,12 @@ export class LocationService {
     console.log(zip);
     return zip;
   }
+
+  getNearbyLocations() {
+    return this.http
+    // tslint:disable-next-line:max-line-length
+    .get('https://maps.googleapis.com/maps/api/geocode/json?address=life+insurance+at+zip+10001,+Mountain+View,+CA&key=AIzaSyDySN_BbijfNYb0D2wuY-wSCm16v3CXLRE');
+  }
+
 
 }
