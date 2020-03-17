@@ -23,7 +23,7 @@
       that we could help you, how<br/>
        soon to you need coverage?
     </label>
-
+    
     <div class="mt-50" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
       <mat-radio-group class="radio-group" fxLayout="column" [(ngModel)]="resPeriod">
         <mat-radio-button color="primary" class="radio-button" [value]="item" *ngFor="let item of coverageResponsePeriod" style="display: block;">
@@ -60,7 +60,7 @@
   <section class="wrapper" *ngIf="state==3" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="20px">
     <label class="que-label">For how long would you like to be covered?</label>
     <div class="mt-50">
-      <mat-radio-group  class="radio-group" formControlName="coveragePeriod" fxLayout="column">
+      <mat-radio-group  class="radio-group" fxLayout="column" [(ngModel)]="coveragePeriod">
         <mat-radio-button color="primary" class="radio-button" [value]="item" *ngFor="let item of coveragePeriodArr">
             {{item}}
         </mat-radio-button>
@@ -71,7 +71,7 @@
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlexAlign="flex-end" class="align-item-bottom">
     <button mat-flat-button class="nav-btn" (click)="goBack(state)">BACK</button>
     <button mat-flat-button class="nav-btn" (click)="goNext(state)"
-    [disabled]="(state === 1 && !resPeriod) || (state === 2 && !coverageSlider)" >NEXT</button>
+    [disabled]="(state === 1 && !resPeriod) || (state === 2 && !coverageSlider) || (state === 3 && !coveragePeriod)" >NEXT</button>
 </div>
 </section>
 

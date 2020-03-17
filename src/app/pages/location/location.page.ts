@@ -1,8 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterContentInit } from '@angular/core';
+import { Geolocation, GeolocationOptions, Geoposition, PositionError } from '@ionic-native/geolocation/ngx';
 import { LocationService } from 'src/app/services/location.service';
-// import {} from 'google-maps';
-import { Platform } from '@ionic/angular';
-import { Router } from '@angular/router';
 
 declare var google;
 @Component({
@@ -10,89 +8,43 @@ declare var google;
   templateUrl: './location.page.html',
   styleUrls: ['./location.page.scss'],
 })
-export class LocationPage implements OnInit {
-  @ViewChild('map', { static: true }) mapElement;
+export class LocationPage implements OnInit, AfterContentInit {
+  options: GeolocationOptions;
+  currentPos: Geoposition;
+  @ViewChild('mapElement', { static: true }) mapElement: ElementRef;
   map: any;
-  pois: any[];
-  infowindow: any;
+  constructor(private geolocation: Geolocation, private location: LocationService) { }
 
-  constructor(
-    private locationService: LocationService,
-    private router: Router,
-    public platform: Platform
-  ) {
-  }
-  ngOnInit(): void {
-    this.initMap();
+  ngOnInit() {
+    this.location.getNearbyLocations()
+    .subscribe(res => {
+      console.log(res);
+    });
   }
 
-initMap() {
-    let service;
-    const sydney = new google.maps.LatLng(40.714, -74.012);
+  ngAfterContentInit(): void {
+  //  this.map = new google.maps.Map(this.mapElement.nativeElement, {
+  //     center: {lat: -34.397, lng: 150.644},
+  //     zoom: 8
+  //  });
 
-    this.infowindow = new google.maps.InfoWindow();
-
-    this.map = new google.maps.Map(
-        this.mapElement.nativeElement, {center: sydney, zoom: 15});
-
-    const request = {
-      query: 'life insurance in zipcode 10286',
-      fields: ['name', 'geometry'],
-    };
-    service = new google.maps.places.PlacesService(this.map);
-
-    service.findPlaceFromQuery(request, (results, status) => {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            // tslint:disable-next-line:prefer-for-of
-            for (let i = 0; i < results.length; i++) {
-              this.createMarker(results[i]);
-            }
-            console.log(results);
-            this.map.setCenter(results[0].geometry.location);
-          }
-        });
-      }
-      createMarker(place) {
-        const marker = new google.maps.Marker({
-          map: this.map,
-          position: place.geometry.location
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-          this.infowindow.setContent(place.name);
-          this.infowindow.open(this.map, this);
-        });
-      }
-
-
-  // searchZipCode(zipCode): void {
-  //   const selectedZipCode = this.locationService.getCoordsByZipCode(
-  //     parseInt(zipCode)
-  //     );
-  //   console.log(selectedZipCode);
-  //   this.initMap(selectedZipCode);
-  // }
-
-  // initMap(zipObj): void {
-  //   const coords = new google.maps.LatLng(zipObj.lat, zipObj.long);
-  //   const mapOptions: google.maps.MapOptions = {
-  //     center: coords,
-  //     zoom: 12,
-  //     mapTypeId: google.maps.MapTypeId.ROADMAP
-  //   };
-
-  //   this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-
-  //   // tslint:disable-next-line:prefer-const
-  //   let marker: google.maps.Marker = new google.maps.Marker(
-  //      {
-  //       maps: this.map,
-  //       position: coords
-  //     });
-  //   marker.setMap(this.map);
-  // }
-
-    navigateToNextPage(): void {
-    this.router.navigate(['/facial-identity']);
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.map = new google.maps.Map(this.mapElement.nativeElement, {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8,
+         });
+      const infoWindow = new google.maps.InfoWindow;
+      const pos = {
+        lat: resp.coords.latitude,
+        lng: resp.coords.longitude
+      };
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found');
+      infoWindow.open(this.map);
+      this.map.setCenter(pos);
+    }).catch(err => {
+      console.log('Error while loading map', err);
+    });
   }
+
 }

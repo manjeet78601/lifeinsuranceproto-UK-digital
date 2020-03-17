@@ -17,7 +17,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
   },
   {
-    path: 'personal-details',
+    path: 'personal-details/:id',
     loadChildren: () => import('./pages/personal-details/personal-details.module').then( m => m.PersonalDetailsPageModule)
   },
   {
@@ -25,17 +25,9 @@ const routes: Routes = [
     loadChildren: () => import('./pages/health-details/health-details.module').then( m => m.HealthDetailsPageModule)
   },
   {
-    path: 'location',
-    loadChildren: () => import('./pages/location/location.module').then( m => m.LocationPageModule)
-  },
-  {
     path: 'facial-identity',
     loadChildren: () => import('./pages/facial-identity/facial-identity.module').then( m => m.FacialIdentityPageModule)
   },
-   //{
-   //  path: 'locate-lab',
-   // loadChildren: () => import('./pages/locate-lab/locate-lab.module').then( m => m.LocateLabPageModule)
-  //},
   {
     path: 'coverage-details',
     loadChildren: () => import('./pages/coverage-details/coverage-details.module').then( m => m.CoverageDetailsPageModule)
@@ -43,6 +35,10 @@ const routes: Routes = [
   {
     path: 'quotation',
     loadChildren: () => import('./pages/quotation/quotation.module').then( m => m.QuotationPageModule)
+  },
+  {
+    path: 'location',
+    loadChildren: () => import('./pages/location/location.module').then( m => m.LocationPageModule)
   }
 
 ];

@@ -71,7 +71,7 @@
         </div>
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
           <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20 circled-img" />
-          <button mat-flat-button>STEP FOUR</button>
+          <button mat-flat-button [routerLink]="['/auth']" routerLinkActive="router-link-active" >STEP FOUR</button>
           <p class=" btn-details">Compare Quotes.</p>
         </div>
       </div>
@@ -123,5 +123,6 @@
       </ion-label>
     </ion-text>
   </footer>
+  <!-- End of footer -->
 </ion-content>
 <!-- End of the Home Page content -->
