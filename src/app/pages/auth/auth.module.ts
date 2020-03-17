@@ -17,6 +17,7 @@ import { AuthPage } from './auth.page';
     IonicModule,
     MaterialModule,
     AuthPageRoutingModule
+   
   ],
   declarations: [AuthPage]
 })
