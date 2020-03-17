@@ -32,14 +32,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/quotation/quotation.module').then( m => m.QuotationPageModule)
   },
   {
-<<<<<<< HEAD
-    path: '',
-    redirectTo: '/welcome',
-    pathMatch: 'full'
-=======
     path: 'location',
     loadChildren: () => import('./pages/location/location.module').then( m => m.LocationPageModule)
->>>>>>> 91fbb7f0bdc9da65f9f6c737ad28fe1e90688c1e
   }
 ];
 
