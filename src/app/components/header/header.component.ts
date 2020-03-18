@@ -10,28 +10,35 @@ export class HeaderComponent implements OnInit {
   navigate = [
     {
       title : 'Insurance calculator',
-      url   : '/home/insurance-calculator',
-      icon  : 'home'
+      url   : '/home/insurance-calculator'
     },
     {
-      title : 'Personal Details',
-      url   : '/personal-details',
-      icon  : 'home'
+      title : 'Financial Budget',
+      url   : '/home/budget',
     },
     {
-      title : 'Health Details',
-      url   : '/health-details',
-      icon  : 'home'
+      title : 'choosing a plan',
+      url   : 'home/chooseplan'
     },
     {
-      title : 'Login',
-      url   : '/auth',
-      icon  : 'home'
+      title : 'Comparing Quotes',
+      url   : 'home/quotes'
+    },
+    {
+      title : 'Contact',
+      url   : 'home/contact'
+    },
+    {
+      title : 'Help',
+      url   : 'home/help'
+    },
+    {
+      title : 'Sign In',
+      url   : '/auth'
     },
     {
       title : 'Location',
-      url   : '/location',
-      icon  : 'home'
+      url   : '/location'
     },
     {
       title : 'Facial-Identity',

@@ -10,6 +10,11 @@ import { HomePage } from './home.page';
 import { InsuranceCalculatorComponent } from './insurance-calculator/insurance-calculator.component';
 import { LandingComponent } from './landing/landing.component';
 import { SharedModule } from 'src/app/sharedModules/shared.module';
+import { FinancialBudgetComponent } from './financial-budget/financial-budget.component';
+import { ChoosePlanComponent } from './choose-plan/choose-plan.component';
+import { CompareQuotesComponent } from './compare-quotes/compare-quotes.component';
+import { ContactComponent } from './contact/contact.component';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   imports: [
@@ -22,7 +27,12 @@ import { SharedModule } from 'src/app/sharedModules/shared.module';
   declarations: [
     HomePage,
     LandingComponent,
-    InsuranceCalculatorComponent
+    InsuranceCalculatorComponent,
+    FinancialBudgetComponent,
+    ChoosePlanComponent,
+    CompareQuotesComponent,
+    ContactComponent,
+    HelpComponent
   ]
 })
 export class HomePageModule {}
