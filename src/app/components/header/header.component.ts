@@ -9,6 +9,11 @@ import { MenuController } from '@ionic/angular';
 export class HeaderComponent implements OnInit {
   navigate = [
     {
+      title : 'Insurance calculator',
+      url   : '/home/insurance-calculator',
+      icon  : 'home'
+    },
+    {
       title : 'Personal Details',
       url   : '/personal-details',
       icon  : 'home'
