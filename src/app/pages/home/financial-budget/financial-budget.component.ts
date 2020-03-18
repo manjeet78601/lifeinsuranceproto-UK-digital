@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeConstants,  } from './../home.constants';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-financial-budget',
@@ -6,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./financial-budget.component.scss'],
 })
 export class FinancialBudgetComponent implements OnInit {
+  panelOpenState = false;
+  DOM_CONSTANTS = HomeConstants.FINANCIALBUDGET;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+   // console.log(this.CONSTANTS.FINANCIALBUDGET);
+  }
 
 }

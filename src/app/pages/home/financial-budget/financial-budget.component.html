@@ -1,3 +1,4 @@
+<!-- Header -->
 <ion-header>  
   <ion-toolbar>  
     <ion-buttons slot="start" >
@@ -11,6 +12,32 @@
     </ion-title>  
   </ion-toolbar>  
 </ion-header> 
-<p>
-  financial-budget works!
-</p>
+<!-- End of header -->
+<!-- Main Section -->
+<ion-content>
+  <section class="wrapper">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.TITLE }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+          <div *ngFor="let que of item.QUESTIONS">
+            <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label>
+            <mat-label class="que-subheader">{{ que.SUBTEXT }}</mat-label>
+            <mat-slider
+                [max]="que.MAX"
+                [min]="que.MIN"
+                [step]="que.STEP"
+                [(ngModel)]="que.VALUE">
+        </mat-slider>
+        {{ que.VALUE }}
+          </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </section>
+</ion-content>
+<!-- End of main section -->
+  
+
