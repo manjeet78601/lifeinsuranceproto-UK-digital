@@ -9,9 +9,6 @@ import { ChoosePlanComponent } from './choose-plan/choose-plan.component';
 import { CompareQuotesComponent } from './compare-quotes/compare-quotes.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
-import { ProfileComponent } from './profile/profile.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {
@@ -37,18 +34,6 @@ const routes: Routes = [
   {
     path: 'help',
     component: HelpComponent
-  },
-  {
-    path: 'signin',
-    component: SigninComponent
-  },
-  {
-    path: 'signup',
-    component: SignupComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
   },
   {
     path: '',

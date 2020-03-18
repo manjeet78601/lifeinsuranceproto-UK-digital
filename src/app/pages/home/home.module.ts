@@ -13,9 +13,6 @@ import { SharedModule } from 'src/app/sharedModules/shared.module';
 import { FinancialBudgetComponent } from './financial-budget/financial-budget.component';
 import { ChoosePlanComponent } from './choose-plan/choose-plan.component';
 import { CompareQuotesComponent } from './compare-quotes/compare-quotes.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
-import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
 
@@ -35,10 +32,7 @@ import { HelpComponent } from './help/help.component';
     ChoosePlanComponent,
     CompareQuotesComponent,
     ContactComponent,
-    HelpComponent,
-    SigninComponent,
-    SignupComponent,
-    ProfileComponent
+    HelpComponent
   ]
 })
 export class HomePageModule {}
