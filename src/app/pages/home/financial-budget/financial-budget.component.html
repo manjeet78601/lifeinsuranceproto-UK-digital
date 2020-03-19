@@ -4,7 +4,7 @@
     <ion-buttons slot="start" >
       <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="end" color="dark">  
+    <ion-buttons slot="start" color="dark">  
       <ion-menu-button color="dark"></ion-menu-button>  
     </ion-buttons>  
     <ion-title fxLayout="row" fxLayoutAlign="center center">  
@@ -21,7 +21,7 @@
       <mat-label>{{ progress }}%</mat-label> 
     </div>
     
-    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+    <mat-progress-bar mode="determinate" color="secondary" [value]="progress"></mat-progress-bar>
   </header>
   <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <header fxLayoutAlign="center center">
@@ -48,9 +48,10 @@
           </div>
       </mat-expansion-panel>
     </mat-accordion>
-    <button mat-flat-button color="primary" (click)="calculateBudget()">{{BTN.CALCULATE}}</button>
+    <button mat-flat-button color="primary" (click)="calculateBudget()">{{BTN.CALCULATE | uppercase}}</button>
   </section>
 </ion-content>
 <!-- End of main section -->
+
   
 

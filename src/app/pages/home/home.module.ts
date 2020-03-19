@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
@@ -15,6 +15,9 @@ import { ChoosePlanComponent } from './choose-plan/choose-plan.component';
 import { CompareQuotesComponent } from './compare-quotes/compare-quotes.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
+import { HealthQuestionsComponent } from './health-questions/health-questions.component';
+import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
+
 
 @NgModule({
   imports: [
@@ -22,7 +25,8 @@ import { HelpComponent } from './help/help.component';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SharedModule
+    SharedModule,
+    MatExpansionModule
   ],
   declarations: [
     HomePage,
@@ -31,8 +35,10 @@ import { HelpComponent } from './help/help.component';
     FinancialBudgetComponent,
     ChoosePlanComponent,
     CompareQuotesComponent,
+    HealthQuestionsComponent,
     ContactComponent,
-    HelpComponent
+    HelpComponent,
+    TotalBudgetCalculatorComponent
   ]
 })
 export class HomePageModule {}

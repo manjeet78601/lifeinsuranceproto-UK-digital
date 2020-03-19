@@ -6,9 +6,13 @@ export const properties = {
     rememberme_link: 'Remember me',
     forgot_pwd: 'Forgot password',
     login_btn: 'Log in',
+    signin_btn: 'SIGN IN',
     signup_btn: 'Sign up',
     signup_header: 'Please sign up here',
     firstName: 'First Name',
     terms_cond: 'I agree to the terms and conditions',
-    submit_btn: 'Submit'
+    submit_btn: 'Submit',
+    welcome_header: 'Welcome to Life+',
+    welcome_subheader: 'Thank you for working with us! We sent you an email for verification.',
+    resent_verification_link: 'Resend verification code',
 };
