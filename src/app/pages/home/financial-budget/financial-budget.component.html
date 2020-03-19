@@ -21,7 +21,7 @@
       <mat-label>{{ progress }}%</mat-label> 
     </div>
     
-    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+    <mat-progress-bar mode="determinate" color="secondary" [value]="progress"></mat-progress-bar>
   </header>
   <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <header fxLayoutAlign="center center">
@@ -48,9 +48,10 @@
           </div>
       </mat-expansion-panel>
     </mat-accordion>
-    <button mat-flat-button color="primary" (click)="calculateBudget()">{{BTN.CALCULATE}}</button>
+    <button mat-flat-button color="primary" (click)="calculateBudget()">{{BTN.CALCULATE | uppercase}}</button>
   </section>
 </ion-content>
 <!-- End of main section -->
+
   
 

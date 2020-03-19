@@ -15,6 +15,7 @@ import { ChoosePlanComponent } from './choose-plan/choose-plan.component';
 import { CompareQuotesComponent } from './compare-quotes/compare-quotes.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
+import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { HelpComponent } from './help/help.component';
     ChoosePlanComponent,
     CompareQuotesComponent,
     ContactComponent,
-    HelpComponent
+    HelpComponent,
+    TotalBudgetCalculatorComponent
   ]
 })
 export class HomePageModule {}
