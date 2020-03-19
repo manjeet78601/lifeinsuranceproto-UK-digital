@@ -341,3 +341,9 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
 .spinner-bubbles {
   color: #E03997 !important;
 }
+// removing from all pages through css, can be enabled if added in new design
+ion-buttons {
+  ion-back-button {
+    display: none !important;
+  }
+}
