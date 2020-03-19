@@ -27,6 +27,8 @@
 
 @import "./theme/variables.scss";
 
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+
 .wrapper {
     padding: 40px 20px;
 }
@@ -235,4 +237,43 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
   .lp-f-txt {
       font-size: 9px;
   }
+}
+
+.mat-accordion {
+  .mat-expansion-panel {
+    border: 1px solid #dfdfe0;
+    border-radius: 4px !important;
+  }
+  .mat-expansion-panel {
+    box-shadow: none;
+  }
+  .mat-slider {
+    width: 60%;
+    .mat-slider-thumb {
+      background-color: #fff;
+      border-color: #000;
+    }
+  }
+}
+
+.mat-progress-bar {
+  width: 90% !important;
+  ::after {
+    background-color: #707070;
+  }
+}
+
+.page-header {
+  background-color: #f8f8f8;
+  padding: 20px 0px;
+  h1 {
+    font-family: proxima nova;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+.progress-indicator {
+  width: 100%;
+  text-align: left;
+  padding: 2% 6%;
 }
