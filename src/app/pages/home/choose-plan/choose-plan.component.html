@@ -23,66 +23,87 @@
       {{ PLAN_SUB_HEADER }}
     </header>
   </section>
+
+  <!--Section: Term Insurance-->
+  <section class="wrapper " fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <mat-card class="plan-card mat-elevation-z0 ">
+      <div fxLayout="column" class="quote-img">
+        <img src="./../../../assets/img/black-mountain-icon.jpg" alt="balck-mountain-image">
+      </div>
+      <mat-card-content *ngIf="collapsedSec1" class="mat-card-content-width" fxLayoutGap="10px">
+        <header fxLayoutAlign="center center">
+          <h2>{{ TERM_INS_HEADER }}</h2>
+        </header>
+        <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+          <button mat-flat-button (click)="collapsedSec1=false" class="btn-mat-card">{{BTN.READ_MORE}}</button>
+        </mat-card-actions>
+      </mat-card-content>
+      <mat-card-content *ngIf="!collapsedSec1" class="mat-card-content-width" fxLayoutGap="10px">
+        <div class="plan-mat-card-title">{{TERM_INS__EXPANSION_HEADER}}</div>
+        <div class="mat-card-label" [innerHtml]=TERM_INS__EXPANSION_BODY></div>
+        <mat-card-actions fxLayout="column" fxLayoutAlign="center start">
+          <button mat-flat-button (click)="collapsedSec1=true" class="btn-mat-card">{{BTN.MINIMIZE}}</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+
+  <!--Section: Term Insurance-->
+
   <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <mat-card class="plan-card mat-elevation-z0">
-      <img mat-card-image src="./../../../assets/img/black-mountain-icon.jpg" alt="icon">
-      <header fxLayoutAlign="center center">
-        <h2>{{ TERM_INS_HEADER }}</h2>
-      </header>
-      <mat-card-actions>
-        <button mat-raised-button (click)="collapsedSec1=false" color="accent">{{BTN.READ_MORE}}</button>
-      </mat-card-actions>
-      <mat-card-content *ngIf="!collapsedSec1">
-        <p>{{TERM_INS__EXPANSION_HEADER}}</p>
-        {{TERM_INS__EXPANSION_BODY}}
-        <mat-card-actions>
-          <button mat-raised-button (click)="collapsedSec1=true" color="primary">{{BTN.MINIMIZE}}</button>
+      <div fxLayout="column" class="quote-img">
+        <img src="./../../../assets/img/black-mountain-icon.jpg" alt="balck-mountain-image">
+      </div>
+      <mat-card-content *ngIf="collapsedSec2" class="mat-card-content-width" fxLayoutGap="10px">
+        <header fxLayoutAlign="center center">
+          <h2>{{ PERM_INS_HEADER }}</h2>
+        </header>
+        <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+          <button mat-flat-button (click)="collapsedSec2=false" class="btn-mat-card">{{BTN.READ_MORE}}</button>
+        </mat-card-actions>
+      </mat-card-content>
+      <mat-card-content *ngIf="!collapsedSec2" class="mat-card-content-width" fxLayoutGap="10px">
+        <div class="plan-mat-card-title">{{PERM_INS__EXPANSION_HEADER}}</div>
+        <div class="mat-card-label" [innerHtml]=PERM_INS__EXPANSION_BODY></div>
+        <mat-card-actions fxLayout="column" fxLayoutAlign="center start">
+          <button mat-flat-button (click)="collapsedSec2=true" class="btn-mat-card">{{BTN.MINIMIZE}}</button>
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
   </section>
+  <!--Section: Life+ -->
 
   <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <mat-card class="plan-card mat-elevation-z0">
-      <img mat-card-image src="./../../../assets/img/black-mountain-icon.jpg" alt="icon">
-      <p>{{PERM_INS_HEADER}}</p>
-      <mat-card-actions>
-        <button mat-raised-button (click)="collapsedSec2=false" color="accent">{{BTN.READ_MORE}}</button>
-      </mat-card-actions>
-      <mat-card-content *ngIf="!collapsedSec2">
-        <p>{{PERM_INS__EXPANSION_HEADER}}</p>
-        {{PERM_INS__EXPANSION_BODY}}
-        <mat-card-actions>
-          <button mat-raised-button (click)="collapsedSec2=true" color="primary">{{BTN.MINIMIZE}}</button>
+      <div fxLayout="column" class="quote-img">
+        <img src="./../../../assets/img/black-mountain-icon.jpg" alt="balck-mountain-image">
+      </div>
+      <mat-card-content *ngIf="collapsedSec3" class="mat-card-content-width" fxLayoutGap="10px">
+        <div>{{ LIFE_PLUS_HEADER}}</div>
+        <p>{{LIFE_PLUS_SUB_HEADER}}</p>
+        <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+          <button mat-flat-button (click)="collapsedSec3=false" class="btn-mat-card">{{BTN.READ_MORE}}</button>
+        </mat-card-actions>
+      </mat-card-content>
+      <mat-card-content *ngIf="!collapsedSec3" class="mat-card-content-width" fxLayoutGap="10px">
+        <div class="plan-mat-card-title">{{LIFE_PLUS_HEADER}}</div>
+        <div class="mat-card-label" [innerHtml]=LIFE_PLUS_EXPANSION_BODY></div>
+        <mat-card-actions fxLayout="column" fxLayoutAlign="center start">
+          <button mat-flat-button (click)="collapsedSec3=true" class="btn-mat-card">{{BTN.MINIMIZE}}</button>
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
   </section>
 
-
-  <section class="wrapper" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <mat-card class="plan-card mat-elevation-z0">
-      <img mat-card-image src="./../../../assets/img/black-mountain-icon.jpg" alt="icon">
-      <p>{{LIFE_PLUS_HEADER}}</p>
-      <p>{{LIFE_PLUS_SUB_HEADER}}</p>
-      <mat-card-actions>
-        <button mat-raised-button (click)="collapsedSec3=false" color="accent">{{BTN.READ_MORE}}</button>
-      </mat-card-actions>
-      <mat-card-content *ngIf="!collapsedSec3">
-        <p>{{LIFE_PLUS_HEADER}}</p>
-        {{LIFE_PLUS_EXPANSION_BODY}}
-        <mat-card-actions>
-          <button mat-raised-button (click)="collapsedSec3=true" color="primary">{{BTN.MINIMIZE}}</button>
-        </mat-card-actions>
-      </mat-card-content>
-    </mat-card>
-  </section>
-
+  <!--Comparision Table -->
   <section fxLayout="column" fxLayoutAlign="center center">
     <header fxLayoutAlign="center center">
       <h2>{{COMP_TBL_HEADER }}</h2>
     </header>
-    <mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+    <div>
+    <mat-table [dataSource]="dataSource"  *ngIf="dataSource.length > 0" class="mat-elevation-z0">
       <ng-container matColumnDef="comparison">
         <mat-header-cell *matHeaderCellDef> </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.comparison}} </mat-cell>
@@ -102,7 +123,7 @@
       <ng-container matColumnDef="perm">
         <mat-header-cell *matHeaderCellDef> Perm </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <ng-container *ngIf="element.perm == 1">
+          <ng-container *ngIf="element.perm == 1 ">
             <mat-icon class="green-icon">done</mat-icon>
           </ng-container>
         </mat-cell>
@@ -121,10 +142,12 @@
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
+  </div>
   </section>
 
   <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
     <p>{{STEP_FOUR_HEADER}}</p>
     <button mat-flat-button color="primary">{{BTN.STEP_FOUR}}</button>
   </section>
+
 </ion-content>

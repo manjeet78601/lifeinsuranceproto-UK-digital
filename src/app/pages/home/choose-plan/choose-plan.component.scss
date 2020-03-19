@@ -20,6 +20,7 @@
   height: 315px;
   width: 302px;
   border: 2px solid #E2E2E3;
+  margin-top: 20px;
 }
 
 mat-header-cell{
@@ -36,6 +37,49 @@ mat-cell{
   font-size:11px; 
   color: #1a084c;
 }
+
+.btn-mat-card
+{   font-family:SegoeUI;
+    font-size:16px;
+    background-color:#F8F8F8;
+    color:#CCCCCC;
+}
+
+.plan-mat-card-title
+{   font-family:SegoeUI;
+    font-weight: bold;
+    font-size:24px;
+    background-color:#FAFAFB;
+    color:#000000 ;
+    margin-top: 10px;
+}
+.mat-card-label
+{
+    font-family:Proxima Soft;
+    font-size:16px;
+    color:#000000 ;
+    margin-top: 10px;
+}
+
+.mat-card-content-width {
+    padding-left: 20px;
+    margin-right: 40px;
+}
+
+.mat-card-content>:first-child {
+    margin-top: 30px;
+}
+
+.comp-header-title{
+    font-family: Playfair Display;
+    font-size:24px;
+    color:#000000 ;
+    margin-top: 10px;
+}
+
+
+
+
 
 
 
