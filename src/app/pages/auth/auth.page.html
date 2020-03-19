@@ -4,7 +4,7 @@
     <ion-buttons slot="start" >
       <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="end" color="dark">  
+    <ion-buttons slot="start" color="dark">  
       <ion-menu-button color="dark"></ion-menu-button>  
     </ion-buttons>  
     <ion-title fxLayout="row" fxLayoutAlign="center center">  
@@ -13,81 +13,17 @@
   </ion-toolbar>  
 </ion-header>
 <!-- End of Header -->
-<ion-content>
-  <section  class="wrapper-auth ion-text-center content">
-    <section fxLayout="column" fxLayoutAlign="center center">
-          <mat-tab-group>
-            <mat-tab label="SIGN IN"> 
-              <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onFormsubmit('login')">
-                <mat-form-field class="full-width">
-                  <input formControlName="lname" matInput type="text" placeholder="Username" value="">
-                  <mat-icon matPrefix>account_circle</mat-icon>
-                  <mat-error>Invalid username</mat-error>
-                </mat-form-field>
-    
-                <mat-form-field class="full-width">
-                  <input formControlName="password" matInput type="password" placeholder="Password" value="">
-                  <mat-icon matPrefix>lock</mat-icon>
-                  <mat-error>Invalid password</mat-error>
-                </mat-form-field>
-                
-                  <div class="mt-20"> 
-                    <button type="submit" class="signin-btn" mat-stroked-button [disabled]="!loginForm.valid" ><strong>SIGN IN</strong></button>
-                  </div>
-            </form>
-            <p class='fs-14 col-blk'>Forgot your password?</p>  
-            <p class='fs-14 col-blk'>Or connect using</p>
-            <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
-            <ion-icon ios="logo-google" md="logo-google"></ion-icon>
-            </mat-tab>
-            
-            <mat-tab label="SIGN UP"> 
-              <header class="mt-30">
-                <p class="fs-18 col-darkgrey font-bold m-30">LETS GET STARTED</p>
-                <p class="fs-14 col-blk lh-05">CREATE AN ACCOUNT</p>
-              </header>
-              <form class="signup-form mt-50" [formGroup]="signupForm" (ngSubmit)="onFormsubmit('signup')">
-                <mat-form-field class="full-width" appearance="outline">
-                    <input formControlName="signupName" matInput placeholder="Email" >
-                    <mat-icon matPrefix>email</mat-icon>
-                    <mat-error>Invalid email</mat-error>
-                </mat-form-field>
+<ion-router-outlet></ion-router-outlet>
 
-                <mat-form-field class="full-width" appearance="outline">
-                    <input formControlName="signupPwd" type="password" matInput placeholder="Password">
-                    <mat-icon matPrefix>lock</mat-icon>
-                </mat-form-field>
-
-                <mat-form-field class="full-width" appearance="outline">
-                  <input formControlName="signupconfirmPwd" type="password" matInput placeholder="Confirm Password">
-                  <mat-icon matPrefix>lock</mat-icon>
-               </mat-form-field>
-               <span class="mat-error err" 
-               *ngIf="(signupForm.controls.signupPwd.dirty && signupForm.controls.signupconfirmPwd.dirty)
-                && (signupForm.controls.signupPwd.value != signupForm.controls.signupconfirmPwd.value)">
-                Password doesnt match
-              </span>
-               <div class="mt-20"> 
-                <button type="submit" class="signin-btn" mat-stroked-button [disabled]="!signupForm.valid" ><strong>SIGN UP</strong></button>
-              </div>
-            </form>
-            </mat-tab>
-          </mat-tab-group>
-    </section>
-    </section>
-    <!-- Footer -->
-  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
-    <ion-text class="align-item-bottom">
-      <ion-label class="fl-footer-content">
-         77 Water St 8th Floor,<br/> Manhattan, NY 10005
-     </ion-label>
-   </ion-text>
-   <ion-text class="align-item-bottom">
-     <ion-label class="fl-footer-content">
-      Copyright Life+ © 2020
-     </ion-label>
-   </ion-text>
-  </footer>
-  <!-- End of footer -->
-    </ion-content>
-
+<footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+  <ion-text class="align-item-bottom">
+    <ion-label class="fl-footer-content">
+       77 Water St 8th Floor,<br/> Manhattan, NY 10005
+   </ion-label>
+ </ion-text>
+ <ion-text class="align-item-bottom">
+   <ion-label class="fl-footer-content">
+    Copyright Life+ © 2020
+   </ion-label>
+ </ion-text>
+</footer>
