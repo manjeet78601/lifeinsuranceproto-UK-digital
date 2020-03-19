@@ -1,3 +1,4 @@
+<!-- Header -->
 <ion-header>  
   <ion-toolbar>  
     <ion-buttons slot="start" >
@@ -11,6 +12,45 @@
     </ion-title>  
   </ion-toolbar>  
 </ion-header> 
-<p>
-  financial-budget works!
-</p>
+<!-- End of header -->
+<!-- Main Section -->
+<ion-content>
+  <header class="page-header" fxLayout="column" fxLayoutAlign="center center">
+    <h1>{{ PAGE_HEADER }}</h1>
+    <div class="progress-indicator">
+      <mat-label>{{ progress }}%</mat-label> 
+    </div>
+    
+    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+  </header>
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header fxLayoutAlign="center center">
+      <h2>{{ PAGE_SUBHEADER }}</h2>
+    </header>
+    
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS">
+        <mat-expansion-panel-header (click)="incrementProgress(item.PROGRESS)">
+          <mat-panel-title>
+            {{ item.TITLE }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+          <div *ngFor="let que of item.QUESTIONS">
+            <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label>
+            <mat-label class="que-subheader">{{ que.SUBTEXT }}</mat-label>
+            <mat-slider
+                [max]="que.MAX"
+                [min]="que.MIN"
+                [step]="que.STEP"
+                [(ngModel)]="que.VALUE">
+        </mat-slider>
+        {{ que.VALUE | currency}}
+          </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <button mat-flat-button color="primary" (click)="calculateBudget()">{{BTN.CALCULATE}}</button>
+  </section>
+</ion-content>
+<!-- End of main section -->
+  
+
