@@ -1,0 +1,81 @@
+<!-- Header -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title fxLayout="row" fxLayoutAlign="center center">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- end of header -->
+<!-- Section 1  -->
+<ion-content>
+
+  <section class="wrapper ion-text-center content">
+    <section fxLayout="column">
+      <mat-card-subtitle >LIFE INSURENCE Medical Questions</mat-card-subtitle><br/>
+      <mat-card-title class="mt-20">Answer a few health Q's </mat-card-title>
+      <mat-card-content>
+        <p>
+         In order to process your examine we need to,
+        </p>
+      </mat-card-content><br/><br/>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+               Basic Health
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Treatments and Medications
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Additional Background Information
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Notes
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </section>
+   
+  </section>
+  <div fxLayout="row" fxLayoutAlign="center center" class=" mb-70 ">
+    <button mat-flat-button class="mt-20 btn-color">Submit</button>
+  </div>
+      <!-- end of section 1 -->
+      
+      <!-- Footer -->
+      <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+        <ion-text class="align-item-bottom">
+          <ion-label class="fl-footer-content">
+            77 Water St 8th Floor,<br /> Manhattan, NY 10005
+          </ion-label>
+        </ion-text>
+        <ion-text class="align-item-bottom">
+          <ion-label class="fl-footer-content">
+            Copyright Life+ © 2020
+          </ion-label>
+        </ion-text>
+      </footer>
+      <!-- End of footer -->
