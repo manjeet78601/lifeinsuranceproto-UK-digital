@@ -15,10 +15,22 @@
 <!-- End of header -->
 <!-- Main Section -->
 <ion-content>
-  <section class="wrapper">
+  <header class="page-header" fxLayout="column" fxLayoutAlign="center center">
+    <h1>{{ PAGE_HEADER }}</h1>
+    <div class="progress-indicator">
+      <mat-label>{{ progress }}%</mat-label> 
+    </div>
+    
+    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+  </header>
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header fxLayoutAlign="center center">
+      <h2>{{ PAGE_SUBHEADER }}</h2>
+    </header>
+    
     <mat-accordion>
       <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS">
-        <mat-expansion-panel-header>
+        <mat-expansion-panel-header (click)="incrementProgress(item.PROGRESS)">
           <mat-panel-title>
             {{ item.TITLE }}
           </mat-panel-title>
@@ -36,6 +48,7 @@
           </div>
       </mat-expansion-panel>
     </mat-accordion>
+    <button mat-flat-button color="primary">{{BTN.CALCULATE}}</button>
   </section>
 </ion-content>
 <!-- End of main section -->

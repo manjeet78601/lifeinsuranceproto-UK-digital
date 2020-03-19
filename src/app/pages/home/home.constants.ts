@@ -5,6 +5,7 @@ public static FINANCIALBUDGET = [
          {
              TITLE: 'Income',
              SUBTITLE: '',
+             PROGRESS: 25,
              QUESTIONS: [
                  {
                     QUESTIONTEXT: 'What’s your wage/salary?',
@@ -35,6 +36,7 @@ public static FINANCIALBUDGET = [
          {
             TITLE: 'Personal Assets',
             SUBTITLE: '',
+            PROGRESS: 50,
             QUESTIONS: [
                 {
                    QUESTIONTEXT: 'How much is your home worth?',
@@ -65,6 +67,7 @@ public static FINANCIALBUDGET = [
         {
             TITLE: 'Home Expenses',
             SUBTITLE: '',
+            PROGRESS: 75,
             QUESTIONS: [
                 {
                    QUESTIONTEXT: 'Monthly rent/mortgage?',
@@ -103,6 +106,7 @@ public static FINANCIALBUDGET = [
         {
             TITLE: 'Monthly Living Expenses',
             SUBTITLE: '',
+            PROGRESS: 100,
             QUESTIONS: [
                 {
                    QUESTIONTEXT: 'Groceries',
@@ -147,4 +151,11 @@ public static FINANCIALBUDGET = [
             ]
         }
      ];
+
+     public static BUDGET_HEADER = 'Budget Calculator';
+     public static BUDGET_SUB_HEADER = 'Let us help you calculate Your budget!';
+     public static BTN = {
+        SUBMIT: 'SUBMIT',
+        CALCULATE: 'CALCULATE'
+     }
 }
