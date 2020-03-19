@@ -48,7 +48,7 @@
         <p class="subheader">{{htmlText.welcome_subheader}}</p>
       </header>
       <div class="mt-20"> 
-        <button class="btn bg-gray col-wht" mat-stroked-button><strong>{{htmlText.signin_btn}}</strong></button>
+        <button class="btn bg-gray col-wht" mat-stroked-button (click)="signin()"><strong>{{htmlText.signin_btn}}</strong></button>
       </div>
       <div class="mt-30"> 
         <a mat-button class="fs-14 col-dull-grey text-underline" routerLink=".">{{htmlText.resent_verification_link}}</a>

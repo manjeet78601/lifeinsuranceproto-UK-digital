@@ -24,5 +24,7 @@ export class SignupComponent implements OnInit {
   onFormsubmit() {
     this.isSignup = true;
   }
-
+  signin() {
+    this.router.navigate(['/auth/signin']);
+  }
 }
