@@ -123,9 +123,23 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
         cursor: not-allowed;
     }
   }
-
+  .f-weight-n{
+    font-weight: 200;
+  }
+  .bg-gray {
+    background-color: #6E6E6E;
+  }
+  .bg-white {
+    background-color: #FFFFFF;
+  }
   .col-blk{
       color: #000000;
+  }
+  .col-wht{
+    color: #FFFFFF;
+  }
+  .col-dull-grey {
+    color: #CCCCCC;
   }
   .col-darkgrey{
       color:#5A5A5A;
@@ -155,39 +169,41 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
   .mr-5{
     margin-right:5px;
   }
+  .mt-10{
+    margin-top:10px;
+}
   .mt-20{
       margin-top: 20px;
   }
-  .mt-10{
-      margin-top:10px;
-  }
+  .mt-30{
+    margin-top:30px;
+}
   .mt-50 {
     margin-top: 50px;
   }
-  .mb-20{
+  .mb-20 {
       margin-bottom: 20px;
   }
-  .mb-30{
+  .mb-30 {
     margin-bottom: 30px;
-}
-.mb-70{
+  }
+  .mb-70 {
     margin-bottom: 70px;
-}
+  }
   .align-item-bottom {
     align-self: flex-end;
     margin-top: auto;
   }
  
-  .p-8{
+  .p-8 {
     padding: 8px;
   }
-  .p-10{
+  .p-10 {
     padding: 10px;
   }
-  pt-13{
+  .pt-13 {
     padding-top:13px; 
   }
-  
 
   // footer 
 
@@ -238,7 +254,52 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
       font-size: 9px;
   }
 }
-
+.signin-section, .signup-section {
+  .header {
+    font-weight: bold;
+    color: #000000;
+    font-size: 24px;
+  }
+  .sub-header {
+    color: #CCCCCC;
+    font-size: 16px;
+  }
+  .form-label {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  .form-input-control {
+    width: 276px;
+    height: 35px;
+    .mat-form-field-flex {
+      max-height: 50px;
+    }
+  }
+  .btn {
+    width: 97px;
+    height: 36px;
+    margin: 0 5px;
+    border: 1px solid #7E7E7E;
+    &:disabled {
+      color : #FFFFFF;
+      opacity: 0.5;
+    }
+  }
+  ion-icon {
+    width: 2em;
+    height: 2em;
+    padding: 0 2px;
+    margin-top: 20px;
+  }
+  .text-underline {
+    text-decoration: underline;
+  }
+  .text-left{
+    text-align: left;
+  }
+}
 .mat-accordion {
   .mat-expansion-panel {
     border: 1px solid #dfdfe0;
@@ -276,4 +337,7 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
   width: 100%;
   text-align: left;
   padding: 2% 6%;
+}
+.spinner-bubbles {
+  color: #E03997 !important;
 }

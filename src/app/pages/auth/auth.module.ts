@@ -8,6 +8,10 @@ import { AuthPageRoutingModule } from './auth-routing.module';
 import { MaterialModule } from '../../sharedModules/material.module';
 import { SharedModule } from '../../sharedModules/shared.module';
 import { AuthPage } from './auth.page';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 @NgModule({
   imports: [
@@ -19,6 +23,10 @@ import { AuthPage } from './auth.page';
     AuthPageRoutingModule
    
   ],
-  declarations: [AuthPage]
+  declarations: [AuthPage,
+  SigninComponent,
+  SignupComponent,
+  ProfileComponent,
+  ForgotpasswordComponent]
 })
 export class AuthPageModule {}
