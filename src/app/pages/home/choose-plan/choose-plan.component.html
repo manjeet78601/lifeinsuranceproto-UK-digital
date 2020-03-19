@@ -1,16 +1,130 @@
-<ion-header>  
-  <ion-toolbar>  
-    <ion-buttons slot="start" >
-      <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="start" color="dark">  
-      <ion-menu-button color="dark"></ion-menu-button>  
-    </ion-buttons>  
-    <ion-title fxLayout="row" fxLayoutAlign="center center">  
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" >
-    </ion-title>  
-  </ion-toolbar>  
-</ion-header> 
-<p>
-  choose-plan works!
-</p>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title fxLayout="row" fxLayoutAlign="center center">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header fxLayoutAlign="center center">
+      <h2>{{ PLAN_HEADER }}</h2>
+    </header>
+    <header fxLayoutAlign="center center">
+      {{ PLAN_SUB_HEADER }}
+    </header>
+  </section>
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <mat-card class="plan-card mat-elevation-z0">
+      <img mat-card-image src="./../../../assets/img/black-mountain-icon.jpg" alt="icon">
+      <header fxLayoutAlign="center center">
+        <h2>{{ TERM_INS_HEADER }}</h2>
+      </header>
+      <mat-card-actions>
+        <button mat-raised-button (click)="collapsedSec1=false" color="accent">{{BTN.READ_MORE}}</button>
+      </mat-card-actions>
+      <mat-card-content *ngIf="!collapsedSec1">
+        <p>{{TERM_INS__EXPANSION_HEADER}}</p>
+        {{TERM_INS__EXPANSION_BODY}}
+        <mat-card-actions>
+          <button mat-raised-button (click)="collapsedSec1=true" color="primary">{{BTN.MINIMIZE}}</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <mat-card class="plan-card mat-elevation-z0">
+      <img mat-card-image src="./../../../assets/img/black-mountain-icon.jpg" alt="icon">
+      <p>{{PERM_INS_HEADER}}</p>
+      <mat-card-actions>
+        <button mat-raised-button (click)="collapsedSec2=false" color="accent">{{BTN.READ_MORE}}</button>
+      </mat-card-actions>
+      <mat-card-content *ngIf="!collapsedSec2">
+        <p>{{PERM_INS__EXPANSION_HEADER}}</p>
+        {{PERM_INS__EXPANSION_BODY}}
+        <mat-card-actions>
+          <button mat-raised-button (click)="collapsedSec2=true" color="primary">{{BTN.MINIMIZE}}</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+
+  <section class="wrapper" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <mat-card class="plan-card mat-elevation-z0">
+      <img mat-card-image src="./../../../assets/img/black-mountain-icon.jpg" alt="icon">
+      <p>{{LIFE_PLUS_HEADER}}</p>
+      <p>{{LIFE_PLUS_SUB_HEADER}}</p>
+      <mat-card-actions>
+        <button mat-raised-button (click)="collapsedSec3=false" color="accent">{{BTN.READ_MORE}}</button>
+      </mat-card-actions>
+      <mat-card-content *ngIf="!collapsedSec3">
+        <p>{{LIFE_PLUS_HEADER}}</p>
+        {{LIFE_PLUS_EXPANSION_BODY}}
+        <mat-card-actions>
+          <button mat-raised-button (click)="collapsedSec3=true" color="primary">{{BTN.MINIMIZE}}</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <section fxLayout="column" fxLayoutAlign="center center">
+    <header fxLayoutAlign="center center">
+      <h2>{{COMP_TBL_HEADER }}</h2>
+    </header>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+      <ng-container matColumnDef="comparison">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.comparison}} </mat-cell>
+      </ng-container>
+
+      <!-- Term Column -->
+      <ng-container matColumnDef="term">
+        <mat-header-cell *matHeaderCellDef> Term </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <ng-container *ngIf="element.term == 1">
+            <mat-icon class="green-icon">done</mat-icon>
+          </ng-container>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Perm Column -->
+      <ng-container matColumnDef="perm">
+        <mat-header-cell *matHeaderCellDef> Perm </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <ng-container *ngIf="element.perm == 1">
+            <mat-icon class="green-icon">done</mat-icon>
+          </ng-container>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Life+ Column -->
+      <ng-container matColumnDef="lifeplus">
+        <mat-header-cell *matHeaderCellDef> Life+ </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <ng-container *ngIf="element.lifeplus == 1">
+            <mat-icon class="green-icon">done</mat-icon>
+          </ng-container>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </section>
+
+  <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
+    <p>{{STEP_FOUR_HEADER}}</p>
+    <button mat-flat-button color="primary">{{BTN.STEP_FOUR}}</button>
+  </section>
+</ion-content>

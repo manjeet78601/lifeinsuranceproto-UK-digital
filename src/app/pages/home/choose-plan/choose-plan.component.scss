@@ -1,0 +1,41 @@
+
+.choose-plan-img{
+    width: 302px;
+    height: 240px;
+}
+   .plan-card {
+    max-width: 400px;
+    background-color: #F8F8F8;
+  }
+
+  .green-icon {
+    color: green;
+    width: 10px;
+    height: 15px;
+    font-weight: bold;
+  }
+
+.mat-table {
+  overflow: auto;
+  height: 315px;
+  width: 302px;
+  border: 2px solid #E2E2E3;
+}
+
+mat-header-cell{
+  background:#FAFAFB;
+}
+
+.mat-row:nth-child(odd){
+  background-color:#FAFAFB;
+  }
+
+mat-cell{
+  height:20px;
+  width :10px;
+  font-size:11px; 
+  color: #1a084c;
+}
+
+
+
