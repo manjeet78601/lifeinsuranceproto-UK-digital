@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeConstants,  } from './../home.constants';
 import { from } from 'rxjs';
+import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
   selector: 'app-financial-budget',
@@ -15,7 +16,7 @@ export class FinancialBudgetComponent implements OnInit {
   BTN = HomeConstants.BTN;
   progress = 0;
 
-  constructor() { }
+  constructor(private loader: LoaderService) { }
 
   ngOnInit() {
    // console.log(this.CONSTANTS.FINANCIALBUDGET);
@@ -26,6 +27,10 @@ export class FinancialBudgetComponent implements OnInit {
       this.progress = progress;
     }
 
+  }
+
+  calculateBudget() {
+    this.loader.showAutoHideLoader('Please wait', 5000);
   }
 
 }
