@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class SignupComponent implements OnInit {
   htmlText = properties;
+  isSignup = false;
   signupForm: FormGroup = this.formBuilder.group({
     firstName: ['', [Validators.required]],
     userName: ['', Validators.required],
@@ -21,7 +22,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {}
   onFormsubmit() {
-    this.router.navigate(['/auth/profile']);
+    this.isSignup = true;
   }
 
 }

@@ -14,8 +14,8 @@
   </ion-toolbar>
 </ion-header>
 <ion-content >
-  <section  class="wrapper-auth ion-text-center content signin-section">
-  <section fxLayout="column" class="signup-section" fxLayoutAlign="center center">
+  <section  class="wrapper-auth ion-text-center content signup-section" fxLayout="column" fxLayoutAlign="center center">
+  <section *ngIf="!isSignup; else verifyAccount">
     <header>
     <p class="header">{{htmlText.signup_header}}</p>
   </header>
@@ -41,6 +41,20 @@
   </div>
   </form>
   </section>
+  <ng-template #verifyAccount>
+    <section>
+      <header>
+        <p class="header">{{htmlText.welcome_header}}</p>
+        <p class="subheader">{{htmlText.welcome_subheader}}</p>
+      </header>
+      <div class="mt-20"> 
+        <button class="btn bg-gray col-wht" mat-stroked-button><strong>{{htmlText.signin_btn}}</strong></button>
+      </div>
+      <div class="mt-30"> 
+        <a mat-button class="fs-14 col-dull-grey text-underline" routerLink=".">{{htmlText.resent_verification_link}}</a>
+    </div>
+    </section>
+  </ng-template>
   </section>
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
