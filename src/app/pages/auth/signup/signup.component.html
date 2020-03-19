@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title fxLayout="row" fxLayoutAlign="center center">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <section  class="wrapper-auth ion-text-center content signin-section">
+  <section fxLayout="column" class="signup-section" fxLayoutAlign="center center">
+    <header>
+    <p class="header">{{htmlText.signup_header}}</p>
+  </header>
+  <form [formGroup]="signupForm" (ngSubmit)="onFormsubmit()">
+    <p class="form-label"><label for="fname">{{htmlText.firstName}}</label></p>
+    <mat-form-field appearance="outline" class="form-input-control mb-20">
+        <input formControlName="firstName" matInput placeholder="First Name" id="fname">
+        <!-- <mat-error>Invalid email</mat-error> -->
+    </mat-form-field>
+    <p class="form-label"><label for="uname">{{htmlText.username}}</label></p>
+    <mat-form-field appearance="outline" class="form-input-control mb-20">
+        <input formControlName="userName" matInput placeholder="Username" id="uname">
+    </mat-form-field>
+    <p class="form-label"><label for="pwd">{{htmlText.password}}</label></p>
+    <mat-form-field appearance="outline" class="form-input-control mb-20">
+      <input formControlName="signupPwd" type="password" matInput placeholder="8-25 characters" id="pwd">
+   </mat-form-field>
+   <div class="mt-20 text-left"> 
+   <mat-checkbox class="terms-cond" formControlName="termsAndCond">{{htmlText.terms_cond}}</mat-checkbox>
+   </div>
+   <div class="mt-20 text-left"> 
+    <button type="submit" class="btn bg-gray col-wht" mat-stroked-button [disabled]="!signupForm.valid" ><strong>{{htmlText.submit_btn}}</strong></button>
+  </div>
+  </form>
+  </section>
+  </section>
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+         77 Water St 8th Floor,<br/> Manhattan, NY 10005
+     </ion-label>
+   </ion-text>
+   <ion-text class="align-item-bottom">
+     <ion-label class="fl-footer-content">
+      Copyright Life+ © 2020
+     </ion-label>
+   </ion-text>
+  </footer> 
+</ion-content>
+
