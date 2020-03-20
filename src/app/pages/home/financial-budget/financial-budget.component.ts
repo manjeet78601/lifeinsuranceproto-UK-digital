@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeConstants,  } from './../home.constants';
 import { from } from 'rxjs';
 import { LoaderService } from 'src/app/services/loader.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-financial-budget',
@@ -16,7 +17,10 @@ export class FinancialBudgetComponent implements OnInit {
   BTN = HomeConstants.BTN;
   progress = 0;
 
-  constructor(private loader: LoaderService) { }
+  constructor(
+    private loader: LoaderService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
    // console.log(this.CONSTANTS.FINANCIALBUDGET);
@@ -30,7 +34,10 @@ export class FinancialBudgetComponent implements OnInit {
   }
 
   calculateBudget() {
-    this.loader.showAutoHideLoader('Please wait', 5000);
+    this.loader.showAutoHideLoader('Fetching Details...', 3000);
+    setTimeout(() => {
+      this.router.navigate(['/home/total-budget']);
+    }, 3000);
   }
 
 }
