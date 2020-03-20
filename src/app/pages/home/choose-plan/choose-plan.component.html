@@ -25,7 +25,7 @@
   <section class="wrapper-plan " fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <mat-card class="plan-card mat-elevation-z0 ">
       <div fxLayout="column" class="quote-img">
-        <img src="./../../../assets/img/black-mountain-icon.jpg" alt="balck-mountain-image">
+        <img src="./../../../../assets/img/dummy.jpg" alt="Dummy Image">
       </div>
       <mat-card-content *ngIf="collapsedSec1" class="mat-card-content-width">
         <header fxLayoutAlign="center center">
@@ -52,7 +52,7 @@
   <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <mat-card class="plan-card mat-elevation-z0">
       <div fxLayout="column" class="quote-img">
-        <img src="./../../../assets/img/black-mountain-icon.jpg" alt="balck-mountain-image">
+        <img src="./../../../../assets/img/dummy.jpg" alt="Dummy Image">
       </div>
       <mat-card-content *ngIf="collapsedSec2" class="mat-card-content-width">
         <header fxLayoutAlign="center center">
@@ -78,7 +78,7 @@
   <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <mat-card class="plan-card mat-elevation-z0">
       <div fxLayout="column" class="quote-img">
-        <img src="./../../../assets/img/black-mountain-icon.jpg" alt="balck-mountain-image">
+        <img src="./../../../../assets/img/dummy.jpg" alt="Dummy Image">
       </div>
       <mat-card-content *ngIf="collapsedSec3" class="mat-card-content-width">
         <div class="header-title">{{DOM_CONSTANTS.LIFE_PLUS_HEADER}}</div>
@@ -149,7 +149,7 @@
 
   <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
     <p>{{DOM_CONSTANTS.STEP_FOUR_HEADER}}</p>
-    <button mat-flat-button color="primary">{{DOM_CONSTANTS.PLAN_BTN.STEP_FOUR}}</button>
+    <button mat-flat-button color="primary" [routerLink]="['/home/health']" routerLinkActive="router-link-active" >{{DOM_CONSTANTS.PLAN_BTN.STEP_FOUR}}</button>
   </section>
 
 
