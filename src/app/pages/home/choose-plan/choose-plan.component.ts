@@ -30,21 +30,7 @@ export class ChoosePlanComponent implements OnInit {
   collapsedSec1 = true;
   collapsedSec2 = true;
   collapsedSec3 = true;
-  //Constants
-  PLAN_HEADER = HomeConstants.PLAN_HEADER;
-  PLAN_SUB_HEADER = HomeConstants.PLAN_SUB_HEADER;
-  TERM_INS_HEADER = HomeConstants.TERM_INS_HEADER;
-  TERM_INS__EXPANSION_HEADER = HomeConstants.TERM_INS__EXPANSION_HEADER;
-  TERM_INS__EXPANSION_BODY = HomeConstants.TERM_INS__EXPANSION_BODY;
-  BTN = HomeConstants.PLAN_BTN;
-  PERM_INS_HEADER = HomeConstants.PERM_INS_HEADER;
-  PERM_INS__EXPANSION_HEADER = HomeConstants.PERM_INS__EXPANSION_HEADER;
-  PERM_INS__EXPANSION_BODY = HomeConstants.PERM_INS__EXPANSION_BODY;
-  LIFE_PLUS_HEADER = HomeConstants.LIFE_PLUS_HEADER;
-  LIFE_PLUS_SUB_HEADER = HomeConstants.LIFE_PLUS_SUB_HEADER;
-  LIFE_PLUS_EXPANSION_BODY = HomeConstants.LIFE_PLUS_EXPANSION_BODY;
-  COMP_TBL_HEADER = HomeConstants.COMP_TBL_HEADER;
-  STEP_FOUR_HEADER = HomeConstants.STEP_FOUR_HEADER;
+  DOM_CONSTANTS = HomeConstants.CHOOSE_PLAN;
   constructor() { }
   ngOnInit() {
 

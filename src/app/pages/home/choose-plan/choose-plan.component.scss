@@ -1,85 +1,107 @@
-
-.choose-plan-img{
-    width: 302px;
-    height: 240px;
+.choose-plan-img {
+  width: 302px;
+  height: 240px;
 }
-   .plan-card {
-    max-width: 400px;
-    background-color: #F8F8F8;
-  }
+.plan-card {
+  max-width: 400px;
+  background-color: #f8f8f8;
+}
+.plan-sub-header {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #070707;
+  text-align: center;
+}
 
-  .green-icon {
-    color: green;
-    width: 10px;
-    height: 15px;
-    font-weight: bold;
-  }
+.green-icon {
+  color: green;
+  width: 10px;
+  height: 15px;
+  font-weight: bold;
+}
 
 .mat-table {
   overflow: auto;
-  height: 315px;
+  height: 306px;
   width: 302px;
-  border: 2px solid #E2E2E3;
+  border: 2px solid #e2e2e3;
   margin-top: 20px;
 }
-
-mat-header-cell{
-  background:#FAFAFB;
+.mat-card {
+  margin-top: 10px;
+  padding: 0px !important;
 }
 
-.mat-row:nth-child(odd){
-  background-color:#FAFAFB;
-  }
+.wrapper-plan {
+  padding: 10px 20px;
+}
 
-mat-cell{
-  height:20px;
-  width :10px;
-  font-size:11px; 
+mat-header-cell {
+  background: #fafafb;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #fafafb;
+}
+
+mat-cell {
+  font-size: 11px;
   color: #1a084c;
 }
-
-.btn-mat-card
-{   font-family:SegoeUI;
-    font-size:16px;
-    background-color:#F8F8F8;
-    color:#CCCCCC;
+.mat-cell-content {
+  font-family: Proxima Soft;
+  font-size: 13px;
+  color: #000000;
+  text-align: center;
 }
 
-.plan-mat-card-title
-{   font-family:SegoeUI;
-    font-weight: bold;
-    font-size:24px;
-    background-color:#FAFAFB;
-    color:#000000 ;
-    margin-top: 10px;
+.btn-mat-card {
+  font-family: SegoeUI;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  color: #cccccc;
 }
-.mat-card-label
-{
-    font-family:Proxima Soft;
-    font-size:16px;
-    color:#000000 ;
-    margin-top: 10px;
+
+.plan-mat-card-title {
+  font-family: SegoeUI;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: #fafafb;
+  color: #000000;
+  margin-top: 10px;
+}
+.mat-card-label {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #000000;
+  margin-top: 10px;
 }
 
 .mat-card-content-width {
-    padding-left: 20px;
-    margin-right: 40px;
+  padding-left: 20px;
+  margin-right: 40px;
 }
 
-.mat-card-content>:first-child {
-    margin-top: 30px;
+.mat-card-content > :first-child {
+  margin-top: 30px;
 }
 
-.comp-header-title{
-    font-family: Playfair Display;
-    font-size:24px;
-    color:#000000 ;
-    margin-top: 10px;
+.header-title {
+  font-family: Playfair Display;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000000;
+  margin-top: 10px;
 }
 
-
-
-
-
-
-
+.exp-header {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  font-weight: bold;
+  color: #070707;
+  text-align: center;
+}
+.comp-header-title {
+  padding-top: 10px;
+  width: 302px;
+}
