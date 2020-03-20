@@ -27,7 +27,7 @@ export class TotalBudgetCalculatorComponent implements OnInit {
   }
 
   getQuote() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/home/chooseplan']);
   }
 
 }
