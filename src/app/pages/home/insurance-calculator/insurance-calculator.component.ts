@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HomeConstants} from '../../home/home.constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-insurance-calculator',
@@ -7,8 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsuranceCalculatorComponent implements OnInit {
 
-  constructor() { }
+  PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER ;
+  PAGE_SUB_HEADER = HomeConstants.LIFE_INSURANCE_SUB_HEADER;
+  PAGE_CONTENT_QUERIES = HomeConstants.PAGE_CONTENT_QUERIES;
+  BTTN = HomeConstants.BTTN;
+  constructor( private router: Router) { }
 
   ngOnInit() {}
 
+  InsuranceBudget() {
+    this.router.navigate(['/home/budget']);
+
+  }
 }

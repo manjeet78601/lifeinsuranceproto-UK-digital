@@ -12,6 +12,51 @@
     </ion-title>  
   </ion-toolbar>  
 </ion-header> 
-<p>
-  insurance-calculator works!
-</p>
+<ion-content>
+<section class="wrapper ion-text-center content" fxLayout="column" fxLayoutAlign="center center">
+  <ion-card-title><img src="../../assets/img/circleImg1.png" alt="img1"  class="circled-img"/></ion-card-title>
+  <mat-card-title>{{ PAGE_HEADER }}</mat-card-title>
+  
+  <section class="mt-20 mb-30">
+    <mat-card-content>{{ PAGE_SUB_HEADER }}</mat-card-content>
+ </section>
+
+ <section fxLayout="column" class="mt-10 mb-30">
+
+    <mat-card-content flex layout layout-align="center">
+ <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.1%" fxLayoutAlign="center">
+            <div fxFlex="10%">
+                {{ PAGE_CONTENT_QUERIES }}
+            </div>
+            <div fxFlex="2%">
+             ?
+            </div>
+            
+          </div>
+
+       
+      </mat-card-content>
+    
+<mat-accordion>
+
+</mat-accordion>
+<button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button>
+ </section>
+  </section>
+  </ion-content>
+
+
+  <!-- Footer -->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+         77 Water St 8th Floor,<br/> Manhattan, NY 10005
+     </ion-label>
+   </ion-text>
+   <ion-text class="align-item-bottom">
+     <ion-label class="fl-footer-content">
+      Copyright Life+ © 2020
+     </ion-label>
+   </ion-text>
+  </footer>
+
