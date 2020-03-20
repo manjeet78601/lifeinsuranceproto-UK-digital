@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeConstants, } from './../home.constants';
-
-//Datasource for table
+// Datasource for table
 export interface TermInsComparision {
   term: number;
   comparison: string;
@@ -26,7 +25,7 @@ export class ChoosePlanComponent implements OnInit {
 
   displayedColumns: string[] = ['comparison', 'term', 'perm', 'lifeplus'];
   dataSource = ELEMENT_DATA;
-  //Initialize expandable card to false
+  // Initialize expandable card to false
   collapsedSec1 = true;
   collapsedSec2 = true;
   collapsedSec3 = true;
