@@ -9,7 +9,9 @@ import { ChoosePlanComponent } from './choose-plan/choose-plan.component';
 import { CompareQuotesComponent } from './compare-quotes/compare-quotes.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
+import { HealthQuestionsComponent } from './health-questions/health-questions.component';
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
+
 
 const routes: Routes = [
   {
@@ -43,7 +45,12 @@ const routes: Routes = [
   {
     path: '',
     component: LandingComponent
-  }
+  },
+  {
+    path: 'health',
+    component: HealthQuestionsComponent
+  },
+
 ];
 
 @NgModule({
