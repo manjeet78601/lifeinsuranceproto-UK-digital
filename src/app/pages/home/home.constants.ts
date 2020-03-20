@@ -241,4 +241,19 @@ export class HomeConstants {
    };
 
 
+ public static LIFE_PLUS_HEADER = 'Life Insurance for the Modern family';
+ public static LIFE_PLUS_SUB_HEADER = '   Life+ insurance is a hybrid of term life and permanent life insurance. ';
+ public static LIFE_PLUS_EXPANSION_BODY = 'Life+ insurance is a hybrid of term life and permanent life insurance. insurance of Life+ provides you term life insurance, plus an option to save money that will stay with you even after your term expires. If you pass away before the term expires, the cash value will be dispersed to your beneficiaries in addition to the term life policy. If you pass away after the term expires, the cash value will be dispersed but you will not be paid any amount from the term life policy. That way, you have some financial safety for end of life expenses. Similar to permanent life insurance, you have the option to contribute to your cash value every month, and you have the flexibility to decide how much to contribute every month. That way, you are not subject to the exorbitant prices of permanent life insurance. At Life+, you will not have access to the cash value. It will only be dispersed at the time of your passing, or upon the term expiration (whichever comes first).';
+ public static COMP_TBL_HEADER = 'Insurance Coverage Comparison Tool';
+ public static STEP_FOUR_HEADER = 'Ready to figure out your budget?';
+
+// Insurance calculator
+public static  LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
+public static  LIFE_INSURANCE_SUB_HEADER= 'BY calculating you long term financial obligations. and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start ';
+public static  PAGE_CONTENT_QUERIES = 'Does anyone in your family depend on you financially';
+
+public static BTTN = {
+   SUBMIT: 'Submit',
+   INSURANCE: 'Step Two',
+ };
 }
