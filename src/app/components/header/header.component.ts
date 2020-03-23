@@ -42,7 +42,8 @@ export class HeaderComponent implements OnInit {
     },
     {
       title : 'Facial-Identity',
-      url   : '/facial-identity'
+      url   : '/facial-identity',
+      icon  : 'home'
     },
   ];
   constructor(private menu: MenuController) { }
