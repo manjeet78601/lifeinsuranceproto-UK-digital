@@ -25,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: SigninComponent
+    redirectTo: 'signin',
+    pathMatch: 'full'
   }
 ];
 

@@ -1,0 +1,23 @@
+<!-- mat-dialog  -->
+<div class="chat-page-header" fxLayout="column" fxLayoutAlign="center center" fxLayout-fill>
+  <span mat-button mat-dialog-close id="close-btn"><mat-icon>close</mat-icon></span>
+  <img mat-card-avatar src="assets/img/bot-avatar.png" alt="bot-avatar">
+  <h2 mat-dialog-title>Bot Name</h2>
+</div>
+<div class="chat-content">
+<mat-dialog-content fxLayout="column" fxLayoutAlign="start" fxLayoutGap="10px">
+
+  <ng-container *ngFor="let message of messages | async">
+    <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
+          'to': message.sentBy === 'user' }">
+      {{ message.content }}
+    </div>
+  </ng-container>
+
+</mat-dialog-content>
+</div>
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="center center">
+  <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" placeholder="your message...." id="message-ip">
+  <span (click)="sendMessage()" style="cursor:pointer"><mat-icon>send</mat-icon></span>
+</mat-dialog-actions>
+<!-- end of the chatpage -->

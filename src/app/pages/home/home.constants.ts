@@ -216,6 +216,128 @@ export class HomeConstants {
       ]
    };
 
+   // Step 4: Health Questions
+   public static HEALTHQUESTIONS = [
+      { 
+         TITLE: 'Basic Health',
+         PROGRESS: 25,
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'Height',
+               INPUT_TYPE: 'Slider',
+               MIN: 1,
+               MAX: 8,
+               STEP: 1,
+               VALUE: 5.11,
+            },
+            {
+               QUESTIONTEXT: 'Weight',
+               INPUT_TYPE:'Slider',
+               MIN: 0,
+               MAX: 500,
+               STEP: 1,
+               VALUE: 210,
+            },
+            {
+               QUESTIONTEXT: 'Have you used any tobacco products in the last 5 years?',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT: 'Have you used any marijuana products in the last 5 years?',
+               INPUT_TYPE:'Button'
+            }
+         ]
+      },
+      { 
+         TITLE: 'Treatments and Medications',
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'Have you ever been treated for and/or taken medication for any of the following?',
+               INPUT_TYPE:'Button',
+               // DISEASES: ['Alchol Abuse', 'Anxiety','Asthma','Cancer','Depression','Diabetes','Drug Abuse','Heart Attack','High Blood Pressure','High Cholesterol','Sleep apenea','Stroke','Other serious Conditions' ]
+            },
+            {
+               QUESTIONTEXT:'Alchol Abuse',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'Anxiety',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'Asthma',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'Cancer',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'Depression',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'Diabetes',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'Drug Abuse',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'Heart Attack',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'High Blood Pressure',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'High Cholesterol',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'Sleep Apnea',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'Stroke', 
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT:'Other serious Conditions',
+               INPUT_TYPE:'Button'
+            },
+         ]
+      },
+      { 
+         TITLE: 'Additional Background Information',
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'Do you have any parents or siblings who had heart attacks, strokes, cancer, diabetes, or kidney disease before age 70?',
+               INPUT_TYPE:'Button'
+            },
+            {
+               QUESTIONTEXT: 'Has your driver’s license been suspended or revoked, or had more than one traffic ticket or accident in the past five years?',
+               INPUT_TYPE:'Button'
+            }
+         ]
+      },
+      { 
+         TITLE: 'Notes',
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'If you answered yes to any of these questions, please explain.',
+               INPUT_TYPE:'Textarea'
+            }
+            
+         ]
+      }
+   ]
+
+   public static HEALTH_HEADER = ' LIFE INSURENCE Medical Questions';
+   public static HEALTH_SUB_HEADER = 'Answer a few health Qs';
+   public static HEALTH_LINE = 'In order to process your examine we need to';
    // Step 3: Choose Plan
 
    public static CHOOSE_PLAN = {
@@ -248,12 +370,16 @@ export class HomeConstants {
  public static STEP_FOUR_HEADER = 'Ready to figure out your budget?';
 
 // Insurance calculator
+public static PAGE_SUBTITLE = 'Life Insurance Calculators'
 public static  LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
-public static  LIFE_INSURANCE_SUB_HEADER= 'BY calculating you long term financial obligations. and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start ';
-public static  PAGE_CONTENT_QUERIES = 'Does anyone in your family depend on you financially';
+public static  LIFE_INSURANCE_SUB_HEADER= 'By calculating you long term financial obligations. and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start ';
+public static  PAGE_CONTENT_QUERIES = 'Does anyone in your family depend on you financially' ;
 
 public static BTTN = {
    SUBMIT: 'Submit',
    INSURANCE: 'Step Two',
  };
+
+ public static INSURANCE_RECOMENDATION = 'Our Recommendation';
+ public static BUTTON_CONTENT = 'you can probably do without Life insurance right now however. if you think you have a unique circumstance that requires it. it costsnothing to compare rates ';
 }
