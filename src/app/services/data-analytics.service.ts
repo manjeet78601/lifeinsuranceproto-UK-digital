@@ -5,6 +5,7 @@ export enum CategoryName {
   HOME = 'Home',
   LOGIN = 'Login',
   PERSONLINFO = 'PersonalInfo',
+  BUDGET_CALCULATOR = 'BudgetCalculator',
 }
 
 export enum Action {
@@ -62,7 +63,7 @@ export class DataAnalyticsService {
       return 'IE';
     }
   }
-  private emitEventToGoogleCloud(eventCategory: string,
+  private emitEventToGoogleCloud(pageName: string,
                                  eventAction: string,
                                  eventLabel: string = '',
                                  eventValue: string = '1',
@@ -73,7 +74,7 @@ export class DataAnalyticsService {
       value: 1,
       tags: {
         action: eventAction,
-        page: eventCategory,
+        page: pageName,
         field: eventLabel,
         value: eventValue,
         user_agent: this.browserName,
@@ -85,8 +86,12 @@ export class DataAnalyticsService {
     }
     this.http.post(this.url, data, { headers: this.analyticHeaders }).subscribe();
   }
-  public trackAnalyticData(categoryName: string, eventAction: string, eventLabel: string = '') {
-    this.emitEventToGoogleCloud(categoryName, eventAction, eventLabel);
+  public trackAnalyticData(categoryName: string, eventAction: string, eventLabel: string = '', eventValue: string = '' ) {
+    this.emitEventToGoogleCloud(categoryName, eventAction, eventLabel, eventValue);
+  }
+  public emitEventPageNavigateToGoogleCloud(eventCategory: string, eventAction: string) {
+    const page = eventCategory;
+    this.emitEventToGoogleCloud(eventCategory, eventAction, '', '', true);
   }
 }
 
