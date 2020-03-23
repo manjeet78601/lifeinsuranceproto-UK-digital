@@ -445,7 +445,7 @@ img{
 }
 #close-btn{
   position: relative;
-  left: 189px;
+  left: 169px;
   bottom: 39px;
   cursor: pointer
 }
@@ -456,7 +456,7 @@ img{
   border-radius: 25px;
   border: 2px solid #609;
   padding: 20px; 
-  width: 330px;
+  width: 289px;
   height: 15px;    
 }
 md-dialog.fullscreen-dialog {
@@ -467,8 +467,13 @@ md-dialog.fullscreen-dialog {
   border-radius: 0;
 }
 mat-dialog-content{
-  width:412px;
-  height:363px;
+  width:350px ;
+  height:300px ;
+ 
+}
+
+
+// 
 .text-center{
   text-align: center;
 }

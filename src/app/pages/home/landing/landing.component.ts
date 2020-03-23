@@ -16,7 +16,8 @@ export class LandingComponent {
     openDialog(): void { 
       const dialogRef = this.dialog.open(ChatDialogComponent, {
         maxWidth: '100vw',
-        maxHeight: '100vh',
+        maxHeight:'100vw',
+        
        
       });
   
