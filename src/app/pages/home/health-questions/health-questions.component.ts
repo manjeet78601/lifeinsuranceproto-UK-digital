@@ -30,7 +30,7 @@ export class HealthQuestionsComponent implements OnInit {
     }
   }
   submit() {
-    this.loader.showAutoHideLoader('Please give us a few moments to check our compliance engine based on the state you live for regulatory adjustments. ', 3000);
+    this.loader.showAutoHideLoader('Please give us a few moments..', 3000);
     setTimeout(() => {
       this.router.navigate(['/home']);
     }, 3000);
