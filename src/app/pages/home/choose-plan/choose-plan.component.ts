@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeConstants, } from './../home.constants';
+import { Router } from '@angular/router';
 
-//Datasource for table
+// Datasource for table
 export interface TermInsComparision {
   term: number;
   comparison: string;
@@ -26,14 +27,19 @@ export class ChoosePlanComponent implements OnInit {
 
   displayedColumns: string[] = ['comparison', 'term', 'perm', 'lifeplus'];
   dataSource = ELEMENT_DATA;
-  //Initialize expandable card to false
+  // Initialize expandable card to false
   collapsedSec1 = true;
   collapsedSec2 = true;
   collapsedSec3 = true;
   DOM_CONSTANTS = HomeConstants.CHOOSE_PLAN;
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
   ngOnInit() {
 
+  }
+  getMedical() {
+    this.router.navigate(['/home/health']);
   }
 
 }

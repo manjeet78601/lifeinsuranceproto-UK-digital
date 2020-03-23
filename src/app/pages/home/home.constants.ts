@@ -223,7 +223,7 @@ export class HomeConstants {
       PLAN_SUB_HEADER: 'Let us help you learn what insurance works best for you and your family.',
       TERM_INS_HEADER: 'TERM INSURANCE',
       TERM_INS__EXPANSION_HEADER: 'What is term life insurance?',
-      TERM_INS__EXPANSION_BODY: '<p>Term life insurance is the most popular form of life insurance. You can buy life insurance that will last 5, 10, 15, 20, or 30 years. If you pass away <strong>before </strong>the term has expired, your beneficiaries will be paid out the <strong>full amount</strong>. If you pass away <strong>after </strong>the term has expired, your beneficiaries <strong>will not be paid any amount</strong>.</p><p> <br></p><p>Keep in mind that some term life policies have an <strong>age limit</strong>. For example, some companies will only cover you up to age 60. If you are 50, you are <strong>ineligible</strong> to purchase a term life policy for more than 10 years. This is an important consideration, given that the average life expectancy for <strong>men is 76.3 years</strong> and for <strong>women is 81.4 years</strong> in 2019.</p>',
+      TERM_INS__EXPANSION_BODY: '<p>Term life insurance is the most popular form of life insurance. You can buy life insurance that will last 5, 10, 15, 20, or 30 years. If you pass away <strong>before </strong>the term has expired, your beneficiaries will be paid out the <strong>full amount</strong>. If you pass away <strong>after </strong>the term has expired, your beneficiaries <strong>will not be paid any amount</strong>.</p><p>Keep in mind that some term life policies have an <strong>age limit</strong>. For example, some companies will only cover you up to age 60. If you are 50, you are <strong>ineligible</strong> to purchase a term life policy for more than 10 years. This is an important consideration, given that the average life expectancy for <strong>men is 76.3 years</strong> and for <strong>women is 81.4 years</strong> in 2019.</p>',
       PLAN_BTN: {
          READ_MORE: 'Read More',
          MINIMIZE: 'Minimize',
@@ -241,4 +241,19 @@ export class HomeConstants {
    };
 
 
+ public static LIFE_PLUS_HEADER = 'Life Insurance for the Modern family';
+ public static LIFE_PLUS_SUB_HEADER = '   Life+ insurance is a hybrid of term life and permanent life insurance. ';
+ public static LIFE_PLUS_EXPANSION_BODY = 'Life+ insurance is a hybrid of term life and permanent life insurance. insurance of Life+ provides you term life insurance, plus an option to save money that will stay with you even after your term expires. If you pass away before the term expires, the cash value will be dispersed to your beneficiaries in addition to the term life policy. If you pass away after the term expires, the cash value will be dispersed but you will not be paid any amount from the term life policy. That way, you have some financial safety for end of life expenses. Similar to permanent life insurance, you have the option to contribute to your cash value every month, and you have the flexibility to decide how much to contribute every month. That way, you are not subject to the exorbitant prices of permanent life insurance. At Life+, you will not have access to the cash value. It will only be dispersed at the time of your passing, or upon the term expiration (whichever comes first).';
+ public static COMP_TBL_HEADER = 'Insurance Coverage Comparison Tool';
+ public static STEP_FOUR_HEADER = 'Ready to figure out your budget?';
+
+// Insurance calculator
+public static  LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
+public static  LIFE_INSURANCE_SUB_HEADER= 'BY calculating you long term financial obligations. and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start ';
+public static  PAGE_CONTENT_QUERIES = 'Does anyone in your family depend on you financially';
+
+public static BTTN = {
+   SUBMIT: 'Submit',
+   INSURANCE: 'Step Two',
+ };
 }

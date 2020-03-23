@@ -19,7 +19,7 @@
     <header fxLayoutAlign="center center">
       <h2 class="header-title">{{DOM_CONSTANTS.PLAN_HEADER }}</h2>
     </header>
-    <p fxLayoutAlign="center center" class="plan-sub-header">{{ PLAN_SUB_HEADER }}</p>
+    <p fxLayoutAlign="center center" class="plan-sub-header">{{DOM_CONSTANTS.PLAN_SUB_HEADER }}</p>
   </section>
   <!--Section: Term Insurance-->
   <section class="wrapper-plan " fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
@@ -46,7 +46,7 @@
       </mat-card-content>
     </mat-card>
   </section>
-  
+
   <!--Section: Term Insurance-->
 
   <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
@@ -149,9 +149,20 @@
 
   <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
     <p>{{DOM_CONSTANTS.STEP_FOUR_HEADER}}</p>
-    <button mat-flat-button color="primary">{{DOM_CONSTANTS.PLAN_BTN.STEP_FOUR}}</button>
+    <button mat-flat-button color="primary" (click)="getMedical()">{{DOM_CONSTANTS.PLAN_BTN.STEP_FOUR}}</button>
   </section>
 
 
-
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+         77 Water St 8th Floor,<br/> Manhattan, NY 10005
+     </ion-label>
+   </ion-text>
+   <ion-text class="align-item-bottom">
+     <ion-label class="fl-footer-content">
+      Copyright Life+ © 2020
+     </ion-label>
+   </ion-text>
+  </footer> 
 </ion-content>
