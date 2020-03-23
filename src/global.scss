@@ -467,10 +467,11 @@ md-dialog.fullscreen-dialog {
   border-radius: 0;
 }
 mat-dialog-content{
-  width:412px;
-  height:363px;
-.text-center{
-  text-align: center;
+    width:412px;
+    height:363px;
+  .text-center{
+    text-align: center;
+  }
 }
 .custom-mat-btn-toggle-group {
   height: 38px;
