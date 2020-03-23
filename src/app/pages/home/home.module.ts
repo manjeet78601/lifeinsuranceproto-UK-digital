@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import {MatExpansionModule} from '@angular/material/expansion';
 import { HomePageRoutingModule } from './home-routing.module';
 // components
 import { HomePage } from './home.page';
@@ -27,8 +26,7 @@ import { ChatService } from '../../services/chat.service';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SharedModule,
-    MatExpansionModule
+    SharedModule
   ],
   declarations: [
     HomePage,

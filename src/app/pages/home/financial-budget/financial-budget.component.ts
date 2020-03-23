@@ -5,6 +5,7 @@ import { LoaderService } from 'src/app/services/loader.service';
 import { Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ChatDialogComponent } from 'src/app/pages/home/landing/landing.component';
+import { DataAnalyticsService, CategoryName, Action } from 'src/app/services/data-analytics.service';
 
 @Component({
   selector: 'app-financial-budget',
@@ -22,7 +23,8 @@ export class FinancialBudgetComponent implements OnInit {
   constructor(
     private loader: LoaderService,
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private analytic: DataAnalyticsService
     ) { }
 
   ngOnInit() {
@@ -48,6 +50,7 @@ export class FinancialBudgetComponent implements OnInit {
   }
 
   calculateBudget() {
+    this.analytic.trackAnalyticData(CategoryName.BUDGET_CALCULATOR, Action.CLICK, 'Calculate');
     this.loader.showAutoHideLoader('Fetching Details...', 3000);
     setTimeout(() => {
       this.router.navigate(['/home/total-budget']);
