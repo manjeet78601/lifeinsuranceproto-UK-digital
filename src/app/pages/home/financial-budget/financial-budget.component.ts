@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeConstants,  } from './../home.constants';
+import { HomeConstants, } from './../home.constants';
 import { from } from 'rxjs';
 import { LoaderService } from 'src/app/services/loader.service';
 import { Router } from '@angular/router';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { ChatDialogComponent } from 'src/app/pages/home/landing/landing.component';
 import { DataAnalyticsService, CategoryName, Action } from 'src/app/services/data-analytics.service';
 
 @Component({
@@ -23,24 +21,13 @@ export class FinancialBudgetComponent implements OnInit {
   constructor(
     private loader: LoaderService,
     private router: Router,
-    public dialog: MatDialog,
     private analytic: DataAnalyticsService
-    ) { }
+  ) { }
 
   ngOnInit() {
-   // console.log(this.CONSTANTS.FINANCIALBUDGET);
+    // console.log(this.CONSTANTS.FINANCIALBUDGET);
   }
-  openDialog(): void { 
-    const dialogRef = this.dialog.open(ChatDialogComponent, {
-      maxWidth: '100vw',
-      maxHeight: '100vh',
-     
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
 
   incrementProgress(progress) {
     if (this.progress < 100 && this.progress < progress) {
