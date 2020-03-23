@@ -370,12 +370,16 @@ export class HomeConstants {
  public static STEP_FOUR_HEADER = 'Ready to figure out your budget?';
 
 // Insurance calculator
+public static PAGE_SUBTITLE = 'Life Insurance Calculators'
 public static  LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
-public static  LIFE_INSURANCE_SUB_HEADER= 'BY calculating you long term financial obligations. and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start ';
-public static  PAGE_CONTENT_QUERIES = 'Does anyone in your family depend on you financially';
+public static  LIFE_INSURANCE_SUB_HEADER= 'By calculating you long term financial obligations. and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start ';
+public static  PAGE_CONTENT_QUERIES = 'Does anyone in your family depend on you financially' ;
 
 public static BTTN = {
    SUBMIT: 'Submit',
    INSURANCE: 'Step Two',
  };
+
+ public static INSURANCE_RECOMENDATION = 'Our Recommendation';
+ public static BUTTON_CONTENT = 'you can probably do without Life insurance right now however. if you think you have a unique circumstance that requires it. it costsnothing to compare rates ';
 }

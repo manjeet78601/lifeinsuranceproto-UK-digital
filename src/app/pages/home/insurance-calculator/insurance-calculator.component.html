@@ -28,10 +28,9 @@
 <mat-card-content class="flex-container" fxLayout="row" fxLayoutGap="0.1%">
       <mat-card-content class="insurance-que">{{ PAGE_CONTENT_QUERIES }}</mat-card-content>
       <mat-icon>help_outline</mat-icon> </mat-card-content>
-     
-     
-<mat-button-toggle-group  class="text-center">
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="custom-mat-btn-toggle-group mt-30">
+ </section>
+  
+   <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="custom-mat-btn-toggle-group mt-30 mb-30">
         <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
         <span class="circle">or</span>
         <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
@@ -39,13 +38,11 @@
   <!-- <mat-button-toggle class="button1" value = "Yes">Yes</mat-button-toggle>
   <mat-button-toggle class="button1" value = "No">No</mat-button-toggle> -->
 
- 
-</mat-button-toggle-group>
-<!-- 
-<mat-card-title>{{INSURANCE_RECOMENDATION }}</mat-card-title> 
-<mat-card-content>{{BUTTON_CONTENT}}</mat-card-content>
 
-<mat-form-field>
+<!-- <mat-card-title>{{INSURANCE_RECOMENDATION }}</mat-card-title> 
+<mat-card-content>{{BUTTON_CONTENT}}</mat-card-content> -->
+
+<!-- <mat-form-field>
  <mat-label class="que-subheader">{{ PAGE_CONTENT_QUERIES }}</mat-label>
  <input matInput placeholder="0.00">
     <mat-icon>help_outline</mat-icon>
@@ -58,7 +55,7 @@
 <mat-accordion>
 </mat-accordion>
 <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button>
- </section>
+
 </ion-content>
 <!-- Footer -->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
