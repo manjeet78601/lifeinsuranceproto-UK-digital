@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeConstants } from './../home.constants';
+import { LoaderService } from 'src/app/services/loader.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-health-questions',
@@ -7,8 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HealthQuestionsComponent implements OnInit {
 
-  constructor() { }
+  DOM_CONSTANTS = HomeConstants.HEALTHQUESTIONS;
+  PAGE_HEADER = HomeConstants.HEALTH_HEADER;
+  PAGE_SUBHEADER = HomeConstants.HEALTH_SUB_HEADER;
+  PAGE_LINE = HomeConstants.HEALTH_LINE;
+  BTN = HomeConstants.BTN;
+  progress = 0;
+  constructor(
+    private loader: LoaderService,
+    private router: Router
+  ) { }
 
   ngOnInit() {}
+
+  
+  incrementProgress(progress) {
+    if (this.progress < 100 && this.progress < progress) {
+      this.progress = progress;
+    }
+  }
+  submit() {
+    this.loader.showAutoHideLoader('Please give us a few moments..', 3000);
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 3000);
+  }
 
 }

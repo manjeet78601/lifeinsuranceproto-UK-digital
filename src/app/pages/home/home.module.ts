@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import {MatExpansionModule} from '@angular/material/expansion';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
@@ -25,8 +24,7 @@ import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SharedModule,
-    MatExpansionModule
+    SharedModule
   ],
   declarations: [
     HomePage,
