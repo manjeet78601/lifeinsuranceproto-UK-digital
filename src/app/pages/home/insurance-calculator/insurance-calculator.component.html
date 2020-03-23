@@ -12,9 +12,12 @@
     </ion-title>  
   </ion-toolbar>  
 </ion-header> 
-<ion-content>
+<ion-content class="text-center">
 <section class="wrapper ion-text-center content" fxLayout="column" fxLayoutAlign="center center">
+  <div>
   <ion-card-title><img src="../../assets/img/circleImg1.png" alt="img1"  class="circled-img"/></ion-card-title>
+ </div>
+  <mat-card-subtitle class="mt-10">{{PAGE_SUBTITLE}}</mat-card-subtitle>
   <mat-card-title>{{ PAGE_HEADER }}</mat-card-title>
   
   <section class="mt-20 mb-30">
@@ -22,31 +25,42 @@
  </section>
 
  <section fxLayout="column" class="mt-10 mb-30">
+<mat-card-content class="flex-container" fxLayout="row" fxLayoutGap="0.1%">
+      <mat-card-content class="insurance-que">{{ PAGE_CONTENT_QUERIES }}</mat-card-content>
+      <mat-icon>help_outline</mat-icon> </mat-card-content>
+     
+     
+<mat-button-toggle-group  class="text-center">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="custom-mat-btn-toggle-group mt-30">
+        <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
+        <span class="circle">or</span>
+        <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
+      </mat-button-toggle-group>
+  <!-- <mat-button-toggle class="button1" value = "Yes">Yes</mat-button-toggle>
+  <mat-button-toggle class="button1" value = "No">No</mat-button-toggle> -->
 
-    <mat-card-content flex layout layout-align="center">
- <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.1%" fxLayoutAlign="center">
-            <div fxFlex="10%">
-                {{ PAGE_CONTENT_QUERIES }}
-            </div>
-            <div fxFlex="2%">
-             ?
-            </div>
-            
-          </div>
+ 
+</mat-button-toggle-group>
+<!-- 
+<mat-card-title>{{INSURANCE_RECOMENDATION }}</mat-card-title> 
+<mat-card-content>{{BUTTON_CONTENT}}</mat-card-content>
 
-       
-      </mat-card-content>
-    
+<mat-form-field>
+ <mat-label class="que-subheader">{{ PAGE_CONTENT_QUERIES }}</mat-label>
+ <input matInput placeholder="0.00">
+    <mat-icon>help_outline</mat-icon>
+</mat-form-field> -->
+
+
+<!-- <div>{{gender.value}} </div>
+<div>{{gender.value}}</div> -->
+ </section>
 <mat-accordion>
-
 </mat-accordion>
 <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button>
  </section>
-  </section>
-  </ion-content>
-
-
-  <!-- Footer -->
+</ion-content>
+<!-- Footer -->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">

@@ -8,12 +8,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./insurance-calculator.component.scss'],
 })
 export class InsuranceCalculatorComponent implements OnInit {
+  isShow = false;
+ Value;
+ Question;
+ Answer;
 
-  PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER ;
+  gender = ['welcoome to my room' , 'ans is yes u r welcome'];
+  // gender1 = ['Welcome to page'];
+
+  PAGE_SUBTITLE = HomeConstants.PAGE_SUBTITLE;
+PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER ;
   PAGE_SUB_HEADER = HomeConstants.LIFE_INSURANCE_SUB_HEADER;
   PAGE_CONTENT_QUERIES = HomeConstants.PAGE_CONTENT_QUERIES;
   BTTN = HomeConstants.BTTN;
-  constructor( private router: Router) { }
+  BUTTON_CONTENT = HomeConstants.BUTTON_CONTENT;
+  INSURANCE_RECOMENDATION = HomeConstants.INSURANCE_RECOMENDATION;
+
+
+ constructor( private router: Router) { }
 
   ngOnInit() {}
 
@@ -21,4 +33,9 @@ export class InsuranceCalculatorComponent implements OnInit {
     this.router.navigate(['/home/budget']);
 
   }
-}
+
+
+    }
+
+
+
