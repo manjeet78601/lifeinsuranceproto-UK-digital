@@ -66,7 +66,15 @@ export class UserService {
           ratings: 3,
           comment:'Seriously love this plan!',
           timestamp:'Today at 5:42PM'
+        },
+        {
+          id: 3,
+          name: 'Kelvin',
+          ratings: 3,
+          comment:'Seriously love this plan!',
+          timestamp:'Today at 5:42PM'
         }
+
       ]
     },
     {
@@ -77,16 +85,23 @@ export class UserService {
       custAvgRatings:3,
       customerRatings: [
         {
-          id: 1,
+          id: 8,
           name: 'John',
           ratings: 2,
           comment:'Seriously love this plan!',
           timestamp:'Today at 5:42PM'
         },
         {
-          id: 2,
+          id: 9,
           name: 'Victor',
           ratings: 4,
+          comment:'Seriously love this plan!',
+          timestamp:'Today at 5:42PM'
+        },
+        {
+          id: 10,
+          name: 'Potter',
+          ratings: 2,
           comment:'Seriously love this plan!',
           timestamp:'Today at 5:42PM'
         }

@@ -43,25 +43,24 @@
         </mat-card-actions>
       </mat-card-content>
       <mat-card-content *ngIf="!collapsedSec1" class="mat-card-content-width">
-        <div>
-          <h2 class="exp-header"> {{DOM_CONSTANTS.CUST_HEADER}}                   
-            <ion-icon *ngFor="let dummy of ' '.repeat(quo.custAvgRatings).split(''), let x = index" name="heart"></ion-icon>
-            <ion-icon *ngFor="let dummy of ' '.repeat(5-quo.custAvgRatings).split(''), let x = index" name="heart-outline">
+          <h2 class="exp-header"> {{DOM_CONSTANTS.CUST_HEADER}}
+            <ion-icon [style.color]="'#EF3B51'" *ngFor="let dummy of ' '.repeat(quo.custAvgRatings).split(''), let x = index" name="heart">
+            </ion-icon>
+            <ion-icon *ngFor="let dummy of ' '.repeat(5-quo.custAvgRatings).split(''), let x = index"
+              name="heart-outline">
             </ion-icon>
           </h2>
-          </div>
         <div *ngFor="let cus of quo.customerRatings">
+          <h2 class="exp-header">{{cus.name}} {{cus.timestamp}}</h2>
           <div>
-            <p class="exp-header">{{cus.name}} {{cus.timestamp}}</p>
-          </div>
-          <div>
-          {{cus.comment}}          
-            <ion-icon *ngFor="let dummy of ' '.repeat(cus.ratings).split(''), let x = index" name="heart"></ion-icon>
+            {{cus.comment}}
+            <ion-icon [style.color]="'#EF3B51'" *ngFor="let dummy of ' '.repeat(cus.ratings).split(''), let x = index" name="heart"></ion-icon>
             <ion-icon *ngFor="let dummy of ' '.repeat(5-cus.ratings).split(''), let x = index" name="heart-outline">
             </ion-icon>
           </div>
         </div>
-        <button mat-flat-button color="primary" (click)="x()" fxLayoutAlign="center center">
+        <button mat-flat-button class="quo-btn" color="primary" (click)="x()" fxLayoutAlign="center center"
+          fxLayoutGap="40px">
           {{ BTN.GET_QUOTE | uppercase }}
         </button>
         <mat-card-actions fxLayout="column" fxLayoutAlign="center end">
