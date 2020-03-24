@@ -10,20 +10,22 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './sharedModules/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Camera } from '@ionic-native/camera/ngx';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
-  AppComponent,
-  WelcomeComponent,
-  HeaderComponent,
-  FooterComponent],
-  entryComponents: [HeaderComponent, FooterComponent],
+    AppComponent,
+    WelcomeComponent,
+    HeaderComponent,
+    ChatComponent
+  ],
+  entryComponents: [HeaderComponent, ChatComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -31,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [
     StatusBar,
@@ -39,6 +42,6 @@ import { HttpClientModule } from '@angular/common/http';
     Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

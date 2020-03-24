@@ -18,6 +18,8 @@ import { HealthQuestionsComponent } from './health-questions/health-questions.co
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
 
 
+import { ChatService } from '../../services/chat.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-
     HealthQuestionsComponent,
     ContactComponent,
     HelpComponent,
-    TotalBudgetCalculatorComponent
-  ]
+    TotalBudgetCalculatorComponent,
+  ],
+  providers: [ChatService]
 })
-export class HomePageModule {}
+export class HomePageModule { }

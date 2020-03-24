@@ -5,6 +5,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { MenuController } from '@ionic/angular';
 import { DataAnalyticsService, PageLoadLabel } from './services/data-analytics.service';
 import { Router, NavigationEnd } from '@angular/router';
+import { ChatService } from './services/chat.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ChatComponent } from './components/chat/chat.component';
 
 @Component({
   selector: 'app-root',
@@ -40,7 +43,9 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     private menu: MenuController,
     private router: Router,
-    private analytic: DataAnalyticsService
+    private analytic: DataAnalyticsService,
+    public chat: ChatService,
+    public dialog: MatDialog
   ) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -58,5 +63,17 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ChatComponent, {
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
