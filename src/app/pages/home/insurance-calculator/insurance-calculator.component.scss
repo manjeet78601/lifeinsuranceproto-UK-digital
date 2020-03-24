@@ -4,9 +4,33 @@
     font-weight: bold;
     display: block;
 }
-
-  .mat-button-toggle-group{
+.mat-button-toggle-group {
       border:none !important;
   }
+  .border{
+      border:2px solid grey;
+       width:30%;
+      float:right;
+      text-align: center;
+  }
+ .que-subheader1{
+    font-family: inherit;
+    font-size: 16px;
+    display: inline-flex;
+   text-align: left;
+  }
+  .currencyinput {
+    border: 1px inset #ccc;
+    margin: 5px
+}
+.currencyinput input {
+    border: 0;
+}
+.mat-icon1{
+    float: left;
+}
+
+
+  
     
     
