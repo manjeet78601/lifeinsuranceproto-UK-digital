@@ -313,14 +313,14 @@ export class HomeConstants {
          TITLE: 'Additional Background Information',
          QUESTIONS: [
             {
-               QUESTIONTEXT: `Do you have any parents or siblings who had heart
-               attacks, strokes, cancer, diabetes, or kidney disease before age 70?',
-               INPUT_TYPE: 'Button'`
+               QUESTIONTEXT: 'Do you have any parents or siblings who had heart attacks,' +
+                  'strokes, cancer, diabetes, or kidney disease before age 70?',
+               INPUT_TYPE: 'Button'
             },
             {
-               QUESTIONTEXT: `Has your driver’s license been suspended or 
-               revoked, or had more than one traffic ticket or accident in the past five years?',
-               INPUT_TYPE: 'Button'`
+               QUESTIONTEXT: 'Has your driver’s license been suspended or revoked,' +
+                  ' or had more than one traffic ticket or accident in the past five years?',
+               INPUT_TYPE: 'Button'
             }
          ]
       },
@@ -393,9 +393,9 @@ export class HomeConstants {
    };
 
 
- public static LIFE_PLUS_HEADER = 'Life Insurance for the Modern family';
- public static LIFE_PLUS_SUB_HEADER = '   Life+ insurance is a hybrid of term life and permanent life insurance. ';
- public static LIFE_PLUS_EXPANSION_BODY = `Life+ insurance is a hybrid of term life and permanent life insurance.
+   public static LIFE_PLUS_HEADER = 'Life Insurance for the Modern family';
+   public static LIFE_PLUS_SUB_HEADER = '   Life+ insurance is a hybrid of term life and permanent life insurance. ';
+   public static LIFE_PLUS_EXPANSION_BODY = `Life+ insurance is a hybrid of term life and permanent life insurance.
  insurance of Life+ provides you term life insurance, plus an option to save money that will stay with you
  even after your term expires. If you pass away before the term expires, the cash value will be dispersed
  \to your beneficiaries in addition to the term life policy. If you pass away after the term expires,
@@ -408,19 +408,19 @@ export class HomeConstants {
  public static COMP_TBL_HEADER = 'Insurance Coverage Comparison Tool';
  public static STEP_FOUR_HEADER = 'Ready to figure out your budget?`;
 
-// Insurance calculator
-public static PAGE_SUBTITLE = 'Life Insurance Calculators';
-public static  LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
-public static  LIFE_INSURANCE_SUB_HEADER = `By calculating you long term financial obligations.
+   // Insurance calculator
+   public static PAGE_SUBTITLE = 'Life Insurance Calculators';
+   public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
+   public static LIFE_INSURANCE_SUB_HEADER = `By calculating you long term financial obligations.
 and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start `;
-public static  PAGE_CONTENT_QUERIES = `Does anyone in your family depend on you financially`;
+   public static PAGE_CONTENT_QUERIES = `Does anyone in your family depend on you financially`;
 
-public static BTTN = {
-   SUBMIT: 'Submit',
-   INSURANCE: 'Step Two',
- };
+   public static BTTN = {
+      SUBMIT: 'Submit',
+      INSURANCE: 'Step Two',
+   };
 
- public static INSURANCE_RECOMENDATION = 'Our Recommendation';
- public static BUTTON_CONTENT = `you can probably do without Life insurance right now however.
+   public static INSURANCE_RECOMENDATION = 'Our Recommendation';
+   public static BUTTON_CONTENT = `you can probably do without Life insurance right now however.
  \if you think you have a unique circumstance that requires it. it costsnothing to compare rates `;
 }

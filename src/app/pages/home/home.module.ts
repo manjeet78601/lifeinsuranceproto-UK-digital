@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
-// components
+
 import { HomePage } from './home.page';
 import { InsuranceCalculatorComponent } from './insurance-calculator/insurance-calculator.component';
 import { LandingComponent } from './landing/landing.component';
@@ -16,8 +16,8 @@ import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
 import { HealthQuestionsComponent } from './health-questions/health-questions.component';
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
-import { ChatDialogComponent } from './landing/landing.component';
-// services
+
+
 import { ChatService } from '../../services/chat.service';
 
 @NgModule({
@@ -39,11 +39,7 @@ import { ChatService } from '../../services/chat.service';
     ContactComponent,
     HelpComponent,
     TotalBudgetCalculatorComponent,
-    ChatDialogComponent
   ],
-  entryComponents: [ChatDialogComponent],
-  exports:[ChatDialogComponent ],
   providers: [ChatService]
-  
 })
-export class HomePageModule {}
+export class HomePageModule { }
