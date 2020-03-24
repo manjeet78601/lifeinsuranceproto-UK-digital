@@ -27,10 +27,6 @@ const routes: Routes = [
     component: ChoosePlanComponent
   },
   {
-    path: 'quotes',
-    component: CompareQuotesComponent
-  },
-  {
     path: 'contact',
     component: ContactComponent
   },

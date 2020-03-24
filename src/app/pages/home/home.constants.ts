@@ -415,5 +415,6 @@ and subtracting your assets you an estimate what your loved ones will need in co
    public static QUOTE = {
       QUOTE_HEADER: 'Quote Results',
       QUOTE_SUB_HEADER: 'The actual cost for you may be different after your application is processed.',
+      CUST_HEADER :'Customer Rating'
    }
 }

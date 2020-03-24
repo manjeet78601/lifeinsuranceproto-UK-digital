@@ -16,6 +16,8 @@
 
 <ion-content>
 
+  <!--Quotes Header-->
+
   <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <header fxLayoutAlign="center center">
       <h2 class="header-title">{{DOM_CONSTANTS.QUOTE_HEADER }}</h2>
@@ -41,16 +43,34 @@
         </mat-card-actions>
       </mat-card-content>
       <mat-card-content *ngIf="!collapsedSec1" class="mat-card-content-width">
-        Ratings :
+          <h2 class="exp-header"> {{DOM_CONSTANTS.CUST_HEADER}}
+            <ion-icon [style.color]="'#EF3B51'" *ngFor="let dummy of ' '.repeat(quo.custAvgRatings).split(''), let x = index" name="heart">
+            </ion-icon>
+            <ion-icon *ngFor="let dummy of ' '.repeat(5-quo.custAvgRatings).split(''), let x = index"
+              name="heart-outline">
+            </ion-icon>
+          </h2>
+        <div *ngFor="let cus of quo.customerRatings">
+          <h2 class="exp-header">{{cus.name}} {{cus.timestamp}}</h2>
+          <div>
+            {{cus.comment}}
+            <ion-icon [style.color]="'#EF3B51'" *ngFor="let dummy of ' '.repeat(cus.ratings).split(''), let x = index" name="heart"></ion-icon>
+            <ion-icon *ngFor="let dummy of ' '.repeat(5-cus.ratings).split(''), let x = index" name="heart-outline">
+            </ion-icon>
+          </div>
+        </div>
+        <button mat-flat-button class="quo-btn" color="primary" (click)="x()" fxLayoutAlign="center center"
+          fxLayoutGap="40px">
+          {{ BTN.GET_QUOTE | uppercase }}
+        </button>
         <mat-card-actions fxLayout="column" fxLayoutAlign="center end">
           <button mat-flat-button (click)="collapsedSec1=true" class="btn-mat-card">{{BTN.CLOSE}}</button>
         </mat-card-actions>
-
-        <!-- <bar-rating [(rate)]="rate" [max]="5" ></bar-rating> -->
       </mat-card-content>
     </mat-card>
   </section>
 
+  <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">
