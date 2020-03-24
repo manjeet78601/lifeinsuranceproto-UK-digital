@@ -16,11 +16,7 @@ export const properties = {
     welcome_subheader: 'Thank you for working with us! We sent you an email for verification.',
     resent_verification_link: 'Resend verification code',
     // Profile section
-    profile_header: 'Financial Picture',
+    profile_header: 'David’s Financial Picture',
 };
 export const financialLists: string[] = ['Goals/Aspirations', 'Lifestyle Expenses', 'Sources of Income', 'Debts',
 'Assets', 'Expected Cash Windfall'];
-export interface Profile {
-userName: string;
-userBdate: string;
-}

@@ -19,7 +19,6 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() {}
   onFormsubmit(formName: string) {
-    this.authService.setUsername(this.loginForm.controls.lname.value as string);
     this.router.navigate(['/auth/profile']);
   }
   signup(event) {

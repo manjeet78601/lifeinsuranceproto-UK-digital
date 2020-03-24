@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { properties, financialLists, Profile } from '../auth.constant';
-import { AuthService } from 'src/app/services/auth.service';
+import { properties, financialLists } from '../auth.constant';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -8,15 +7,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ProfileComponent implements OnInit {
   htmltext = properties;
-  userInfo: Profile;
-  birthDate: Date;
   userFinancialInfo: string[] = financialLists;
-  constructor(private auth: AuthService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.userInfo = this.auth.getUsername();
-    this.birthDate = new Date(this.userInfo.userBdate);
-  }
+  ngOnInit() {}
   trackByIndex(index, item) {
     return index;
   }

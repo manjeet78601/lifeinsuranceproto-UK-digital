@@ -2,9 +2,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button text="" color="dark"
-        ><ion-icon name="arrow-back"></ion-icon
-      ></ion-back-button>
+      <ion-back-button text="" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
     </ion-buttons>
     <ion-buttons slot="start" color="dark">
       <ion-menu-button color="dark"></ion-menu-button>
@@ -24,27 +24,16 @@
         <mat-label>{{ progress }}%</mat-label>
       </div>
 
-      <mat-progress-bar
-        mode="determinate"
-        color="secondary"
-        [value]="progress"
-      ></mat-progress-bar>
+      <mat-progress-bar mode="determinate" color="secondary" [value]="progress"></mat-progress-bar>
     </header>
-    <section
-      class="wrapper"
-      fxLayout="column"
-      fxLayoutAlign="center center"
-      fxLayoutGap="10px"
-    >
+    <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
       <header fxLayoutAlign="center center">
         <h2>{{ PAGE_SUBHEADER }}</h2>
       </header>
 
       <mat-accordion>
         <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS">
-          <mat-expansion-panel-header
-            (click)="incrementProgress(item.PROGRESS)"
-          >
+          <mat-expansion-panel-header (click)="incrementProgress(item.PROGRESS)">
             <mat-panel-title>
               {{ item.TITLE }}
             </mat-panel-title>
@@ -52,12 +41,7 @@
           <div *ngFor="let que of item.QUESTIONS">
             <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label>
             <mat-label class="que-subheader">{{ que.SUBTEXT }}</mat-label>
-            <mat-slider
-              [max]="que.MAX"
-              [min]="que.MIN"
-              [step]="que.STEP"
-              [(ngModel)]="que.VALUE"
-            >
+            <mat-slider [max]="que.MAX" [min]="que.MIN" [step]="que.STEP" [(ngModel)]="que.VALUE">
             </mat-slider>
             {{ que.VALUE | currency }}
           </div>
@@ -66,16 +50,14 @@
       <button mat-flat-button color="primary" (click)="calculateBudget()">
         {{ BTN.CALCULATE | uppercase }}
       </button>
+
+      <a class="link" [routerLink]="['/auth/signup']" routerLinkActive="router-link-active">{{ BTN.CREATE_ACCOUNT }}</a>
+
     </section>
     <!-- End of main section -->
   </section>
   <!-- Footer -->
-  <footer
-    class="footer"
-    fxLayout="row"
-    fxLayoutAlign="space-between"
-    fxLayoutGap="40px"
-  >
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">
         77 Water St 8th Floor,<br />

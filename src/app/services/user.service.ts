@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   constructor() { }
-
+  financialBudget: any[] = [];
   users = [
     {
       id: 1,
@@ -44,57 +44,23 @@ export class UserService {
     return this.users.find(data => data.id === id);
   }
 
-
-  quotes = [
-    {
-      productId: 1,
-      prodImg: './../../../../assets/img/dummy.jpg',
-      quoteHeader: 'Quote Details',
-      quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies. ',
-      custAvgRatings:4,
-      customerRatings: [
-        {
-          id: 1,
-          name: 'Matt',
-          ratings: 5,
-          comment:'Seriously love this plan!',
-          timestamp:'Today at 5:42PM'
-        },
-        {
-          id: 2,
-          name: 'George',
-          ratings: 3,
-          comment:'Seriously love this plan!',
-          timestamp:'Today at 5:42PM'
-        }
-      ]
-    },
-    {
-      productId: 2,
-      prodImg: './../../../../assets/img/dummy.jpg',
-      quoteHeader: 'Quote Details',
-      quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies.  ',
-      custAvgRatings:3,
-      customerRatings: [
-        {
-          id: 1,
-          name: 'John',
-          ratings: 2,
-          comment:'Seriously love this plan!',
-          timestamp:'Today at 5:42PM'
-        },
-        {
-          id: 2,
-          name: 'Victor',
-          ratings: 4,
-          comment:'Seriously love this plan!',
-          timestamp:'Today at 5:42PM'
-        }
-      ]
-    }
-  ];
-
-  getQuoteList() {
-    return this.quotes;
+  getCalculatedBudget() {
+    return this.financialBudget;
   }
+
+  setCalculatedBudget(budgetList) {
+
+    // tslint:disable-next-line:prefer-for-of
+    for (let index = 0; index < budgetList.length; index++) {
+      const sum = budgetList[index].QUESTIONS.reduce((a, b) => {
+        console.log(a, b);
+        return parseInt(a) + parseInt(b);
+      });
+      this.financialBudget.push(sum);
+    }
+
+    console.log(this.financialBudget);
+
+  }
+
 }

@@ -38,13 +38,19 @@
         </mat-expansion-panel-header>
         <div *ngFor="let que of item.QUESTIONS">
           <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label>
-          <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'"
+          <mat-button-toggle-group
+            *ngIf="que.INPUT_TYPE === 'Button'"
             name="fontStyle"
             aria-label="Font Style"
-            class="custom-mat-btn-toggle-group mt-30">
-            <mat-button-toggle value="bold" class="yes-btn">Yes</mat-button-toggle>
+            class="custom-mat-btn-toggle-group mt-30"
+          >
+            <mat-button-toggle value="bold" class="yes-btn"
+              >Yes</mat-button-toggle
+            >
             <span class="circle">or</span>
-            <mat-button-toggle value="italic" class="no-btn">No</mat-button-toggle>
+            <mat-button-toggle value="italic" class="no-btn"
+              >No</mat-button-toggle
+            >
           </mat-button-toggle-group>
           <form>
             <mat-form-field *ngIf="que.INPUT_TYPE === 'Textarea'">
