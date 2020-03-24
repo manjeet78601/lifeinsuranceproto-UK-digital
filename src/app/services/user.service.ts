@@ -36,14 +36,6 @@ export class UserService {
     }
   ];
 
-  getUsersList() {
-    return this.users;
-  }
-
-  getUser(id: number) {
-    return this.users.find(data => data.id === id);
-  }
-
 
   quotes = [
     {
@@ -108,6 +100,14 @@ export class UserService {
       ]
     }
   ];
+
+  getUsersList() {
+    return this.users;
+  }
+
+  getUser(id: number) {
+    return this.users.find(data => data.id === id);
+  }
 
   getQuoteList() {
     return this.quotes;
