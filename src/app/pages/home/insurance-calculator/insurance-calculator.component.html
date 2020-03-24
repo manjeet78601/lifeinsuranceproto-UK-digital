@@ -19,39 +19,69 @@
  </div>
   <mat-card-subtitle class="mt-10">{{PAGE_SUBTITLE}}</mat-card-subtitle>
   <mat-card-title>{{ PAGE_HEADER }}</mat-card-title>
-  
+
   <section class="mt-20 mb-30">
     <mat-card-content>{{ PAGE_SUB_HEADER }}</mat-card-content>
  </section>
 
- <section fxLayout="column" class="mt-10 mb-30">
-<mat-card-content class="flex-container" fxLayout="row" fxLayoutGap="0.1%">
+ <section fxLayout="column" class="mt-10 mb-20">
+<mat-card-content  class="flex-container" fxLayout="row" fxLayoutGap="0.1%">
       <mat-card-content class="insurance-que">{{ PAGE_CONTENT_QUERIES }}</mat-card-content>
       <mat-icon>help_outline</mat-icon> </mat-card-content>
  </section>
-  
-   <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="custom-mat-btn-toggle-group mt-30 mb-30">
-        <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
+
+  <section>
+   <mat-button-toggle-group #matToggleGroup="matButtonToggleGroup" name="fontStyle" aria-label="Font Style" class="custom-mat-btn-toggle-group mt-10 mb-10">
+        <mat-button-toggle value="yes" class="yes-btn" >Yes</mat-button-toggle>
         <span class="circle">or</span>
-        <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
+        <mat-button-toggle value="no" class="no-btn" >No</mat-button-toggle>
+   
       </mat-button-toggle-group>
-  <!-- <mat-button-toggle class="button1" value = "Yes">Yes</mat-button-toggle>
-  <mat-button-toggle class="button1" value = "No">No</mat-button-toggle> -->
+  </section>   
+
+<mat-card-content *ngIf="matToggleGroup.value === 'no'" class="que-header">{{INSURANCE_RECOMENDATION}}</mat-card-content>
+<mat-card-content *ngIf="matToggleGroup.value === 'no'" class="page-header" style="text-align: left;">{{BUTTON_CONTENT}}</mat-card-content>
+
+<section fxLayout="column" class="mt-10 mb-20">
+    <mat-card-content  class="flex-container mt-10 mb-20" fxLayout="row" fxLayoutGap="0">
+          <mat-card-content class="insurance-que">{{ PAGE_CONTENT_US1 }} </mat-card-content>
+          <mat-icon>help_outline</mat-icon></mat-card-content>
+    
+</section>
+
+<div  class="flex-container " fxLayout="column" fxLayoutGap="0.1%">
+  <header fxLayoutAlign="center center">
+    <mat-card-title *ngIf="matToggleGroup.value === 'yes'">{{ LETS_GETS_TARTED }}</mat-card-title>
+  </header>
+
+ <section class="mt-20 mb-30">
+   
+<mat-label *ngIf="matToggleGroup.value === 'yes'" class="que-subheader1">{{PAGE_CONTENT_QUERIES }}
+  <div class="currencyinput">$<input matInput type="text" name="currency1"  placeholder="0.00" class="border"></div></mat-label>
+  <br><mat-icon class="mat-icon1" *ngIf="matToggleGroup.value === 'yes'">help_outline</mat-icon> 
+
+<mat-label *ngIf="matToggleGroup.value === 'yes'" class="que-subheader1">{{PAGE_CONTENT_QUERIES }}
+<div class="currencyinput">$<input matInput type="text" name="currency"  placeholder="0.00" class="border"></div></mat-label>
+ <br> <mat-icon class="mat-icon1" *ngIf="matToggleGroup.value === 'yes'">help_outline</mat-icon> 
 
 
-<!-- <mat-card-title>{{INSURANCE_RECOMENDATION }}</mat-card-title> 
-<mat-card-content>{{BUTTON_CONTENT}}</mat-card-content> -->
-
-<!-- <mat-form-field>
- <mat-label class="que-subheader">{{ PAGE_CONTENT_QUERIES }}</mat-label>
- <input matInput placeholder="0.00">
-    <mat-icon>help_outline</mat-icon>
-</mat-form-field> -->
+<mat-label *ngIf="matToggleGroup.value === 'yes'" class="que-subheader1">{{PAGE_CONTENT_QUERIES }}
+  <div class="currencyinput">$<input matInput type="text" id="txtbox"  placeholder="0.00" class="border"></div></mat-label>
+<mat-icon class="mat-icon1" *ngIf="matToggleGroup.value === 'yes'">help_outline</mat-icon> 
 
 
-<!-- <div>{{gender.value}} </div>
-<div>{{gender.value}}</div> -->
+<section  class="mt-30 mb-40">
+ <mat-card-title *ngIf="matToggleGroup.value === 'yes'" >{{ PAGE_BOTTOM }}</mat-card-title>
+ <div class="currencyinput" *ngIf="matToggleGroup.value === 'yes'">$<input type="text" id="txtbox"  placeholder="0.00" class="border"></div>
  </section>
+
+ </section>
+ 
+</div>
+ 
+
+
+</section>
 <mat-accordion>
 </mat-accordion>
 <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button>
