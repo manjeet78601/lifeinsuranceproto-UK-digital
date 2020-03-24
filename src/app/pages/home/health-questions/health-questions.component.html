@@ -2,15 +2,15 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button text="" color='dark'>
+      <ion-back-button text="" color="dark">
         <ion-icon name="arrow-back"></ion-icon>
       </ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="end" color="dark">
+    <ion-buttons slot="start" color="dark">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title fxLayout="row" fxLayoutAlign="center center">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" />
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -21,9 +21,14 @@
   <header class="page-header" fxLayout="column" fxLayoutAlign="center center">
     <h1>{{ PAGE_HEADER }}</h1>
     <h2>{{ PAGE_SUBHEADER }}</h2>
-    <p>{{PAGE_LINE}}</p>
+    <p>{{ PAGE_LINE }}</p>
   </header>
-  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <section
+    class="wrapper"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+  >
     <mat-accordion>
       <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS">
         <mat-expansion-panel-header (click)="incrementProgress(item.PROGRESS)">
@@ -33,38 +38,49 @@
         </mat-expansion-panel-header>
         <div *ngFor="let que of item.QUESTIONS">
           <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label>
-          <mat-button-toggle-group *ngIf="que.INPUT_TYPE==='Button'" name="fontStyle" aria-label="Font Style" class="custom-mat-btn-toggle-group mt-30">
+          <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'"
+            name="fontStyle"
+            aria-label="Font Style"
+            class="custom-mat-btn-toggle-group mt-30">
             <mat-button-toggle value="bold" class="yes-btn">Yes</mat-button-toggle>
-           <span class="circle">or</span>
-           <mat-button-toggle value="italic" class="no-btn">No</mat-button-toggle>
+            <span class="circle">or</span>
+            <mat-button-toggle value="italic" class="no-btn">No</mat-button-toggle>
           </mat-button-toggle-group>
           <form>
-            <mat-form-field *ngIf="que.INPUT_TYPE==='Textarea'">
+            <mat-form-field *ngIf="que.INPUT_TYPE === 'Textarea'">
               <textarea matInput placeholder="Write a response"></textarea>
             </mat-form-field>
           </form>
-          <mat-slider *ngIf="que.INPUT_TYPE==='Slider'"
-                [max]="que.MAX"
-                [min]="que.MIN"
-                [step]="que.STEP"
-                [(ngModel)]="que.VALUE">
-        </mat-slider> 
-        {{ que.VALUE}}
+          <mat-slider
+            *ngIf="que.INPUT_TYPE === 'Slider'"
+            [max]="que.MAX"
+            [min]="que.MIN"
+            [step]="que.STEP"
+            [(ngModel)]="que.VALUE"
+          >
+          </mat-slider>
+          {{ que.VALUE }}
         </div>
-        
-        
       </mat-expansion-panel>
     </mat-accordion>
-    <button mat-flat-button color="primary" (click)="submit()">{{BTN.SUBMIT | uppercase}}</button>
+    <button mat-flat-button color="primary" (click)="submit()">
+      {{ BTN.SUBMIT | uppercase }}
+    </button>
   </section>
 </ion-content>
 <!-- end of section 1 -->
 
 <!-- Footer -->
-<footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+<footer
+  class="footer"
+  fxLayout="row"
+  fxLayoutAlign="space-between"
+  fxLayoutGap="40px"
+>
   <ion-text class="align-item-bottom">
     <ion-label class="fl-footer-content">
-      77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      77 Water St 8th Floor,<br />
+      Manhattan, NY 10005
     </ion-label>
   </ion-text>
   <ion-text class="align-item-bottom">

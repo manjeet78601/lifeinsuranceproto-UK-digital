@@ -16,7 +16,9 @@ import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
 import { HealthQuestionsComponent } from './health-questions/health-questions.component';
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
+import { QuoteComponent } from './quote/quote.component';
 
+import { ChatService } from '../../services/chat.service';
 
 @NgModule({
   imports: [
@@ -36,7 +38,9 @@ import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-
     HealthQuestionsComponent,
     ContactComponent,
     HelpComponent,
-    TotalBudgetCalculatorComponent
-  ]
+    TotalBudgetCalculatorComponent,
+    QuoteComponent
+  ],
+  providers: [ChatService]
 })
-export class HomePageModule {}
+export class HomePageModule { }
