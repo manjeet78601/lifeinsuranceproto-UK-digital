@@ -11,7 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
 import { HealthQuestionsComponent } from './health-questions/health-questions.component';
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
-
+import { QuoteComponent } from './quote/quote.component';
 
 const routes: Routes = [
   {
@@ -49,6 +49,10 @@ const routes: Routes = [
   {
     path: 'health',
     component: HealthQuestionsComponent
+  },
+  {
+    path: 'quote',
+    component: QuoteComponent
   },
 
 ];

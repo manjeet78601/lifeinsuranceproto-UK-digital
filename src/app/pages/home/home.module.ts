@@ -16,7 +16,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
 import { HealthQuestionsComponent } from './health-questions/health-questions.component';
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
-
+import { QuoteComponent } from './quote/quote.component';
 
 import { ChatService } from '../../services/chat.service';
 
@@ -39,6 +39,7 @@ import { ChatService } from '../../services/chat.service';
     ContactComponent,
     HelpComponent,
     TotalBudgetCalculatorComponent,
+    QuoteComponent
   ],
   providers: [ChatService]
 })
