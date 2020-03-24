@@ -13,8 +13,8 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content fullscreen>
-  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+<ion-content>
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" >
     
      <section class='user-info'>
        <ion-list>
@@ -23,7 +23,10 @@
             <img src="../../../../assets/img/profile-icon.png" alt="profil-pic">
           </ion-thumbnail>
           <ion-label class="user-info" class="profile-desc">
-            <p class="uname cap-first-letter"><strong>{{userInfo.userName}}</strong></p>
+            <p class="uname cap-first-letter">
+              <strong>{{userInfo.userName}}</strong>
+              <ion-icon name="create-outline"></ion-icon>
+            </p>
             <p class="label">Birthday</p>
             <p class="bdate">{{ birthDate | date: 'dd/MM/yyyy' }}</p>
             <p class="label policy">Policy Status</p>

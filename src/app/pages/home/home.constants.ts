@@ -340,14 +340,6 @@ public static HEALTH_HEADER = ' LIFE INSURENCE Medical Questions';
 public static HEALTH_SUB_HEADER = 'Answer a few health Qs';
 public static HEALTH_LINE = 'In order to process your examine we need to';
 
-
-
-
-
-
-
-
-
    // Step 3: Choose Plan
 
    public static CHOOSE_PLAN = {
@@ -422,10 +414,9 @@ and subtracting your assets you an estimate what your loved ones will need in co
  public static PAGE_CONTENT_US1 = 'Are You a US Citizen or Residents';
  public static LETS_GETS_TARTED = 'Great let s get Started ';
  public static PAGE_BOTTOM = 'By our calculation You will need this total coverage'; 
-   //Quote
+ //Quote
    public static QUOTE = {
       QUOTE_HEADER: 'Quote Results',
       QUOTE_SUB_HEADER: 'The actual cost for you may be different after your application is processed.',
-      CUST_HEADER:'Customer Rating'
-   }
+   };
 }

@@ -12,6 +12,12 @@
             font-size: 18px;
             color: #000000;
             line-height: 2;
+            ::after {
+                clear: right;
+            }
+            ion-icon {
+                float: right;
+            }
         }
         .label {
             color: #707070;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { properties, financialLists, Profile } from '../auth.constant';
 import { AuthService } from 'src/app/services/auth.service';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -8,14 +9,14 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ProfileComponent implements OnInit {
   htmltext = properties;
-  userInfo: Profile;
+  userInfo: any;
   birthDate: Date;
   userFinancialInfo: string[] = financialLists;
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
     this.userInfo = this.auth.getUsername();
-    this.birthDate = new Date(this.userInfo.userBdate);
+    this.birthDate = new Date(this.auth.bDate);
   }
   trackByIndex(index, item) {
     return index;
