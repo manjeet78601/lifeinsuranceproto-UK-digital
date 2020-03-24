@@ -15,10 +15,25 @@
 </ion-header>
 <ion-content>
   <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    
+     <section>
+      <ion-thumbnail slot="start">
+        <img src="" alt="profil-pic">
+      </ion-thumbnail>
+      <ion-label class="user-info">
+        <h1>{{userInfo.userName}}</h1>
+        <h2>Birthday</h2>
+        <p>{{ birthDate | date: 'dd/MM/yyyy' }}</p>
+        <h2>Policy Status</h2>
+        <p>Med Exam Received. Our Underwiters are reviewing, stay tuned.</p>
+      </ion-label>
+   
+     </section>
+       
     <header fxLayoutAlign="center center">
       <h2>{{htmltext.profile_header }}</h2>
     </header>
-    
+
     <mat-accordion>
       <mat-expansion-panel *ngFor="let item of userFinancialInfo; trackBy: trackByIndex">
         <mat-expansion-panel-header>
