@@ -8,18 +8,39 @@
     <ion-buttons slot="start" color="dark">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title fxLayout="row" fxLayoutAlign="center center">
+   <ion-title class="ion-text-center app-name">
       <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <header fxLayoutAlign="center center">
-      <h2>{{htmltext.profile_header }}</h2>
-    </header>
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" >
     
-    <mat-accordion>
+     <section class='user-info'>
+       <ion-list>
+         <ion-item>
+          <ion-thumbnail slot="start" class="profile-pic">
+            <img src="../../../../assets/img/profile-icon.png" alt="profil-pic">
+          </ion-thumbnail>
+          <ion-label class="user-info" class="profile-desc">
+            <p class="uname cap-first-letter">
+              <strong>{{userInfo.userName}}</strong>
+              <ion-icon name="create-outline"></ion-icon>
+            </p>
+            <p class="label">Birthday</p>
+            <p class="bdate">{{ birthDate | date: 'dd/MM/yyyy' }}</p>
+            <p class="label policy">Policy Status</p>
+            <p class="policy-status">Med Exam Received. Our Underwiters are reviewing, stay tuned.</p>
+          </ion-label>
+         </ion-item>
+       </ion-list>
+     </section>
+       
+    <header fxLayoutAlign="center center">
+      <h2 class="cap-first-letter">{{userInfo.userName +"'s "+ htmltext.profile_header }}</h2>
+    </header>
+
+    <mat-accordion class="user-financial-info">
       <mat-expansion-panel *ngFor="let item of userFinancialInfo; trackBy: trackByIndex">
         <mat-expansion-panel-header>
           <mat-panel-title>

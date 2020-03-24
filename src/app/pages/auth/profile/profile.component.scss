@@ -1,0 +1,41 @@
+.user-info {
+    width: 100%;
+    .profile-pic {
+        width: 123px;
+        height:123px;
+        margin-right: 15px;
+    }
+    .profile-desc {
+        margin-top: 0;
+        margin-right: 0;
+        .uname {
+            font-size: 18px;
+            color: #000000;
+            line-height: 2;
+            ::after {
+                clear: right;
+            }
+            ion-icon {
+                float: right;
+            }
+        }
+        .label {
+            color: #707070;
+            font-size: 14px;
+            font-weight: 600;
+            &.policy {
+                line-height: 2;
+            }
+        }
+        .bdate, .policy-status {
+            color: #333333;
+            font-size: 12px;
+        }
+    }
+}
+.user-financial-info {
+    width: 85%;
+}
+.cap-first-letter::first-letter {
+    text-transform: uppercase;
+}

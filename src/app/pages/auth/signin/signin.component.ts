@@ -3,6 +3,7 @@ import { ReactiveFormsModule, Validators, FormBuilder, FormGroup } from '@angula
 import { Router } from '@angular/router';
 import { properties } from '../auth.constant';
 import { AuthService } from 'src/app/services/auth.service';
+import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
   selector: 'app-signin',
@@ -15,10 +16,12 @@ export class SigninComponent implements OnInit {
     lname: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
   });
-  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService, private loader: LoaderService) { }
 
   ngOnInit() {}
   onFormsubmit(formName: string) {
+    this.authService.setUsername(this.loginForm.controls.lname.value as string);
+    this.loader.showAutoHideLoader('', 2000);
     this.router.navigate(['/auth/profile']);
   }
   signup(event) {

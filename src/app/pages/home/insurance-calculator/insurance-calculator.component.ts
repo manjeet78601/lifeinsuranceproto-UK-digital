@@ -23,7 +23,9 @@ PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER ;
   BTTN = HomeConstants.BTTN;
   BUTTON_CONTENT = HomeConstants.BUTTON_CONTENT;
   INSURANCE_RECOMENDATION = HomeConstants.INSURANCE_RECOMENDATION;
-
+  LETS_GETS_TARTED = HomeConstants.LETS_GETS_TARTED;
+  PAGE_CONTENT_US1 = HomeConstants.PAGE_CONTENT_US1;
+  PAGE_BOTTOM = HomeConstants.PAGE_BOTTOM;
 
  constructor( private router: Router) { }
 
