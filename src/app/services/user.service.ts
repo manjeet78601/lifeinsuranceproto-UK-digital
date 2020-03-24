@@ -44,4 +44,46 @@ export class UserService {
     return this.users.find(data => data.id === id);
   }
 
+
+  quotes = [
+    {
+      productId: 1,
+      prodImg: './../../../../assets/img/dummy.jpg',
+      quoteHeader: 'Quote Details',
+      quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies. ',
+      customerRatings: [
+        {
+          id: 1,
+          name: 'Matt',
+          ratings: 3
+        },
+        {
+          id: 2,
+          name: 'George',
+          ratings: 4
+        }
+      ]
+    },
+    {
+      productId: 2,
+      prodImg: './../../../../assets/img/dummy.jpg',
+      quoteHeader: 'Quote Details',
+      quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies.  ',
+      customerRatings: [
+        {
+          id: 1,
+          name: 'John',
+          ratings: 3
+        },
+        {
+          name: 'Victor',
+          ratings: 2
+        }
+      ]
+    }
+  ];
+
+  getQuoteList() {
+    return this.quotes;
+  }
 }
