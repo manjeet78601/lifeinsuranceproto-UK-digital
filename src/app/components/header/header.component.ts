@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     },
     {
       title : 'Comparing Quotes',
-      url   : 'home/quotes'
+      url   : 'home/health'
     },
     {
       title : 'Contact',
