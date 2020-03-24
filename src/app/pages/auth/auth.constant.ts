@@ -20,3 +20,7 @@ export const properties = {
 };
 export const financialLists: string[] = ['Goals/Aspirations', 'Lifestyle Expenses', 'Sources of Income', 'Debts',
 'Assets', 'Expected Cash Windfall'];
+export interface Profile {
+userName: string;
+userBdate: string;
+}
