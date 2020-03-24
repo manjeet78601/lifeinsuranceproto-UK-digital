@@ -6,7 +6,6 @@ import { InsuranceCalculatorComponent } from './insurance-calculator/insurance-c
 import { LandingComponent } from './landing/landing.component';
 import { FinancialBudgetComponent } from './financial-budget/financial-budget.component';
 import { ChoosePlanComponent } from './choose-plan/choose-plan.component';
-import { CompareQuotesComponent } from './compare-quotes/compare-quotes.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
 import { HealthQuestionsComponent } from './health-questions/health-questions.component';

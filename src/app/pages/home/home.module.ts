@@ -11,13 +11,11 @@ import { LandingComponent } from './landing/landing.component';
 import { SharedModule } from 'src/app/sharedModules/shared.module';
 import { FinancialBudgetComponent } from './financial-budget/financial-budget.component';
 import { ChoosePlanComponent } from './choose-plan/choose-plan.component';
-import { CompareQuotesComponent } from './compare-quotes/compare-quotes.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
 import { HealthQuestionsComponent } from './health-questions/health-questions.component';
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
 import { QuoteComponent } from './quote/quote.component';
-
 import { ChatService } from '../../services/chat.service';
 
 @NgModule({
@@ -34,7 +32,6 @@ import { ChatService } from '../../services/chat.service';
     InsuranceCalculatorComponent,
     FinancialBudgetComponent,
     ChoosePlanComponent,
-    CompareQuotesComponent,
     HealthQuestionsComponent,
     ContactComponent,
     HelpComponent,
