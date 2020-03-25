@@ -9,7 +9,7 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./insurance-calculator.component.scss'],
 })
 export class InsuranceCalculatorComponent implements OnInit {
- 
+
 
   PAGE_SUBTITLE = HomeConstants.PAGE_SUBTITLE;
   PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER;
@@ -28,11 +28,13 @@ export class InsuranceCalculatorComponent implements OnInit {
   INSURANCE_CALCULATOR = HomeConstants.INSURANCE_CALCULATOR;
 
 
- constructor( private router: Router) { }
+  constructor(private router: Router,
+    private navigationService: MenuService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   InsuranceBudget() {
+    this.navigationService.setCompletedMenu('Insurance calculator')
     this.router.navigate(['/home/budget']);
 
   }
