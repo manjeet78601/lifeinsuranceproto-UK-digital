@@ -47,7 +47,8 @@
       </ion-grid>
       <mat-card-content *ngIf="collapsedSec1">
         <mat-card-actions fxLayout="column" fxLayoutAlign="center start">
-          <button mat-flat-button (click)="collapsedSec1=false" class="btn-mat-card">{{BTN.READ_MORE}}</button>
+          <button mat-flat-button (click)="collapsedSec1=false"
+            class="btn-mat-card marg-10px">{{BTN.READ_MORE}}</button>
         </mat-card-actions>
       </mat-card-content>
       <mat-card-content *ngIf="!collapsedSec1">
@@ -78,8 +79,8 @@
           <button mat-flat-button fxLayoutAlign="center end" class="quo-btn" color="primary"
             (click)="getPDF()">{{BTN.GET_QUOTE}}</button>
         </div>
-        <mat-card-actions fxLayout="column">
-          <button mat-flat-button (click)="collapsedSec1=true" class="btn-mat-card">{{BTN.CLOSE}}</button>
+        <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+          <button mat-flat-button (click)="collapsedSec1=true" class="btn-mat-card marg-10px">{{BTN.CLOSE}}</button>
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
