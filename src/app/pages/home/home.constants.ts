@@ -405,15 +405,45 @@ and subtracting your assets you an estimate what your loved ones will need in co
       INSURANCE: 'Step Two',
       READ_MORE: 'Read More',
       CLOSE: 'Close',
-      GET_QUOTE:'GET QUOTE'
+      GET_QUOTE: 'GET QUOTE'
    };
 
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
    public static BUTTON_CONTENT = `you can probably do without Life insurance right now however.
  \if you think you have a unique circumstance that requires it. it costsnothing to compare rates `;
+ public static PAGE_CONTENT_US = 'Are You a US Citizen or Residents';
  public static PAGE_CONTENT_US1 = 'Are You a US Citizen or Residents';
  public static LETS_GETS_TARTED = 'Great let s get Started ';
  public static PAGE_BOTTOM = 'By our calculation You will need this total coverage'; 
+
+ public static INSURANCE_CALCULATOR = [
+   {
+      TITLE: 'Basic Health',
+      PROGRESS: 25,
+      QUESTIONS1: [
+         {
+            INPUT_TYPE: 'Does anyone in your family depend on you financially',
+            VALUE: '50000',
+         },
+         {
+            INPUT_TYPE: 'Does anyone in your family depend on you financially',
+            VALUE: '50000',
+         },
+
+         {
+            INPUT_TYPE: 'Does anyone in your family depend on you financially',
+            VALUE: '50000',
+
+         },
+         {
+            INPUT_TYPE: 'Does anyone in your family depend on you financially',
+            VALUE: '50000',
+
+         },
+      ]
+   },
+];
+
  //Quote
    public static QUOTE = {
       QUOTE_HEADER: 'Quote Results',
