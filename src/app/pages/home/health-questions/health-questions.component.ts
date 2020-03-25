@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeConstants } from './../home.constants';
 import { LoaderService } from 'src/app/services/loader.service';
 import { Router } from '@angular/router';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-health-questions',
@@ -18,22 +19,18 @@ export class HealthQuestionsComponent implements OnInit {
   progress = 0;
   constructor(
     private loader: LoaderService,
-    private router: Router
+    private router: Router,
+    private navigationService: MenuService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  
-  incrementProgress(progress) {
-    if (this.progress < 100 && this.progress < progress) {
-      this.progress = progress;
-    }
-  }
   submit() {
+    this.navigationService.setCompletedMenu('Comparing Quotes');
     this.loader.showAutoHideLoader('Please give us a few moments..', 3000);
     setTimeout(() => {
-      this.router.navigate(['/home']);
-    }, 3000);
+      this.router.navigate(['/home/quote']);
+    }, 2000);
   }
 
 }

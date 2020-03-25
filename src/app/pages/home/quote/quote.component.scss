@@ -82,10 +82,6 @@ mat-cell {
   margin-right: 40px;
 }
 
-.mat-card-content > :first-child {
-  margin-top: 30px;
-}
-
 .header-title {
   font-family: Playfair Display;
   font-weight: bold;
@@ -107,4 +103,39 @@ mat-cell {
 }
 p {
   font-family: Lato;
+}
+
+.heart-icon {
+  color: #ef3b51;
+}
+.quo-btn {
+  margin-top: 30px !important;
+}
+.quo-sub-header {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #070707;
+  text-align: left;
+  padding-left: 15px;
+}
+.comment-txt {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #070707;
+  text-align: left;
+}
+ion-grid {
+  ion-card {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    margin-top: 0px !important;
+  }
+}
+.pad-15px {
+  padding-left: 15px;
+}
+.marg-10px {
+  margin-left: 10px;
 }

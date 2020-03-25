@@ -1,77 +1,76 @@
 <!-- Header -->
-<ion-header>  
-  <ion-toolbar>  
-    <ion-buttons slot="start" >
-      <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="start" color="dark">  
-      <ion-menu-button color="dark"></ion-menu-button>  
-    </ion-buttons>  
-   <ion-title class="ion-text-center app-name">  
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" >
-    </ion-title>  
-  </ion-toolbar>  
-</ion-header> 
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 <!-- End of header -->
 <!-- Main content -->
 <ion-content>
   <section class="content">
-  <header>
-    <img class="img-header" src="./../../../../assets/img/dummy.jpg" alt="Total Budget Calculator" srcset="">
-  </header>
-
-  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center">
     <header>
-      <h2>
-        {{ DOM_CONSTANTS.PAGE_HEADER }}
-      </h2>
-      <mat-label class="lightgray-text">{{ amountLeft | currency }}</mat-label>
+      <img class="img-header" src="./../../../../assets/img/dummy.jpg" alt="Total Budget Calculator" srcset="">
     </header>
-    <div class="w-100">
-      <h3>{{ DOM_CONSTANTS.TOTAL_TEXT | uppercase}}</h3>
-    </div>
-    <table class="w-100">
-      <tr *ngFor="let item of totals">
-        <td class="w-50 h-25">
-         {{ item.TITLE }}
-        </td>
-        <td class="w-50 h-25">
-         {{ item.AMOUNT | currency}}
-        </td>
-      </tr>
-    </table>
-  </section>
 
-  <section class="bg-lightgray ion-padding">
-    <div *ngFor="let que of DOM_CONSTANTS.BUDGET">
-      <mat-label class="que-header">{{ que.TEXT }}</mat-label>
-      <mat-slider
-          [max]="que.MAX"
-          [min]="que.MIN"
-          [step]="que.STEP"
-          [(ngModel)]="que.VALUE">
-  </mat-slider>
-  {{ que.VALUE | currency}}
-    </div>
-    <div fxLayout="row" fxLayoutAlign="center center">
-      <button mat-flat-button color="primary" (click)="getQuote()">{{ BTN.GET_QUOTE | uppercase}}</button>
-    </div>
-    
+    <section class="wrapper" fxLayout="column" fxLayoutAlign="center center">
+      <header>
+        <h2>
+          {{ DOM_CONSTANTS.PAGE_HEADER }}
+        </h2>
+        <mat-label class="lightgray-text">{{ amountLeft | currency }}</mat-label>
+        <h5>{{ DOM_CONSTANTS.PAGE_SUB_TEXT}}</h5>
+      </header>
+      <div class="w-100">
+        <h3>{{ DOM_CONSTANTS.TOTAL_TEXT | uppercase}}</h3>
+      </div>
+      <table class="w-100">
+        <tr *ngFor="let item of totals">
+          <td class="w-50 h-25">
+            {{ item.TOTAL_TEXT }}
+          </td>
+          <td class="w-50 h-25">
+            {{ item.TOTAL | currency}}
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="bg-lightgray ion-padding">
+      <div *ngFor="let que of totals">
+        <mat-label class="que-header">{{ que.TOTAL_TEXT }}</mat-label>
+        <mat-slider [max]="que.MAX" [min]="que.MIN" [step]="que.STEP" [(ngModel)]="que.TOTAL">
+        </mat-slider>
+        {{ que.TOTAL | currency}}
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <button mat-flat-button color="primary" (click)="getQuote()">{{ BTN.STEP_THREE | uppercase}}</button>
+      </div>
+
+    </section>
   </section>
-</section>
- <!-- Footer -->
- <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
-  <ion-text class="align-item-bottom">
-    <ion-label class="fl-footer-content">
-       77 Water St 8th Floor,<br/> Manhattan, NY 10005
-   </ion-label>
- </ion-text>
- <ion-text class="align-item-bottom">
-   <ion-label class="fl-footer-content">
-    Copyright Life+ © 2020
-   </ion-label>
- </ion-text>
-</footer>
-<!-- End of footer -->
+  <!-- Footer -->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+  <!-- End of footer -->
 </ion-content>
 <!-- End of main content -->

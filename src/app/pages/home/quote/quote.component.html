@@ -8,66 +8,79 @@
     <ion-buttons slot="start" color="dark">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-   <ion-title class="ion-text-center app-name">
+    <ion-title class="ion-text-center app-name">
       <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
   <!--Quotes Header-->
-
   <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <header fxLayoutAlign="center center">
       <h2 class="header-title">{{DOM_CONSTANTS.QUOTE_HEADER }}</h2>
     </header>
     <p fxLayoutAlign="center center" class="plan-sub-header">{{DOM_CONSTANTS.QUOTE_SUB_HEADER }}</p>
-  </section>
 
-  <!--Quotes-->
-
-  <section class="wrapper-plan " *ngFor="let quo of quotes" fxLayout="column" fxLayoutAlign="center center"
-    fxLayoutGap="10px">
-    <mat-card class="plan-card mat-elevation-z0 ">
+    <!--Quotes-->
+    <mat-card class="plan-card mat-elevation-z0 " *ngFor="let quo of quotes; let i = index">
       <div fxLayout="column" class="quote-img">
         <img [src]="quo.prodImg" alt="dummy-image">
       </div>
-      <header fxLayoutAlign="center start">
-        <h2 class="exp-header">{{quo.quoteHeader }}</h2>
-      </header>
-      <p>{{quo.quoteDetails}}</p>
-      <mat-card-content *ngIf="collapsedSec1" class="mat-card-content-width">
+      <h2 class="exp-header pad-15px">{{quo.quoteHeader }}</h2>
+      <h2 class="quo-sub-header">{{quo.quoteDetails}}</h2>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <div class="exp-header"> {{DOM_CONSTANTS.CUST_HEADER}}
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <ion-icon class='heart-icon' *ngFor="let r of ' '.repeat(quo.custAvgRatings).split('')" name="heart">
+              </ion-icon>
+              <ion-icon *ngFor="let r of ' '.repeat(5-quo.custAvgRatings).split('')" name="heart-outline">
+              </ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <mat-card-content *ngIf="collapsedSec1">
         <mat-card-actions fxLayout="column" fxLayoutAlign="center start">
-          <button mat-flat-button (click)="collapsedSec1=false" class="btn-mat-card">{{BTN.READ_MORE}}</button>
+          <button mat-flat-button (click)="collapsedSec1=false"
+            class="btn-mat-card marg-10px">{{BTN.READ_MORE}}</button>
         </mat-card-actions>
       </mat-card-content>
-      <mat-card-content *ngIf="!collapsedSec1" class="mat-card-content-width">
-          <ion-item-group>
-            <ion-label class="exp-header"> {{DOM_CONSTANTS.CUST_HEADER}}</ion-label>
-            <ion-icon [style.color]="'#EF3B51'"
-              *ngFor="let dummy of ' '.repeat(quo.custAvgRatings).split(''), let x = index" name="heart">
-            </ion-icon>
-            <ion-icon *ngFor="let dummy of ' '.repeat(5-quo.custAvgRatings).split(''), let x = index"
-              name="heart-outline">
-            </ion-icon>
-          </ion-item-group>
-        <div *ngFor="let cus of quo.customerRatings">
-          <h2 class="exp-header">{{cus.name}} {{cus.timestamp}}</h2>
-          <div>
-            {{cus.comment}}
-            <ion-icon [style.color]="'#EF3B51'" *ngFor="let dummy of ' '.repeat(cus.ratings).split(''), let x = index"
-              name="heart"></ion-icon>
-            <ion-icon *ngFor="let dummy of ' '.repeat(5-cus.ratings).split(''), let x = index" name="heart-outline">
-            </ion-icon>
-          </div>
+      <mat-card-content *ngIf="!collapsedSec1">
+        <ion-grid>
+          <ion-row *ngFor="let cus of quo.customerRatings">
+            <ion-col size="6">
+              <ion-row>
+                <div class="exp-header">
+                  {{cus.name}}
+                </div>
+              </ion-row>
+              <ion-row>
+                <div class="comment-txt">{{cus.comment}}</div>
+              </ion-row>
+            </ion-col>
+            <ion-col class="btn-mat-card">{{cus.timestamp}}</ion-col>
+            <ion-col size="3">
+              <div>
+                <ion-icon class='heart-icon' *ngFor="let r of ' '.repeat(cus.ratings).split('')" name="heart">
+                </ion-icon>
+                <ion-icon class='heart-icon' *ngFor="let r of ' '.repeat(5-cus.ratings).split('')" name="heart-outline">
+                </ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="40px">
+          <button mat-flat-button fxLayoutAlign="center end" class="quo-btn" color="primary"
+            (click)="getPDF()">{{BTN.GET_QUOTE}}</button>
         </div>
-        <button mat-flat-button class="quo-btn" color="primary" (click)="x()" fxLayoutAlign="center center"
-          fxLayoutGap="40px">
-          {{ BTN.GET_QUOTE | uppercase }}
-        </button>
-        <mat-card-actions fxLayout="column" fxLayoutAlign="center end">
-          <button mat-flat-button (click)="collapsedSec1=true" class="btn-mat-card">{{BTN.CLOSE}}</button>
+        <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+          <button mat-flat-button (click)="collapsedSec1=true" class="btn-mat-card marg-10px">{{BTN.CLOSE}}</button>
         </mat-card-actions>
       </mat-card-content>
     </mat-card>

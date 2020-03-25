@@ -6,6 +6,7 @@ export class HomeConstants {
          TITLE: 'Income',
          SUBTITLE: '',
          PROGRESS: 25,
+         TOTAL_TEXT: 'Monthly Income',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'What’s your wage/salary?',
@@ -37,6 +38,7 @@ export class HomeConstants {
          TITLE: 'Personal Assets',
          SUBTITLE: '',
          PROGRESS: 50,
+         TOTAL_TEXT: 'Total assets',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'How much is your home worth?',
@@ -68,6 +70,7 @@ export class HomeConstants {
          TITLE: 'Home Expenses',
          SUBTITLE: '',
          PROGRESS: 75,
+         TOTAL_TEXT: 'Total Liabilities',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Monthly rent/mortgage?',
@@ -107,6 +110,7 @@ export class HomeConstants {
          TITLE: 'Monthly Living Expenses',
          SUBTITLE: '',
          PROGRESS: 100,
+         TOTAL_TEXT: 'Monthly Expenses',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Groceries',
@@ -157,7 +161,8 @@ export class HomeConstants {
    public static BTN = {
       SUBMIT: 'Submit',
       CALCULATE: 'Calculate',
-      GET_QUOTE: 'Get Quote'
+      GET_QUOTE: 'Get Quote',
+      STEP_THREE: 'Step Three'
    };
 
    public static BUDGET_CALCULATOR = {
@@ -216,129 +221,128 @@ export class HomeConstants {
       ]
    };
 
-// Step 4: Health Questions
-public static HEALTHQUESTIONS = [
-   {
-      TITLE: 'Basic Health',
-      PROGRESS: 25,
-      QUESTIONS: [
-         {
-            QUESTIONTEXT: 'Height',
-            INPUT_TYPE: 'Slider',
-            MIN: 1,
-            MAX: 8,
-            STEP: 1,
-            VALUE: 5.11,
-         },
-         {
-            QUESTIONTEXT: 'Weight',
-            INPUT_TYPE: 'Slider',
-            MIN: 0,
-            MAX: 500,
-            STEP: 1,
-            VALUE: 210,
-         },
-         {
-            QUESTIONTEXT: 'Have you used any tobacco products in the last 5 years?',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Have you used any marijuana products in the last 5 years?',
-            INPUT_TYPE: 'Button'
-         }
-      ]
-   },
-   {
-      TITLE: 'Treatments and Medications',
-      QUESTIONS: [
-         {
-            QUESTIONTEXT: 'Have you ever been treated for and/or taken medication for any of the following?',
-            INPUT_TYPE: 'Button',
-         },
-         {
-            QUESTIONTEXT: 'Alchol Abuse',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Anxiety',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Asthma',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Cancer',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Depression',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Diabetes',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Drug Abuse',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Heart Attack',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'High Blood Pressure',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'High Cholesterol',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Sleep Apnea',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Stroke',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Other serious Conditions',
-            INPUT_TYPE: 'Button'
-         },
-      ]
-   },
-   {
-      TITLE: 'Additional Background Information',
-      QUESTIONS: [
-         {
-            QUESTIONTEXT: 'Do you have any parents or siblings who had heart attacks,' +
-               'strokes, cancer, diabetes, or kidney disease before age 70?',
-            INPUT_TYPE: 'Button'
-         },
-         {
-            QUESTIONTEXT: 'Has your driver’s license been suspended or revoked,' +
-               ' or had more than one traffic ticket or accident in the past five years?',
-            INPUT_TYPE: 'Button'
-         }
-      ]
-   },
-   {
-      TITLE: 'Notes',
-      QUESTIONS: [
-         {
-            QUESTIONTEXT: 'If you answered yes to any of these questions, please explain.',
-            INPUT_TYPE: 'Textarea'
-         }
+   // Step 4: Health Questions
+   public static HEALTHQUESTIONS = [
+      {
+         TITLE: 'Basic Health',
+         PROGRESS: 25,
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'Height',
+               INPUT_TYPE: 'Slider',
+               MIN: 1,
+               MAX: 8,
+               STEP: 1,
+               VALUE: 5.11,
+            },
+            {
+               QUESTIONTEXT: 'Weight',
+               INPUT_TYPE: 'Slider',
+               MIN: 0,
+               MAX: 500,
+               STEP: 1,
+               VALUE: 210,
+            },
+            {
+               QUESTIONTEXT: 'Have you used any tobacco products in the last 5 years?',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Have you used any marijuana products in the last 5 years?',
+               INPUT_TYPE: 'Button'
+            }
+         ]
+      },
+      {
+         TITLE: 'Treatments and Medications',
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'Have you ever been treated for and/or taken medication for any of the following?'
+            },
+            {
+               QUESTIONTEXT: 'Alchol Abuse',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Anxiety',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Asthma',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Cancer',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Depression',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Diabetes',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Drug Abuse',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Heart Attack',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'High Blood Pressure',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'High Cholesterol',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Sleep Apnea',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Stroke',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Other serious Conditions',
+               INPUT_TYPE: 'Button'
+            },
+         ]
+      },
+      {
+         TITLE: 'Additional Background Information',
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'Do you have any parents or siblings who had heart attacks,' +
+                  'strokes, cancer, diabetes, or kidney disease before age 70?',
+               INPUT_TYPE: 'Button'
+            },
+            {
+               QUESTIONTEXT: 'Has your driver’s license been suspended or revoked,' +
+                  ' or had more than one traffic ticket or accident in the past five years?',
+               INPUT_TYPE: 'Button'
+            }
+         ]
+      },
+      {
+         TITLE: 'Notes',
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'If you answered yes to any of these questions, please explain.',
+               INPUT_TYPE: 'Textarea'
+            }
 
-      ]
-   }
-];
+         ]
+      }
+   ];
 
-public static HEALTH_HEADER = ' LIFE INSURENCE Medical Questions';
-public static HEALTH_SUB_HEADER = 'Answer a few health Qs';
-public static HEALTH_LINE = 'In order to process your examine we need to';
+   public static HEALTH_HEADER = ' LIFE INSURENCE Medical Questions';
+   public static HEALTH_SUB_HEADER = 'Answer a few health Qs';
+   public static HEALTH_LINE = 'In order to process your examine we need to';
 
    // Step 3: Choose Plan
 
@@ -448,7 +452,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
    public static QUOTE = {
       QUOTE_HEADER: 'Quote Results',
       QUOTE_SUB_HEADER: 'The actual cost for you may be different after your application is processed.',
-      CUST_HEADER :'Customer Rating'
+      CUST_HEADER: 'Customer Rating'
    }
 
 }

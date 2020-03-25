@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-
+  financialBudget = [];
   constructor() { }
 
   users = [
@@ -35,12 +35,42 @@ export class UserService {
       }
     }
   ];
+  totalCalculatedBudget: [
+    {
+      TEXT: 'Monthly income',
+      MIN: 10000,
+      MAX: 100000,
+      STEP: 10000,
+      VALUE: 50000,
+    },
+    {
+      TEXT: 'Monthly expenses',
+      MIN: 10000,
+      MAX: 100000,
+      STEP: 10000,
+      VALUE: 50000,
+    },
+    {
+      TEXT: 'Assets',
+      MIN: 10000,
+      MAX: 100000,
+      STEP: 10000,
+      VALUE: 50000,
+    },
+    {
+      TEXT: 'Liabilities',
+      MIN: 10000,
+      MAX: 100000,
+      STEP: 10000,
+      VALUE: 50000,
+    },
+  ];
 
 
   quotes = [
     {
       productId: 1,
-      prodImg: './../../../../assets/img/dummy.jpg',
+      prodImg: './../../../../assets/img/quote-img.jpg',
       quoteHeader: 'Quote Details',
       quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies. ',
       custAvgRatings: 4,
@@ -71,7 +101,7 @@ export class UserService {
     },
     {
       productId: 2,
-      prodImg: './../../../../assets/img/dummy.jpg',
+      prodImg: './../../../../assets/img/quote-img.jpg',
       quoteHeader: 'Quote Details',
       quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies.  ',
       custAvgRatings: 3,
@@ -107,6 +137,37 @@ export class UserService {
 
   getUser(id: number) {
     return this.users.find(data => data.id === id);
+  }
+
+  getCalculatedBudget() {
+    return this.financialBudget;
+  }
+
+  setCalculatedBudget(budgetList) {
+    for (const iterator of budgetList) {
+      iterator.TOTAL = this.sum(iterator.QUESTIONS);
+      iterator.MIN = iterator.TOTAL - 50000;
+      iterator.MAX = iterator.TOTAL + 50000;
+      iterator.STEP = 10000;
+    }
+    this.financialBudget = budgetList;
+
+  }
+
+  sum(input) {
+    if (toString.call(input) !== '[object Array]') {
+      return false;
+    }
+    let total = 0;
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < input.length; i++) {
+      // tslint:disable-next-line:radix
+      if (isNaN(parseInt(input[i].VALUE))) {
+        continue;
+      }
+      total += Number(input[i].VALUE);
+    }
+    return total;
   }
 
   getQuoteList() {

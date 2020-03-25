@@ -31,13 +31,14 @@
   >
     <mat-accordion>
       <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS">
-        <mat-expansion-panel-header (click)="incrementProgress(item.PROGRESS)">
+        <mat-expansion-panel-header>
           <mat-panel-title>
             {{ item.TITLE }}
           </mat-panel-title>
         </mat-expansion-panel-header>
         <div *ngFor="let que of item.QUESTIONS">
-          <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label>
+          <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
+          <mat-icon matTooltip = {{que.QUESTIONTEXT}} >help_outline</mat-icon>
           <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'"
             name="fontStyle"
             aria-label="Font Style"
@@ -47,7 +48,7 @@
             <mat-button-toggle value="italic" class="no-btn">No</mat-button-toggle>
           </mat-button-toggle-group>
           <form>
-            <mat-form-field *ngIf="que.INPUT_TYPE === 'Textarea'">
+            <mat-form-field *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
               <textarea matInput placeholder="Write a response"></textarea>
             </mat-form-field>
           </form>
@@ -56,8 +57,7 @@
             [max]="que.MAX"
             [min]="que.MIN"
             [step]="que.STEP"
-            [(ngModel)]="que.VALUE"
-          >
+            [(ngModel)]="que.VALUE">
           </mat-slider>
           {{ que.VALUE }}
         </div>
