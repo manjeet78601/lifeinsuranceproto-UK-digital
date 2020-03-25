@@ -9,13 +9,7 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./insurance-calculator.component.scss'],
 })
 export class InsuranceCalculatorComponent implements OnInit {
-  isShow = false;
-  Value;
-  Question;
-  Answer;
-
-  gender = ['welcoome to my room', 'ans is yes u r welcome'];
-  // gender1 = ['Welcome to page'];
+ 
 
   PAGE_SUBTITLE = HomeConstants.PAGE_SUBTITLE;
   PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER;
@@ -28,13 +22,25 @@ export class InsuranceCalculatorComponent implements OnInit {
   PAGE_CONTENT_US1 = HomeConstants.PAGE_CONTENT_US1;
   PAGE_BOTTOM = HomeConstants.PAGE_BOTTOM;
   progress = 0;
-  constructor(private router: Router,
-    private navigationService: MenuService) { }
 
-  ngOnInit() { }
+  PAGE_CONTENT_US = HomeConstants.PAGE_CONTENT_US;
+
+  INSURANCE_CALCULATOR = HomeConstants.INSURANCE_CALCULATOR;
+
+
+ constructor( private router: Router) { }
+
+  ngOnInit() {}
+
   InsuranceBudget() {
-    this.navigationService.setCompletedMenu('Insurance calculator');
     this.router.navigate(['/home/budget']);
+
+  }
+
+  incrementProgress(progress) {
+    if (this.progress < 100 && this.progress < progress) {
+      this.progress = progress;
+    }
 
   }
 
