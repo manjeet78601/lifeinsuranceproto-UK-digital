@@ -161,7 +161,8 @@ export class HomeConstants {
    public static BTN = {
       SUBMIT: 'Submit',
       CALCULATE: 'Calculate',
-      GET_QUOTE: 'Get Quote'
+      GET_QUOTE: 'Get Quote',
+      STEP_THREE: 'Step Three'
    };
 
    public static BUDGET_CALCULATOR = {
