@@ -38,7 +38,7 @@ export class HomeConstants {
          TITLE: 'Personal Assets',
          SUBTITLE: '',
          PROGRESS: 50,
-         TOTAL_TEXT: 'Monthly Expenses',
+         TOTAL_TEXT: 'Total assets',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'How much is your home worth?',
@@ -70,7 +70,7 @@ export class HomeConstants {
          TITLE: 'Home Expenses',
          SUBTITLE: '',
          PROGRESS: 75,
-         TOTAL_TEXT: 'Monthly Income',
+         TOTAL_TEXT: 'Total Liabilities',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Monthly rent/mortgage?',
@@ -110,6 +110,7 @@ export class HomeConstants {
          TITLE: 'Monthly Living Expenses',
          SUBTITLE: '',
          PROGRESS: 100,
+         TOTAL_TEXT: 'Monthly Expenses',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Groceries',

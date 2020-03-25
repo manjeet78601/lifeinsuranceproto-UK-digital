@@ -145,9 +145,12 @@ export class UserService {
 
   setCalculatedBudget(budgetList) {
     for (const iterator of budgetList) {
-      iterator.ADDITION = this.sum(iterator.QUESTIONS);
+      iterator.TOTAL = this.sum(iterator.QUESTIONS);
+      iterator.MIN = iterator.TOTAL - 50000;
+      iterator.MAX = iterator.TOTAL + 50000;
+      iterator.STEP = 10000;
     }
-    console.log(this.financialBudget);
+    this.financialBudget = budgetList;
 
   }
 
