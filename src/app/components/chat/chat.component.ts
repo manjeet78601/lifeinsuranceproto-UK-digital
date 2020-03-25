@@ -1,10 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ChatService, Message } from './../../services/chat.service';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA
-} from '@angular/material/dialog';
+import { ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { scan } from 'rxjs/operators';
 
@@ -19,8 +15,7 @@ export class ChatComponent implements OnInit {
 
   constructor(
     public chat: ChatService,
-    public dialogRef: MatDialogRef<ChatComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    public modalController: ModalController
   ) { }
   ngOnInit() {
     // appends to array after each new message is added to feedSource
@@ -32,4 +27,7 @@ export class ChatComponent implements OnInit {
     this.chat.converse(this.formValue);
     this.formValue = '';
   }
+  closeModal(){
+    this.modalController.dismiss();
+   }
 }

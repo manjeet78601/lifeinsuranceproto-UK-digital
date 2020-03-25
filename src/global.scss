@@ -50,7 +50,10 @@ h5,
 h6 {
   color: #5a5a5a;
 }
-
+.app-name{
+  padding-left: 0;
+  padding-top: 10px;
+}
 .radio-group {
   display: flex;
   flex-direction: row;
@@ -174,6 +177,9 @@ h6 {
 }
 .font-bold {
   font-weight: 500;
+}
+.m-15{
+  margin:15px
 }
 .mr-5 {
   margin-right: 5px;
@@ -397,21 +403,15 @@ ion-buttons {
 }
 
 // chatbox
-.full-width-dialog .mat-dialog-container {
-  max-width: 100vw !important;
-}
+
 .chat-page-header {
-  background-color: aquamarine;
-  padding: 20px 0px;
-  h1 {
-    font-family: proxima nova;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  img {
+ img {
     width: 80px;
     height: 80px;
   }
+}
+.chat-title{
+  position: relative;
 }
 .message {
   border-radius: 50px;
@@ -422,20 +422,18 @@ ion-buttons {
 }
 
 .message.to {
-  background-color: #2095fe;
-  color: #fff;
+  background-color: rgba(32, 239, 254, 0.27);
+  color:black;
   margin-left: 100px;
   text-align: right;
-  border: 2px solid red;
   padding: 10px;
-  border-bottom-left-radius: 25px;
+ border-bottom-left-radius: 25px;
 }
 
 .message.from {
   background-color: #e5e4e9;
   color: #363636;
   margin-right: 100px;
-  border: 2px solid red;
   padding: 10px;
   border-bottom-right-radius: 50px 20px;
 }
@@ -444,21 +442,21 @@ ion-buttons {
 .message.from + .message.from {
   margin-top: -10px;
 }
+
 #add-button {
   top: auto;
   right: 20px;
-  bottom: 49px;
+  bottom: 109px;
   left: auto;
   position: fixed;
 }
-#close-btn {
+.btn-close{
   position: relative;
-  left: 189px;
-  bottom: 39px;
-  cursor: pointer;
+  bottom: 37px;
 }
 .chat-content {
-  margin: 14px;
+  position: relative;
+  top: 13px;
 }
 #message-ip {
   border-radius: 25px;
@@ -467,20 +465,15 @@ ion-buttons {
   width: 330px;
   height: 15px;
 }
-md-dialog.fullscreen-dialog {
-  max-width: 100%;
-  max-height: 100%;
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
+.message-sendIcon{
+  cursor:pointer;
+  position: relative;
+  top: 6px;
+  left: 2px;
 }
-mat-dialog-content {
-  width: 412px;
-  height: 363px;
-  .text-center {
-    text-align: center;
-  }
-}
+
+// end of chat SCSS
+//*******************//
 .custom-mat-btn-toggle-group {
   height: 38px;
   width: 161px;
