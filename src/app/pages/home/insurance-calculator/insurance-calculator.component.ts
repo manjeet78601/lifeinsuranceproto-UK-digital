@@ -9,20 +9,7 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./insurance-calculator.component.scss'],
 })
 export class InsuranceCalculatorComponent implements OnInit {
-<<<<<<< HEAD
-   boolean = true;
-
-
-  gender = ['welcoome to my room' , 'ans is yes u r welcome'];
-=======
-  isShow = false;
-  Value;
-  Question;
-  Answer;
-
-  gender = ['welcoome to my room', 'ans is yes u r welcome'];
-  // gender1 = ['Welcome to page'];
->>>>>>> 5c14a1ad4f3f50b4d5e54e10aff92e718dc2d3e7
+ 
 
   PAGE_SUBTITLE = HomeConstants.PAGE_SUBTITLE;
   PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER;
