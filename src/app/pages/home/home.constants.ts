@@ -252,8 +252,7 @@ export class HomeConstants {
          TITLE: 'Treatments and Medications',
          QUESTIONS: [
             {
-               QUESTIONTEXT: 'Have you ever been treated for and/or taken medication for any of the following?',
-               INPUT_TYPE: 'Button',
+               QUESTIONTEXT: 'Have you ever been treated for and/or taken medication for any of the following?'
             },
             {
                QUESTIONTEXT: 'Alchol Abuse',
