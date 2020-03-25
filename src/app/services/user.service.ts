@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-
+  financialBudget = [];
   constructor() { }
-  financialBudget: any[] = [];
+
   users = [
     {
       id: 1,
@@ -66,6 +66,71 @@ export class UserService {
     },
   ];
 
+
+  quotes = [
+    {
+      productId: 1,
+      prodImg: './../../../../assets/img/dummy.jpg',
+      quoteHeader: 'Quote Details',
+      quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies. ',
+      custAvgRatings: 4,
+      customerRatings: [
+        {
+          id: 1,
+          name: 'Matt',
+          ratings: 5,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        },
+        {
+          id: 2,
+          name: 'George',
+          ratings: 3,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        },
+        {
+          id: 3,
+          name: 'Kelvin',
+          ratings: 3,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        }
+
+      ]
+    },
+    {
+      productId: 2,
+      prodImg: './../../../../assets/img/dummy.jpg',
+      quoteHeader: 'Quote Details',
+      quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies.  ',
+      custAvgRatings: 3,
+      customerRatings: [
+        {
+          id: 8,
+          name: 'John',
+          ratings: 2,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        },
+        {
+          id: 9,
+          name: 'Victor',
+          ratings: 4,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        },
+        {
+          id: 10,
+          name: 'Potter',
+          ratings: 2,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        }
+      ]
+    }
+  ];
+
   getUsersList() {
     return this.users;
   }
@@ -102,4 +167,7 @@ export class UserService {
     return total;
   }
 
+  getQuoteList() {
+    return this.quotes;
+  }
 }

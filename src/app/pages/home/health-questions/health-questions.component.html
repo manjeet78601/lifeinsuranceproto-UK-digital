@@ -9,7 +9,7 @@
     <ion-buttons slot="start" color="dark">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title fxLayout="row" fxLayoutAlign="center center">
+   <ion-title class="ion-text-center app-name">
       <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" />
     </ion-title>
   </ion-toolbar>
@@ -31,29 +31,24 @@
   >
     <mat-accordion>
       <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS">
-        <mat-expansion-panel-header (click)="incrementProgress(item.PROGRESS)">
+        <mat-expansion-panel-header>
           <mat-panel-title>
             {{ item.TITLE }}
           </mat-panel-title>
         </mat-expansion-panel-header>
         <div *ngFor="let que of item.QUESTIONS">
-          <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label>
-          <mat-button-toggle-group
-            *ngIf="que.INPUT_TYPE === 'Button'"
+          <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
+          <mat-icon matTooltip = {{que.QUESTIONTEXT}} >help_outline</mat-icon>
+          <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'"
             name="fontStyle"
             aria-label="Font Style"
-            class="custom-mat-btn-toggle-group mt-30"
-          >
-            <mat-button-toggle value="bold" class="yes-btn"
-              >Yes</mat-button-toggle
-            >
+            class="custom-mat-btn-toggle-group mt-30">
+            <mat-button-toggle value="bold" class="yes-btn">Yes</mat-button-toggle>
             <span class="circle">or</span>
-            <mat-button-toggle value="italic" class="no-btn"
-              >No</mat-button-toggle
-            >
+            <mat-button-toggle value="italic" class="no-btn">No</mat-button-toggle>
           </mat-button-toggle-group>
           <form>
-            <mat-form-field *ngIf="que.INPUT_TYPE === 'Textarea'">
+            <mat-form-field *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
               <textarea matInput placeholder="Write a response"></textarea>
             </mat-form-field>
           </form>
@@ -62,8 +57,7 @@
             [max]="que.MAX"
             [min]="que.MIN"
             [step]="que.STEP"
-            [(ngModel)]="que.VALUE"
-          >
+            [(ngModel)]="que.VALUE">
           </mat-slider>
           {{ que.VALUE }}
         </div>

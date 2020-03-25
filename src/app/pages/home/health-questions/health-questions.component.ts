@@ -22,17 +22,11 @@ export class HealthQuestionsComponent implements OnInit {
   ) { }
 
   ngOnInit() {}
-
   
-  incrementProgress(progress) {
-    if (this.progress < 100 && this.progress < progress) {
-      this.progress = progress;
-    }
-  }
   submit() {
     this.loader.showAutoHideLoader('Please give us a few moments..', 3000);
     setTimeout(() => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/home/quote']);
     }, 3000);
   }
 

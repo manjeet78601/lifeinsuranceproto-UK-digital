@@ -6,7 +6,7 @@ import { MenuController } from '@ionic/angular';
 import { DataAnalyticsService, PageLoadLabel } from './services/data-analytics.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { ChatService } from './services/chat.service';
-import { MatDialog } from '@angular/material/dialog';
+import { ModalController } from '@ionic/angular';
 import { ChatComponent } from './components/chat/chat.component';
 
 @Component({
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     private router: Router,
     private analytic: DataAnalyticsService,
     public chat: ChatService,
-    public dialog: MatDialog
+    public modalController: ModalController
   ) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -65,15 +65,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ChatComponent, {
-      maxWidth: '100vw',
-      maxHeight: '100vh',
-
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+  async openUserModal(){
+    const modal = await this.modalController.create({
+      component: ChatComponent,
+   });
+   return await modal.present();
   }
 }

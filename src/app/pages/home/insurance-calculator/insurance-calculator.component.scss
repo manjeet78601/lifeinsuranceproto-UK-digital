@@ -4,10 +4,8 @@
     font-weight: bold;
     display: block;
     text-align: left;
-  
 }
-
-  .mat-button-toggle-group{
+.mat-button-toggle-group {
       border:none !important;
   }
   .border{
@@ -16,8 +14,7 @@
       float:right;
       text-align: center;
   }
- 
-  .que-subheader1{
+ .que-subheader1{
     font-family: inherit;
     font-size: 16px;
     display: inline-flex;
@@ -29,6 +26,12 @@
 }
 .currencyinput input {
     border: 0;
+}
+.bordertxt{
+    text-align: right;
+    width:50%;
+    border:1px solid grey;
+    height:30px;
 }
 .mat-icon1{
     float: left;

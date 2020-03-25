@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeConstants } from '../../home/home.constants';
 import { Router } from '@angular/router';
-import { ThemePalette } from '@angular/material/core';
 import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
@@ -10,6 +9,13 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./insurance-calculator.component.scss'],
 })
 export class InsuranceCalculatorComponent implements OnInit {
+  isShow = false;
+  Value;
+  Question;
+  Answer;
+
+  gender = ['welcoome to my room', 'ans is yes u r welcome'];
+  // gender1 = ['Welcome to page'];
 
   PAGE_SUBTITLE = HomeConstants.PAGE_SUBTITLE;
   PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER;
@@ -18,8 +24,8 @@ export class InsuranceCalculatorComponent implements OnInit {
   BTTN = HomeConstants.BTTN;
   BUTTON_CONTENT = HomeConstants.BUTTON_CONTENT;
   INSURANCE_RECOMENDATION = HomeConstants.INSURANCE_RECOMENDATION;
-  PAGE_CONTENT_US1 = HomeConstants.PAGE_CONTENT_US1;
   LETS_GETS_TARTED = HomeConstants.LETS_GETS_TARTED;
+  PAGE_CONTENT_US1 = HomeConstants.PAGE_CONTENT_US1;
   PAGE_BOTTOM = HomeConstants.PAGE_BOTTOM;
   progress = 0;
   constructor(private router: Router,
@@ -31,10 +37,9 @@ export class InsuranceCalculatorComponent implements OnInit {
     this.router.navigate(['/home/budget']);
 
   }
-  incrementProgress(progress) {
-    if (this.progress < 100 && this.progress < progress) {
-      this.progress = progress;
-    }
 
-  }
+
 }
+
+
+

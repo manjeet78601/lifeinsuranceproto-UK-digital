@@ -49,7 +49,7 @@ export class FinancialBudgetComponent implements OnInit {
     this.analytic.trackAnalyticData(CategoryName.BUDGET_CALCULATOR, Action.CLICK, 'Calculate');
     this.loader.showAutoHideLoader('Fetching Details...', 3000);
     setTimeout(() => {
-      // this.router.navigate(['/home/total-budget']);
+      this.router.navigate(['/home/total-budget']);
     }, 3000);
   }
 }
