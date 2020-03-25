@@ -27,10 +27,10 @@ export class QuoteComponent implements OnInit {
     this.quotes = this.getQuotes();
     console.log(this.quotes);
   }
-  getMedical() {
-    this.router.navigate(['/home/health']);
-  }
 
+  getPDF() {
+  console.log("get pdf");
+  }
   getQuotes() {
     return this.userService.getQuoteList();
   }
