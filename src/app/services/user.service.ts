@@ -35,6 +35,36 @@ export class UserService {
       }
     }
   ];
+  totalCalculatedBudget: [
+    {
+      TEXT: 'Monthly income',
+      MIN: 10000,
+      MAX: 100000,
+      STEP: 10000,
+      VALUE: 50000,
+    },
+    {
+      TEXT: 'Monthly expenses',
+      MIN: 10000,
+      MAX: 100000,
+      STEP: 10000,
+      VALUE: 50000,
+    },
+    {
+      TEXT: 'Assets',
+      MIN: 10000,
+      MAX: 100000,
+      STEP: 10000,
+      VALUE: 50000,
+    },
+    {
+      TEXT: 'Liabilities',
+      MIN: 10000,
+      MAX: 100000,
+      STEP: 10000,
+      VALUE: 50000,
+    },
+  ];
 
   getUsersList() {
     return this.users;
@@ -49,18 +79,27 @@ export class UserService {
   }
 
   setCalculatedBudget(budgetList) {
-
-    // tslint:disable-next-line:prefer-for-of
-    for (let index = 0; index < budgetList.length; index++) {
-      const sum = budgetList[index].QUESTIONS.reduce((a, b) => {
-        console.log(a, b);
-        return parseInt(a) + parseInt(b);
-      });
-      this.financialBudget.push(sum);
+    for (const iterator of budgetList) {
+      iterator.ADDITION = this.sum(iterator.QUESTIONS);
     }
-
     console.log(this.financialBudget);
 
+  }
+
+  sum(input) {
+    if (toString.call(input) !== '[object Array]') {
+      return false;
+    }
+    let total = 0;
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < input.length; i++) {
+      // tslint:disable-next-line:radix
+      if (isNaN(parseInt(input[i].VALUE))) {
+        continue;
+      }
+      total += Number(input[i].VALUE);
+    }
+    return total;
   }
 
 }

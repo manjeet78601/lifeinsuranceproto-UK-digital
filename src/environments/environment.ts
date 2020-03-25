@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   analyticURL: 'data-analytic-metric-url',
-  dialogflow:{
-    InsurnaceBot:'27f39d358a1a4c5ab00d3a99b5cd0b01',
+  dialogflow: {
+    InsurnaceBot: '27f39d358a1a4c5ab00d3a99b5cd0b01',
   }
 };
 

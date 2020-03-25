@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeConstants, } from './../home.constants';
 import { Router } from '@angular/router';
+import { MenuService } from 'src/app/services/menu.service';
 
 // Datasource for table
 export interface TermInsComparision {
@@ -33,12 +34,14 @@ export class ChoosePlanComponent implements OnInit {
   collapsedSec3 = true;
   DOM_CONSTANTS = HomeConstants.CHOOSE_PLAN;
   constructor(
-    private router: Router
+    private router: Router,
+    private navigationService: MenuService
   ) { }
   ngOnInit() {
 
   }
   getMedical() {
+    this.navigationService.setCompletedMenu('Choosing a plan');
     this.router.navigate(['/home/health']);
   }
 

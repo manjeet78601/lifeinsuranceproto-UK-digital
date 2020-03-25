@@ -23,11 +23,12 @@ export class FinancialBudgetComponent implements OnInit {
     private loader: LoaderService,
     private router: Router,
     private analytic: DataAnalyticsService,
-    private userService: UserService
+    private userService: UserService,
   ) { }
 
   ngOnInit() {
     // console.log(this.CONSTANTS.FINANCIALBUDGET);
+
   }
 
 
@@ -40,32 +41,15 @@ export class FinancialBudgetComponent implements OnInit {
 
   calculateBudget() {
     const totalBudget = [];
-    for (const iterator of this.DOM_CONSTANTS) {
-      totalBudget.push(this.sum(iterator.QUESTIONS));
-    }
+    // for (const iterator of this.DOM_CONSTANTS) {
+    //   totalBudget.push(this.sum(iterator.QUESTIONS));
+    // }
     console.log(totalBudget);
-    // this.userService.setCalculatedBudget(this.DOM_CONSTANTS);
+    this.userService.setCalculatedBudget(this.DOM_CONSTANTS);
     this.analytic.trackAnalyticData(CategoryName.BUDGET_CALCULATOR, Action.CLICK, 'Calculate');
     this.loader.showAutoHideLoader('Fetching Details...', 3000);
     setTimeout(() => {
       // this.router.navigate(['/home/total-budget']);
     }, 3000);
   }
-
-  sum(input) {
-    if (toString.call(input) !== '[object Array]') {
-      return false;
-    }
-    let total = 0;
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < input.length; i++) {
-      // tslint:disable-next-line:radix
-      if (isNaN(parseInt(input[i].VALUE))) {
-        continue;
-      }
-      total += Number(input[i].VALUE);
-    }
-    return total;
-  }
-
 }

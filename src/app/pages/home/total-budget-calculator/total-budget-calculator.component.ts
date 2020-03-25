@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeConstants } from './../home.constants';
 import { Router } from '@angular/router';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-total-budget-calculator',
@@ -14,7 +15,8 @@ export class TotalBudgetCalculatorComponent implements OnInit {
   totals: any[];
 
   constructor(
-    private router: Router
+    private router: Router,
+    private navigationService: MenuService
   ) { }
 
   ngOnInit() {
@@ -27,6 +29,7 @@ export class TotalBudgetCalculatorComponent implements OnInit {
   }
 
   getQuote() {
+    this.navigationService.setCompletedMenu('Financial Budget');
     this.router.navigate(['/home/chooseplan']);
   }
 

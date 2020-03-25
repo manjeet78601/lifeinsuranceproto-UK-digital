@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {HomeConstants} from '../../home/home.constants';
+import { HomeConstants } from '../../home/home.constants';
 import { Router } from '@angular/router';
 import { ThemePalette } from '@angular/material/core';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-insurance-calculator',
@@ -11,7 +12,7 @@ import { ThemePalette } from '@angular/material/core';
 export class InsuranceCalculatorComponent implements OnInit {
 
   PAGE_SUBTITLE = HomeConstants.PAGE_SUBTITLE;
-  PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER ;
+  PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER;
   PAGE_SUB_HEADER = HomeConstants.LIFE_INSURANCE_SUB_HEADER;
   PAGE_CONTENT_QUERIES = HomeConstants.PAGE_CONTENT_QUERIES;
   BTTN = HomeConstants.BTTN;
@@ -21,10 +22,12 @@ export class InsuranceCalculatorComponent implements OnInit {
   LETS_GETS_TARTED = HomeConstants.LETS_GETS_TARTED;
   PAGE_BOTTOM = HomeConstants.PAGE_BOTTOM;
   progress = 0;
- constructor( private router: Router) {}
+  constructor(private router: Router,
+    private navigationService: MenuService) { }
 
-ngOnInit() {}
+  ngOnInit() { }
   InsuranceBudget() {
+    this.navigationService.setCompletedMenu('Insurance calculator');
     this.router.navigate(['/home/budget']);
 
   }
@@ -34,4 +37,4 @@ ngOnInit() {}
     }
 
   }
-    }
+}
