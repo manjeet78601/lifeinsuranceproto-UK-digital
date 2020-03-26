@@ -35,7 +35,60 @@
 }
 .user-financial-info {
     width: 85%;
+    .ques-header {
+        color:#333333;
+        padding: 0 10px;
+        margin:0;
+    }
+    .ques-details {
+        width: 100%;
+        padding: 0 10px;
+        &.my-15 {
+            margin: 15px 0;
+        }
+        .tooltip {
+            color:#6e6e6e;
+            padding-left: 15px;
+            vertical-align: middle;
+        }
+    }
+    .mat-expansion-panel-body{
+        padding-left: 35px;
+    }
+    .form-input-control {
+        text-align: right;
+        font-size: 14px;
+        width: 65%;
+        .mat-form-field-wrapper {
+            padding-bottom: 0 !important;
+          }
+    }
+    .mat-accordian-header {
+        position: relative;
+        .user-icon {
+            position: absolute;
+            right: 20px;
+            vertical-align: middle;
+            top: 18px;
+            color: #767676;
+            &.complete {
+                color: #21BA45;
+            }
+        }
+        .tick-icon {
+            position: absolute;
+            right: 14px;
+            top: 16px;
+            width: 10px;
+            color: #767676;
+            &.complete {
+                color: #21BA45;
+            }
+        }
+    }
+   
 }
 .cap-first-letter::first-letter {
     text-transform: uppercase;
 }
+

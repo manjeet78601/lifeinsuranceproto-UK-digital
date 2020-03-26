@@ -225,6 +225,9 @@ h6 {
 .pt-13 {
   padding-top: 13px;
 }
+.text-right{
+  text-align: right;
+}
 
 // footer
 
@@ -526,6 +529,16 @@ ion-buttons {
     font-weight: 500;
     font-size: 12px;
   }
+}
+.mat-accordion.user-financial-info {
+  .mat-expansion-indicator {
+    margin-right: 15px !important;
+  }
+  // .mat-expanded {
+  //   .mat-expansion-indicator {
+  //     margin-right: 15px !important;
+  //   }
+  // }
 }
 .mat-form-field-appearance-outline .mat-form-field-prefix {
   top: 0em !important;
