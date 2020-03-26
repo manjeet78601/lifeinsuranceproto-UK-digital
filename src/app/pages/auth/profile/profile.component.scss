@@ -35,7 +35,7 @@
 }
 .user-financial-info {
     width: 85%;
-    .ques-header {
+    .header-txt {
         color:#333333;
         padding: 0 10px;
         margin:0;
@@ -45,6 +45,9 @@
         padding: 0 10px;
         &.my-15 {
             margin: 15px 0;
+        }
+        .que-header {
+            color: #000000;
         }
         .tooltip {
             color:#6e6e6e;
@@ -59,6 +62,7 @@
         text-align: right;
         font-size: 14px;
         width: 65%;
+        color: #333333;
         .mat-form-field-wrapper {
             padding-bottom: 0 !important;
           }
