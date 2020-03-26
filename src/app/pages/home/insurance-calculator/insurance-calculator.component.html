@@ -69,20 +69,19 @@
            </header>
 
       <mat-progress-bar  mode="determinate" value="20"  class="mt-10 mb-20"></mat-progress-bar>
-   
-      
-      <mat-card-content  *ngFor="let item of INSURANCE_CALCULATOR"  class="mt-20 mt-10">
+   <mat-card-content  *ngFor="let item of INSURANCE_CALCULATOR"  style="white-space:unset;" class="mt-20 mt-10">
        <div *ngFor="let que of item.QUESTIONS1">
           <mat-label class="que-subheader1">{{ que.INPUT_TYPE}}
          <input matInput type="text" name="currency1"  placeholder="0.00" class="border"></mat-label>
          <mat-icon class="mat-icon1" >help_outline</mat-icon>
         </div>
-  <section class="flex-container mt-20px"style="padding:30px;" fxLayout="column" fxLayoutGap="0.1%"  >
+  <section class="flex-container mt-40"style="padding:30px;" fxLayout="column" fxLayoutGap="10%">
     <mat-card-title  >{{ PAGE_BOTTOM }}</mat-card-title>
     <div class="currencyinput" >$<input type="text" id="txtbox"  placeholder="0.00" class="bordertxt"></div>
-    </section> </mat-card-content></mat-card-title>
+    </section> 
     <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button>
-
+  </mat-card-content></mat-card-title>
+    
     </div>
 </section>
 
