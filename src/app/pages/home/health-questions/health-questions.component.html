@@ -36,9 +36,42 @@
             {{ item.TITLE }}
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <div *ngFor="let que of item.QUESTIONS">
-          <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
-          <mat-icon matTooltip = {{que.QUESTIONTEXT}} >help_outline</mat-icon>
+        <div *ngFor="let que of item.QUESTIONS" >
+        <mat-label class="que-header2 mt-20 mt-10" >{{ que.QUESTIONTEXT }}</mat-label>
+        <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
+        <!--DOB-->
+        <form> 
+            <mat-form-field class="textA" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline"> 
+           
+                <input type="text" placeholder="mm/dd/yyyy" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon></mat-icon>
+               </mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+              
+            </mat-form-field> </form>
+            <!--Sex tab-->
+            <section style="padding-top:2px;">
+            <mat-button-toggle-group *ngIf="que.INPUT_TEXT === 'Button'" name="fontStyle"
+            aria-label="Font Style"
+            class="custom-mat-btn-toggle-group ">
+            <mat-button-toggle value="bold" class="yes-btn">Male</mat-button-toggle>
+            <span class="circle">or</span>
+            <mat-button-toggle value="italic" class="no-btn">Female</mat-button-toggle>
+            </mat-button-toggle-group>
+</section>
+   <!--Height & Weight -->
+   <form  class="example-form">
+      <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT=== 'Textbox'" appearance="outline" >
+        <input type="text"  matInput placeholder="0.00">
+        
+      </mat-form-field>
+      <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT=== 'Textbox'" appearance="outline" >
+      <input type="text"matInput placeholder="0.00">
+      </mat-form-field>
+</form>
+
+
           <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'"
             name="fontStyle"
             aria-label="Font Style"
@@ -52,14 +85,8 @@
               <textarea matInput placeholder="Write a response"></textarea>
             </mat-form-field>
           </form>
-          <mat-slider
-            *ngIf="que.INPUT_TYPE === 'Slider'"
-            [max]="que.MAX"
-            [min]="que.MIN"
-            [step]="que.STEP"
-            [(ngModel)]="que.VALUE">
-          </mat-slider>
-          {{ que.VALUE }}
+        
+                
         </div>
       </mat-expansion-panel>
     </mat-accordion>

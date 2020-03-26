@@ -228,88 +228,109 @@ export class HomeConstants {
          PROGRESS: 25,
          QUESTIONS: [
             {
+               QUESTIONTEXT: 'Date of Birth',
+               INPUT_TEXT1: 'Textbox',
+               ICON: false
+            },
+            {
+               QUESTIONTEXT: 'Sex',
+               INPUT_TEXT: 'Button',
+               ICON: true
+            },
+            {
                QUESTIONTEXT: 'Height',
-               INPUT_TYPE: 'Slider',
-               MIN: 1,
-               MAX: 8,
-               STEP: 1,
-               VALUE: 5.11,
+               INPUT_TEXT: 'Textbox',
+               ICON: false
             },
             {
                QUESTIONTEXT: 'Weight',
-               INPUT_TYPE: 'Slider',
-               MIN: 0,
-               MAX: 500,
-               STEP: 1,
-               VALUE: 210,
+               INPUT_TEXT: 'Textbox',
+               ICON: false
             },
-            {
+           {
                QUESTIONTEXT: 'Have you used any tobacco products in the last 5 years?',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Have you used any marijuana products in the last 5 years?',
-               INPUT_TYPE: 'Button'
-            }
+               INPUT_TYPE: 'Button',
+               ICON: true
+            },
+
          ]
       },
       {
          TITLE: 'Treatments and Medications',
          QUESTIONS: [
             {
-               QUESTIONTEXT: 'Have you ever been treated for and/or taken medication for any of the following?'
+               QUESTIONTEXT: 'Have you ever been treated for and/or taken medication for any of the following?',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Alchol Abuse',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Anxiety',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Asthma',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Cancer',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Depression',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Diabetes',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Drug Abuse',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Heart Attack',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'High Blood Pressure',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'High Cholesterol',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Sleep Apnea',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Stroke',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Other serious Conditions',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
          ]
       },
@@ -319,12 +340,14 @@ export class HomeConstants {
             {
                QUESTIONTEXT: 'Do you have any parents or siblings who had heart attacks,' +
                   'strokes, cancer, diabetes, or kidney disease before age 70?',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             },
             {
                QUESTIONTEXT: 'Has your driver’s license been suspended or revoked,' +
                   ' or had more than one traffic ticket or accident in the past five years?',
-               INPUT_TYPE: 'Button'
+               INPUT_TYPE: 'Button',
+               ICON: true
             }
          ]
       },
@@ -333,13 +356,14 @@ export class HomeConstants {
          QUESTIONS: [
             {
                QUESTIONTEXT: 'If you answered yes to any of these questions, please explain.',
-               INPUT_TYPE: 'Textarea'
+               INPUT_TYPE: 'Textarea',
+               ICON: false
             }
 
          ]
       }
    ];
-
+   public static Weight = 'Weight';
    public static HEALTH_HEADER = ' LIFE INSURENCE Medical Questions';
    public static HEALTH_SUB_HEADER = 'Answer a few health Qs';
    public static HEALTH_LINE = 'In order to process your examine we need to';
@@ -418,7 +442,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
  public static PAGE_CONTENT_US = 'Are You a US Citizen or Residents';
  public static PAGE_CONTENT_US1 = 'Are You a US Citizen or Residents';
  public static LETS_GETS_TARTED = 'Great let s get Started ';
- public static PAGE_BOTTOM = 'By our calculation You will need this total coverage'; 
+ public static PAGE_BOTTOM = 'By our calculation You will need this total coverage';
 
  public static INSURANCE_CALCULATOR = [
    {
@@ -426,21 +450,21 @@ and subtracting your assets you an estimate what your loved ones will need in co
       PROGRESS: 25,
       QUESTIONS1: [
          {
-            INPUT_TYPE: 'Does anyone in your family depend on you financially',
+            INPUT_TYPE: 'Does anyone in your \n  family depend \n on you  financially',
             VALUE: '50000',
          },
          {
-            INPUT_TYPE: 'Does anyone in your family depend on you financially',
+            INPUT_TYPE: 'Does anyone in your \n family depend \n on you  financially',
             VALUE: '50000',
          },
 
          {
-            INPUT_TYPE: 'Does anyone in your family depend on you financially',
+            INPUT_TYPE: 'Does anyone in your \n family depend \n on you  financially',
             VALUE: '50000',
 
          },
          {
-            INPUT_TYPE: 'Does anyone in your family depend on you financially',
+            INPUT_TYPE: 'Does anyone in your \n family depend  \n on you  financially',
             VALUE: '50000',
 
          },
@@ -453,6 +477,6 @@ and subtracting your assets you an estimate what your loved ones will need in co
       QUOTE_HEADER: 'Quote Results',
       QUOTE_SUB_HEADER: 'The actual cost for you may be different after your application is processed.',
       CUST_HEADER: 'Customer Rating'
-   }
+   };
 
 }
