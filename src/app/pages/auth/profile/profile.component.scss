@@ -91,4 +91,22 @@
 .cap-first-letter::first-letter {
     text-transform: uppercase;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.chart {
+    width: 100%;
+}
+.r-text{
+    font-size: 14px;
+    color: #cccccc;
+    text-align: center;
+    line-height: 1;
+}
