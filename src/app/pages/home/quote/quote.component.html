@@ -31,15 +31,15 @@
       <h2 class="quo-sub-header">{{quo.quoteDetails}}</h2>
       <ion-grid>
         <ion-row>
-          <ion-col size="6">
+          <ion-col size="9">
             <div class="exp-header"> {{DOM_CONSTANTS.CUST_HEADER}}
             </div>
           </ion-col>
-          <ion-col>
+          <ion-col size="3">
             <div>
               <ion-icon class='heart-icon' *ngFor="let r of ' '.repeat(quo.custAvgRatings).split('')" name="heart">
               </ion-icon>
-              <ion-icon *ngFor="let r of ' '.repeat(5-quo.custAvgRatings).split('')" name="heart-outline">
+              <ion-icon class="heart-grey-icon" *ngFor="let r of ' '.repeat(5-quo.custAvgRatings).split('')" name="heart">
               </ion-icon>
             </div>
           </ion-col>
@@ -54,22 +54,20 @@
       <mat-card-content *ngIf="!collapsedSec1">
         <ion-grid>
           <ion-row *ngFor="let cus of quo.customerRatings">
-            <ion-col size="6">
+            <ion-col size="9">
               <ion-row>
-                <div class="exp-header">
-                  {{cus.name}}
+                <div>
+                  <span class="label-inline exp-header">{{cus.name}}</span>
+                  <span class="label-inline btn-mat-card">{{cus.timestamp}}</span>
                 </div>
-              </ion-row>
-              <ion-row>
                 <div class="comment-txt">{{cus.comment}}</div>
               </ion-row>
             </ion-col>
-            <ion-col class="btn-mat-card">{{cus.timestamp}}</ion-col>
             <ion-col size="3">
               <div>
                 <ion-icon class='heart-icon' *ngFor="let r of ' '.repeat(cus.ratings).split('')" name="heart">
                 </ion-icon>
-                <ion-icon class='heart-icon' *ngFor="let r of ' '.repeat(5-cus.ratings).split('')" name="heart-outline">
+                <ion-icon class="heart-grey-icon" *ngFor="let r of ' '.repeat(5-cus.ratings).split('')" name="heart">
                 </ion-icon>
               </div>
             </ion-col>

@@ -8,7 +8,7 @@
     <ion-buttons slot="start" color="dark">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-   <ion-title class="ion-text-center app-name">
+    <ion-title class="ion-text-center app-name">
       <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
     </ion-title>
   </ion-toolbar>
@@ -17,152 +17,95 @@
 <ion-content>
   <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <header fxLayoutAlign="center center">
-      <h2 class="header-title">{{DOM_CONSTANTS.PLAN_HEADER }}</h2>
+      <h2 class="header-title">{{DOM_CONSTANTS.PLAN_HEADER}}</h2>
     </header>
-    <p fxLayoutAlign="center center" class="plan-sub-header">{{DOM_CONSTANTS.PLAN_SUB_HEADER }}</p>
-  </section>
-  <!--Section: Term Insurance-->
-  <section class="wrapper-plan " fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <mat-card class="plan-card mat-elevation-z0 ">
-      <div fxLayout="column" class="quote-img">
-        <img src="./../../../../assets/img/dummy.jpg" alt="Dummy Image">
-      </div>
-      <mat-card-content *ngIf="collapsedSec1" class="mat-card-content-width">
-        <header fxLayoutAlign="center center">
-          <h2 class="exp-header">{{DOM_CONSTANTS.TERM_INS_HEADER }}</h2>
-        </header>
-        <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
-          <button mat-flat-button (click)="collapsedSec1=false"
-            class="btn-mat-card">{{DOM_CONSTANTS.PLAN_BTN.READ_MORE}}</button>
-        </mat-card-actions>
-      </mat-card-content>
-      <mat-card-content *ngIf="!collapsedSec1" class="mat-card-content-width">
-        <div class="plan-mat-card-title">{{DOM_CONSTANTS.TERM_INS__EXPANSION_HEADER}}</div>
-        <div class="mat-card-label" [innerHtml]=DOM_CONSTANTS.TERM_INS__EXPANSION_BODY></div>
-        <mat-card-actions fxLayout="column" fxLayoutAlign="center start">
-          <button mat-flat-button (click)="collapsedSec1=true"
-            class="btn-mat-card">{{DOM_CONSTANTS.PLAN_BTN.MINIMIZE}}</button>
-        </mat-card-actions>
-      </mat-card-content>
-    </mat-card>
-  </section>
+    <p fxLayoutAlign="center center" class="plan-content txt-align">{{DOM_CONSTANTS.PLAN_SUB_HEADER }}</p>
 
-  <!--Section: Term Insurance-->
+    <!--Plans accordion-->
+    <mat-accordion class="mt-50">
+      <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS.PLANS">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="plan-content">
+            {{ item.EXP_HEADER }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="plan-content" [innerHtml]=item.EXP_BODY></div>
+      </mat-expansion-panel>
+    </mat-accordion>
 
-  <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <mat-card class="plan-card mat-elevation-z0">
-      <div fxLayout="column" class="quote-img">
-        <img src="./../../../../assets/img/dummy.jpg" alt="Dummy Image">
-      </div>
-      <mat-card-content *ngIf="collapsedSec2" class="mat-card-content-width">
-        <header fxLayoutAlign="center center">
-          <h2 class="exp-header">{{DOM_CONSTANTS.PERM_INS_HEADER}}</h2>
-        </header>
-        <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
-          <button mat-flat-button (click)="collapsedSec2=false"
-            class="btn-mat-card">{{DOM_CONSTANTS.PLAN_BTN.READ_MORE}}</button>
-        </mat-card-actions>
-      </mat-card-content>
-      <mat-card-content *ngIf="!collapsedSec2" class="mat-card-content-width">
-        <div class="plan-mat-card-title">{{DOM_CONSTANTS.PERM_INS__EXPANSION_HEADER}}</div>
-        <div class="mat-card-label" [innerHtml]=DOM_CONSTANTS.PERM_INS__EXPANSION_BODY></div>
-        <mat-card-actions fxLayout="column" fxLayoutAlign="center start">
-          <button mat-flat-button (click)="collapsedSec2=true"
-            class="btn-mat-card">{{DOM_CONSTANTS.PLAN_BTN.MINIMIZE}}</button>
-        </mat-card-actions>
-      </mat-card-content>
-    </mat-card>
-  </section>
+    <!--Comparision Tool-->
 
-  <!--Section: Life+ -->
-  <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <mat-card class="plan-card mat-elevation-z0">
-      <div fxLayout="column" class="quote-img">
-        <img src="./../../../../assets/img/dummy.jpg" alt="Dummy Image">
-      </div>
-      <mat-card-content *ngIf="collapsedSec3" class="mat-card-content-width">
-        <div class="header-title">{{DOM_CONSTANTS.LIFE_PLUS_HEADER}}</div>
-        <p class="mat-card-label">{{DOM_CONSTANTS.LIFE_PLUS_SUB_HEADER}}</p>
-        <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
-          <button mat-flat-button (click)="collapsedSec3=false"
-            class="btn-mat-card">{{DOM_CONSTANTS.PLAN_BTN.READ_MORE}}</button>
-        </mat-card-actions>
-      </mat-card-content>
-      <mat-card-content *ngIf="!collapsedSec3" class="mat-card-content-width">
-        <div class="plan-mat-card-title">{{DOM_CONSTANTS.LIFE_PLUS_HEADER}}</div>
-        <div class="mat-card-label" [innerHtml]=DOM_CONSTANTS.LIFE_PLUS_EXPANSION_BODY></div>
-        <mat-card-actions fxLayout="column" fxLayoutAlign="center start">
-          <button mat-flat-button (click)="collapsedSec3=true"
-            class="btn-mat-card">{{DOM_CONSTANTS.PLAN_BTN.MINIMIZE}}</button>
-        </mat-card-actions>
-      </mat-card-content>
-    </mat-card>
-  </section>
-
-  <!--Comparision Table -->
-  <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center">
-    <header fxLayoutAlign="center center">
-      <p class="header-title comp-header-title">{{DOM_CONSTANTS.COMP_TBL_HEADER}}</p>
+    <header fxLayoutAlign="center center" fxLayoutGap="30px">
+      <p class="mt-50 header-title pt-13 ">{{DOM_CONSTANTS.COMP_TBL_HEADER}}</p>
     </header>
-    <div>
-      <mat-table [dataSource]="dataSource" *ngIf="dataSource.length > 0" class="mat-elevation-z0">
-        <ng-container matColumnDef="comparison">
-          <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-          <mat-cell *matCellDef="let element" class="mat-cell-content"> {{element.comparison}} </mat-cell>
-        </ng-container>
 
-        <!-- Term Column -->
-        <ng-container matColumnDef="term">
-          <mat-header-cell *matHeaderCellDef> Term </mat-header-cell>
-          <mat-cell *matCellDef="let element">
-            <ng-container *ngIf="element.term == 1">
-              <mat-icon class="green-icon">done</mat-icon>
-            </ng-container>
-          </mat-cell>
-        </ng-container>
+    <mat-table [dataSource]="dataSource" *ngIf="dataSource.length > 0" class="mat-elevation-z0 mt-10">
+      <ng-container matColumnDef="comparison">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="mat-cell-content"> {{element.comparison}} </mat-cell>
+      </ng-container>
 
-        <!-- Perm Column -->
-        <ng-container matColumnDef="perm">
-          <mat-header-cell *matHeaderCellDef> Perm </mat-header-cell>
-          <mat-cell *matCellDef="let element">
-            <ng-container *ngIf="element.perm == 1 ">
-              <mat-icon class="green-icon">done</mat-icon>
-            </ng-container>
-          </mat-cell>
-        </ng-container>
+      <!-- Term Column -->
+      <ng-container matColumnDef="term">
+        <mat-header-cell *matHeaderCellDef> Term </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <ng-container *ngIf="element.term == 1">
+            <mat-icon class="green-icon">done</mat-icon>
+          </ng-container>
+        </mat-cell>
+      </ng-container>
 
-        <!-- Life+ Column -->
-        <ng-container matColumnDef="lifeplus">
-          <mat-header-cell *matHeaderCellDef> Life+ </mat-header-cell>
-          <mat-cell *matCellDef="let element">
-            <ng-container *ngIf="element.lifeplus == 1">
-              <mat-icon class="green-icon">done</mat-icon>
-            </ng-container>
-          </mat-cell>
-        </ng-container>
+      <!-- Perm Column -->
+      <ng-container matColumnDef="perm">
+        <mat-header-cell *matHeaderCellDef> Perm </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <ng-container *ngIf="element.perm == 1 ">
+            <mat-icon class="green-icon">done</mat-icon>
+          </ng-container>
+        </mat-cell>
+      </ng-container>
 
-        <mat-header-row *matHeaderRowDef="displayedColumns" class="mat-cell-content"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-      </mat-table>
-    </div>
+      <!-- Variable Column -->
+      <ng-container matColumnDef="var">
+        <mat-header-cell *matHeaderCellDef> Variable </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <ng-container *ngIf="element.var == 1 ">
+            <mat-icon class="green-icon">done</mat-icon>
+          </ng-container>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Life+ Column -->
+      <ng-container matColumnDef="lifeplus">
+        <mat-header-cell *matHeaderCellDef> Life+ </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <ng-container *ngIf="element.lifeplus == 1">
+            <mat-icon class="green-icon">done</mat-icon>
+          </ng-container>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns" class="mat-cell-content"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
   </section>
 
   <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
-    <p>{{DOM_CONSTANTS.STEP_FOUR_HEADER}}</p>
-    <button mat-flat-button color="primary" (click)="getMedical()">{{DOM_CONSTANTS.PLAN_BTN.STEP_FOUR}}</button>
+    <p class="plan-content txt-align">{{DOM_CONSTANTS.COVG_HEADER}}</p>
+    <button mat-flat-button color="primary" (click)="getInsCal()">{{BTN.INS_CAL}}</button>
   </section>
 
-
+  <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">
-         77 Water St 8th Floor,<br/> Manhattan, NY 10005
-     </ion-label>
-   </ion-text>
-   <ion-text class="align-item-bottom">
-     <ion-label class="fl-footer-content">
-      Copyright Life+ © 2020
-     </ion-label>
-   </ion-text>
-  </footer> 
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
 </ion-content>

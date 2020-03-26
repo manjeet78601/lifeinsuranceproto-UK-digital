@@ -1,107 +1,53 @@
-.choose-plan-img {
-  width: 302px;
-  height: 240px;
+.wrapper-plan {
+  padding: 10px 20px;
 }
-.plan-card {
-  max-width: 400px;
-  background-color: #f8f8f8;
-}
-.plan-sub-header {
+.plan-content {
   font-family: Proxima Soft;
   font-size: 16px;
-  color: #070707;
+  color: #070707 !important;
+}
+.txt-align {
   text-align: center;
 }
-
+.header-title {
+  font-family: Playfair Display;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000000;
+}
+.mat-table {
+  overflow: auto;
+  height: 353px;
+  width: 330px;
+  border-top: 1px solid #e2e2e3;
+  border-right: 1px solid #e2e2e3;
+}
 .green-icon {
   color: green;
   width: 10px;
   height: 15px;
   font-weight: bold;
+  margin-left: 15px;
 }
-
-.mat-table {
-  overflow: auto;
-  height: 306px;
-  width: 302px;
-  border: 2px solid #e2e2e3;
-  margin-top: 20px;
-}
-.mat-card {
-  margin-top: 10px;
-  padding: 0px !important;
-}
-
-.wrapper-plan {
-  padding: 10px 20px;
-}
-
 mat-header-cell {
   background: #fafafb;
 }
-
 .mat-row:nth-child(odd) {
   background-color: #fafafb;
 }
-
+mat-header-cell {
+  padding: 2px !important;
+  border-left: 1px solid #e2e2e3;
+}
 mat-cell {
   font-size: 11px;
   color: #1a084c;
+  padding: 2px !important;
+  border-left: 1px solid #e2e2e3;
 }
 .mat-cell-content {
   font-family: Proxima Soft;
   font-size: 13px;
   color: #000000;
   text-align: left;
-}
-
-.btn-mat-card {
-  font-family: SegoeUI;
-  font-size: 16px;
-  background-color: #f8f8f8;
-  color: #cccccc;
-}
-
-.plan-mat-card-title {
-  font-family: SegoeUI;
-  font-weight: bold;
-  font-size: 24px;
-  background-color: #fafafb;
-  color: #000000;
-  margin-top: 10px;
-}
-.mat-card-label {
-  font-family: Proxima Soft;
-  font-size: 16px;
-  color: #000000;
-  margin-top: 10px;
-}
-
-.mat-card-content-width {
-  padding-left: 20px;
-  margin-right: 40px;
-}
-
-.mat-card-content > :first-child {
-  margin-top: 30px;
-}
-
-.header-title {
-  font-family: Playfair Display;
-  font-weight: bold;
-  font-size: 24px;
-  color: #000000;
-  margin-top: 10px;
-}
-
-.exp-header {
-  font-family: Proxima Soft;
-  font-size: 16px;
-  font-weight: bold;
-  color: #070707;
-  text-align: center;
-}
-.comp-header-title {
-  padding-top: 10px;
-  width: 302px;
 }

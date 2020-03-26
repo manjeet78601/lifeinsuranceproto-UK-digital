@@ -385,56 +385,72 @@ export class HomeConstants {
 
    // Step 3: Choose Plan
 
-   public static CHOOSE_PLAN = {
+   public static CHOOSE_PLANS = {
       PLAN_HEADER: 'Term vs. Perm ',
       PLAN_SUB_HEADER: 'Let us help you learn what insurance works best for you and your family.',
-      TERM_INS_HEADER: 'TERM INSURANCE',
-      TERM_INS__EXPANSION_HEADER: 'What is term life insurance?',
-      TERM_INS__EXPANSION_BODY: `<p>Term life insurance is the most popular form of life insurance.
-      You can buy life insurance that will last 5, 10, 15, 20, or 30 years.
-      If you pass away <strong>before </strong>the term has expired, your beneficiaries will be paid out the <strong>full amount</strong>.
-      If you pass away <strong>after </strong>the term has expired, your beneficiaries <strong>will not be paid any amount</strong>.
-      </p><p>Keep in mind that some term life policies have an <strong>age limit</strong>.
-      For example, some companies will only cover you up to age 60.
-      If you are 50, you are <strong>ineligible</strong> to purchase a term life policy for more than 10 years.
-      This is an important consideration, given that the average life expectancy
-      for <strong>men is 76.3 years</strong> and for <strong>women is 81.4 years</strong> in 2019.</p>`,
-      PLAN_BTN: {
-         READ_MORE: 'Read More',
-         MINIMIZE: 'Minimize',
-         STEP_FOUR: ' STEP FOUR'
-      },
-      PERM_INS_HEADER: 'PERMANENT INSURANCE',
-      PERM_INS__EXPANSION_HEADER: 'What is permanent life insurance?',
-      PERM_INS__EXPANSION_BODY: `<p>Permanent life insurance has multiple options, some of which are based in the market.
-      Essentially, permanent life insurance also functions as a savings account <strong>(cash value)</strong>.
-      Each month, you contribute a portion to the premium and a portion to the cash value.
-      Permanent life insurance is much less popular because the cost can be <strong>5x-15x&nbsp;</strong>the cost of term life insurance.
-      </p><p>The advantage of a cash value component is the <strong>option to use that money for personal
-      expenses&nbsp;</strong>or <strong>take a loan</strong> from that amount.If you withdraw,
-      that <strong>money may be taxed</strong>, and if you take out a loan, that amount
-      will be <strong>deducted from the death benefit</strong> if that loan is not paid back.&nbsp;</p><p>Permanent
-      life insurance is best for people with <strong>special needs children</strong> and <strong>lifelong dependents,</strong> high
-      net-worth individuals who are looking to build tax-free inheritance, and <strong>seniors&nbsp;</strong>who have outlived term\
-      life insurance or <strong>don’t have enough savings</strong> for final expenses.</p>`,
-      LIFE_PLUS_HEADER: 'How is Life+',
-      LIFE_PLUS_SUB_HEADER: 'Life+ insurance is a hybrid of term life and permanent life insurance. ',
-      LIFE_PLUS_EXPANSION_BODY: `<p>Life+ insurance is a hybrid of term life and permanent life insurance.
-      insurance of Life+ provides you <strong>term life insurance</strong>, plus an option to save money
-      that will <strong>stay with you</strong> even <strong>after your term expires</strong>.
-      If you pass away before the term expires, the <strong>cash value&nbsp;</strong>will be
-      dispersed to your beneficiaries <strong>in addition to the term life policy</strong>.
-      \If you pass away <strong>after</strong> the term expires, the <strong>cash value will
-      be dispersed</strong> but you <strong>will not be paid any amount from the term life policy</strong>.
-      That way, you have some financial safety for end of life expenses.</p><p>Similar to
-      permanent life insurance, you have the option to contribute to your cash value every month, and you
-      have the flexibility to decide how much to contribute every month. That way, you are not subject to the
-      exorbitant prices of permanent life insurance.</p><p>At Life+, you will not have access to the cash value.
-      It will only be dispersed at the time of your passing, or upon the term expiration (whichever comes first).</p>`,
+      COVG_HEADER: 'Ready to figure out how much coverage you need?',
       COMP_TBL_HEADER: 'Insurance Coverage Comparison Tool',
-      STEP_FOUR_HEADER: 'Ready to figure out your budget?',
-
+      PLANS: [
+         {
+            EXP_HEADER: 'What is term life insurance?',
+            EXP_BODY: `<p>Term life insurance a popular form of life insurance. 
+         You can buy life insurance that will last anywhere between 1-30 years. 
+         If you pass away before the policy has expired, your beneficiaries will 
+         be paid out the death benefit. If you wish to continue having life insurance 
+         after the policy expires, you could either renew your policy or switch 
+         roviders entirely, at a new higher age adjusted premium rate. It is also 
+         important to keep in mind that some policies have a 10-year policy cap restriction 
+         past the age of 50.</p>
+         <p>Term life insurance is a more affordable option than other forms of insurance 
+         because of its fixed time. It is suitable if you are looking to protect dependents 
+         for a limited period of time.</p>
+         <p>Term life insurance is an appropriate option if you are not seeking a savings 
+         component and would like straight-forward protection at a lower premium.</p>`,
+         },
+         {
+            EXP_HEADER: 'What is permanent life insurance?',
+            EXP_BODY: `<p>Permanent life insurance provides you with lifelong 
+      protection as long as you pay your set premium every month. Each time you pay 
+      the monthly premium, a portion goes to your death benefit and a portion is set aside 
+      to your cash value account. The cash value functions as a savings account. When you pass 
+      away, your family will receive the full un-taxed death benefit. Even though permanent life 
+      insurance guarantees coverage for life, it is less popular because it is more expensive 
+      than term life insurance.</p><p>The advantage of a cash value component is the option 
+      to use that money for personal expenses or take a loan from that amount. If you withdraw, 
+      that money may be taxed, and if you take out a loan, that amount will be deducted from the 
+      death benefit if the loan is not paid back.</p><p>If you have living dependents, are looking
+       to build a tax-advantaged inheritance and/or have outlived your term life policy, 
+       permanent life insurance may be for you.</p>`
+         },
+         {
+            EXP_HEADER: 'What is variable life insurance?',
+            EXP_BODY: `<p>Like permanent life insurance, variable life insurance provides 
+      lifelong coverage, and the premium consists of contributions for the death benefit 
+      and cash value. In the case of variable life insurance, the cash value operates similar 
+      to a mutual fund. The cash value is invested by professional fund managers; over time 
+      the cash value will fluctuate based on your investment options. The cash invested grows 
+      tax-free. However, if you withdraw from the cash value, you may incur taxes and fees.</p>
+      <p>Variable life insurance is suitable for those seeking an additional investment 
+      component in addition to life insurance.</p>`
+         },
+         {
+            EXP_HEADER: 'How is Life+ different?',
+            EXP_BODY: `<p>Life+ insurance is a hybrid of term life and permanent life insurance. 
+      insurance of Life+ provides you term life insurance, plus an option to save money that 
+      will stay with you even after your term expires. If you pass away before the term expires, 
+      the cash value will be dispersed to your beneficiaries in addition to the term life 
+      policy. If you pass away after the term expires, the cash value will be dispersed 
+      but you will not be paid any amount from the term life policy. That way, you have 
+      some financial safety for end of life expenses.</p><p>Similar to permanent life 
+      insurance, you have the option to contribute to your cash value every month, and 
+      you have the flexibility to decide how much to contribute every month. That way, 
+      you are not subject to the exorbitant prices of permanent life insurance.</p>
+      <p>At Life+, you will not have access to the cash value. It will only be dispersed 
+      at the time of your passing, or upon the term expiration (whichever comes first).</p>`
+         }
+      ]
    };
+
 
    // Insurance calculator
    public static PAGE_SUBTITLE = 'Life Insurance Calculators';
@@ -448,7 +464,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
       INSURANCE: 'Step Two',
       READ_MORE: 'Read More',
       CLOSE: 'Close',
-      GET_QUOTE: 'GET QUOTE'
+      INS_CAL: 'INSURANCE CALCULATOR'
    };
 
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
@@ -514,11 +530,45 @@ and subtracting your assets you an estimate what your loved ones will need in co
          ]
       };
 
-   // Quote
+   // Step4 : Quote
+
    public static QUOTE = {
       QUOTE_HEADER: 'Quote Results',
       QUOTE_SUB_HEADER: 'The actual cost for you may be different after your application is processed.',
       CUST_HEADER: 'Customer Rating'
+   };
+
+   // Facial scan
+   public static FACIAL_SCAN = {
+      PAGE_HEADER: 'Facial Recognition',
+      PAGE_SUB_TEXT: 'Additional Health Check',
+      PAGE_SUB_HEADER: 'Look directly at the camera, and let us do the rest!',
+   };
+
+   // Compliance
+   public static COMPLIANCE = {
+      PAGE_HEADER: 'Contract',
+      PAGE_SUB_TEXT: ` <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Nisl vel pretium lectus quam id Leo in vitae turpis. Pellentesque sit amet porttitor eget dolor
+      morbi non. Tellus at urna condimentum mattis pellentesque id nibh tortor. Fermentum odio eu feugiat pretium nibh
+      ipsum consequat nisl.&nbsp;</p>
+    <p>Massa sed elementum tempus egestas sed sed risus pretium quam. Sed enim ut sem viverra aliquet eget sit amet
+      tellus. Dignissim diam quis enim lobortis scelerisque fermentum. Tellus rutrum tellus pellentesque eu tincidunt.
+      Duis at tellus at urna condimentum. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Integer eget
+      aliquet nibh praesent tristique. Tristique et egestas quis ipsum suspendisse ultrices gravida.</p>
+    <p>Eget nunc scelerisque viverra mauris in aliquam sem fringilla ut. Tellus in hac habitasse platea. Sagittis nisl
+      rhoncus mattis rhoncus urna neque viverra justo. Lacus sed turpis tincidunt id aliquet risus. Sit amet cursus
+      sit amet dictum sit amet justo donec. Malesuada pellentesque elit eget gravida cum.</p>
+    <p>Condimentum id venenatis a condimentum vitae sapien. Diam in arcu cursus euismod quis viverra nibh. Pharetra
+      diam sit amet nisl suscipit adipiscing bibendum est. Ornare quam viverra orci sagittis eu. Arcu dui vivamus arcu
+      felis bibendum ut. Elementum pulvinar etiam non quam. Massa tempor nec feugiat nisl pretium fusce id. Consequat
+      mauris nunc congue nisi vitae. Tortor dignissim convallis aenean et tortor. Integer malesuada nunc vel risus
+      commodo. Ultrices eros in cursus turpis massa tincidunt dui ut. Ut tortor pretium viverra suspendisse. Non
+      blandit massa enim nec dui nunc mattis enim. Ornare aenean euismod elementum nisi quis eleifend quam. Tortor
+      aliquam nulla facilisi cras. Eget nulla facilisi etiam dignissim. Purus in massa tempor nec feugiat. Sit amet
+      luctus venenatis lectus magna fringilla. Enim nec dui nunc mattis enim ut tellus elementum.</p>
+`,
+      SIGN_TXT: 'eSignature'
    };
 
 }

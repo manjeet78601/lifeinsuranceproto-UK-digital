@@ -1,0 +1,51 @@
+<!-- Header -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- End of Header -->
+<ion-content>
+  <section class="wrapper ion-text-center content" fxLayout="column" fxLayoutAlign="center center">
+    <header class="mt-10">
+      <p class="facial-header">{{DOM_CONSTANTS.PAGE_HEADER}}</p>
+      <p class="header-title">{{DOM_CONSTANTS.PAGE_SUB_TEXT}}</p>
+      <p class="plan-content">{{DOM_CONSTANTS.PAGE_SUB_HEADER}}</p>
+    </header>
+    <mat-card class="camera-section">
+      <ion-img [src]="capturedSnapURL"></ion-img>
+    </mat-card>
+    <div class="mt-30">
+      <button mat-flat-button color="primary" (click)="onSubmit()">SUBMIT</button>
+      <ion-label class="plan-content txt-or"> OR </ion-label>
+      <button mat-flat-button (click)="onScan($event)">
+        <img class="photo-img" src="./../../../assets/img/capture-photo.png">
+        <div class="btn-retake">Retake</div>
+      </button>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+  <!-- End of footer -->
+</ion-content>

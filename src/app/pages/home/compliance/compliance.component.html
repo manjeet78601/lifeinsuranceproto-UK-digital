@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--Quotes Header-->
+  <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header fxLayoutAlign="center center">
+      <h2 class="header-title mt-50">{{DOM_CONSTANTS.PAGE_HEADER}}</h2>
+    </header>
+    <!--Quotes-->
+    <mat-card class="m-15">
+      <div class="comp-content" [innerHtml]=DOM_CONSTANTS.PAGE_SUB_TEXT></div>
+    </mat-card>
+  </section>
+  <div class="m-15 comp-content" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
+    <p>{{DOM_CONSTANTS.SIGN_TXT}}</p>
+    <input class="comp-content"  type="text" placeholder="First and last name" id="name">
+  </div>
+  <!--Footer-->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+</ion-content>
