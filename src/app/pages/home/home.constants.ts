@@ -161,7 +161,8 @@ export class HomeConstants {
    public static BTN = {
       SUBMIT: 'Submit',
       CALCULATE: 'Calculate',
-      GET_QUOTE: 'Get Quote'
+      GET_QUOTE: 'Get Quote',
+      STEP_THREE: 'Step Three'
    };
 
    public static BUDGET_CALCULATOR = {
@@ -414,9 +415,65 @@ and subtracting your assets you an estimate what your loved ones will need in co
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
    public static BUTTON_CONTENT = `you can probably do without Life insurance right now however.
  \if you think you have a unique circumstance that requires it. it costsnothing to compare rates `;
+   public static PAGE_CONTENT_US = 'Are You a US Citizen or Residents';
    public static PAGE_CONTENT_US1 = 'Are You a US Citizen or Residents';
    public static LETS_GETS_TARTED = 'Great let s get Started ';
    public static PAGE_BOTTOM = 'By our calculation You will need this total coverage';
+
+   public static INSURANCE_CALCULATOR =
+      {
+         TITLE: 'Basic Health',
+         PROGRESS: 25,
+         QUESTIONS: [
+            {
+               INPUT_TYPE: '1. How much annual income would you need to replace if something were to happen to you?',
+               VALUE: 0,
+               isAmt: true
+            },
+            {
+               INPUT_TYPE: '2. How many years would your family need to replace your income and the services you provide if you died suddenly?',
+               VALUE: 0,
+               isAmt: false
+            },
+
+            {
+               INPUT_TYPE: '3. How debt do you have?',
+               VALUE: 0,
+               isAmt: true
+
+            },
+            {
+               INPUT_TYPE: '4. How much money do you want to provide for your children’s education or future needs?',
+               VALUE: 0,
+               isAmt: true
+
+            },
+            {
+               INPUT_TYPE: '5. How much would your family need to pay for your funeral?',
+               VALUE: 0,
+               isAmt: true
+            },
+            {
+               INPUT_TYPE: '6. How much money do you have in savings and investment accounts? ',
+               VALUE: 0,
+               isAmt: true
+            },
+
+            {
+               INPUT_TYPE: '7. How much life insurance do you already have? ',
+               VALUE: 0,
+               isAmt: true
+
+            },
+            {
+               INPUT_TYPE: '8. How much after-tax income does your family have annually in addition to your income?',
+               VALUE: 0,
+               isAmt: true
+
+            },
+         ]
+      };
+
    //Quote
    public static QUOTE = {
       QUOTE_HEADER: 'Quote Results',

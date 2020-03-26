@@ -13,7 +13,8 @@ export const properties = {
     terms_cond: 'I agree to the terms and conditions',
     submit_btn: 'Submit',
     welcome_header: 'Welcome to Life+',
-    welcome_subheader: 'Thank you for working with us! We sent you an email for verification.',
+    welcome_subheader: 'Thank you for working with us!',
+    welcome_subheader1: 'We sent you an email for verification.',
     resent_verification_link: 'Resend verification code',
     // Profile section
     profile_header: 'Financial Picture',

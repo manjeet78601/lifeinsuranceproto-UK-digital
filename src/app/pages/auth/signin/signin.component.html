@@ -17,7 +17,8 @@
 <!-- End of Header -->
 <ion-content>
   <section  class="wrapper-auth ion-text-center content signin-section" fxLayout="column" fxLayoutAlign="center center">
-   
+     
+     <ion-img class="login-img" [src]="'../../../../assets/img/login-img.png'"></ion-img>
       <header>
         <p class="header">{{htmlText.login_welcome_header}}</p>
         <p class="sub-header">{{htmlText.login_welcome_subheader}}</p>
@@ -43,8 +44,6 @@
                 </div>
             </form>
     </section>
- 
-    </ion-content>
     <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
       <ion-text class="align-item-bottom">
         <ion-label class="fl-footer-content">
@@ -57,3 +56,5 @@
        </ion-label>
      </ion-text>
     </footer> 
+    </ion-content>
+   
