@@ -39,7 +39,8 @@ export class FinancialBudgetComponent implements OnInit {
 
   }
 
-  calculateBudget() {
+  calculateBudget(f) {
+    console.log(f);
     const totalBudget = [];
     // for (const iterator of this.DOM_CONSTANTS) {
     //   totalBudget.push(this.sum(iterator.QUESTIONS));
