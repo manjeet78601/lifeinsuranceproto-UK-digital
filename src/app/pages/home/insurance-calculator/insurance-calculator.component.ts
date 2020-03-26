@@ -9,7 +9,7 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./insurance-calculator.component.scss'],
 })
 export class InsuranceCalculatorComponent implements OnInit {
- 
+
 
   PAGE_SUBTITLE = HomeConstants.PAGE_SUBTITLE;
   PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER;
@@ -22,17 +22,20 @@ export class InsuranceCalculatorComponent implements OnInit {
   PAGE_CONTENT_US1 = HomeConstants.PAGE_CONTENT_US1;
   PAGE_BOTTOM = HomeConstants.PAGE_BOTTOM;
   progress = 0;
+  totalCoverage = 0;
 
   PAGE_CONTENT_US = HomeConstants.PAGE_CONTENT_US;
 
   INSURANCE_CALCULATOR = HomeConstants.INSURANCE_CALCULATOR;
 
 
- constructor( private router: Router) { }
+  constructor(private router: Router,
+    private navigationService: MenuService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   InsuranceBudget() {
+    this.navigationService.setCompletedMenu('Insurance calculator')
     this.router.navigate(['/home/budget']);
 
   }
@@ -42,6 +45,17 @@ export class InsuranceCalculatorComponent implements OnInit {
       this.progress = progress;
     }
 
+  }
+
+  calculateCoverage() {
+    this.INSURANCE_CALCULATOR.QUESTIONS.forEach(element => {
+      if (element.VALUE === 0) {
+        this.totalCoverage = 0;
+        return false;
+      } else {
+        this.totalCoverage = Math.floor(Math.random() * 100000) + 10000
+      }
+    });
   }
 
 

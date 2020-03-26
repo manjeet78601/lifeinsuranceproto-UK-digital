@@ -9,24 +9,27 @@ export class HomeConstants {
          TOTAL_TEXT: 'Monthly Income',
          QUESTIONS: [
             {
-               QUESTIONTEXT: 'What’s your wage/salary?',
+               QUESTIONTEXT: 'What’s your yearly wage/salary?',
                SUBTEXT: 'Annual Income',
+               NAME: 'aanualIncome',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'How much is your savings?',
+               QUESTIONTEXT: 'How much are your total savings?',
                SUBTEXT: 'Total Savings',
+               NAME: 'totalSavings',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Do you have passive income?',
+               QUESTIONTEXT: 'Do you have monthly rental income?',
                SUBTEXT: 'Income from Rent',
+               NAME: 'incomeFromRent',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
@@ -43,22 +46,25 @@ export class HomeConstants {
             {
                QUESTIONTEXT: 'How much is your home worth?',
                SUBTEXT: 'Value of my Home',
+               NAME: 'valueOfHome',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Do you own vehicle(s)?',
+               QUESTIONTEXT: 'How much are your vehicle(s) worth?',
                SUBTEXT: 'Value of my Vehicle(s)',
+               NAME: 'valueOfVehicle',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Do you own valuables?',
+               QUESTIONTEXT: 'How much are your valuables worth?',
                SUBTEXT: 'Total Value of my Valuables',
+               NAME: 'valueOfvaluables',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
@@ -75,14 +81,16 @@ export class HomeConstants {
             {
                QUESTIONTEXT: 'Monthly rent/mortgage?',
                SUBTEXT: 'House payments',
+               NAME: 'houseRent',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Utilities',
+               QUESTIONTEXT: 'Monthly Utilities',
                SUBTEXT: 'Home Utilities',
+               NAME: 'monthlyUtilities',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
@@ -91,14 +99,16 @@ export class HomeConstants {
             {
                QUESTIONTEXT: 'Monthly home maintenance fees',
                SUBTEXT: 'Fees',
+               NAME: 'maintainanceFees',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Property Tax',
+               QUESTIONTEXT: 'Monthly property tax',
                SUBTEXT: 'Home tax',
+               NAME: 'propertyTax',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
@@ -113,40 +123,45 @@ export class HomeConstants {
          TOTAL_TEXT: 'Monthly Expenses',
          QUESTIONS: [
             {
-               QUESTIONTEXT: 'Groceries',
+               QUESTIONTEXT: 'Monthly groceries',
                SUBTEXT: 'Weekly meals',
+               NAME: 'groceries',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Car loan / lease payment',
+               QUESTIONTEXT: 'Monthly Car loan / lease payment',
                SUBTEXT: 'Car Payment',
+               NAME: 'carPayment',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Gas / Oil',
+               QUESTIONTEXT: 'Monthly Gas / Oil',
                SUBTEXT: 'Fuel for vehicles',
+               NAME: 'gasOrOil',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Child Daycare',
+               QUESTIONTEXT: 'Monthly Child Daycare',
                SUBTEXT: 'Kids',
+               NAME: 'childDaycare',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Child Activities / Sports',
+               QUESTIONTEXT: 'Monthly Child Activities / Sports',
                SUBTEXT: 'Kids',
+               NAME: 'kidsActivities',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
@@ -415,44 +430,71 @@ and subtracting your assets you an estimate what your loved ones will need in co
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
    public static BUTTON_CONTENT = `you can probably do without Life insurance right now however.
  \if you think you have a unique circumstance that requires it. it costsnothing to compare rates `;
- public static PAGE_CONTENT_US = 'Are You a US Citizen or Residents';
- public static PAGE_CONTENT_US1 = 'Are You a US Citizen or Residents';
- public static LETS_GETS_TARTED = 'Great let s get Started ';
- public static PAGE_BOTTOM = 'By our calculation You will need this total coverage'; 
+   public static PAGE_CONTENT_US = 'Are You a US Citizen or Residents';
+   public static PAGE_CONTENT_US1 = 'Are You a US Citizen or Residents';
+   public static LETS_GETS_TARTED = 'Great let s get Started ';
+   public static PAGE_BOTTOM = 'By our calculation You will need this total coverage';
 
- public static INSURANCE_CALCULATOR = [
-   {
-      TITLE: 'Basic Health',
-      PROGRESS: 25,
-      QUESTIONS1: [
-         {
-            INPUT_TYPE: 'Does anyone in your family depend on you financially',
-            VALUE: '50000',
-         },
-         {
-            INPUT_TYPE: 'Does anyone in your family depend on you financially',
-            VALUE: '50000',
-         },
+   public static INSURANCE_CALCULATOR =
+      {
+         TITLE: 'Basic Health',
+         PROGRESS: 25,
+         QUESTIONS: [
+            {
+               INPUT_TYPE: '1. How much annual income would you need to replace if something were to happen to you?',
+               VALUE: 0,
+               isAmt: true
+            },
+            {
+               INPUT_TYPE: '2. How many years would your family need to' +
+                  'replace your income and the services you provide if you died suddenly?',
+               VALUE: 0,
+               isAmt: false
+            },
 
-         {
-            INPUT_TYPE: 'Does anyone in your family depend on you financially',
-            VALUE: '50000',
+            {
+               INPUT_TYPE: '3. How debt do you have?',
+               VALUE: 0,
+               isAmt: true
 
-         },
-         {
-            INPUT_TYPE: 'Does anyone in your family depend on you financially',
-            VALUE: '50000',
+            },
+            {
+               INPUT_TYPE: '4. How much money do you want to provide for your children’s education or future needs?',
+               VALUE: 0,
+               isAmt: true
 
-         },
-      ]
-   },
-];
+            },
+            {
+               INPUT_TYPE: '5. How much would your family need to pay for your funeral?',
+               VALUE: 0,
+               isAmt: true
+            },
+            {
+               INPUT_TYPE: '6. How much money do you have in savings and investment accounts? ',
+               VALUE: 0,
+               isAmt: true
+            },
 
- //Quote
+            {
+               INPUT_TYPE: '7. How much life insurance do you already have? ',
+               VALUE: 0,
+               isAmt: true
+
+            },
+            {
+               INPUT_TYPE: '8. How much after-tax income does your family have annually in addition to your income?',
+               VALUE: 0,
+               isAmt: true
+
+            },
+         ]
+      };
+
+   // Quote
    public static QUOTE = {
       QUOTE_HEADER: 'Quote Results',
       QUOTE_SUB_HEADER: 'The actual cost for you may be different after your application is processed.',
       CUST_HEADER: 'Customer Rating'
-   }
+   };
 
 }

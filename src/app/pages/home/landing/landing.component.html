@@ -21,11 +21,10 @@
 
   <section class="wrapper ion-text-center content">
     <section fxLayout="column">
-
-      <div>
-        <img src="../../assets/img/circleImg1.png" alt="img1" class="circled-img" />
+      <div fxLayout="column" >
+        <img src="../../assets/img/homePage_Img/Welcome_To_Life_Plus-01.png" alt="img1"  />
       </div>
-      <mat-card-subtitle class="mt-50">HELLO THERE</mat-card-subtitle>
+     
       <mat-card-title class="mt-20">Life Insurance For The <br /> Morden Family</mat-card-title>
       <mat-card-content class="mt-20">
         <p>
@@ -34,14 +33,30 @@
           in your budget and adapts to <br />your changing lifestyle, income and needs.
         </p>
       </mat-card-content>
+      <mat-card-subtitle class="mt-50">WE GOT YOU COVERED</mat-card-subtitle>
+      <mat-card-title class="mt-20">Holistic Financial Planning</mat-card-title>
+      <mat-card-content class="mt-20">
+        <p>
+          We’ll help you budget for your real life,<br />  support you to develop a holistic view of your <br />
+          finances, and prepare you for the worst-case<br /> scenario. 
+        </p>
+        <p>
+          We help all families: single-parent homes, two-<br /> parent homes, 
+          multigenerational families and <br /> empty nesters. No matter your circumstances,<br />  we got you covered. 
+        </p>
+      </mat-card-content>
+      </section>
 
+    <section fxLayout="column">
+      <div fxLayout="column" fxLayoutGap="25px" class="mt-20">
+        <img src="../../assets/img/homePage_Img/Plan_Ahead-02.png" alt="Plan_Ahead"  />
+      </div>
     </section>
-    <mat-divider></mat-divider>
 
 
     <!-- step one and two -->
     <section fxLayout="column">
-      <mat-card-subtitle class="mt-50">LIFE INSURANCE SIMPLIFIED, PERSONALIZED</mat-card-subtitle>
+      <mat-card-subtitle class="mt-50">SIMPLIFIED, PERSONALIZED</mat-card-subtitle>
       <mat-card-title class="mt-20">Let Us Help You Plan Your <br />Family’s Future.</mat-card-title>
       <mat-card-content class="mt-20 ">
         <p>
@@ -50,36 +65,44 @@
           flexible, afforadble and as easy<br /> to understand as 1, 2, 3, 4.
         </p>
       </mat-card-content>
+      
       <!-- One and Two -->
-      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
+      <div fxLayout="column" fxLayoutGap="25px" class="mt-20" >
+        <img src="../../assets/img/homePage_Img/Life_Plus_Collaboration-01-01.png" alt="img1"  />
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mt-50">
+        <button mat-flat-button  class="btn-color" style="width:50%"  [routerLink]="['/home/budget']"
+        routerLinkActive="router-link-active">GETTING STARTED</button>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mt-20">
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20  circled-img" />
-          <button mat-flat-button class="btn-color" [routerLink]="['/home/insurance-calculator']"
+          <img src="../../assets/img/homePage_Img/winner.png" alt="img1" class="mt-20  circled-img" />
+          <button mat-flat-button class="btn-color" style="width:94%" [routerLink]="['/home/insurance-calculator']"
             routerLinkActive="router-link-active">STEP ONE</button>
           <p class="btn-details">Calculate how<br> much coverage<br> your family needs.</p>
         </div>
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20 circled-img" />
-          <button mat-flat-button class="btn-color" [routerLink]="['/home/budget']">STEP TWO</button>
+          <img src="../../assets/img/homePage_Img/stroke.png" alt="img1" class="mt-20 circled-img" />
+          <button mat-flat-button  class="btn-color"  style="width:94%"  [routerLink]="['/home/budget']">STEP TWO</button>
           <p class="btn-details">Customize a Plan<br> based on your<br> holist view.</p>
         </div>
       </div>
       <!-- three and Four -->
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-50 circled-img" />
-          <button mat-flat-button [routerLink]="['/home/chooseplan']">STEP THREE</button>
+          <img src="../../assets/img/homePage_Img/star.png" alt="img1" class="mt-50 circled-img" />
+          <button mat-flat-button style="width:94%"  [routerLink]="['/home/chooseplan']">STEP THREE</button>
           <p class=" btn-details">Term vs Prem:<br> What's best for<br> you?</p>
         </div>
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20 circled-img" />
-          <button mat-flat-button [routerLink]="['/home/health']" routerLinkActive="router-link-active">STEP
+          <img src="../../assets/img/homePage_Img/spotlight.png" alt="img1" class="mt-20 circled-img" />
+          <button mat-flat-button  style="width:94%" [routerLink]="['/home/health']" routerLinkActive="router-link-active">STEP
             FOUR</button>
           <p class=" btn-details">Compare Quotes.</p>
         </div>
       </div>
     </section>
-    <mat-divider></mat-divider>
+  
     <!-- Section 3 -->
     <section fxLayout="column" class="mt-20 mb-30">
       <mat-card-subtitle class="mt-50">EVERY FAMILY IS DIFFERENT</mat-card-subtitle>
@@ -99,12 +122,12 @@
       </mat-card-content>
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20 circled-img" />
-          <button mat-flat-button class=" mt-20">READ MORE</button>
+          <img src="../../assets/img/homePage_Img/Mask Group 20.png" alt="img1" class="mt-20 circled-img" />
+          <button mat-flat-button class=" mt-20" style="width:94%"  >READ MORE</button>
         </div>
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20  circled-img" />
-          <button mat-flat-button class="mt-20 ">READ MORE</button>
+          <img src="../../assets/img/homePage_Img/Mask Group 21.png" alt="img1" class="mt-20  circled-img" />
+          <button mat-flat-button class="mt-20 " style="width:94%" >READ MORE</button>
         </div>
       </div>
     </section>
