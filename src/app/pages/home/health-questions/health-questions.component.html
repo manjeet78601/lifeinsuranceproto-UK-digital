@@ -9,7 +9,7 @@
     <ion-buttons slot="start" color="dark">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-   <ion-title class="ion-text-center app-name">
+    <ion-title class="ion-text-center app-name">
       <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" />
     </ion-title>
   </ion-toolbar>
@@ -18,17 +18,13 @@
 
 <!-- Section 1  -->
 <ion-content>
-  <header class="page-header" fxLayout="column" fxLayoutAlign="center center">
-    <h1>{{ PAGE_HEADER }}</h1>
-    <h2>{{ PAGE_SUBHEADER }}</h2>
-    <p>{{ PAGE_LINE }}</p>
-  </header>
-  <section
-    class="wrapper"
-    fxLayout="column"
-    fxLayoutAlign="center center"
-    fxLayoutGap="10px"
-  >
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header class="page-header">
+      <h1>{{ PAGE_HEADER }}</h1>
+      <h2>{{ PAGE_SUBHEADER }}</h2>
+      <p>{{ PAGE_LINE }}</p>
+    </header>
+
     <mat-accordion>
       <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS">
         <mat-expansion-panel-header>
@@ -36,45 +32,43 @@
             {{ item.TITLE }}
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <div *ngFor="let que of item.QUESTIONS" >
-        <mat-label class="que-header2 mt-20 mt-10" >{{ que.QUESTIONTEXT }}</mat-label>
-        <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
-        <!--DOB-->
-        <form> 
-            <mat-form-field class="textA" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline"> 
-           
-                <input type="text" placeholder="mm/dd/yyyy" matInput [matDatepicker]="picker">
-                <mat-datepicker-toggle matSuffix [for]="picker">
+        <div *ngFor="let que of item.QUESTIONS">
+          <mat-label class="que-header2 mt-20 mt-10">{{ que.QUESTIONTEXT }}</mat-label>
+          <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
+          <!--DOB-->
+          <form>
+            <mat-form-field class="textA" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline">
+
+              <input type="text" placeholder="mm/dd/yyyy" matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker">
                 <mat-icon matDatepickerToggleIcon></mat-icon>
-               </mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
-              
-            </mat-form-field> </form>
-            <!--Sex tab-->
-            <section style="padding-top:2px;">
-            <mat-button-toggle-group *ngIf="que.INPUT_TEXT === 'Button'" name="fontStyle"
-            aria-label="Font Style"
-            class="custom-mat-btn-toggle-group ">
-            <mat-button-toggle value="bold" class="yes-btn">Male</mat-button-toggle>
-            <span class="circle">or</span>
-            <mat-button-toggle value="italic" class="no-btn">Female</mat-button-toggle>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+
+            </mat-form-field>
+          </form>
+          <!--Sex tab-->
+          <section style="padding-top:2px;">
+            <mat-button-toggle-group *ngIf="que.INPUT_TEXT === 'Button'" name="fontStyle" aria-label="Font Style"
+              class="custom-mat-btn-toggle-group ">
+              <mat-button-toggle value="bold" class="yes-btn">Male</mat-button-toggle>
+              <span class="circle">or</span>
+              <mat-button-toggle value="italic" class="no-btn">Female</mat-button-toggle>
             </mat-button-toggle-group>
-</section>
-   <!--Height & Weight -->
-   <form  class="example-form">
-      <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT=== 'Textbox'" appearance="outline" >
-        <input type="text"  matInput placeholder="0.00">
-        
-      </mat-form-field>
-      <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT=== 'Textbox'" appearance="outline" >
-      <input type="text"matInput placeholder="0.00">
-      </mat-form-field>
-</form>
+          </section>
+          <!--Height & Weight -->
+          <form class="example-form">
+            <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT=== 'Textbox'" appearance="outline">
+              <input type="text" matInput placeholder="0.00">
+
+            </mat-form-field>
+            <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT=== 'Textbox'" appearance="outline">
+              <input type="text" matInput placeholder="0.00">
+            </mat-form-field>
+          </form>
 
 
-          <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'"
-            name="fontStyle"
-            aria-label="Font Style"
+          <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'" name="fontStyle" aria-label="Font Style"
             class="custom-mat-btn-toggle-group mt-30">
             <mat-button-toggle value="bold" class="yes-btn">Yes</mat-button-toggle>
             <span class="circle">or</span>
@@ -85,8 +79,8 @@
               <textarea matInput placeholder="Write a response"></textarea>
             </mat-form-field>
           </form>
-        
-                
+
+
         </div>
       </mat-expansion-panel>
     </mat-accordion>
@@ -94,26 +88,20 @@
       {{ BTN.SUBMIT | uppercase }}
     </button>
   </section>
+  <!-- Footer -->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br />
+        Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+  <!-- End of footer -->
 </ion-content>
 <!-- end of section 1 -->
-
-<!-- Footer -->
-<footer
-  class="footer"
-  fxLayout="row"
-  fxLayoutAlign="space-between"
-  fxLayoutGap="40px"
->
-  <ion-text class="align-item-bottom">
-    <ion-label class="fl-footer-content">
-      77 Water St 8th Floor,<br />
-      Manhattan, NY 10005
-    </ion-label>
-  </ion-text>
-  <ion-text class="align-item-bottom">
-    <ion-label class="fl-footer-content">
-      Copyright Life+ © 2020
-    </ion-label>
-  </ion-text>
-</footer>
-<!-- End of footer -->
