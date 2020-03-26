@@ -303,6 +303,12 @@ h6 {
       opacity: 0.5;
     }
   }
+  #btn-steps-wth{
+    width:94%;
+  }
+  #btn-start-wth{
+    width:50%;
+  }
   ion-icon {
     width: 2em;
     height: 2em;
@@ -412,6 +418,7 @@ ion-buttons {
 }
 .chat-title{
   position: relative;
+  
 }
 .message {
   border-radius: 50px;
