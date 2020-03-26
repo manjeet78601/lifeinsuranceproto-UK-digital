@@ -225,6 +225,9 @@ h6 {
 .pt-13 {
   padding-top: 13px;
 }
+.text-right{
+  text-align: right;
+}
 
 // footer
 
@@ -310,6 +313,12 @@ h6 {
       opacity: 0.5;
     }
   }
+  #btn-steps-wth{
+    width:94%;
+  }
+  #btn-start-wth{
+    width:50%;
+  }
   ion-icon {
     width: 2em;
     height: 2em;
@@ -352,6 +361,7 @@ h6 {
   font-family: inherit;
   font-size: 16px;
   display: block;
+  color: #cccccc;
 }
 
 .mat-progress-bar {
@@ -419,6 +429,7 @@ ion-buttons {
 }
 .chat-title{
   position: relative;
+  
 }
 .message {
   border-radius: 50px;
@@ -527,9 +538,25 @@ ion-buttons {
     font-size: 12px;
   }
 }
+.mat-accordion.user-financial-info {
+  .mat-expansion-indicator {
+    margin-right: 15px !important;
+  }
+  // .mat-expanded {
+  //   .mat-expansion-indicator {
+  //     margin-right: 15px !important;
+  //   }
+  // }
+}
 .mat-form-field-appearance-outline .mat-form-field-prefix {
   top: 0em !important;
 }
 .align-end {
   text-align: end !important;
 }
+
+
+  .menu-inner {
+      background-color: transparent !important;
+  }
+  

@@ -10,7 +10,7 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./health-questions.component.scss'],
 })
 export class HealthQuestionsComponent implements OnInit {
-  display:boolean; 
+  
   DOM_CONSTANTS = HomeConstants.HEALTHQUESTIONS;
   PAGE_HEADER = HomeConstants.HEALTH_HEADER;
   PAGE_SUBHEADER = HomeConstants.HEALTH_SUB_HEADER;

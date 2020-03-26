@@ -1,0 +1,233 @@
+[
+    {
+        "title": "Goals/Aspirations",
+        "quesHeader": "What are your financial goals and aspirations?",
+        "id": 1,
+        "questions": [
+            {
+                "name": "Growing wealth",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+
+            },
+            {
+                "name": "Financial stability",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            },
+            {
+                "name": "Protect my family",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            },
+            {
+                "name": "More",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            },
+            {
+                "name": "More",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            },
+            {
+                "name": "More",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            },
+            {
+                "name": "Other",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Lifestyle Expenses",
+        "quesHeader": "",
+        "id": 2,
+        "questions": [
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Sources of Income",
+        "quesHeader": "",
+        "id": 3,
+        "questions": [
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Debts",
+        "quesHeader": "",
+        "id": 4,
+        "questions": [
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Assets",
+        "quesHeader": "",
+        "id": 5,
+        "questions": [
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Expected Cash Windfall",
+        "quesHeader": "",
+        "id": 6,
+        "questions": [
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    }
+]

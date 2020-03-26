@@ -27,13 +27,15 @@ export class TotalBudgetCalculatorComponent implements OnInit {
   }
 
   getAmountLeft() {
-    return (this.totals[0].TOTAL - this.totals[3].TOTAL)
+    return (this.totals[0].TOTAL - this.totals[3].TOTAL) > 0 ? (this.totals[0].TOTAL - this.totals[3].TOTAL) : 0;
+  }
+  setAmountLeft() {
+    this.amountLeft = this.getAmountLeft();
   }
 
   getTotals() {
     this.totals = this.userService.getCalculatedBudget();
-    //this.totals.map(res => res.AMOUNT = 450);
-    this.amountLeft = this.getAmountLeft();
+    this.setAmountLeft();
   }
 
   getQuote() {

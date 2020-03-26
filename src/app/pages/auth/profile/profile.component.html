@@ -36,20 +36,56 @@
       </ion-list>
     </section>
 
+    <!-- Chart section -->
+    <ion-card class="chart">
+      <ion-card-header>
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #userFinancialAssets></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- financial details  -->
     <header fxLayoutAlign="center center">
       <h2 class="cap-first-letter">{{userInfo.userName +"'s "+ htmltext.profile_header }}</h2>
     </header>
 
     <mat-accordion class="user-financial-info">
-      <mat-expansion-panel *ngFor="let item of userFinancialInfo; trackBy: trackByIndex">
-        <mat-expansion-panel-header>
+      <ng-container *ngFor="let financeDetails of userFinancialInfo; let itemIndex = index; trackBy: trackByIndex">
+      <mat-expansion-panel [ngStyle]="{'background':financeDetails.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
+        <mat-expansion-panel-header class="mat-accordian-header">
           <mat-panel-title>
-            {{ item }}
+            {{ financeDetails.title }}
           </mat-panel-title>
+          <ion-icon name="person"  class="user-icon" [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
+          <ion-icon name="checkmark"  class="tick-icon" [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
         </mat-expansion-panel-header>
-        <p>{{item + 'details..'}}</p>
+        <p class="header-txt" *ngIf="financeDetails.quesHeader"><strong> {{financeDetails.quesHeader}} </strong></p>
+        <ng-container *ngFor="let quesDetails of financeDetails.questions; let quesIndex = index; trackBy: trackByIndex">
+          <div [ngSwitch]="quesDetails.element">
+            <div class="ques-details my-15" *ngSwitchCase="'toggleButton'">
+              <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
+              <mat-button-toggle-group name="{{'question' + quesIndex}}" ngDefaultControl aria-label="Font Style" class="custom-mat-btn-toggle-group" [(ngModel)] = "quesDetails.value" (ngModelChange)="trackQuesProgress($event, financeDetails.id)" >
+                <mat-button-toggle value="yes" class="yes-btn" >Yes</mat-button-toggle>
+                <span class="circle">or</span>
+                <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+            <div class="ques-details" *ngSwitchCase="'inputNumber'">
+              <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
+              <mat-form-field appearance="outline" class="form-input-control text-right">
+                <span matPrefix class="col-dull-grey">$ &nbsp;</span>
+                <input matInput type="number" name="{{'question' + quesIndex}}" ngDefaultControl [placeholder]="quesDetails.placeholder" value="" [(ngModel)] = "quesDetails.value" (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
+              </mat-form-field>
+              <mat-icon matTooltip = {{quesDetails.name}} class="tooltip">help_outline</mat-icon>
+            </div>
+          </div>
+        </ng-container>
       </mat-expansion-panel>
+    </ng-container>
     </mat-accordion>
+    <h2 >Recommendation</h2>
+    <p class="r-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyundefined</p>
   </section>
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">

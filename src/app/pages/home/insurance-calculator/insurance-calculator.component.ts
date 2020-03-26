@@ -22,6 +22,7 @@ export class InsuranceCalculatorComponent implements OnInit {
   PAGE_CONTENT_US1 = HomeConstants.PAGE_CONTENT_US1;
   PAGE_BOTTOM = HomeConstants.PAGE_BOTTOM;
   progress = 0;
+  totalCoverage = 0;
 
   PAGE_CONTENT_US = HomeConstants.PAGE_CONTENT_US;
 
@@ -43,6 +44,17 @@ export class InsuranceCalculatorComponent implements OnInit {
       this.progress = progress;
     }
 
+  }
+
+  calculateCoverage() {
+    this.INSURANCE_CALCULATOR.QUESTIONS.forEach(element => {
+      if (element.VALUE === 0) {
+        this.totalCoverage = 0;
+        return false;
+      } else {
+        this.totalCoverage = Math.floor(Math.random() * 100000) + 10000
+      }
+    });
   }
 
 
