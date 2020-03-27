@@ -44,7 +44,6 @@ export class FinancialBudgetComponent implements OnInit {
     const totalBudget = [];
     // for (const iterator of this.DOM_CONSTANTS) {
     //   totalBudget.push(this.sum(iterator.QUESTIONS));
-    // 
     this.userService.setCalculatedBudget(this.DOM_CONSTANTS);
     this.analytic.trackAnalyticData(CategoryName.BUDGET_CALCULATOR, Action.CLICK, 'Calculate');
     this.loader.showAutoHideLoader('Fetching Details...', 3000);
