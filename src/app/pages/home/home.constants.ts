@@ -464,8 +464,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
       READ_MORE: 'Read More',
       CLOSE: 'Close',
       INS_CAL: 'INSURANCE CALCULATOR',
-   
-   };
+};
    public  static STEP1_BOTTOM = 'Ready to figure out your budget ?';
    public static INSURANCE_CALCULATOR =
       {

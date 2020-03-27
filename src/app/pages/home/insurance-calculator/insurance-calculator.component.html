@@ -27,11 +27,11 @@
     <!--Progress Bar-->
         <mat-progress-bar mode="determinate" value="20" class="mt-10 mb-20"></mat-progress-bar>
        <!--Question & Answer-->
-        <section fxLayout="column" fxLayoutGap="10px" >
+        <section fxLayout="column" fxLayoutGap="20px" >
         <div fxLayout="row" fxLayoutAlign="start start" *ngFor="let item of INSURANCE_CALCULATOR.QUESTIONS">
           <div class="text w-50">
             <mat-label>{{ item.INPUT_TYPE }}</mat-label>
-            <mat-icon style="display:block">help_outline</mat-icon>
+            <mat-icon class="icon12" >help_outline</mat-icon>
           </div>
           <mat-form-field appearance="outline" class="w-50" style="justify-content: end; align-items: flex-end;">
             <span matPrefix *ngIf="item.isAmt">$</span>
