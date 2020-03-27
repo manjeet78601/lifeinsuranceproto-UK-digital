@@ -46,10 +46,8 @@
         </ion-row>
       </ion-grid>
       <mat-card-content *ngIf="collapsedSec1">
-        <mat-card-actions fxLayout="column" fxLayoutAlign="center start">
-          <button mat-flat-button (click)="collapsedSec1=false"
-            class="btn-mat-card marg-10px">{{BTN.READ_MORE}}</button>
-        </mat-card-actions>
+          <button mat-flat-button (click)="collapsedSec1=false" fxFlex="20"
+            class="btn-mat-card">{{BTN.READ_MORE}}</button>
       </mat-card-content>
       <mat-card-content *ngIf="!collapsedSec1">
         <ion-grid>
@@ -57,8 +55,8 @@
             <ion-col size="9">
               <ion-row>
                 <div>
-                  <span class="label-inline exp-header">{{cus.name}}</span>
-                  <span class="label-inline btn-mat-card">{{cus.timestamp}}</span>
+                  <span class="label-inline exp-header">{{cus.name}} </span>
+                  <span class="label-inline btn-mat-card ml-5"> {{cus.timestamp}}</span>
                 </div>
                 <div class="comment-txt">{{cus.comment}}</div>
               </ion-row>
@@ -73,17 +71,19 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="40px">
-          <button mat-flat-button fxLayoutAlign="center end" class="quo-btn" color="primary"
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <button mat-flat-button class="quo-btn" color="primary"
             (click)="getPDF()">{{BTN.GET_QUOTE}}</button>
-        </div>
-        <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
-          <button mat-flat-button (click)="collapsedSec1=true" class="btn-mat-card marg-10px">{{BTN.CLOSE}}</button>
-        </mat-card-actions>
-      </mat-card-content>
+            <button mat-flat-button (click)="collapsedSec1=true" class="btn-mat-card mt-10">{{BTN.CLOSE}}</button>
+       </div>
+             </mat-card-content>
     </mat-card>
   </section>
-
+  <!--Create Account link-->
+  <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
+    <a [routerLink]="['./']" fxLayout="column" fxLayoutAlign="center center" (click)="createAccount()"
+      class="btn-acc mt-30" mat-menu-item>Create account</a>
+  </section>
   <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">

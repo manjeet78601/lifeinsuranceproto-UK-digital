@@ -13,13 +13,6 @@
   text-align: center;
 }
 
-.green-icon {
-  color: green;
-  width: 10px;
-  height: 15px;
-  font-weight: bold;
-}
-
 .mat-table {
   overflow: auto;
   height: 306px;
@@ -56,14 +49,14 @@ mat-cell {
 }
 
 .btn-mat-card {
-  font-family: SegoeUI;
+  font-family: Proxima Soft;
   font-size: 16px;
   background-color: #f8f8f8;
   color: #cccccc;
 }
 
 .plan-mat-card-title {
-  font-family: SegoeUI;
+  font-family: Proxima Soft;
   font-weight: bold;
   font-size: 24px;
   background-color: #fafafb;
@@ -147,4 +140,12 @@ ion-grid {
 }
 .label-inline {
   display: inline-block;
+}
+.ml-5{
+  margin-left: 5px; 
+}
+.btn-acc{
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #CCCCCC;
 }

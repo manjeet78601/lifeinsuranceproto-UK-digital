@@ -93,6 +93,7 @@
   <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
     <p class="plan-content txt-align">{{DOM_CONSTANTS.COVG_HEADER}}</p>
     <button mat-flat-button color="primary" (click)="getInsCal()">{{BTN.INS_CAL}}</button>
+    <a  [routerLink]="['./']"  (click)="createAccount()" class="btn-acc" mat-menu-item>Create account</a>
   </section>
 
   <!--Footer-->

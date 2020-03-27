@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   financialBudget = [];
-  constructor() { }
+  constructor(private router:Router) { }
 
   users = [
     {
@@ -173,4 +174,7 @@ export class UserService {
   getQuoteList() {
     return this.quotes;
   }
+  createAccount(){
+    this.router.navigate(['/auth/signup']);
+  } 
 }

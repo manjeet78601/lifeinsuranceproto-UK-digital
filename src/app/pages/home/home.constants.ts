@@ -465,7 +465,8 @@ and subtracting your assets you an estimate what your loved ones will need in co
       INSURANCE: 'Step Two',
       READ_MORE: 'Read More',
       CLOSE: 'Close',
-      INS_CAL: 'INSURANCE CALCULATOR'
+      GET_QUOTE : 'GET QUOTE',
+      INS_CAL: 'INSURANCE'
    };
 
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';

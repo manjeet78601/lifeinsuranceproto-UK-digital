@@ -34,5 +34,8 @@ export class QuoteComponent implements OnInit {
   getQuotes() {
     return this.userService.getQuoteList();
   }
+  createAccount() {
+    return this.userService.createAccount();
+  }
 }
 

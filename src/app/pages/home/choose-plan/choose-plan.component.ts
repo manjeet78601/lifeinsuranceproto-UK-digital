@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeConstants, } from './../home.constants';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
-
+import { UserService } from 'src/app/services/user.service';
 // Datasource for table
 export interface TermInsComparision {
   term: number;
@@ -34,14 +34,18 @@ export class ChoosePlanComponent implements OnInit {
   BTN=HomeConstants.BTTN;
   constructor(
     private router: Router,
-    private navigationService: MenuService
+    private navigationService: MenuService,
+    private userService: UserService
   ) { }
   ngOnInit() {
 
   }
   getInsCal() {
     this.navigationService.setCompletedMenu('Choosing a plan');
-    this.router.navigate(['/home/insurance-calculator']);
+    this.router.navigate(['/home/health']);
+  }
+  createAccount(){
+    this.userService.createAccount();
   }
 
 }
