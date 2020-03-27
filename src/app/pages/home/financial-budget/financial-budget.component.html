@@ -55,9 +55,6 @@
               </mat-form-field>
 
               <mat-icon class="pos-rel t-l-7">help_outline</mat-icon>
-
-
-
             </div>
           </mat-expansion-panel>
         </mat-accordion>
@@ -65,6 +62,7 @@
       <button mat-flat-button color="primary" [disabled]="f.invalid" (click)="calculateBudget(f)">
         {{ BTN.CALCULATE | uppercase }}
       </button>
+      <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
     </section>
     <!-- End of main section -->
   </section>

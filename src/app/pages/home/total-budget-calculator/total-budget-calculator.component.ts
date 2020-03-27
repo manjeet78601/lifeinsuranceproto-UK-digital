@@ -42,5 +42,8 @@ export class TotalBudgetCalculatorComponent implements OnInit {
     this.navigationService.setCompletedMenu('Financial Budget');
     this.router.navigate(['/home/chooseplan']);
   }
+  createAccount() {
+    this.router.navigate(['/auth/signup']);
+  }
 
 }

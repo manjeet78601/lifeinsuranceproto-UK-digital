@@ -432,34 +432,55 @@ ion-buttons {
   
 }
 .message {
-  border-radius: 50px;
-  margin: 0 15px 10px;
+  border-radius: 12px;
   padding: 15px 20px;
+  max-width: 75%;
+  min-width: 25%;
+  margin: 5px;
   position: relative;
-  font-weight: bold;
 }
 
 .message.to {
-  background-color: rgba(32, 239, 254, 0.27);
-  color:black;
-  margin-left: 100px;
+  background-color: #00B5AD;
+  color:#fff;
   text-align: right;
   padding: 10px;
- border-bottom-left-radius: 25px;
+  float: right;
+  ::after {
+    content: "";
+      position: absolute;
+      bottom: 0;
+      right: 1%;
+      width: 0;
+      height: 0;
+      border: 17px solid transparent;
+      border-top-color: #00B5AD;
+      border-bottom: 0;
+      border-right: 0;
+      margin-bottom: -5px;
+  }
 }
+
 
 .message.from {
-  background-color: #e5e4e9;
+  background-color: #e5e5ea;
   color: #363636;
-  margin-right: 100px;
   padding: 10px;
-  border-bottom-right-radius: 50px 20px;
+  float: left;
+  ::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1%;
+    width: 0;
+    height: 0;
+    border: 17px solid transparent;
+    border-top-color: #e5e5ea;
+    border-bottom: 0;
+    border-left: 0;
+    margin-bottom: -7px;}
 }
 
-.message.to + .message.to,
-.message.from + .message.from {
-  margin-top: -10px;
-}
 
 #add-button {
   top: auto;
@@ -469,8 +490,9 @@ ion-buttons {
   position: fixed;
 }
 .btn-close{
-  position: relative;
-  bottom: 37px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .chat-content {
   position: relative;
@@ -554,9 +576,12 @@ ion-buttons {
 .align-end {
   text-align: end !important;
 }
-
-
-  .menu-inner {
+.menu-inner {
       background-color: transparent !important;
   }
+.link {
+  text-decoration: underline;
+  font-size: 16px;
+  color: #ccc;
+}
   

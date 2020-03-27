@@ -65,10 +65,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
-  async openUserModal(){
+  async openUserModal() {
     const modal = await this.modalController.create({
       component: ChatComponent,
-   });
-   return await modal.present();
+    });
+    return await modal.present();
   }
 }

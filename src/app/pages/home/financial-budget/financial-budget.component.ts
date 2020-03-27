@@ -51,4 +51,8 @@ export class FinancialBudgetComponent implements OnInit {
       this.router.navigate(['/home/total-budget']);
     }, 3000);
   }
+
+  createAccount() {
+    this.router.navigate(['/auth/signup']);
+  }
 }

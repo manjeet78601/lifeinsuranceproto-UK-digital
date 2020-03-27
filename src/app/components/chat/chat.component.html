@@ -1,30 +1,41 @@
 <!-- Chat page  -->
+<!-- Header -->
 <ion-header class="chat-page-header" fxLayout="column" fxLayoutAlign="center center" fxLayout-fill>
   <ion-toolbar color="light">
-  <div fxLayout="column" fxLayoutAlign="center center"  class="m-15">
-    <img mat-card-avatar src="assets/img/bot-avatar.png" alt="bot-avatar">
-  </div>
-  <ion-title class="chat-title">Bot Name</ion-title>
-  <ion-buttons slot="end" class="btn-close">
-       <ion-icon size="large" slot="icon-only" name="close-circle" (click)="closeModal()"></ion-icon>
-  </ion-buttons>
-</ion-toolbar>
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <img src="assets/img/bot-avatar.png" alt="Bot avatar">
+      <ion-title class="chat-title">Bot Name</ion-title>
+    </div>
+    <ion-buttons slot="end" class="btn-close">
+      <ion-icon size="large" slot="icon-only" name="close-circle" (click)="closeModal()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
-<ion-content class="chat-content">
-<ng-container *ngFor="let message of messages | async">
-  <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
+<!-- End of header -->
+<!-- Main Content -->
+<ion-content fullscreen>
+  <ng-container *ngFor="let message of messages | async">
+    <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
           'to': message.sentBy === 'user' }">
-  {{ message.content }} 
-  </div>
-</ng-container>
+      <span>{{ message.content }}</span>
+    </div>
+  </ng-container>
 </ion-content>
-<ion-footer fxLayout="row" fxLayoutAlign="center center">
-<ion-toolbar>
-    <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" placeholder="your message...."
-    id="message-ip">
-    <span (click)="sendMessage()" class="message-sendIcon">
-    <mat-icon>send</mat-icon>
-  </span>
-</ion-toolbar>
+<!-- End of main content -->
+<!-- Footer -->
+<ion-footer>
+  <ion-toolbar>
+    <div fxLayout="row" fxLayoutAlign="end start">
+      <mat-form-field appearance="outline">
+        <input type="text" matInput [(ngModel)]="formValue" (keyup.enter)="sendMessage()"
+          placeholder="Your message here">
+      </mat-form-field>
+      <button mat-icon-button>
+        <mat-icon>send</mat-icon>
+      </button>
+
+    </div>
+  </ion-toolbar>
 </ion-footer>
+<!-- End of footer -->
 <!-- end of the chatpage -->

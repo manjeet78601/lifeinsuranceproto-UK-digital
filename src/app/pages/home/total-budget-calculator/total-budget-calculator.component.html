@@ -46,8 +46,8 @@
     </section>
 
     <section class="bg-lightgray ion-padding" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <div *ngFor="let que of totals">
-        <mat-label class="que-header">{{ que.TOTAL_TEXT }}</mat-label>
+      <div *ngFor="let que of totals" fxLayout="column">
+        <mat-label>{{ que.TOTAL_TEXT }}</mat-label>
         <mat-form-field appearance="outline">
           <span matPrefix>$</span>
           <input type="number" class="align-end" matInput [(ngModel)]="que.TOTAL" (change)="setAmountLeft()">
@@ -56,8 +56,9 @@
         </mat-slider> -->
         <!-- {{ que.TOTAL | currency}} -->
       </div>
-      <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
         <button mat-flat-button color="primary" (click)="getQuote()">{{ BTN.STEP_THREE | uppercase}}</button>
+        <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
       </div>
 
     </section>

@@ -27,7 +27,7 @@ export class ChatComponent implements OnInit {
     this.chat.converse(this.formValue);
     this.formValue = '';
   }
-  closeModal(){
+  closeModal() {
     this.modalController.dismiss();
-   }
+  }
 }
