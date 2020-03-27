@@ -4,13 +4,13 @@ import { LoaderService } from 'src/app/services/loader.service';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 
+
 @Component({
   selector: 'app-health-questions',
   templateUrl: './health-questions.component.html',
   styleUrls: ['./health-questions.component.scss'],
 })
 export class HealthQuestionsComponent implements OnInit {
-  
   DOM_CONSTANTS = HomeConstants.HEALTHQUESTIONS;
   PAGE_HEADER = HomeConstants.HEALTH_HEADER;
   PAGE_SUBHEADER = HomeConstants.HEALTH_SUB_HEADER;
@@ -31,6 +31,9 @@ export class HealthQuestionsComponent implements OnInit {
     setTimeout(() => {
       this.router.navigate(['/home/quote']);
     }, 2000);
+  }
+createAccount() {
+    this.router.navigate(['/auth/signup']);
   }
 
 }
