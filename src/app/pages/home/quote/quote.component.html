@@ -45,11 +45,11 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-      <mat-card-content *ngIf="collapsedSec1">
-          <button mat-flat-button (click)="collapsedSec1=false" fxFlex="20"
+      <mat-card-content [hidden]="collapse[i]">
+          <button mat-flat-button (click)="collapse[i] = !collapse[i]" fxFlex="20"
             class="btn-mat-card">{{BTN.READ_MORE}}</button>
       </mat-card-content>
-      <mat-card-content *ngIf="!collapsedSec1">
+      <mat-card-content [hidden]="!collapse[i]">
         <ion-grid>
           <ion-row *ngFor="let cus of quo.customerRatings">
             <ion-col size="9">
@@ -74,7 +74,7 @@
         <div fxLayout="column" fxLayoutAlign="center center">
           <button mat-flat-button class="quo-btn" color="primary"
             (click)="getPDF()">{{BTN.GET_QUOTE}}</button>
-            <button mat-flat-button (click)="collapsedSec1=true" class="btn-mat-card mt-10">{{BTN.CLOSE}}</button>
+            <button mat-flat-button (click)="collapse[i] = !collapse[i]" class="btn-mat-card mt-10">{{BTN.CLOSE}}</button>
        </div>
              </mat-card-content>
     </mat-card>

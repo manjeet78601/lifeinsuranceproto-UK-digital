@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 export class QuoteComponent implements OnInit {
 
   // Initialize expandable card to false
-  collapsedSec1 = true;
+  collapse=[];
   DOM_CONSTANTS = HomeConstants.QUOTE;
   BTN = HomeConstants.BTTN;
   quotes: any;
