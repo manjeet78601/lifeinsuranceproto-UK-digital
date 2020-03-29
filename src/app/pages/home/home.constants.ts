@@ -255,12 +255,12 @@ export class HomeConstants {
             },
             {
                QUESTIONTEXT: 'Height',
-               INPUT_TEXT: 'Textbox',
+               INPUT_TEXT12: 'Textbox',
                ICON: false
             },
             {
                QUESTIONTEXT: 'Weight',
-               INPUT_TEXT: 'Textbox',
+               INPUT_TEXT01: 'Textbox',
                ICON: false
             },
             {
@@ -381,8 +381,8 @@ export class HomeConstants {
    ];
    public static Weight = 'Weight';
    public static HEALTH_HEADER = ' LIFE INSURENCE Medical Questions';
-   public static HEALTH_SUB_HEADER = 'Answer a few health Qs';
-   public static HEALTH_LINE = 'In order to process your examine we need to';
+   public static HEALTH_SUB_HEADER = 'Answer a few health Qs ANSWER A FEW HEALTH Q s';
+   public static HEALTH_LINE = 'In order to provide yout with quotes. we need to ask a few questions. about your health.';
 
    // Step 3: Choose Plan
 
@@ -460,7 +460,7 @@ export class HomeConstants {
 and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start `;
    public static BTTN = {
       SUBMIT: 'Submit',
-      INSURANCE: 'Step Two',
+      INSURANCE: 'CALCULATE',
       READ_MORE: 'Read More',
       CLOSE: 'Close',
       INS_CAL: 'INSURANCE CALCULATOR',

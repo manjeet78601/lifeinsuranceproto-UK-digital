@@ -15,17 +15,12 @@ export class InsuranceCalculatorComponent implements OnInit {
   PAGE_SUB_HEADER = HomeConstants.LIFE_INSURANCE_SUB_HEADER;
 
   BTTN = HomeConstants.BTTN;
- 
   STEP1_BOTTOM = HomeConstants.STEP1_BOTTOM;
   progress = 0;
   totalCoverage = 0;
-
- 
-
   INSURANCE_CALCULATOR = HomeConstants.INSURANCE_CALCULATOR;
 
-
-  constructor(private router: Router, private navigationService: MenuService) { }
+constructor(private router: Router, private navigationService: MenuService) { }
 
   ngOnInit() { }
 
@@ -48,7 +43,7 @@ export class InsuranceCalculatorComponent implements OnInit {
         this.totalCoverage = 0;
         return false;
       } else {
-        this.totalCoverage = Math.floor(Math.random() * 100000) + 10000
+        this.totalCoverage = Math.floor(Math.random() * 100000) + 10000;
       }
     });
   }
