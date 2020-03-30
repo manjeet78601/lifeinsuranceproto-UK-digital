@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './sharedModules/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -21,12 +20,12 @@ import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
-  AppComponent,
-  WelcomeComponent,
-  HeaderComponent,
-  ChatComponent,
-  FooterComponent],
-  entryComponents: [HeaderComponent, FooterComponent,ChatComponent],
+    AppComponent,
+    WelcomeComponent,
+    HeaderComponent,
+    ChatComponent
+  ],
+  entryComponents: [HeaderComponent, ChatComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -35,7 +34,7 @@ import { ChatComponent } from './components/chat/chat.component';
     MaterialModule,
     FlexLayoutModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     StatusBar,
@@ -43,6 +42,6 @@ import { ChatComponent } from './components/chat/chat.component';
     Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

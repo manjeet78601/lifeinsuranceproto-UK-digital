@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { MenuService } from 'src/app/services/menu.service';
+import { NavigationMenu } from 'src/app/models/navigation.model';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -7,45 +11,10 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  navigate = [
-    {
-      title : 'Insurance calculator',
-      url   : '/home/insurance-calculator'
-    },
-    {
-      title : 'Financial Budget',
-      url   : '/home/budget',
-    },
-    {
-      title : 'choosing a plan',
-      url   : 'home/chooseplan'
-    },
-    {
-      title : 'Comparing Quotes',
-      url   : 'home/quotes'
-    },
-    {
-      title : 'Contact',
-      url   : 'home/contact'
-    },
-    {
-      title : 'Help',
-      url   : 'home/help'
-    },
-    {
-      title : 'Sign In',
-      url   : '/auth'
-    },
-    {
-      title : 'Location',
-      url   : '/location'
-    },
-    {
-      title : 'Facial-Identity',
-      url   : '/facial-identity'
-    },
-  ];
-  constructor(private menu: MenuController) { }
-  ngOnInit() {}
+  navigate$: Observable<NavigationMenu[]>;
+  constructor(private menu: MenuController, private navigationService: MenuService) { }
+  ngOnInit() {
+    this.navigate$ = this.navigationService.getNavigationMenus();
+  }
 
 }

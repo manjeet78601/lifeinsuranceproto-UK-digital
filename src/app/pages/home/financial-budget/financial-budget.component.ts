@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeConstants,  } from './../home.constants';
+import { HomeConstants, } from './../home.constants';
 import { from } from 'rxjs';
 import { LoaderService } from 'src/app/services/loader.service';
 import { Router } from '@angular/router';
+import { DataAnalyticsService, CategoryName, Action } from 'src/app/services/data-analytics.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-financial-budget',
@@ -19,12 +21,16 @@ export class FinancialBudgetComponent implements OnInit {
 
   constructor(
     private loader: LoaderService,
-    private router: Router
-    ) { }
+    private router: Router,
+    private analytic: DataAnalyticsService,
+    private userService: UserService,
+  ) { }
 
   ngOnInit() {
-   // console.log(this.CONSTANTS.FINANCIALBUDGET);
+    // console.log(this.CONSTANTS.FINANCIALBUDGET);
+
   }
+
 
   incrementProgress(progress) {
     if (this.progress < 100 && this.progress < progress) {
@@ -34,10 +40,15 @@ export class FinancialBudgetComponent implements OnInit {
   }
 
   calculateBudget() {
+    const totalBudget = [];
+    // for (const iterator of this.DOM_CONSTANTS) {
+    //   totalBudget.push(this.sum(iterator.QUESTIONS));
+    // 
+    this.userService.setCalculatedBudget(this.DOM_CONSTANTS);
+    this.analytic.trackAnalyticData(CategoryName.BUDGET_CALCULATOR, Action.CLICK, 'Calculate');
     this.loader.showAutoHideLoader('Fetching Details...', 3000);
     setTimeout(() => {
       this.router.navigate(['/home/total-budget']);
     }, 3000);
   }
-
 }

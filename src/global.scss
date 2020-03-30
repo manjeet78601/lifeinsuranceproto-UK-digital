@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -27,213 +27,233 @@
 
 @import "./theme/variables.scss";
 
-@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+@import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
 
 .wrapper {
-    padding: 40px 20px;
+  padding: 40px 20px;
 }
 header {
-    text-align: center;
-    h1{
-        font-family: 'Lato' !important;
-        font-size:  16px !important;
-        font-weight: bold !important;
-    }
+  text-align: center;
+  h1 {
+    font-family: "Lato" !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+  }
 }
 
-p, h1 ,h2 ,h3 ,h4, h5, h6 {
-    color: #5a5a5a;
-} 
-
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #5a5a5a;
+}
+.app-name{
+  padding-left: 0;
+  padding-top: 10px;
+}
 .radio-group {
-    display: flex;
-    flex-direction: row;
-    margin: 15px 0;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+}
+
 .radio-button {
-    margin: 5px;
+  margin: 5px;
 }
 .full-width {
-    width: 100%;
-  }
-  .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding-top: 0.5em !important;
+  width: 100%;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding-top: 0.5em !important;
 }
 
 .que-label {
-      font-size: 18px;
-      font-weight: bold;
-      color: #5a5a5a;
-  }
-  
-  .card-gray {
-    background-color: #585858;
-    border-radius: 10px;
-    box-shadow: none;
-    width: 100%;
-    font-family: "Lato";
-    margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #5a5a5a;
+}
 
-      .mat-card-title, .mat-card-content{
-          color: #fff;
-      }
-      .mat-card-title {
-          font-size: 18px;
-          font-weight: bold;
-      }
-      .mat-card-content {
-          font-size: 12px;
-          color: #fff !important;
+.card-gray {
+  background-color: #585858;
+  border-radius: 10px;
+  box-shadow: none;
+  width: 100%;
+  font-family: "Lato";
+  margin-bottom: 10px;
 
-          p{
-            color: #fff !important;
-            text-align: center;
-          }
-      }
-  }
-
-  .map-card {
-      height: 184px;
-      width: 340px;
-  }
-  .mat-checkbox-layout {
-    .mat-checkbox-label{
-      font-size: 14px;
-    }
-  } 
-  .lightgray-card{
-    background-color:  #f4f4f4;
-    padding: 40px 0;
-    width: 100%;
-  }
-  
-  .signin-btn, .scan-btn, .nav-btn {
-    height: 32px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 1 !important;
-    width: 45%;
-    background-color:#C1C1C1;
+  .mat-card-title,
+  .mat-card-content {
     color: #fff;
-    border: none !important;
-    &.mat-stroked-button:disabled{
-        color: #fff !important;
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
   }
-  .f-weight-n{
-    font-weight: 200;
-  }
-  .bg-gray {
-    background-color: #6E6E6E;
-  }
-  .bg-white {
-    background-color: #FFFFFF;
-  }
-  .col-blk{
-      color: #000000;
-  }
-  .col-wht{
-    color: #FFFFFF;
-  }
-  .col-dull-grey {
-    color: #CCCCCC;
-  }
-  .col-darkgrey{
-      color:#5A5A5A;
-  }
-  
-  .fs-12{
-    font-size: 12px;
-  }
-  .fs-14{
-      font-size: 14px;
-  }
-  .fs-15{
-    font-size:15px;
-  }
-  .fs-16{
-    font-size: 16px;
-  }
-  .fs-18{
+  .mat-card-title {
     font-size: 18px;
+    font-weight: bold;
   }
-  .lh-05{
-    line-height: 0.5;
-  }
-  .font-bold{
-  font-weight: 500;
-  }
-  .mr-5{
-    margin-right:5px;
-  }
-  .mt-10{
-    margin-top:10px;
-}
-  .mt-20{
-      margin-top: 20px;
-  }
-  .mt-30{
-    margin-top:30px;
-}
-  .mt-50 {
-    margin-top: 50px;
-  }
-  .mb-20 {
-      margin-bottom: 20px;
-  }
-  .mb-30 {
-    margin-bottom: 30px;
-  }
-  .mb-70 {
-    margin-bottom: 70px;
-  }
-  .align-item-bottom {
-    align-self: flex-end;
-    margin-top: auto;
-  }
- 
-  .p-8 {
-    padding: 8px;
-  }
-  .p-10 {
-    padding: 10px;
-  }
-  .pt-13 {
-    padding-top:13px; 
-  }
+  .mat-card-content {
+    font-size: 12px;
+    color: #fff !important;
 
-  // footer 
-
-  .footer-p-40{
-    padding: 40px;
-}
-  .fl-footer-content{
-    font-family:Proxima Soft;
-    font-size:12px;
-    width:118px;
-     height:32px;
-     margin-bottom: 30px;
-    
-  }
-  .fr-footer-content{
-    float:right;
-    font-family:Proxima Soft;
-    font-size:12px;
-    width:126;
-    height:16px;
-    margin-bottom: 30px;
-  }
-
-
-  .mat-form-field-appearance-legacy,.mat-form-field-appearance-outline{
-    .mat-form-field-infix {
-      margin-left: 5px;
+    p {
+      color: #fff !important;
+      text-align: center;
     }
-  } 
-  
+  }
+}
+
+.map-card {
+  height: 184px;
+  width: 340px;
+}
+.mat-checkbox-layout {
+  .mat-checkbox-label {
+    font-size: 14px;
+  }
+}
+.lightgray-card {
+  background-color: #f4f4f4;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.signin-btn,
+.scan-btn,
+.nav-btn {
+  height: 32px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1 !important;
+  width: 45%;
+  background-color: #c1c1c1;
+  color: #fff;
+  border: none !important;
+  &.mat-stroked-button:disabled {
+    color: #fff !important;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+.f-weight-n {
+  font-weight: 200;
+}
+.bg-gray {
+  background-color: #6e6e6e;
+}
+.bg-white {
+  background-color: #ffffff;
+}
+.col-blk {
+  color: #000000;
+}
+.col-wht {
+  color: #ffffff;
+}
+.col-dull-grey {
+  color: #cccccc;
+}
+.col-darkgrey {
+  color: #5a5a5a;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+.fs-14 {
+  font-size: 14px;
+}
+.fs-15 {
+  font-size: 15px;
+}
+.fs-16 {
+  font-size: 16px;
+}
+.fs-18 {
+  font-size: 18px;
+}
+.lh-05 {
+  line-height: 0.5;
+}
+.font-bold {
+  font-weight: 500;
+}
+.m-15{
+  margin:15px
+}
+.mr-5 {
+  margin-right: 5px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-50 {
+  margin-top: 50px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.mb-70 {
+  margin-bottom: 70px;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.mb-0{
+  margin-bottom: 0;
+}
+.align-item-bottom {
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.p-8 {
+  padding: 8px;
+}
+.p-10 {
+  padding: 10px;
+}
+.pt-13 {
+  padding-top: 13px;
+}
+
+// footer
+
+.footer-p-40 {
+  padding: 40px;
+}
+.fl-footer-content {
+  font-family: Proxima Soft;
+  font-size: 12px;
+  width: 118px;
+  height: 32px;
+  margin-bottom: 30px;
+}
+.fr-footer-content {
+  float: right;
+  font-family: Proxima Soft;
+  font-size: 12px;
+  width: 126;
+  height: 16px;
+  margin-bottom: 30px;
+}
+
+.mat-form-field-appearance-legacy,
+.mat-form-field-appearance-outline {
+  .mat-form-field-infix {
+    margin-left: 5px;
+  }
+}
+
 //content
 .content {
   min-height: calc(100vh - 197px);
@@ -245,23 +265,26 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
 }
 //footer
 .footer {
+  margin-top: 50px;
   height: 141px;
   background-color: #272727;
   color: white;
   padding: 30px;
 
   .lp-f-txt {
-      font-size: 9px;
+    font-size: 9px;
   }
 }
-.signin-section, .signup-section {
+
+.signin-section,
+.signup-section {
   .header {
     font-weight: bold;
     color: #000000;
     font-size: 24px;
   }
   .sub-header {
-    color: #CCCCCC;
+    color: #cccccc;
     font-size: 16px;
   }
   .form-label {
@@ -281,11 +304,17 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
     width: 97px;
     height: 36px;
     margin: 0 5px;
-    border: 1px solid #7E7E7E;
+    border: 1px solid #7e7e7e;
     &:disabled {
-      color : #FFFFFF;
+      color: #ffffff;
       opacity: 0.5;
     }
+  }
+  #btn-steps-wth{
+    width:94%;
+  }
+  #btn-start-wth{
+    width:50%;
   }
   ion-icon {
     width: 2em;
@@ -296,7 +325,7 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
   .text-underline {
     text-decoration: underline;
   }
-  .text-left{
+  .text-left {
     text-align: left;
   }
 }
@@ -307,6 +336,8 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
   }
   .mat-expansion-panel {
     box-shadow: none;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 .mat-slider {
@@ -349,7 +380,6 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
   background-color: #f8f8f8;
 }
 .page-header {
-  
   padding: 20px 0px;
   h1 {
     font-family: proxima nova;
@@ -363,10 +393,10 @@ p, h1 ,h2 ,h3 ,h4, h5, h6 {
   padding: 2% 6%;
 }
 .spinner-bubbles {
-  color: #E03997 !important;
+  color: #e03997 !important;
 }
 .lightgray-text {
-  color: #C3C6CB;
+  color: #c3c6cb;
   font-size: 16px;
 }
 .w-100 {
@@ -521,6 +551,67 @@ padding: 5px
 #message-ip {
   border-radius: 25px;
   border: 2px solid grey;
+}
+// chatbox
+
+.chat-page-header {
+ img {
+    width: 80px;
+    height: 80px;
+  }
+}
+.chat-title{
+  position: relative;
+  
+}
+.message {
+  border-radius: 50px;
+  margin: 0 15px 10px;
+  padding: 15px 20px;
+  position: relative;
+  font-weight: bold;
+}
+
+.message.to {
+  background-color: rgba(32, 239, 254, 0.27);
+  color:black;
+  margin-left: 100px;
+  text-align: right;
+  padding: 10px;
+ border-bottom-left-radius: 25px;
+}
+
+.message.from {
+  background-color: #e5e4e9;
+  color: #363636;
+  margin-right: 100px;
+  padding: 10px;
+  border-bottom-right-radius: 50px 20px;
+}
+
+.message.to + .message.to,
+.message.from + .message.from {
+  margin-top: -10px;
+}
+
+#add-button {
+  top: auto;
+  right: 20px;
+  bottom: 109px;
+  left: auto;
+  position: fixed;
+}
+.btn-close{
+  position: relative;
+  bottom: 37px;
+}
+.chat-content {
+  position: relative;
+  top: 13px;
+}
+#message-ip {
+  border-radius: 25px;
+  border: 2px solid #609;
   padding: 20px;
   width: 330px;
   height: 15px;

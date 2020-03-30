@@ -1,0 +1,141 @@
+.choose-plan-img {
+  width: 302px;
+  height: 240px;
+}
+.plan-card {
+  max-width: 400px;
+  background-color: #f8f8f8;
+}
+.plan-sub-header {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #070707;
+  text-align: center;
+}
+
+.green-icon {
+  color: green;
+  width: 10px;
+  height: 15px;
+  font-weight: bold;
+}
+
+.mat-table {
+  overflow: auto;
+  height: 306px;
+  width: 302px;
+  border: 2px solid #e2e2e3;
+  margin-top: 20px;
+}
+.mat-card {
+  margin-top: 10px;
+  padding: 0px !important;
+}
+
+.wrapper-plan {
+  padding: 10px 20px;
+}
+
+mat-header-cell {
+  background: #fafafb;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #fafafb;
+}
+
+mat-cell {
+  font-size: 11px;
+  color: #1a084c;
+}
+.mat-cell-content {
+  font-family: Proxima Soft;
+  font-size: 13px;
+  color: #000000;
+  text-align: left;
+}
+
+.btn-mat-card {
+  font-family: SegoeUI;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  color: #cccccc;
+}
+
+.plan-mat-card-title {
+  font-family: SegoeUI;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: #fafafb;
+  color: #000000;
+  margin-top: 10px;
+}
+.mat-card-label {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.mat-card-content-width {
+  padding-left: 20px;
+  margin-right: 40px;
+}
+
+.header-title {
+  font-family: Playfair Display;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.exp-header {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  font-weight: bold;
+  color: #070707;
+  text-align: left;
+}
+.comp-header-title {
+  padding-top: 10px;
+  width: 302px;
+}
+p {
+  font-family: Lato;
+}
+
+.heart-icon {
+  color: #ef3b51;
+}
+.quo-btn {
+  margin-top: 30px !important;
+}
+.quo-sub-header {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #070707;
+  text-align: left;
+  padding-left: 15px;
+}
+.comment-txt {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #070707;
+  text-align: left;
+}
+ion-grid {
+  ion-card {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    margin-top: 0px !important;
+  }
+}
+.pad-15px {
+  padding-left: 15px;
+}
+.marg-10px {
+  margin-left: 10px;
+}

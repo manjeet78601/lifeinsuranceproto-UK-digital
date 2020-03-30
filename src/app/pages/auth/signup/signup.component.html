@@ -8,7 +8,7 @@
     <ion-buttons slot="start" color="dark">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title fxLayout="row" fxLayoutAlign="center center">
+   <ion-title class="ion-text-center app-name">
       <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
     </ion-title>
   </ion-toolbar>
@@ -43,11 +43,13 @@
   </section>
   <ng-template #verifyAccount>
     <section>
+      <ion-img class="wel-img" [src]="'../../../../assets/img/welcome-signin.png'"></ion-img>
       <header>
         <p class="header">{{htmlText.welcome_header}}</p>
-        <p class="subheader">{{htmlText.welcome_subheader}}</p>
+        <p class="subheader mb-0">{{htmlText.welcome_subheader}}</p>
+        <p class="subheader mt-0">{{htmlText.welcome_subheader1}}</p>
       </header>
-      <div class="mt-20"> 
+      <div class="mt-30"> 
         <button class="btn bg-gray col-wht" mat-stroked-button (click)="signin()"><strong>{{htmlText.signin_btn}}</strong></button>
       </div>
       <div class="mt-30"> 
@@ -69,4 +71,5 @@
    </ion-text>
   </footer> 
 </ion-content>
+
 

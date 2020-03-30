@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import {MatExpansionModule} from '@angular/material/expansion';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
@@ -12,12 +11,12 @@ import { LandingComponent } from './landing/landing.component';
 import { SharedModule } from 'src/app/sharedModules/shared.module';
 import { FinancialBudgetComponent } from './financial-budget/financial-budget.component';
 import { ChoosePlanComponent } from './choose-plan/choose-plan.component';
-import { CompareQuotesComponent } from './compare-quotes/compare-quotes.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
 import { HealthQuestionsComponent } from './health-questions/health-questions.component';
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
-
+import { QuoteComponent } from './quote/quote.component';
+import { ChatService } from '../../services/chat.service';
 
 @NgModule({
   imports: [
@@ -25,8 +24,7 @@ import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SharedModule,
-    MatExpansionModule
+    SharedModule
   ],
   declarations: [
     HomePage,
@@ -34,11 +32,12 @@ import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-
     InsuranceCalculatorComponent,
     FinancialBudgetComponent,
     ChoosePlanComponent,
-    CompareQuotesComponent,
     HealthQuestionsComponent,
     ContactComponent,
     HelpComponent,
-    TotalBudgetCalculatorComponent
-  ]
+    TotalBudgetCalculatorComponent,
+    QuoteComponent
+  ],
+  providers: [ChatService]
 })
-export class HomePageModule {}
+export class HomePageModule { }

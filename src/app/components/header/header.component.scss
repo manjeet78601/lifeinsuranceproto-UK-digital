@@ -1,0 +1,19 @@
+ion-content.menu-bar {
+    --ion-background-color: #CCCCCC;
+    .menu-item {
+        font-size: 18px;
+        color: #070707;
+    }
+    .menu-list {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .menu-step {
+        border: 1px solid #000;
+        border-radius: 50%;
+        min-width: 24px;
+        margin-right: 5px;
+        text-align: center;
+    }
+  }

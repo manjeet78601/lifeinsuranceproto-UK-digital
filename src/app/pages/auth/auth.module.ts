@@ -21,6 +21,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     IonicModule,
     MaterialModule,
     AuthPageRoutingModule
+   
   ],
   declarations: [AuthPage,
   SigninComponent,

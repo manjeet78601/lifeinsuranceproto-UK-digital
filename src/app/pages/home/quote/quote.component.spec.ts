@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { CompareQuotesComponent } from './compare-quotes.component';
+import { QuoteComponent } from './quote.component';
 
-describe('CompareQuotesComponent', () => {
-  let component: CompareQuotesComponent;
-  let fixture: ComponentFixture<CompareQuotesComponent>;
+describe('QuoteComponent', () => {
+  let component: QuoteComponent;
+  let fixture: ComponentFixture<QuoteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CompareQuotesComponent ],
+      declarations: [ QuoteComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CompareQuotesComponent);
+    fixture = TestBed.createComponent(QuoteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

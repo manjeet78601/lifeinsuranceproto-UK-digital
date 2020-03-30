@@ -9,7 +9,7 @@
     <ion-buttons slot="start" color="dark">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title fxLayout="row" fxLayoutAlign="center center">
+    <ion-title class="ion-text-center app-name">
       <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
     </ion-title>
   </ion-toolbar>
@@ -17,7 +17,8 @@
 <!-- End of Header -->
 <ion-content>
   <section  class="wrapper-auth ion-text-center content signin-section" fxLayout="column" fxLayoutAlign="center center">
-   
+     
+     <ion-img class="login-img" [src]="'../../../../assets/img/login-img.png'"></ion-img>
       <header>
         <p class="header">{{htmlText.login_welcome_header}}</p>
         <p class="sub-header">{{htmlText.login_welcome_subheader}}</p>
@@ -43,16 +44,17 @@
                 </div>
             </form>
     </section>
-  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
-    <ion-text class="align-item-bottom">
-      <ion-label class="fl-footer-content">
-         77 Water St 8th Floor,<br/> Manhattan, NY 10005
-     </ion-label>
-   </ion-text>
-   <ion-text class="align-item-bottom">
-     <ion-label class="fl-footer-content">
-      Copyright Life+ © 2020
-     </ion-label>
-   </ion-text>
-  </footer> 
+    <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+      <ion-text class="align-item-bottom">
+        <ion-label class="fl-footer-content">
+           77 Water St 8th Floor,<br/> Manhattan, NY 10005
+       </ion-label>
+     </ion-text>
+     <ion-text class="align-item-bottom">
+       <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+       </ion-label>
+     </ion-text>
+    </footer> 
     </ion-content>
+   
