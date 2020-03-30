@@ -11,6 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class ComplianceComponent implements OnInit {
 
   DOM_CONSTANTS = HomeConstants.COMPLIANCE;
+  BTN = HomeConstants.BTTN;
   complianceForm: FormGroup;
   constructor(private router: Router) {
     this.complianceForm = new FormGroup(

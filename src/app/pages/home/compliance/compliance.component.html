@@ -28,24 +28,24 @@
   <div class="m-15 comp-content" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
     <p>{{DOM_CONSTANTS.SIGN_TXT}}</p>
     <form [formGroup]="complianceForm">
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <input class="comp-content" matInput type="text" formControlName="name" placeholder="First and last name">
       </mat-form-field>
     </form>
     <button mat-flat-button color="primary" fxLayoutAlign="center center" (click)="addCard(state)"
-     [disabled]="(complianceForm.invalid)">Add Card</button>
+      [disabled]="(complianceForm.invalid)">{{BTN.ADD_CARD}}</button>
   </div>
   <!--Footer-->
   <footer class=" footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
-      <ion-text class="align-item-bottom">
-        <ion-label class="fl-footer-content">
-          77 Water St 8th Floor,<br /> Manhattan, NY 10005
-        </ion-label>
-      </ion-text>
-      <ion-text class="align-item-bottom">
-        <ion-label class="fl-footer-content">
-          Copyright Life+ © 2020
-        </ion-label>
-      </ion-text>
-      </footer>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
 </ion-content>

@@ -530,7 +530,8 @@ and subtracting your assets you an estimate what your loved ones will need in co
       READ_MORE: 'Read More',
       CLOSE: 'Close',
       GET_QUOTE : 'GET QUOTE',
-      INS_CAL: 'INSURANCE'
+      INS_CAL: 'INSURANCE',
+      ADD_CARD : 'Add Card'
    };
 
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
