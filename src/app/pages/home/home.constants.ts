@@ -178,7 +178,11 @@ export class HomeConstants {
       CALCULATE: 'Calculate',
       GET_QUOTE: 'Get Quote',
       STEP_THREE: 'Step Three',
-      CREATE_ACCOUNT: 'Create Account'
+      CREATE_ACCOUNT: 'Create Account',
+      INS_CAL: 'INSURANCE CALCULATOR',
+      INSURANCE: 'CALCULATE',
+
+
    };
 
    public static BUDGET_CALCULATOR = {
@@ -381,7 +385,7 @@ export class HomeConstants {
    ];
    public static Weight = 'Weight';
    public static HEALTH_HEADER = ' LIFE INSURENCE Medical Questions';
-   public static HEALTH_SUB_HEADER = 'Answer a few health Qs ANSWER A FEW HEALTH Q s';
+   public static HEALTH_SUB_HEADER = 'ANSWER A FEW HEALTH Q s';
    public static HEALTH_LINE = 'In order to provide yout with quotes. we need to ask a few questions. about your health.';
 
    // Step 3: Choose Plan
@@ -458,13 +462,7 @@ export class HomeConstants {
    public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
    public static LIFE_INSURANCE_SUB_HEADER = `By calculating you long term financial obligations.
 and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start `;
-   public static BTTN = {
-      SUBMIT: 'Submit',
-      INSURANCE: 'CALCULATE',
-      READ_MORE: 'Read More',
-      CLOSE: 'Close',
-      INS_CAL: 'INSURANCE CALCULATOR',
-};
+
    public  static STEP1_BOTTOM = 'Ready to figure out your budget ?';
    public static INSURANCE_CALCULATOR =
       {

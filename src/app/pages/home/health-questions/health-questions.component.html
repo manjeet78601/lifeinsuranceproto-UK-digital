@@ -24,7 +24,7 @@
         </header>
       
 <section fxLayout="column" class="wrapper-plan1" fxLayoutAlign="center center" fxLayoutGap="10px">
-  <form #f1="ngForm" name="form">
+  <form #health="ngForm" name="form">
     <mat-accordion>
       <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS" >
         <mat-expansion-panel-header>
@@ -76,15 +76,14 @@
       </mat-expansion-panel>
     </mat-accordion>
   </form>
-    <button  mat-flat-button   color="primary"(click)="submit(f1)">
-      {{ BTN.SUBMIT | uppercase }}
-    </button>
+  <button  mat-flat-button   color="primary"(click)="submit(health)" [disabled]="health.invalid">
+    {{ BTN.SUBMIT | uppercase }}
+  </button>
   <div>
     <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
     </div>
   </section>
   </section>
-
   <!-- Footer -->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
     <ion-text class="align-item-bottom">

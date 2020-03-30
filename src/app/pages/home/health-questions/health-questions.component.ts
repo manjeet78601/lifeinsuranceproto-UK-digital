@@ -4,7 +4,7 @@ import { LoaderService } from 'src/app/services/loader.service';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 import { UserService } from 'src/app/services/user.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+
 
 
 @Component({
@@ -37,8 +37,8 @@ export class HealthQuestionsComponent implements OnInit {
 
 
 
-   submit(f1) {
-    console.log(f1);
+   submit(health) {
+    console.log(health);
     const totalbudget = [];
     this.navigationService.setCompletedMenu('Comparing Quotes');
     this.loader.showAutoHideLoader('Please give us a few moments..', 3000);
