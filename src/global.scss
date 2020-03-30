@@ -418,7 +418,157 @@ ion-buttons {
     display: none !important;
   }
 }
+// chatbot css
+#add-button {
+  top: auto;
+  right: 20px;
+  bottom: 109px;
+  left: auto;
+  position: fixed;
+}
+.chat-page-header {
+  img {
+     width: 80px;
+     height: 80px;
+   }
+ }
+ .chat-title{
+   position: relative;
+   
+ }
+// *************
 
+.chats {
+  position: relative;
+  z-index: 0;
+}
+
+.chats .chatbox {
+  padding: 0 40px;
+  margin-bottom: 5px;
+}
+
+.joined {
+clear: both;
+line-height: 18px;
+font-size: 15px;
+margin: 8px 0;
+padding: 8px;
+}
+.joined span {
+padding: 5px
+}
+
+/* Messages*/
+
+
+
+.message {
+  color: #000;
+  clear: both;
+  line-height: 18px;
+  font-size: 15px;
+  padding: 8px;
+  position: relative;
+  margin: 8px 0;
+  max-width: 85%;
+  word-wrap: break-word;
+  z-index: -1;
+}
+
+.message:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.metadata {
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 7px;
+  position: relative;
+  bottom: -4px;
+}
+
+.metadata .time {
+  color: rgba(0, 0, 0, .45);
+  font-size: 11px;
+  display: inline-block;
+}
+
+
+.message:first-child {
+  margin: 16px 0 8px;
+}
+
+.message.sent{
+  background: #ccc;
+  border-radius: 10px 10px 0px 10px;
+  float: left;
+
+:after {
+content: "";
+  position: absolute;
+  bottom: 0;
+  right: 1%;
+  width: 0;
+  height: 0;
+  border: 17px solid transparent;
+  border-top-color: #ccc;
+  border-bottom: 0;
+  border-right: 0;
+  margin-bottom: -5px;
+}
+}
+
+.message.received {
+  background: #00B5AD;
+  border-radius: 10px 10px 10px 0px;
+  float: right;
+
+:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1%;
+  width: 0;
+  height: 0;
+  border: 17px solid transparent;
+  border-top-color: #00B5AD;
+  border-bottom: 0;
+  border-left: 0;
+  margin-bottom: -7px;
+}
+}
+
+
+.metadata {
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 7px;
+  position: relative;
+  bottom: -4px;
+}
+
+.metadata .time {
+  color: rgba(0, 0, 0, .45);
+  font-size: 11px;
+  display: inline-block;
+}
+
+.chat_input{
+ 
+    -moz-border-radius: 15px;
+   border-radius: 15px;
+      border:solid 1px black; 
+      padding:5px;
+}
+#message-ip {
+  border-radius: 25px;
+  border: 2px solid grey;
+}
 // chatbox
 
 .chat-page-header {
@@ -505,60 +655,18 @@ ion-buttons {
   width: 330px;
   height: 15px;
 }
-.message-sendIcon{
-  cursor:pointer;
-  position: relative;
-  top: 6px;
-  left: 2px;
+/* input text Border */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  border: 1px solid grey;
+  border-radius:25px !important;
 }
 
-// end of chat SCSS
-//*******************//
-.custom-mat-btn-toggle-group {
-  height: 38px;
-  width: 161px;
-  border: none !important;
-  .mat-button-toggle {
-    background-color: #e0e0e0;
-    color: #5a5a5a;
-    width: 100px;
-    border: none;
-    font-size: 14px;
-    font-weight: 500;
-    .mat-button-toggle-label-content {
-      line-height: 36px;
-    }
-    &.yes-btn {
-      margin-right: 2px;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-    }
-    &.no-btn {
-      margin-left: 2px;
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-    }
-    &.mat-button-toggle-checked {
-      background-color: #21ba45;
-      color: #ffffff;
-    }
-  }
-  .circle {
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 1.6;
-    left: 45%;
-    z-index: 9;
-    top: 23%;
-    color: #5a5a5a;
-    font-weight: 500;
-    font-size: 12px;
-  }
+.circled{
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: grey;
+  margin: 19px;
+  position: relative;
 }
 .mat-accordion.user-financial-info {
   .mat-expansion-indicator {
@@ -585,3 +693,9 @@ ion-buttons {
   color: #ccc;
 }
   
+.circled-ele{
+  position: absolute;
+  bottom: 3px;
+  left: 305px;
+  right: 2px;
+}
