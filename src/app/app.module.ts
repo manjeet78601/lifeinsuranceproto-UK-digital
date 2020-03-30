@@ -16,14 +16,17 @@ import { MaterialModule } from './sharedModules/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Camera } from '@ionic-native/camera/ngx';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
   AppComponent,
   WelcomeComponent,
   HeaderComponent,
+  ChatComponent,
   FooterComponent],
-  entryComponents: [HeaderComponent, FooterComponent],
+  entryComponents: [HeaderComponent, FooterComponent,ChatComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -31,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     StatusBar,

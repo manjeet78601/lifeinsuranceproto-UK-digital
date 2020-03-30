@@ -1,5 +1,4 @@
-.wrapper {
-    .card-background-page ion-card {
+.card-background-page ion-card {
     position: relative;
     text-align: left;
   }
@@ -35,14 +34,10 @@
   .m-0 {
     margin: 0;
   }
-  
-  img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    background-color: gray;
-    display: inline-block;
-  }
+  mat-card {
+    transition: none !important;
+    box-shadow: none !important;
+}
   
   .align-content-center {
     padding: 20px 0;
@@ -50,38 +45,38 @@
     text-align: center;
   }
   
-  .mat-card-title {
+  mat-card-title {
     font-family: Playfair Display;
     font-size: 24px;
     font-weight: bold;
+    margin-top: 20px;
   }
   
-  .mat-card-subtitle {
+  mat-card-subtitle {
     font-family: Proxima Soft;
     font-size: 14px;
     font-weight: bold;
+    margin-top: 50px;
   }
-  
-  .mat-card-content > p mat-label {
+  mat-card-content > p  {
     font-family: Proxima Soft;
     font-size: 16px;
+    margin-top: 20px;
   }
-  
-  button {
-    font-weight: bold;
-    width: 100px;
-    height: 36px;
-    background-color: turquoise;
-    color: white;
-    text-align: center;
-  }
-  
-  .btn-details {
+  .btn-content {
     font-family: Proxima Soft;
     font-size: 14px;
   }
-}
-  
+
+ .btn-content4{
+  padding-bottom: 41px;
+  padding-right: 15px;
+ } 
+ .btn-content_4{
+  position: relative;
+  top: 16px;
+ }
+
   ion-toolbar {
     --background: transparent;
     --ion-color-base: transparent !important;

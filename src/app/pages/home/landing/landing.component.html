@@ -16,93 +16,142 @@
 
 <!-- First Content  -->
 <ion-content>
-
-  <section class="wrapper ion-text-center content">
-    <section fxLayout="column">
-
-      <div>
-        <img src="../../assets/img/circleImg1.png" alt="img1"  class="circled-img"/>
-      </div>
-      <mat-card-subtitle class="mt-50">HELLO THERE</mat-card-subtitle>
-      <mat-card-title class="mt-20">Life Insurance For The <br/> Morden Family</mat-card-title>
-      <mat-card-content class="mt-20">
-        <p>
-          To help protect your family and prepare your <br/> family for life’s events, you need coverage that <br/>fits comfortably
-          in your budget and adapts to <br/>your changing lifestyle, income and needs.
-        </p>
+<!-- Landing page starts from here -->
+<section class="content">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <img src="../../assets/img/landingPage/Welcome_To_Life_Plus-01.png" alt="Welcome_Img" />
+  </div>
+  <div class="wrapper ion-text-center" fxLayout="column">
+    <mat-card>
+      <mat-card-title [innerHtml]=DOM_CONSTANTS.PLAN_HEADER1></mat-card-title>
+      <mat-card-content>
+        <p [innerHtml]=DOM_CONSTANTS.PLAN_BODY></p>
       </mat-card-content>
-
-    </section>
-    <mat-divider></mat-divider>
-
-
-    <!-- step one and two -->
-    <section fxLayout="column">
-      <mat-card-subtitle class="mt-50">LIFE INSURANCE SIMPLIFIED, PERSONALIZED</mat-card-subtitle>
-      <mat-card-title class="mt-20">Let Us Help You Plan Your <br/>Family’s Future.</mat-card-title>
-      <mat-card-content class="mt-20 ">
-        <p>
-          We’ll walk you through the process and help <br/>you prioritze what’s best for you and yours.<br/> Our plans are
-          flexible, afforadble and as easy<br/> to understand as 1, 2, 3, 4.
-        </p>
+     <div>
+      <mat-card-subtitle>{{DOM_CONSTANTS.PLAN_HEADER2}} </mat-card-subtitle>
+      <mat-card-title>{{DOM_CONSTANTS.PLAN_SUB_HEADER2}}</mat-card-title>
+    </div>
+      <mat-card-content>
+        <p [innerHtml]=DOM_CONSTANTS.PLAN_BODY2></p>
+        <p [innerHtml]=DOM_CONSTANTS.PLAN_BODY_2></p>
       </mat-card-content>
-      <!-- One and Two -->
-      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
-        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20  circled-img" />
-          <button mat-flat-button class="btn-color" [routerLink]="['/location']" routerLinkActive="router-link-active" >STEP ONE</button>
-          <p class="btn-details">Calculate how<br> much coverage<br> your family needs.</p>
-        </div>
-        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20 circled-img" />
-          <button mat-flat-button class="btn-color">STEP TWO</button>
-          <p class="btn-details">Customize a Plan<br> based on your<br> holist view.</p>
-        </div>
-      </div>
-      <!-- three and Four -->
-      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
-        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-50 circled-img" />
-          <button mat-flat-button >STEP THREE</button>
-          <p class=" btn-details">Term vs Prem:<br> What's best for<br> you?</p>
-        </div>
-        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20 circled-img" />
-          <button mat-flat-button [routerLink]="['/auth']" routerLinkActive="router-link-active" >STEP FOUR</button>
-          <p class=" btn-details">Compare Quotes.</p>
-        </div>
-      </div>
-    </section>
-    <mat-divider></mat-divider>
-    <!-- Section 3 -->
-    <section fxLayout="column" class="mt-20 mb-30">
-      <mat-card-subtitle class="mt-50">EVERY FAMILY IS DIFFERENT</mat-card-subtitle>
-      <mat-card-title class="mt-20">SEE How We've Helped <br> Families Like Yours.</mat-card-title>
-      <mat-card-content class="mt-20">
-        <mat-label class="que-label">I am a : </mat-label>
-        <mat-form-field appearance="outline">
-          <mat-label>Select Marital/Parental Status</mat-label>
-          <mat-select matNativeControl>
-            <mat-option>None</mat-option>
-            <mat-option value="option1">Married</mat-option>
-            <mat-option value="option2">Single</mat-option>
-            <mat-option value="option3">Umarried</mat-option>
-            <mat-option value="option3">Divorced</mat-option>
-          </mat-select>
-        </mat-form-field>
+    </mat-card>
+  </div>
+  <!--  -->
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <img src="../../assets/img/landingPage/Plan_Ahead-02.png" alt="Plan_Ahead_Img" />
+  </div>
+  <div class="wrapper ion-text-center" fxLayout="column">
+    <mat-card>
+      <mat-card-subtitle>{{DOM_CONSTANTS.PLAN_HEADER3}}</mat-card-subtitle>
+      <mat-card-title [innerHtml]=DOM_CONSTANTS.PLAN_SUB_HEADER3></mat-card-title>
+      <mat-card-content>
+        <p [innerHtml]=DOM_CONSTANTS.PLAN_BODY3></p>
       </mat-card-content>
-      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
-        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20 circled-img" />
-          <button mat-flat-button class=" mt-20">READ MORE</button>
+    </mat-card>
+  </div>
+
+  <!--  -->
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <img src="../../assets/img/landingPage/Life_Plus_Collaboration-01-01.png" alt="Life_Plus_Img" />
+  </div>
+  <div class="wrapper ion-text-center" fxLayout="column">
+    <div>
+      <button mat-flat-button color="primary" [routerLink]="['/home/insurance-calculator']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_GETTING_STARTED.TITLE}}</button>
+    </div>
+    <!-- step One and two -->
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px" class="mt-50">
+      <div fxLayout="column" fxLayoutGap="10px">
+        <div>
+          <img src="../../assets/img/landingPage/winner.png" alt="Winner_Img" class="circled-img" />
         </div>
-        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
-          <img src="../../assets/img/circleImg1.png" alt="img1" class="mt-20  circled-img" />
-          <button mat-flat-button class="mt-20 ">READ MORE</button>
+        <div>
+          <button mat-flat-button color="primary" [routerLink]="['/home/insurance-calculator']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_STEP_ONE.TITLE}}</button>
+        </div>
+        <div>
+          <p class="btn-content" [innerHtml]=DOM_CONSTANTS.PLAN_STEP_ONE.CONTENT></p>
         </div>
       </div>
-    </section>
-  </section>
+      <div fxLayout="column" fxLayoutGap="10px">
+        <div>
+          <img src="../../assets/img/landingPage/stroke.png" alt="Stroke_Img" class="circled-img" />
+        </div>
+        <div>
+          <button mat-flat-button color="primary" [routerLink]="['/home/budget']">
+          {{DOM_CONSTANTS.PLAN_STEP_TWO.TITLE}}</button>
+        </div>
+        <div>
+          <p class="btn-content" [innerHtml]=DOM_CONSTANTS.PLAN_STEP_TWO.CONTENT></p>
+        </div>
+      </div>
+    </div>
+    <!-- step three and Four -->
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px">
+      <div fxLayout="column" fxLayoutGap="10px">
+        <div>
+          <img src="../../assets/img/landingPage/star.png" alt="Star_Img" class="circled-img" />
+        </div>
+        <div>
+          <button mat-flat-button color="primary" [routerLink]="['/home/insurance-calculator']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_STEP_THREE.TITLE}}</button>
+        </div>
+        <div>
+          <p class="btn-content" [innerHtml]=DOM_CONSTANTS.PLAN_STEP_THREE.CONTENT></p>
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutGap="10px">
+        <div>
+          <img src="../../assets/img/landingPage/spotlight.png" alt="SpotLight_Img" class="circled-img" />
+        </div>
+        <div>
+          <button mat-flat-button color="primary" class="mt-50" [routerLink]="['/home/budget']">
+            {{DOM_CONSTANTS.PLAN_STEP_FOUR.TITLE}}</button>
+        </div>
+        <div>
+          <p class="btn-content" [innerHtml]=DOM_CONSTANTS.PLAN_STEP_FOUR.CONTENT></p>
+        </div>
+      </div>
+
+    </div>
+    <!-- Read more -->
+    <div class="20px">
+      <mat-card>
+        <div>
+        <mat-card-subtitle>{{DOM_CONSTANTS.PLAN_HEADER4}}</mat-card-subtitle>
+        <mat-card-title [innerHtml]=DOM_CONSTANTS.PLAN_SUB_HEADER4></mat-card-title>
+      </div>
+        <mat-card-content>
+          <mat-label class="que-label">{{DOM_CONSTANTS.PLAN_HEADER_4}}</mat-label>
+          <mat-form-field appearance="outline">
+            <mat-label>{{DOM_CONSTANTS.PLAN_SUB_HEADER_4}}</mat-label>
+            <mat-select matNativeControl [(value)]="none">
+              <mat-option *ngFor="let status of maritalStaus" [value]="status.name">{{status.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px">
+          <div fxLayout="column" fxLayoutGap="10px">
+            <div>
+              <img src="../../assets/img/landingPage/Mask Group 20.png" alt="Mask_Group1_Img" class="circled-img" />
+            </div>
+            <div>
+              <button mat-flat-button color="primary" [routerLink]="['/home/insurance-calculator']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_READ_MORE.TITLE}}</button>
+            </div>
+          </div>
+          <div fxLayout="column" fxLayoutGap="10px">
+            <div>
+              <img src="../../assets/img/landingPage/Mask Group 21.png" alt="Mask_Group2_Img" class="circled-img" />
+            </div>
+            <div>
+              <button mat-flat-button color="primary" [routerLink]="['/home/budget']">
+                  {{DOM_CONSTANTS.PLAN_READ_MORE.TITLE}}</button>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</section>
+<!-- Landing page ends here -->
   <!-- Footer -->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">

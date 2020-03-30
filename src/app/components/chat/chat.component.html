@@ -1,0 +1,83 @@
+<!-- Chat page  -->
+<!-- Header -->
+<ion-header class="chat-page-header" fxLayout="column" fxLayoutAlign="center center" fxLayout-fill>
+  <ion-toolbar color="light">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <img src="assets/img/chatbotImg/bot-avatar.png" alt="Bot avatar">
+      <ion-title class="chat-title">Bot Name</ion-title>
+    </div>
+    <ion-buttons slot="end" class="btn-close">
+      <ion-icon size="large" slot="icon-only" name="close-circle" (click)="closeModal()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- End of header -->
+<!-- Main Content -->
+<ion-content fullscreen>
+  <div class="chats">
+    <div class="chatbox">
+      <div *ngFor="let message of messages | async">
+        <div class="message received" *ngIf="message.sentBy === 'user'">
+          {{message.content}}
+          <!-- <span class="metadata">
+                <span class="time">{{message.createdAt | message: 'HH:mm aaa'}}</span>
+              </span> -->
+        </div>
+        <div class=" message sent" *ngIf=" message.sentBy === 'bot'">
+          <!-- <strong>{{message.displayName}}</strong> <br> -->
+          {{message.content}}
+          <span class="metadata">
+                <!-- <span class="time">{{chat.createdAt | date: 'HH:mm aaa'}}</span> -->
+          </span>
+        </div>
+        <!-- <p align="center" class="joined"  *ngIf="message.type==='joined'">
+            <span class="rounded bg-primary text-white">{{message.displayName}} Joined</span> -->
+        <!-- </p> -->
+      </div>
+    </div>
+  </div>
+</ion-content>
+<!-- End of main content -->
+<!-- Footer -->
+<ion-footer>
+  <ion-toolbar>
+    <div fxLayout="row" >
+   
+      <div>
+        <button mat-icon-button>
+            <mat-icon class="material-icons">
+                linked_camera</mat-icon>
+            </button>
+      </div>
+      <div>
+        <button mat-icon-button>
+          <mat-icon nclass="material-icons">
+              favorite</mat-icon>
+          </button>
+      </div>
+      <div>
+        <button mat-icon-button> 
+            <mat-icon class="material-icons">
+                text_format</mat-icon>
+        </button>
+      </div>
+   
+
+      <div fxlayoutAlign="end">
+        <mat-form-field appearance="outline">
+          <input type="text" matInput [(ngModel)]="formValue" (keyup.enter)="sendMessage()" placeholder="Your message here">
+        <mat-icon matSuffix class="material-icons">
+              settings_voice</mat-icon>
+         </mat-form-field>
+          <!-- <span >
+          <button mat-icon-button>
+              <mat-icon class="material-icons">
+                  settings_voice</mat-icon>
+           </button> </span> -->
+      </div>
+    
+    </div>
+  </ion-toolbar>
+</ion-footer>
+<!-- End of footer -->
+<!-- end of the chatpage -->

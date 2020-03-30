@@ -4,6 +4,9 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { MenuController } from '@ionic/angular';
+import { ChatService } from './services/chat.service';
+import { ModalController } from '@ionic/angular';
+import { ChatComponent } from './components/chat/chat.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +22,9 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private menu: MenuController
+    private menu: MenuController,
+    public chat: ChatService,
+    public modalController: ModalController
   ) {
     this.initializeApp();
   }
@@ -32,5 +37,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  async openUserModal() {
+    const modal = await this.modalController.create({
+      component: ChatComponent,
+    });
+    return await modal.present();
   }
 }

@@ -1,5 +1,69 @@
 export class HomeConstants {
 
+    public static HOME_PAGE = {
+        PLAN_HEADER1: `<p>Life Insurance For The </br>Morden Family.</p>`,
+        PLAN_BODY:`<p>To help protect your family and prepare your
+                      family for life’s events, you need coverage that
+                      fits comfortably in your budget and adapts to
+                      your changing lifestyle, income and needs.</p>`,
+    
+        PLAN_HEADER2:'WE GOT YOU COVERED',
+        PLAN_SUB_HEADER2:'Holistic Financial Planning',
+        PLAN_BODY2:`<p>We’ll help you budget for your real life,
+                          support you to develop a holistic view of your
+                          finances, and prepare you for the worst-case
+                          scenario.</p>`,
+        PLAN_BODY_2:`<p>We help all families: single-parent homes, two-
+                          parent homes, multigenerational families and
+                          empty nesters. No matter your circumstances,
+                          we got you covered. </p>`,
+    
+        PLAN_HEADER3:'SIMPLIFIED, PERSONALIZED',
+        PLAN_SUB_HEADER3:`<p>Let Us Help You Plan Your
+                           Family’s Future.</p>`,
+        PLAN_BODY3:`<p>We’ll walk you through the process and help
+                       you prioritze what’s best for you and 
+                       yours.Our plans are flexible, afforadble 
+                      and as easy to understand as 1, 2, 3, 4.</p>`,
+    
+        
+        PLAN_HEADER4:'EVERY FAMILY IS DIFFERENT',
+        PLAN_SUB_HEADER4:`<p>SEE How We've Helped
+                            Families Like Yours.</p>`,
+        PLAN_HEADER_4:'I am a : ',
+        PLAN_SUB_HEADER_4:'Select Marital/Parental Status', 
+    
+        PLAN_GETTING_STARTED: {
+        TITLE: 'GETTING STARTED',
+        },           
+        PLAN_STEP_ONE: {
+          TITLE: 'STEP ONE',
+          CONTENT: `<p>Calculate how</br>
+                      much coverage</br>
+                      your family needs.</p>`,
+        },  
+        PLAN_STEP_TWO: {
+          TITLE: 'STEP TWO',
+          CONTENT: `<p>Customize a Plan</br>
+                      based on your</br>
+                      holistc view.</p>`,
+        },  
+        PLAN_STEP_THREE: {
+          TITLE: 'STEP THREE',
+          CONTENT:  `<p>Term vs Prem:</br>
+                        What's best for
+                        you?&nbsp;&nbsp</p>`,
+        }, 
+        PLAN_STEP_FOUR: {
+          TITLE: 'STEP FOUR',
+          CONTENT:`<p>Compare Quotes.</br>
+                      &nbsp;&nbsp</p>`,
+        },  
+         PLAN_READ_MORE: {
+          TITLE: ' READ MORE',
+        },                
+    };
+
    // Step 2: Financial budget
    public static FINANCIALBUDGET = [
       {
