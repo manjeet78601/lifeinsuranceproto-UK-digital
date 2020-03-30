@@ -80,7 +80,7 @@ export class HomeConstants {
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
-            },
+           },
             {
                QUESTIONTEXT: 'How much are your total savings?',
                SUBTEXT: 'Total Savings',
