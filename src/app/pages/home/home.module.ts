@@ -19,6 +19,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { ChatService } from '../../services/chat.service';
 import { FacialScanComponent } from './facial-scan/facial-scan.component';
 import { ComplianceComponent } from './compliance/compliance.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { ComplianceComponent } from './compliance/compliance.component';
     TotalBudgetCalculatorComponent,
     QuoteComponent,
     FacialScanComponent,
-    ComplianceComponent
+    ComplianceComponent,
+    PaymentComponent
   ],
   providers: [ChatService]
 })

@@ -637,4 +637,13 @@ and subtracting your assets you an estimate what your loved ones will need in co
       SIGN_TXT: 'eSignature'
    };
 
+   // Facial scan-payment
+   public static PAYMENT = {
+      PAGE_HEADER: 'Payment',
+      PAGE_SUB_TEXT: 'Pay with credit card.',
+      PAGE_SUB_HEADER: 'Don’t forget to qualify, you must signup with an urgent care specialist.',
+      PAY_TXT: 'or select other payment method',
+      PAY_BTN_TXT :'Pay with'
+   };
+
 }
