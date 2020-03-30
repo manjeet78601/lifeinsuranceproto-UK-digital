@@ -15,81 +15,84 @@
   </ion-toolbar>
 </ion-header>
 <!-- end of header -->
-
-<!-- Section 1  -->
-<ion-content>
-  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <header class="page-header">
-      <h1>{{ PAGE_HEADER }}</h1>
-      <h2>{{ PAGE_SUBHEADER }}</h2>
-      <p>{{ PAGE_LINE }}</p>
-    </header>
-
+<ion-content >
+ <section  fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header  class="page-header-health">
+          <h5>{{ PAGE_HEADER }}</h5> 
+        <p class="health-header">{{PAGE_HEADER}}</p>
+       <p class="plan-content-health">{{ PAGE_LINE }}</p>
+        </header>
+      
+<section fxLayout="column" class="wrapper-plan1" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <form #health="ngForm" name="form">
     <mat-accordion>
-      <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS">
+      <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS" >
         <mat-expansion-panel-header>
           <mat-panel-title>
             {{ item.TITLE }}
           </mat-panel-title>
         </mat-expansion-panel-header>
         <div *ngFor="let que of item.QUESTIONS">
-          <mat-label class="que-header2 mt-20 mt-10">{{ que.QUESTIONTEXT }}</mat-label>
+          <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
           <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
-          <!--DOB-->
-          <form>
-            <mat-form-field class="textA" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline">
-
-              <input type="text" placeholder="mm/dd/yyyy" matInput [matDatepicker]="picker">
-              <mat-datepicker-toggle matSuffix [for]="picker">
-                <mat-icon matDatepickerToggleIcon></mat-icon>
-              </mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-
-            </mat-form-field>
-          </form>
-          <!--Sex tab-->
-          <section style="padding-top:2px;">
+          <!--DOB  mat-form-field-wrapper-->
+          <mat-form-field class="w-50 mat-form-field-wrapper" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline" >
+             <input type="date" name="birthDate"  matInput  placeholder="mm/dd/yyyy"
+             [(ngModel)]="que.birthDate" class="form-control" required>
+           </mat-form-field> 
+           <!--Sex tab-->
             <mat-button-toggle-group *ngIf="que.INPUT_TEXT === 'Button'" name="fontStyle" aria-label="Font Style"
-              class="custom-mat-btn-toggle-group ">
+              class="custom-mat-btn-toggle-group">
               <mat-button-toggle value="bold" class="yes-btn">Male</mat-button-toggle>
               <span class="circle">or</span>
               <mat-button-toggle value="italic" class="no-btn">Female</mat-button-toggle>
             </mat-button-toggle-group>
-          </section>
-          <!--Height & Weight -->
-          <form class="example-form">
-            <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT=== 'Textbox'" appearance="outline">
-              <input type="text" matInput placeholder="0.00">
+         <!--Height & Weight -->
+             <mat-form-field  class="example-full-width" *ngIf="que.INPUT_TEXT12 === 'Textbox'" appearance="outline">
+              <input type="number" matInput placeholder="0.00" >
+               </mat-form-field>
+             <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT001 === 'DROPDOWN'" appearance="outline">
+                <select matNativeControl>
+                  <option value="cm">cm</option>
+                  <option value="feet">feet</option>
+                </select>
+              </mat-form-field>
 
-            </mat-form-field>
-            <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT=== 'Textbox'" appearance="outline">
-              <input type="text" matInput placeholder="0.00">
-            </mat-form-field>
-          </form>
-
-
+               <mat-form-field  class="example-full-width" *ngIf="que.INPUT_TEXT01=== 'Textbox'" appearance="outline">
+              <input type="number" matInput placeholder="0.00" >
+               </mat-form-field>
+             <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT002 === 'DROPDOWN'" appearance="outline">
+                <select matNativeControl required>
+                  <option value="cm">lbs</option>
+                  <option value="feet">kg</option>
+                </select>
+              </mat-form-field>
+        
           <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'" name="fontStyle" aria-label="Font Style"
-            class="custom-mat-btn-toggle-group mt-30">
+            class="custom-mat-btn-toggle-group">
             <mat-button-toggle value="bold" class="yes-btn">Yes</mat-button-toggle>
             <span class="circle">or</span>
             <mat-button-toggle value="italic" class="no-btn">No</mat-button-toggle>
           </mat-button-toggle-group>
-          <form>
-            <mat-form-field *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
-              <textarea matInput placeholder="Write a response"></textarea>
+          
+          <mat-form-field  class="full-width" *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
+            <textarea #txt="ngModel" name="insuranceText" [(ngModel)]="insuranceText"   class="mat-form-field-flex form-control" matInput placeholder="Write a response"
+            required></textarea>
             </mat-form-field>
-          </form>
-
-
-        </div>
+         </div>
       </mat-expansion-panel>
     </mat-accordion>
-    <button mat-flat-button color="primary" (click)="submit()">
-      {{ BTN.SUBMIT | uppercase }}
-    </button>
+  </form>
+  <button  mat-flat-button   color="primary"(click)="Submit(health)" [disabled]="health.invalid">
+    {{ BTN.SUBMIT | uppercase }}
+  </button>
+  <div>
+    <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
+    </div>
+  </section>
   </section>
   <!-- Footer -->
-  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">
         77 Water St 8th Floor,<br />
