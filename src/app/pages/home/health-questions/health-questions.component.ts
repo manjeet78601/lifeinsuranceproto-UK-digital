@@ -14,6 +14,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class HealthQuestionsComponent implements OnInit {
   panelOpenState = false;
+
   name: string;
   birthDate: Date;
   insuranceText: string;

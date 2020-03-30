@@ -177,10 +177,11 @@ export class HomeConstants {
       SUBMIT: 'Submit',
       CALCULATE: 'Calculate',
       GET_QUOTE: 'Get Quote',
+      CREATE_ACCOUNT: 'create',
       STEP_THREE: 'Step Three',
-      CREATE_ACCOUNT: 'Create Account',
       INS_CAL: 'INSURANCE CALCULATOR',
       INSURANCE: 'CALCULATE',
+      READ_MORE: 'Read More',
 
 
    };
