@@ -518,8 +518,14 @@ export class HomeConstants {
 
 
    // Insurance calculator
+<<<<<<< HEAD
    public static PAGE_SUBTITLE = 'Life Insurance Calculators';
    public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
+=======
+   public static PAGE_BOTTOM1 ='By Our calculations you will need this total coverage';
+   public static PAGE_SUBTITLE = 'LIFE INSURANCE CALCULATORS';
+   public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your family furure';
+>>>>>>> feature/LP_S1_insurance_calculator
    public static LIFE_INSURANCE_SUB_HEADER = `By calculating you long term financial obligations.
 and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start `;
    public static PAGE_CONTENT_QUERIES = `Does anyone in your family depend on you financially`;
@@ -542,6 +548,13 @@ and subtracting your assets you an estimate what your loved ones will need in co
    public static LETS_GETS_TARTED = 'Great let s get Started ';
    public static PAGE_BOTTOM = 'By our calculation You will need this total coverage';
 
+<<<<<<< HEAD
+=======
+};
+
+
+   public  static STEP1_BOTTOM = 'Ready to figure out your budget ?';
+>>>>>>> feature/LP_S1_insurance_calculator
    public static INSURANCE_CALCULATOR =
       {
          TITLE: 'Basic Health',

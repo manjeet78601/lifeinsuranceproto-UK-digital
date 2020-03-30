@@ -38,8 +38,8 @@ export class HealthQuestionsComponent implements OnInit {
 
 
 
-   Submit(health) {
-    console.log(health);
+   Submit(health1) {
+    console.log(health1);
     const totalbudget = [];
     this.navigationService.setCompletedMenu('Comparing Quotes');
     this.loader.showAutoHideLoader('Please give us a few moments..', 3000);
