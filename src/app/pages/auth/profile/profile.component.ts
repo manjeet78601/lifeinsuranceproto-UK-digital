@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   userInfo: any;
   birthDate: Date;
   userFinancialInfo: any;
+  progress = 0;
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
@@ -56,10 +57,14 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   trackByIndex(index, item) {
     return index;
   }
-  trackQuesProgress(event, id: string| number) {
+  trackQuesProgress(event, id: string | number) {
     const currentItem = this.userFinancialInfo.find((item) => item.id === id);
     currentItem.isAllQuestionsAnswered = currentItem.questions.every(data => {
       return !!data.value;
     });
+    const completedQuescount = this.userFinancialInfo.filter(data => {
+      return data.isAllQuestionsAnswered === true;
+    });
+    this.progress = Math.floor(16.7 * completedQuescount.length);
   }
 }
