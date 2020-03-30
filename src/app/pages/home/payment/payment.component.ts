@@ -8,6 +8,7 @@ import { HomeConstants, } from './../home.constants';
 export class PaymentComponent implements OnInit {
 
   DOM_CONSTANTS = HomeConstants.PAYMENT;
+  BTN = HomeConstants.BTTN;
   constructor() { }
 
   ngOnInit() {}
