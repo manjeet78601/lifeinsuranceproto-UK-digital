@@ -319,12 +319,14 @@ export class HomeConstants {
             },
             {
                QUESTIONTEXT: 'Height',
-               INPUT_TEXT: 'Textbox',
+               INPUT_TEXT12: 'Textbox',
+               INPUT_TEXT001: 'DROPDOWN',
                ICON: false
             },
             {
                QUESTIONTEXT: 'Weight',
-               INPUT_TEXT: 'Textbox',
+               INPUT_TEXT01: 'Textbox',
+               INPUT_TEXT002: 'DROPDOWN',
                ICON: false
             },
             {

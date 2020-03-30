@@ -14,8 +14,8 @@ export class InsuranceCalculatorComponent implements OnInit {
   PAGE_SUBTITLE = HomeConstants.PAGE_SUBTITLE;
   PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER;
   PAGE_SUB_HEADER = HomeConstants.LIFE_INSURANCE_SUB_HEADER;
-  // STEP1_BOTTOM = HomeConstants.STEP1_BOTTOM;
-  // BTTN = HomeConstants.BTTN;
+  STEP1_BOTTOM = HomeConstants.STEP1_BOTTOM;
+  BTTN = HomeConstants.BTTN;
   progress = 0;
   totalCoverage = 0;
   INSURANCE_CALCULATOR = HomeConstants.INSURANCE_CALCULATOR;
