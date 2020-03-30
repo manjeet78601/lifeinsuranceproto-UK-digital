@@ -469,27 +469,27 @@ padding: 5px
   margin: 16px 0 8px;
 }
 
-.message.received {
+.message.sent{
   background: #ccc;
   border-radius: 0px 5px 5px 5px;
   float: left;
 }
 
 
-.message.received:after {
+.message.sent:after {
   border-width: 0px 10px 10px 0;
   border-color: transparent #ccc transparent transparent;
   top: 0;
   left: -10px;
 }
 
-.message.sent {
+.message.received {
   background: #e1ffc7;
   border-radius: 5px 0px 5px 5px;
   float: right;
 }
 
-.message.sent:after {
+.message.received:after {
   border-width: 0px 0 10px 10px;
   border-color: transparent transparent transparent #e1ffc7;
   top: 0;
@@ -525,7 +525,7 @@ padding: 5px
   width: 330px;
   height: 15px;
 }
-/* Border */
+/* input text Border */
 .mat-form-field-appearance-outline .mat-form-field-outline {
   border: 1px solid grey;
   border-radius:25px !important;
