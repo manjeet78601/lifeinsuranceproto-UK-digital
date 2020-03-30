@@ -501,29 +501,42 @@ padding: 5px
 
 .message.sent{
   background: #ccc;
-  border-radius: 0px 5px 5px 5px;
+  border-radius: 10px 10px 0px 10px;
   float: left;
+
+:after {
+content: "";
+  position: absolute;
+  bottom: 0;
+  right: 1%;
+  width: 0;
+  height: 0;
+  border: 17px solid transparent;
+  border-top-color: #ccc;
+  border-bottom: 0;
+  border-right: 0;
+  margin-bottom: -5px;
 }
-
-
-.message.sent:after {
-  border-width: 0px 10px 10px 0;
-  border-color: transparent #ccc transparent transparent;
-  top: 0;
-  left: -10px;
 }
 
 .message.received {
-  background: #e1ffc7;
-  border-radius: 5px 0px 5px 5px;
+  background: #00B5AD;
+  border-radius: 10px 10px 10px 0px;
   float: right;
-}
 
-.message.received:after {
-  border-width: 0px 0 10px 10px;
-  border-color: transparent transparent transparent #e1ffc7;
-  top: 0;
-  right: -10px;
+:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1%;
+  width: 0;
+  height: 0;
+  border: 17px solid transparent;
+  border-top-color: #00B5AD;
+  border-bottom: 0;
+  border-left: 0;
+  margin-bottom: -7px;
+}
 }
 
 

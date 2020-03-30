@@ -17,13 +17,13 @@
   <div class="chats">
     <div class="chatbox">
       <div *ngFor="let message of messages | async">
-        <div class="message received" *ngIf="message.sentBy === 'user'">
+        <div class="message sent" *ngIf="message.sentBy === 'user'">
           {{message.content}}
           <!-- <span class="metadata">
                 <span class="time">{{message.createdAt | message: 'HH:mm aaa'}}</span>
               </span> -->
         </div>
-        <div class=" message sent" *ngIf=" message.sentBy === 'bot'">
+        <div class=" message received" *ngIf=" message.sentBy === 'bot'">
           <!-- <strong>{{message.displayName}}</strong> <br> -->
           {{message.content}}
           <span class="metadata">
