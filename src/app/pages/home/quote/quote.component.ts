@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 export class QuoteComponent implements OnInit {
 
   // Initialize expandable card to false
-  collapse=[];
+  collapse = [];
   DOM_CONSTANTS = HomeConstants.QUOTE;
   BTN = HomeConstants.BTTN;
   quotes: any;
@@ -28,8 +28,8 @@ export class QuoteComponent implements OnInit {
     console.log(this.quotes);
   }
 
-  getPDF() {
-  console.log("get pdf");
+  getMedicalExam() {
+    this.router.navigate(['/home/medical-exam']);
   }
   getQuotes() {
     return this.userService.getQuoteList();
