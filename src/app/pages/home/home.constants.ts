@@ -446,12 +446,11 @@ export class HomeConstants {
       }
    ];
    public static Weight = 'Weight';
-   public static HEALTH_HEADER = ' LIFE INSURENCE Medical Questions';
+   public static HEALTH_HEADER = 'LIFE INSURANCE Medical Questions';
    public static HEALTH_SUB_HEADER = 'Answer a few health Qs';
-   public static HEALTH_LINE = 'In order to process your examine we need to';
+   public static HEALTH_LINE = 'In order to process your examine we need to ask a few question about your health';
 
    // Step 3: Choose Plan
-
    public static CHOOSE_PLANS = {
       PLAN_HEADER: 'Term vs. Perm ',
       PLAN_SUB_HEADER: 'Let us help you learn what insurance works best for you and your family.',
@@ -535,7 +534,6 @@ and subtracting your assets you an estimate what your loved ones will need in co
       INS_CAL: 'INSURANCE',
       ADD_CARD: 'Add Card'
    };
-
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
    public static BUTTON_CONTENT = `you can probably do without Life insurance right now however.
  \if you think you have a unique circumstance that requires it. it costsnothing to compare rates `;
