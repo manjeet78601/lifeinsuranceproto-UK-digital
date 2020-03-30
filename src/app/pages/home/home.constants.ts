@@ -1,68 +1,68 @@
 export class HomeConstants {
 
-    public static HOME_PAGE = {
-        PLAN_HEADER1: `<p>Life Insurance For The </br>Morden Family.</p>`,
-        PLAN_BODY:`<p>To help protect your family and prepare your
+   public static HOME_PAGE = {
+      PLAN_HEADER1: `<p>Life Insurance For The </br>Morden Family.</p>`,
+      PLAN_BODY: `<p>To help protect your family and prepare your
                       family for life’s events, you need coverage that
                       fits comfortably in your budget and adapts to
                       your changing lifestyle, income and needs.</p>`,
-    
-        PLAN_HEADER2:'WE GOT YOU COVERED',
-        PLAN_SUB_HEADER2:'Holistic Financial Planning',
-        PLAN_BODY2:`<p>We’ll help you budget for your real life,
+
+      PLAN_HEADER2: 'WE GOT YOU COVERED',
+      PLAN_SUB_HEADER2: 'Holistic Financial Planning',
+      PLAN_BODY2: `<p>We’ll help you budget for your real life,
                           support you to develop a holistic view of your
                           finances, and prepare you for the worst-case
                           scenario.</p>`,
-        PLAN_BODY_2:`<p>We help all families: single-parent homes, two-
+      PLAN_BODY_2: `<p>We help all families: single-parent homes, two-
                           parent homes, multigenerational families and
                           empty nesters. No matter your circumstances,
                           we got you covered. </p>`,
-    
-        PLAN_HEADER3:'SIMPLIFIED, PERSONALIZED',
-        PLAN_SUB_HEADER3:`<p>Let Us Help You Plan Your
+
+      PLAN_HEADER3: 'SIMPLIFIED, PERSONALIZED',
+      PLAN_SUB_HEADER3: `<p>Let Us Help You Plan Your
                            Family’s Future.</p>`,
-        PLAN_BODY3:`<p>We’ll walk you through the process and help
-                       you prioritze what’s best for you and 
-                       yours.Our plans are flexible, afforadble 
+      PLAN_BODY3: `<p>We’ll walk you through the process and help
+                       you prioritze what’s best for you and
+                       yours.Our plans are flexible, afforadble
                       and as easy to understand as 1, 2, 3, 4.</p>`,
-    
-        
-        PLAN_HEADER4:'EVERY FAMILY IS DIFFERENT',
-        PLAN_SUB_HEADER4:`<p>SEE How We've Helped
+
+
+      PLAN_HEADER4: 'EVERY FAMILY IS DIFFERENT',
+      PLAN_SUB_HEADER4: `<p>SEE How We've Helped
                             Families Like Yours.</p>`,
-        PLAN_HEADER_4:'I am a : ',
-        PLAN_SUB_HEADER_4:'Select Marital/Parental Status', 
-    
-        PLAN_GETTING_STARTED: {
-        TITLE: 'GETTING STARTED',
-        },           
-        PLAN_STEP_ONE: {
-          TITLE: 'STEP ONE',
-          CONTENT: `<p>Calculate how</br>
+      PLAN_HEADER_4: 'I am a : ',
+      PLAN_SUB_HEADER_4: 'Select Marital/Parental Status',
+
+      PLAN_GETTING_STARTED: {
+         TITLE: 'GETTING STARTED',
+      },
+      PLAN_STEP_ONE: {
+         TITLE: 'STEP ONE',
+         CONTENT: `<p>Calculate how</br>
                       much coverage</br>
                       your family needs.</p>`,
-        },  
-        PLAN_STEP_TWO: {
-          TITLE: 'STEP TWO',
-          CONTENT: `<p>Customize a Plan</br>
+      },
+      PLAN_STEP_TWO: {
+         TITLE: 'STEP TWO',
+         CONTENT: `<p>Customize a Plan</br>
                       based on your</br>
                       holistc view.</p>`,
-        },  
-        PLAN_STEP_THREE: {
-          TITLE: 'STEP THREE',
-          CONTENT:  `<p>Term vs Prem:</br>
+      },
+      PLAN_STEP_THREE: {
+         TITLE: 'STEP THREE',
+         CONTENT: `<p>Term vs Prem:</br>
                         What's best for
                         you?&nbsp;&nbsp</p>`,
-        }, 
-        PLAN_STEP_FOUR: {
-          TITLE: 'STEP FOUR',
-          CONTENT:`<p>Compare Quotes.</br>
+      },
+      PLAN_STEP_FOUR: {
+         TITLE: 'STEP FOUR',
+         CONTENT: `<p>Compare Quotes.</br>
                       &nbsp;&nbsp</p>`,
-        },  
-         PLAN_READ_MORE: {
-          TITLE: ' READ MORE',
-        },                
-    };
+      },
+      PLAN_READ_MORE: {
+         TITLE: ' READ MORE',
+      },
+   };
 
    // Step 2: Financial budget
    public static FINANCIALBUDGET = [
@@ -80,7 +80,7 @@ export class HomeConstants {
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
-           },
+            },
             {
                QUESTIONTEXT: 'How much are your total savings?',
                SUBTEXT: 'Total Savings',
@@ -518,14 +518,8 @@ export class HomeConstants {
 
 
    // Insurance calculator
-<<<<<<< HEAD
-   public static PAGE_SUBTITLE = 'Life Insurance Calculators';
-   public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
-=======
-   public static PAGE_BOTTOM1 ='By Our calculations you will need this total coverage';
    public static PAGE_SUBTITLE = 'LIFE INSURANCE CALCULATORS';
    public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your family furure';
->>>>>>> feature/LP_S1_insurance_calculator
    public static LIFE_INSURANCE_SUB_HEADER = `By calculating you long term financial obligations.
 and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start `;
    public static PAGE_CONTENT_QUERIES = `Does anyone in your family depend on you financially`;
@@ -535,9 +529,9 @@ and subtracting your assets you an estimate what your loved ones will need in co
       INSURANCE: 'Step Two',
       READ_MORE: 'Read More',
       CLOSE: 'Close',
-      GET_QUOTE : 'GET QUOTE',
+      GET_QUOTE: 'GET QUOTE',
       INS_CAL: 'INSURANCE',
-      ADD_CARD : 'Add Card'
+      ADD_CARD: 'Add Card'
    };
 
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
@@ -546,69 +540,61 @@ and subtracting your assets you an estimate what your loved ones will need in co
    public static PAGE_CONTENT_US = 'Are You a US Citizen or Residents';
    public static PAGE_CONTENT_US1 = 'Are You a US Citizen or Residents';
    public static LETS_GETS_TARTED = 'Great let s get Started ';
-   public static PAGE_BOTTOM = 'By our calculation You will need this total coverage';
+   public static PAGE_BOTTOM1 = 'By our calculation You will need this total coverage';
+   public static STEP1_BOTTOM = 'Ready to figure out your budget ?';
+   public static INSURANCE_CALCULATOR = {
+      TITLE: 'Basic Health',
+      PROGRESS: 25,
+      QUESTIONS: [
+         {
+            INPUT_TYPE: '1. How much annual income would you need to replace if something were to happen to you?',
+            VALUE: 0,
+            isAmt: true
+         },
+         {
+            INPUT_TYPE: '2. How many years would your family need to' +
+               'replace your income and the services you provide if you died suddenly?',
+            VALUE: 0,
+            isAmt: false
+         },
 
-<<<<<<< HEAD
-=======
-};
+         {
+            INPUT_TYPE: '3. How debt do you have?',
+            VALUE: 0,
+            isAmt: true
 
+         },
+         {
+            INPUT_TYPE: '4. How much money do you want to provide for your children’s education or future needs?',
+            VALUE: 0,
+            isAmt: true
 
-   public  static STEP1_BOTTOM = 'Ready to figure out your budget ?';
->>>>>>> feature/LP_S1_insurance_calculator
-   public static INSURANCE_CALCULATOR =
-      {
-         TITLE: 'Basic Health',
-         PROGRESS: 25,
-         QUESTIONS: [
-            {
-               INPUT_TYPE: '1. How much annual income would you need to replace if something were to happen to you?',
-               VALUE: 0,
-               isAmt: true
-            },
-            {
-               INPUT_TYPE: '2. How many years would your family need to' +
-                  'replace your income and the services you provide if you died suddenly?',
-               VALUE: 0,
-               isAmt: false
-            },
+         },
+         {
+            INPUT_TYPE: '5. How much would your family need to pay for your funeral?',
+            VALUE: 0,
+            isAmt: true
+         },
+         {
+            INPUT_TYPE: '6. How much money do you have in savings and investment accounts? ',
+            VALUE: 0,
+            isAmt: true
+         },
 
-            {
-               INPUT_TYPE: '3. How debt do you have?',
-               VALUE: 0,
-               isAmt: true
+         {
+            INPUT_TYPE: '7. How much life insurance do you already have? ',
+            VALUE: 0,
+            isAmt: true
 
-            },
-            {
-               INPUT_TYPE: '4. How much money do you want to provide for your children’s education or future needs?',
-               VALUE: 0,
-               isAmt: true
+         },
+         {
+            INPUT_TYPE: '8. How much after-tax income does your family have annually in addition to your income?',
+            VALUE: 0,
+            isAmt: true
 
-            },
-            {
-               INPUT_TYPE: '5. How much would your family need to pay for your funeral?',
-               VALUE: 0,
-               isAmt: true
-            },
-            {
-               INPUT_TYPE: '6. How much money do you have in savings and investment accounts? ',
-               VALUE: 0,
-               isAmt: true
-            },
-
-            {
-               INPUT_TYPE: '7. How much life insurance do you already have? ',
-               VALUE: 0,
-               isAmt: true
-
-            },
-            {
-               INPUT_TYPE: '8. How much after-tax income does your family have annually in addition to your income?',
-               VALUE: 0,
-               isAmt: true
-
-            },
-         ]
-      };
+         },
+      ]
+   };
 
    // Step4 : Quote
 
@@ -657,7 +643,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
       PAGE_SUB_TEXT: 'Pay with credit card.',
       PAGE_SUB_HEADER: 'Don’t forget to qualify, you must signup with an urgent care specialist.',
       PAY_TXT: 'or select other payment method',
-      PAY_BTN_TXT :'Pay with'
+      PAY_BTN_TXT: 'Pay with'
    };
 
 }
