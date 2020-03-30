@@ -656,9 +656,11 @@ content: "";
   height: 15px;
 }
 /* input text Border */
-.mat-form-field-appearance-outline .mat-form-field-outline {
-  border: 1px solid grey;
-  border-radius:25px !important;
+app-chat{
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    border: 1px solid grey;
+    border-radius:25px !important;
+  }
 }
 
 .circled{
