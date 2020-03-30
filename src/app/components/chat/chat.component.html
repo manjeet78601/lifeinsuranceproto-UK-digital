@@ -62,9 +62,8 @@
         </button>
       </div>
     </div>
-
-      <div fxlayoutAlign="end">
-        <mat-form-field appearance="outline">
+  <div fxlayoutAlign="end" class="remove-appearance-outline">
+        <mat-form-field appearance="outline" >
           <input type="text" matInput [(ngModel)]="formValue" (keyup.enter)="sendMessage()" placeholder="Your message here">
         <mat-icon matSuffix class="material-icons">
               settings_voice</mat-icon>
