@@ -10,6 +10,7 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class InsuranceCalculatorComponent implements OnInit {
   BTN = HomeConstants.BTN;
+  PAGE_BOTTOM1= HomeConstants.PAGE_BOTTOM1;
   PAGE_SUBTITLE = HomeConstants.PAGE_SUBTITLE;
   PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER;
   PAGE_SUB_HEADER = HomeConstants.LIFE_INSURANCE_SUB_HEADER;

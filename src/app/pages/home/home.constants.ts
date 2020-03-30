@@ -461,8 +461,9 @@ export class HomeConstants {
 
 
    // Insurance calculator
+   public static PAGE_BOTTOM1 ='By Our calculations you will need this total coverage';
    public static PAGE_SUBTITLE = 'LIFE INSURANCE CALCULATORS';
-   public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
+   public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your family furure';
    public static LIFE_INSURANCE_SUB_HEADER = `By calculating you long term financial obligations.
 and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start `;
    public static BTTN = {
@@ -473,6 +474,8 @@ and subtracting your assets you an estimate what your loved ones will need in co
       INS_CAL: 'INSURANCE CALCULATOR',
 
 };
+
+
    public  static STEP1_BOTTOM = 'Ready to figure out your budget ?';
    public static INSURANCE_CALCULATOR =
       {
