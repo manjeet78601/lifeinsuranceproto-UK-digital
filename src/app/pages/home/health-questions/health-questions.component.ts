@@ -14,7 +14,6 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class HealthQuestionsComponent implements OnInit {
   panelOpenState = false;
-  name1: string;
   name: string;
   birthDate: Date;
   insuranceText: string;
