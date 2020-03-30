@@ -37,7 +37,7 @@ export class HealthQuestionsComponent implements OnInit {
 
 
 
-   submit(health) {
+   Submit(health) {
     console.log(health);
     const totalbudget = [];
     this.navigationService.setCompletedMenu('Comparing Quotes');

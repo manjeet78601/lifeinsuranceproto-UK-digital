@@ -260,11 +260,13 @@ export class HomeConstants {
             {
                QUESTIONTEXT: 'Height',
                INPUT_TEXT12: 'Textbox',
+               INPUT_TEXT001: 'DROPDOWN',
                ICON: false
             },
             {
                QUESTIONTEXT: 'Weight',
                INPUT_TEXT01: 'Textbox',
+               INPUT_TEXT002: 'DROPDOWN',
                ICON: false
             },
             {
@@ -462,7 +464,14 @@ export class HomeConstants {
    public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
    public static LIFE_INSURANCE_SUB_HEADER = `By calculating you long term financial obligations.
 and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start `;
+   public static BTTN = {
+      SUBMIT: 'Submit',
+      INSURANCE: 'CALCULATE',
+      READ_MORE: 'Read More',
+      CLOSE: 'Close',
+      INS_CAL: 'INSURANCE CALCULATOR',
 
+};
    public  static STEP1_BOTTOM = 'Ready to figure out your budget ?';
    public static INSURANCE_CALCULATOR =
       {

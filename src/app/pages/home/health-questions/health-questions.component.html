@@ -51,15 +51,22 @@
              <mat-form-field  class="example-full-width" *ngIf="que.INPUT_TEXT12 === 'Textbox'" appearance="outline">
               <input type="number" matInput placeholder="0.00" >
                </mat-form-field>
-               <mat-form-field  class="example-full-width" *ngIf="que.INPUT_TEXT12 === 'Textbox'" appearance="outline">
-                  <input  type="text" #itxt="ngModel" name="inptxt" [(ngModel)]="que.inptxt" matInput placeholder="cm" required>
-                   </mat-form-field>
+             <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT001 === 'DROPDOWN'" appearance="outline">
+                <select matNativeControl required>
+                  <option value="cm">cm</option>
+                  <option value="feet">feet</option>
+                </select>
+              </mat-form-field>
+
                <mat-form-field  class="example-full-width" *ngIf="que.INPUT_TEXT01=== 'Textbox'" appearance="outline">
               <input type="number" matInput placeholder="0.00" >
                </mat-form-field>
-              <mat-form-field   class="example-full-width" *ngIf="que.INPUT_TEXT01==='Textbox'" appearance="outline">
-              <input type="text" #txtlbs="ngModel" name="inptlbs" [(ngModel)]="que.inptlbs" matInput class="align-end1" placeholder="lbs" required>
-            </mat-form-field>
+             <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT002 === 'DROPDOWN'" appearance="outline">
+                <select matNativeControl required>
+                  <option value="cm">lbs</option>
+                  <option value="feet">kg</option>
+                </select>
+              </mat-form-field>
         
           <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'" name="fontStyle" aria-label="Font Style"
             class="custom-mat-btn-toggle-group">
@@ -76,7 +83,7 @@
       </mat-expansion-panel>
     </mat-accordion>
   </form>
-  <button  mat-flat-button   color="primary"(click)="submit(health)" [disabled]="health.invalid">
+  <button  mat-flat-button   color="primary"(click)="Submit(health)" [disabled]="health.invalid">
     {{ BTN.SUBMIT | uppercase }}
   </button>
   <div>
