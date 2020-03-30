@@ -35,6 +35,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     }
   };
 
+  progress = 0;
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
@@ -57,5 +58,9 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     currentItem.isAllQuestionsAnswered = currentItem.questions.every(data => {
       return !!data.value;
     });
+    const completedQuescount = this.userFinancialInfo.filter(data => {
+      return data.isAllQuestionsAnswered === true;
+    });
+    this.progress = Math.floor(16.7 * completedQuescount.length);
   }
 }

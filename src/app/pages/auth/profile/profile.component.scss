@@ -30,7 +30,12 @@
         .bdate, .policy-status {
             color: #333333;
             font-size: 12px;
+            line-height: 1.2;
         }
+    }
+    .mat-progress-bar {
+        width: 100% !important;
+        padding: 0 18px;
     }
 }
 .user-financial-info {

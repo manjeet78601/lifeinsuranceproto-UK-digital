@@ -13,6 +13,7 @@ import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-
 import { QuoteComponent } from './quote/quote.component';
 import { FacialScanComponent } from './facial-scan/facial-scan.component';
 import { ComplianceComponent } from './compliance/compliance.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {
@@ -58,8 +59,11 @@ const routes: Routes = [
   {
     path: 'compliance',
     component: ComplianceComponent
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent
   }
-
 ];
 
 @NgModule({

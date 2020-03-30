@@ -30,10 +30,16 @@
             <p class="label">Birthday</p>
             <p class="bdate">{{ birthDate | date: 'dd/MM/yyyy' }}</p>
             <p class="label policy">Policy Status</p>
-            <p class="policy-status">Med Exam Received. Our Underwiters are reviewing, stay tuned.</p>
+            <p class="policy-status">We’re looking to make sure</p>
+            <p class="policy-status">we’re getting the best</p>
+            <p class="policy-status">policy for you.</p>
           </ion-label>
         </ion-item>
       </ion-list>
+      <div class="progress-indicator">
+        <mat-label>{{ progress }}%</mat-label>
+      </div>
+      <mat-progress-bar mode="determinate" color="secondary" [value]="progress"></mat-progress-bar>
     </section>
 
     <!-- Chart section -->

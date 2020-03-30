@@ -80,7 +80,7 @@ export class HomeConstants {
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
-            },
+           },
             {
                QUESTIONTEXT: 'How much are your total savings?',
                SUBTEXT: 'Total Savings',
@@ -530,7 +530,8 @@ and subtracting your assets you an estimate what your loved ones will need in co
       READ_MORE: 'Read More',
       CLOSE: 'Close',
       GET_QUOTE : 'GET QUOTE',
-      INS_CAL: 'INSURANCE'
+      INS_CAL: 'INSURANCE',
+      ADD_CARD : 'Add Card'
    };
 
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
@@ -635,6 +636,15 @@ and subtracting your assets you an estimate what your loved ones will need in co
       luctus venenatis lectus magna fringilla. Enim nec dui nunc mattis enim ut tellus elementum.</p>
 `,
       SIGN_TXT: 'eSignature'
+   };
+
+   // Facial scan-payment
+   public static PAYMENT = {
+      PAGE_HEADER: 'Payment',
+      PAGE_SUB_TEXT: 'Pay with credit card.',
+      PAGE_SUB_HEADER: 'Don’t forget to qualify, you must signup with an urgent care specialist.',
+      PAY_TXT: 'or select other payment method',
+      PAY_BTN_TXT :'Pay with'
    };
 
 }
