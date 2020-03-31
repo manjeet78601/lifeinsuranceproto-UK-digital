@@ -15,14 +15,14 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   doughnutChart: Chart;
   htmltext = properties;
   userInfo: any;
-  birthDate: Date;
   userFinancialInfo: any;
+  userName: string;
+  birthDate: string;
   progress = 0;
   constructor(private auth: AuthService) { }
-
   ngOnInit() {
-    this.userInfo = this.auth.getUsername();
-    this.birthDate = new Date(this.auth.bDate);
+    this.userName = this.auth.userName;
+    this.birthDate = this.auth.userBirthDate;
     const unsub = this.auth.getUserFinancialDetails().subscribe((data) => {
       this.userFinancialInfo = data;
       this.drawUserProfile();

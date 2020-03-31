@@ -11,9 +11,6 @@ import { HelpComponent } from './help/help.component';
 import { HealthQuestionsComponent } from './health-questions/health-questions.component';
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
 import { QuoteComponent } from './quote/quote.component';
-import { FacialScanComponent } from './facial-scan/facial-scan.component';
-import { ComplianceComponent } from './compliance/compliance.component';
-import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {
@@ -51,18 +48,6 @@ const routes: Routes = [
   {
     path: 'quote',
     component: QuoteComponent
-  },
-  {
-    path: 'facial-scan',
-    component: FacialScanComponent
-  },
-  {
-    path: 'compliance',
-    component: ComplianceComponent
-  },
-  {
-    path: 'payment',
-    component: PaymentComponent
   }
 ];
 

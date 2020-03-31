@@ -17,9 +17,7 @@ import { HealthQuestionsComponent } from './health-questions/health-questions.co
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
 import { QuoteComponent } from './quote/quote.component';
 import { ChatService } from '../../services/chat.service';
-import { FacialScanComponent } from './facial-scan/facial-scan.component';
-import { ComplianceComponent } from './compliance/compliance.component';
-import { PaymentComponent } from './payment/payment.component';
+
 
 @NgModule({
   imports: [
@@ -35,14 +33,11 @@ import { PaymentComponent } from './payment/payment.component';
     InsuranceCalculatorComponent,
     FinancialBudgetComponent,
     ChoosePlanComponent,
-    HealthQuestionsComponent,
     ContactComponent,
+    HealthQuestionsComponent,    
     HelpComponent,
     TotalBudgetCalculatorComponent,
-    QuoteComponent,
-    FacialScanComponent,
-    ComplianceComponent,
-    PaymentComponent
+    QuoteComponent
   ],
   providers: [ChatService]
 })

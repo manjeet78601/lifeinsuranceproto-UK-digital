@@ -33,6 +33,11 @@
     <mat-form-field appearance="outline" class="form-input-control mb-20">
       <input formControlName="signupPwd" type="password" matInput placeholder="8-25 characters" id="pwd">
    </mat-form-field>
+   <p class="form-label"><label for="location">{{htmlText.location}}</label></p>
+    <mat-form-field appearance="outline" class="form-input-control mb-20">
+        <input type="number" formControlName="location" matInput placeholder="Zip code" id="location">
+        <!-- <mat-error>Invalid email</mat-error> -->
+    </mat-form-field>
    <div class="mt-20 text-left"> 
    <mat-checkbox class="terms-cond" formControlName="termsAndCond">{{htmlText.terms_cond}}</mat-checkbox>
    </div>
