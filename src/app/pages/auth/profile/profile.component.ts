@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { properties, financialLists, Profile } from '../auth.constant';
+import { properties, financialLists, Profile } from '../../../properties/auth.constant';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { DataAnalyticsService } from 'src/app/services/data-analytics.service';

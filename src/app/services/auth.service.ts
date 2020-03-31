@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Profile } from '../pages/auth/auth.constant';
+import { Profile } from '../properties/auth.constant';
 import { of, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
