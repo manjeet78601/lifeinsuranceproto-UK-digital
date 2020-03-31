@@ -6,7 +6,6 @@ export class HomeConstants {
                       family for life’s events, you need coverage that
                       fits comfortably in your budget and adapts to
                       your changing lifestyle, income and needs.</p>`,
-
       PLAN_HEADER2: 'WE GOT YOU COVERED',
       PLAN_SUB_HEADER2: 'Holistic Financial Planning',
       PLAN_BODY2: `<p>We’ll help you budget for your real life,
