@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-facial-identity',
@@ -9,34 +7,9 @@ import { Router } from '@angular/router';
 })
 export class FacialIdentityPage implements OnInit {
 
-  constructor(
-    private camera: Camera,
-    private router: Router
-    ) { }
-  capturedSnapURL: string;
+  constructor() { }
 
-  cameraOptions = {
-    quality: 20,
-    destinationType: this.camera.DestinationType.DATA_URL,
-    encodingType: this.camera.EncodingType.JPEG,
-    mediaType: this.camera.MediaType.PICTURE
-  };
   ngOnInit() {
   }
-  onScan() {
-    this.camera.getPicture(this.cameraOptions).then((imageData) => {
-    // this.camera.DestinationType.FILE_URI gives file URI saved in local
-    // this.camera.DestinationType.DATA_URL gives base64 URI
-    const base64Image = 'data:image/jpeg;base64,' + imageData;
-    this.capturedSnapURL = base64Image;
-    this.router.navigate(['/personal-details/1']);
-  }, (err) => {
-    alert(err);
-    // Handle error
-    this.router.navigate(['/personal-details/1']);
-  });
- }
- onSkip(): void {
-  this.router.navigate(['/personal-details/0']);
- }
+
 }

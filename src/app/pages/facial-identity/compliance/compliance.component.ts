@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeConstants, } from './../home.constants';
+import { FacialIdentityConstant, } from '../../../properties/facial-identity.constant';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -10,8 +10,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ComplianceComponent implements OnInit {
 
-  DOM_CONSTANTS = HomeConstants.COMPLIANCE;
-  BTN = HomeConstants.BTTN;
+  DOM_CONSTANTS = FacialIdentityConstant.COMPLIANCE;
+  BTN = FacialIdentityConstant.BTN;
   complianceForm: FormGroup;
   constructor(private router: Router) {
     this.complianceForm = new FormGroup(
@@ -21,6 +21,6 @@ export class ComplianceComponent implements OnInit {
   }
   ngOnInit() { }
   addCard() {
-    this.router.navigate(['/home/payment']);
+    this.router.navigate(['/facial-identity/payment']);
   }
 }

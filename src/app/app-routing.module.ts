@@ -19,10 +19,10 @@ const routes: Routes = [
     path: 'health-details',
     loadChildren: () => import('./pages/health-details/health-details.module').then( m => m.HealthDetailsPageModule)
   },
-  {
-    path: 'facial-identity',
-    loadChildren: () => import('./pages/facial-identity/facial-identity.module').then( m => m.FacialIdentityPageModule)
-  },
+  // {
+  //   path: 'facial-identity',
+  //   loadChildren: () => import('./pages/facial-identity/facial-identity.module').then( m => m.FacialIdentityPageModule)
+  // },
   {
     path: 'coverage-details',
     loadChildren: () => import('./pages/coverage-details/coverage-details.module').then( m => m.CoverageDetailsPageModule)
