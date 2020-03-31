@@ -29,7 +29,7 @@ export class QuoteComponent implements OnInit {
   }
 
   getMedicalExam() {
-    this.router.navigate(['/home/medical-exam']);
+    this.router.navigate(['/medical-exam']);
   }
   getQuotes() {
     return this.userService.getQuoteList();
