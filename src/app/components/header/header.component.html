@@ -11,14 +11,14 @@
         <ion-item [routerLink]="pages.url" routerDirection="forward" detail-none class="menu-item">
           <!-- <ion-icon [name]="pages.icon" slot="start"></ion-icon>   -->
           <span *ngIf="pages.isStep && !pages.isCompleted" class="menu-step">{{i+1}}</span>
-          <mat-icon *ngIf="pages.isStep && pages.isCompleted" class="mr-5">check_circle_outline</mat-icon>
+          <mat-icon *ngIf="pages.isStep && pages.isCompleted === true" class="mr-5">check_circle_outline</mat-icon>
           {{pages.title}}
         </ion-item>
       </ion-menu-toggle>
     </ion-list>
   </ion-content>
 </ion-menu>
-<ion-menu side="start" menuId="afterLogin" contentId="content" id="authenticated">
+<ion-menu side="start" menuId=" " contentId="content" id="authenticated">
   <ion-header>
     <ion-toolbar>
       <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
