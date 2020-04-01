@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
     userName: ['', [Validators.required, Validators.email]],
     signupPwd: ['', Validators.required],
     location: ['', Validators.required],
-    termsAndCond: ['', Validators.required]
+    termsAndCond: ['', [Validators.required, Validators.requiredTrue]]
   });
   constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService, private loader: LoaderService) { }
 
