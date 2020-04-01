@@ -40,7 +40,8 @@
             </mat-expansion-panel-header>
             <div *ngFor="let que of item.QUESTIONS">
               <!-- <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label> -->
-              <mat-label class="que-subheader">{{ que.QUESTIONTEXT }}</mat-label>
+              <mat-label class="que-subheader" [ngClass]="{'txt-black': que.isVisited}">{{ que.QUESTIONTEXT }}
+              </mat-label>
               <!-- <mat-slider
               [max]="que.MAX"
               [min]="que.MIN"
@@ -48,10 +49,10 @@
               [(ngModel)]="que.VALUE"
             >
             </mat-slider> -->
-
               <mat-form-field appearance="outline" class="w-50">
                 <span matPrefix>$</span>
-                <input type="number" matInput class="align-end" [name]="que.NAME" [(ngModel)]="que.VALUE" required>
+                <input type="number" matInput class="align-end" [name]="que.NAME" [(ngModel)]="que.VALUE"
+                  (click)="que.isVisited = true" required>
               </mat-form-field>
 
               <mat-icon class="pos-rel t-l-7">help_outline</mat-icon>

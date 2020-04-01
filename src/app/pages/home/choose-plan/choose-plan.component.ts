@@ -42,7 +42,7 @@ export class ChoosePlanComponent implements OnInit {
   }
   getInsCal() {
     this.navigationService.setCompletedMenu('Choosing a plan');
-    this.router.navigate(['/home/insurance-calculator']);
+    this.router.navigate(['/home/health']);
   }
   createAccount(){
     this.userService.createAccount();
