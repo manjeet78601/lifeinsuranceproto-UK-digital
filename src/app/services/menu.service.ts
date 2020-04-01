@@ -11,9 +11,14 @@ import { map } from 'rxjs/operators';
 export class MenuService {
   constructor(private http: HttpClient) { }
   navigate: NavigationMenu[];
-
-  getNavigationMenus(): Observable<NavigationMenu[]> {
-    return this.http.get<NavigationMenu[]>('./../../assets/json/navigation.json')
+  menuURL: string;
+  getNavigationMenus(flag): Observable<NavigationMenu[]> {
+    if (flag === 'beforeSignin') {
+      this.menuURL = './../../assets/json/menu/beforeLoginNavigation.json';
+    } else {
+      this.menuURL = './../../assets/json/menu/afterLoginNavigation.json';
+    }
+    return this.http.get<NavigationMenu[]>(this.menuURL)
       .pipe(
         map(res => {
           return this.navigate = res;

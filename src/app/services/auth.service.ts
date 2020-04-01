@@ -9,13 +9,15 @@ import { Signup, Signin} from '../models/auth.model';
 export class AuthService {
 financeURL =  '../../assets/json/profile/financial-details.json';
 userInfo: Signup = new Signup('', '', '', '', '');
+isLoggedIn = false;
 bDate: string;
   constructor(private http: HttpClient) { }
   login(loginObj: Signin): Observable<boolean> {
     if (loginObj.userName === this.userInfo.userName && loginObj.password === this.userInfo.password) {
-     return  of(true);
+      this.isLoggedIn = true;
+      return  of(true);
     } else {
-      return throwError('Invaid Credentials');
+      return throwError('Invalid Credentials');
     }
   }
   signup(user: Signup): Observable<boolean>  {
@@ -34,5 +36,8 @@ bDate: string;
   }
   getUserFinancialDetails() {
     return this.http.get(this.financeURL);
+  }
+  get isUserLoggedIn() {
+    return this.isLoggedIn;
   }
 }

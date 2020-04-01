@@ -5,6 +5,7 @@ import { properties} from '../../../properties/auth.constant';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { Signin } from 'src/app/models/auth.model';
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -18,12 +19,14 @@ export class SigninComponent implements OnInit {
     lname: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
   });
-  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService, private loader: LoaderService) { }
+  constructor(private menu: MenuController, private formBuilder: FormBuilder,
+              private router: Router, private authService: AuthService, private loader: LoaderService) { }
 
   ngOnInit() {}
   onFormsubmit(formName: string) {
     const loginObj = new Signin(this.loginForm.controls.lname.value, this.loginForm.controls.password.value);
     this.authService.login(loginObj).subscribe((data) => {
+      this.menu.enable(true, 'afterLogin');
       this.loader.showAutoHideLoader('', 2000);
       this.router.navigate(['/auth/profile']);
     }, (error) => {
