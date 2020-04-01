@@ -8,6 +8,9 @@ import { MedicalExamPageRoutingModule } from './medical-exam-routing.module';
 
 import { MedicalExamPage } from './medical-exam.page';
 import { SharedModule } from 'src/app/sharedModules/shared.module';
+import { SechduleAppointmentComponent } from './sechdule-appointment/sechdule-appointment.component';
+
+
 
 @NgModule({
   imports: [
@@ -15,8 +18,8 @@ import { SharedModule } from 'src/app/sharedModules/shared.module';
     FormsModule,
     IonicModule,
     MedicalExamPageRoutingModule,
-    SharedModule
-  ],
-  declarations: [MedicalExamPage]
+    SharedModule   ],
+
+  declarations: [MedicalExamPage, SechduleAppointmentComponent],
 })
 export class MedicalExamPageModule {}
