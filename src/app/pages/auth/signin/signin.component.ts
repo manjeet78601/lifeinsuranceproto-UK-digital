@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { properties } from '../auth.constant';
+import { properties} from '../../../properties/auth.constant';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoaderService } from 'src/app/services/loader.service';
+import { Signin } from 'src/app/models/auth.model';
+
 
 @Component({
   selector: 'app-signin',
@@ -20,9 +22,13 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() {}
   onFormsubmit(formName: string) {
-    this.authService.setUsername(this.loginForm.controls.lname.value as string);
-    this.loader.showAutoHideLoader('', 2000);
-    this.router.navigate(['/auth/profile']);
+    const loginObj = new Signin(this.loginForm.controls.lname.value, this.loginForm.controls.password.value);
+    this.authService.login(loginObj).subscribe((data) => {
+      this.loader.showAutoHideLoader('', 2000);
+      this.router.navigate(['/auth/profile']);
+    }, (error) => {
+      alert(error);
+    });
   }
   signup(event) {
     this.router.navigate(['/auth/signup']);

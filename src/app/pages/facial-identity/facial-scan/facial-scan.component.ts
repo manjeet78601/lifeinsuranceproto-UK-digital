@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Router } from '@angular/router';
-import { HomeConstants, } from './../home.constants';
+import { FacialIdentityConstant, } from '../../../properties/facial-identity.constant';
 import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { LoaderService } from 'src/app/services/loader.service';
   styleUrls: ['./facial-scan.component.scss'],
 })
 export class FacialScanComponent implements OnInit {
-  DOM_CONSTANTS = HomeConstants.FACIAL_SCAN;
+  DOM_CONSTANTS = FacialIdentityConstant.FACIAL_SCAN;
   imageData:string;
   constructor(
     private camera: Camera,
@@ -49,7 +49,7 @@ export class FacialScanComponent implements OnInit {
   {
     this.loader.showAutoHideLoader('Submitting Details...', 1000);
     setTimeout(() => {
-      this.router.navigate(['/home/compliance']);
+      this.router.navigate(['/facial-identity/compliance']);
     }, 1000);
   }
 }

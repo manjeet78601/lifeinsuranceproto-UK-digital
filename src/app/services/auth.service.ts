@@ -1,22 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Profile } from '../pages/auth/auth.constant';
-import { of, Observable } from 'rxjs';
+import { Profile } from '../properties/auth.constant';
+import { of, Observable, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Signup, Signin} from '../models/auth.model';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 financeURL =  '../../assets/json/profile/financial-details.json';
-userInfo: Profile = {userName: '', userBdate: ''};
+userInfo: Signup = new Signup('', '', '', '', '');
 bDate: string;
   constructor(private http: HttpClient) { }
-  setUsername(name: string) {
-    this.userInfo.userName = name.substr(0, name.indexOf('@'));
-    this.userInfo.userBdate = '02/21/1988';
-    this.bDate = '02/21/1988';
+  login(loginObj: Signin): Observable<boolean> {
+    if (loginObj.userName === this.userInfo.userName && loginObj.password === this.userInfo.password) {
+     return  of(true);
+    } else {
+      return throwError('Invaid Credentials');
+    }
   }
-  getUsername() {
-    return this.userInfo;
+  signup(user: Signup): Observable<boolean>  {
+    for (const key in user) {
+      if (user.hasOwnProperty(key)) {
+         this.userInfo[key] = user[key];
+      }
+    }
+    return of(true);
+  }
+  get userName() {
+    return this.userInfo.firstName;
+  }
+  get userBirthDate() {
+    return this.userInfo.birthDate;
   }
   getUserFinancialDetails() {
     return this.http.get(this.financeURL);

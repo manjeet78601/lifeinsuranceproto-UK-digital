@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeConstants, } from './../home.constants';
+import { CompareQuotesConstant, } from '../../../properties/compare-quotes.constant';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
@@ -12,8 +12,8 @@ export class QuoteComponent implements OnInit {
 
   // Initialize expandable card to false
   collapse = [];
-  DOM_CONSTANTS = HomeConstants.QUOTE;
-  BTN = HomeConstants.BTTN;
+  DOM_CONSTANTS = CompareQuotesConstant.QUOTE;
+  BTN = CompareQuotesConstant.BTTN;
   quotes: any;
   isLoading = true;
   constructor(
@@ -29,7 +29,7 @@ export class QuoteComponent implements OnInit {
   }
 
   getMedicalExam() {
-    this.router.navigate(['/home/medical-exam']);
+    this.router.navigate(['/medical-exam']);
   }
   getQuotes() {
     return this.userService.getQuoteList();

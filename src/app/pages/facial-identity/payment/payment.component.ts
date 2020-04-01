@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeConstants, } from './../home.constants';
+import { FacialIdentityConstant, } from '../../../properties/facial-identity.constant';
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -7,10 +8,11 @@ import { HomeConstants, } from './../home.constants';
 })
 export class PaymentComponent implements OnInit {
 
-  DOM_CONSTANTS = HomeConstants.PAYMENT;
-  BTN = HomeConstants.BTTN;
+  DOM_CONSTANTS = FacialIdentityConstant.PAYMENT;
+  BTN = FacialIdentityConstant.BTN;
   constructor() { }
 
   ngOnInit() {}
 
 }
+

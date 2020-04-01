@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 })
 export class UserService {
   financialBudget = [];
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   users = [
     {
@@ -176,5 +176,5 @@ export class UserService {
   }
   createAccount(){
     this.router.navigate(['/auth/signup']);
-  } 
+ }
 }

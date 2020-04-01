@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { properties, financialLists, Profile } from '../auth.constant';
+import { properties, financialLists, Profile } from '../../../properties/auth.constant';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { DataAnalyticsService } from 'src/app/services/data-analytics.service';
@@ -12,7 +12,6 @@ import { DataAnalyticsService } from 'src/app/services/data-analytics.service';
 export class ProfileComponent implements OnInit, AfterViewInit {
   htmltext = properties;
   userInfo: any;
-  birthDate: Date;
   userFinancialInfo: any;
   doughnutChartLabels = [
     'Home', 'Mortgage', 'Vehicle(s)', 'Valuables', 'Fixed Income'
@@ -35,12 +34,13 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     }
   };
 
+  userName: string;
+  birthDate: string;
   progress = 0;
   constructor(private auth: AuthService) { }
-
   ngOnInit() {
-    this.userInfo = this.auth.getUsername();
-    this.birthDate = new Date(this.auth.bDate);
+    this.userName = this.auth.userName;
+    this.birthDate = this.auth.userBirthDate;
     const unsub = this.auth.getUserFinancialDetails().subscribe((data) => {
       this.userFinancialInfo = data;
     }, err => {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeConstants, } from './../home.constants';
+import { ChoosePlanConstant, } from '../../../properties/choose-plan.constant';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 import { UserService } from 'src/app/services/user.service';
@@ -30,8 +30,8 @@ export class ChoosePlanComponent implements OnInit {
 
   displayedColumns: string[] = ['comparison', 'term', 'perm', 'var', 'lifeplus'];
   dataSource = ELEMENT_DATA;
-  DOM_CONSTANTS = HomeConstants.CHOOSE_PLANS;
-  BTN=HomeConstants.BTTN;
+  DOM_CONSTANTS = ChoosePlanConstant.CHOOSE_PLANS;
+  BTN=ChoosePlanConstant.BTTN;
   constructor(
     private router: Router,
     private navigationService: MenuService,
@@ -42,7 +42,7 @@ export class ChoosePlanComponent implements OnInit {
   }
   getInsCal() {
     this.navigationService.setCompletedMenu('Choosing a plan');
-    this.router.navigate(['/home/health']);
+    this.router.navigate(['/home/insurance-calculator']);
   }
   createAccount(){
     this.userService.createAccount();

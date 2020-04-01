@@ -1,68 +1,67 @@
 export class HomeConstants {
 
-    public static HOME_PAGE = {
-        PLAN_HEADER1: `<p>Life Insurance For The </br>Morden Family.</p>`,
-        PLAN_BODY:`<p>To help protect your family and prepare your
+   public static HOME_PAGE = {
+      PLAN_HEADER1: `<p>Life Insurance For The </br>Morden Family.</p>`,
+      PLAN_BODY: `<p>To help protect your family and prepare your
                       family for life’s events, you need coverage that
                       fits comfortably in your budget and adapts to
                       your changing lifestyle, income and needs.</p>`,
-    
-        PLAN_HEADER2:'WE GOT YOU COVERED',
-        PLAN_SUB_HEADER2:'Holistic Financial Planning',
-        PLAN_BODY2:`<p>We’ll help you budget for your real life,
+      PLAN_HEADER2: 'WE GOT YOU COVERED',
+      PLAN_SUB_HEADER2: 'Holistic Financial Planning',
+      PLAN_BODY2: `<p>We’ll help you budget for your real life,
                           support you to develop a holistic view of your
                           finances, and prepare you for the worst-case
                           scenario.</p>`,
-        PLAN_BODY_2:`<p>We help all families: single-parent homes, two-
+      PLAN_BODY_2: `<p>We help all families: single-parent homes, two-
                           parent homes, multigenerational families and
                           empty nesters. No matter your circumstances,
                           we got you covered. </p>`,
-    
-        PLAN_HEADER3:'SIMPLIFIED, PERSONALIZED',
-        PLAN_SUB_HEADER3:`<p>Let Us Help You Plan Your
+
+      PLAN_HEADER3: 'SIMPLIFIED, PERSONALIZED',
+      PLAN_SUB_HEADER3: `<p>Let Us Help You Plan Your
                            Family’s Future.</p>`,
-        PLAN_BODY3:`<p>We’ll walk you through the process and help
-                       you prioritze what’s best for you and 
-                       yours.Our plans are flexible, afforadble 
+      PLAN_BODY3: `<p>We’ll walk you through the process and help
+                       you prioritze what’s best for you and
+                       yours.Our plans are flexible, afforadble
                       and as easy to understand as 1, 2, 3, 4.</p>`,
-    
-        
-        PLAN_HEADER4:'EVERY FAMILY IS DIFFERENT',
-        PLAN_SUB_HEADER4:`<p>SEE How We've Helped
+
+
+      PLAN_HEADER4: 'EVERY FAMILY IS DIFFERENT',
+      PLAN_SUB_HEADER4: `<p>SEE How We've Helped
                             Families Like Yours.</p>`,
-        PLAN_HEADER_4:'I am a : ',
-        PLAN_SUB_HEADER_4:'Select Marital/Parental Status', 
-    
-        PLAN_GETTING_STARTED: {
-        TITLE: 'GETTING STARTED',
-        },           
-        PLAN_STEP_ONE: {
-          TITLE: 'STEP ONE',
-          CONTENT: `<p>Calculate how</br>
+      PLAN_HEADER_4: 'I am a : ',
+      PLAN_SUB_HEADER_4: 'Select Marital/Parental Status',
+
+      PLAN_GETTING_STARTED: {
+         TITLE: 'GETTING STARTED',
+      },
+      PLAN_STEP_ONE: {
+         TITLE: 'STEP ONE',
+         CONTENT: `<p>Calculate how</br>
                       much coverage</br>
                       your family needs.</p>`,
-        },  
-        PLAN_STEP_TWO: {
-          TITLE: 'STEP TWO',
-          CONTENT: `<p>Customize a Plan</br>
+      },
+      PLAN_STEP_TWO: {
+         TITLE: 'STEP TWO',
+         CONTENT: `<p>Customize a Plan</br>
                       based on your</br>
                       holistc view.</p>`,
-        },  
-        PLAN_STEP_THREE: {
-          TITLE: 'STEP THREE',
-          CONTENT:  `<p>Term vs Prem:</br>
+      },
+      PLAN_STEP_THREE: {
+         TITLE: 'STEP THREE',
+         CONTENT: `<p>Term vs Prem:</br>
                         What's best for
                         you?&nbsp;&nbsp</p>`,
-        }, 
-        PLAN_STEP_FOUR: {
-          TITLE: 'STEP FOUR',
-          CONTENT:`<p>Compare Quotes.</br>
+      },
+      PLAN_STEP_FOUR: {
+         TITLE: 'STEP FOUR',
+         CONTENT: `<p>Compare Quotes.</br>
                       &nbsp;&nbsp</p>`,
-        },  
-         PLAN_READ_MORE: {
-          TITLE: ' READ MORE',
-        },                
-    };
+      },
+      PLAN_READ_MORE: {
+         TITLE: ' READ MORE',
+      },
+   };
 
    // Step 2: Financial budget
    public static FINANCIALBUDGET = [
@@ -80,7 +79,7 @@ export class HomeConstants {
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
-           },
+            },
             {
                QUESTIONTEXT: 'How much are your total savings?',
                SUBTEXT: 'Total Savings',
@@ -319,12 +318,14 @@ export class HomeConstants {
             },
             {
                QUESTIONTEXT: 'Height',
-               INPUT_TEXT: 'Textbox',
+               INPUT_TEXT12: 'Textbox',
+               INPUT_TEXT001: 'DROPDOWN',
                ICON: false
             },
             {
                QUESTIONTEXT: 'Weight',
-               INPUT_TEXT: 'Textbox',
+               INPUT_TEXT01: 'Textbox',
+               INPUT_TEXT002: 'DROPDOWN',
                ICON: false
             },
             {
@@ -444,82 +445,13 @@ export class HomeConstants {
       }
    ];
    public static Weight = 'Weight';
-   public static HEALTH_HEADER = ' LIFE INSURENCE Medical Questions';
+   public static HEALTH_HEADER = 'LIFE INSURANCE Medical Questions';
    public static HEALTH_SUB_HEADER = 'Answer a few health Qs';
-   public static HEALTH_LINE = 'In order to process your examine we need to';
-
-   // Step 3: Choose Plan
-
-   public static CHOOSE_PLANS = {
-      PLAN_HEADER: 'Term vs. Perm ',
-      PLAN_SUB_HEADER: 'Let us help you learn what insurance works best for you and your family.',
-      COVG_HEADER: 'Ready to figure out how much coverage you need?',
-      COMP_TBL_HEADER: 'Insurance Coverage Comparison Tool',
-      PLANS: [
-         {
-            EXP_HEADER: 'What is term life insurance?',
-            EXP_BODY: `<p>Term life insurance a popular form of life insurance.
-         You can buy life insurance that will last anywhere between 1-30 years.
-         If you pass away before the policy has expired, your beneficiaries will
-         be paid out the death benefit. If you wish to continue having life insurance
-         after the policy expires, you could either renew your policy or switch
-         roviders entirely, at a new higher age adjusted premium rate. It is also
-         important to keep in mind that some policies have a 10-year policy cap restriction
-         past the age of 50.</p>
-         <p>Term life insurance is a more affordable option than other forms of insurance
-         because of its fixed time. It is suitable if you are looking to protect dependents
-         for a limited period of time.</p>
-         <p>Term life insurance is an appropriate option if you are not seeking a savings
-         component and would like straight-forward protection at a lower premium.</p>`,
-         },
-         {
-            EXP_HEADER: 'What is permanent life insurance?',
-            EXP_BODY: `<p>Permanent life insurance provides you with lifelong
-      protection as long as you pay your set premium every month. Each time you pay
-      the monthly premium, a portion goes to your death benefit and a portion is set aside
-      to your cash value account. The cash value functions as a savings account. When you pass
-      away, your family will receive the full un-taxed death benefit. Even though permanent life
-      insurance guarantees coverage for life, it is less popular because it is more expensive
-      than term life insurance.</p><p>The advantage of a cash value component is the option
-      to use that money for personal expenses or take a loan from that amount. If you withdraw,
-      that money may be taxed, and if you take out a loan, that amount will be deducted from the
-      death benefit if the loan is not paid back.</p><p>If you have living dependents, are looking
-       to build a tax-advantaged inheritance and/or have outlived your term life policy,
-       permanent life insurance may be for you.</p>`
-         },
-         {
-            EXP_HEADER: 'What is variable life insurance?',
-            EXP_BODY: `<p>Like permanent life insurance, variable life insurance provides
-      lifelong coverage, and the premium consists of contributions for the death benefit
-      and cash value. In the case of variable life insurance, the cash value operates similar
-      to a mutual fund. The cash value is invested by professional fund managers; over time
-      the cash value will fluctuate based on your investment options. The cash invested grows
-      tax-free. However, if you withdraw from the cash value, you may incur taxes and fees.</p>
-      <p>Variable life insurance is suitable for those seeking an additional investment
-      component in addition to life insurance.</p>`
-         },
-         {
-            EXP_HEADER: 'How is Life+ different?',
-            EXP_BODY: `<p>Life+ insurance is a hybrid of term life and permanent life insurance.
-      insurance of Life+ provides you term life insurance, plus an option to save money that
-      will stay with you even after your term expires. If you pass away before the term expires,
-      the cash value will be dispersed to your beneficiaries in addition to the term life
-      policy. If you pass away after the term expires, the cash value will be dispersed
-      but you will not be paid any amount from the term life policy. That way, you have
-      some financial safety for end of life expenses.</p><p>Similar to permanent life
-      insurance, you have the option to contribute to your cash value every month, and
-      you have the flexibility to decide how much to contribute every month. That way,
-      you are not subject to the exorbitant prices of permanent life insurance.</p>
-      <p>At Life+, you will not have access to the cash value. It will only be dispersed
-      at the time of your passing, or upon the term expiration (whichever comes first).</p>`
-         }
-      ]
-   };
-
+   public static HEALTH_LINE = 'In order to process your examine we need to ask a few question about your health';
 
    // Insurance calculator
-   public static PAGE_SUBTITLE = 'Life Insurance Calculators';
-   public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your future family';
+   public static PAGE_SUBTITLE = 'LIFE INSURANCE CALCULATORS';
+   public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your family future.';
    public static LIFE_INSURANCE_SUB_HEADER = `By calculating you long term financial obligations.
 and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start `;
    public static PAGE_CONTENT_QUERIES = `Does anyone in your family depend on you financially`;
@@ -527,124 +459,66 @@ and subtracting your assets you an estimate what your loved ones will need in co
    public static BTTN = {
       SUBMIT: 'Submit',
       INSURANCE: 'Step Two',
-      READ_MORE: 'Read More',
-      CLOSE: 'Close',
-      GET_QUOTE : 'GET QUOTE',
-      INS_CAL: 'INSURANCE',
-      ADD_CARD : 'Add Card'
    };
-
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
    public static BUTTON_CONTENT = `you can probably do without Life insurance right now however.
  \if you think you have a unique circumstance that requires it. it costsnothing to compare rates `;
    public static PAGE_CONTENT_US = 'Are You a US Citizen or Residents';
    public static PAGE_CONTENT_US1 = 'Are You a US Citizen or Residents';
    public static LETS_GETS_TARTED = 'Great let s get Started ';
-   public static PAGE_BOTTOM = 'By our calculation You will need this total coverage';
+   public static PAGE_BOTTOM1 = 'By our calculation You will need this total coverage';
+   public static STEP1_BOTTOM = 'Ready to figure out your budget ?';
+   public static INSURANCE_CALCULATOR = {
+      TITLE: 'Basic Health',
+      PROGRESS: 25,
+      QUESTIONS: [
+         {
+            INPUT_TYPE: '1. How much annual income would you need to replace if something were to happen to you?',
+            VALUE: 0,
+            isAmt: true
+         },
+         {
+            INPUT_TYPE: '2. How many years would your family need to' +
+               'replace your income and the services you provide if you died suddenly?',
+            VALUE: 0,
+            isAmt: false
+         },
 
-   public static INSURANCE_CALCULATOR =
-      {
-         TITLE: 'Basic Health',
-         PROGRESS: 25,
-         QUESTIONS: [
-            {
-               INPUT_TYPE: '1. How much annual income would you need to replace if something were to happen to you?',
-               VALUE: 0,
-               isAmt: true
-            },
-            {
-               INPUT_TYPE: '2. How many years would your family need to' +
-                  'replace your income and the services you provide if you died suddenly?',
-               VALUE: 0,
-               isAmt: false
-            },
+         {
+            INPUT_TYPE: '3. How debt do you have?',
+            VALUE: 0,
+            isAmt: true
 
-            {
-               INPUT_TYPE: '3. How debt do you have?',
-               VALUE: 0,
-               isAmt: true
+         },
+         {
+            INPUT_TYPE: '4. How much money do you want to provide for your children’s education or future needs?',
+            VALUE: 0,
+            isAmt: true
 
-            },
-            {
-               INPUT_TYPE: '4. How much money do you want to provide for your children’s education or future needs?',
-               VALUE: 0,
-               isAmt: true
+         },
+         {
+            INPUT_TYPE: '5. How much would your family need to pay for your funeral?',
+            VALUE: 0,
+            isAmt: true
+         },
+         {
+            INPUT_TYPE: '6. How much money do you have in savings and investment accounts? ',
+            VALUE: 0,
+            isAmt: true
+         },
 
-            },
-            {
-               INPUT_TYPE: '5. How much would your family need to pay for your funeral?',
-               VALUE: 0,
-               isAmt: true
-            },
-            {
-               INPUT_TYPE: '6. How much money do you have in savings and investment accounts? ',
-               VALUE: 0,
-               isAmt: true
-            },
+         {
+            INPUT_TYPE: '7. How much life insurance do you already have? ',
+            VALUE: 0,
+            isAmt: true
 
-            {
-               INPUT_TYPE: '7. How much life insurance do you already have? ',
-               VALUE: 0,
-               isAmt: true
+         },
+         {
+            INPUT_TYPE: '8. How much after-tax income does your family have annually in addition to your income?',
+            VALUE: 0,
+            isAmt: true
 
-            },
-            {
-               INPUT_TYPE: '8. How much after-tax income does your family have annually in addition to your income?',
-               VALUE: 0,
-               isAmt: true
-
-            },
-         ]
-      };
-
-   // Step4 : Quote
-
-   public static QUOTE = {
-      QUOTE_HEADER: 'Quote Results',
-      QUOTE_SUB_HEADER: 'The actual cost for you may be different after your application is processed.',
-      CUST_HEADER: 'Customer Rating'
+         },
+      ]
    };
-
-   // Facial scan
-   public static FACIAL_SCAN = {
-      PAGE_HEADER: 'Facial Recognition',
-      PAGE_SUB_TEXT: 'Additional Health Check',
-      PAGE_SUB_HEADER: 'Look directly at the camera, and let us do the rest!',
-   };
-
-   // Compliance
-   public static COMPLIANCE = {
-      PAGE_HEADER: 'Contract',
-      PAGE_SUB_TEXT: ` <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Nisl vel pretium lectus quam id Leo in vitae turpis. Pellentesque sit amet porttitor eget dolor
-      morbi non. Tellus at urna condimentum mattis pellentesque id nibh tortor. Fermentum odio eu feugiat pretium nibh
-      ipsum consequat nisl.&nbsp;</p>
-    <p>Massa sed elementum tempus egestas sed sed risus pretium quam. Sed enim ut sem viverra aliquet eget sit amet
-      tellus. Dignissim diam quis enim lobortis scelerisque fermentum. Tellus rutrum tellus pellentesque eu tincidunt.
-      Duis at tellus at urna condimentum. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Integer eget
-      aliquet nibh praesent tristique. Tristique et egestas quis ipsum suspendisse ultrices gravida.</p>
-    <p>Eget nunc scelerisque viverra mauris in aliquam sem fringilla ut. Tellus in hac habitasse platea. Sagittis nisl
-      rhoncus mattis rhoncus urna neque viverra justo. Lacus sed turpis tincidunt id aliquet risus. Sit amet cursus
-      sit amet dictum sit amet justo donec. Malesuada pellentesque elit eget gravida cum.</p>
-    <p>Condimentum id venenatis a condimentum vitae sapien. Diam in arcu cursus euismod quis viverra nibh. Pharetra
-      diam sit amet nisl suscipit adipiscing bibendum est. Ornare quam viverra orci sagittis eu. Arcu dui vivamus arcu
-      felis bibendum ut. Elementum pulvinar etiam non quam. Massa tempor nec feugiat nisl pretium fusce id. Consequat
-      mauris nunc congue nisi vitae. Tortor dignissim convallis aenean et tortor. Integer malesuada nunc vel risus
-      commodo. Ultrices eros in cursus turpis massa tincidunt dui ut. Ut tortor pretium viverra suspendisse. Non
-      blandit massa enim nec dui nunc mattis enim. Ornare aenean euismod elementum nisi quis eleifend quam. Tortor
-      aliquam nulla facilisi cras. Eget nulla facilisi etiam dignissim. Purus in massa tempor nec feugiat. Sit amet
-      luctus venenatis lectus magna fringilla. Enim nec dui nunc mattis enim ut tellus elementum.</p>
-`,
-      SIGN_TXT: 'eSignature'
-   };
-
-   // Facial scan-payment
-   public static PAYMENT = {
-      PAGE_HEADER: 'Payment',
-      PAGE_SUB_TEXT: 'Pay with credit card.',
-      PAGE_SUB_HEADER: 'Don’t forget to qualify, you must signup with an urgent care specialist.',
-      PAY_TXT: 'or select other payment method',
-      PAY_BTN_TXT :'Pay with'
-   };
-
 }

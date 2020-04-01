@@ -38,10 +38,5 @@
     {
         "title": "Location",
         "url": "/location"
-    },
-    {
-        "title": "Facial-Identity",        
-        "url": "/home/facial-scan",
-        "icon": "home"
     }
 ]
