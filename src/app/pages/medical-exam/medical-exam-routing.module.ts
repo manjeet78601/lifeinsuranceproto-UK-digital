@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MedicalExamPage } from './medical-exam.page';
 import { SechduleAppointmentComponent } from './sechdule-appointment/sechdule-appointment.component';
-
+import { EmailApptComponent } from './email-appt/email-appt.component';
+  
 const routes: Routes = [
   {
     path: '',
@@ -15,12 +16,8 @@ const routes: Routes = [
     component: SechduleAppointmentComponent
   },
   {
-    path: 'urgent-care',
-    loadChildren: () => import('./urgent-care/urgent-care.module').then( m => m.UrgentCarePageModule)
-  },
-  {
-    path: 'urgent-care',
-    loadChildren: () => import('./urgent-care/urgent-care.module').then( m => m.UrgentCarePageModule)
+    path: 'email-appt',
+    component: EmailApptComponent
   },
   // {
   //   path: 'urgent-care',

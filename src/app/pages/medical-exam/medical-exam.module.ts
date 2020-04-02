@@ -9,6 +9,8 @@ import { MedicalExamPageRoutingModule } from './medical-exam-routing.module';
 import { MedicalExamPage } from './medical-exam.page';
 import { SharedModule } from 'src/app/sharedModules/shared.module';
 import { SechduleAppointmentComponent } from './sechdule-appointment/sechdule-appointment.component';
+import { EmailApptComponent } from './email-appt/email-appt.component';
+  
 
 
 
@@ -20,6 +22,6 @@ import { SechduleAppointmentComponent } from './sechdule-appointment/sechdule-ap
     MedicalExamPageRoutingModule,
     SharedModule   ],
 
-  declarations: [MedicalExamPage, SechduleAppointmentComponent],
+  declarations: [MedicalExamPage, SechduleAppointmentComponent,EmailApptComponent],
 })
 export class MedicalExamPageModule {}

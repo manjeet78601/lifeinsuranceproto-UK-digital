@@ -10,7 +10,7 @@
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center app-name">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -38,7 +38,7 @@
                   <a mat-button class="fs-14 col-dull-grey text-underline" routerLink=".">{{htmlText.forgot_pwd}}</a>
               </div>
                 <div class="mt-20"> 
-                    <button type="submit" class="btn bg-gray col-wht" mat-stroked-button [disabled]="!loginForm.valid" (click)="onFormsubmit()">{{htmlText.login_btn}}</button>
+                    <button type="submit" class="btn bg-blk col-wht" mat-stroked-button [disabled]="!loginForm.valid" (click)="onFormsubmit()">{{htmlText.login_btn}}</button>
                     <button class="btn bg-white col-blk" mat-stroked-button (click)="signup($event)" >{{htmlText.signup_btn}}</button>
                 </div>
             </form>

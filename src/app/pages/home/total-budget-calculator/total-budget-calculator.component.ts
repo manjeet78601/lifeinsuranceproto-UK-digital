@@ -3,6 +3,7 @@ import { HomeConstants } from './../home.constants';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-total-budget-calculator',
@@ -14,12 +15,15 @@ export class TotalBudgetCalculatorComponent implements OnInit {
   BTN = HomeConstants.BTN;
   amountLeft = 1000;
   totals: any[];
-
+  isUerLoggedIn: boolean;
   constructor(
     private router: Router,
     private navigationService: MenuService,
     private userService: UserService,
-  ) { }
+    private auth: AuthService
+  ) {
+    this.isUerLoggedIn = this.auth.isUserLoggedIn;
+  }
 
   ngOnInit() {
     this.getTotals();
@@ -45,5 +49,7 @@ export class TotalBudgetCalculatorComponent implements OnInit {
   createAccount() {
     this.router.navigate(['/auth/signup']);
   }
-
+  gotoHomePage() {
+    this.router.navigate(['/home']);
+  }
 }

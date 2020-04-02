@@ -9,7 +9,7 @@
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center app-name">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,9 +19,6 @@
     <div fxLayout="row" fxLayoutAlign="center center">
       <img src="../../assets/img/Calculator-01.png" alt="insurance_calculator" />
     </div>
-    <!-- <div fxLayout="row" fxLayoutAlign="center center">
-        <img src="../../assets/img/insurance_calculator.png" alt="insurance_calculator"  />
-    </div> -->
     <div class="wrapper ion-text-center" fxLayout="column" fxLayoutAlign="center center">
       <header>
         <p class="title">{{PAGE_SUBTITLE}}</p>
@@ -43,26 +40,29 @@
           </div>
 
           <div>
-            <mat-form-field appearance="outline" class="w-50" style="justify-content: end; align-items: flex-end;">
+            <mat-form-field appearance="outline" class="insurance_input">
               <span matPrefix *ngIf="item.isAmt">$</span>
-              <input type="number" matInput [(ngModel)]="item.VALUE" (blur)="calculateCoverage()" class="ipt">
+              <input type="number" matInput [(ngModel)]="item.VALUE" (click)="que.isVisited = true" (blur)="calculateCoverage()" class="ipt">
             </mat-form-field>
           </div>
+
         </div>
-        <p class="txt">{{PAGE_BOTTOM1}}</p>
+        <p class="subtitle">{{PAGE_BOTTOM1}}</p>
         <mat-form-field class="w-100" appearance="outline">
           <span matPrefix>$</span>
           <input type="number" matInput value="0" disabled class="ipt" [(ngModel)]="totalCoverage">
         </mat-form-field>
       </section>
-      <p></p>
-      <p class="plan-content-insur"> {{STEP1_BOTTOM}}</p>
-      <div fxLayout="column" fxLayoutAlign=="center center" fxLayoutGap="10px">
-      <button mat-stroked-button (click)="back()">{{BTTN.INSURANCE | uppercase}}</button>
-      <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button>
-    </div>
-      <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
-    </div>
+      <!-- bottom section -->
+          <p class="plan-content-insur"> {{STEP1_BOTTOM}}</p>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="mt-20">
+        <button mat-stroked-button (click)="back()">{{BTTN.BACK| uppercase}}</button>
+        <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button>
+      </div>
+      <div class="mt-20">
+        <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
+      </div>
+   </div>
   </section>
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">

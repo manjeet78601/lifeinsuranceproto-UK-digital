@@ -28,12 +28,19 @@ export class SigninComponent implements OnInit {
     this.authService.login(loginObj).subscribe((data) => {
       this.menu.enable(true, 'afterLogin');
       this.loader.showAutoHideLoader('', 2000);
-      this.router.navigate(['/auth/profile']);
+      if (this.authService.quotesGenerated === true) {
+        this.router.navigate(['/medical-exam']);
+      } else {
+        this.router.navigate(['/auth/profile']);
+      }
     }, (error) => {
       alert(error);
     });
   }
   signup(event) {
     this.router.navigate(['/auth/signup']);
+  }
+  gotoHomePage() {
+    this.router.navigate(['/home']);
   }
 }

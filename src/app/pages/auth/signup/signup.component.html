@@ -9,7 +9,7 @@
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center app-name">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -41,7 +41,7 @@
           <mat-checkbox class="terms-cond" formControlName="termsAndCond">{{htmlText.terms_cond}}</mat-checkbox>
         </div>
         <div class="mt-20 text-left">
-          <button type="submit" class="btn bg-gray col-wht" mat-stroked-button
+          <button type="submit" class="btn bg-blk col-wht" mat-stroked-button
             [disabled]="!signupForm.valid"><strong>{{htmlText.submit_btn}}</strong></button>
         </div>
       </form>
@@ -55,7 +55,7 @@
         <p class="subheader mt-0">{{htmlText.welcome_subheader1}}</p>
       </header>
       <div class="mt-30">
-        <button class="btn bg-gray col-wht" mat-stroked-button
+        <button class="btn bg-blk col-wht" mat-stroked-button
           (click)="signin()"><strong>{{htmlText.signin_btn}}</strong></button>
       </div>
       <div class="mt-30">

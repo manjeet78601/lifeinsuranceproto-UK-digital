@@ -424,6 +424,9 @@ h6 {
 .w-50 {
   width: 50%;
 }
+.w-75 {
+  width: 75%;
+}
 .h-25 {
   height: 25px;
 }
@@ -696,5 +699,8 @@ float: left;
   color: #333;
 }
 .bg-blk {
-  background-color: #000000;
+  background-color: #434343;
+}
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  background-color:  #000000;;
 }

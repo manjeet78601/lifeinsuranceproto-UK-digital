@@ -3,6 +3,7 @@ import { ChoosePlanConstant, } from '../../../properties/choose-plan.constant';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
 // Datasource for table
 export interface TermInsComparision {
   term: number;
@@ -32,11 +33,15 @@ export class ChoosePlanComponent implements OnInit {
   dataSource = ELEMENT_DATA;
   DOM_CONSTANTS = ChoosePlanConstant.CHOOSE_PLANS;
   BTN = ChoosePlanConstant.BTTN;
+  isUerLoggedIn: boolean;
   constructor(
     private router: Router,
     private navigationService: MenuService,
+    private auth: AuthService,
     private userService: UserService
-  ) { }
+  ) {
+    this.isUerLoggedIn = this.auth.isUserLoggedIn;
+   }
   ngOnInit() {
 
   }
@@ -47,7 +52,9 @@ export class ChoosePlanComponent implements OnInit {
   createAccount() {
     this.userService.createAccount();
   }
-
+  gotoHomePage() {
+    this.router.navigate(['/home']);
+  }
 }
 
 
