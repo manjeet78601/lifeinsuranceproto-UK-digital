@@ -1,21 +1,11 @@
 
-
-.schdule-header{
-  margin:20px 0px 0px 0px;
-  font-family:Playfair Display;
-  font-size:16px;
-  color:#000 !important;
-  text-align: center;
-  word-spacing: normal;
-  padding: 5px;
+.header-title{
+  font-family: Playfair Display;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000000;
 }
-// .schdule-header{
-//     margin:20px 0px 0px 0px;
-//     font-family:Playfair Display;
-//     font-size:24px;
-//     font-weight: bold;
-//     color:#000 !important;
-//   }
+
   .wrapper-plan-marg {
     padding: 50px 20px;
   }
@@ -115,3 +105,27 @@
   .pin{
     height:200px; text-align:left;
   }
+
+  //aniruddha
+  .n-m {
+    margin: 0px !important;
+  }
+  .n-p {
+    padding: 0px !important;
+  }
+  .n-sh {
+    box-shadow: none !important;
+  }
+  .mat-card-image{
+    margin: 0 !important;
+}
+.zip-input{
+  margin: 10px !important;
+    padding: 4px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    text-align: center;
+}
+.w-90 {
+  width: 90% !important;
+}

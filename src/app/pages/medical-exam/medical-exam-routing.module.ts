@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MedicalExamPage } from './medical-exam.page';
 import { SechduleAppointmentComponent } from './sechdule-appointment/sechdule-appointment.component';
+import { ScheduleMedicalExamComponent } from './schedule-medical-exam/schedule-medical-exam.component';
 import { EmailApptComponent } from './email-appt/email-appt.component';
-  
+
 const routes: Routes = [
   {
     path: '',
-    component: MedicalExamPage
+    component: ScheduleMedicalExamComponent
   },
 
   {
@@ -30,4 +31,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MedicalExamPageRoutingModule {}
+export class MedicalExamPageRoutingModule { }
