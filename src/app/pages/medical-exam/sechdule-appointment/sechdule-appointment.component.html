@@ -1,3 +1,79 @@
-<p>
-  sechdule-appointment works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+ 
+  <section class="wrapper-plan-marg" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header fxLayoutAlign="center center">
+      <h2 class="schdule-header">Sechdule Medical Test</h2>
+    </header>
+  
+  <mat-card class="plan-card mat-elevation-z0">
+    <div fxLayout="column" class="flex-container1">
+      <div class="flex-container001">Question Diagnostic<br>
+      <p  class="headfnt">77 water st, manhatten NY 10005</p></div>
+
+
+      <div class="flex-container002">
+      <img src="../../../../assets/img/Quest_Diagnostics.png">
+    </div>
+      <div class="flex-container003">
+        <input type="number" class="zipcde" placeholder="Enter your zip"  name="zipcode" >
+       
+        </div>
+      
+      <div class="flex-container001"><p class="headfntcnt" zipcntnt >Phone Number.<br> 222.222.222.<br><br></p>
+      <span class= "headfntcnt"> Hours of operation<br></span>
+      <p class="headfntcnt">9am - 9pm</p>
+    <p  class="headfntcnt1">
+      <button  class="headfntcnt1" mat-flat-button color="primary" (click)="urgent()">SCHEDULE</button> 
+       </p>
+ 
+    </div>
+  </div>
+   <div fxLayout="row" class="emaildwn">
+              <mat-icon  class="mrg">email</mat-icon>
+              <p class="algn">Email</p>
+  </div>
+  <p class="plan-content-insur">At the appointment you are required to present documentation with your prescrition</p>
+               
+    
+            <a class="link"> create Account</a>
+        
+    
+        
+          <div>
+           
+          </div>
+       
+    
+
+   
+  </mat-card>
+  </section>
+      <!--Footer-->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+</ion-content>
