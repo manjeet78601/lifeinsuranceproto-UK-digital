@@ -18,7 +18,7 @@ export class TotalBudgetCalculatorComponent implements OnInit {
   constructor(
     private router: Router,
     private navigationService: MenuService,
-    private userService: UserService
+    private userService: UserService,
   ) { }
 
   ngOnInit() {
@@ -39,8 +39,8 @@ export class TotalBudgetCalculatorComponent implements OnInit {
   }
 
   getQuote() {
-    this.navigationService.setCompletedMenu('Financial Budget');
-    this.router.navigate(['/home/chooseplan']);
+    this.navigationService.setCompletedMenu('Budget Calculator');
+    this.router.navigate(['/home/health']);
   }
   createAccount() {
     this.router.navigate(['/auth/signup']);

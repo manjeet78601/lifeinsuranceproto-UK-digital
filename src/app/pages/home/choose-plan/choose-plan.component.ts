@@ -8,17 +8,17 @@ export interface TermInsComparision {
   term: number;
   comparison: string;
   perm: number;
-  var:number;
+  var: number;
   lifeplus: number;
 }
 
 const ELEMENT_DATA: TermInsComparision[] = [
-  { comparison: 'Indefinite coverage', term: 0, perm: 1,var:1, lifeplus: 0 },
-  { comparison: 'Cash value', term: 0, perm: 1, var:1, lifeplus: 1 },
-  { comparison: 'Affordable', term: 1, perm: 0, var:0, lifeplus: 1 },
-  { comparison: 'Refundable', term: 0, perm: 1, var:1, lifeplus: 1 },
-  { comparison: 'Variable contribution', term: 0, perm: 0, var:0, lifeplus: 1 },
-  { comparison: 'Investment option', term: 0, perm: 0, var:1, lifeplus: 0 }
+  { comparison: 'Indefinite coverage', term: 0, perm: 1, var: 1, lifeplus: 0 },
+  { comparison: 'Cash value', term: 0, perm: 1, var: 1, lifeplus: 1 },
+  { comparison: 'Affordable', term: 1, perm: 0, var: 0, lifeplus: 1 },
+  { comparison: 'Refundable', term: 0, perm: 1, var: 1, lifeplus: 1 },
+  { comparison: 'Variable contribution', term: 0, perm: 0, var: 0, lifeplus: 1 },
+  { comparison: 'Investment option', term: 0, perm: 0, var: 1, lifeplus: 0 }
 ];
 
 @Component({
@@ -31,7 +31,7 @@ export class ChoosePlanComponent implements OnInit {
   displayedColumns: string[] = ['comparison', 'term', 'perm', 'var', 'lifeplus'];
   dataSource = ELEMENT_DATA;
   DOM_CONSTANTS = ChoosePlanConstant.CHOOSE_PLANS;
-  BTN=ChoosePlanConstant.BTTN;
+  BTN = ChoosePlanConstant.BTTN;
   constructor(
     private router: Router,
     private navigationService: MenuService,
@@ -41,10 +41,10 @@ export class ChoosePlanComponent implements OnInit {
 
   }
   getInsCal() {
-    this.navigationService.setCompletedMenu('Choosing a plan');
-    this.router.navigate(['/home/health']);
+    this.navigationService.setCompletedMenu('Insurance 101');
+    this.router.navigate(['/home/insurance-calculator']);
   }
-  createAccount(){
+  createAccount() {
     this.userService.createAccount();
   }
 
