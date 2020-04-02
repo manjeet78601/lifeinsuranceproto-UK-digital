@@ -47,4 +47,7 @@ export class SignupComponent implements OnInit {
       alert(error);
     });
     }
+    gotoHomePage() {
+      this.router.navigate(['/home']);
+    }
 }

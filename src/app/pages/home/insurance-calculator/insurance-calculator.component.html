@@ -9,7 +9,7 @@
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center app-name">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -51,7 +51,7 @@
       <p class="plan-content-insur"> {{STEP1_BOTTOM}}</p> 
       <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button> 
       <p class="hgt">
-      <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
+      <a class="link" *ngIf="!isUerLoggedIn" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
       </p>
   </section>
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">

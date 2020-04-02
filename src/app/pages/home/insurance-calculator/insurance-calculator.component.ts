@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeConstants } from '../../home/home.constants';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-insurance-calculator',
@@ -19,8 +20,10 @@ export class InsuranceCalculatorComponent implements OnInit {
   progress = 0;
   totalCoverage = 0;
   INSURANCE_CALCULATOR = HomeConstants.INSURANCE_CALCULATOR;
-
-  constructor(private router: Router, private navigationService: MenuService) { }
+  isUerLoggedIn: boolean;
+  constructor(private router: Router, private navigationService: MenuService, private auth: AuthService) {
+    this.isUerLoggedIn = this.auth.isUserLoggedIn;
+   }
 
   ngOnInit() { }
 
@@ -51,7 +54,9 @@ export class InsuranceCalculatorComponent implements OnInit {
   createAccount() {
     this.router.navigate(['/auth/signup']);
   }
-
+  gotoHomePage() {
+    this.router.navigate(['/home']);
+  }
 
 }
 
