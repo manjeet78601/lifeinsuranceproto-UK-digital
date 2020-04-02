@@ -14,18 +14,7 @@ const routes: Routes = [
     path: 'sechdule-appointment',
     component: SechduleAppointmentComponent
   },
-  {
-    path: 'urgent-care',
-    loadChildren: () => import('./urgent-care/urgent-care.module').then( m => m.UrgentCarePageModule)
-  },
-  {
-    path: 'urgent-care',
-    loadChildren: () => import('./urgent-care/urgent-care.module').then( m => m.UrgentCarePageModule)
-  },
-  {
-    path: 'schdule-appt-cal',
-    loadChildren: () => import('./schdule-appt-cal/schdule-appt-cal.module').then( m => m.SchduleApptCalPageModule)
-  },
+ 
   // {
   //   path: 'urgent-care',
   //   loadChildren: () => import('./urgent-care/urgent-care.module').then( m => m.UrgentCarePageModule)
