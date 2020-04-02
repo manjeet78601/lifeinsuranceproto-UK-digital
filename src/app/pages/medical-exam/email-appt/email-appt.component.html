@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="content">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <img src="./../../../assets/img/Email-appt.png" alt="Email Appt" />
+    </div>
+    <div class="ion-text-center" fxLayout="column">
+      <mat-card>
+        <mat-card-title [innerHtml]=DOM_CONSTANTS.APPT_HEADER></mat-card-title>
+        <mat-card-content>
+          <p class="sub-header" [innerHtml]=DOM_CONSTANTS.APPT_SUB_HEADER></p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+  <div div fxLayout="column" fxLayoutAlign="center center">
+    <div>
+      <button class="btn bg-blk col-wht" mat-stroked-button>{{BTN.FINISH}}</button>
+    </div>
+    <a [routerLink]="['./']" (click)="createAccount()" class="btn-acc col-dull-grey mt-10" mat-menu-item>{{BTN.DOC}}</a>
+  </div>
+  <!--Footer-->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+</ion-content>
