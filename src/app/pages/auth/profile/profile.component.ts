@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   userInfo: any;
   userFinancialInfo: any;
   doughnutChartLabels = [
-    'Home', 'Mortgage', 'Vehicle(s)', 'Valuables', 'Fixed Income'
+    'Home(s)', 'Mortgage', 'Vehicle(s)', 'Valuables', 'Fixed Income'
   ];
   doughnutChartData = [12, 3, 4, 8, 19];
   doughnutChartType = 'doughnut';
@@ -61,6 +61,6 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     const completedQuescount = this.userFinancialInfo.filter(data => {
       return data.isAllQuestionsAnswered === true;
     });
-    this.progress = Math.floor(16.7 * completedQuescount.length);
+    this.progress = Math.floor(12.5 * completedQuescount.length);
   }
 }

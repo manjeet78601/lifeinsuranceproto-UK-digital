@@ -1,7 +1,7 @@
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
 <ion-menu side="start" menuId="beforeLogin" contentId="content" id="unauthenticated">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar class="ion-text-center">
       <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
     </ion-toolbar>
   </ion-header>
@@ -11,7 +11,7 @@
         <ion-item [routerLink]="pages.url" routerDirection="forward" detail-none class="menu-item">
           <!-- <ion-icon [name]="pages.icon" slot="start"></ion-icon>   -->
           <span *ngIf="pages.isStep && !pages.isCompleted" class="menu-step">{{i+1}}</span>
-          <mat-icon *ngIf="pages.isStep && pages.isCompleted" class="mr-5">check_circle_outline</mat-icon>
+          <mat-icon *ngIf="pages.isStep && pages.isCompleted === true" class="mr-5">check_circle_outline</mat-icon>
           {{pages.title}}
         </ion-item>
       </ion-menu-toggle>

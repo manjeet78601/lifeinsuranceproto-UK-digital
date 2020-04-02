@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/user.service';
-// import {HomeConstants} from 'src/app/services/user.service';
 
 
 
@@ -13,18 +11,19 @@ import { UserService } from 'src/app/services/user.service';
 export class MedicalExamPage implements OnInit {
   // BTTN = HomeConstants.BTTN;
 
-  constructor( private router: Router, private userService: UserService) { }
+  constructor( private router: Router) { }
 
   ngOnInit() {
   }
-  InsuranceBudget() {
+  scanner() {
     // this.navigationService.setCompletedMenu('Insurance calculator');
-    this.router.navigate(['/home/facial-scan']);
+    // this.router.navigate(['facial-scan']);
 
   }
 
-  // sechdule() {
-  //   this.router.navigate(['/sechdule-appoint']);
-  // }
+  onsechdule() {
+    this.router.navigate(['/medical-exam/sechdule-appointment']);
+
+  }
 
 }

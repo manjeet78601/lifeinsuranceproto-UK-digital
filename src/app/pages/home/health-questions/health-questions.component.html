@@ -24,7 +24,7 @@
           </header>
         
   <section fxLayout="column" class="wrapper-plan1" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <form #health1="ngForm" name="form">
+    <form #health1="ngForm" name="form" >
       <mat-accordion>
         <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS" >
           <mat-expansion-panel-header>
@@ -35,11 +35,15 @@
           <div *ngFor="let que of item.QUESTIONS">
             <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
             <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
-            <!--DOB  mat-form-field-wrapper-->
+            <!--DOB  mat-form-field-wrapper     -->
             <mat-form-field class="w-50 mat-form-field-wrapper" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline" >
-               <input type="date" name="birthDate"  matInput  placeholder="mm/dd/yyyy"
+               <input type="date"  name="birthDate" (dateChange)="getDOB()"  matInput  placeholder="mm/dd/yyyy" 
                [(ngModel)]="que.birthDate" class="form-control" required>
+               <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker> -->
              </mat-form-field> 
+
+             
              <!--Sex tab-->
               <mat-button-toggle-group *ngIf="que.INPUT_TEXT === 'Button'" name="fontStyle" aria-label="Font Style"
                 class="custom-mat-btn-toggle-group">

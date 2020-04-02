@@ -17,8 +17,7 @@ export class HeaderComponent implements OnInit {
   constructor(private menu: MenuController, private navigationService: MenuService, private auth: AuthService) { }
   ngOnInit() {
     this.menu.enable(true, 'beforeLogin');
-    this.navigateBeforeSignin$ = this.navigationService.getNavigationMenus('beforeSignin');
-    this.navigateAfterSignin$ = this.navigationService.getNavigationMenus('afterSignin');
+    this.navigateBeforeSignin$ = this.navigationService.getNavigationMenuBeforeSignin();
+    this.navigateAfterSignin$ = this.navigationService.getNavigationMenuAfterSignin();
   }
-
 }
