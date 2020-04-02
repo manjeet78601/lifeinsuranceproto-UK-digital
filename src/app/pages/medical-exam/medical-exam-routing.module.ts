@@ -3,18 +3,19 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MedicalExamPage } from './medical-exam.page';
 import { SechduleAppointmentComponent } from './sechdule-appointment/sechdule-appointment.component';
+import { ScheduleMedicalExamComponent } from './schedule-medical-exam/schedule-medical-exam.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MedicalExamPage
+    component: ScheduleMedicalExamComponent
   },
 
   {
     path: 'sechdule-appointment',
     component: SechduleAppointmentComponent
   },
- 
+
   // {
   //   path: 'urgent-care',
   //   loadChildren: () => import('./urgent-care/urgent-care.module').then( m => m.UrgentCarePageModule)
@@ -26,4 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MedicalExamPageRoutingModule {}
+export class MedicalExamPageRoutingModule { }
