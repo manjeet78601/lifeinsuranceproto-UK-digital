@@ -28,30 +28,35 @@
       <img src="../../../assets/img/medical-exam.png">
       <!-- <img [src]="quo.prodImg" alt="dummy-image"> -->
     </div>
-    <h2 class="medical-subheader"  style="text-align: center;">In Person</h2>
-    <p class="plan-content-insur">Schedule an appointment with medical lab</p>
+    <h5 class="medical-subheader1" style="text-align: center;">IN PERSON</h5>
+    <p class="medical-content-insur">Schedule an appointment for blooddwork and doctor's visit</p>
     <ion-grid>
       <ion-row>
-        <ion-col size="9">
-          <div class="center-medical">
-            
-            <button mat-flat-button color="primary" (click)="onsechdule()" >SCHEDULE</button> 
-
-      
-          </div>
+        <ion-col size="5">
+          <div class="center-button">
+            <button mat-raised-button ="Basic" (click)="onsechdule()" >BACK</button>
+           </div>
         </ion-col>
-
-
-        <ion-col size="9">
-            <div class="centeror">
-              OR
+        <ion-col size="5">
+            <div class="center-button">
+              
+             <button mat-flat-button color="primary" (click)="onsechdule()"  style="background-color: #000;">SCHEDULE</button>
+  
         
             </div>
           </ion-col>
 
+
+        <!-- <ion-col size="9">
+            <div class="centeror">
+              OR
+        
+            </div>
+          </ion-col> -->
+<!-- 
           <div fxLayout="column" class="quote-img">
               <img src="../../../assets/img/medical-exam-2.png">
-              <!-- <img [src]="quo.prodImg" alt="dummy-image"> -->
+            
             </div>
             <h5 class="subhding">FACIAL RECOGNITION </h5>
     <p class="plan-content-insur">use our facial recogition tool to do an additional health check.</p>
@@ -60,13 +65,13 @@
 
             <button mat-flat-button color="primary" >SCANNER</button> 
       
-            <!-- <a class="link subhding"> create Account</a> -->
+            
         </div>
       </ion-col>
         
           <div>
            
-          </div>
+          </div> -->
        
       </ion-row>
     </ion-grid>
