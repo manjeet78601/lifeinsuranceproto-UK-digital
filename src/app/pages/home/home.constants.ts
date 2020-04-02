@@ -452,7 +452,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
 
    public static BTTN = {
       SUBMIT: 'Submit',
-      INSURANCE: 'Step Two',
+      INSURANCE: 'Next',
    };
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
    public static BUTTON_CONTENT = `you can probably do without Life insurance right now however.
