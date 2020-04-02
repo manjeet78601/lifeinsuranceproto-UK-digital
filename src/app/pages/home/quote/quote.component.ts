@@ -37,7 +37,11 @@ export class QuoteComponent implements OnInit {
 
   goToNext() {
     this.menuService.setCompletedMenu('Compare Quotes');
-    this.router.navigate(['/medical-exam']);
+    if (this.auth.isUserLoggedIn === true) {
+      this.router.navigate(['/medical-exam']);
+    } else {
+      this.router.navigate(['/auth/signup']);
+    }
   }
   getQuotes() {
     return this.userService.getQuoteList();
