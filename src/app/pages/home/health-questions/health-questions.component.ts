@@ -6,7 +6,8 @@ import { MenuService } from 'src/app/services/menu.service';
 import { UserService } from 'src/app/services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataAnalyticsService, CategoryName, PageName, Action, PersonalDetailLabel } from 'src/app/services/data-analytics.service';
-import { FormGroup , Validator} from '@angular/forms';
+import { FormGroup, Validator } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 
@@ -39,22 +40,26 @@ export class HealthQuestionsComponent implements OnInit {
   BTN = HomeConstants.BTN;
   // DOM_CONSTANTS = HomeConstants.FINANCIALBUDGET;
   progress = 0;
+  isUerLoggedIn: boolean;
   constructor(
     private loader: LoaderService,
     private router: Router,
+    private auth: AuthService,
     private navigationService: MenuService,
     private userService: UserService,
     private actRoute: ActivatedRoute,
     private snackbar: MatSnackBar,
     private dataAnalytics: DataAnalyticsService
-  ) { }
+  ) {
+    this.isUerLoggedIn = this.auth.isUserLoggedIn;
+  }
 
   ngOnInit() { }
 
 
 
 
-   Submit(health1) {
+  Submit(health1) {
     console.log(health1);
     const totalbudget = [];
     this.navigationService.setCompletedMenu('Comparing Quotes');
@@ -63,7 +68,7 @@ export class HealthQuestionsComponent implements OnInit {
       this.router.navigate(['/home/quote']);
     }, 2000);
   }
-createAccount() {
+  createAccount() {
     this.router.navigate(['/auth/signup']);
   }
   getDOB() {
@@ -72,7 +77,7 @@ createAccount() {
     const dateBefore18Years = new Date(today.getFullYear() - 18, today.getMonth() - 1, today.getDate());
 
 
-    if ( selectedDate > today ) {
+    if (selectedDate > today) {
       this.openSnackBar('Seems like you are not born yet, Please get back to us once you will be 18 !', null);
       this.personalInfoForm.controls.dob.setValue('');
       return false;
@@ -89,5 +94,8 @@ createAccount() {
       duration: 3000,
       verticalPosition: 'top'
     });
+  }
+  gotoHomePage() {
+    this.router.navigate(['/home']);
   }
 }

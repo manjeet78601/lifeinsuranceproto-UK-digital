@@ -9,7 +9,7 @@
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center app-name">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -90,7 +90,7 @@
       <button class="btn bg-blk col-wht" mat-stroked-button (click)="goToNext()">
         {{BTN.GET_QUOTE}}</button>
     </div>
-    <a [routerLink]="['./']" (click)="createAccount()" class="btn-acc" mat-menu-item>Create account</a>
+    <a *ngIf="!isUerLoggedIn" [routerLink]="['./']" (click)="createAccount()" class="btn-acc" mat-menu-item>Create account</a>
   </section>
   <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!--Quotes Header-->
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header class="page-header" fxLayout="column" fxLayoutAlign="center center">
+      <h1>Medical Testing</h1>
+      <h2 class="header-title">Get Your Results</h2>
+    </header>
+    <mat-card class="card">
+      <img mat-card-image src="assets/img/medical-exam.png" alt="Medical Test">
+      <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+        <h5>IN PERSON</h5>
+        <p>
+          Schedule an appointment for bloodwork and a doctor’s visit.
+        </p>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button mat-stroked-button routerLink="/home/quote" color="primary">BACK</button>
+        <button mat-flat-button routerLink="/medical-exam/sechdule-appointment" class="black_color">SCHEDULE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </section>
+  <!--Footer-->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+</ion-content>

@@ -7,23 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./sechdule-appointment.component.scss'],
 })
 export class SechduleAppointmentComponent implements OnInit {
+  locations = ['Newton - Lab Corp', 'Chealsea - Lab Corp', 'West Haven - Quest Diagnostics'];
+  constructor(private router: Router) { }
 
-  constructor( private router: Router) { }
+  ngOnInit() { }
 
-  ngOnInit() {}
-
-  urgent1() {
-    this.router.navigate(['/medical-exam/urgent-care']);
+  // urgent1() {
+  //   this.router.navigate(['/medical-exam/urgent-care']);
+  // }
+    
+  goToNext() {
+    this.router.navigate(['/medical-exam/email-appt']);
   }
 
-  //(click)="urgent()" 
-  // goNext(state) {
-  //   if (state !== 4 ) {
-  //     this.state = state + 1;
-  //   } else {
-  //     this.router.navigate(['urgent-care']);
-  //   }
-
-  // }
 
 }
