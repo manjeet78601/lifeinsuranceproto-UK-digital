@@ -234,7 +234,7 @@ export class HomeConstants {
       SUBMIT: 'Submit',
       CALCULATE: 'Calculate',
       GET_QUOTE: 'Get Quote',
-      STEP_THREE: 'Step Three',
+      STEP_THREE: 'Next',
       CREATE_ACCOUNT: 'Create Account'
    };
 
