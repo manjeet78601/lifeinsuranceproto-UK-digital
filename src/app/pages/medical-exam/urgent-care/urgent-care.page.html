@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button text="" color='dark'>
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="start" color="dark">
+        <ion-menu-button color="dark"></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center app-name">
+        <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+    <section class="wrapper-plan1" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <section  class="flex-container001">
+      <header fxLayoutAlign="center center">
+        <h5>Urgent care </h5>
+      </header>
+      <div fxLayoutAlign="center center" >
+        <h2 class="medical-subheader">Almost Done</h2></div>
+        <p class="urgent-carecnt">Don't forget to qualify you must signup with an urgent care specialist</p>
+    
+
+        <div class="center-medical" style="text-align: center;">
+              
+            <button mat-flat-button color="primary" >SCHEDULE</button> 
+
+      
+          </div></section>
+ 
+    <mat-card class="plan-card mat-elevation-z0">
+          <ion-grid>
+        <ion-row>
+          <div fxLayout="column">
+                  </div>
+              <h2 class="urgent-bttmheader" >Already Schduled ? </h2>
+      <p class="plan-content-insur">If you scheduled your appointment  with a health care specialist. then you can finish  </p>
+      <ion-col size="9">
+          <div class="bottom-bttn">
+  
+              <button mat-flat-button color="primary" >FINISH</button> 
+        
+              <!-- <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
+         -->
+            </div>
+        </ion-col>
+          
+            <div>
+             
+            </div>
+         
+        </ion-row>
+      </ion-grid>
+  
+     
+    </mat-card>
+    </section>
+        <!--Footer-->
+    <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+      <ion-text class="align-item-bottom">
+        <ion-label class="fl-footer-content">
+          77 Water St 8th Floor,<br /> Manhattan, NY 10005
+        </ion-label>
+      </ion-text>
+      <ion-text class="align-item-bottom">
+        <ion-label class="fl-footer-content">
+          Copyright Life+ © 2020
+        </ion-label>
+      </ion-text>
+    </footer>
+  </ion-content>
