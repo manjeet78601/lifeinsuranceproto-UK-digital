@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   userInfo: any;
   userFinancialInfo: any;
   doughnutChartLabels = [
-    'Home', 'Mortgage', 'Vehicle(s)', 'Valuables', 'Fixed Income'
+    'Home(s)', 'Mortgage', 'Vehicle(s)', 'Valuables', 'Fixed Income'
   ];
   doughnutChartData = [12, 3, 4, 8, 19];
   doughnutChartType = 'doughnut';
