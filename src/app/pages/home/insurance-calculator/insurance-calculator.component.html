@@ -36,7 +36,7 @@
           </div>
           <mat-form-field appearance="outline" class="w-50" style="justify-content: end; align-items: flex-end;">
             <span matPrefix *ngIf="item.isAmt">$</span>
-            <input type="number" class="mat-form-field-flex"  matInput [(ngModel)]="item.VALUE" (click)="que.isVisited = true"  
+            <input type="number" matInput [(ngModel)]="item.VALUE" (click)="que.isVisited = true"  
               (blur)="calculateCoverage()" class="ipt">
           </mat-form-field>
         </div>
