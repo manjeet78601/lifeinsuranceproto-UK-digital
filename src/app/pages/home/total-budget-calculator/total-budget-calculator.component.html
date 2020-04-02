@@ -10,7 +10,7 @@
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center app-name">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -58,7 +58,7 @@
       </div>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
         <button mat-flat-button color="primary" (click)="getQuote()">{{ BTN.STEP_THREE | uppercase}}</button>
-        <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
+        <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
       </div>
 
     </section>

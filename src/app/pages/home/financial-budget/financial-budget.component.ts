@@ -5,6 +5,7 @@ import { LoaderService } from 'src/app/services/loader.service';
 import { Router } from '@angular/router';
 import { DataAnalyticsService, CategoryName, Action } from 'src/app/services/data-analytics.service';
 import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-financial-budget',
@@ -18,13 +19,16 @@ export class FinancialBudgetComponent implements OnInit {
   PAGE_SUBHEADER = HomeConstants.BUDGET_SUB_HEADER;
   BTN = HomeConstants.BTN;
   progress = 0;
-
+  isUerLoggedIn: boolean;
   constructor(
     private loader: LoaderService,
     private router: Router,
     private analytic: DataAnalyticsService,
     private userService: UserService,
-  ) { }
+    private auth: AuthService
+  ) {
+    this.isUerLoggedIn = this.auth.isUserLoggedIn;
+  }
 
   ngOnInit() {
     // console.log(this.CONSTANTS.FINANCIALBUDGET);
@@ -54,5 +58,8 @@ export class FinancialBudgetComponent implements OnInit {
 
   createAccount() {
     this.router.navigate(['/auth/signup']);
+  }
+  gotoHomePage() {
+    this.router.navigate(['/home']);
   }
 }
