@@ -51,7 +51,7 @@
       <p class="plan-content-insur"> {{STEP1_BOTTOM}}</p> 
       <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button> 
       <p class="top1">
-      <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
+      <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
       </p>
   </section>
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
