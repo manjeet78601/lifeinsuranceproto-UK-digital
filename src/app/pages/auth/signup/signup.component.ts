@@ -24,7 +24,10 @@ export class SignupComponent implements OnInit {
   });
   constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService, private loader: LoaderService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isSignup = false;
+    this.isAccountVerified = false;
+  }
   onFormsubmit() {
     this.isSignup = true;
     this.isAccountVerified = true;
