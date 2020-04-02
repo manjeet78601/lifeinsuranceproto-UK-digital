@@ -30,7 +30,7 @@ export class QuoteComponent implements OnInit {
     console.log(this.quotes);
   }
 
-  getMedicalExam() {
+  goToNext() {
     this.menuService.setCompletedMenu('Compare Quotes');
     this.router.navigate(['/medical-exam']);
   }
@@ -40,5 +40,10 @@ export class QuoteComponent implements OnInit {
   createAccount() {
     return this.userService.createAccount();
   }
+  getPrevious() {
+    this.router.navigate(['/home/health']);
+  }
+
 }
+
 

@@ -85,7 +85,7 @@ mat-cell {
 
 .exp-header {
   font-family: Proxima Soft;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: #070707;
   text-align: left;
@@ -99,13 +99,15 @@ p {
 }
 
 .heart-icon {
-  color: #ef3b51;
+  color: #FAEF54;
+  border: thin;
+  border-color: #E5DA3F;
 }
 .heart-grey-icon {
   color: #D9D9D9;
 }
 ion-icon {
-  font-size: 13px;
+  font-size: 14px;
 }
 .quo-btn {
   margin-top: 30px !important;
@@ -115,7 +117,7 @@ ion-icon {
   font-size: 16px;
   color: #070707;
   text-align: left;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 .comment-txt {
   font-family: Proxima Soft;
@@ -132,8 +134,8 @@ ion-grid {
     margin-top: 0px !important;
   }
 }
-.pad-15px {
-  padding-left: 15px;
+.pad-10 {
+  padding-left: 10px;
 }
 .marg-10px {
   margin-left: 10px;
@@ -148,4 +150,9 @@ ion-grid {
   font-family: Proxima Soft;
   font-size: 16px;
   color: #CCCCCC;
+}
+.btn-border{
+  border-radius: 2px;
+  border-color: #00B5AD;
+  margin-right: 10px;
 }
