@@ -10,7 +10,7 @@
         <ion-menu-button color="dark"></ion-menu-button>
       </ion-buttons>
       <ion-title class="ion-text-center app-name">
-        <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" />
+        <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()"/>
       </ion-title>
     </ion-toolbar>
   </ion-header>
@@ -80,7 +80,7 @@
             </mat-button-toggle-group>
             
             <mat-form-field  class="full-width" *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
-              <textarea #txt="ngModel" name="insuranceText" [(ngModel)]="insuranceText"   class="mat-form-field-flex form-control" matInput placeholder="Write a response"
+              <textarea type="text" #txt="ngModel" name="insuranceText" [(ngModel)]="insuranceText"   class="mat-form-field-flex form-control" matInput placeholder="Write a response"
               required></textarea>
               </mat-form-field>
            </div>
@@ -91,7 +91,7 @@
       {{ BTN.SUBMIT | uppercase }}
     </button>
     <div>
-      <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
+      <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
       </div>
     </section>
     </section>

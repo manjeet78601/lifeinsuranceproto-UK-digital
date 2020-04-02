@@ -12,10 +12,11 @@ export class SechduleAppointmentComponent implements OnInit {
 
   ngOnInit() {}
 
-  urgent() {
-    this.router.navigate(['medical-exam/urgent-care']);
+  urgent1() {
+    this.router.navigate(['/medical-exam/urgent-care']);
   }
 
+  //(click)="urgent()" 
   // goNext(state) {
   //   if (state !== 4 ) {
   //     this.state = state + 1;

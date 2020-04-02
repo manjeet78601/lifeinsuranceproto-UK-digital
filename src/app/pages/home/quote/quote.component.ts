@@ -3,6 +3,7 @@ import { CompareQuotesConstant, } from '../../../properties/compare-quotes.const
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { MenuService } from 'src/app/services/menu.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-quote',
@@ -17,11 +18,15 @@ export class QuoteComponent implements OnInit {
   BTN = CompareQuotesConstant.BTTN;
   quotes: any;
   isLoading = true;
+  isUerLoggedIn: boolean;
   constructor(
     private router: Router,
     private userService: UserService,
-    private menuService: MenuService
-  ) { }
+    private menuService: MenuService,
+    private auth: AuthService
+  ) {
+    this.isUerLoggedIn = this.auth.isUserLoggedIn;
+   }
   ngOnInit() {
     setTimeout(() => {
       this.isLoading = false;
@@ -30,7 +35,7 @@ export class QuoteComponent implements OnInit {
     console.log(this.quotes);
   }
 
-  getMedicalExam() {
+  goToNext() {
     this.menuService.setCompletedMenu('Compare Quotes');
     this.router.navigate(['/medical-exam']);
   }
@@ -40,5 +45,12 @@ export class QuoteComponent implements OnInit {
   createAccount() {
     return this.userService.createAccount();
   }
+  getPrevious() {
+    this.router.navigate(['/home/health']);
+  }
+  gotoHomePage() {
+    this.router.navigate(['/home']);
+  }
 }
+
 

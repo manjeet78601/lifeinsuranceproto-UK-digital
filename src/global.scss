@@ -50,6 +50,10 @@ h5,
 h6 {
   color: #5a5a5a;
 }
+.black_color{
+  background-color: black;
+  color:white
+}
 .app-name{
   padding-left: 0;
   padding-top: 10px;
@@ -157,7 +161,9 @@ h6 {
 .col-darkgrey {
   color: #5a5a5a;
 }
-
+.pl-35{
+  padding-left: 35px;
+}
 .fs-12 {
   font-size: 12px;
 }
@@ -184,6 +190,9 @@ h6 {
 }
 .mr-5 {
   margin-right: 5px;
+}
+.mr-10 {
+  margin-right: 10px;
 }
 .mt-10 {
   margin-top: 10px;
@@ -353,7 +362,7 @@ h6 {
 }
 .que-header {
   font-family: proxima nova;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   line-height: 2em;
   display: block;
@@ -378,6 +387,11 @@ h6 {
     ::after {
       border-radius: 2px !important;
     }
+  }
+}
+.user-info {
+  .mat-progress-bar ::after {
+    background-color: #E03997;
   }
 }
 
@@ -680,4 +694,10 @@ float: left;
 }
 .txt-black {
   color: #333;
+}
+.bg-blk {
+  background-color: #000000;
+}
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  background-color:  #000000;;
 }

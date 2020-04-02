@@ -36,4 +36,7 @@ export class SigninComponent implements OnInit {
   signup(event) {
     this.router.navigate(['/auth/signup']);
   }
+  gotoHomePage() {
+    this.router.navigate(['/home']);
+  }
 }

@@ -1,11 +1,11 @@
 export class ChoosePlanConstant {
 
     public static BTTN = {
-        INS_CAL: 'INSURANCE CALCULATOR'
+        INS_CAL: 'NEXT'
     };
     // Step 3: Choose Plan
     public static CHOOSE_PLANS = {
-        PLAN_HEADER: 'Term vs. Perm ',
+        PLAN_HEADER: 'Life Insurance 101',
         PLAN_SUB_HEADER: 'Let us help you learn what insurance works best for you and your family.',
         COVG_HEADER: 'Ready to figure out how much coverage you need?',
         COMP_TBL_HEADER: 'Insurance Coverage Comparison Tool',
@@ -17,7 +17,7 @@ export class ChoosePlanConstant {
        If you pass away before the policy has expired, your beneficiaries will
        be paid out the death benefit. If you wish to continue having life insurance
        after the policy expires, you could either renew your policy or switch
-       roviders entirely, at a new higher age adjusted premium rate. It is also
+       providers entirely, at a new higher age adjusted premium rate. It is also
        important to keep in mind that some policies have a 10-year policy cap restriction
        past the age of 50.</p>
        <p>Term life insurance is a more affordable option than other forms of insurance

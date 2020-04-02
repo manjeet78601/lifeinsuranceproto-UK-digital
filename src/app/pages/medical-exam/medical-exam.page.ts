@@ -25,5 +25,7 @@ export class MedicalExamPage implements OnInit {
     this.router.navigate(['/medical-exam/sechdule-appointment']);
 
   }
-
+  gotoHomePage() {
+    this.router.navigate(['/home']);
+  }
 }

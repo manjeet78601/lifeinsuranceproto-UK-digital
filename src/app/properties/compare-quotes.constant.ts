@@ -10,5 +10,6 @@ export class CompareQuotesConstant {
         READ_MORE: 'Read More',
         CLOSE: 'Close',
         GET_QUOTE: 'GET QUOTE',
+        BACK: 'BACK',
     };
 }
