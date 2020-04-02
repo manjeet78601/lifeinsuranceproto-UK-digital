@@ -8,8 +8,14 @@
           color: #000 !important;
         }
 }
-.txt{
-  margin:0px 0px 0px 0px;
+header >p.title{
+  font-family: proxima nova;
+  font-size: 14px;
+  font-weight: bold; 
+  color: #000 !important;
+}
+header >p.subtitle{
+ 
   font-family:Playfair Display;
   font-size:24px;
   font-weight: bold;
@@ -31,6 +37,11 @@ white-space:pre-line;
 }
 .icon12{
    display:block;
+}
+.input{
+  width: 340px;
+  height:95px;
+  text-align: end;
 }
 
   

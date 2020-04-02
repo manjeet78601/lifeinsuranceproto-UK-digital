@@ -14,45 +14,55 @@
   </ion-toolbar>
 </ion-header>
 <!--Header Section-->
-<ion-content class="text-center">
-  <section class="wrapper ion-text-center content" fxLayout="column" fxLayoutAlign="center center">
-    <div>
-      <ion-card-title><img src="../../assets/img/circleImg1.png" alt="img1" class="circled-img" /></ion-card-title>
+<ion-content>
+  <section class="content">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <img src="../../assets/img/Calculator-01.png" alt="insurance_calculator" />
     </div>
-      <header class="page-header-insurance" fxLayout="column" fxLayoutAlign="center center">
-           <h5>{{PAGE_SUBTITLE}}</h5>
-              </header>
-              <p class="txt">{{ PAGE_HEADER }}</p>
-           <p fxLayoutAlign="center center" class="plan-content-insur txt-align">{{PAGE_SUB_HEADER }}</p>
- 
-    <!--Progress Bar-->
-        <mat-progress-bar mode="determinate" value="20" class="mt-10 mb-20"></mat-progress-bar>
-       <!--Question & Answer-->
-        <section fxLayout="column" fxLayoutGap="20px" >
-        <div fxLayout="row" fxLayoutAlign="start start" *ngFor="let item of INSURANCE_CALCULATOR.QUESTIONS">
-          <div class="text w-50">
+    <!-- <div fxLayout="row" fxLayoutAlign="center center">
+        <img src="../../assets/img/insurance_calculator.png" alt="insurance_calculator"  />
+    </div> -->
+    <div class="wrapper ion-text-center" fxLayout="column" fxLayoutAlign="center center">
+      <header>
+        <p class="title">{{PAGE_SUBTITLE}}</p>
+        <p class="subtitle">{{ PAGE_HEADER }}</p>
+      </header>
+      <div>
+        <p class="plan-content-insur">{{PAGE_SUB_HEADER }}</p>
+      </div>
+
+      <!--Progress Bar-->
+      <mat-progress-bar mode="determinate" value="20" class="mt-10 mb-20"></mat-progress-bar>
+      <!--Question & Answer-->
+      <section>
+        <div fxLayout="row" fxLayoutGap="20px" *ngFor="let item of INSURANCE_CALCULATOR.QUESTIONS">
+
+          <div class="text">
             <mat-label>{{ item.INPUT_TYPE }}</mat-label>
-            <mat-icon class="icon12" >help_outline</mat-icon>
+            <mat-icon class="icon12 mt-20 mb-30">help_outline</mat-icon>
           </div>
-          <mat-form-field appearance="outline" class="w-50" style="justify-content: end; align-items: flex-end;">
-            <span matPrefix *ngIf="item.isAmt">$</span>
-            <input type="number" matInput [(ngModel)]="item.VALUE" 
-              (blur)="calculateCoverage()" class="ipt">
-          </mat-form-field>
+
+          <div>
+            <mat-form-field appearance="outline" class="w-50" style="justify-content: end; align-items: flex-end;">
+              <span matPrefix *ngIf="item.isAmt">$</span>
+              <input type="number" matInput [(ngModel)]="item.VALUE" (blur)="calculateCoverage()" class="ipt">
+            </mat-form-field>
+          </div>
         </div>
         <p class="txt">{{PAGE_BOTTOM1}}</p>
         <mat-form-field class="w-100" appearance="outline">
-          
           <span matPrefix>$</span>
-          <input type="number" matInput value="0" disabled class="ipt"[(ngModel)]="totalCoverage">
+          <input type="number" matInput value="0" disabled class="ipt" [(ngModel)]="totalCoverage">
         </mat-form-field>
       </section>
       <p></p>
-      <p class="plan-content-insur"> {{STEP1_BOTTOM}}</p> 
-      <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button> 
-      
+      <p class="plan-content-insur"> {{STEP1_BOTTOM}}</p>
+      <div fxLayout="column" fxLayoutAlign=="center center" fxLayoutGap="10px">
+      <button mat-stroked-button (click)="back()">{{BTTN.INSURANCE | uppercase}}</button>
+      <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button>
+    </div>
       <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
-      
+    </div>
   </section>
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
