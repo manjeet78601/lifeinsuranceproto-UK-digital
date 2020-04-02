@@ -37,26 +37,20 @@ export class HomeConstants {
       },
       PLAN_STEP_ONE: {
          TITLE: 'STEP ONE',
-         CONTENT: `<p>Calculate how</br>
-                      much coverage</br>
-                      your family needs.</p>`,
+         CONTENT: `<p>Insurance 101</p>`,
       },
       PLAN_STEP_TWO: {
          TITLE: 'STEP TWO',
-         CONTENT: `<p>Customize a Plan</br>
-                      based on your</br>
-                      holistc view.</p>`,
+         CONTENT: `<p>Insurance</br> Calculator.</p>`,
       },
       PLAN_STEP_THREE: {
          TITLE: 'STEP THREE',
-         CONTENT: `<p>Term vs Prem:</br>
-                        What's best for
-                        you?&nbsp;&nbsp</p>`,
+         CONTENT: `<p>Financial Budget</p>`,
       },
       PLAN_STEP_FOUR: {
          TITLE: 'STEP FOUR',
-         CONTENT: `<p>Compare Quotes.</br>
-                      &nbsp;&nbsp</p>`,
+         CONTENT: `<p>Compare Quotess
+                      </p>`,
       },
       PLAN_READ_MORE: {
          TITLE: ' READ MORE',
