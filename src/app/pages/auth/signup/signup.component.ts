@@ -14,6 +14,7 @@ import { Signup } from 'src/app/models/auth.model';
 export class SignupComponent implements OnInit {
   htmlText = properties;
   isSignup = false;
+  isAccountVerified = false;
   signupForm: FormGroup = this.formBuilder.group({
     firstName: ['', [Validators.required]],
     userName: ['', [Validators.required, Validators.email]],
@@ -26,6 +27,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {}
   onFormsubmit() {
     this.isSignup = true;
+    this.isAccountVerified = true;
   }
   signin() {
     const signUpObj = new Signup(

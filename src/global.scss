@@ -380,6 +380,11 @@ h6 {
     }
   }
 }
+.user-info {
+  .mat-progress-bar ::after {
+    background-color: #E03997;
+  }
+}
 
 .bg-lightgray {
   background-color: #f8f8f8;
