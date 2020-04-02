@@ -15,7 +15,7 @@
 </ion-header>
 <!--Header Section-->
 <ion-content class="text-center">
-  <section class="wrapper1 ion-text-center content" fxLayout="column" fxLayoutAlign="center center">
+  <section class="wrapper_insur  ion-text-center content" fxLayout="column" fxLayoutAlign="center center">
     <div>
       <ion-card-title><img src="../../../../assets/img/Calculator-01.png" alt="img1" class="circled-img" /></ion-card-title>
     </div>
@@ -31,12 +31,12 @@
         <section fxLayout="column" fxLayoutGap="20px" >
         <div fxLayout="row" fxLayoutAlign="start start" *ngFor="let item of INSURANCE_CALCULATOR.QUESTIONS">
           <div class="text w-50">
-            <mat-label>{{ item.INPUT_TYPE }}</mat-label>
+            <mat-label >{{ item.INPUT_TYPE }}</mat-label>
             <mat-icon class="icon12" >help_outline</mat-icon>
           </div>
           <mat-form-field appearance="outline" class="w-50" style="justify-content: end; align-items: flex-end;">
             <span matPrefix *ngIf="item.isAmt">$</span>
-            <input type="number" matInput [(ngModel)]="item.VALUE" 
+            <input type="number" matInput [(ngModel)]="item.VALUE" (click)="que.isVisited = true"  
               (blur)="calculateCoverage()" class="ipt">
           </mat-form-field>
         </div>
@@ -50,8 +50,8 @@
       <p></p>
       <p class="plan-content-insur"> {{STEP1_BOTTOM}}</p> 
       <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button> 
-      <p class="hgt">
-      <a class="link" *ngIf="!isUerLoggedIn" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
+      <p class="top1">
+      <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
       </p>
   </section>
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
