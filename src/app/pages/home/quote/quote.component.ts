@@ -32,6 +32,7 @@ export class QuoteComponent implements OnInit {
       this.isLoading = false;
     }, 2000);
     this.quotes = this.getQuotes();
+    this.auth.setQuotesGeneratedFlag();
     console.log(this.quotes);
   }
 

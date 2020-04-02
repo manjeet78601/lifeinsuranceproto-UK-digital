@@ -174,7 +174,7 @@ export class UserService {
   getQuoteList() {
     return this.quotes;
   }
-  createAccount(){
+  createAccount() {
     this.router.navigate(['/auth/signup']);
  }
 }

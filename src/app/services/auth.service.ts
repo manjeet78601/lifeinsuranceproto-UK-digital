@@ -10,6 +10,7 @@ export class AuthService {
 financeURL =  '../../assets/json/profile/financial-details.json';
 userInfo: Signup = new Signup('', '', '', '', '');
 isLoggedIn = false;
+isQuotesGenerated = false;
 bDate: string;
   constructor(private http: HttpClient) { }
   login(loginObj: Signin): Observable<boolean> {
@@ -27,6 +28,12 @@ bDate: string;
       }
     }
     return of(true);
+  }
+  setQuotesGeneratedFlag() {
+    this.isQuotesGenerated = true;
+  }
+  get quotesGenerated() {
+    return this.isQuotesGenerated;
   }
   get userName() {
     return this.userInfo.firstName;
