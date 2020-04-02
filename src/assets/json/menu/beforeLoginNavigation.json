@@ -1,24 +1,24 @@
 [
     {
-        "title": "Insurance calculator",
-        "url": "/home/insurance-calculator",
-        "isStep": true,
-        "isCompleted": false
-    },
-    {
-        "title": "Financial Budget",
-        "url": "/home/budget",
-        "isStep": true,
-        "isCompleted": false
-    },
-    {
-        "title": "Choosing a plan",
+        "title": "Insurance 101",
         "url": "home/chooseplan",
         "isStep": true,
         "isCompleted": false
     },
     {
-        "title": "Comparing Quotes",
+        "title": "Life Insurance Calculator",
+        "url": "/home/insurance-calculator",
+        "isStep": true,
+        "isCompleted": false
+    },
+    {
+        "title": "Budget Calculator",
+        "url": "/home/budget",
+        "isStep": true,
+        "isCompleted": false
+    },
+    {
+        "title": "Compare Quotes",
         "url": "home/health",
         "isStep": true,
         "isCompleted": false
@@ -34,9 +34,5 @@
     {
         "title": "Sign In",
         "url": "/auth"
-    },
-    {
-        "title": "Location",
-        "url": "/location"
     }
 ]

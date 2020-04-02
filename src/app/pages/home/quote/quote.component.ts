@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CompareQuotesConstant, } from '../../../properties/compare-quotes.constant';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-quote',
@@ -18,7 +19,8 @@ export class QuoteComponent implements OnInit {
   isLoading = true;
   constructor(
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private menuService: MenuService
   ) { }
   ngOnInit() {
     setTimeout(() => {
@@ -28,7 +30,8 @@ export class QuoteComponent implements OnInit {
     console.log(this.quotes);
   }
 
-  getMedicalExam() {
+  goToNext() {
+    this.menuService.setCompletedMenu('Compare Quotes');
     this.router.navigate(['/medical-exam']);
   }
   getQuotes() {
@@ -37,5 +40,10 @@ export class QuoteComponent implements OnInit {
   createAccount() {
     return this.userService.createAccount();
   }
+  getPrevious() {
+    this.router.navigate(['/home/health']);
+  }
+
 }
+
 

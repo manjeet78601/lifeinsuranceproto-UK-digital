@@ -3,6 +3,7 @@ import { properties, financialLists, Profile } from '../../../properties/auth.co
 import { AuthService } from 'src/app/services/auth.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { DataAnalyticsService } from 'src/app/services/data-analytics.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -14,7 +15,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   userInfo: any;
   userFinancialInfo: any;
   doughnutChartLabels = [
-    'Home', 'Mortgage', 'Vehicle(s)', 'Valuables', 'Fixed Income'
+    'Home(s)', 'Mortgage', 'Vehicle(s)', 'Valuables', 'Fixed Income'
   ];
   doughnutChartData = [12, 3, 4, 8, 19];
   doughnutChartType = 'doughnut';
@@ -37,7 +38,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   userName: string;
   birthDate: string;
   progress = 0;
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
   ngOnInit() {
     this.userName = this.auth.userName;
     this.birthDate = this.auth.userBirthDate;
@@ -61,6 +62,9 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     const completedQuescount = this.userFinancialInfo.filter(data => {
       return data.isAllQuestionsAnswered === true;
     });
-    this.progress = Math.floor(16.7 * completedQuescount.length);
+    this.progress = Math.floor(12.5 * completedQuescount.length);
+  }
+  gotoHomePage() {
+    this.router.navigate(['/home']);
   }
 }

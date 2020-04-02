@@ -14,6 +14,7 @@ import { Signup } from 'src/app/models/auth.model';
 export class SignupComponent implements OnInit {
   htmlText = properties;
   isSignup = false;
+  isAccountVerified = false;
   signupForm: FormGroup = this.formBuilder.group({
     firstName: ['', [Validators.required]],
     userName: ['', [Validators.required, Validators.email]],
@@ -23,9 +24,13 @@ export class SignupComponent implements OnInit {
   });
   constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService, private loader: LoaderService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isSignup = false;
+    this.isAccountVerified = false;
+  }
   onFormsubmit() {
     this.isSignup = true;
+    this.isAccountVerified = true;
   }
   signin() {
     const signUpObj = new Signup(
@@ -41,5 +46,8 @@ export class SignupComponent implements OnInit {
     }, (error) => {
       alert(error);
     });
+    }
+    gotoHomePage() {
+      this.router.navigate(['/home']);
     }
 }

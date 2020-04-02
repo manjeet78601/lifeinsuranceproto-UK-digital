@@ -59,27 +59,27 @@
   </div>
   <div class="wrapper ion-text-center" fxLayout="column">
     <div>
-      <button mat-flat-button color="primary" [routerLink]="['/home/insurance-calculator']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_GETTING_STARTED.TITLE}}</button>
+      <button mat-flat-button class="black_color" [routerLink]="['/home/insurance-calculator']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_GETTING_STARTED.TITLE}}</button>
     </div>
     <!-- step One and two -->
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px" class="mt-50">
       <div fxLayout="column" fxLayoutGap="10px">
-        <div>
-          <img src="../../assets/img/landingPage/winner.png" alt="Winner_Img" class="circled-img" />
+        <div class="img_circled" fxLayoutAlign="center center">
+          <img src="../../assets/img/landingPage/step1.png" alt="Winner_Img" />
         </div>
         <div>
-          <button mat-flat-button color="primary" [routerLink]="['/home/insurance-calculator']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_STEP_ONE.TITLE}}</button>
+          <button mat-flat-button  class="black_color"  [routerLink]="['/home/chooseplan']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_STEP_ONE.TITLE}}</button>
         </div>
         <div>
           <p class="btn-content" [innerHtml]=DOM_CONSTANTS.PLAN_STEP_ONE.CONTENT></p>
         </div>
       </div>
-      <div fxLayout="column" fxLayoutGap="10px">
-        <div>
-          <img src="../../assets/img/landingPage/stroke.png" alt="Stroke_Img" class="circled-img" />
+      <div fxLayout="column" fxLayoutGap="10px" class="mt-20">
+        <div class="img_circled" fxLayoutAlign="center center" >
+          <img src="../../assets/img/landingPage/step2.png" alt="Stroke_Img" />
         </div>
         <div>
-          <button mat-flat-button color="primary" [routerLink]="['/home/budget']">
+          <button mat-flat-button class="black_color" [routerLink]="['/home/insurance-calculator']">
           {{DOM_CONSTANTS.PLAN_STEP_TWO.TITLE}}</button>
         </div>
         <div>
@@ -90,22 +90,22 @@
     <!-- step three and Four -->
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px">
       <div fxLayout="column" fxLayoutGap="10px">
-        <div>
-          <img src="../../assets/img/landingPage/star.png" alt="Star_Img" class="circled-img" />
+        <div class="img_circled" fxLayoutAlign="center center">
+          <img src="../../assets/img/landingPage/step3.png" alt="Star_Img"  />
         </div>
         <div>
-          <button mat-flat-button color="primary" [routerLink]="['/home/insurance-calculator']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_STEP_THREE.TITLE}}</button>
+          <button mat-flat-button class="black_color" [routerLink]="['/home/budget']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_STEP_THREE.TITLE}}</button>
         </div>
         <div>
           <p class="btn-content" [innerHtml]=DOM_CONSTANTS.PLAN_STEP_THREE.CONTENT></p>
         </div>
       </div>
       <div fxLayout="column" fxLayoutGap="10px">
-        <div>
-          <img src="../../assets/img/landingPage/spotlight.png" alt="SpotLight_Img" class="circled-img" />
+        <div class="img_circled" fxLayoutAlign="center center">
+          <img src="../../assets/img/landingPage/step4.png" alt="SpotLight_Img" />
         </div>
         <div>
-          <button mat-flat-button color="primary" class="mt-50" [routerLink]="['/home/budget']">
+          <button mat-flat-button  class="mt-50 black_color" [routerLink]="['/home/health']">
             {{DOM_CONSTANTS.PLAN_STEP_FOUR.TITLE}}</button>
         </div>
         <div>
@@ -136,7 +136,7 @@
               <img src="../../assets/img/landingPage/Mask Group 20.png" alt="Mask_Group1_Img" class="circled-img" />
             </div>
             <div>
-              <button mat-flat-button color="primary" [routerLink]="['/home/insurance-calculator']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_READ_MORE.TITLE}}</button>
+              <button mat-flat-button class="black_color" style="width: 97;height:36" [routerLink]="['/home/insurance-calculator']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_READ_MORE.TITLE}}</button>
             </div>
           </div>
           <div fxLayout="column" fxLayoutGap="10px">
@@ -144,7 +144,7 @@
               <img src="../../assets/img/landingPage/Mask Group 21.png" alt="Mask_Group2_Img" class="circled-img" />
             </div>
             <div>
-              <button mat-flat-button color="primary" [routerLink]="['/home/budget']">
+              <button mat-flat-button class="black_color" style="width: 97;height:36" [routerLink]="['/home/budget']">
                   {{DOM_CONSTANTS.PLAN_READ_MORE.TITLE}}</button>
             </div>
           </div>

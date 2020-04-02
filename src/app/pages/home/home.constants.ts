@@ -37,26 +37,20 @@ export class HomeConstants {
       },
       PLAN_STEP_ONE: {
          TITLE: 'STEP ONE',
-         CONTENT: `<p>Calculate how</br>
-                      much coverage</br>
-                      your family needs.</p>`,
+         CONTENT: `<p>Insurance 101</p>`,
       },
       PLAN_STEP_TWO: {
          TITLE: 'STEP TWO',
-         CONTENT: `<p>Customize a Plan</br>
-                      based on your</br>
-                      holistc view.</p>`,
+         CONTENT: `<p>Insurance</br> Calculator.</p>`,
       },
       PLAN_STEP_THREE: {
          TITLE: 'STEP THREE',
-         CONTENT: `<p>Term vs Prem:</br>
-                        What's best for
-                        you?&nbsp;&nbsp</p>`,
+         CONTENT: `<p>Financial Budget</p>`,
       },
       PLAN_STEP_FOUR: {
          TITLE: 'STEP FOUR',
-         CONTENT: `<p>Compare Quotes.</br>
-                      &nbsp;&nbsp</p>`,
+         CONTENT: `<p>Compare Quotess
+                      </p>`,
       },
       PLAN_READ_MORE: {
          TITLE: ' READ MORE',
@@ -240,7 +234,7 @@ export class HomeConstants {
       SUBMIT: 'Submit',
       CALCULATE: 'Calculate',
       GET_QUOTE: 'Get Quote',
-      STEP_THREE: 'Step Three',
+      STEP_THREE: 'Next',
       CREATE_ACCOUNT: 'Create Account'
    };
 
@@ -458,7 +452,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
 
    public static BTTN = {
       SUBMIT: 'Submit',
-      INSURANCE: 'Step Two',
+      INSURANCE: 'Next',
    };
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
    public static BUTTON_CONTENT = `you can probably do without Life insurance right now however.
