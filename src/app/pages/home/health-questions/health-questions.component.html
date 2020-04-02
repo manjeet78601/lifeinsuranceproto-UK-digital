@@ -80,8 +80,9 @@
             </mat-button-toggle-group>
             
             <mat-form-field  class="full-width" *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
-              <textarea type="text" #txt="ngModel" name="insuranceText" [(ngModel)]="insuranceText"   class="mat-form-field-flex form-control" matInput placeholder="Write a response"
-              required></textarea>
+              <textarea type="text" name="insuranceText"    class="mat-form-field-flex form-control" matInput placeholder="Write a response"></textarea>
+
+              <!-- [(ngModel)]="insuranceText" #txt="ngModel"  -->
               </mat-form-field>
            </div>
         </mat-expansion-panel>
