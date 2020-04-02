@@ -34,9 +34,5 @@
     {
         "title": "Sign In",
         "url": "/auth"
-    },
-    {
-        "title": "Location",
-        "url": "/location"
     }
 ]
