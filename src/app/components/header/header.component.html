@@ -6,16 +6,18 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="menu-bar">
-    <ion-list *ngFor="let pages of navigateBeforeSignin$ | async; let i = index" lines="none" class="menu-list">
+    <ng-container *ngFor="let pages of navigateBeforeSignin$ | async; let i = index">
+    <ion-list  lines="none" class="menu-list" [ngClass] = "pages.title === 'Contact' || pages.title === 'Help' || pages.title === 'Sign In'? 'pl-35' : ''">
       <ion-menu-toggle auto-hide="true">
         <ion-item [routerLink]="pages.url" routerDirection="forward" detail-none class="menu-item">
           <!-- <ion-icon [name]="pages.icon" slot="start"></ion-icon>   -->
           <span *ngIf="pages.isStep && !pages.isCompleted" class="menu-step">{{i+1}}</span>
-          <mat-icon *ngIf="pages.isStep && pages.isCompleted === true" class="mr-5">check_circle_outline</mat-icon>
+          <mat-icon *ngIf="pages.isStep && pages.isCompleted === true" class="mr-10">check_circle_outline</mat-icon>
           {{pages.title}}
         </ion-item>
       </ion-menu-toggle>
     </ion-list>
+  </ng-container>
   </ion-content>
 </ion-menu>
 <ion-menu side="start" menuId="afterLogin" contentId="content" id="authenticated">
@@ -25,7 +27,8 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="menu-bar">
-    <ion-list *ngFor="let pages of navigateAfterSignin$ | async; let i = index" lines="none" class="menu-list">
+    <ng-container  *ngFor="let pages of navigateAfterSignin$ | async; let i = index">
+    <ion-list lines="none" class="menu-list" [ngClass] = "pages.title === 'Contact' || pages.title === 'Help' || pages.title === 'My Profile'? 'pl-35' : ''">
       <ion-menu-toggle auto-hide="true">
         <ion-item [routerLink]="pages.url" routerDirection="forward" detail-none class="menu-item">
           <!-- <ion-icon [name]="pages.icon" slot="start"></ion-icon>   -->
@@ -35,5 +38,6 @@
         </ion-item>
       </ion-menu-toggle>
     </ion-list>
+  </ng-container>
   </ion-content>
 </ion-menu>
