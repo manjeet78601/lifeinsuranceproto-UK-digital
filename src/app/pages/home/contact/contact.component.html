@@ -1,28 +1,20 @@
-<!-- Header -->
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button text="" color="dark">
-        <ion-icon name="arrow-back"></ion-icon>
-      </ion-back-button>
+<ion-header>  
+  <ion-toolbar>  
+    <ion-buttons slot="start" >
+      <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="start" color="dark">
-      <ion-menu-button color="dark"></ion-menu-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center app-name">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" />
-    </ion-title>
+    <ion-buttons slot="start" color="dark">  
+      <ion-menu-button color="dark"></ion-menu-button>  
+    </ion-buttons>  
+   <ion-title class="ion-text-center app-name">  
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
+    </ion-title>  
   </ion-toolbar>
-</ion-header>
-<!-- End of header -->
-<!-- Main Section -->
+</ion-header> 
 <ion-content>
-  <section class="content" fxLayout="column" fxLayoutAlign="center center">
-
+  <section class="content" fxLayout="row" fxLayoutAlign="center center">
     <p>WORK IN PROGRESS</p>
-
   </section>
-  <!-- End of main section -->
   <!-- Footer -->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">

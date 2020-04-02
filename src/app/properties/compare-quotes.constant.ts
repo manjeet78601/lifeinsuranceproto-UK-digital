@@ -11,5 +11,13 @@ export class CompareQuotesConstant {
         CLOSE: 'Close',
         GET_QUOTE: 'GET QUOTE',
         BACK: 'BACK',
+        FINISH: 'FINISH',
+        DOC: 'Resend documentation',
+    };
+
+    public static EMAIL_APPT = {
+        APPT_HEADER: 'You’re All Set!',
+        APPT_SUB_HEADER: 'Thank you for working with us! <br/>We sent you an email.',
     };
 }
+

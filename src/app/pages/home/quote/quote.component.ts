@@ -32,12 +32,17 @@ export class QuoteComponent implements OnInit {
       this.isLoading = false;
     }, 2000);
     this.quotes = this.getQuotes();
+    this.auth.setQuotesGeneratedFlag();
     console.log(this.quotes);
   }
 
   goToNext() {
     this.menuService.setCompletedMenu('Compare Quotes');
-    this.router.navigate(['/medical-exam']);
+    if (this.auth.isUserLoggedIn === true) {
+      this.router.navigate(['/medical-exam']);
+    } else {
+      this.router.navigate(['/auth/signup']);
+    }
   }
   getQuotes() {
     return this.userService.getQuoteList();
