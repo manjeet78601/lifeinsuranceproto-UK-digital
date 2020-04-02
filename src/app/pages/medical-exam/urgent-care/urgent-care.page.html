@@ -16,28 +16,35 @@
   <ion-content>
 
     <section class="wrapper-plan1" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <section  class="flex-container001">
-      <header fxLayoutAlign="center center">
+      <section  class="flex-container">
+      <!-- <header fxLayoutAlign="center center">
         <h5>Urgent care </h5>
-      </header>
+      </header> -->
       <div fxLayoutAlign="center center" >
-        <h2 class="medical-subheader">Almost Done</h2></div>
-        <p class="urgent-carecnt">Don't forget to qualify you must signup with an urgent care specialist</p>
-    
+        <h2 class="medical-subheader">Schduled Bloodwork</h2></div>
+        <!-- <p class="urgent-carecnt">Don't forget to qualify you must signup with an urgent care specialist</p>
+     -->
 
         <div class="center-medical" style="text-align: center;">
               
-            <button mat-flat-button color="primary" >SCHEDULE</button> 
+            <mat-form-field class="example-full-width">
+                <mat-label style="background:red">Choose a date</mat-label>
+                <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            <!-- <button mat-flat-button color="primary" (click)="schduleapptemail()" >SCHEDULE</button> 
 
       
-          </div></section>
+          </div> -->
+        </div></section>
  
     <mat-card class="plan-card mat-elevation-z0">
           <ion-grid>
         <ion-row>
           <div fxLayout="column">
                   </div>
-              <h2 class="urgent-bttmheader" >Already Schduled ? </h2>
+              <!-- <h2 class="urgent-bttmheader" >Already Schduled ? </h2>
       <p class="plan-content-insur">If you scheduled your appointment  with a health care specialist. then you can finish  </p>
       <ion-col size="9">
           <div class="bottom-bttn">
@@ -47,7 +54,7 @@
               <!-- <a class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
          -->
             </div>
-        </ion-col>
+        </ion-col> -->
           
             <div>
              

@@ -32,7 +32,20 @@ white-space:pre-line;
 .icon12{
    display:block;
 }
+.top1{
+      padding-top:10px;
+}
+.wrapper_insur {
+  padding: 3px 10px;
+}
 
-  
+
+::ng-deep {
+  .mat-form-field-flex {
+    height: 40px !important;
+    align-items: center !important;
+  }
+
+}
     
     
