@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
   selector: 'app-sechdule-appointment',
@@ -8,16 +9,18 @@ import { Router } from '@angular/router';
 })
 export class SechduleAppointmentComponent implements OnInit {
   locations = ['Newton - Lab Corp', 'Chealsea - Lab Corp', 'West Haven - Quest Diagnostics'];
-  constructor(private router: Router) { }
+  loc = 'Newton - Lab Corp';
+  constructor(private router: Router, private loader: LoaderService) { }
 
   ngOnInit() { }
 
-  // urgent1() {
-  //   this.router.navigate(['/medical-exam/urgent-care']);
-  // }
-    
   goToNext() {
-    this.router.navigate(['/medical-exam/email-appt']);
+    this.loader.showAutoHideLoader('Booking appointment', 2000);
+
+    setTimeout(() => {
+      this.router.navigate(['/medical-exam/email-appt']);
+    }, 2000);
+
   }
 
 
