@@ -16,26 +16,14 @@ import { CompareQuotesConstant, } from '../../../properties/compare-quotes.const
 })
 export class HealthQuestionsComponent implements OnInit {
 
-  state = 1;
-  personalInfoForm: FormGroup;
-  personalQuestForm: FormGroup;
-  endDate: Date = new Date();
-  data: any;
+  healthQuesForm: FormGroup;
   isLoading = true;
-  // tslint:disable-next-line:no-string-literal
-  // id = this.actRoute.snapshot.params['id'];
   panelOpenState = false;
-
-  name: string;
-  birthDate: Date;
+  dob: Date;
   insuranceText: string;
 
-  DOM_CONSTANTS = CompareQuotesConstant.HEALTHQUESTIONS;
-  PAGE_HEADER = CompareQuotesConstant.HEALTH_HEADER;
-  PAGE_SUBHEADER = CompareQuotesConstant.HEALTH_SUB_HEADER;
-  PAGE_LINE = CompareQuotesConstant.HEALTH_LINE;
+  DOM_CONSTANTS = CompareQuotesConstant.HEALTH_PAGE;
   BTN = CompareQuotesConstant.BTTN;
-  // DOM_CONSTANTS = HomeConstants.FINANCIALBUDGET;
   progress = 0;
   isUerLoggedIn: boolean;
   constructor(
@@ -51,13 +39,12 @@ export class HealthQuestionsComponent implements OnInit {
     this.isUerLoggedIn = this.auth.isUserLoggedIn;
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.log("dob is " + this.dob);
+  }
 
-
-
-
-  Submit(health1) {
-    console.log(health1);
+  Submit(healthQuesForm) {
+    console.log(healthQuesForm);
     const totalbudget = [];
     this.navigationService.setCompletedMenu('Comparing Quotes');
     this.loader.showAutoHideLoader('Please give us a few moments..', 3000);
@@ -69,18 +56,16 @@ export class HealthQuestionsComponent implements OnInit {
     this.router.navigate(['/auth/signup']);
   }
   getDOB() {
-    const selectedDate = this.personalInfoForm.value.dob;
+    const selectedDate = this.healthQuesForm.value.dob;
     const today = new Date();
     const dateBefore18Years = new Date(today.getFullYear() - 18, today.getMonth() - 1, today.getDate());
-
-
     if (selectedDate > today) {
       this.openSnackBar('Seems like you are not born yet, Please get back to us once you will be 18 !', null);
-      this.personalInfoForm.controls.dob.setValue('');
+      this.healthQuesForm.controls.dob.setValue('');
       return false;
     } else if ((selectedDate < today) && (selectedDate > dateBefore18Years)) {
       this.openSnackBar('Seems like you are minor, See you soon on your 18th birthday !', null);
-      this.personalInfoForm.controls.dob.setValue('');
+      this.healthQuesForm.controls.dob.setValue('');
       return false;
     } else {
       return true;
