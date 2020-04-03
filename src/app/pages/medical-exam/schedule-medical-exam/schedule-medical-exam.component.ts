@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MedicalExamConstants } from 'src/app/properties/medical-exam.constant';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-schedule-medical-exam',
@@ -8,8 +9,11 @@ import { MedicalExamConstants } from 'src/app/properties/medical-exam.constant';
 })
 export class ScheduleMedicalExamComponent implements OnInit {
   DOM_CONSTATNTS = MedicalExamConstants.MEDICAL_EXAM;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
 
+  gotoHomePage() {
+    this.router.navigate(['/home']);
+  }
 }

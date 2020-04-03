@@ -1,15 +1,12 @@
 
-.page-header-insurance{
-     padding: 0px 0px;
-        h5 {
-          font-family: proxima nova;
-          font-size: 14px;
-          font-weight: bold; 
-          color: #000 !important;
-        }
+.title{
+  font-family: proxima nova;
+  font-size: 14px;
+  font-weight: bold; 
+  color: #000 !important;
 }
-.txt{
-  margin:0px 0px 0px 0px;
+.subtitle{
+ 
   font-family:Playfair Display;
   font-size:24px;
   font-weight: bold;
@@ -19,7 +16,6 @@
 .plan-content-insur { 
   font-family: Proxima Soft;;
   font-size: 16px;
-  font-size: large;
   color: #000 !important;
 }
 .text{
@@ -31,6 +27,12 @@ white-space:pre-line;
 }
 .icon12{
    display:block;
+}
+.insurance_input{
+  width: 75%;
+  height:95px;
+  position:realtive;
+  left:30px;
 }
 .hgt{
   padding:10px;
