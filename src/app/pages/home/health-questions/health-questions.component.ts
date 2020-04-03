@@ -80,4 +80,7 @@ export class HealthQuestionsComponent implements OnInit {
   gotoHomePage() {
     this.router.navigate(['/home']);
   }
+  getPrevious(){
+    this.router.navigate(['/home/budget']);
+  }
 }
