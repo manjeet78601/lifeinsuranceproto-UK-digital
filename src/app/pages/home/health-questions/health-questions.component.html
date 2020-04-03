@@ -16,14 +16,12 @@
   </ion-header>
   <!-- end of header -->
   <ion-content >
-   <section  fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+   <section class="wrapper-plan1"  fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
       <header  class="page-header-health">
             <h5>{{ PAGE_HEADER }}</h5> 
           <p class="health-header">{{PAGE_SUBHEADER}}</p>
          <p class="plan-content-health">{{ PAGE_LINE }}</p>
           </header>
-        
-  <section fxLayout="column" class="wrapper-plan1" fxLayoutAlign="center center" fxLayoutGap="10px">
     <form #health1="ngForm" name="form" >
       <mat-accordion>
         <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS" >
@@ -93,7 +91,6 @@
     <div>
       <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
       </div>
-    </section>
     </section>
     <!-- Footer -->
     <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">

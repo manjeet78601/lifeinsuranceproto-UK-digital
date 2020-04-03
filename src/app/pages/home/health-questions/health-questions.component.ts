@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeConstants } from './../home.constants';
 import { LoaderService } from 'src/app/services/loader.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
@@ -8,9 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataAnalyticsService, CategoryName, PageName, Action, PersonalDetailLabel } from 'src/app/services/data-analytics.service';
 import { FormGroup, Validator } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-
-
-
+import { CompareQuotesConstant, } from '../../../properties/compare-quotes.constant';
 
 @Component({
   selector: 'app-health-questions',
@@ -33,11 +30,11 @@ export class HealthQuestionsComponent implements OnInit {
   birthDate: Date;
   insuranceText: string;
 
-  DOM_CONSTANTS = HomeConstants.HEALTHQUESTIONS;
-  PAGE_HEADER = HomeConstants.HEALTH_HEADER;
-  PAGE_SUBHEADER = HomeConstants.HEALTH_SUB_HEADER;
-  PAGE_LINE = HomeConstants.HEALTH_LINE;
-  BTN = HomeConstants.BTN;
+  DOM_CONSTANTS = CompareQuotesConstant.HEALTHQUESTIONS;
+  PAGE_HEADER = CompareQuotesConstant.HEALTH_HEADER;
+  PAGE_SUBHEADER = CompareQuotesConstant.HEALTH_SUB_HEADER;
+  PAGE_LINE = CompareQuotesConstant.HEALTH_LINE;
+  BTN = CompareQuotesConstant.BTTN;
   // DOM_CONSTANTS = HomeConstants.FINANCIALBUDGET;
   progress = 0;
   isUerLoggedIn: boolean;
