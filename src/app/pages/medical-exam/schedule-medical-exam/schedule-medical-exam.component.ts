@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { MedicalExamConstants } from 'src/app/properties/medical-exam.constant';
+=======
+>>>>>>> origin/feature/LP_S1_insurance_calculator
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,9 +12,15 @@ import { Router } from '@angular/router';
 })
 export class ScheduleMedicalExamComponent implements OnInit {
   DOM_CONSTATNTS = MedicalExamConstants.MEDICAL_EXAM;
-  constructor(private router: Router) { }
 
-  ngOnInit() { }
+
+  constructor( private router: Router) { }
+
+  ngOnInit() {}
+  goToNext() {
+    this.router.navigate(['medical-exam/sechdule-appointment']);
+    //email calender
+  }
 
   gotoHomePage() {
     this.router.navigate(['/home']);
