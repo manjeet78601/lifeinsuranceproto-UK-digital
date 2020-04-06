@@ -13,8 +13,8 @@ import { ScheduleMedicalExamComponent } from './schedule-medical-exam/schedule-m
 import { EmailApptComponent } from './email-appt/email-appt.component';
 import { SchduleCalenderComponent } from './schdule-calender/schdule-calender.component';
 import { SchduleBookedComponent } from './schdule-booked/schdule-booked.component';
-import { UrgentCareComponent } from './urgent-care/urgent-care.component';
-import { Calendar } from '@ionic-native/calendar';
+
+
 
 
 
@@ -29,6 +29,6 @@ import { Calendar } from '@ionic-native/calendar';
   ],
 
   declarations: [MedicalExamPage, SechduleAppointmentComponent, ScheduleMedicalExamComponent,
-    EmailApptComponent, SchduleCalenderComponent, SchduleBookedComponent, UrgentCareComponent],
+    EmailApptComponent, SchduleCalenderComponent, SchduleBookedComponent],
 })
 export class MedicalExamPageModule { }
