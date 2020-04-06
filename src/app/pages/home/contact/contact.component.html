@@ -22,15 +22,15 @@
         <input formControlName="name" matInput type="text" placeholder="Firstname" value="" id="uname">
         <!-- <mat-error>Invalid username</mat-error> -->
       </mat-form-field>
-      <p class="form-label"><label for="uname">Email address</label></p>
+      <p class="form-label"><label for="email">Email address</label></p>
       <mat-form-field appearance="outline" class="form-input-control mb-20">
-        <input formControlName="email" matInput type="text" placeholder="" value="">
+        <input formControlName="email" matInput type="text" placeholder="" value="" id="email">
         <!-- <mat-error>Invalid password</mat-error> -->
       </mat-form-field>
-      <p class="form-label"><label for="uname">How can we help?</label></p>
-      <mat-form-field appearance="outline" class="form-input-control mb-20">
-        <textarea formControlName="note" matInput type="text" placeholder="" value=""></textarea>
-        <!-- <mat-error>Invalid password</mat-error> -->
+      <p class="form-label"><label for="notes">How can we help?</label></p>
+      <!-- <textarea formControlName="note" rows="8" cols="50" id="notes" class="form-input-control"></textarea> -->
+      <mat-form-field appearance="outline" class="form-input-control text-note mb-20">
+        <textarea formControlName="note" matInput type="text" placeholder="" value="" id="notes" class="mat-form-field-flex form-control"></textarea>
       </mat-form-field>
       <div class="mt-20"> 
           <button type="submit" class="btn bg-blk col-wht" mat-stroked-button [disabled]="!contactForm.valid" (click)="onFormsubmit()">Submit</button>

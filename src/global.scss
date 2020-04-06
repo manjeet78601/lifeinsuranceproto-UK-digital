@@ -314,6 +314,11 @@ h6 {
     .mat-form-field-flex {
       max-height: 50px;
     }
+    &.text-note{
+      .mat-form-field-flex {
+        max-height: 400px;
+      }
+    }
   }
   .btn {
     width: 97px;
