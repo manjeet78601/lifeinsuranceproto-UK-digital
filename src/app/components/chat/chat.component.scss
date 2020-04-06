@@ -4,3 +4,7 @@ ion-toolbar {
 .mat-icon-button {
     margin-top: 10px;
 }
+.msg-scroll {
+    overflow-y: auto;
+    max-height: 539px;
+  }
