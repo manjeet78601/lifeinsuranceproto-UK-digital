@@ -11,12 +11,12 @@ export class ScheduleMedicalExamComponent implements OnInit {
   DOM_CONSTATNTS = MedicalExamConstants.MEDICAL_EXAM;
 
 
-  constructor( private router: Router) { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
   goToNext() {
     this.router.navigate(['medical-exam/sechdule-appointment']);
-    //email calender
+    // email calender
   }
 
   gotoHomePage() {
