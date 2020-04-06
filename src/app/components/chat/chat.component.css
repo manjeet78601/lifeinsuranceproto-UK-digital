@@ -1,0 +1,13 @@
+ion-toolbar {
+  --border-width: 0 !important;
+}
+
+.mat-icon-button {
+  margin-top: 10px;
+}
+
+.msg-scroll {
+  overflow-y: auto;
+  max-height: 539px;
+}
+/*# sourceMappingURL=chat.component.css.map */

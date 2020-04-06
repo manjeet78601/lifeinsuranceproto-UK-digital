@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { MedicalExamConstants } from 'src/app/properties/medical-exam.constant';
-=======
->>>>>>> origin/feature/LP_S1_insurance_calculator
 import { Router } from '@angular/router';
 
 @Component({
