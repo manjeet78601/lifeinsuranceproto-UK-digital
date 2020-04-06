@@ -189,7 +189,7 @@ h6 {
   margin:15px
 }
 .mr-5 {
-  margin-right: 5px;
+  margin-right: 5px !important;
 }
 .mb-5 {
   margin-bottom: 5px;
@@ -710,4 +710,10 @@ float: left;
 }
 .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
   background-color:  #000000;;
+}
+.back-btn {
+  background-color: #fff;
+  color: #000000;
+  height: 36px;
+  border-color: #00B5AD !important;
 }

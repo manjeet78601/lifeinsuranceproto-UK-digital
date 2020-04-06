@@ -57,7 +57,10 @@
         <!-- {{ que.TOTAL | currency}} -->
       </div>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-        <button mat-flat-button color="primary" (click)="getQuote()">{{ BTN.STEP_THREE | uppercase}}</button>
+        <div class="ion-text-center">
+          <button mat-stroked-button class="back-btn mr-5" routerLink="/home/budget">BACK</button>
+          <button mat-flat-button color="primary" (click)="getQuote()">{{ BTN.STEP_THREE | uppercase}}</button>
+        </div>
         <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
       </div>
 
