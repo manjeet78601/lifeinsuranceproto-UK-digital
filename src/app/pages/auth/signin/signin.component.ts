@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { Signin } from 'src/app/models/auth.model';
 import { MenuController } from '@ionic/angular';
+import { MenuService } from 'src/app/services/menu.service';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class SigninComponent implements OnInit {
     password: ['', Validators.required]
   });
   constructor(private menu: MenuController, private formBuilder: FormBuilder,
-              private router: Router, private authService: AuthService, private loader: LoaderService) { }
+              private router: Router, private authService: AuthService,
+              private loader: LoaderService, private navigationService: MenuService) { }
 
   ngOnInit() {}
   onFormsubmit(formName: string) {

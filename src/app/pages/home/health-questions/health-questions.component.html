@@ -1,32 +1,30 @@
 <!-- Header -->
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button text="" color="dark">
-          <ion-icon name="arrow-back"></ion-icon>
-        </ion-back-button>
-      </ion-buttons>
-      <ion-buttons slot="start" color="dark">
-        <ion-menu-button color="dark"></ion-menu-button>
-      </ion-buttons>
-      <ion-title class="ion-text-center app-name">
-        <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()"/>
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <!-- end of header -->
-  <ion-content >
-   <section  fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <header  class="page-header-health">
-            <h5>{{ PAGE_HEADER }}</h5> 
-          <p class="health-header">{{PAGE_SUBHEADER}}</p>
-         <p class="plan-content-health">{{ PAGE_LINE }}</p>
-          </header>
-        
-  <section fxLayout="column" class="wrapper-plan1" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <form #health1="ngForm" name="form" >
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()" />
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- end of header -->
+<ion-content>
+  <section class="wrapper-plan1" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header class="page-header-health">
+      <h5>{{DOM_CONSTANTS.PAGE_HEADER }}</h5>
+      <p class="health-header">{{DOM_CONSTANTS.PAGE_SUB_HEADER}}</p>
+      <p class="plan-content-health">{{DOM_CONSTANTS.PAGE_LINE }}</p>
+    </header>
+    <form #healthQuesForm="ngForm" name="form">
       <mat-accordion>
-        <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS" >
+        <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS.HEALTHQUESTIONS">
           <mat-expansion-panel-header>
             <mat-panel-title>
               {{ item.TITLE }}
@@ -36,79 +34,79 @@
             <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
             <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
             <!--DOB  mat-form-field-wrapper     -->
-            <mat-form-field class="w-50 mat-form-field-wrapper" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline" >
-               <input type="date"  name="birthDate" (dateChange)="getDOB()"  matInput  placeholder="mm/dd/yyyy" 
-               [(ngModel)]="que.birthDate" class="form-control" required>
-               <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker> -->
-             </mat-form-field> 
+            <mat-form-field class="w-50 mat-form-field-wrapper" *ngIf="que.INPUT_TEXT1 === 'Textbox'"
+              appearance="outline">
+              <input type="date" name="birthDate" (dateChange)="getDOB()" matInput placeholder="mm/dd/yyyy"
+                [(ngModel)]="que.birthDate" class="form-control" required>
+            </mat-form-field>
+            <!--Sex tab-->
+            <mat-button-toggle-group *ngIf="que.INPUT_TEXT === 'Button'" name="fontStyle" aria-label="Font Style"
+              class="custom-mat-btn-toggle-group" required>
+              <mat-button-toggle value="bold" class="yes-btn">Male</mat-button-toggle>
+              <span class="circle">or</span>
+              <mat-button-toggle value="italic" class="no-btn">Female</mat-button-toggle>
+            </mat-button-toggle-group>
+            <!--Height & Weight -->
+            <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT12 === 'Textbox'" appearance="outline">
+              <input type="number" matInput placeholder="0.00" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT001 === 'DROPDOWN'" appearance="outline">
+              <select matNativeControl>
+                <option value="cm">cm</option>
+                <option value="feet">feet</option>
+              </select>
+            </mat-form-field>
 
-             
-             <!--Sex tab-->
-              <mat-button-toggle-group *ngIf="que.INPUT_TEXT === 'Button'" name="fontStyle" aria-label="Font Style"
-                class="custom-mat-btn-toggle-group">
-                <mat-button-toggle value="bold" class="yes-btn">Male</mat-button-toggle>
-                <span class="circle">or</span>
-                <mat-button-toggle value="italic" class="no-btn">Female</mat-button-toggle>
-              </mat-button-toggle-group>
-           <!--Height & Weight -->
-               <mat-form-field  class="example-full-width" *ngIf="que.INPUT_TEXT12 === 'Textbox'" appearance="outline">
-                <input type="number" matInput placeholder="0.00" >
-                 </mat-form-field>
-               <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT001 === 'DROPDOWN'" appearance="outline">
-                  <select matNativeControl>
-                    <option value="cm">cm</option>
-                    <option value="feet">feet</option>
-                  </select>
-                </mat-form-field>
-  
-                 <mat-form-field  class="example-full-width" *ngIf="que.INPUT_TEXT01=== 'Textbox'" appearance="outline">
-                <input type="number" matInput placeholder="0.00" >
-                 </mat-form-field>
-               <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT002 === 'DROPDOWN'" appearance="outline">
-                  <select matNativeControl required>
-                    <option value="cm">lbs</option>
-                    <option value="feet">kg</option>
-                  </select>
-                </mat-form-field>
-          
+            <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT01=== 'Textbox'" appearance="outline">
+              <input type="number" matInput placeholder="0.00" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT002 === 'DROPDOWN'" appearance="outline">
+              <select matNativeControl required>
+                <option value="cm">lbs</option>
+                <option value="feet">kg</option>
+              </select>
+            </mat-form-field>
+
             <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'" name="fontStyle" aria-label="Font Style"
-              class="custom-mat-btn-toggle-group">
+              class="custom-mat-btn-toggle-group" required>
               <mat-button-toggle value="bold" class="yes-btn">Yes</mat-button-toggle>
               <span class="circle">or</span>
               <mat-button-toggle value="italic" class="no-btn">No</mat-button-toggle>
             </mat-button-toggle-group>
-            
-            <mat-form-field  class="full-width" *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
-              <textarea type="text" #txt="ngModel" name="insuranceText" [(ngModel)]="insuranceText"   class="mat-form-field-flex form-control" matInput placeholder="Write a response"
-              required></textarea>
-              </mat-form-field>
-           </div>
+
+            <mat-form-field class="full-width" *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
+              <textarea type="text" #txt="ngModel" name="insuranceText" [(ngModel)]="insuranceText"
+                class="mat-form-field-flex form-control" matInput placeholder="Write a response" required></textarea>
+            </mat-form-field>
+          </div>
         </mat-expansion-panel>
       </mat-accordion>
     </form>
-    <button  mat-flat-button   color="primary"(click)="Submit(health1)" [disabled]="health1.invalid">
-      {{ BTN.SUBMIT | uppercase }}
-    </button>
+  </section>
+  <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class="mb-70 mt-50">
     <div>
-      <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
-      </div>
-    </section>
-    </section>
-    <!-- Footer -->
-    <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
-      <ion-text class="align-item-bottom">
-        <ion-label class="fl-footer-content">
-          77 Water St 8th Floor,<br />
-          Manhattan, NY 10005
-        </ion-label>
-      </ion-text>
-      <ion-text class="align-item-bottom">
-        <ion-label class="fl-footer-content">
-          Copyright Life+ © 2020
-        </ion-label>
-      </ion-text>
-    </footer>
-    <!-- End of footer -->
-  </ion-content>
-  <!-- end of section 1 -->
+      <button mat-stroked-button class="btn btn-border" (click)="getPrevious()">{{BTN.BACK}}</button>
+      <button mat-flat-button color="primary" (click)="Submit(healthQuesForm)" [disabled]="healthQuesForm.invalid">
+        {{ BTN.SUBMIT }}
+      </button>
+    </div>
+    <a *ngIf="!isUerLoggedIn" [routerLink]="['./']" (click)="createAccount()" class="btn-acc" mat-menu-item>Create
+      account</a>
+  </section>
+  <!-- Footer -->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br />
+        Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+  <!-- End of footer -->
+</ion-content>
+<!-- end of section 1 -->

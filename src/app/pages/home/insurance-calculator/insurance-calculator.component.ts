@@ -42,13 +42,15 @@ export class InsuranceCalculatorComponent implements OnInit {
 
   calculateCoverage() {
     this.INSURANCE_CALCULATOR.QUESTIONS.forEach(element => {
+   
       if (element.VALUE === 0) {
         this.totalCoverage = 0;
         return false;
       } else {
-        this.totalCoverage = Math.floor(Math.random() * 100000) + 10000;
-      }
+      this.totalCoverage = Math.floor(Math.random() * 100000) + 10000;
+       }
     });
+   
   }
 
   createAccount() {
