@@ -48,7 +48,8 @@
               [(ngModel)]="que.birthDate" name ="DOBhealth" (dateChange)="getDOB(que.birthDate)"  required>
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
+              <!-- <mat-error *ngIf="que.picker.error && que.picker.error required">Your date of birth is required</mat-error>  -->
+                    </mat-form-field>
 
              
              <!--Sex tab-->

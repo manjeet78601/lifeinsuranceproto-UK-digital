@@ -8,6 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataAnalyticsService, CategoryName, PageName, Action, PersonalDetailLabel } from 'src/app/services/data-analytics.service';
 import { FormGroup, Validator, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 
 
@@ -48,6 +49,7 @@ export class HealthQuestionsComponent implements OnInit {
   progress = 0;
   isUerLoggedIn: boolean;
   constructor(
+    private toast: ToastService,
     private formBuilder: FormBuilder,
     private loader: LoaderService,
     private router: Router,
@@ -85,25 +87,21 @@ export class HealthQuestionsComponent implements OnInit {
 
 
     if (date > today) {
-      this.openSnackBar('Seems like you are not born yet, Please get back to us once you will be 18 !', null);
-      // this.personalInfoForm.controls.dob.setValue('');
-
-      // this.birthDate.getDate.setValue();
+      this.toast.presentToast('Seems like you are not born yet, Please get back to us once you will be 18 !');
       return false;
     } else if ((date < today) && (date > dateBefore18Years)) {
-      this.openSnackBar('Seems like you are minor, See you soon on your 18th birthday !', null);
-      // this.personalInfoForm.controls.dob.setValue('');
+      this.toast.presentToast('Seems like you are minor, See you soon on your 18th birthday !');
       return false;
     } else {
       return true;
     }
   }
-  openSnackBar(message, action = null) {
-    this.snackbar.open(message, action, {
-      duration: 3000,
-      verticalPosition: 'top'
-    });
-  }
+  // openSnackBar(message, action = null) {
+  //   this.snackbar.open(message, action, {
+  //     duration: 3000,
+  //     verticalPosition: 'top'
+  //   });
+  // }
   gotoHomePage() {
     this.router.navigate(['/home']);
   }
