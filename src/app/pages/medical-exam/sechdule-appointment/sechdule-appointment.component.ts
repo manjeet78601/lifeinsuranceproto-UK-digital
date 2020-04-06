@@ -13,14 +13,9 @@ export class SechduleAppointmentComponent implements OnInit {
   constructor(private router: Router, private loader: LoaderService) { }
 
   ngOnInit() { }
-
   goToNext() {
-    this.loader.showAutoHideLoader('Booking appointment', 2000);
-
-    setTimeout(() => {
-      this.router.navigate(['/medical-exam/email-appt']);
-    }, 2000);
-
+    this.router.navigate(['/medical-exam/schdule-calender']);
+    //email calender
   }
 
 
