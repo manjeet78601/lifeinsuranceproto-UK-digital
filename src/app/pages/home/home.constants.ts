@@ -66,6 +66,7 @@ export class HomeConstants {
          PROGRESS: 25,
          TOTAL_TEXT: 'Total Liabilities',
          isAllQuestionsAnswered: true,
+         TYPE: 'Expense',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Monthly rent/mortgage?',
@@ -112,6 +113,7 @@ export class HomeConstants {
          PROGRESS: 50,
          TOTAL_TEXT: 'Monthly Expenses',
          isAllQuestionsAnswered: true,
+         TYPE: 'Expense',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Monthly groceries',
@@ -167,6 +169,7 @@ export class HomeConstants {
          PROGRESS: 75,
          TOTAL_TEXT: 'Monthly Income',
          isAllQuestionsAnswered: true,
+         TYPE: 'Income',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Do you own a business? What is your profit?',
@@ -213,6 +216,7 @@ export class HomeConstants {
          PROGRESS: 100,
          TOTAL_TEXT: 'Total assets',
          isAllQuestionsAnswered: true,
+         TYPE: 'Liabillities',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Outstanding credit card debt',

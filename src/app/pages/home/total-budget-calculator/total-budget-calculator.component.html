@@ -36,10 +36,10 @@
       <table class="w-100">
         <tr *ngFor="let item of totals">
           <td class="w-50 h-25">
-            {{ item.TOTAL_TEXT }}
+            {{ item.title }}
           </td>
           <td class="w-50 h-25">
-            {{ item.TOTAL | currency}}
+            {{ item.value | currency}}
           </td>
         </tr>
       </table>
@@ -47,10 +47,10 @@
 
     <section class="bg-lightgray ion-padding" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
       <div *ngFor="let que of totals" fxLayout="column">
-        <mat-label>{{ que.TOTAL_TEXT }}</mat-label>
+        <mat-label>{{ que.title }}</mat-label>
         <mat-form-field appearance="outline">
           <span matPrefix>$</span>
-          <input type="number" class="align-end" matInput [(ngModel)]="que.TOTAL" (change)="setAmountLeft()">
+          <input type="number" class="align-end" matInput [(ngModel)]="que.value" (change)="setAmountLeft()">
         </mat-form-field>
         <!-- <mat-slider [max]="que.MAX" [min]="que.MIN" [step]="que.STEP" [(ngModel)]="que.TOTAL">
         </mat-slider> -->
