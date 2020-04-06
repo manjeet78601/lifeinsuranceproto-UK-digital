@@ -62,4 +62,12 @@ export class FinancialBudgetComponent implements OnInit {
   gotoHomePage() {
     this.router.navigate(['/home']);
   }
+  checkQuestionStatus(id: number | string) {
+    const currentItem = this.DOM_CONSTANTS.find(item => item.ID === id);
+
+    currentItem.isAllQuestionsAnswered = currentItem.QUESTIONS.every(data => {
+      return !!data.VALUE;
+    });
+
+  }
 }

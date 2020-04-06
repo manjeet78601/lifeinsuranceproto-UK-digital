@@ -60,80 +60,12 @@ export class HomeConstants {
    // Step 2: Financial budget
    public static FINANCIALBUDGET = [
       {
-         TITLE: 'Income',
+         ID: 1,
+         TITLE: 'Housing Expenses',
          SUBTITLE: '',
          PROGRESS: 25,
-         TOTAL_TEXT: 'Monthly Income',
-         QUESTIONS: [
-            {
-               QUESTIONTEXT: 'What’s your yearly wage/salary?',
-               SUBTEXT: 'Annual Income',
-               NAME: 'aanualIncome',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-            {
-               QUESTIONTEXT: 'How much are your total savings?',
-               SUBTEXT: 'Total Savings',
-               NAME: 'totalSavings',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-            {
-               QUESTIONTEXT: 'Do you have monthly rental income?',
-               SUBTEXT: 'Income from Rent',
-               NAME: 'incomeFromRent',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-         ]
-      },
-      {
-         TITLE: 'Personal Assets',
-         SUBTITLE: '',
-         PROGRESS: 50,
-         TOTAL_TEXT: 'Total assets',
-         QUESTIONS: [
-            {
-               QUESTIONTEXT: 'How much is your home worth?',
-               SUBTEXT: 'Value of my Home',
-               NAME: 'valueOfHome',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-            {
-               QUESTIONTEXT: 'How much are your vehicle(s) worth?',
-               SUBTEXT: 'Value of my Vehicle(s)',
-               NAME: 'valueOfVehicle',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-            {
-               QUESTIONTEXT: 'How much are your valuables worth?',
-               SUBTEXT: 'Total Value of my Valuables',
-               NAME: 'valueOfvaluables',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-         ]
-      },
-      {
-         TITLE: 'Home Expenses',
-         SUBTITLE: '',
-         PROGRESS: 75,
          TOTAL_TEXT: 'Total Liabilities',
+         isAllQuestionsAnswered: true,
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Monthly rent/mortgage?',
@@ -145,7 +77,7 @@ export class HomeConstants {
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Monthly Utilities',
+               QUESTIONTEXT: 'Monthly utilities (water, electricity, etc.) ',
                SUBTEXT: 'Home Utilities',
                NAME: 'monthlyUtilities',
                MIN: 10000,
@@ -174,10 +106,12 @@ export class HomeConstants {
          ]
       },
       {
-         TITLE: 'Monthly Living Expenses',
+         ID: 2,
+         TITLE: 'Living Expenses',
          SUBTITLE: '',
-         PROGRESS: 100,
+         PROGRESS: 50,
          TOTAL_TEXT: 'Monthly Expenses',
+         isAllQuestionsAnswered: true,
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Monthly groceries',
@@ -189,7 +123,7 @@ export class HomeConstants {
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Monthly Car loan / lease payment',
+               QUESTIONTEXT: 'Monthly lease, car payments, insurance',
                SUBTEXT: 'Car Payment',
                NAME: 'carPayment',
                MIN: 10000,
@@ -198,7 +132,7 @@ export class HomeConstants {
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Monthly Gas / Oil',
+               QUESTIONTEXT: 'Monthly gas / oil',
                SUBTEXT: 'Fuel for vehicles',
                NAME: 'gasOrOil',
                MIN: 10000,
@@ -207,25 +141,108 @@ export class HomeConstants {
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Monthly Child Daycare',
-               SUBTEXT: 'Kids',
-               NAME: 'childDaycare',
+               QUESTIONTEXT: 'Monthly entertainment bills (cell phone, internet, etc.)',
+               SUBTEXT: '',
+               NAME: 'monthlyEntertainment',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Monthly Child Activities / Sports',
-               SUBTEXT: 'Kids',
-               NAME: 'kidsActivities',
+               QUESTIONTEXT: 'Additional expected monthly expenses',
+               SUBTEXT: '',
+               NAME: 'additionalExpenses',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
          ]
-      }
+      },
+      {
+         ID: 3,
+         TITLE: 'Sources of Income',
+         SUBTITLE: '',
+         PROGRESS: 75,
+         TOTAL_TEXT: 'Monthly Income',
+         isAllQuestionsAnswered: true,
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'Do you own a business? What is your profit?',
+               SUBTEXT: 'Annual Income',
+               NAME: 'businessProfit',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+            {
+               QUESTIONTEXT: 'What is your yearly income/salary?',
+               SUBTEXT: 'Total Savings',
+               NAME: 'totalSavings',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+            {
+               QUESTIONTEXT: 'Additional sources of annual income (side job, rental, stipends, passive income, etc.)',
+               SUBTEXT: 'Income from Rent',
+               NAME: 'additionalSourceIncome',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+            {
+               QUESTIONTEXT: 'Expected annual bonuses',
+               SUBTEXT: 'Annual Bonus',
+               NAME: 'annualBonus',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+         ]
+      },
+      {
+         ID: 4,
+         TITLE: 'Debts',
+         SUBTITLE: '',
+         PROGRESS: 100,
+         TOTAL_TEXT: 'Total assets',
+         isAllQuestionsAnswered: true,
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'Outstanding credit card debt',
+               SUBTEXT: 'Outstanding credit card debt',
+               NAME: 'outstandingDebt',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+            {
+               QUESTIONTEXT: 'Outstanding student loan debt',
+               SUBTEXT: 'Outstanding student loan debt',
+               NAME: 'loanDebt',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+            {
+               QUESTIONTEXT: 'Other outstanding loans',
+               SUBTEXT: 'Other outstanding loans',
+               NAME: 'otherOutstandingLoans',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+         ]
+      },
    ];
 
    public static BUDGET_HEADER = 'Budget Calculator';
@@ -304,7 +321,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
    public static BTTN = {
       SUBMIT: 'Submit',
       INSURANCE: 'Next',
-      BACK:'Back'
+      BACK: 'Back'
    };
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
    public static BUTTON_CONTENT = `you can probably do without Life insurance right now however.
