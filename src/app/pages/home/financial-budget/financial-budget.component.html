@@ -68,9 +68,13 @@
           </ng-container>
         </mat-accordion>
       </form>
-      <button mat-flat-button color="primary" [disabled]="f.invalid" (click)="calculateBudget(f)">
-        {{ BTN.CALCULATE | uppercase }}
-      </button>
+      <div class="mt-20 ion-text-center">
+        <button mat-stroked-button class="back-btn mr-5" routerLink="/home/insurance-calculator">BACK</button>
+        <button mat-flat-button color="primary" [disabled]="f.invalid" (click)="calculateBudget(f)">
+          {{ BTN.CALCULATE | uppercase }}
+        </button>
+      </div>
+
       <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
     </section>
     <!-- End of main section -->

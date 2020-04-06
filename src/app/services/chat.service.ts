@@ -12,9 +12,17 @@ export class Message {
 })
 export class ChatService {
   readonly token = environment.dialogflow.InsurnaceBot;
-  
-  readonly client =new ApiAiClient({ accessToken: this.token });
+  client:any;
   conversation =new BehaviorSubject<Message[]>([]);
+
+
+  connectToApi(){
+    this. client =new ApiAiClient({ accessToken: this.token });
+    const intro =new Message('Hello and Welcome to the Insurance chatbot','bot');
+    this.update(intro);
+       
+ }
+
   
 // Sends and receives messages via DialogFlow
 converse(msg: string) {

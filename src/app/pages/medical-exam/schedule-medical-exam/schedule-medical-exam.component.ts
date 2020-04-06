@@ -9,9 +9,15 @@ import { Router } from '@angular/router';
 })
 export class ScheduleMedicalExamComponent implements OnInit {
   DOM_CONSTATNTS = MedicalExamConstants.MEDICAL_EXAM;
+
+
   constructor(private router: Router) { }
 
   ngOnInit() { }
+  goToNext() {
+    this.router.navigate(['medical-exam/sechdule-appointment']);
+    // email calender
+  }
 
   gotoHomePage() {
     this.router.navigate(['/home']);

@@ -34,7 +34,7 @@ import { ChatComponent } from './components/chat/chat.component';
     MaterialModule,
     FlexLayoutModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [
     StatusBar,
