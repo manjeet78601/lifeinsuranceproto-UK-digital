@@ -12,8 +12,30 @@
   </ion-toolbar>
 </ion-header> 
 <ion-content>
-  <section class="content" fxLayout="row" fxLayoutAlign="center center">
-    <p>WORK IN PROGRESS</p>
+  <section  class="wrapper-auth content contact-us" fxLayout="column" fxLayoutAlign="center center">
+    <header>
+      <p class="header">Contact Us</p>
+    </header>
+    <form class="contactus" [formGroup]="contactForm">
+      <p class="form-label"><label for="uname">Name</label></p>
+      <mat-form-field appearance="outline" class="form-input-control mb-20">
+        <input formControlName="name" matInput type="text" placeholder="Firstname" value="" id="uname">
+        <!-- <mat-error>Invalid username</mat-error> -->
+      </mat-form-field>
+      <p class="form-label"><label for="uname">Email address</label></p>
+      <mat-form-field appearance="outline" class="form-input-control mb-20">
+        <input formControlName="email" matInput type="text" placeholder="" value="">
+        <!-- <mat-error>Invalid password</mat-error> -->
+      </mat-form-field>
+      <p class="form-label"><label for="uname">How can we help?</label></p>
+      <mat-form-field appearance="outline" class="form-input-control mb-20">
+        <textarea formControlName="note" matInput type="text" placeholder="" value=""></textarea>
+        <!-- <mat-error>Invalid password</mat-error> -->
+      </mat-form-field>
+      <div class="mt-20"> 
+          <button type="submit" class="btn bg-blk col-wht" mat-stroked-button [disabled]="!contactForm.valid" (click)="onFormsubmit()">Submit</button>
+      </div>
+  </form>
   </section>
   <!-- Footer -->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">

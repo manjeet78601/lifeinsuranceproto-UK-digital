@@ -191,6 +191,9 @@ h6 {
 .mr-5 {
   margin-right: 5px;
 }
+.mb-5 {
+  margin-bottom: 5px;
+}
 .mr-10 {
   margin-right: 10px;
 }
@@ -289,8 +292,7 @@ h6 {
   }
 }
 
-.signin-section,
-.signup-section {
+ .contact-us, .signup-section {
   .header {
     font-weight: bold;
     color: #000000;

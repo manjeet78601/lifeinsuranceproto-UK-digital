@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -7,10 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  contactForm: FormGroup = this.formBuilder.group({
+    name: ['',  Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    note: ['', Validators.required]
+  });
+  constructor(private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {}
+  onFormsubmit() {
+  }
   gotoHomePage() {
     this.router.navigate(['/home']);
   }
