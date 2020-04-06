@@ -24,7 +24,7 @@
           </header>
         
   <section fxLayout="column" class="wrapper-plan1" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <form #health1="ngForm" name="form" >
+    <form #health1="ngForm" name="form" (ngSubmit)="Submit()" >
       <mat-accordion>
         <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS" >
           <mat-expansion-panel-header>
@@ -36,12 +36,19 @@
             <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
             <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
             <!--DOB  mat-form-field-wrapper     -->
-            <mat-form-field class="w-50 mat-form-field-wrapper" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline" >
+            <!-- <mat-form-field class="w-50 mat-form-field-wrapper" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline" >
                <input type="date"  name="birthDate" (dateChange)="getDOB()"  matInput  placeholder="mm/dd/yyyy" 
                [(ngModel)]="que.birthDate" class="form-control" required>
-               <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker> -->
-             </mat-form-field> 
+               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+             </mat-form-field>  -->
+
+             <mat-form-field class="full-width" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline">
+              <input matInput [matDatepicker]="picker" placeholder="mm /dd /yyyy"
+              [(ngModel)]="que.birthDate" name ="DOBhealth" (dateChange)="getDOB(que.birthDate)"  required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
 
              
              <!--Sex tab-->
@@ -53,8 +60,13 @@
               </mat-button-toggle-group>
            <!--Height & Weight -->
                <mat-form-field  class="example-full-width" *ngIf="que.INPUT_TEXT12 === 'Textbox'" appearance="outline">
-                <input type="number" matInput placeholder="0.00" >
+                <input type="number" matInput placeholder="0.00" class="align-end" name="iptnumber[(iptnumber)]" ngModel  required >
+
+                <!-- name]="que.NAME" [(ngModel)]="que.VALUE" -->
                  </mat-form-field>
+
+
+       
                <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT001 === 'DROPDOWN'" appearance="outline">
                   <select matNativeControl>
                     <option value="cm">cm</option>
@@ -63,7 +75,7 @@
                 </mat-form-field>
   
                  <mat-form-field  class="example-full-width" *ngIf="que.INPUT_TEXT01=== 'Textbox'" appearance="outline">
-                <input type="number" matInput placeholder="0.00" >
+                <input type="number" matInput placeholder="0.00" name="iptnumber1[(iptnumber1)]" ngModel  required >
                  </mat-form-field>
                <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT002 === 'DROPDOWN'" appearance="outline">
                   <select matNativeControl required>
@@ -71,8 +83,7 @@
                     <option value="feet">kg</option>
                   </select>
                 </mat-form-field>
-          
-            <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'" name="fontStyle" aria-label="Font Style"
+        <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'" name="fontStyle" aria-label="Font Style"
               class="custom-mat-btn-toggle-group">
               <mat-button-toggle value="bold" class="yes-btn">Yes</mat-button-toggle>
               <span class="circle">or</span>
@@ -80,7 +91,8 @@
             </mat-button-toggle-group>
             
             <mat-form-field  class="full-width" *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
-              <textarea type="text" name="insuranceText"    class="mat-form-field-flex form-control" matInput placeholder="Write a response"></textarea>
+              <textarea type="text" name="insuranceText"    class="mat-form-field-flex form-control" matInput placeholder="Write a response"
+              name="txttbxno[(txttbxno)]" ngModel  required></textarea>
 
               <!-- [(ngModel)]="insuranceText" #txt="ngModel"  -->
               </mat-form-field>
@@ -88,7 +100,7 @@
         </mat-expansion-panel>
       </mat-accordion>
     </form>
-    <button  mat-flat-button   color="primary"(click)="Submit(health1)" [disabled]="health1.invalid">
+    <button  mat-flat-button   color="primary"(click)="!Submit(health1)" [disabled]="!health1.invalid"> 
       {{ BTN.SUBMIT | uppercase }}
     </button>
     <div>

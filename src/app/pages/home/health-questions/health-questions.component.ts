@@ -6,7 +6,7 @@ import { MenuService } from 'src/app/services/menu.service';
 import { UserService } from 'src/app/services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataAnalyticsService, CategoryName, PageName, Action, PersonalDetailLabel } from 'src/app/services/data-analytics.service';
-import { FormGroup, Validator } from '@angular/forms';
+import { FormGroup, Validator, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
 
@@ -19,6 +19,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HealthQuestionsComponent implements OnInit {
 
+
   state = 1;
   personalInfoForm: FormGroup;
   personalQuestForm: FormGroup;
@@ -28,6 +29,11 @@ export class HealthQuestionsComponent implements OnInit {
   // tslint:disable-next-line:no-string-literal
   // id = this.actRoute.snapshot.params['id'];
   panelOpenState = false;
+
+  health1: FormGroup = this.formBuilder.group({
+    iptnumber: ['', [Validators.required]],
+
+  });
 
   name: string;
   birthDate: Date;
@@ -42,6 +48,7 @@ export class HealthQuestionsComponent implements OnInit {
   progress = 0;
   isUerLoggedIn: boolean;
   constructor(
+    private formBuilder: FormBuilder,
     private loader: LoaderService,
     private router: Router,
     private auth: AuthService,
@@ -56,12 +63,12 @@ export class HealthQuestionsComponent implements OnInit {
 
   ngOnInit() { }
 
-
-
+ 
 
   Submit(health1) {
     console.log(health1);
     const totalbudget = [];
+    // this.health1 =  true;
     this.navigationService.setCompletedMenu('Comparing Quotes');
     this.loader.showAutoHideLoader('Please give us a few moments..', 3000);
     setTimeout(() => {
@@ -71,19 +78,21 @@ export class HealthQuestionsComponent implements OnInit {
   createAccount() {
     this.router.navigate(['/auth/signup']);
   }
-  getDOB() {
-    const selectedDate = this.personalInfoForm.value.dob;
+  getDOB(date) {
+    const selectedDate = this.birthDate;
     const today = new Date();
     const dateBefore18Years = new Date(today.getFullYear() - 18, today.getMonth() - 1, today.getDate());
 
 
-    if (selectedDate > today) {
+    if (date > today) {
       this.openSnackBar('Seems like you are not born yet, Please get back to us once you will be 18 !', null);
-      this.personalInfoForm.controls.dob.setValue('');
+      // this.personalInfoForm.controls.dob.setValue('');
+
+      // this.birthDate.getDate.setValue();
       return false;
-    } else if ((selectedDate < today) && (selectedDate > dateBefore18Years)) {
+    } else if ((date < today) && (date > dateBefore18Years)) {
       this.openSnackBar('Seems like you are minor, See you soon on your 18th birthday !', null);
-      this.personalInfoForm.controls.dob.setValue('');
+      // this.personalInfoForm.controls.dob.setValue('');
       return false;
     } else {
       return true;
@@ -98,4 +107,5 @@ export class HealthQuestionsComponent implements OnInit {
   gotoHomePage() {
     this.router.navigate(['/home']);
   }
+
 }
