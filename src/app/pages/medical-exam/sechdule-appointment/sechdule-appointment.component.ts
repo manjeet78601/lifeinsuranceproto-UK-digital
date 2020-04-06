@@ -11,13 +11,9 @@ export class SechduleAppointmentComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() { }
-
-  // urgent1() {
-  //   this.router.navigate(['/medical-exam/urgent-care']);
-  // }
-    
   goToNext() {
-    this.router.navigate(['/medical-exam/email-appt']);
+    this.router.navigate(['/medical-exam/schdule-calender']);
+    //email calender
   }
 
 
