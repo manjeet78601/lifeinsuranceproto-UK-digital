@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SechduleAptEmailPage } from './sechdule-apt-email.page';
+import { ScheduleDoctorVisitComponent } from './schedule-doctor-visit.component';
 
-describe('SechduleAptEmailPage', () => {
-  let component: SechduleAptEmailPage;
-  let fixture: ComponentFixture<SechduleAptEmailPage>;
+describe('ScheduleDoctorVisitComponent', () => {
+  let component: ScheduleDoctorVisitComponent;
+  let fixture: ComponentFixture<ScheduleDoctorVisitComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SechduleAptEmailPage ],
+      declarations: [ ScheduleDoctorVisitComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SechduleAptEmailPage);
+    fixture = TestBed.createComponent(ScheduleDoctorVisitComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
