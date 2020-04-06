@@ -154,16 +154,16 @@ export class UserService {
           this.financialBudget.forEach(element => {
             switch (element.title) {
               case 'Monthly income':
-                element.value = this.getMonthlyIncome(budgetList);
+                element.value = Math.round(this.getMonthlyIncome(budgetList) * 100) / 100;
                 break;
               case 'Monthly expenses':
-                element.value = this.getMonthlyExpenses(budgetList);
+                element.value = Math.round(this.getMonthlyExpenses(budgetList) * 100) / 100;
                 break;
               case 'Total assets':
-                element.value = this.getTotalAssets(budgetList);
+                element.value = Math.round(this.getTotalAssets(budgetList) * 100) / 100;
                 break;
               case 'Total Liabilities':
-                element.value = this.getTotalLiabillities(budgetList);
+                element.value = Math.round(this.getTotalLiabillities(budgetList) * 100) / 100;
                 break;
               default:
                 break;
@@ -184,7 +184,7 @@ export class UserService {
         totalSum = totalSum + this.sum(iterator.QUESTIONS);
       }
     }
-    return totalSum;
+    return totalSum / 12;
   }
 
   getMonthlyExpenses(budgetList) {
