@@ -32,17 +32,18 @@
       <mat-progress-bar mode="determinate" value="20" class="mt-10 mb-20"></mat-progress-bar>
       <!--Question & Answer-->
       <section>
-        <div fxLayout="row" fxLayoutGap="20px" *ngFor="let item of INSURANCE_CALCULATOR.QUESTIONS">
+        <div fxLayout="row" fxLayoutGap="10px" *ngFor="let item of INSURANCE_CALCULATOR.QUESTIONS">
 
           <div class="text">
-            <mat-label>{{ item.INPUT_TYPE }}</mat-label>
+            <mat-label class="que-subheader" [ngClass]="{'txt-black': item.isVisited}">{{ item.INPUT_TYPE }}</mat-label>
             <mat-icon class="icon12 mt-20 mb-30">help_outline</mat-icon>
           </div>
 
           <div>
             <mat-form-field appearance="outline" class="insurance_input">
               <span matPrefix *ngIf="item.isAmt">$</span>
-              <input type="number" matInput [(ngModel)]="item.VALUE" (click)="que.isVisited = true" (blur)="calculateCoverage()" class="ipt">
+              <input type="number" matInput [(ngModel)]="item.VALUE" (click)="item.isVisited = true"
+                (blur)="calculateCoverage()" class="ipt">
             </mat-form-field>
           </div>
 
@@ -54,15 +55,16 @@
         </mat-form-field>
       </section>
       <!-- bottom section -->
-          <p class="plan-content-insur"> {{STEP1_BOTTOM}}</p>
+      <p class="plan-content-insur"> {{STEP1_BOTTOM}}</p>
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="mt-20">
-        <button mat-stroked-button (click)="back()">{{BTTN.BACK| uppercase}}</button>
+        <button mat-stroked-button class="bg-blk col-wht"
+          routerLink="/ home/chooseplan">{{BTTN.BACK| uppercase}}</button>
         <button mat-flat-button color="primary" (click)="InsuranceBudget()">{{BTTN.INSURANCE | uppercase}}</button>
       </div>
       <div class="mt-20">
         <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
       </div>
-   </div>
+    </div>
   </section>
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">

@@ -30,7 +30,7 @@
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
 
 .wrapper {
-  padding: 40px 20px;
+  padding: 20px;
 }
 header {
   text-align: center;
@@ -666,7 +666,7 @@ float: left;
   font-size: 12px;
   }
  }
-.mat-accordion.user-financial-info {
+.mat-accordion .user-financial-info, .financial-accordion {
   .mat-expansion-indicator {
     margin-right: 15px !important;
   }

@@ -15,8 +15,9 @@
 <!-- Main Content -->
 <ion-content fullscreen>
   <div class="chats">
-    <div class="chatbox">
-      <div *ngFor="let message of messages | async">
+    <div class="chatbox msg-scroll"  #scrollMe >
+     
+      <ng-container *ngFor="let message of messages | async">
         <div class="message sent" *ngIf="message.sentBy === 'user'">
           {{message.content}}
           <!-- <span class="metadata">
@@ -33,8 +34,9 @@
         <!-- <p align="center" class="joined"  *ngIf="message.type==='joined'">
             <span class="rounded bg-primary text-white">{{message.displayName}} Joined</span> -->
         <!-- </p> -->
-      </div>
+      </ng-container>
     </div>
+  
   </div>
 </ion-content>
 <!-- End of main content -->
