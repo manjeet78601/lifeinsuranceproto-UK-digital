@@ -341,7 +341,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
             isAmt: true
          },
          {
-            INPUT_TYPE: '2. How many years would your family need to' +
+            INPUT_TYPE: '2. How many years would your family need to ' +
                'replace your income and the services you provide if you died suddenly?',
             VALUE: 0,
             isAmt: false
