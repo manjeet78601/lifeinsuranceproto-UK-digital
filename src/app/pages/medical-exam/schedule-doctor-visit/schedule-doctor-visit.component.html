@@ -47,12 +47,12 @@
 
   
   <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-    <div fxFlex="20%"  >
+    <div fxFlex="100%"  >
       <mat-card>
           <!-- <input matInput [matDatepicker]="picker"
           (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
         <input type="text" matInput> -->
-        <mat-calendar style="background-color: #F8F8F8;" #picker [selected]="selectedDate" type="text"  matInput  (selectedChange)="onSelect($event)"></mat-calendar>
+        <mat-calendar style="background-color: #F8F8F8; width: 100%" #picker [selected]="selectedDate" type="text"  matInput  (selectedChange)="onSelect($event)"></mat-calendar>
       </mat-card>
     </div>
 
@@ -66,8 +66,8 @@
           <p style="border:1px solid #000; width:20%; text-align: center;">9:00AM</p>
           
          
-          <p style="border:1px solid #000; width:20%; text-align: center;">9:00AM</p>
-          <p style="border:1px solid #000; width:20%; text-align: center;">9:00AM</p>
+          <!-- <p style="border:1px solid #000; width:20%; text-align: center;">9:00AM</p>
+          <p style="border:1px solid #000; width:20%; text-align: center;">9:00AM</p> -->
           </div>
         
   
