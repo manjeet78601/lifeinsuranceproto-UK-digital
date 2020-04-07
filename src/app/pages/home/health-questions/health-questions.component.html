@@ -24,7 +24,7 @@
           </header>
         
   <section fxLayout="column" class="wrapper-plan1" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <form #health1="ngForm" name="form" (ngSubmit)="Submit()" >
+    <form #health1="ngForm" name="form" (ngSubmit)="Submit(health1)" >
       <mat-accordion>
         <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS" >
           <mat-expansion-panel-header>
@@ -43,13 +43,22 @@
                     <mat-datepicker #picker></mat-datepicker>
              </mat-form-field>  -->
 
-             <mat-form-field class="full-width" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline">
-              <input matInput [matDatepicker]="picker" placeholder="mm /dd /yyyy"
-              [(ngModel)]="que.birthDate" name ="DOBhealth" (dateChange)="getDOB(que.birthDate)"  required>
+             <mat-form-field class="f-w" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline">
+              <input  matInput [matDatepicker]="picker"  placeholder="mm/dd/yyyy"
+              [(ngModel)]="que.birthDate" name ="DOBhealth" (dateChange)="getDOB(que.birthDate)"  >
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
-              <!-- <mat-error *ngIf="que.picker.error && que.picker.error required">Your date of birth is required</mat-error>  -->
-                    </mat-form-field>
+            
+
+              <!-- <mat-error *ngIf="que.birthDate.error.required">
+                please fill the dob
+              </mat-error> -->
+              <!-- <mat-error *ngIf="que.birthDate.error('required')">Your date of birth is required</mat-error> 
+
+                 <p> errrors : {{que.birthdate.errors | json}}</p> -->
+             </mat-form-field>
+
+            
              <!--Sex tab-->
               <mat-button-toggle-group *ngIf="que.INPUT_TEXT === 'Button'" name="fontStyle" aria-label="Font Style"
                 class="custom-mat-btn-toggle-group">
@@ -99,7 +108,7 @@
         </mat-expansion-panel>
       </mat-accordion>
     </form>
-    <button  mat-flat-button   color="primary"(click)="!Submit(health1)" [disabled]="!health1.invalid"> 
+    <button  mat-flat-button   color="primary"(click)="!Submit(health1)"> 
       {{ BTN.SUBMIT | uppercase }}
     </button>
     <div>

@@ -45,6 +45,9 @@ padding: 10px 20px;
   margin-right: 3%;
   
 }
+.f-w{
+  width: 40%;
+}
 .full-width{
   width:100%;
 
@@ -55,6 +58,7 @@ padding: 10px 20px;
 }
 
 .mat-form-field-flex{
+ 
   display: grid !important;
   height:200px !important;
 }
@@ -64,6 +68,7 @@ padding: 10px 20px;
   .mat-form-field-wrapper {
     padding-bottom: 0 !important;
   }
+  
  
   
 }

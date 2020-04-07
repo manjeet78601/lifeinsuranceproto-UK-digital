@@ -19,7 +19,7 @@ import { ToastService } from 'src/app/services/toast.service';
   styleUrls: ['./health-questions.component.scss'],
 })
 export class HealthQuestionsComponent implements OnInit {
-
+  public date: Date;
 
   state = 1;
   personalInfoForm: FormGroup;
@@ -33,7 +33,6 @@ export class HealthQuestionsComponent implements OnInit {
 
   health1: FormGroup = this.formBuilder.group({
     iptnumber: ['', [Validators.required]],
-
   });
 
   name: string;
@@ -92,10 +91,15 @@ export class HealthQuestionsComponent implements OnInit {
     } else if ((date < today) && (date > dateBefore18Years)) {
       this.toast.presentToast('Seems like you are minor, See you soon on your 18th birthday !');
       return false;
+    } else if (date == null) {
+      this.toast.presentToast ('please fill the valid date');
+      return false;
     } else {
       return true;
+    } 
+
     }
-  }
+  
   // openSnackBar(message, action = null) {
   //   this.snackbar.open(message, action, {
   //     duration: 3000,
