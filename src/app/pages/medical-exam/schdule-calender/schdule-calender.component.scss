@@ -48,6 +48,44 @@
     // border: 1px solid #555;
     overflow: auto;
   }
+  .title{
+    font-family: proxima soft;
+    font-size: 14px;
+    font-weight: bold; 
+    color: #000 !important;
+  }
+  .subtitle{
+    
+     font-family:Playfair Display;
+     font-size:24px;
+     font-weight: bold;
+     color:#000;
+   }
+  mat-card {
+    transition: none !important;
+    box-shadow: none !important;
+    width:344px;
+    height: 344px;
+}
+.note{
+  
+  text-align: center;
+  word-wrap: break-word;
+}
 
+
+::ng-deep .mat-stroked-button {
+  border-color:transparent
+}
+::ng-deep .mat-calendar-header {
+  background-color: #E03997;
+  color:white !important
+}
+::ng-deep .mat-calendar-arrow{
+  color:white !important
+}
+ .mat-calendar-body-cell-content{
+  color:black !important;
+}
   //calender
  

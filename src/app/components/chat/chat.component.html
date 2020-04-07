@@ -15,8 +15,8 @@
 <!-- Main Content -->
 <ion-content fullscreen>
   <div class="chats">
-    <div class="chatbox msg-scroll"  #scrollMe >
-     
+    <div class="chatbox msg-scroll" #scrollMe>
+
       <ng-container *ngFor="let message of messages | async">
         <div class="message sent" *ngIf="message.sentBy === 'user'">
           {{message.content}}
@@ -28,7 +28,7 @@
           <!-- <strong>{{message.displayName}}</strong> <br> -->
           {{message.content}}
           <!-- <span class="metadata"> -->
-            <!-- <span class="time">{{chat.createdAt | date: 'HH:mm aaa'}}</span> -->
+          <!-- <span class="time">{{chat.createdAt | date: 'HH:mm aaa'}}</span> -->
           <!-- </span> -->
         </div>
         <!-- <p align="center" class="joined"  *ngIf="message.type==='joined'">
@@ -36,7 +36,7 @@
         <!-- </p> -->
       </ng-container>
     </div>
-  
+
   </div>
 </ion-content>
 <!-- End of main content -->
@@ -67,8 +67,7 @@
 
       <div fxlayoutAlign="end">
         <mat-form-field appearance="outline">
-          <input type="text" matInput [(ngModel)]="formValue" (keyup.enter)="sendMessage()"
-            placeholder="Your message here">
+          <input type="text" matInput [(ngModel)]="formValue" (keyup.enter)="sendMessage()" placeholder="Your message here">
           <mat-icon matSuffix class="material-icons">
             settings_voice</mat-icon>
         </mat-form-field>
