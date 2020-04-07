@@ -19,21 +19,10 @@ import { ToastService } from 'src/app/services/toast.service';
   styleUrls: ['./health-questions.component.scss'],
 })
 export class HealthQuestionsComponent implements OnInit {
-  public date: Date;
 
-  state = 1;
-  personalInfoForm: FormGroup;
-  personalQuestForm: FormGroup;
-  endDate: Date = new Date();
-  data: any;
   isLoading = true;
-  // tslint:disable-next-line:no-string-literal
-  // id = this.actRoute.snapshot.params['id'];
   panelOpenState = false;
-
-  health1: FormGroup = this.formBuilder.group({
-    iptnumber: ['', [Validators.required]],
-  });
+ 
 
   name: string;
   birthDate: Date;
@@ -63,9 +52,6 @@ export class HealthQuestionsComponent implements OnInit {
   }
 
   ngOnInit() { }
-
- 
-
   Submit(health1) {
     console.log(health1);
     const totalbudget = [];
@@ -80,6 +66,7 @@ export class HealthQuestionsComponent implements OnInit {
     this.router.navigate(['/auth/signup']);
   }
   getDOB(date) {
+    // console.log(date);
     const selectedDate = this.birthDate;
     const today = new Date();
     const dateBefore18Years = new Date(today.getFullYear() - 18, today.getMonth() - 1, today.getDate());
@@ -91,21 +78,14 @@ export class HealthQuestionsComponent implements OnInit {
     } else if ((date < today) && (date > dateBefore18Years)) {
       this.toast.presentToast('Seems like you are minor, See you soon on your 18th birthday !');
       return false;
-    } else if (date == null) {
+    } else if (date === null) {
       this.toast.presentToast ('please fill the valid date');
       return false;
     } else {
       return true;
-    } 
-
     }
-  
-  // openSnackBar(message, action = null) {
-  //   this.snackbar.open(message, action, {
-  //     duration: 3000,
-  //     verticalPosition: 'top'
-  //   });
-  // }
+ }
+
   gotoHomePage() {
     this.router.navigate(['/home']);
   }
