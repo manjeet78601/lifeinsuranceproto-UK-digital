@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
-import { UrgentCarePageRoutingModule } from './urgent-care-routing.module';
-
+//import { UrgentCarePageRoutingModule } from './urgent-care-routing.module';
 import { UrgentCarePage } from './urgent-care.page';
 import { SharedModule } from 'src/app/sharedModules/shared.module';
 
@@ -14,7 +12,7 @@ import { SharedModule } from 'src/app/sharedModules/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    UrgentCarePageRoutingModule,
+ // UrgentCarePageRoutingModule,
     SharedModule
   ],
   declarations: [UrgentCarePage]
