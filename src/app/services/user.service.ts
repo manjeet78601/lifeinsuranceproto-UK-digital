@@ -73,7 +73,7 @@ export class UserService {
   quotes = [
     {
       productId: 1,
-      prodImg: './../../../../assets/img/quote-img.jpg',
+      prodImg: './../../../../assets/img/quote-img.svg',
       quoteHeader: 'Quote Details',
       quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies. ',
       custAvgRatings: 4,
@@ -104,7 +104,7 @@ export class UserService {
     },
     {
       productId: 2,
-      prodImg: './../../../../assets/img/quote-img.jpg',
+      prodImg: './../../../../assets/img/quote-img.svg',
       quoteHeader: 'Quote Details',
       quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies.  ',
       custAvgRatings: 3,

@@ -34,7 +34,7 @@ import { ChatService } from '../../services/chat.service';
     FinancialBudgetComponent,
     ChoosePlanComponent,
     ContactComponent,
-    HealthQuestionsComponent,    
+    HealthQuestionsComponent,
     HelpComponent,
     TotalBudgetCalculatorComponent,
     QuoteComponent
