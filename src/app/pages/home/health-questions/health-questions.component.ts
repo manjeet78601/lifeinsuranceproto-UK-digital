@@ -9,10 +9,6 @@ import { DataAnalyticsService, CategoryName, PageName, Action, PersonalDetailLab
 import { FormGroup, Validator, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastService } from 'src/app/services/toast.service';
-import { MatInput } from '@angular/material/input';
-
-
-
 
 @Component({
   selector: 'app-health-questions',
@@ -23,14 +19,10 @@ export class HealthQuestionsComponent implements OnInit {
 
   today = new Date();
   dateBefore18Years = new Date(this.today.getFullYear() - 18, this.today.getMonth() - 1, this.today.getDate());
-  
-
-  // panelOpenState = false;
-
-  // name: string;
   birthDate = new Date();
+  birthdaterror: boolean = false;
   insuranceText: string;
-  birthdaterror:boolean = false;
+
   DOM_CONSTANTS = HomeConstants.HEALTHQUESTIONS;
   PAGE_HEADER = HomeConstants.HEALTH_HEADER;
   PAGE_SUBHEADER = HomeConstants.HEALTH_SUB_HEADER;
@@ -56,7 +48,6 @@ export class HealthQuestionsComponent implements OnInit {
 
   ngOnInit() { }
   Submit(health1) {
-    // console.log(health1);
     const totalbudget = [];
     this.navigationService.setCompletedMenu('Comparing Quotes');
     this.loader.showAutoHideLoader('Please give us a few moments..', 3000);

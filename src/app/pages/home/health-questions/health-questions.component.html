@@ -35,6 +35,7 @@
           <div *ngFor="let que of item.QUESTIONS">
             <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
             <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
+            <!--DOB-->
            <div  *ngIf="que.INPUT_TEXT1 === 'Textbox'">
               <mat-form-field class="f-w"  appearance="outline">
               <input  [max]="dateBefore18Years"  matInput [matDatepicker]="picker"  id="birthDate"  placeholder="mm/dd/yyyy" 
@@ -83,7 +84,7 @@
             <mat-form-field  class="full-width" *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
               <textarea type="text" name="insuranceText"    class="mat-form-field-flex form-control" matInput placeholder="Write a response"
               name="txttbxno[(txttbxno)]" ngModel  required></textarea>
-               <!-- [(ngModel)]="insuranceText" #txt="ngModel"  -->
+             
               </mat-form-field>
            </div>
         </mat-expansion-panel>
