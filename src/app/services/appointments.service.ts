@@ -8,19 +8,19 @@ import { Appointments } from '../models/appointments.model';
   providedIn: 'root'
 })
 export class AppointmentsService {
+
   constructor(private http: HttpClient) { }
 
-  apptDetails: Appointments;
+  apptDetails: Observable<Appointments>;
   docApptDerails = {};
   setLocation(location: string) {
-    this.apptDetails.location = location;
+    // this.apptDetails.location = location;
   }
   setScheduleDetails(date: string, time: string) {
-    this.apptDetails.date = date;
-    this.apptDetails.time = time;
+    // this.apptDetails.date = date;
+    // this.apptDetails.time = time;
   }
-  getApptScheduleDetails() {
+  getApptScheduleDetails(): Observable<Appointments> {
     return this.apptDetails;
   }
 }
-

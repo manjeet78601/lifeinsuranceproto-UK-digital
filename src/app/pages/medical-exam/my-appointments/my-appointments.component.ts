@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { AppointmentsConstant, } from '../../properties/appointments.constant';
+import { AppointmentsConstant, } from '../../../properties/appointments.constant';
 import { Router } from '@angular/router';
 import { AppointmentsService } from 'src/app/services/appointments.service';
 
 @Component({
   selector: 'app-my-appointments',
-  templateUrl: './my-appointments.page.html',
-  styleUrls: ['./my-appointments.page.scss'],
+  templateUrl: './my-appointments.component.html',
+  styleUrls: ['./my-appointments.component.scss'],
 })
-export class MyAppointmentsPage implements OnInit {
+export class MyAppointmentsComponent implements OnInit {
 
   DOM_CONSTANTS = AppointmentsConstant.APPT;
   BTN = AppointmentsConstant.BTN;

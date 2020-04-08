@@ -8,7 +8,7 @@ import { EmailApptComponent } from './email-appt/email-appt.component';
 import { SchduleCalenderComponent } from './schdule-calender/schdule-calender.component';
 import { SchduleBookedComponent } from './schdule-booked/schdule-booked.component';
 import { UrgentCareComponent } from './urgent-care/urgent-care.component';
-import { MyAppointmentsPage } from 'src/app/pages/my-appointments/my-appointments.page';
+import { MyAppointmentsComponent } from './my-appointments/my-appointments.component';
 
 const routes: Routes = [
   {
@@ -36,6 +36,11 @@ const routes: Routes = [
   {
     path: 'urgent-care',
     component: UrgentCareComponent
+  },
+  
+  {
+    path: 'my-appointments',
+    component: MyAppointmentsComponent
   }
  
 
