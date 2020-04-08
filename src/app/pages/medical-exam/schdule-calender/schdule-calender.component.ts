@@ -6,6 +6,9 @@ import { MedicalExamConstants } from 'src/app/properties/medical-exam.constant';
 import {MatSelectChange } from '@angular/material';
 import {ThemePalette} from '@angular/material/core';
 import {SchedularCustomDirective} from './schedular.validator';
+import { AppointmentsService } from 'src/app/services/appointments.service';
+import { Appointments } from 'src/app/models/appointments.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-schdule-calender',
@@ -18,6 +21,9 @@ export class SchduleCalenderComponent implements OnInit {
 DaterForm : FormGroup;
 minFromDate= new Date();
 maxToDate = new Date().setDate(2);
+apptDetails: Observable<Appointments>;
+date:any;
+picked_timeSlot:any;
 
   DOM_CONSTATNTS = MedicalExamConstants.Schedule_CALANDER;
   aval_timeslot=['9:00 AM',  '10:00 AM', '11:00 AM', '12:00 PM',  '13:00 PM',
@@ -26,19 +32,28 @@ backendData = ['9:00 AM', '10:00 AM',  '11:00 AM',  '12:00 PM', '13:00 PM',
  ] //Data from the backend
 appt_timeslots = []
 
+// setApptScheduleDetails(apptData: Observable<Appointments>){
+//   this.date=this.onSelect(event);
+//   this.picked_timeSlot=this.onChangedSort(event:mat).
+//   this.apptDetails = apptData;
+// }
+
+
+
 // chip
 flag : any = false;
 name: string;
 chipColor: ThemePalette;
 
-constructor(private fb:FormBuilder) { }
+constructor(private fb:FormBuilder,private apptService: AppointmentsService) { }
 selectedDate: any;
-  events: string[] = [];
-  // name = 'Angular 6';
+events: string[] = [];
+ 
 
-  onSelect(event) {
+onSelect(event) {
     console.log("selected date>>",event);
-    this.selectedDate = event;
+   this.selectedDate = event;
+   
   }
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.events.push(`${type}: ${event.value}`);
@@ -84,9 +99,12 @@ selectedDate: any;
     onChangedSort(event: MatSelectChange){
       for (let i = 0; i < this. aval_timeslot.length; i++) {
         var name = this. aval_timeslot[i];
-         if (name == event.value) {
+        var date=this.addEvent;
+        if (name == event.value) {
           this.flag = true;
+          console.log("current selected date>>>>>", this.date);
           console.log("exist",event.value);
+          break;
          }
       
       }
