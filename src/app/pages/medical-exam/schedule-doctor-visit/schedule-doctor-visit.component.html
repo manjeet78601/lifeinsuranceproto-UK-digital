@@ -15,74 +15,71 @@
 </ion-header>
 <ion-content>
   <!--Quotes Header-->
-  <section class="wrapper-plan1" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <header class="page-header" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
-      <!-- <h1>Medical Testing</h1> -->
-      <h2 class="header-title">Schedule Doctor's Visit</h2>
-      <!-- <p>At the appointment, you are required to present documentation with your prescription. </p> -->
-    </header>
-    <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-      <div fxFlex="100%">
-        <mat-card>
-          <!-- <input matInput [matDatepicker]="picker"
-          (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
-        <input type="text" matInput> -->
-          <mat-calendar class="d-20" #picker [selected]="selectedDate" type="text" matInput
-            (selectedChange)="onSelect($event)"></mat-calendar>
+  <section>
+     
+    <div class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <header class="page-header" fxLayout="column" fxLayoutAlign="center center">
+        <h2 class="subtitle">{{ DOM_CONSTATNTS.HEADER }}</h2>
+      </header>
+      <div fxLayout="row" fxLayoutAlign="center center">
+       <mat-card>
+          <mat-calendar #calendar [(selected)]="selectedDate"
+           (selectedChange)="onSelect($event)"></mat-calendar>
         </mat-card>
+       
       </div>
 
-    </div>
+      <!-- appointment badges -->
+      
+      <div class="wrapper" fxLayout="column" fxLayoutAlign="start">
+        <p class="title">{{ DOM_CONSTATNTS.AVAL_TIME}}</p>
+        <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="16px grid" class=" mt-20">
+      <mat-chip-list #chipList  >
+                <mat-chip *ngFor="let appt of appt_timeslots" [ngClass]="{ 'colorRed' :flag }" >
+                  {{appt.text}}
+                </mat-chip>
+              </mat-chip-list>
+            
+          <!-- <div *ngFor="let appt of appt_timeslots" [ngSwitch]="appt.value">
+              <button mat-stroked-button name="timeslot" value="{{ appt.value }}">
+          <span *ngSwitchCase="appt.value">{{appt.text}}</span>
+              </button>
+          </div> -->
+        </div>
 
-    <div class="example-events">
-      <h5>Available Times</h5>
-
-      <p class="l1-30">9:00AM</p>
-
-      <p class="l1-30">10:00AM</p>
-
-      <p class="l1-30">11:00AM</p>
-      <!-- <p style="border:1px solid #000; width:20%; text-align: center;">9:00AM</p>
-          <p style="border:1px solid #000; width:20%; text-align: center;">9:00AM</p> -->
-    </div>
-    </div>
-
-    <!-- choose Appointment-->
-    <div class="mt-20">
-      <p class="title">{{DOM_CONSTATNTS.CHOOSE_TIME}}</p>
-      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-        <mat-form-field appearance="outline" class="w-90">
-          <mat-label>{{DOM_CONSTATNTS.CHOOSE_TIME}}</mat-label>
-          <mat-select (selectionChange)="onChangedSort($event)">
-            <mat-option *ngFor="let timing of backendData" [value]="timing">
-              {{timing}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+        <!-- choose Appointment-->
+        <div class="mt-20">
+          <p class="title">{{DOM_CONSTATNTS.CHOOSE_TIME}}</p>
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+            <!-- <mat-form-field appearance="outline" class="w-90"> -->
+              <mat-select (selectionChange)="onChangedSort($event)">
+                <mat-option *ngFor="let timing of backendData" [value]="timing">
+                  {{timing}}
+                </mat-option>
+              </mat-select>
+            
+          </div>
+        </div>
       </div>
+   
     </div>
-    </div>
-    </div>
-
-    <mat-form-field appearance="outline" class="w-90">
-      <mat-label>Timing</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let timing of timings" [value]="timings">
-          {{timing}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <!-- <mat-form-field appearance="outline" class="w-90">
-      <mat-label>Pick Location</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let timing of timings" [value]="timing">
-          {{timing}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field> -->
-    <section fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <button mat-stroked-button routerLink="/medical-exam/sechdule-appointment" color="primary">BACK</button>
-      <button mat-flat-button routerLink="/medical-exam/appointment-details" class="black_color">BOOK</button>
+  
+    <!--  -->
+    <section>
+      <div class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <div fxLayout="row" fxLayoutGap="20px">
+          <button mat-button><span><ion-icon name="mail"></ion-icon></span></button>
+          <!-- need an anchor tag -->
+          <p class="title">{{DOM_CONSTATNTS.EMAIL}}</p>
+        </div>
+        <div fxLayout="row">
+          <p class="title note">{{DOM_CONSTATNTS.NOTE}}</p>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <button mat-stroked-button routerLink="/medical-exam/sechdule-appointment" color="primary">BACK</button>
+          <button mat-flat-button routerLink="/medical-exam/schdule-booked" class="black_color">BOOK</button>
+        </div>
+      </div>
     </section>
   </section>
   <!--Footer-->
