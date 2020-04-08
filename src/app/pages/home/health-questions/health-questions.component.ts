@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { HomeConstants } from './../home.constants';
 import { LoaderService } from 'src/app/services/loader.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -9,6 +9,7 @@ import { DataAnalyticsService, CategoryName, PageName, Action, PersonalDetailLab
 import { FormGroup, Validator, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { MatInput } from '@angular/material/input';
 
 
 
@@ -20,14 +21,16 @@ import { ToastService } from 'src/app/services/toast.service';
 })
 export class HealthQuestionsComponent implements OnInit {
 
-  isLoading = true;
-  panelOpenState = false;
- 
+  today = new Date();
+  dateBefore18Years = new Date(this.today.getFullYear() - 18, this.today.getMonth() - 1, this.today.getDate());
+  
 
-  name: string;
-  birthDate: Date;
+  // panelOpenState = false;
+
+  // name: string;
+  birthDate = new Date();
   insuranceText: string;
-
+  birthdaterror:boolean = false;
   DOM_CONSTANTS = HomeConstants.HEALTHQUESTIONS;
   PAGE_HEADER = HomeConstants.HEALTH_HEADER;
   PAGE_SUBHEADER = HomeConstants.HEALTH_SUB_HEADER;
@@ -53,9 +56,8 @@ export class HealthQuestionsComponent implements OnInit {
 
   ngOnInit() { }
   Submit(health1) {
-    console.log(health1);
+    // console.log(health1);
     const totalbudget = [];
-    // this.health1 =  true;
     this.navigationService.setCompletedMenu('Comparing Quotes');
     this.loader.showAutoHideLoader('Please give us a few moments..', 3000);
     setTimeout(() => {
@@ -65,27 +67,26 @@ export class HealthQuestionsComponent implements OnInit {
   createAccount() {
     this.router.navigate(['/auth/signup']);
   }
+
   getDOB(date) {
-    // console.log(date);
-    const selectedDate = this.birthDate;
+    const selectedDate = new Date(date);
     const today = new Date();
     const dateBefore18Years = new Date(today.getFullYear() - 18, today.getMonth() - 1, today.getDate());
 
 
     if (date > today) {
-      this.toast.presentToast('Seems like you are not born yet, Please get back to us once you will be 18 !');
+      this.toast.presentToast('Seems like you are not born yet, Please get back to us once you will be 18 !');    
+      this.birthdaterror = true;
       return false;
     } else if ((date < today) && (date > dateBefore18Years)) {
       this.toast.presentToast('Seems like you are minor, See you soon on your 18th birthday !');
+      this.birthdaterror = true ;
       return false;
-    } else if (date === null) {
-      this.toast.presentToast ('please fill the valid date');
-      return false;
-    } else {
-      return true;
+   } else {
+    this.birthdaterror = false;
+    return true;
     }
- }
-
+}
   gotoHomePage() {
     this.router.navigate(['/home']);
   }

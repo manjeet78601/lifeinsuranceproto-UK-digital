@@ -24,7 +24,7 @@
           </header>
         
   <section fxLayout="column" class="wrapper-plan1" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <form #health1="ngForm" name="form" (ngSubmit)="Submit(health1)" >
+    <form #health1="ngForm"  name="form" (ngSubmit)="Submit(health1)" >
       <mat-accordion>
         <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS" >
           <mat-expansion-panel-header>
@@ -35,17 +35,17 @@
           <div *ngFor="let que of item.QUESTIONS">
             <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
             <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
-           
-              
-             <mat-form-field class="f-w" *ngIf="que.INPUT_TEXT1 === 'Textbox'" appearance="outline">
-              <input  matInput [matDatepicker]="picker"  id="birthDate" placeholder="mm/dd/yyyy"
-              [(ngModel)]="que.birthDate" #birthDate="ngModel"  name ="DOBhealth" (dateChange)="getDOB(que.birthDate)" required>
+           <div  *ngIf="que.INPUT_TEXT1 === 'Textbox'">
+              <mat-form-field class="f-w"  appearance="outline">
+              <input  [max]="dateBefore18Years"  matInput [matDatepicker]="picker"  id="birthDate"  placeholder="mm/dd/yyyy" 
+              [(ngModel)]="que.birthDate"   name="DOBhealth" (dateChange)="getDOB(que.birthDate)" required>
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-             
-
-            <!--Sex tab-->
+              <mat-datepicker  #picker></mat-datepicker>
+          </mat-form-field> 
+              <span *ngIf="birthdaterror"> Age must be greater than 18 </span>
+            </div>
+            
+           <!--Sex tab-->
               <mat-button-toggle-group *ngIf="que.INPUT_TEXT === 'Button'" name="fontStyle" aria-label="Font Style"
                 class="custom-mat-btn-toggle-group">
                 <mat-button-toggle value="bold" class="yes-btn">Male</mat-button-toggle>
