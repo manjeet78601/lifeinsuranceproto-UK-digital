@@ -50,8 +50,14 @@ export class ScheduleDoctorVisitComponent implements OnInit {
   onSelect(event) {
       console.log("selected date>>",event);
      this.selectedDate = event;
-     
-    }
+     this.setapt(this.selectedDate,'')
+  }
+   setapt(date?:any,time?:any){
+    let x=date;
+    console.log("dataesssss>>>",x);
+    let y=time;
+    console.log('timeeeeess>>>',y);
+   }
     addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
       this.events.push(`${type}: ${event.value}`);
     }
@@ -101,6 +107,8 @@ export class ScheduleDoctorVisitComponent implements OnInit {
             this.flag = true;
             console.log("current selected date>>>>>", this.date);
             console.log("exist",event.value);
+            this.setapt('',event.value)
+           
             break;
            }
         
