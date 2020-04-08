@@ -24,6 +24,10 @@
         "isCompleted": false
     },
     {
+        "title": "My Appointments",
+        "url": "medical-exam/my-appointments"
+    },
+    {
         "title": "Contact",
         "url": "home/contact"
     },

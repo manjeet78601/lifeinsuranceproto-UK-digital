@@ -11,10 +11,10 @@ import { SharedModule } from 'src/app/sharedModules/shared.module';
 import { SechduleAppointmentComponent } from './sechdule-appointment/sechdule-appointment.component';
 import { ScheduleMedicalExamComponent } from './schedule-medical-exam/schedule-medical-exam.component';
 import { EmailApptComponent } from './email-appt/email-appt.component';
-import { SchduleCalenderComponent } from './schdule-calender/schdule-calender.component';
-import { SchduleBookedComponent } from './schdule-booked/schdule-booked.component';
-import { UrgentCareComponent } from './urgent-care/urgent-care.component';
+import { ScheduleDoctorVisitComponent } from './schedule-doctor-visit/schedule-doctor-visit.component';
+import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
 import { MyAppointmentsComponent } from './my-appointments/my-appointments.component';
+
 
 
 @NgModule({
@@ -26,7 +26,7 @@ import { MyAppointmentsComponent } from './my-appointments/my-appointments.compo
     SharedModule,
   ],
 
-  declarations: [MedicalExamPage, SechduleAppointmentComponent, ScheduleMedicalExamComponent,
-    EmailApptComponent, SchduleCalenderComponent, SchduleBookedComponent, UrgentCareComponent, MyAppointmentsComponent],
+  declarations: [MedicalExamPage, SechduleAppointmentComponent, ScheduleMedicalExamComponent, MyAppointmentsComponent,
+    EmailApptComponent, ScheduleDoctorVisitComponent, AppointmentDetailsComponent],
 })
 export class MedicalExamPageModule { }

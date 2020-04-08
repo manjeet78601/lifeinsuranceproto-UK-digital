@@ -43,37 +43,17 @@
 
   .example-events {
     width:100%;
-    padding:20px;
+    padding:50px;
     // height: 200px;
     // border: 1px solid #555;
     overflow: auto;
   }
-  .title{
-    font-family: proxima soft;
-    font-size: 14px;
-    font-weight: bold; 
-    color: #000 !important;
-  }
-  .subtitle{
-    
-     font-family:Playfair Display;
-     font-size:24px;
-     font-weight: bold;
-     color:#000;
-   }
-  mat-card {
-    transition: none !important;
-    box-shadow: none !important;
-    width:344px;
-    height: 344px;
-}
-.note{
-  
-  text-align: center;
-  word-wrap: break-word;
-}
+  .l1-30{
+    border:1px solid #000;
+     width:25%;
+      text-align: center;
 
-
+<<<<<<< HEAD:src/app/pages/medical-exam/schdule-calender/schdule-calender.component.scss
 ::ng-deep .mat-stroked-button {
   border-color:transparent
 }
@@ -104,3 +84,9 @@ mat-chip {
 } 
   //calender
  
+=======
+  }
+  .d-20{
+    background-color: #F8F8F8; width: 100%;
+  }
+>>>>>>> 65867c5fcca00f6957a3e5b3e7214bd05abdeec2:src/app/pages/medical-exam/schedule-doctor-visit/schedule-doctor-visit.component.scss
