@@ -5,10 +5,9 @@ import { MedicalExamPage } from './medical-exam.page';
 import { SechduleAppointmentComponent } from './sechdule-appointment/sechdule-appointment.component';
 import { ScheduleMedicalExamComponent } from './schedule-medical-exam/schedule-medical-exam.component';
 import { EmailApptComponent } from './email-appt/email-appt.component';
-
 import { ScheduleDoctorVisitComponent } from './schedule-doctor-visit/schedule-doctor-visit.component';
 import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
-
+import { MyAppointmentsComponent } from './my-appointments/my-appointments.component';
 
 const routes: Routes = [
   {
@@ -31,8 +30,11 @@ const routes: Routes = [
   {
     path: 'email-appt',
     component: EmailApptComponent
+  },
+  {
+    path: 'my-appointments',
+    component: MyAppointmentsComponent
   }
-
 ];
 
 @NgModule({

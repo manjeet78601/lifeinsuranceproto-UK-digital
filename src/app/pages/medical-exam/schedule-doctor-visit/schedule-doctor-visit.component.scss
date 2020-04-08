@@ -1,59 +1,105 @@
 .n-m {
-    margin: 0px !important;
-  }
-  .n-p {
-    padding: 0px !important;
-  }
-  .n-sh {
-    box-shadow: none !important;
-  }
-  .mat-card-image{
-    margin: 0 !important;
+  margin: 0px !important;
+}
+.n-p {
+  padding: 0px !important;
+}
+.n-sh {
+  box-shadow: none !important;
+}
+.mat-card-image{
+  margin: 0 !important;
 }
 .zip-input{
-  margin: 10px !important;
-    padding: 4px;
-    border: 1px solid lightgrey;
-    border-radius: 4px;
-    text-align: center;
+margin: 10px !important;
+  padding: 4px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  text-align: center;
 }
 .w-90 {
-  width: 80% !important;
+width: 80% !important;
 }
 //manjeet
 
 .custom-day {
-    text-align: center;
-    padding: 0.185rem 0.25rem;
-    border-radius: 0.25rem;
-    display: inline-block;
-    width: 2rem;
-  }
-  .custom-day:hover, .custom-day.focused {
-    background-color: #e6e6e6;
-  }
-  .weekend {
-    background-color: #f0ad4e;
-    border-radius: 1rem;
-    color: white;
-  }
-  .hidden {
-    display: none;
-  }
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  width: 2rem;
+}
+.custom-day:hover, .custom-day.focused {
+  background-color: #e6e6e6;
+}
+.weekend {
+  background-color: #f0ad4e;
+  border-radius: 1rem;
+  color: white;
+}
+.hidden {
+  display: none;
+}
 
-  .example-events {
-    width:100%;
-    padding:50px;
-    // height: 200px;
-    // border: 1px solid #555;
-    overflow: auto;
-  }
-  .l1-30{
-    border:1px solid #000;
-     width:25%;
-      text-align: center;
+.example-events {
+  width:100%;
+  padding:20px;
+  // height: 200px;
+  // border: 1px solid #555;
+  overflow: auto;
+}
+.title{
+  font-family: proxima soft;
+  font-size: 14px;
+  font-weight: bold; 
+  color: #000 !important;
+}
+.subtitle{
+  
+   font-family:Playfair Display;
+   font-size:24px;
+   font-weight: bold;
+   color:#000;
+ }
+mat-card {
+  transition: none !important;
+  box-shadow: none !important;
+  width:344px;
+  height: 344px;
+}
+.note{
 
-  }
-  .d-20{
-    background-color: #F8F8F8; width: 100%;
-  }
+text-align: center;
+word-wrap: break-word;
+}
+
+
+::ng-deep .mat-stroked-button {
+border-color:transparent
+}
+::ng-deep .mat-calendar-header {
+background-color: #E03997;
+color:white !important
+}
+::ng-deep .mat-calendar{
+background-color: #F8F8F8;
+}
+::ng-deep .mat-calendar-arrow{
+color:white !important
+}
+.mat-calendar-body-cell-content{
+color:black !important;
+}
+::ng-host .mat-chip {
+border-radius: 0px;
+}
+
+mat-chip {
+border-radius: 3px !important;
+font-size: 12px;
+color: black !important;
+border: 1px solid black !important;
+background-color: white !important;
+padding: 3px 8px !important;
+} 
+//calender
