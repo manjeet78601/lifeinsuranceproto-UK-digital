@@ -29,5 +29,8 @@ export class MyAppointmentsComponent implements OnInit {
   getDocAppts() {
 
   }
+  gotoHomePage() {
+    this.router.navigate(['/home']);
+  }
 }
 
