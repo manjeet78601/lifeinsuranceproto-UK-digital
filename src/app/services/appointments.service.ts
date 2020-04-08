@@ -13,12 +13,15 @@ export class AppointmentsService {
 
   apptDetails: Observable<Appointments>;
   docApptDerails = {};
-  setLocation(location: string) {
-    // this.apptDetails.location = location;
-  }
-  setScheduleDetails(date: string, time: string) {
-    // this.apptDetails.date = date;
-    // this.apptDetails.time = time;
+  // setLocation(location: string) {
+  //   this.apptDetails.location = location;
+  // }
+  // setScheduleDetails(date: string, time: string) {
+  //   this.apptDetails.date = date;
+  //   this.apptDetails.time = time;
+  // }
+  setApptScheduleDetails(apptData: Observable<Appointments>){
+    this.apptDetails = apptData;
   }
   getApptScheduleDetails(): Observable<Appointments> {
     return this.apptDetails;

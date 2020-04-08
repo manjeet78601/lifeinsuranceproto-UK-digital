@@ -28,7 +28,7 @@
   </ion-header>
   <ion-content class="menu-bar">
     <ng-container  *ngFor="let pages of navigateAfterSignin$ | async; let i = index">
-    <ion-list lines="none" class="menu-list" [ngClass] = "pages.title === 'Contact' || pages.title === 'Help' || pages.title === 'My Profile'? 'pl-35' : ''">
+    <ion-list lines="none" class="menu-list" [ngClass] = "pages.title== 'My Appointments' || pages.title === 'Contact' || pages.title === 'Help' || pages.title === 'My Profile'? 'pl-35' : ''">
       <ion-menu-toggle auto-hide="true">
         <ion-item [routerLink]="pages.url" routerDirection="forward" detail-none class="menu-item">
           <!-- <ion-icon [name]="pages.icon" slot="start"></ion-icon>   -->
