@@ -1,7 +1,7 @@
 export interface Appointments {
-    location: string;
-    time: string;
-    date: string;
-  }
-  
-  
+  location?: string;
+  time?: string;
+  date?: string;
+}
+
+

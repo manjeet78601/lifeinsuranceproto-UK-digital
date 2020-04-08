@@ -14,8 +14,7 @@ import { EmailApptComponent } from './email-appt/email-appt.component';
 import { SchduleCalenderComponent } from './schdule-calender/schdule-calender.component';
 import { SchduleBookedComponent } from './schdule-booked/schdule-booked.component';
 import { UrgentCareComponent } from './urgent-care/urgent-care.component';
-
-
+import { MyAppointmentsComponent } from './my-appointments/my-appointments.component';
 
 
 @NgModule({
@@ -28,6 +27,6 @@ import { UrgentCareComponent } from './urgent-care/urgent-care.component';
   ],
 
   declarations: [MedicalExamPage, SechduleAppointmentComponent, ScheduleMedicalExamComponent,
-    EmailApptComponent, SchduleCalenderComponent, SchduleBookedComponent, UrgentCareComponent],
+    EmailApptComponent, SchduleCalenderComponent, SchduleBookedComponent, UrgentCareComponent, MyAppointmentsComponent],
 })
 export class MedicalExamPageModule { }
