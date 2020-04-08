@@ -14,5 +14,7 @@ export class AppointmentDetailsComponent implements OnInit {
 
   }
   ngOnInit() {}
-
+  gotoHomePage() {
+    this.router.navigate(['/home']);
+  }
 }

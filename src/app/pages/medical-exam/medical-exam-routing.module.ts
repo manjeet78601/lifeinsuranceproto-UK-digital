@@ -32,8 +32,6 @@ const routes: Routes = [
     path: 'email-appt',
     component: EmailApptComponent
   }
- 
-
 ];
 
 @NgModule({
