@@ -107,15 +107,10 @@ export class ScheduleDoctorVisitComponent implements OnInit {
           const date = this.addEvent;
           if (name === event.value) {
             this.flag = true;
-<<<<<<< HEAD
             console.log("current selected date>>>>>", this.date);
             console.log("exist",event.value);
             this.setapt('',event.value)
            
-=======
-            console.log('current selected date>>>>>', this.date);
-            console.log('exist', event.value);
->>>>>>> 49ff95c62df582c3e98e1dd3a9e5d6a53f3a2b2b
             break;
            }
         }
