@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MedicalExamConstants } from 'src/app/properties/medical-exam.constant';
-//import { Calendar } from '@ionic-native/calendar';
+// import { Calendar } from '@ionic-native/calendar';
 import {MatSelectChange } from '@angular/material';
 import {ThemePalette} from '@angular/material/core';
 import {SchedularCustomDirective} from './schedular.validator';
@@ -16,37 +16,37 @@ import { Observable } from 'rxjs';
   styleUrls: ['./schedule-doctor-visit.component.scss'],
 })
 export class ScheduleDoctorVisitComponent implements OnInit {
-  DaterForm : FormGroup;
-  minFromDate= new Date();
+  DaterForm: FormGroup;
+  minFromDate = new Date();
   maxToDate = new Date().setDate(2);
   apptDetails: Observable<Appointments>;
-  date:any;
-  picked_timeSlot:any;
+  date: any;
+  picked_timeSlot: any;
   DOM_CONSTATNTS = MedicalExamConstants.Schedule_CALANDER;
-    aval_timeslot=['9:00 AM',  '10:00 AM', '11:00 AM', '12:00 PM',  '13:00 PM',
+    aval_timeslot = ['9:00 AM',  '10:00 AM', '11:00 AM', '12:00 PM',  '13:00 PM',
     ];
   backendData = ['9:00 AM', '10:00 AM',  '11:00 AM',  '12:00 PM', '13:00 PM',
-   ] //Data from the backend
-  appt_timeslots = []
-  
+   ]; // Data from the backend
+  appt_timeslots = [];
+
   // setApptScheduleDetails(apptData: Observable<Appointments>){
   //   this.date=this.onSelect(event);
   //   this.picked_timeSlot=this.onChangedSort(event:mat).
   //   this.apptDetails = apptData;
   // }
-  
-  
-  
+
+
+
   // chip
-  flag : any = false;
+  flag: any = false;
   name: string;
   chipColor: ThemePalette;
-  
-  constructor(private fb:FormBuilder,private apptService: AppointmentsService) { }
+
+  constructor(private fb: FormBuilder, private apptService: AppointmentsService) { }
   selectedDate: any;
   events: string[] = [];
-   
-  
+
+
   onSelect(event) {
       console.log("selected date>>",event);
      this.selectedDate = event;
@@ -61,58 +61,63 @@ export class ScheduleDoctorVisitComponent implements OnInit {
     addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
       this.events.push(`${type}: ${event.value}`);
     }
-  
+
     ngOnInit() {
-  
+
       this.backendData.forEach(e => {
-        var text = this.getTextFromValue(e);
-        this.appt_timeslots.push({ value: e, text: text });
-      })
-      console.log("timeSlot>>>", this.appt_timeslots);
-   }
-  
-    getTextFromValue(value: string) {
-  
-      var timeSlots = value.split("-");
-      var formattedTime = timeSlots.map(time => {
-        time = this.setAMorPM(time);
-        return time
+        const text = this.getTextFromValue(e);
+        this.appt_timeslots.push({ value: e, text });
       });
-  
-      var result = formattedTime.join("-")
-      return result
+      console.log('timeSlot>>>', this.appt_timeslots);
+   }
+
+    getTextFromValue(value: string) {
+
+      const timeSlots = value.split('-');
+      const formattedTime = timeSlots.map(time => {
+        time = this.setAMorPM(time);
+        return time;
+      });
+
+      const result = formattedTime.join('-');
+      return result;
     }
-  
-    setAMorPM(number: string) {
-  
-      if (parseInt(number) > 12)
-        number = (parseInt(number) - 12).toString() +''+'PM';
+
+    setAMorPM(no: string) {
+
+      if (parseInt(no) > 12) {
+        no = (parseInt(no) - 12).toString() + '' + 'PM';
+      }
       else
-      if (parseInt(number) == 0)
-          number = "12am"
+      if (parseInt(no) == 0) {
+          no = "12am"
+      }
         else
-          if (number[0] == '0') {
-            number = number.slice(1);
-            number += 'am';
+          if (no[0] == '0') {
+            no = no.slice(1);
+            no += 'am';
           }
-  
-      return number
+
+      return no;
     }
     // To select the avialabel appointment
-      onChangedSort(event: MatSelectChange){
-        for (let i = 0; i < this. aval_timeslot.length; i++) {
-          var name = this. aval_timeslot[i];
-          var date=this.addEvent;
-          if (name == event.value) {
+      onChangedSort(event: MatSelectChange) {
+        for (const item of this. aval_timeslot) {
+          const name = item;
+          const date = this.addEvent;
+          if (name === event.value) {
             this.flag = true;
+<<<<<<< HEAD
             console.log("current selected date>>>>>", this.date);
             console.log("exist",event.value);
             this.setapt('',event.value)
            
+=======
+            console.log('current selected date>>>>>', this.date);
+            console.log('exist', event.value);
+>>>>>>> 49ff95c62df582c3e98e1dd3a9e5d6a53f3a2b2b
             break;
            }
-        
         }
       }
-      
 }
