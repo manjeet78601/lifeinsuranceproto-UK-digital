@@ -1,0 +1,39 @@
+.n-m {
+  margin: 0px !important;
+}
+
+.n-p {
+  padding: 0px !important;
+}
+
+.n-sh {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.mat-card-image {
+  margin: 0 !important;
+}
+
+.zip-input {
+  margin: 10px !important;
+  padding: 4px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.w-90 {
+  width: 90% !important;
+}
+
+.pink_color {
+  background-color: #E03997;
+  color: white;
+}
+
+.w1-40 {
+  width: 100%;
+  background-color: #FAFAFA;
+}
+/*# sourceMappingURL=schdule-booked.component.css.map */

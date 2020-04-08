@@ -11,7 +11,7 @@ import { LoaderService } from 'src/app/services/loader.service';
 })
 export class FacialScanComponent implements OnInit {
   DOM_CONSTANTS = FacialIdentityConstant.FACIAL_SCAN;
-  imageData:string;
+  imageData: string;
   constructor(
     private camera: Camera,
     private router: Router,
@@ -31,7 +31,7 @@ export class FacialScanComponent implements OnInit {
     this.camera.getPicture(this.cameraOptions).then((imageData) => {
       // this.camera.DestinationType.FILE_URI gives file URI saved in local
       // this.camera.DestinationType.DATA_URL gives base64 URI
-      imageData="txt"
+      imageData = 'txt';
       const base64Image = 'data:image/jpeg;base64,' + imageData;
       this.capturedSnapURL = base64Image;
       this.router.navigate(['/personal-details/1']);
@@ -45,8 +45,7 @@ export class FacialScanComponent implements OnInit {
     this.router.navigate(['/personal-details/0']);
   }
 
-  onSubmit()
-  {
+  onSubmit() {
     this.loader.showAutoHideLoader('Submitting Details...', 1000);
     setTimeout(() => {
       this.router.navigate(['/facial-identity/compliance']);

@@ -9,6 +9,7 @@ import { DataAnalyticsService, CategoryName, PageName, Action, PersonalDetailLab
 import { FormGroup, Validator, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { CompareQuotesConstant, } from '../../../properties/compare-quotes.constant';
 
 @Component({
   selector: 'app-health-questions',
@@ -20,14 +21,16 @@ export class HealthQuestionsComponent implements OnInit {
   today = new Date();
   dateBefore18Years = new Date(this.today.getFullYear() - 18, this.today.getMonth() - 1, this.today.getDate());
   birthDate = new Date();
-  birthdaterror: boolean = false;
+  birthdaterror = false;
   insuranceText: string;
-  DOM_CONSTANTS = HomeConstants.HEALTHQUESTIONS;
-  PAGE_HEADER = HomeConstants.HEALTH_HEADER;
-  PAGE_SUBHEADER = HomeConstants.HEALTH_SUB_HEADER;
-  PAGE_LINE = HomeConstants.HEALTH_LINE;
-  BTN = HomeConstants.BTN;
   // DOM_CONSTANTS = HomeConstants.FINANCIALBUDGET;
+  healthQuesForm: FormGroup;
+  isLoading = true;
+  panelOpenState = false;
+  dob: Date;
+
+  DOM_CONSTANTS = CompareQuotesConstant.HEALTH_PAGE;
+  BTN = CompareQuotesConstant.BTTN;
   progress = 0;
   isUerLoggedIn: boolean;
   constructor(
@@ -44,8 +47,12 @@ export class HealthQuestionsComponent implements OnInit {
     this.isUerLoggedIn = this.auth.isUserLoggedIn;
   }
 
-  ngOnInit() { }
-  Submit(health1) {
+  ngOnInit() {
+    console.log('dob is ' + this.dob);
+  }
+
+  Submit(healthQuesForm) {
+    console.log(healthQuesForm);
     const totalbudget = [];
     this.navigationService.setCompletedMenu('Comparing Quotes');
     this.loader.showAutoHideLoader('Please give us a few moments..', 3000);
@@ -69,15 +76,17 @@ export class HealthQuestionsComponent implements OnInit {
       return false;
     } else if ((date < today) && (date > dateBefore18Years)) {
       this.toast.presentToast('Seems like you are minor, See you soon on your 18th birthday !');
-      this.birthdaterror = true ;
+      this.birthdaterror = true;
       return false;
-   } else {
-    this.birthdaterror = false;
-    return true;
+    } else {
+      this.birthdaterror = false;
+      return true;
     }
-}
+  }
   gotoHomePage() {
     this.router.navigate(['/home']);
   }
-
+  getPrevious() {
+    this.router.navigate(['/home/budget']);
+  }
 }

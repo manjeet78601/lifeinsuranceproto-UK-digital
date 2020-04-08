@@ -21,34 +21,48 @@
       <h2 class="header-title">Schedule Doctor's Visit</h2>
       <!-- <p>At the appointment, you are required to present documentation with your prescription. </p> -->
     </header>
-  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-    <div fxFlex="100%"  >
-      <mat-card>
+    <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+      <div fxFlex="100%">
+        <mat-card>
           <!-- <input matInput [matDatepicker]="picker"
           (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
         <input type="text" matInput> -->
-        <mat-calendar  class="d-20" #picker [selected]="selectedDate" type="text"  matInput  (selectedChange)="onSelect($event)"></mat-calendar>
-      </mat-card>
+          <mat-calendar class="d-20" #picker [selected]="selectedDate" type="text" matInput
+            (selectedChange)="onSelect($event)"></mat-calendar>
+        </mat-card>
+      </div>
+
     </div>
 
-     </div>
+    <div class="example-events">
+      <h5>Available Times</h5>
 
-     <div class="example-events">
-        <h5>Available Times</h5>
-        
-          <p class="l1-30">9:00AM</p>
-          
-          <p class="l1-30">10:00AM</p>
-          
-          <p class="l1-30">11:00AM</p>
-          <!-- <p style="border:1px solid #000; width:20%; text-align: center;">9:00AM</p>
+      <p class="l1-30">9:00AM</p>
+
+      <p class="l1-30">10:00AM</p>
+
+      <p class="l1-30">11:00AM</p>
+      <!-- <p style="border:1px solid #000; width:20%; text-align: center;">9:00AM</p>
           <p style="border:1px solid #000; width:20%; text-align: center;">9:00AM</p> -->
-          </div>
-        
-  
+    </div>
+    </div>
 
-
-<!-- </div></div> -->
+    <!-- choose Appointment-->
+    <div class="mt-20">
+      <p class="title">{{DOM_CONSTATNTS.CHOOSE_TIME}}</p>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-form-field appearance="outline" class="w-90">
+          <mat-label>{{DOM_CONSTATNTS.CHOOSE_TIME}}</mat-label>
+          <mat-select (selectionChange)="onChangedSort($event)">
+            <mat-option *ngFor="let timing of backendData" [value]="timing">
+              {{timing}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    </div>
+    </div>
 
     <mat-form-field appearance="outline" class="w-90">
       <mat-label>Timing</mat-label>
@@ -66,11 +80,10 @@
         </mat-option>
       </mat-select>
     </mat-form-field> -->
-   <section fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <section fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
       <button mat-stroked-button routerLink="/medical-exam/sechdule-appointment" color="primary">BACK</button>
       <button mat-flat-button routerLink="/medical-exam/appointment-details" class="black_color">BOOK</button>
     </section>
-
   </section>
   <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">

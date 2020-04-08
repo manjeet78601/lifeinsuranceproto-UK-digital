@@ -48,7 +48,6 @@ const routes: Routes = [
     path: 'medical-exam',
     loadChildren: () => import('./pages/medical-exam/medical-exam.module').then( m => m.MedicalExamPageModule)
   },
-
 ];
 
 @NgModule({

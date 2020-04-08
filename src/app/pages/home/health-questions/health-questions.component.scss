@@ -1,49 +1,44 @@
-mat-icon{
+mat-icon {
   float: right;
 }
 
-.page-header-health{
-padding: 20px 0px;
-   h5 {
-     font-family: proxima nova;
-     font-size: 14px;
-     font-weight: bold; 
-     color: #000 !important;
-     padding: 10px 20px;
-
-   }
+.page-header-health {
+  padding: 20px 0px;
+  h5 {
+    font-family: Proxima Soft;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000 !important;
+    padding: 10px 20px;
+  }
 }
-.health-header{
-
-font-family:Playfair Display;
-font-size:18px;
-font-weight: bold;
-color:#000;
+.health-header {
+  font-family: Playfair Display;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
 }
-.plan-content-health { 
-font-family: Proxima Soft;;
-font-size: 16px;
-font-size: large;
-color: #000 !important;
+.plan-content-health {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #000 !important;
 }
-.que-header2{
-margin: 14px 0px 0px 0px;
-font-family: proxima nova;
-font-size: 16px;
-font-weight: bold;
-line-height: 1.5em;
-display: block;
+.que-header2 {
+  margin: 14px 0px 0px 0px;
+  font-family: Proxima Soft;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5em;
+  display: block;
 }
 
 .wrapper-plan1 {
-padding: 10px 20px;
-
+  padding: 10px 20px;
 }
-.example-full-width { 
+.example-full-width {
   width: 40%;
   text-align: center;
   margin-right: 3%;
-  
 }
 .f-w{
   width: 40%;
@@ -53,26 +48,30 @@ padding: 10px 20px;
 
  }
 
- .align-end1 {
+.align-end1 {
   text-align: center !important;
 }
 
-.mat-form-field-flex{
- 
+.mat-form-field-flex {
   display: grid !important;
-  height:200px !important;
+  height: 200px !important;
 }
-
 
 ::ng-deep {
   .mat-form-field-wrapper {
     padding-bottom: 0 !important;
   }
-  
- 
-  
 }
-
-
-
-  
+.btn-acc{
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #CCCCCC;
+}
+.btn-border{
+  border-radius: 2px;
+  border-color: #00B5AD;
+  margin-right: 10px;
+}
+.col-wht {
+  color: #ffffff;
+}

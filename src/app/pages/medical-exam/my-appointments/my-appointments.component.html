@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!--Quotes Header-->
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header class="page-header">
+      <h2 class="header-title">{{DOM_CONSTANTS.APPT_HEADER}}</h2>
+      <h5 class="header-subtitle">{{DOM_CONSTANTS.APPT_SUB_HEADER}}</h5>
+    </header>
+    <mat-card class="w1-40">
+      <p><img src="../../../../assets/icon/Group_2433.png" alt="Medical Test"></p>
+      <mat-card-content class="header-subtitle">
+        <h2 class="header-subtitle">{{DOM_CONSTANTS.SCHD_HEADER}}</h2>
+        <p>{{DOM_CONSTANTS.SCH_DETAILS}}</p>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <div class="mt-10">
+          <button mat-stroked-button class="bg-blk col-wht" (click)="goToSchedule()">{{BTN.RESCHEDULE}}</button>
+          <button mat-flat-button (click)="goToNext()" class="pink_color">{{BTN.CANCEL}}</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="w1-40 mt-30">
+      <p><img src="../../../../assets/icon/Group_2433.png" alt="Medical Test"></p>
+      <mat-card-content class="header-subtitle">
+        <h2 class="header-subtitle">{{DOM_CONSTANTS.DOC_SCHD_HEADER}}</h2>
+        <p>{{DOM_CONSTANTS.DOC_SCHD_DETAILS}}</p>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <div class="mt-10">
+          <button mat-stroked-button class="bg-blk col-wht" (click)="goToSchedule()">{{BTN.RESCHEDULE}}</button>
+          <button mat-flat-button (click)="goToNext()" class="pink_color">{{BTN.CANCEL}}</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+  <!--Footer-->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+</ion-content>

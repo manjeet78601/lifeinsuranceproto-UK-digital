@@ -48,7 +48,8 @@ export class FinancialBudgetComponent implements OnInit {
     const totalBudget = [];
     // for (const iterator of this.DOM_CONSTANTS) {
     //   totalBudget.push(this.sum(iterator.QUESTIONS));
-    this.userService.setCalculatedBudget(this.DOM_CONSTANTS);
+    this.userService.setCalculatedBudget(this.DOM_CONSTANTS)
+      .subscribe(res => console.log(res));
     this.analytic.trackAnalyticData(CategoryName.BUDGET_CALCULATOR, Action.CLICK, 'Calculate');
     this.loader.showAutoHideLoader('Fetching Details...', 3000);
     setTimeout(() => {
@@ -61,5 +62,13 @@ export class FinancialBudgetComponent implements OnInit {
   }
   gotoHomePage() {
     this.router.navigate(['/home']);
+  }
+  checkQuestionStatus(id: number | string) {
+    const currentItem = this.DOM_CONSTANTS.find(item => item.ID === id);
+
+    currentItem.isAllQuestionsAnswered = currentItem.QUESTIONS.every(data => {
+      return !!data.VALUE;
+    });
+
   }
 }

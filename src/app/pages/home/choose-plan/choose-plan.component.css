@@ -1,0 +1,82 @@
+.wrapper-plan {
+  padding: 10px 20px;
+}
+
+.plan-content {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #070707 !important;
+}
+
+.txt-align {
+  text-align: center;
+}
+
+.header-title {
+  font-family: Playfair Display;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000000;
+}
+
+.mat-table {
+  overflow: auto;
+  height: 353px;
+  width: 345px;
+  border-top: 1px solid #e2e2e3;
+  border-right: 1px solid #e2e2e3;
+}
+
+.green-icon {
+  color: #21BA45;
+  width: 10px;
+  height: 15px;
+  font-weight: bold;
+  margin-left: 15px;
+  margin-bottom: 18px;
+  font-size: 35px;
+}
+
+mat-header-cell {
+  background: #fafafb;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #fafafb;
+}
+
+mat-header-cell {
+  padding: 2px !important;
+  border-left: 1px solid #e2e2e3;
+  font-family: Lato;
+  font-size: 13px;
+  color: #000000;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+mat-cell {
+  font-size: 11px;
+  color: #1a084c;
+  padding: 2px !important;
+  border-left: 1px solid #e2e2e3;
+}
+
+.mat-cell-content {
+  font-family: Proxima Soft;
+  font-size: 13px;
+  color: #000000;
+  text-align: left;
+}
+
+.btn-acc {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #CCCCCC;
+}
+/*# sourceMappingURL=choose-plan.component.css.map */

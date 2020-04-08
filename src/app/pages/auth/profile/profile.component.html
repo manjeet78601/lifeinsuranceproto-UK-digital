@@ -54,7 +54,7 @@
     </ion-card>
 
     <!-- financial details  -->
-    <header fxLayoutAlign="center center">
+    <header>
       <h2 class="cap-first-letter">{{userName +"'s "+ htmltext.profile_header }}</h2>
     </header>
 
@@ -71,7 +71,7 @@
             <ion-icon name="checkmark" class="tick-icon"
               [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
           </mat-expansion-panel-header>
-          <p class="header-txt" *ngIf="financeDetails.quesHeader"><strong> {{financeDetails.quesHeader}} </strong></p>
+          <p class="header-txt" *ngIf="financeDetails.quesHeader">{{financeDetails.quesHeader}}</p>
           <ng-container
             *ngFor="let quesDetails of financeDetails.questions; let quesIndex = index; trackBy: trackByIndex">
             <div [ngSwitch]="quesDetails.element">
@@ -85,7 +85,7 @@
                   <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
                 </mat-button-toggle-group>
               </div>
-              <div class="ques-details" *ngSwitchCase="'inputNumber'">
+              <div class="ques-details input-box" *ngSwitchCase="'inputNumber'">
                 <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
                 <mat-form-field appearance="outline" class="form-input-control text-right">
                   <span matPrefix class="col-dull-grey">$ &nbsp;</span>
@@ -101,7 +101,7 @@
       </ng-container>
     </mat-accordion>
     <h2>Recommendation</h2>
-    <p class="r-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyundefined</p>
+    <p class="recommend-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyundefined</p>
   </section>
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">

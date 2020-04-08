@@ -60,80 +60,13 @@ export class HomeConstants {
    // Step 2: Financial budget
    public static FINANCIALBUDGET = [
       {
-         TITLE: 'Income',
+         ID: 1,
+         TITLE: 'Housing Expenses',
          SUBTITLE: '',
          PROGRESS: 25,
-         TOTAL_TEXT: 'Monthly Income',
-         QUESTIONS: [
-            {
-               QUESTIONTEXT: 'What’s your yearly wage/salary?',
-               SUBTEXT: 'Annual Income',
-               NAME: 'aanualIncome',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-            {
-               QUESTIONTEXT: 'How much are your total savings?',
-               SUBTEXT: 'Total Savings',
-               NAME: 'totalSavings',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-            {
-               QUESTIONTEXT: 'Do you have monthly rental income?',
-               SUBTEXT: 'Income from Rent',
-               NAME: 'incomeFromRent',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-         ]
-      },
-      {
-         TITLE: 'Personal Assets',
-         SUBTITLE: '',
-         PROGRESS: 50,
-         TOTAL_TEXT: 'Total assets',
-         QUESTIONS: [
-            {
-               QUESTIONTEXT: 'How much is your home worth?',
-               SUBTEXT: 'Value of my Home',
-               NAME: 'valueOfHome',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-            {
-               QUESTIONTEXT: 'How much are your vehicle(s) worth?',
-               SUBTEXT: 'Value of my Vehicle(s)',
-               NAME: 'valueOfVehicle',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-            {
-               QUESTIONTEXT: 'How much are your valuables worth?',
-               SUBTEXT: 'Total Value of my Valuables',
-               NAME: 'valueOfvaluables',
-               MIN: 10000,
-               MAX: 100000,
-               STEP: 10000,
-               VALUE: 50000,
-            },
-         ]
-      },
-      {
-         TITLE: 'Home Expenses',
-         SUBTITLE: '',
-         PROGRESS: 75,
          TOTAL_TEXT: 'Total Liabilities',
+         isAllQuestionsAnswered: true,
+         TYPE: 'Expense',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Monthly rent/mortgage?',
@@ -145,7 +78,7 @@ export class HomeConstants {
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Monthly Utilities',
+               QUESTIONTEXT: 'Monthly utilities (water, electricity, etc.) ',
                SUBTEXT: 'Home Utilities',
                NAME: 'monthlyUtilities',
                MIN: 10000,
@@ -174,10 +107,13 @@ export class HomeConstants {
          ]
       },
       {
-         TITLE: 'Monthly Living Expenses',
+         ID: 2,
+         TITLE: 'Living Expenses',
          SUBTITLE: '',
-         PROGRESS: 100,
+         PROGRESS: 50,
          TOTAL_TEXT: 'Monthly Expenses',
+         isAllQuestionsAnswered: true,
+         TYPE: 'Expense',
          QUESTIONS: [
             {
                QUESTIONTEXT: 'Monthly groceries',
@@ -189,7 +125,7 @@ export class HomeConstants {
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Monthly Car loan / lease payment',
+               QUESTIONTEXT: 'Monthly lease, car payments, insurance',
                SUBTEXT: 'Car Payment',
                NAME: 'carPayment',
                MIN: 10000,
@@ -198,7 +134,7 @@ export class HomeConstants {
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Monthly Gas / Oil',
+               QUESTIONTEXT: 'Monthly gas / oil',
                SUBTEXT: 'Fuel for vehicles',
                NAME: 'gasOrOil',
                MIN: 10000,
@@ -207,25 +143,110 @@ export class HomeConstants {
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Monthly Child Daycare',
-               SUBTEXT: 'Kids',
-               NAME: 'childDaycare',
+               QUESTIONTEXT: 'Monthly entertainment bills (cell phone, internet, etc.)',
+               SUBTEXT: '',
+               NAME: 'monthlyEntertainment',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
             {
-               QUESTIONTEXT: 'Monthly Child Activities / Sports',
-               SUBTEXT: 'Kids',
-               NAME: 'kidsActivities',
+               QUESTIONTEXT: 'Additional expected monthly expenses',
+               SUBTEXT: '',
+               NAME: 'additionalExpenses',
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
                VALUE: 50000,
             },
          ]
-      }
+      },
+      {
+         ID: 3,
+         TITLE: 'Sources of Income',
+         SUBTITLE: '',
+         PROGRESS: 75,
+         TOTAL_TEXT: 'Monthly Income',
+         isAllQuestionsAnswered: true,
+         TYPE: 'Income',
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'Do you own a business? What is your profit?',
+               SUBTEXT: 'Annual Income',
+               NAME: 'businessProfit',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+            {
+               QUESTIONTEXT: 'What is your yearly income/salary?',
+               SUBTEXT: 'Total Savings',
+               NAME: 'totalSavings',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+            {
+               QUESTIONTEXT: 'Additional sources of annual income (side job, rental, stipends, passive income, etc.)',
+               SUBTEXT: 'Income from Rent',
+               NAME: 'additionalSourceIncome',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+            {
+               QUESTIONTEXT: 'Expected annual bonuses',
+               SUBTEXT: 'Annual Bonus',
+               NAME: 'annualBonus',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+         ]
+      },
+      {
+         ID: 4,
+         TITLE: 'Debts',
+         SUBTITLE: '',
+         PROGRESS: 100,
+         TOTAL_TEXT: 'Total assets',
+         isAllQuestionsAnswered: true,
+         TYPE: 'Liabillities',
+         QUESTIONS: [
+            {
+               QUESTIONTEXT: 'Outstanding credit card debt',
+               SUBTEXT: 'Outstanding credit card debt',
+               NAME: 'outstandingDebt',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+            {
+               QUESTIONTEXT: 'Outstanding student loan debt',
+               SUBTEXT: 'Outstanding student loan debt',
+               NAME: 'loanDebt',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+            {
+               QUESTIONTEXT: 'Other outstanding loans',
+               SUBTEXT: 'Other outstanding loans',
+               NAME: 'otherOutstandingLoans',
+               MIN: 10000,
+               MAX: 100000,
+               STEP: 10000,
+               VALUE: 50000,
+            },
+         ]
+      },
    ];
 
    public static BUDGET_HEADER = 'Budget Calculator';
@@ -294,165 +315,17 @@ export class HomeConstants {
       ]
    };
 
-   // Step 4: Health Questions
-   public static HEALTHQUESTIONS = [
-      {
-         TITLE: 'Basic Health',
-         PROGRESS: 25,
-         QUESTIONS: [
-            {
-               QUESTIONTEXT: 'Date of Birth',
-               INPUT_TEXT1: 'Textbox',
-               ICON: false
-            },
-            {
-               QUESTIONTEXT: 'Sex',
-               INPUT_TEXT: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Height',
-               INPUT_TEXT12: 'Textbox',
-               INPUT_TEXT001: 'DROPDOWN',
-               ICON: false
-            },
-            {
-               QUESTIONTEXT: 'Weight',
-               INPUT_TEXT01: 'Textbox',
-               INPUT_TEXT002: 'DROPDOWN',
-               ICON: false
-            },
-            {
-               QUESTIONTEXT: 'Have you used any tobacco products in the last 5 years?',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Have you used any marijuana products in the last 5 years?',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-
-         ]
-      },
-      {
-         TITLE: 'Treatments and Medications',
-         QUESTIONS: [
-            {
-               QUESTIONTEXT: 'Have you ever been treated for and/or taken medication for any of the following?',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Alchol Abuse',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Anxiety',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Asthma',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Cancer',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Depression',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Diabetes',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Drug Abuse',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Heart Attack',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'High Blood Pressure',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'High Cholesterol',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Sleep Apnea',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Stroke',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Other serious Conditions',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-         ]
-      },
-      {
-         TITLE: 'Additional Background Information',
-         QUESTIONS: [
-            {
-               QUESTIONTEXT: 'Do you have any parents or siblings who had heart attacks,' +
-                  'strokes, cancer, diabetes, or kidney disease before age 70?',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            },
-            {
-               QUESTIONTEXT: 'Has your driver’s license been suspended or revoked,' +
-                  ' or had more than one traffic ticket or accident in the past five years?',
-               INPUT_TYPE: 'Button',
-               ICON: true
-            }
-         ]
-      },
-      {
-         TITLE: 'Notes',
-         QUESTIONS: [
-            {
-               QUESTIONTEXT: 'If you answered yes to any of these questions, please explain.',
-               INPUT_TYPE: 'Textarea',
-               ICON: false
-            }
-
-         ]
-      }
-   ];
-   public static Weight = 'Weight';
-   public static HEALTH_HEADER = 'LIFE INSURANCE Medical Questions';
-   public static HEALTH_SUB_HEADER = 'Answer a few health Qs';
-   public static HEALTH_LINE = 'In order to process your examine we need to ask a few question about your health';
-
    // Insurance calculator
-   public static PAGE_SUBTITLE = 'LIFE INSURANCE CALCULATORS';
-   public static LIFE_INSURANCE_HEADER = 'Calculate the coverage you need for your family future.';
+   public static PAGE_SUBTITLE = 'LIFE INSURANCE CALCULATOR';
+   public static LIFE_INSURANCE_HEADER = `Calculate the coverage you need for your family's future.`;
    public static LIFE_INSURANCE_SUB_HEADER = `By calculating you long term financial obligations.
-and subtracting your assets you an estimate what your loved ones will need in coming years take a few minutes to help start `;
+and subtracting your assets you an estimate what your loved ones will need in coming years. Take a few minutes to help start`;
    public static PAGE_CONTENT_QUERIES = `Does anyone in your family depend on you financially`;
 
    public static BTTN = {
       SUBMIT: 'Submit',
       INSURANCE: 'Next',
+      BACK: 'Back'
    };
    public static INSURANCE_RECOMENDATION = 'Our Recommendation';
    public static BUTTON_CONTENT = `you can probably do without Life insurance right now however.
@@ -460,7 +333,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
    public static PAGE_CONTENT_US = 'Are You a US Citizen or Residents';
    public static PAGE_CONTENT_US1 = 'Are You a US Citizen or Residents';
    public static LETS_GETS_TARTED = 'Great let s get Started ';
-   public static PAGE_BOTTOM1 = 'By our calculation You will need this total coverage';
+   public static PAGE_BOTTOM1 = 'By our calculation You will need this total coverage:';
    public static STEP1_BOTTOM = 'Ready to figure out your budget ?';
    public static INSURANCE_CALCULATOR = {
       TITLE: 'Basic Health',
@@ -472,7 +345,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
             isAmt: true
          },
          {
-            INPUT_TYPE: '2. How many years would your family need to' +
+            INPUT_TYPE: '2. How many years would your family need to ' +
                'replace your income and the services you provide if you died suddenly?',
             VALUE: 0,
             isAmt: false

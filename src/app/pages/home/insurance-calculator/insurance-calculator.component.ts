@@ -23,7 +23,7 @@ export class InsuranceCalculatorComponent implements OnInit {
   isUerLoggedIn: boolean;
   constructor(private router: Router, private navigationService: MenuService, private auth: AuthService) {
     this.isUerLoggedIn = this.auth.isUserLoggedIn;
-   }
+  }
 
   ngOnInit() { }
 
@@ -41,14 +41,19 @@ export class InsuranceCalculatorComponent implements OnInit {
   }
 
   calculateCoverage() {
-    this.INSURANCE_CALCULATOR.QUESTIONS.forEach(element => {
-      if (element.VALUE === 0) {
-        this.totalCoverage = 0;
-        return false;
-      } else {
-        this.totalCoverage = Math.floor(Math.random() * 100000) + 10000;
-      }
-    });
+    const annualIncome = this.INSURANCE_CALCULATOR.QUESTIONS[0].VALUE;
+    const years = this.INSURANCE_CALCULATOR.QUESTIONS[1].VALUE;
+    const debt = this.INSURANCE_CALCULATOR.QUESTIONS[2].VALUE;
+    const childrensFuture = this.INSURANCE_CALCULATOR.QUESTIONS[3].VALUE;
+    const funeraryCosts = this.INSURANCE_CALCULATOR.QUESTIONS[4].VALUE;
+    const savings = this.INSURANCE_CALCULATOR.QUESTIONS[5].VALUE;
+    const existingPolicy = this.INSURANCE_CALCULATOR.QUESTIONS[6].VALUE;
+    const additionalAnnualIncome = this.INSURANCE_CALCULATOR.QUESTIONS[7].VALUE;
+
+    const totalCoverage = (annualIncome * years)
+      + debt + childrensFuture + funeraryCosts - savings - existingPolicy - additionalAnnualIncome;
+    this.totalCoverage = totalCoverage > 0 ? totalCoverage : 0;
+
   }
 
   createAccount() {

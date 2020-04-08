@@ -13,6 +13,7 @@ import { ScheduleMedicalExamComponent } from './schedule-medical-exam/schedule-m
 import { EmailApptComponent } from './email-appt/email-appt.component';
 import { ScheduleDoctorVisitComponent } from './schedule-doctor-visit/schedule-doctor-visit.component';
 import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
+import { MyAppointmentsComponent } from './my-appointments/my-appointments.component';
 
 
 
@@ -25,7 +26,7 @@ import { AppointmentDetailsComponent } from './appointment-details/appointment-d
     SharedModule,
   ],
 
-  declarations: [MedicalExamPage, SechduleAppointmentComponent, ScheduleMedicalExamComponent,
-    EmailApptComponent,  ScheduleDoctorVisitComponent,  AppointmentDetailsComponent],
+  declarations: [MedicalExamPage, SechduleAppointmentComponent, ScheduleMedicalExamComponent, MyAppointmentsComponent,
+    EmailApptComponent, ScheduleDoctorVisitComponent, AppointmentDetailsComponent],
 })
 export class MedicalExamPageModule { }

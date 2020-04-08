@@ -1,1 +1,54 @@
-/* No CSS *//*# sourceMappingURL=health-details.page.css.map */
+.btn-grey {
+  background-color: #646464;
+  width: 127px;
+  height: 50px;
+  text-align: center;
+  -webkit-text-decoration-color: white !important;
+          text-decoration-color: white !important;
+}
+
+.radio-group-lab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+  margin: 15px 0;
+}
+
+.width-73 {
+  width: 70%;
+}
+
+.addComment-btn {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+p {
+  font-family: 'Lato' !important;
+  font-size: 12px;
+  font-weight: regular;
+  color: #050505;
+}
+
+mat-checkbox {
+  font-family: 'Arial' !important;
+  font-size: 14px;
+  font-weight: regular;
+  color: #000000;
+}
+
+.que-label-lab {
+  font-family: 'Lato' !important;
+  font-size: 18px;
+  font-weight: bold;
+  color: #5a5a5a;
+}
+
+.w-40 {
+  width: 40%;
+}
+/*# sourceMappingURL=health-details.page.css.map */

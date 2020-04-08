@@ -30,7 +30,7 @@
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
 
 .wrapper {
-  padding: 40px 20px;
+  padding: 20px;
 }
 header {
   text-align: center;
@@ -189,7 +189,10 @@ h6 {
   margin:15px
 }
 .mr-5 {
-  margin-right: 5px;
+  margin-right: 5px !important;
+}
+.mb-5 {
+  margin-bottom: 5px;
 }
 .mr-10 {
   margin-right: 10px;
@@ -288,9 +291,7 @@ h6 {
     font-size: 9px;
   }
 }
-
-.signin-section,
-.signup-section {
+.signin-section, .signup-section, .contact-us {
   .header {
     font-weight: bold;
     color: #000000;
@@ -311,6 +312,11 @@ h6 {
     height: 35px;
     .mat-form-field-flex {
       max-height: 50px;
+    }
+    &.text-note{
+      .mat-form-field-flex {
+        max-height: 400px;
+      }
     }
   }
   .btn {
@@ -423,6 +429,9 @@ h6 {
 }
 .w-50 {
   width: 50%;
+}
+.w-75 {
+  width: 75%;
 }
 .h-25 {
   height: 25px;
@@ -661,7 +670,7 @@ float: left;
   font-size: 12px;
   }
  }
-.mat-accordion.user-financial-info {
+.mat-accordion.user-financial-info, .financial-accordion {
   .mat-expansion-indicator {
     margin-right: 15px !important;
   }
@@ -700,4 +709,10 @@ float: left;
 }
 .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
   background-color:  #000000;;
+}
+.back-btn {
+  background-color: #fff;
+  color: #000000;
+  height: 36px;
+  border-color: #00B5AD !important;
 }

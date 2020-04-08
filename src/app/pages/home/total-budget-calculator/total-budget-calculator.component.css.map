@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACN,KAAK,EAAE,IAAI;CACd;;AACD,AAAA,WAAW,CAAA;EACP,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "total-budget-calculator.component.scss"
+    ],
+    "names": [],
+    "file": "total-budget-calculator.component.css"
+}

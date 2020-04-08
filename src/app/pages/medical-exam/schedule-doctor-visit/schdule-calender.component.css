@@ -1,0 +1,82 @@
+.n-m {
+  margin: 0px !important;
+}
+
+.n-p {
+  padding: 0px !important;
+}
+
+.n-sh {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.mat-card-image {
+  margin: 0 !important;
+}
+
+.zip-input {
+  margin: 10px !important;
+  padding: 4px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.w-90 {
+  width: 80% !important;
+}
+
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  width: 2rem;
+}
+
+.custom-day:hover, .custom-day.focused {
+  background-color: #e6e6e6;
+}
+
+.weekend {
+  background-color: #f0ad4e;
+  border-radius: 1rem;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.example-events {
+  width: 100%;
+  padding: 20px;
+  overflow: auto;
+}
+
+.h2{
+  font-family: Playfair Display;
+  font-size: 24px;
+  font-weight: bold;
+}
+.title{
+  font-family: proxima nova;
+  font-size: 14px;
+  font-weight: bold; 
+  color: #000 !important;
+}
+.subtitle{
+  
+   font-family:Playfair Display;
+   font-size:24px;
+   font-weight: bold;
+   color:#000;
+ }
+ mat-card {
+  transition: none !important;
+  box-shadow: none !important;
+  width: 344px;
+  height:344px;
+}
+/*# sourceMappingURL=schdule-calender.component.css.map */

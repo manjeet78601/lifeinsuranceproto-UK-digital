@@ -37,18 +37,16 @@ export class MenuService {
     );
 }
   setCompletedMenu(pageName: string) {
-    // const menuItem = this.navigate.find((item) => {
-    //   return item.title === pageName;
-    // });
-    // menuItem.isCompleted = true;
     for (const item of this.navigateBeforeLogin) {
       if ( item.title === pageName) {
         item.isCompleted = true;
+        break;
       }
     }
     for (const item of this.navigateAfterLogin) {
       if ( item.title === pageName) {
         item.isCompleted = true;
+        break;
       }
     }
   }

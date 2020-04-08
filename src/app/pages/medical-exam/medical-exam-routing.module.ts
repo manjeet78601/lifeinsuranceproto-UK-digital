@@ -6,9 +6,7 @@ import { SechduleAppointmentComponent } from './sechdule-appointment/sechdule-ap
 import { ScheduleMedicalExamComponent } from './schedule-medical-exam/schedule-medical-exam.component';
 import { EmailApptComponent } from './email-appt/email-appt.component';
 
-// import { SchduleBookedComponent } from './schdule-booked/schdule-booked.component';
-
-import {ScheduleDoctorVisitComponent} from './schedule-doctor-visit/schedule-doctor-visit.component';
+import { ScheduleDoctorVisitComponent } from './schedule-doctor-visit/schedule-doctor-visit.component';
 import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
 
 
@@ -24,11 +22,11 @@ const routes: Routes = [
   },
   {
     path: 'schedule-doctor-visit',
- component : ScheduleDoctorVisitComponent
-   },
- {
+    component: ScheduleDoctorVisitComponent
+  },
+  {
     path: 'appointment-details',
-     component: AppointmentDetailsComponent
+    component: AppointmentDetailsComponent
   },
   {
     path: 'email-appt',

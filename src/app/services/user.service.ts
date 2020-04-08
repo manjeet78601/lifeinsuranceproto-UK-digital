@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  financialBudget = [];
-  constructor(private router: Router) { }
+  financialBudget: any = [];
+  constructor(private router: Router, private http: HttpClient) { }
 
   users = [
     {
@@ -71,7 +73,7 @@ export class UserService {
   quotes = [
     {
       productId: 1,
-      prodImg: './../../../../assets/img/quote-img.jpg',
+      prodImg: './../../../../assets/img/quote-img.svg',
       quoteHeader: 'Quote Details',
       quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies. ',
       custAvgRatings: 4,
@@ -102,7 +104,7 @@ export class UserService {
     },
     {
       productId: 2,
-      prodImg: './../../../../assets/img/quote-img.jpg',
+      prodImg: './../../../../assets/img/quote-img.svg',
       quoteHeader: 'Quote Details',
       quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies.  ',
       custAvgRatings: 3,
@@ -145,19 +147,79 @@ export class UserService {
   }
 
   setCalculatedBudget(budgetList) {
-    for (const iterator of budgetList) {
-      iterator.TOTAL = this.sum(iterator.QUESTIONS);
-      iterator.MIN = iterator.TOTAL - 50000;
-      iterator.MAX = iterator.TOTAL + 50000;
-      iterator.STEP = 10000;
-    }
+    return this.http.get('assets/json/budget/budget.json')
+      .pipe(
+        map(res => {
+          this.financialBudget = res;
+          this.financialBudget.forEach(element => {
+            switch (element.title) {
+              case 'Monthly income':
+                element.value = Math.round(this.getMonthlyIncome(budgetList) * 100) / 100;
+                break;
+              case 'Monthly expenses':
+                element.value = Math.round(this.getMonthlyExpenses(budgetList) * 100) / 100;
+                break;
+              case 'Total assets':
+                element.value = Math.round(this.getTotalAssets(budgetList) * 100) / 100;
+                break;
+              case 'Total Liabilities':
+                element.value = Math.round(this.getTotalLiabillities(budgetList) * 100) / 100;
+                break;
+              default:
+                break;
+            }
+          });
+          console.log(this.financialBudget);
+
+        })
+      );
+    console.log(this.getMonthlyIncome(budgetList));
     this.financialBudget = budgetList;
+  }
+
+  getMonthlyIncome(budgetList) {
+    let totalSum = 0;
+    for (const iterator of budgetList) {
+      if (iterator.TYPE === 'Income') {
+        totalSum = totalSum + this.sum(iterator.QUESTIONS);
+      }
+    }
+    return totalSum / 12;
+  }
+
+  getMonthlyExpenses(budgetList) {
+    let totalSum = 0;
+    for (const iterator of budgetList) {
+      if (iterator.TYPE === 'Expense') {
+        totalSum = totalSum + this.sum(iterator.QUESTIONS);
+      }
+    }
+    return totalSum;
+  }
+  getTotalAssets(budgetList) {
+    let totalSum = 0;
+    for (const iterator of budgetList) {
+      if (iterator.TYPE === 'Assets') {
+        totalSum = totalSum + this.sum(iterator.QUESTIONS);
+      }
+    }
+    return totalSum;
+
+  }
+  getTotalLiabillities(budgetList) {
+    let totalSum = 0;
+    for (const iterator of budgetList) {
+      if (iterator.TYPE === 'Liabillities') {
+        totalSum = totalSum + this.sum(iterator.QUESTIONS);
+      }
+    }
+    return totalSum;
 
   }
 
-  sum(input) {
+  sum(input): number {
     if (toString.call(input) !== '[object Array]') {
-      return false;
+      return null;
     }
     let total = 0;
     // tslint:disable-next-line:prefer-for-of
@@ -176,5 +238,5 @@ export class UserService {
   }
   createAccount() {
     this.router.navigate(['/auth/signup']);
- }
+  }
 }
