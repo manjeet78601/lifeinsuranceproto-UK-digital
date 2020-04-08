@@ -18,13 +18,11 @@
 <ion-content>
   <section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <header class="page-header-health">
-      <h5>{{ PAGE_HEADER }}</h5>
-      <p class="health-header">{{PAGE_SUBHEADER}}</p>
-      <p class="plan-content-health">{{ PAGE_LINE }}</p>
+      <h5>{{ DOM_CONSTANTS.PAGE_HEADER }}</h5>
+      <p class="health-header">{{DOM_CONSTANTS.PAGE_SUB_HEADER}}</p>
+      <p class="plan-content-health">{{ DOM_CONSTANTS.PAGE_LINE }}</p>
     </header>
-
-    <section fxLayout="column" class="wrapper-plan1" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <form #health1="ngForm" name="form" (ngSubmit)="Submit(health1)">
+    <form #health1="ngForm" name="form" (ngSubmit)="Submit(health1)">
         <mat-accordion>
           <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS.HEALTHQUESTIONS">
             <mat-expansion-panel-header>
@@ -94,13 +92,14 @@
     <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class="mb-70 mt-50">
       <div>
         <button mat-stroked-button class="btn btn-border" (click)="getPrevious()">{{BTN.BACK}}</button>
-        <button mat-flat-button color="primary" (click)="Submit(healthQuesForm)" [disabled]="healthQuesForm.invalid">
+        <button mat-flat-button color="primary" (click)="Submit(health1)">
           {{ BTN.SUBMIT }}
         </button>
       </div>
       <a *ngIf="!isUerLoggedIn" [routerLink]="['./']" (click)="createAccount()" class="btn-acc" mat-menu-item>Create
         account</a>
     </section>
+  
     <!-- Footer -->
     <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
       <ion-text class="align-item-bottom">

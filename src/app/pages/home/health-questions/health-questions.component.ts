@@ -28,7 +28,6 @@ export class HealthQuestionsComponent implements OnInit {
   isLoading = true;
   panelOpenState = false;
   dob: Date;
-
   DOM_CONSTANTS = CompareQuotesConstant.HEALTH_PAGE;
   BTN = CompareQuotesConstant.BTTN;
   progress = 0;
