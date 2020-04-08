@@ -9,12 +9,9 @@ import { Router } from '@angular/router';
 export class AppointmentDetailsComponent implements OnInit {
 
   constructor( private router: Router) { }
-
-
- 
   goToNext() {
     this.router.navigate(['/medical-exam/email-appt']);
-    //email calender
+
   }
   ngOnInit() {}
 

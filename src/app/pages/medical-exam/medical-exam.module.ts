@@ -11,7 +11,6 @@ import { SharedModule } from 'src/app/sharedModules/shared.module';
 import { SechduleAppointmentComponent } from './sechdule-appointment/sechdule-appointment.component';
 import { ScheduleMedicalExamComponent } from './schedule-medical-exam/schedule-medical-exam.component';
 import { EmailApptComponent } from './email-appt/email-appt.component';
-
 import { ScheduleDoctorVisitComponent } from './schedule-doctor-visit/schedule-doctor-visit.component';
 import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
 

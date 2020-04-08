@@ -13,7 +13,6 @@ export class SechduleAppointmentComponent implements OnInit {
   ngOnInit() { }
   goToNext() {
     this.router.navigate(['/medical-exam/schedule-doctor-visit']);
-    //email calender
   }
 
 

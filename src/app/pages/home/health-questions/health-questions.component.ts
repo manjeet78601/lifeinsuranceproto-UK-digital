@@ -22,7 +22,6 @@ export class HealthQuestionsComponent implements OnInit {
   birthDate = new Date();
   birthdaterror: boolean = false;
   insuranceText: string;
-
   DOM_CONSTANTS = HomeConstants.HEALTHQUESTIONS;
   PAGE_HEADER = HomeConstants.HEALTH_HEADER;
   PAGE_SUBHEADER = HomeConstants.HEALTH_SUB_HEADER;
@@ -40,7 +39,6 @@ export class HealthQuestionsComponent implements OnInit {
     private navigationService: MenuService,
     private userService: UserService,
     private actRoute: ActivatedRoute,
-    private snackbar: MatSnackBar,
     private dataAnalytics: DataAnalyticsService
   ) {
     this.isUerLoggedIn = this.auth.isUserLoggedIn;
@@ -66,7 +64,7 @@ export class HealthQuestionsComponent implements OnInit {
 
 
     if (date > today) {
-      this.toast.presentToast('Seems like you are not born yet, Please get back to us once you will be 18 !');    
+      this.toast.presentToast('Seems like you are not born yet, Please get back to us once you will be 18 !');
       this.birthdaterror = true;
       return false;
     } else if ((date < today) && (date > dateBefore18Years)) {

@@ -9,16 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./medical-exam.page.scss'],
 })
 export class MedicalExamPage implements OnInit {
-  // BTTN = HomeConstants.BTTN;
+
 
   constructor( private router: Router) { }
 
   ngOnInit() {
-  }
-  scanner() {
-    // this.navigationService.setCompletedMenu('Insurance calculator');
-    // this.router.navigate(['facial-scan']);
-
   }
 
   onsechdule() {

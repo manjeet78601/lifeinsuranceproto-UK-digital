@@ -23,18 +23,17 @@ const routes: Routes = [
     component: SechduleAppointmentComponent
   },
   {
-    path: 'email-appt',
-    component: EmailApptComponent
-  },
- 
-   {
     path: 'schedule-doctor-visit',
  component : ScheduleDoctorVisitComponent
    },
-   {
-     path: 'appointment-details',
-      component: AppointmentDetailsComponent
-   }
+ {
+    path: 'appointment-details',
+     component: AppointmentDetailsComponent
+  },
+  {
+    path: 'email-appt',
+    component: EmailApptComponent
+  }
 
 ];
 
