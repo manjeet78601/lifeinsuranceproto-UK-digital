@@ -18,6 +18,7 @@ import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-
 import { QuoteComponent } from './quote/quote.component';
 import { ChatService } from '../../services/chat.service';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -32,8 +33,8 @@ import { ChatService } from '../../services/chat.service';
     InsuranceCalculatorComponent,
     FinancialBudgetComponent,
     ChoosePlanComponent,
-    HealthQuestionsComponent,
     ContactComponent,
+    HealthQuestionsComponent,    
     HelpComponent,
     TotalBudgetCalculatorComponent,
     QuoteComponent

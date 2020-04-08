@@ -12,6 +12,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
@@ -20,13 +21,13 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     SharedModule,
     IonicModule,
     MaterialModule,
-    AuthPageRoutingModule
-   
+    AuthPageRoutingModule,
+    ChartsModule
   ],
   declarations: [AuthPage,
-  SigninComponent,
-  SignupComponent,
-  ProfileComponent,
-  ForgotpasswordComponent]
+    SigninComponent,
+    SignupComponent,
+    ProfileComponent,
+    ForgotpasswordComponent]
 })
-export class AuthPageModule {}
+export class AuthPageModule { }

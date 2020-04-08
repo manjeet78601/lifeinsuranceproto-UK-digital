@@ -1,0 +1,39 @@
+.financial-accordion{
+    
+.pos-rel {
+    position: relative;
+}
+.t-l-7{
+top: 7px;
+left: 7px;
+}
+.header-title{
+    font-family: Playfair Display;
+    font-weight: bold;
+    font-size: 24px;
+    color: #000000;
+  }
+ .mat-accordian-header{
+     position: relative;
+ }
+    .user-icon {
+        position: absolute;
+        right: 20px;
+        vertical-align: middle;
+        top: 18px;
+        color: #767676;
+        &.complete {
+            color: #21BA45;
+        }
+    }
+    .tick-icon {
+        position: absolute;
+        right: 14px;
+        top: 16px;
+        width: 10px;
+        color: #767676;
+        &.complete {
+            color: #21BA45;
+        }
+    }
+}

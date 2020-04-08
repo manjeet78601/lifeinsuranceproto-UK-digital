@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Insurance 101",
+        "url": "home/chooseplan",
+        "isStep": true,
+        "isCompleted": false
+    },
+    {
+        "title": "Life Insurance Calculator",
+        "url": "/home/insurance-calculator",
+        "isStep": true,
+        "isCompleted": false
+    },
+    {
+        "title": "Budget Calculator",
+        "url": "/home/budget",
+        "isStep": true,
+        "isCompleted": false
+    },
+    {
+        "title": "Compare Quotes",
+        "url": "home/health",
+        "isStep": true,
+        "isCompleted": false
+    },
+    {
+        "title": "Contact",
+        "url": "home/contact"
+    },
+    {
+        "title": "Help",
+        "url": "home/help"
+    },
+    {
+        "title": "My Profile",
+        "url": "/auth/profile"
+    }
+]

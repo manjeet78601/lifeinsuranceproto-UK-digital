@@ -1,1 +1,24 @@
-/* No CSS *//*# sourceMappingURL=header.component.css.map */
+ion-content.menu-bar {
+  --ion-background-color: #222;
+  opacity: 0.95;
+}
+
+ion-content.menu-bar .menu-item {
+  font-size: 18px;
+  color: #fff;
+}
+
+ion-content.menu-bar .menu-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+ion-content.menu-bar .menu-step {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  min-width: 24px;
+  margin-right: 10px;
+  text-align: center;
+}
+/*# sourceMappingURL=header.component.css.map */

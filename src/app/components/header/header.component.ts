@@ -4,6 +4,7 @@ import { MenuService } from 'src/app/services/menu.service';
 import { NavigationMenu } from 'src/app/models/navigation.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +12,12 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  navigate$: Observable<NavigationMenu[]>;
-  constructor(private menu: MenuController, private navigationService: MenuService) { }
+  navigateBeforeSignin$: Observable<NavigationMenu[]>;
+  navigateAfterSignin$: Observable<NavigationMenu[]>;
+  constructor(private menu: MenuController, private navigationService: MenuService, private auth: AuthService) { }
   ngOnInit() {
-    this.navigate$ = this.navigationService.getNavigationMenus();
+    this.menu.enable(true, 'beforeLogin');
+    this.navigateBeforeSignin$ = this.navigationService.getNavigationMenuBeforeSignin();
+    this.navigateAfterSignin$ = this.navigationService.getNavigationMenuAfterSignin();
   }
-
 }

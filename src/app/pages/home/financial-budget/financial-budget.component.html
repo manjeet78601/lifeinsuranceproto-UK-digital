@@ -2,80 +2,85 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button text="" color="dark"
-        ><ion-icon name="arrow-back"></ion-icon
-      ></ion-back-button>
+      <ion-back-button text="" color="dark">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
     </ion-buttons>
     <ion-buttons slot="start" color="dark">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-   <ion-title class="ion-text-center app-name">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" />
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()" />
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <!-- End of header -->
 <!-- Main Section -->
 <ion-content>
-  <section class="content">
+  <section class="content wrapper">
     <header class="page-header" fxLayout="column" fxLayoutAlign="center center">
       <h1>{{ PAGE_HEADER }}</h1>
       <div class="progress-indicator">
         <mat-label>{{ progress }}%</mat-label>
       </div>
 
-      <mat-progress-bar
-        mode="determinate"
-        color="secondary"
-        [value]="progress"
-      ></mat-progress-bar>
+      <mat-progress-bar mode="determinate" color="secondary" [value]="progress"></mat-progress-bar>
     </header>
-    <section
-      class="wrapper"
-      fxLayout="column"
-      fxLayoutAlign="center center"
-      fxLayoutGap="10px"
-    >
+    <section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
       <header fxLayoutAlign="center center">
-        <h2>{{ PAGE_SUBHEADER }}</h2>
+        <h2 class="header-title">{{ PAGE_SUBHEADER }}</h2>
       </header>
-
-      <mat-accordion>
-        <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS">
-          <mat-expansion-panel-header
-            (click)="incrementProgress(item.PROGRESS)"
-          >
-            <mat-panel-title>
-              {{ item.TITLE }}
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div *ngFor="let que of item.QUESTIONS">
-            <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label>
-            <mat-label class="que-subheader">{{ que.SUBTEXT }}</mat-label>
-            <mat-slider
+      <form #f="ngForm" name="form">
+        <mat-accordion class="financial-accordion">
+          <ng-container *ngFor="let item of DOM_CONSTANTS">
+            <mat-expansion-panel class="mat-accordian-header"
+              [ngStyle]="{'background':item.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
+              <mat-expansion-panel-header (click)="incrementProgress(item.PROGRESS)"
+                [ngStyle]="{'background':item.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
+                <mat-panel-title>
+                  {{ item.TITLE }}
+                </mat-panel-title>
+                <ion-icon name="person" class="user-icon"
+                  [ngStyle]="{'color':item.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
+                <ion-icon name="checkmark" class="tick-icon"
+                  [ngStyle]="{'color':item.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
+              </mat-expansion-panel-header>
+              <div *ngFor="let que of item.QUESTIONS">
+                <!-- <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label> -->
+                <mat-label class="que-subheader" [ngClass]="{'txt-black': que.isVisited}">{{ que.QUESTIONTEXT }}
+                </mat-label>
+                <!-- <mat-slider
               [max]="que.MAX"
               [min]="que.MIN"
               [step]="que.STEP"
               [(ngModel)]="que.VALUE"
             >
-            </mat-slider>
-            {{ que.VALUE | currency }}
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
-      <button mat-flat-button color="primary" (click)="calculateBudget()">
-        {{ BTN.CALCULATE | uppercase }}
-      </button>
+            </mat-slider> -->
+                <mat-form-field appearance="outline" class="w-50">
+                  <span matPrefix>$</span>
+                  <input type="number" matInput class="align-end" [name]="que.NAME" [(ngModel)]="que.VALUE"
+                    (click)="que.isVisited = true" (ngModelChange)="checkQuestionStatus(item.ID)" required>
+                </mat-form-field>
+
+                <mat-icon class="pos-rel t-l-7">help_outline</mat-icon>
+              </div>
+            </mat-expansion-panel>
+          </ng-container>
+        </mat-accordion>
+      </form>
+      <div class="mt-20 ion-text-center">
+        <button mat-stroked-button class="back-btn mr-5" routerLink="/home/insurance-calculator">BACK</button>
+        <button mat-flat-button color="primary" [disabled]="f.invalid" (click)="calculateBudget(f)">
+          {{ BTN.CALCULATE | uppercase }}
+        </button>
+      </div>
+
+      <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
     </section>
     <!-- End of main section -->
   </section>
   <!-- Footer -->
-  <footer
-    class="footer"
-    fxLayout="row"
-    fxLayoutAlign="space-between"
-    fxLayoutGap="40px"
-  >
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">
         77 Water St 8th Floor,<br />

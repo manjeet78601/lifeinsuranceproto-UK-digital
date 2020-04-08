@@ -1,0 +1,53 @@
+<!-- Header -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- End of Header -->
+<ion-content>
+  <div class="bg-col">
+    <section class="wrapper ion-text-center content" fxLayout="column" fxLayoutAlign="center center">
+      <header>
+        <p class="facial-header">{{DOM_CONSTANTS.PAGE_HEADER}}</p>
+        <p class="header-title">{{DOM_CONSTANTS.PAGE_SUB_TEXT}}</p>
+        <p class="plan-content">{{DOM_CONSTANTS.PAGE_SUB_HEADER}}</p>
+      </header>
+      <img src="./../../../assets/img/payment-card.png" alt="payment-card">
+      <div class="mt-30">
+        <button mat-flat-button color="primary">{{BTN.ADD_CARD}}</button>
+      </div>
+    </section>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <p class="select-pay">{{DOM_CONSTANTS.PAY_TXT}}</p>
+    <button mat-button class='btn-black'>Pay with Pay</button>
+    <button class="mt-10" mat-button class='btn-grey'>Pay with
+      <img src="./../../../assets/img/paypal.png" alt="PayPal">
+    </button>
+  </div>
+  <!-- Footer -->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+  <!-- End of footer -->
+</ion-content>

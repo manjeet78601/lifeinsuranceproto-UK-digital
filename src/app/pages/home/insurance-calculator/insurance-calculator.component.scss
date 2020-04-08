@@ -1,47 +1,45 @@
-.insurance-que {
-    font-family: proxima nova;
-    font-size: 15px;
-    font-weight: bold;
-    display: inline-flex;
-    text-align: left;
+
+.title{
+  font-family: proxima nova;
+  font-size: 14px;
+  font-weight: bold; 
+  color: #000 !important;
+}
+.subtitle{
+ 
+  font-family:Playfair Display;
+  font-size:24px;
+  font-weight: bold;
+  color:#000;
 }
 
-.mat-button-toggle-group {
-      border:none !important;
-  }
-  .border{
-      border:2px solid grey;
-       width:30%;
-      float:right;
-      line-height: 3px;
-      text-align: right;
-      margin-bottom: 10px;
-  }
- .que-subheader1{
-    font-family: inherit;
-    font-size: 16px;
-    display: inline-flex;
-   text-align: left;
-  
-  }
-  .currencyinput {
-    border: 1px inset #ccc;
-    margin: 5px
+.plan-content-insur { 
+  font-family: Proxima Soft;;
+  font-size: 16px;
+  color: #000 !important;
 }
-.currencyinput input {
-    border: 0;
+.text{
+text-align: left; 
+white-space:pre-line;
 }
-.bordertxt{
-    text-align: right;
-    width:50%;
-    border:1px solid grey;
-    height:30px;
+.ipt{
+    text-align: end;
 }
-.mat-icon1{
-    float: left;
+.icon12{
+   display:block;
+}
+.insurance_input{
+  width: 75%;
+  height:95px;
+  position:realtive;
+  left:30px;
+}
+.hgt{
+  padding:10px;
+}
+.wrapper1{
+  padding:3px 6px
 }
 
-
-  
     
     

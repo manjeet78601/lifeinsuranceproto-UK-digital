@@ -9,7 +9,7 @@
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center app-name">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +17,8 @@
 <ion-content>
   <!--Quotes Header-->
   <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <header fxLayoutAlign="center center">
+    <h2 class="exp-header">Compare Quotes</h2>
+    <header fxLayoutAlign="center center">     
       <h2 class="header-title">{{DOM_CONSTANTS.QUOTE_HEADER }}</h2>
     </header>
     <p fxLayoutAlign="center center" class="plan-sub-header">{{DOM_CONSTANTS.QUOTE_SUB_HEADER }}</p>
@@ -27,65 +28,70 @@
       <div fxLayout="column" class="quote-img">
         <img [src]="quo.prodImg" alt="dummy-image">
       </div>
-      <h2 class="exp-header pad-15px">{{quo.quoteHeader }}</h2>
+      <h2 class="exp-header pad-10">{{quo.quoteHeader }}</h2>
       <h2 class="quo-sub-header">{{quo.quoteDetails}}</h2>
       <ion-grid>
         <ion-row>
-          <ion-col size="6">
+          <ion-col size="9">
             <div class="exp-header"> {{DOM_CONSTANTS.CUST_HEADER}}
             </div>
           </ion-col>
-          <ion-col>
+          <ion-col size="3">
             <div>
               <ion-icon class='heart-icon' *ngFor="let r of ' '.repeat(quo.custAvgRatings).split('')" name="heart">
               </ion-icon>
-              <ion-icon *ngFor="let r of ' '.repeat(5-quo.custAvgRatings).split('')" name="heart-outline">
+              <ion-icon class="heart-grey-icon" *ngFor="let r of ' '.repeat(5-quo.custAvgRatings).split('')"
+                name="heart">
               </ion-icon>
             </div>
           </ion-col>
         </ion-row>
       </ion-grid>
-      <mat-card-content *ngIf="collapsedSec1">
-        <mat-card-actions fxLayout="column" fxLayoutAlign="center start">
-          <button mat-flat-button (click)="collapsedSec1=false"
-            class="btn-mat-card marg-10px">{{BTN.READ_MORE}}</button>
-        </mat-card-actions>
-      </mat-card-content>
-      <mat-card-content *ngIf="!collapsedSec1">
-        <ion-grid>
+      <mat-card-content [hidden]="collapse[i]">
+        <div fxLayout="column" fxLayoutAlign="center start">
+          <button mat-flat-button (click)="collapse[i] = !collapse[i]" fxFlex="20"
+            class="btn-mat-card">{{BTN.READ_MORE}}</button>
+        </div>
+        <div class="mt-10" fxLayout="column" fxLayoutAlign="center center">
+          <button mat-stroked-button class="quo-btn bg-blk col-wht" (click)="goToNext()">{{BTN.GET_QUOTE}}</button>
+        </div>
+        </mat-card-content>
+      <mat-card-content [hidden]="!collapse[i]"> <ion-grid>
           <ion-row *ngFor="let cus of quo.customerRatings">
-            <ion-col size="6">
+            <ion-col size="9">
               <ion-row>
-                <div class="exp-header">
-                  {{cus.name}}
+                <div>
+                  <span class="label-inline exp-header">{{cus.name}} </span>
+                  <span class="label-inline btn-mat-card ml-5"> {{cus.timestamp}}</span>
                 </div>
-              </ion-row>
-              <ion-row>
                 <div class="comment-txt">{{cus.comment}}</div>
               </ion-row>
             </ion-col>
-            <ion-col class="btn-mat-card">{{cus.timestamp}}</ion-col>
             <ion-col size="3">
               <div>
                 <ion-icon class='heart-icon' *ngFor="let r of ' '.repeat(cus.ratings).split('')" name="heart">
                 </ion-icon>
-                <ion-icon class='heart-icon' *ngFor="let r of ' '.repeat(5-cus.ratings).split('')" name="heart-outline">
+                <ion-icon class="heart-grey-icon" *ngFor="let r of ' '.repeat(5-cus.ratings).split('')" name="heart">
                 </ion-icon>
               </div>
             </ion-col>
           </ion-row>
         </ion-grid>
-        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="40px">
-          <button mat-flat-button fxLayoutAlign="center end" class="quo-btn" color="primary"
-            (click)="getPDF()">{{BTN.GET_QUOTE}}</button>
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <button mat-stroked-button class="quo-btn bg-blk col-wht" (click)="goToNext()">{{BTN.GET_QUOTE}}</button>
+          <button mat-flat-button (click)="collapse[i] = !collapse[i]" class="btn-mat-card mt-10">{{BTN.CLOSE}}</button>
         </div>
-        <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
-          <button mat-flat-button (click)="collapsedSec1=true" class="btn-mat-card marg-10px">{{BTN.CLOSE}}</button>
-        </mat-card-actions>
       </mat-card-content>
     </mat-card>
   </section>
-
+  <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class="mb-70 mt-50">
+    <div>
+      <button mat-stroked-button  class="btn btn-border"(click)="getPrevious()">{{BTN.BACK}}</button>
+      <button class="btn bg-blk col-wht" mat-stroked-button (click)="goToNext()">
+        {{BTN.GET_QUOTE}}</button>
+    </div>
+    <a *ngIf="!isUerLoggedIn" [routerLink]="['./']" (click)="createAccount()" class="btn-acc" mat-menu-item>Create account</a>
+  </section>
   <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">

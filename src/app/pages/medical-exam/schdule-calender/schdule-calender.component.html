@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!--Quotes Header-->
+  <section>
+     
+    <div class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <header class="page-header" fxLayout="column" fxLayoutAlign="center center">
+        <h2 class="subtitle">{{ DOM_CONSTATNTS.HEADER }}</h2>
+      </header>
+      <div fxLayout="row" fxLayoutAlign="center center">
+       <mat-card>
+          <mat-calendar #calendar [(selected)]="selectedDate"
+           (selectedChange)="onSelect($event)"></mat-calendar>
+        </mat-card>
+       
+      </div>
+
+      <!-- appointment badges -->
+      
+      <div class="wrapper" fxLayout="column" fxLayoutAlign="start">
+        <p class="title">{{ DOM_CONSTATNTS.AVAL_TIME}}</p>
+        <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="16px grid" class=" mt-20">
+      <mat-chip-list #chipList  >
+                <mat-chip *ngFor="let appt of appt_timeslots" [ngClass]="{ 'colorRed' :flag }" >
+                  {{appt.text}}
+                </mat-chip>
+              </mat-chip-list>
+            
+          <!-- <div *ngFor="let appt of appt_timeslots" [ngSwitch]="appt.value">
+              <button mat-stroked-button name="timeslot" value="{{ appt.value }}">
+          <span *ngSwitchCase="appt.value">{{appt.text}}</span>
+              </button>
+          </div> -->
+        </div>
+
+        <!-- choose Appointment-->
+        <div class="mt-20">
+          <p class="title">{{DOM_CONSTATNTS.CHOOSE_TIME}}</p>
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+            <!-- <mat-form-field appearance="outline" class="w-90"> -->
+              <mat-select (selectionChange)="onChangedSort($event)">
+                <mat-option *ngFor="let timing of backendData" [value]="timing">
+                  {{timing}}
+                </mat-option>
+              </mat-select>
+            
+          </div>
+        </div>
+      </div>
+   
+    </div>
+  
+    <!--  -->
+    <section>
+      <div class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <div fxLayout="row" fxLayoutGap="20px">
+          <button mat-button><span><ion-icon name="mail"></ion-icon></span></button>
+          <!-- need an anchor tag -->
+          <p class="title">{{DOM_CONSTATNTS.EMAIL}}</p>
+        </div>
+        <div fxLayout="row">
+          <p class="title note">{{DOM_CONSTATNTS.NOTE}}</p>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <button mat-stroked-button routerLink="/medical-exam/sechdule-appointment" color="primary">BACK</button>
+          <button mat-flat-button routerLink="/medical-exam/schdule-booked" class="black_color">BOOK</button>
+        </div>
+      </div>
+    </section>
+  </section>
+  <!--Footer-->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+</ion-content>

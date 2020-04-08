@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeConstants } from '../../home/home.constants';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-insurance-calculator',
@@ -9,33 +10,25 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./insurance-calculator.component.scss'],
 })
 export class InsuranceCalculatorComponent implements OnInit {
-
-
+  BTN = HomeConstants.BTN;
+  PAGE_BOTTOM1 = HomeConstants.PAGE_BOTTOM1;
   PAGE_SUBTITLE = HomeConstants.PAGE_SUBTITLE;
   PAGE_HEADER = HomeConstants.LIFE_INSURANCE_HEADER;
   PAGE_SUB_HEADER = HomeConstants.LIFE_INSURANCE_SUB_HEADER;
-  PAGE_CONTENT_QUERIES = HomeConstants.PAGE_CONTENT_QUERIES;
+  STEP1_BOTTOM = HomeConstants.STEP1_BOTTOM;
   BTTN = HomeConstants.BTTN;
-  BUTTON_CONTENT = HomeConstants.BUTTON_CONTENT;
-  INSURANCE_RECOMENDATION = HomeConstants.INSURANCE_RECOMENDATION;
-  LETS_GETS_TARTED = HomeConstants.LETS_GETS_TARTED;
-  PAGE_CONTENT_US1 = HomeConstants.PAGE_CONTENT_US1;
-  PAGE_BOTTOM = HomeConstants.PAGE_BOTTOM;
   progress = 0;
   totalCoverage = 0;
-
-  PAGE_CONTENT_US = HomeConstants.PAGE_CONTENT_US;
-
   INSURANCE_CALCULATOR = HomeConstants.INSURANCE_CALCULATOR;
-
-
-  constructor(private router: Router,
-    private navigationService: MenuService) { }
+  isUerLoggedIn: boolean;
+  constructor(private router: Router, private navigationService: MenuService, private auth: AuthService) {
+    this.isUerLoggedIn = this.auth.isUserLoggedIn;
+  }
 
   ngOnInit() { }
 
   InsuranceBudget() {
-    this.navigationService.setCompletedMenu('Insurance calculator')
+    this.navigationService.setCompletedMenu('Life Insurance Calculator');
     this.router.navigate(['/home/budget']);
 
   }
@@ -48,16 +41,27 @@ export class InsuranceCalculatorComponent implements OnInit {
   }
 
   calculateCoverage() {
-    this.INSURANCE_CALCULATOR.QUESTIONS.forEach(element => {
-      if (element.VALUE === 0) {
-        this.totalCoverage = 0;
-        return false;
-      } else {
-        this.totalCoverage = Math.floor(Math.random() * 100000) + 10000
-      }
-    });
+    const annualIncome = this.INSURANCE_CALCULATOR.QUESTIONS[0].VALUE;
+    const years = this.INSURANCE_CALCULATOR.QUESTIONS[1].VALUE;
+    const debt = this.INSURANCE_CALCULATOR.QUESTIONS[2].VALUE;
+    const childrensFuture = this.INSURANCE_CALCULATOR.QUESTIONS[3].VALUE;
+    const funeraryCosts = this.INSURANCE_CALCULATOR.QUESTIONS[4].VALUE;
+    const savings = this.INSURANCE_CALCULATOR.QUESTIONS[5].VALUE;
+    const existingPolicy = this.INSURANCE_CALCULATOR.QUESTIONS[6].VALUE;
+    const additionalAnnualIncome = this.INSURANCE_CALCULATOR.QUESTIONS[7].VALUE;
+
+    const totalCoverage = (annualIncome * years)
+      + debt + childrensFuture + funeraryCosts - savings - existingPolicy - additionalAnnualIncome;
+    this.totalCoverage = totalCoverage > 0 ? totalCoverage : 0;
+
   }
 
+  createAccount() {
+    this.router.navigate(['/auth/signup']);
+  }
+  gotoHomePage() {
+    this.router.navigate(['/home']);
+  }
 
 }
 

@@ -1,0 +1,305 @@
+[
+    {
+        "title": "Goals/Aspirations",
+        "quesHeader": "What are your financial goals and aspirations?",
+        "id": 1,
+        "questions": [
+            {
+                "name": "Growing wealth",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+
+            },
+            {
+                "name": "Financial stability",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            },
+            {
+                "name": "Protect my family",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            },
+            {
+                "name": "More",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            },
+            {
+                "name": "More",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            },
+            {
+                "name": "More",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            },
+            {
+                "name": "Other",
+                "tooltipInfo": "",
+                "element": "toggleButton",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Housing Expenses",
+        "quesHeader": "",
+        "id": 2,
+        "questions": [
+            {
+                "name": "Monthly rent/mortgage",
+                "tooltipInfo": "Monthly rent/mortgage",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Monthly utilities (water,electricity, etc.)",
+                "tooltipInfo": "Monthly utilities (water,electricity, etc.)",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Monthly home maintenance fees",
+                "tooltipInfo": "Monthly home maintenance fees",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Monthly property tax",
+                "tooltipInfo": "Monthly property tax",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Living Expenses",
+        "quesHeader": "",
+        "id": 3,
+        "questions": [
+            {
+                "name": "Monthly groceries",
+                "tooltipInfo": "Monthly groceries",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Monthly lease, car payments, insurance",
+                "tooltipInfo": "Monthly lease, car payments, insurance",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Monthly gas/oil",
+                "tooltipInfo": "Monthly gas/oil",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Monthly entertainment bills (cell phone, internet, etc.)",
+                "tooltipInfo": "Monthly entertainment bills (cell phone, internet, etc.)",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Additional expected monthly expenses",
+                "tooltipInfo": "Additional expected monthly expenses",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Sources of Income",
+        "quesHeader": "",
+        "id": 4,
+        "questions": [
+            {
+                "name": "Do you own a business?",
+                "tooltipInfo": "Do you own a business?",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "What is your yearly income/salary?",
+                "tooltipInfo": "What is your yearly income/salary?",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Additional sources of annual income (side job, rental, stipends, passive income, etc.)",
+                "tooltipInfo": "Additional sources of annual income (side job, rental, stipends, passive income, etc.)",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Expected annual bonuses",
+                "tooltipInfo": "Expected annual bonuses",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Debts",
+        "quesHeader": "",
+        "id": 5,
+        "questions": [
+            {
+                "name": "Outstanding credit card debt",
+                "tooltipInfo": "Outstanding credit card debt",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Outstanding student loan debt",
+                "tooltipInfo": "Outstanding student loan debt",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Other outstanding loans",
+                "tooltipInfo": "Other outstanding loans",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Investment Assets",
+        "quesHeader": "",
+        "id": 6,
+        "questions": [
+            {
+                "name": "How much do you contribute to a 401k?",
+                "tooltipInfo": "How much do you contribute to a 401k?",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "How much do you contribute to an IRA?",
+                "tooltipInfo": "How much do you contribute to an IRA?",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "How much do you contribute to a 529?",
+                "tooltipInfo": "How much do you contribute to a 529?",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "How much do you contribute to FSA/HSA?",
+                "tooltipInfo": "How much do you contribute to FSA/HSA?",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Personal Assets",
+        "quesHeader": "",
+        "id": 7,
+        "questions": [
+            {
+                "name": "How much do you currently have in bank accounts?",
+                "tooltipInfo": "How much do you currently have in bank accounts?",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "How much is your home worth?",
+                "tooltipInfo": "How much is your home worth?",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "How much are your (owned) vehicles worth?",
+                "tooltipInfo": "How much are your (owned) vehicles worth?",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "How much are your valuables worth? (Cameras, jewelry, fine art, etc.)",
+                "tooltipInfo": "How much are your valuables worth? (Cameras, jewelry, fine art, etc.)",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    },
+    {
+        "title": "Expected Cash Windfall",
+        "quesHeader": "",
+        "id": 8,
+        "questions": [
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            },
+            {
+                "name": "Lorem ipsum",
+                "tooltipInfo": "Lorem ipsum",
+                "element": "inputNumber",
+                "placeholder": "00.00",
+                "value": ""
+            }
+        ],
+        "isAllQuestionsAnswered": false
+    }
+]

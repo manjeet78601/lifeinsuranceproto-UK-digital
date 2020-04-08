@@ -15,8 +15,9 @@
 <!-- Main Content -->
 <ion-content fullscreen>
   <div class="chats">
-    <div class="chatbox">
-      <div *ngFor="let message of messages | async">
+    <div class="chatbox msg-scroll" #scrollMe>
+
+      <ng-container *ngFor="let message of messages | async">
         <div class="message sent" *ngIf="message.sentBy === 'user'">
           {{message.content}}
           <!-- <span class="metadata">
@@ -26,55 +27,57 @@
         <div class=" message received" *ngIf=" message.sentBy === 'bot'">
           <!-- <strong>{{message.displayName}}</strong> <br> -->
           {{message.content}}
-          <span class="metadata">
-                <!-- <span class="time">{{chat.createdAt | date: 'HH:mm aaa'}}</span> -->
-          </span>
+          <!-- <span class="metadata"> -->
+          <!-- <span class="time">{{chat.createdAt | date: 'HH:mm aaa'}}</span> -->
+          <!-- </span> -->
         </div>
         <!-- <p align="center" class="joined"  *ngIf="message.type==='joined'">
             <span class="rounded bg-primary text-white">{{message.displayName}} Joined</span> -->
         <!-- </p> -->
-      </div>
+      </ng-container>
     </div>
+
   </div>
 </ion-content>
 <!-- End of main content -->
 <!-- Footer -->
 <ion-footer>
   <ion-toolbar>
-    <div fxLayout="row"  fxLayoutAlign="space-between">
+    <div fxLayout="row" fxLayoutAlign="space-between">
       <div fxLayout="row">
-      <div>
-        <button mat-icon-button>
+        <div>
+          <button mat-icon-button>
             <mat-icon class="material-icons">
-                linked_camera</mat-icon>
-            </button>
-      </div>
-      <div>
-        <button mat-icon-button>
-          <mat-icon nclass="material-icons">
+              linked_camera</mat-icon>
+          </button>
+        </div>
+        <div>
+          <button mat-icon-button>
+            <mat-icon nclass="material-icons">
               favorite</mat-icon>
           </button>
-      </div>
-      <div>
-        <button mat-icon-button> 
+        </div>
+        <div>
+          <button mat-icon-button>
             <mat-icon class="material-icons">
-                text_format</mat-icon>
-        </button>
+              text_format</mat-icon>
+          </button>
+        </div>
       </div>
-    </div>
-  <div fxlayoutAlign="end" class="remove-appearance-outline">
-        <mat-form-field appearance="outline" >
+
+      <div fxlayoutAlign="end">
+        <mat-form-field appearance="outline">
           <input type="text" matInput [(ngModel)]="formValue" (keyup.enter)="sendMessage()" placeholder="Your message here">
-        <mat-icon matSuffix class="material-icons">
-              settings_voice</mat-icon>
-         </mat-form-field>
-          <!-- <span >
+          <mat-icon matSuffix class="material-icons">
+            settings_voice</mat-icon>
+        </mat-form-field>
+        <!-- <span >
           <button mat-icon-button>
               <mat-icon class="material-icons">
                   settings_voice</mat-icon>
            </button> </span> -->
       </div>
-    
+
     </div>
   </ion-toolbar>
 </ion-footer>

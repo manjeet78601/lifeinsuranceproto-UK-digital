@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACL,QAAQ,EAAE,QAAQ;CACrB;;AACD,AAAA,MAAM,CAAA;EACN,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;CACR",
+    "sources": [
+        "financial-budget.component.scss"
+    ],
+    "names": [],
+    "file": "financial-budget.component.css"
+}

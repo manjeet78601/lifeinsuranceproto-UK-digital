@@ -13,13 +13,6 @@
   text-align: center;
 }
 
-.green-icon {
-  color: green;
-  width: 10px;
-  height: 15px;
-  font-weight: bold;
-}
-
 .mat-table {
   overflow: auto;
   height: 306px;
@@ -56,14 +49,14 @@ mat-cell {
 }
 
 .btn-mat-card {
-  font-family: SegoeUI;
+  font-family: Proxima Soft;
   font-size: 16px;
   background-color: #f8f8f8;
   color: #cccccc;
 }
 
 .plan-mat-card-title {
-  font-family: SegoeUI;
+  font-family: Proxima Soft;
   font-weight: bold;
   font-size: 24px;
   background-color: #fafafb;
@@ -92,7 +85,7 @@ mat-cell {
 
 .exp-header {
   font-family: Proxima Soft;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: #070707;
   text-align: left;
@@ -106,7 +99,15 @@ p {
 }
 
 .heart-icon {
-  color: #ef3b51;
+  color: #FAEF54;
+  border: thin;
+  border-color: #E5DA3F;
+}
+.heart-grey-icon {
+  color: #D9D9D9;
+}
+ion-icon {
+  font-size: 14px;
 }
 .quo-btn {
   margin-top: 30px !important;
@@ -116,7 +117,7 @@ p {
   font-size: 16px;
   color: #070707;
   text-align: left;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 .comment-txt {
   font-family: Proxima Soft;
@@ -133,9 +134,25 @@ ion-grid {
     margin-top: 0px !important;
   }
 }
-.pad-15px {
-  padding-left: 15px;
+.pad-10 {
+  padding-left: 10px;
 }
 .marg-10px {
   margin-left: 10px;
+}
+.label-inline {
+  display: inline-block;
+}
+.ml-5{
+  margin-left: 5px; 
+}
+.btn-acc{
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #CCCCCC;
+}
+.btn-border{
+  border-radius: 2px;
+  border-color: #00B5AD;
+  margin-right: 10px;
 }

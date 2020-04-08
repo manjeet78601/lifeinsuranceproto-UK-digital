@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>locate-lab</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
+    <label class="que-label">To complete your medical profile, you are required to complete a blood and urine test at a local medical lab.
+    </label>
+    <mat-label>What is your preferred lab?</mat-label>
+    <div>
+      <mat-checkbox  [value]="item.name" *ngFor="let item of availableLabs">{{ item.name }}</mat-checkbox>
+    </div>
+  </section>
+</ion-content>

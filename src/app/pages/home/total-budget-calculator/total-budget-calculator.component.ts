@@ -3,6 +3,8 @@ import { HomeConstants } from './../home.constants';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-total-budget-calculator',
@@ -14,12 +16,16 @@ export class TotalBudgetCalculatorComponent implements OnInit {
   BTN = HomeConstants.BTN;
   amountLeft = 1000;
   totals: any[];
-
+  isUerLoggedIn: boolean;
   constructor(
     private router: Router,
     private navigationService: MenuService,
-    private userService: UserService
-  ) { }
+    private userService: UserService,
+    private auth: AuthService,
+    private toast: ToastService
+  ) {
+    this.isUerLoggedIn = this.auth.isUserLoggedIn;
+  }
 
   ngOnInit() {
     this.getTotals();
@@ -27,18 +33,29 @@ export class TotalBudgetCalculatorComponent implements OnInit {
   }
 
   getAmountLeft() {
-    return (this.totals[0].TOTAL - this.totals[3].TOTAL)
+    const total = (this.totals[0].value - this.totals[1].value) > 0 ? (this.totals[0].value - this.totals[1].value) : 0;
+    return total;
+  }
+  setAmountLeft() {
+    this.amountLeft = this.getAmountLeft();
+    if (this.amountLeft === 0) {
+      this.toast.presentToast('Seems like your expenses are greater than income.', 4000);
+    }
   }
 
   getTotals() {
     this.totals = this.userService.getCalculatedBudget();
-    //this.totals.map(res => res.AMOUNT = 450);
-    this.amountLeft = this.getAmountLeft();
+    this.setAmountLeft();
   }
 
   getQuote() {
-    this.navigationService.setCompletedMenu('Financial Budget');
-    this.router.navigate(['/home/chooseplan']);
+    this.navigationService.setCompletedMenu('Budget Calculator');
+    this.router.navigate(['/home/health']);
   }
-
+  createAccount() {
+    this.router.navigate(['/auth/signup']);
+  }
+  gotoHomePage() {
+    this.router.navigate(['/home']);
+  }
 }

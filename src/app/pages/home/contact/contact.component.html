@@ -7,38 +7,49 @@
       <ion-menu-button color="dark"></ion-menu-button>  
     </ion-buttons>  
    <ion-title class="ion-text-center app-name">  
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" >
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
     </ion-title>  
   </ion-toolbar>
 </ion-header> 
-<ion-content class="text-center">
-  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="custom-mat-btn-toggle-group mt-30">
-    <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
-    <span class="circle">or</span>
-    <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
-  </mat-button-toggle-group>
-  <hr>
-  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="custom-mat-btn-toggle-group mt-30">
-    <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
-    <span class="circle">or</span>
-    <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
-  </mat-button-toggle-group>
-  <hr>
-  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="custom-mat-btn-toggle-group mt-30">
-    <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
-    <span class="circle">or</span>
-    <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
-  </mat-button-toggle-group>
+<ion-content>
+  <section  class="wrapper-auth content contact-us" fxLayout="column" fxLayoutAlign="center center">
+    <header>
+      <p class="header">Contact Us</p>
+    </header>
+    <form class="contactus" [formGroup]="contactForm">
+      <p class="form-label"><label for="uname">Name</label></p>
+      <mat-form-field appearance="outline" class="form-input-control mb-20">
+        <input formControlName="name" matInput type="text" placeholder="Firstname" value="" id="uname">
+        <!-- <mat-error>Invalid username</mat-error> -->
+      </mat-form-field>
+      <p class="form-label"><label for="email">Email address</label></p>
+      <mat-form-field appearance="outline" class="form-input-control mb-20">
+        <input formControlName="email" matInput type="text" placeholder="" value="" id="email">
+        <!-- <mat-error>Invalid password</mat-error> -->
+      </mat-form-field>
+      <p class="form-label"><label for="notes">How can we help?</label></p>
+      <!-- <textarea formControlName="note" rows="8" cols="50" id="notes" class="form-input-control"></textarea> -->
+      <mat-form-field appearance="outline" class="form-input-control text-note mb-20">
+        <textarea formControlName="note" matInput type="text" placeholder="" value="" id="notes" class="mat-form-field-flex form-control"></textarea>
+      </mat-form-field>
+      <div class="mt-50 ion-text-center"> 
+          <button type="submit" class="btn bg-blk col-wht" mat-stroked-button [disabled]="!contactForm.valid" (click)="onFormsubmit()">Submit</button>
+      </div>
+  </form>
+  </section>
+  <!-- Footer -->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br />
+        Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+  <!-- End of footer -->
 </ion-content>
-<footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
-  <ion-text class="align-item-bottom">
-    <ion-label class="fl-footer-content">
-       77 Water St 8th Floor,<br/> Manhattan, NY 10005
-   </ion-label>
- </ion-text>
- <ion-text class="align-item-bottom">
-   <ion-label class="fl-footer-content">
-    Copyright Life+ © 2020
-   </ion-label>
- </ion-text>
-</footer> 

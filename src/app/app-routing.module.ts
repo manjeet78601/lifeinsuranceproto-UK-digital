@@ -43,7 +43,11 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: 'home'
-  }
+  },
+  {
+    path: 'medical-exam',
+    loadChildren: () => import('./pages/medical-exam/medical-exam.module').then( m => m.MedicalExamPageModule)
+  },
 
 ];
 

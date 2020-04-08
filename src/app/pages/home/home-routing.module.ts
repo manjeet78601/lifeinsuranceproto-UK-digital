@@ -48,8 +48,7 @@ const routes: Routes = [
   {
     path: 'quote',
     component: QuoteComponent
-  },
-
+  }
 ];
 
 @NgModule({

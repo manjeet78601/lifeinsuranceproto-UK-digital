@@ -4,8 +4,7 @@ ion-toolbar {
 .mat-icon-button {
     margin-top: 10px;
 }
-/* input text Border */
-.mat-form-field-appearance-outline .mat-form-field-outline {
-    border: 1px solid grey;
-    border-radius:25px !important;
+.msg-scroll {
+    overflow-y: auto;
+    max-height: 539px;
   }

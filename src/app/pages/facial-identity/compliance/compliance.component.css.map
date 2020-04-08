@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACV,WAAW,EAAE,gBAAgB;EAC7B,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,OAAO;CACf;;AAED,AAAA,aAAa,CAAA;EACX,WAAW,EAAE,YAAY;EACzB,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,OAAO;CACf",
+    "sources": [
+        "compliance.component.scss"
+    ],
+    "names": [],
+    "file": "compliance.component.css"
+}

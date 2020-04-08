@@ -10,7 +10,7 @@
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center app-name">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -27,7 +27,7 @@
         <h2>
           {{ DOM_CONSTANTS.PAGE_HEADER }}
         </h2>
-        <mat-label class="lightgray-text">{{ amountLeft | currency }}</mat-label>
+        <mat-label class="lightgray-text">{{ amountLeft | currency}} per month</mat-label>
         <h5>{{ DOM_CONSTANTS.PAGE_SUB_TEXT}}</h5>
       </header>
       <div class="w-100">
@@ -36,24 +36,32 @@
       <table class="w-100">
         <tr *ngFor="let item of totals">
           <td class="w-50 h-25">
-            {{ item.TOTAL_TEXT }}
+            {{ item.title }}
           </td>
           <td class="w-50 h-25">
-            {{ item.TOTAL | currency}}
+            {{ item.value | currency}}
           </td>
         </tr>
       </table>
     </section>
 
-    <section class="bg-lightgray ion-padding">
-      <div *ngFor="let que of totals">
-        <mat-label class="que-header">{{ que.TOTAL_TEXT }}</mat-label>
-        <mat-slider [max]="que.MAX" [min]="que.MIN" [step]="que.STEP" [(ngModel)]="que.TOTAL">
-        </mat-slider>
-        {{ que.TOTAL | currency}}
+    <section class="bg-lightgray ion-padding" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <div *ngFor="let que of totals" fxLayout="column">
+        <mat-label>{{ que.title }}</mat-label>
+        <mat-form-field appearance="outline">
+          <span matPrefix>$</span>
+          <input type="number" class="align-end" matInput [(ngModel)]="que.value" (change)="setAmountLeft()">
+        </mat-form-field>
+        <!-- <mat-slider [max]="que.MAX" [min]="que.MIN" [step]="que.STEP" [(ngModel)]="que.TOTAL">
+        </mat-slider> -->
+        <!-- {{ que.TOTAL | currency}} -->
       </div>
-      <div fxLayout="row" fxLayoutAlign="center center">
-        <button mat-flat-button color="primary" (click)="getQuote()">{{ BTN.STEP_THREE | uppercase}}</button>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <div class="ion-text-center">
+          <button mat-stroked-button class="back-btn mr-5" routerLink="/home/budget">BACK</button>
+          <button mat-flat-button color="primary" (click)="getQuote()">{{ BTN.STEP_THREE | uppercase}}</button>
+        </div>
+        <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
       </div>
 
     </section>

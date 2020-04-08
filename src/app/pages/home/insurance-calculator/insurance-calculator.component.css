@@ -1,0 +1,48 @@
+.title {
+  font-family: proxima nova;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000 !important;
+}
+
+.subtitle {
+  font-family: Playfair Display;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+.plan-content-insur {
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color: #000 !important;
+}
+
+.text {
+  text-align: left;
+  white-space: pre-line;
+}
+
+.ipt {
+  text-align: end;
+}
+
+.icon12 {
+  display: block;
+}
+
+.insurance_input {
+  width: 75%;
+  height: 95px;
+  position: realtive;
+  left: 30px;
+}
+
+.hgt {
+  padding: 10px;
+}
+
+.wrapper1 {
+  padding: 3px 6px;
+}
+/*# sourceMappingURL=insurance-calculator.component.css.map */
