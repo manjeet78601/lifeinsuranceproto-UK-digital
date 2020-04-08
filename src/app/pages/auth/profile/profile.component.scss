@@ -52,13 +52,17 @@
             margin: 15px 0;
         }
         .que-header {
-            color: #000000;
             line-height: 23px;
         }
         .tooltip {
             color:#6e6e6e;
             padding-left: 15px;
             vertical-align: middle;
+        }
+        &.input-box{
+            .que-header {
+                font-weight: normal;
+            }
         }
     }
     .mat-expansion-panel-body{
