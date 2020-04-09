@@ -18,9 +18,7 @@ import { CompareQuotesConstant, } from '../../../properties/compare-quotes.const
 })
 export class HealthQuestionsComponent implements OnInit {
   today = new Date();
-  // today1 = new Date();
-   dateBefore18Years = new Date(this.today.getFullYear() - 18, this.today.getMonth() - 1, this.today.getDate());
-
+  dateBefore18Years = new Date(this.today.getFullYear() - 18, this.today.getMonth() - 1, this.today.getDate());
    birthDate = new Date();
    birthdaterror = false;
    insuranceText: string;
@@ -69,11 +67,7 @@ export class HealthQuestionsComponent implements OnInit {
     const today = new Date();
     const today1 = new date();
     const dateBefore18Years = new Date(today.getFullYear() - 18, today.getMonth() - 1, today.getDate());
-    // const minDate = new Date(Date.now());
-   // const  dateAfteryears = new Date(today.getFullYear() - 100, today.getMonth()-1,today.getDate());
-//     this.minDate.setDate( this.minDate.getDate() );
-// this.minDate.setFullYear( this.minDate.getFullYear() - 100 );
-
+  
     if (date > today) {
       this.toast.presentToast('Seems like you are not born yet, Please get back to us once you will be 18 !');
       this.birthdaterror = true;
