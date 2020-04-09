@@ -13,22 +13,34 @@ export class MyAppointmentsComponent implements OnInit {
   DOM_CONSTANTS = AppointmentsConstant.APPT;
   BTN = AppointmentsConstant.BTN;
   schdData: any;
-  docApptsData: any;
+  schHeader: string;
   constructor(private router: Router, private apptService: AppointmentsService) { }
 
   ngOnInit() {
+    this.schHeader = AppointmentsConstant.APPT.SCHD_HEADER;
     this.schdData = this.getScheduleDetails();
-    this.docApptsData = this.getDocAppts();
   }
   goToSchedule() {
     this.router.navigate(['/medical-exam']);
   }
+  // Get Scheduled Appts
   getScheduleDetails() {
     this.schdData = this.apptService.getApptScheduleDetails();
+    if (Object.keys(this.schdData).length === 0) {
+      AppointmentsConstant.APPT.SCHD_HEADER = this.schHeader;
+      AppointmentsConstant.APPT.SCH_DETAILS = '';
+    } else {
+      AppointmentsConstant.APPT.SCHD_HEADER = this.schdData.location;
+      AppointmentsConstant.APPT.SCH_DETAILS = AppointmentsConstant.APPT.SCH_DETAILS + this.schdData.location + ' for '
+        + this.schdData.date + ' at ' + this.schdData.time;
+    }
   }
-  getDocAppts() {
+  // cancelling Appt
+  cancelAppt() {
+    this.apptService.apptDetails = {};
+    this.getScheduleDetails();
+  }
 
-  }
   gotoHomePage() {
     this.router.navigate(['/home']);
   }

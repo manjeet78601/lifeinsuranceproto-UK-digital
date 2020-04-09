@@ -25,38 +25,34 @@
         <mat-card>
           <mat-calendar #calendar [(selected)]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
         </mat-card>
-
       </div>
-
-      <!-- appointment badges -->
-
-      <div class="wrapper" fxLayout="column" fxLayoutAlign="start">
-        <p class="title">{{ DOM_CONSTATNTS.AVAL_TIME}}</p>
-        <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="16px grid" class=" mt-20">
-          <mat-chip-list #chipList>
-            <mat-chip *ngFor="let appt of appointmentTimeSlots" [ngClass]="{ 'colorRed' :flag }">
-              {{appt.text}}
-            </mat-chip>
-          </mat-chip-list>
-        </div>
-
-        <!-- choose Appointment-->
-        <div class="mt-20">
-          <p class="title">{{DOM_CONSTATNTS.CHOOSE_TIME}}</p>
-          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-            <!-- <mat-form-field appearance="outline" class="w-90"> -->
-            <mat-select class="time-slot" (selectionChange)="onChangedSort($event)">
-              <mat-option *ngFor="let timing of backendData" [value]="timing">
-                {{timing}}
-              </mat-option>
-            </mat-select>
-
-          </div>
-        </div>
-      </div>
-
     </div>
 
+    <!-- appointment badges -->
+
+    <div class="wrapper" fxLayout="column" fxLayoutAlign="start">
+      <p class="title">{{ DOM_CONSTATNTS.AVAL_TIME}}</p>
+      <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="16px grid" class=" mt-20">
+        <mat-chip-list #chipList>
+          <mat-chip *ngFor="let appt of appt_timeslots" [ngClass]="{ 'colorRed' :flag }">
+            {{appt.text}}
+          </mat-chip>
+        </mat-chip-list>
+      </div>
+
+      <!-- choose Appointment-->
+      <div class="mt-20">
+        <p class="title">{{DOM_CONSTATNTS.CHOOSE_TIME}}</p>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+          <!-- <mat-form-field appearance="outline" class="w-90"> -->
+          <mat-select (selectionChange)="onChangedSort($event)">
+            <mat-option *ngFor="let timing of backendData" [value]="timing">
+              {{timing}}
+            </mat-option>
+          </mat-select>
+        </div>
+      </div>
+    </div>
     <!--  -->
     <section>
       <div class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
