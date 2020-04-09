@@ -19,79 +19,91 @@ import { Observable } from 'rxjs';
 
 export class ScheduleDoctorVisitComponent implements OnInit {
 
-  
   DaterForm: FormGroup;
   minFromDate = new Date();
   maxToDate = new Date().setDate(2);
   apptDetails: Observable<Appointments>;
   date: any;
-  DOM_CONSTATNTS = MedicalExamConstants.Schedule_CALANDER;
-    aval_timeslot = ['9:00 AM',  '10:00 AM', '11:00 AM', '12:00 PM',  '13:00 PM'];
-  backendData = ['9:00 AM', '10:00 AM',  '11:00 AM',  '12:00 PM', '13:00 PM']; // Data from the backend
-  appt_timeslots = [];
-  disabled=false;
+  selectedDate: any;
+  selectedTime: any;
+  events: string[] = [];
   // chip
   flag: any = false;
   name: string;
   chipColor: ThemePalette;
+  DOM_CONSTATNTS = MedicalExamConstants.Schedule_CALANDER;
+  aval_timeslot = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM'];
+  backendData = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM']; // Data from the backend
+  appt_timeslots = [];
+  disabled = false;
+
 
   constructor(private fb: FormBuilder, private apptService: AppointmentsService) { }
-  selectedDate: any;
-  events: string[] = [];
+
 
   onSelect(event) {
-      console.log("selected date>>",event);
-      this.selectedDate = event;
-     this.setapt(this.selectedDate,'')
+    console.log("selected date>>", event);
+    this.selectedDate = event;
   }
-   setapt(date?:any,time?:any){
-    let x=date;
-    console.log("dataesssss>>>",x);
-    let y=time;
-    console.log('timeeeeess>>>',y);
-   }
-    addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-      this.events.push(`${type}: ${event.value}`);
-    }
 
-    ngOnInit() {
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.value}`);
+  }
 
-      this.backendData.forEach(e => {
-        const text = this.getTextFromValue(e);
-        this.appt_timeslots.push({ value: e, text });
-      });
-      console.log('timeSlot>>>', this.appt_timeslots);
-   }
+  ngOnInit() {
+    this.backendData.forEach(e => {
+      const text = this.getTextFromValue(e);
+      this.appt_timeslots.push({ value: e, text });
+    });
+    console.log('timeSlot>>>', this.appt_timeslots);
+  }
 
-    getTextFromValue(value: string) {
+  getTextFromValue(value: string) {
+    const timeSlots = value.split('-');
+    const formattedTime = timeSlots.map(time => {
+      time = this.setAMorPM(time);
+      return time;
+    });
+    const result = formattedTime.join('-');
+    return result;
+  }
+  setAMorPM(number: string) {
 
-      const timeSlots = value.split('-');
-      const formattedTime = timeSlots.map(time => {
-        time = this.setAMorPM(time);
-        return time;
-      });
-
-      const result = formattedTime.join('-');
-      return result;
-    }
-
-    setAMorPM(no: string) {
-
-    return no;
+    if (parseInt(number) > 12)
+      number = (parseInt(number) - 12).toString() + '' + 'PM';
+    else
+      if (parseInt(number) == 0)
+        number = "12am"
+      else
+        if (number[0] == '0') {
+          number = number.slice(1);
+          number += 'am';
+        }
+    return number
+  }
+  onclick(event) {
+    this.butnSelcted = event.text;
+    console.log("button selected>>", this.butnSelcted);
+  }
+  setApptDetails(date?: string, time?: string) {
+    this.apptService.setScheduleDetails(this.selectedDate, this.selectedTime);
   }
   // To select the avialabel appointment
   onChangedSort(event: MatSelectChange) {
-    for (const item of this.availTimeSlot) {
-      const name = item;
-      const date = this.addEvent;
-      if (name === event.value) {
+    this.selectedTime = event.value;
+    console.log("befort the for loop selectedTIme>>", this.selectedTime);
+    for (let i = 0; i < this.aval_timeslot.length; i++) {
+      var name = this.aval_timeslot[i];
+      if (name == event.value) {
         this.flag = true;
-        console.log('current selected date>>>>>', this.date);
         console.log('exist', event.value);
+        console.log('current selected date', this.selectedDate);
+        console.log('current selected time', this.selectedTime);
+        this.setApptDetails();
         break;
       }
     }
 
- }
- }
+  }
+}
 
