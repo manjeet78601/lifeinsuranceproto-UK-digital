@@ -55,7 +55,12 @@ export class InsuranceCalculatorComponent implements OnInit {
     this.totalCoverage = totalCoverage > 0 ? totalCoverage : 0;
 
   }
-
+  trackProgressBar() {
+    const completedQuescount = this.INSURANCE_CALCULATOR.QUESTIONS.filter(data => {
+      return !!data.VALUE;
+    });
+    this.progress = Math.floor(12.5 * completedQuescount.length);
+  }
   createAccount() {
     this.router.navigate(['/auth/signup']);
   }
