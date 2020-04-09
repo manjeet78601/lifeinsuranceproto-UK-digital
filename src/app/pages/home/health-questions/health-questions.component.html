@@ -47,7 +47,7 @@
                 </div>
                 <div *ngSwitchCase="'GENDERBTN'">
                     <mat-button-toggle-group aria-label="Font Style"
-                    class="custom-mat-btn-toggle-group" [(ngModel)] = "que.value" name="gender + {{healthIndex+''+quesIndex}}">
+                    class="custom-mat-btn-toggle-group mt-10" [(ngModel)] = "que.value" name="gender + {{healthIndex+''+quesIndex}}">
                     <mat-button-toggle value="male" class="yes-btn">Male</mat-button-toggle>
                     <span class="circle">or</span>
                     <mat-button-toggle value="female" class="no-btn">Female</mat-button-toggle>
@@ -55,7 +55,7 @@
                 </div>
                 <div *ngSwitchCase="'TOGGLEBTN'">
                   <mat-button-toggle-group aria-label="Font Style"
-                  class="custom-mat-btn-toggle-group" [(ngModel)] = "que.value" name=" health + {{healthIndex+''+quesIndex}}">
+                  class="custom-mat-btn-toggle-group mt-10" [(ngModel)] = "que.value" name=" health + {{healthIndex+''+quesIndex}}">
                   <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
                   <span class="circle">or</span>
                   <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
