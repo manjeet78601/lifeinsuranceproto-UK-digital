@@ -17,12 +17,13 @@ import { CompareQuotesConstant, } from '../../../properties/compare-quotes.const
   styleUrls: ['./health-questions.component.scss'],
 })
 export class HealthQuestionsComponent implements OnInit {
-  today = new Date();
-  dateBefore18Years = new Date(this.today.getFullYear() - 18, this.today.getMonth() - 1, this.today.getDate());
-   birthDate = new Date();
-   birthdaterror = false;
-   insuranceText: string;
-   //DOM_CONSTANTS = HomeConstants.FINANCIALBUDGET;
+
+   today = new Date();
+   dateBefore18Years = new Date(this.today.getFullYear() - 18, this.today.getMonth() - 1, this.today.getDate());
+  birthDate = new Date();
+  birthdaterror = false;
+  insuranceText: string;
+  // DOM_CONSTANTS = HomeConstants.FINANCIALBUDGET;
   healthQuesForm: FormGroup;
   isLoading = true;
   panelOpenState = false;
@@ -65,9 +66,9 @@ export class HealthQuestionsComponent implements OnInit {
   getDOB(date) {
     const selectedDate = new Date(date);
     const today = new Date();
-    const today1 = new date();
     const dateBefore18Years = new Date(today.getFullYear() - 18, today.getMonth() - 1, today.getDate());
-  
+
+
     if (date > today) {
       this.toast.presentToast('Seems like you are not born yet, Please get back to us once you will be 18 !');
       this.birthdaterror = true;
