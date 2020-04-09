@@ -13,13 +13,14 @@ export class AppointmentsService {
   constructor(private http: HttpClient) { }
 
   setLocation(location: string) {
-    this.apptDetails.location = "location";
+    this.apptDetails.location = location;
   }
   setScheduleDetails(date: string, time: string) {
-    this.apptDetails.date = "date";
-    this.apptDetails.time = "time";
+    this.apptDetails.date = date;
+    this.apptDetails.time = time;
   }
   getApptScheduleDetails(): Appointments {
     return this.apptDetails;
   }
 }
+
