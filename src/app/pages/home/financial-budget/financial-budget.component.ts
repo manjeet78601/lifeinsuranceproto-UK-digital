@@ -34,15 +34,6 @@ export class FinancialBudgetComponent implements OnInit {
     // console.log(this.CONSTANTS.FINANCIALBUDGET);
 
   }
-
-
-  incrementProgress(progress) {
-    if (this.progress < 100 && this.progress < progress) {
-      this.progress = progress;
-    }
-
-  }
-
   calculateBudget(f) {
     console.log(f);
     const totalBudget = [];
@@ -69,6 +60,10 @@ export class FinancialBudgetComponent implements OnInit {
     currentItem.isAllQuestionsAnswered = currentItem.QUESTIONS.every(data => {
       return !!data.VALUE;
     });
+    const completedQues = this.DOM_CONSTANTS.filter(data => {
+      return data.isAllQuestionsAnswered === true;
+    });
+    this.progress = Math.floor(25 * completedQues.length);
 
   }
 }

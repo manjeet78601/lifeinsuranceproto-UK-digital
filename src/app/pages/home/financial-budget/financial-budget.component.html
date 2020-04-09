@@ -35,7 +35,7 @@
           <ng-container *ngFor="let item of DOM_CONSTANTS">
             <mat-expansion-panel class="mat-accordian-header"
               [ngStyle]="{'background':item.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
-              <mat-expansion-panel-header (click)="incrementProgress(item.PROGRESS)"
+              <mat-expansion-panel-header
                 [ngStyle]="{'background':item.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
                 <mat-panel-title>
                   {{ item.TITLE }}
