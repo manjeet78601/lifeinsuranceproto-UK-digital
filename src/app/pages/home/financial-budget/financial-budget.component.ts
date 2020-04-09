@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { DataAnalyticsService, CategoryName, Action } from 'src/app/services/data-analytics.service';
 import { UserService } from 'src/app/services/user.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { FormGroup, Validator, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-financial-budget',
