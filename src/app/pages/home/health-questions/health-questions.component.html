@@ -22,7 +22,7 @@
       <p class="health-header">{{DOM_CONSTANTS.PAGE_SUB_HEADER}}</p>
       <p class="plan-content-health">{{ DOM_CONSTANTS.PAGE_LINE }}</p>
     </header>
-    <form #health1="ngForm" name="form" (ngSubmit)="Submit(health1)">
+    <form #health1="ngForm" name="form" (ngSubmit)="Submit(health1)" class="w-90">
         <mat-accordion>
           <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS.HEALTHQUESTIONS">
             <mat-expansion-panel-header>

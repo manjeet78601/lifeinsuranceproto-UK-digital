@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MedicalExamConstants } from 'src/app/properties/medical-exam.constant';
 // import { Calendar } from '@ionic-native/calendar';
-import {MatSelectChange } from '@angular/material';
-import {ThemePalette} from '@angular/material/core';
-import {SchedularCustomDirective} from './schedular.validator';
+import { MatSelectChange } from '@angular/material';
+import { ThemePalette } from '@angular/material/core';
+import { SchedularCustomDirective } from './schedular.validator';
 import { AppointmentsService } from 'src/app/services/appointments.service';
 import { Appointments } from 'src/app/models/appointments.model';
 import { Observable } from 'rxjs';
@@ -25,7 +25,6 @@ export class ScheduleDoctorVisitComponent implements OnInit {
   maxToDate = new Date().setDate(2);
   apptDetails: Observable<Appointments>;
   date: any;
-  picked_timeSlot: any;
   DOM_CONSTATNTS = MedicalExamConstants.Schedule_CALANDER;
     aval_timeslot = ['9:00 AM',  '10:00 AM', '11:00 AM', '12:00 PM',  '13:00 PM'];
   backendData = ['9:00 AM', '10:00 AM',  '11:00 AM',  '12:00 PM', '13:00 PM']; // Data from the backend
@@ -78,40 +77,21 @@ export class ScheduleDoctorVisitComponent implements OnInit {
 
     setAMorPM(no: string) {
 
-      if (parseInt(no) > 12) {
-        no = (parseInt(no) - 12).toString() + '' + 'PM';
+    return no;
+  }
+  // To select the avialabel appointment
+  onChangedSort(event: MatSelectChange) {
+    for (const item of this.availTimeSlot) {
+      const name = item;
+      const date = this.addEvent;
+      if (name === event.value) {
+        this.flag = true;
+        console.log('current selected date>>>>>', this.date);
+        console.log('exist', event.value);
+        break;
       }
-      else
-      if (parseInt(no) == 0) {
-          no = "12am"
-      }
-        else
-          if (no[0] == '0') {
-            no = no.slice(1);
-            no += 'am';
-          }
+    }
 
-      return no;
-    }
-    setApp(){
-     this.apptService;
-    }
-    // To select the avialabel appointment
-      onChangedSort(event: MatSelectChange) {
-        for (const item of this. aval_timeslot) {
-          const name = item;
-          const date = this.addEvent;
-          if (name === event.value) {
-            this.flag = true;
-            this.disabled=true;
-            console.log("flaggg>>",this.flag);
-            console.log("current selected date>>>>>", this. selectedDate);
-            console.log("exist",event.value);
-            this.setapt('',event.value)
-           this.apptService.setApptScheduleDetails=this.selectedDate
-           
-            break;
-           }
-        }
-      }
-}
+ }
+ }
+
