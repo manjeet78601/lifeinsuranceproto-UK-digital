@@ -22,7 +22,7 @@
       <p class="health-header">{{DOM_CONSTANTS.PAGE_SUB_HEADER}}</p>
       <p class="plan-content-health">{{ DOM_CONSTANTS.PAGE_LINE }}</p>
     </header>
-    <form #health1="ngForm" name="form" (ngSubmit)="Submit(health1)" class="w-90">
+    <form #health1="ngForm" name="form"  (ngSubmit)="Submit(health1)" class="w-90">
         <mat-accordion>
           <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS.HEALTHQUESTIONS">
             <mat-expansion-panel-header>
@@ -44,7 +44,6 @@
                 </mat-form-field>
                 <span *ngIf="birthdaterror"> Age must be greater than 18 </span>
               </div>
-
               <!--Sex tab-->
               <mat-button-toggle-group *ngIf="que.INPUT_TEXT === 'Button'" name="fontStyle" aria-label="Font Style"
                 class="custom-mat-btn-toggle-group">
@@ -56,16 +55,14 @@
               <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT12 === 'Textbox'" appearance="outline">
                 <input type="number" matInput placeholder="0.00" name="iptnumber[(iptnumber)]" ngModel required>
               </mat-form-field>
-
-              <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT001 === 'DROPDOWN'" appearance="outline">
+             <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT001 === 'DROPDOWN'" appearance="outline">
                 <select matNativeControl>
                   <option value="cm">cm</option>
                   <option value="feet">feet</option>
                 </select>
               </mat-form-field>
-
               <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT01=== 'Textbox'" appearance="outline">
-                <input type="number" matInput placeholder="0.00" name="iptnumber1[(iptnumber1)]" ngModel required>
+              <input type="number" matInput placeholder="0.00" name="iptnumber1[(iptnumber1)]" ngModel required>
               </mat-form-field>
               <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT002 === 'DROPDOWN'" appearance="outline">
                 <select matNativeControl required>
@@ -79,7 +76,6 @@
                 <span class="circle">or</span>
                 <mat-button-toggle value="italic" class="no-btn">No</mat-button-toggle>
               </mat-button-toggle-group>
-
               <mat-form-field class="full-width" *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
                 <textarea type="text" #txt="ngModel" name="insuranceText" [(ngModel)]="insuranceText"
                   class="mat-form-field-flex form-control" matInput placeholder="Write a response" required></textarea>
