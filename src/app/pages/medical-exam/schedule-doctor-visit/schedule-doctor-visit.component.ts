@@ -13,9 +13,13 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-schedule-doctor-visit',
   templateUrl: './schedule-doctor-visit.component.html',
-  styleUrls: ['./schedule-doctor-visit.component.scss'],
+  styleUrls: [
+    './schedule-doctor-visit.component.scss'],
 })
+
 export class ScheduleDoctorVisitComponent implements OnInit {
+
+  
   DaterForm: FormGroup;
   minFromDate = new Date();
   maxToDate = new Date().setDate(2);
@@ -23,20 +27,10 @@ export class ScheduleDoctorVisitComponent implements OnInit {
   date: any;
   picked_timeSlot: any;
   DOM_CONSTATNTS = MedicalExamConstants.Schedule_CALANDER;
-    aval_timeslot = ['9:00 AM',  '10:00 AM', '11:00 AM', '12:00 PM',  '13:00 PM',
-    ];
-  backendData = ['9:00 AM', '10:00 AM',  '11:00 AM',  '12:00 PM', '13:00 PM',
-   ]; // Data from the backend
+    aval_timeslot = ['9:00 AM',  '10:00 AM', '11:00 AM', '12:00 PM',  '13:00 PM'];
+  backendData = ['9:00 AM', '10:00 AM',  '11:00 AM',  '12:00 PM', '13:00 PM']; // Data from the backend
   appt_timeslots = [];
-
-  // setApptScheduleDetails(apptData: Observable<Appointments>){
-  //   this.date=this.onSelect(event);
-  //   this.picked_timeSlot=this.onChangedSort(event:mat).
-  //   this.apptDetails = apptData;
-  // }
-
-
-
+  disabled=false;
   // chip
   flag: any = false;
   name: string;
@@ -46,10 +40,9 @@ export class ScheduleDoctorVisitComponent implements OnInit {
   selectedDate: any;
   events: string[] = [];
 
-
   onSelect(event) {
       console.log("selected date>>",event);
-     this.selectedDate = event;
+      this.selectedDate = event;
      this.setapt(this.selectedDate,'')
   }
    setapt(date?:any,time?:any){
@@ -100,6 +93,9 @@ export class ScheduleDoctorVisitComponent implements OnInit {
 
       return no;
     }
+    setApp(){
+     this.apptService;
+    }
     // To select the avialabel appointment
       onChangedSort(event: MatSelectChange) {
         for (const item of this. aval_timeslot) {
@@ -107,9 +103,12 @@ export class ScheduleDoctorVisitComponent implements OnInit {
           const date = this.addEvent;
           if (name === event.value) {
             this.flag = true;
-            console.log("current selected date>>>>>", this.date);
+            this.disabled=true;
+            console.log("flaggg>>",this.flag);
+            console.log("current selected date>>>>>", this. selectedDate);
             console.log("exist",event.value);
             this.setapt('',event.value)
+           this.apptService.setApptScheduleDetails=this.selectedDate
            
             break;
            }
