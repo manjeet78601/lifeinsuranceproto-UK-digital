@@ -13,34 +13,33 @@ export class CompareQuotesConstant {
                 QUESTIONS: [
                     {
                         QUESTIONTEXT: 'Date of Birth',
-                        INPUT_TEXT1: 'Textbox',
+                        INPUT_TYPE: 'Datepicker',
                         ICON: false
                     },
                     {
                         QUESTIONTEXT: 'Sex',
-                        INPUT_TEXT: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'GENDERBTN',
+                        ICON: true,
+                        value: ''
                     },
                     {
                         QUESTIONTEXT: 'Height',
-                        INPUT_TEXT12: 'Textbox',
-                        INPUT_TEXT001: 'DROPDOWN',
+                        INPUT_TYPE: 'HEIGHTDROPDOWN',
                         ICON: false
                     },
                     {
                         QUESTIONTEXT: 'Weight',
-                        INPUT_TEXT01: 'Textbox',
-                        INPUT_TEXT002: 'DROPDOWN',
+                        INPUT_TYPE: 'WEIGHTDROPDOWN',
                         ICON: false
                     },
                     {
                         QUESTIONTEXT: 'Have you used any tobacco products in the last 5 years?',
-                        INPUT_TYPE: 'Button',
+                        INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true
                     },
                     {
                         QUESTIONTEXT: 'Have you used any marijuana products in the last 5 years?',
-                        INPUT_TYPE: 'Button',
+                        INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true
                     },
 
@@ -55,68 +54,81 @@ export class CompareQuotesConstant {
                     },
                     {
                         QUESTIONTEXT: 'Alchol Abuse',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'Anxiety',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'Asthma',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'Cancer',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'Depression',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'Diabetes',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'Drug Abuse',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'Heart Attack',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'High Blood Pressure',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'High Cholesterol',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'Sleep Apnea',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'Stroke',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                     {
                         QUESTIONTEXT: 'Other serious Conditions',
-                        INPUT_TYPE: 'Button',
-                        ICON: true
+                        INPUT_TYPE: 'TOGGLEBTN',
+                        ICON: true,
+                        note: ''
                     },
                 ]
             },
@@ -126,26 +138,15 @@ export class CompareQuotesConstant {
                     {
                         QUESTIONTEXT: 'Do you have any parents or siblings who had heart attacks,' +
                             'strokes, cancer, diabetes, or kidney disease before age 70?',
-                        INPUT_TYPE: 'Button',
+                        INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true
                     },
                     {
                         QUESTIONTEXT: 'Has your driver’s license been suspended or revoked,' +
                             ' or had more than one traffic ticket or accident in the past five years?',
-                        INPUT_TYPE: 'Button',
+                        INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true
                     }
-                ]
-            },
-            {
-                TITLE: 'Notes',
-                QUESTIONS: [
-                    {
-                        QUESTIONTEXT: 'If you answered yes to any of these questions, please explain.',
-                        INPUT_TYPE: 'Textarea',
-                        ICON: false
-                    }
-
                 ]
             }
         ]
