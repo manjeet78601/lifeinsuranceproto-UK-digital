@@ -32,9 +32,9 @@ export class ScheduleDoctorVisitComponent implements OnInit {
   name: string;
   chipColor: ThemePalette;
   DOM_CONSTATNTS = MedicalExamConstants.Schedule_CALANDER;
-  aval_timeslot = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM'];
+  availTimeslot = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM'];
   backendData = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM']; // Data from the backend
-  appt_timeslots = [];
+  appointmentTimeslots = [];
   disabled = false;
 
 
@@ -42,7 +42,7 @@ export class ScheduleDoctorVisitComponent implements OnInit {
 
 
   onSelect(event) {
-    console.log("selected date>>", event);
+    console.log('selected date>>', event);
     this.selectedDate = event;
   }
 
@@ -53,37 +53,31 @@ export class ScheduleDoctorVisitComponent implements OnInit {
   ngOnInit() {
     this.backendData.forEach(e => {
       const text = this.getTextFromValue(e);
-      this.appt_timeslots.push({ value: e, text });
+      this.appointmentTimeslots.push({ value: e, text });
     });
-    console.log('timeSlot>>>', this.appt_timeslots);
+    console.log('timeSlot>>>', this.appointmentTimeslots);
   }
 
   getTextFromValue(value: string) {
-    const timeSlots = value.split('-');
+    const timeSlots = value.split(':');
     const formattedTime = timeSlots.map(time => {
-      time = this.setAMorPM(time);
-      return time;
+      return this.setAMorPM(time);
     });
     const result = formattedTime.join('-');
     return result;
   }
-  setAMorPM(number: string) {
-
-    if (parseInt(number) > 12)
-      number = (parseInt(number) - 12).toString() + '' + 'PM';
-    else
-      if (parseInt(number) == 0)
-        number = "12am"
-      else
-        if (number[0] == '0') {
-          number = number.slice(1);
-          number += 'am';
+  setAMorPM(no: string) {
+    let time: number|string  =  parseInt(no);
+    if (time >= 12) {
+      time = (time - 12).toString() + '' + 'PM';
+    } else if (time === 0) {
+        time = '12am';
+    } else if (time > 0 && time < 12) {
+          time = time + 'am';
         }
-    return number
+    return time;
   }
   onclick(event) {
-    this.butnSelcted = event.text;
-    console.log("button selected>>", this.butnSelcted);
   }
   setApptDetails(date?: string, time?: string) {
     this.apptService.setScheduleDetails(this.selectedDate, this.selectedTime);
@@ -91,19 +85,9 @@ export class ScheduleDoctorVisitComponent implements OnInit {
   // To select the avialabel appointment
   onChangedSort(event: MatSelectChange) {
     this.selectedTime = event.value;
-    console.log("befort the for loop selectedTIme>>", this.selectedTime);
-    for (let i = 0; i < this.aval_timeslot.length; i++) {
-      var name = this.aval_timeslot[i];
-      if (name == event.value) {
-        this.flag = true;
-        console.log('exist', event.value);
-        console.log('current selected date', this.selectedDate);
-        console.log('current selected time', this.selectedTime);
-        this.setApptDetails();
-        break;
-      }
+    if (this.availTimeslot.indexOf(event.value)) {
+      this.setApptDetails();
     }
-
   }
 }
 

@@ -34,7 +34,7 @@
       <p class="title">{{ DOM_CONSTATNTS.AVAL_TIME}}</p>
       <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="16px grid" class=" mt-20">
         <mat-chip-list #chipList>
-          <mat-chip *ngFor="let appt of appt_timeslots" [ngClass]="{ 'colorRed' :flag }">
+          <mat-chip *ngFor="let appt of appointmentTimeslots" [ngClass]="{ 'colorRed' :flag }">
             {{appt.text}}
           </mat-chip>
         </mat-chip-list>
@@ -45,7 +45,7 @@
         <p class="title">{{DOM_CONSTATNTS.CHOOSE_TIME}}</p>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
           <!-- <mat-form-field appearance="outline" class="w-90"> -->
-          <mat-select (selectionChange)="onChangedSort($event)">
+          <mat-select (selectionChange)="onChangedSort($event)" class="time-slot">
             <mat-option *ngFor="let timing of backendData" [value]="timing">
               {{timing}}
             </mat-option>
