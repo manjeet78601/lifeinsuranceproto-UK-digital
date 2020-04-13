@@ -68,7 +68,7 @@ export class ScheduleDoctorVisitComponent implements OnInit{
           number = number.slice(1);
           number += 'am';
         }
-    return time;
+    return number;
   }
   setApptDetails(date?: string, time?: string) {
     this.apptService.setScheduleDetails(this.datePipe.transform(this.selectedDate,'dd/MM/yyyy'), this.selectedTime);
@@ -77,8 +77,8 @@ export class ScheduleDoctorVisitComponent implements OnInit{
   onChangedSort(event: MatSelectChange) {
     this.selectedTime = event.value;
     console.log("befort the for loop selectedTIme>>", this.selectedTime);
-    for (let i = 0; i < this.aval_timeslot.length; i++) {
-      var name = this.aval_timeslot[i];
+    for (let i = 0; i < this.availTimeslot.length; i++) {
+      var name = this.availTimeslot[i];
       if (name == event.value) {
         this.flag = true;
         console.log('exist', event.value);
