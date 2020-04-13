@@ -30,9 +30,9 @@
       <header fxLayoutAlign="center center">
         <h2 class="header-title">{{ PAGE_SUBHEADER }}</h2>
       </header>
-      <form #f="ngForm" name="form">
+      <form name="budgetDetails">
         <mat-accordion class="financial-accordion">
-          <ng-container *ngFor="let item of DOM_CONSTANTS">
+          <ng-container *ngFor="let item of DOM_CONSTANTS; let panelIndex = index;">
             <mat-expansion-panel class="mat-accordian-header"
               [ngStyle]="{'background':item.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
               <mat-expansion-panel-header
@@ -45,7 +45,7 @@
                 <ion-icon name="checkmark" class="tick-icon"
                   [ngStyle]="{'color':item.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
               </mat-expansion-panel-header>
-              <div *ngFor="let que of item.QUESTIONS">
+              <div *ngFor="let que of item.QUESTIONS; let quesIndex = index;">
                 <!-- <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label> -->
                 <mat-label class="que-subheader" [ngClass]="{'txt-black': que.isVisited}">{{ que.QUESTIONTEXT }}
                 </mat-label>
@@ -58,23 +58,21 @@
             </mat-slider> -->
                 <mat-form-field appearance="outline" class="w-50">
                   <span matPrefix>$</span>
-                  <input type="number" matInput class="align-end" [name]="que.NAME" [(ngModel)]="que.VALUE"
-                    (click)="que.isVisited = true" (ngModelChange)="checkQuestionStatus(item.ID)" required>
+                  <input type="number" matInput class="align-end" [name]="'que'+ panelIndex + ' ' + quesIndex " [(ngModel)]="que.VALUE"
+                    (click)="que.isVisited = true" (ngModelChange)="checkQuestionStatus(item.ID)">
                 </mat-form-field>
-
                 <mat-icon class="pos-rel t-l-7">help_outline</mat-icon>
               </div>
             </mat-expansion-panel>
           </ng-container>
         </mat-accordion>
-      </form>
-      <div class="mt-20 ion-text-center">
-        <button mat-stroked-button class="back-btn mr-5" routerLink="/home/insurance-calculator">BACK</button>
-        <button mat-flat-button color="primary" [disabled]="f.invalid" (click)="calculateBudget(f)">
-          {{ BTN.CALCULATE | uppercase }}
-        </button>
-      </div>
-
+    </form>
+    <div class="mt-20 ion-text-center">
+      <button mat-stroked-button class="back-btn mr-5" routerLink="/home/insurance-calculator">BACK</button>
+      <button mat-flat-button color="primary" [disabled]="progress <= 99" (click)="calculateBudget(f)">
+        {{ BTN.CALCULATE | uppercase }}
+      </button>
+    </div>
       <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()">{{ BTN.CREATE_ACCOUNT }}</a>
     </section>
     <!-- End of main section -->

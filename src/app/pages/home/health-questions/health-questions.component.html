@@ -22,69 +22,73 @@
       <p class="health-header">{{DOM_CONSTANTS.PAGE_SUB_HEADER}}</p>
       <p class="plan-content-health">{{ DOM_CONSTANTS.PAGE_LINE }}</p>
     </header>
-    <form #health1="ngForm" name="form" (ngSubmit)="Submit(health1)" class="w-90">
+    <form #health1="ngForm" name="healthDetails" class="w-90">
         <mat-accordion>
-          <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS.HEALTHQUESTIONS">
+          <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS.HEALTHQUESTIONS; let healthIndex = index;">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 {{ item.TITLE }}
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <div *ngFor="let que of item.QUESTIONS">
+            <ng-container *ngFor="let que of item.QUESTIONS; let quesIndex = index;">
               <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
               <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
-              <!--DOB-->
-              <div *ngIf="que.INPUT_TEXT1 === 'Textbox'">
-                <mat-form-field class="f-w" appearance="outline">
-                  <input [max]="dateBefore18Years" matInput [matDatepicker]="picker" id="birthDate"
-                    placeholder="mm/dd/yyyy" [(ngModel)]="que.birthDate" name="DOBhealth"
-                    (dateChange)="getDOB(que.birthDate)" required>
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
+              <div [ngSwitch]="que.INPUT_TYPE">
+                <div *ngSwitchCase="'Datepicker'">
+                   <!--DOB-->
+                    <mat-form-field class="f-w" appearance="outline">
+                      <input [max]="dateBefore18Years" matInput [matDatepicker]="picker" id="birthDate"
+                        placeholder="mm/dd/yyyy" [(ngModel)]="que.birthDate" name="DOBhealth + {{healthIndex+''+quesIndex}}"
+                        (dateChange)="getDOB(que.birthDate)" required>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <span *ngIf="birthdaterror"> Age must be greater than 18 </span>
+                </div>
+                <div *ngSwitchCase="'GENDERBTN'">
+                    <mat-button-toggle-group aria-label="Font Style"
+                    class="custom-mat-btn-toggle-group mt-10" [(ngModel)] = "que.value" name="gender + {{healthIndex+''+quesIndex}}">
+                    <mat-button-toggle value="male" class="yes-btn">Male</mat-button-toggle>
+                    <span class="circle">or</span>
+                    <mat-button-toggle value="female" class="no-btn">Female</mat-button-toggle>
+                  </mat-button-toggle-group>
+                </div>
+                <div *ngSwitchCase="'TOGGLEBTN'">
+                  <mat-button-toggle-group aria-label="Font Style"
+                  class="custom-mat-btn-toggle-group mt-10" [(ngModel)] = "que.value" name=" health + {{healthIndex+''+quesIndex}}">
+                  <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
+                  <span class="circle">or</span>
+                  <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
+                </mat-button-toggle-group>
+                <mat-form-field *ngIf= "healthIndex === 1 && que.value === 'yes'" class="full-width" appearance="outline">
+                  <textarea type="text" name="insuranceText + {{healthIndex+''+quesIndex}}"
+                    class="mat-form-field-flex form-control" matInput placeholder="Write a response" required [(ngModel)] = "que.note"></textarea>
                 </mat-form-field>
-                <span *ngIf="birthdaterror"> Age must be greater than 18 </span>
               </div>
-
-              <!--Sex tab-->
-              <mat-button-toggle-group *ngIf="que.INPUT_TEXT === 'Button'" name="fontStyle" aria-label="Font Style"
-                class="custom-mat-btn-toggle-group">
-                <mat-button-toggle value="bold" class="yes-btn">Male</mat-button-toggle>
-                <span class="circle">or</span>
-                <mat-button-toggle value="italic" class="no-btn">Female</mat-button-toggle>
-              </mat-button-toggle-group>
-              <!--Height & Weight -->
-              <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT12 === 'Textbox'" appearance="outline">
-                <input type="number" matInput placeholder="0.00" name="iptnumber[(iptnumber)]" ngModel required>
-              </mat-form-field>
-
-              <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT001 === 'DROPDOWN'" appearance="outline">
-                <select matNativeControl>
-                  <option value="cm">cm</option>
-                  <option value="feet">feet</option>
-                </select>
-              </mat-form-field>
-
-              <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT01=== 'Textbox'" appearance="outline">
-                <input type="number" matInput placeholder="0.00" name="iptnumber1[(iptnumber1)]" ngModel required>
-              </mat-form-field>
-              <mat-form-field class="example-full-width" *ngIf="que.INPUT_TEXT002 === 'DROPDOWN'" appearance="outline">
-                <select matNativeControl required>
-                  <option value="cm">lbs</option>
-                  <option value="feet">kg</option>
-                </select>
-              </mat-form-field>
-              <mat-button-toggle-group *ngIf="que.INPUT_TYPE === 'Button'" name="fontStyle" aria-label="Font Style"
-                class="custom-mat-btn-toggle-group mt-10" required>
-                <mat-button-toggle value="bold" class="yes-btn">Yes</mat-button-toggle>
-                <span class="circle">or</span>
-                <mat-button-toggle value="italic" class="no-btn">No</mat-button-toggle>
-              </mat-button-toggle-group>
-
-              <mat-form-field class="full-width" *ngIf="que.INPUT_TYPE === 'Textarea'" appearance="outline">
-                <textarea type="text" #txt="ngModel" name="insuranceText" [(ngModel)]="insuranceText"
-                  class="mat-form-field-flex form-control" matInput placeholder="Write a response" required></textarea>
-              </mat-form-field>
-            </div>
+                <div *ngSwitchCase="'HEIGHTDROPDOWN'">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <input type="number" matInput placeholder="0.00" name="ht + {{healthIndex+''+quesIndex}}" ngModel required>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <select matNativeControl>
+                        <option value="cm">cm</option>
+                        <option value="feet">feet</option>
+                      </select>
+                    </mat-form-field>
+                </div>
+                <div *ngSwitchCase="'WEIGHTDROPDOWN'">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <input type="number" matInput placeholder="0.00" name="wt + {{healthIndex+''+quesIndex}}" ngModel required>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <select matNativeControl required>
+                      <option value="cm">lbs</option>
+                      <option value="feet">kg</option>
+                    </select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </ng-container>
           </mat-expansion-panel>
         </mat-accordion>
       </form>
@@ -92,7 +96,7 @@
     <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class="mb-70 mt-50">
       <div>
         <button mat-stroked-button class="btn btn-border" (click)="getPrevious()">{{BTN.BACK}}</button>
-        <button mat-flat-button color="primary" (click)="Submit(health1)">
+        <button mat-flat-button color="primary" (click)="Submit(health1)" [disabled] ="!health1.valid">
           {{ BTN.SUBMIT }}
         </button>
       </div>
