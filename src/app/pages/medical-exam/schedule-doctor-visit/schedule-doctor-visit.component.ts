@@ -81,11 +81,7 @@ export class ScheduleDoctorVisitComponent implements OnInit {
         }
     return number
   }
-  onclick(event) {
-    this.butnSelcted = event.text;
-    console.log("button selected>>", this.butnSelcted);
-  }
-  setApptDetails(date?: string, time?: string) {
+ setApptDetails(date?: string, time?: string) {
     this.apptService.setScheduleDetails(this.selectedDate, this.selectedTime);
   }
   // To select the avialabel appointment
