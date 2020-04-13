@@ -30,9 +30,9 @@ export class ScheduleDoctorVisitComponent implements OnInit{
   name: string;
   chipColor: ThemePalette;
   DOM_CONSTATNTS = MedicalExamConstants.Schedule_CALANDER;
-  aval_timeslot = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM'];
+  availTimeslot = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM'];
   backendData = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM']; // Data from the backend
-  appt_timeslots = [];
+  appointmentTimeslots = [];
   disabled = false;
 
 
@@ -44,16 +44,15 @@ export class ScheduleDoctorVisitComponent implements OnInit{
   ngOnInit() {
     this.backendData.forEach(e => {
       const text = this.getTextFromValue(e);
-      this.appt_timeslots.push({ value: e, text });
+      this.appointmentTimeslots.push({ value: e, text });
     });
-    console.log('timeSlot>>>', this.appt_timeslots);
+    console.log('timeSlot>>>', this.appointmentTimeslots);
   }
   
   getTextFromValue(value: string) {
-    const timeSlots = value.split('-');
+    const timeSlots = value.split(':');
     const formattedTime = timeSlots.map(time => {
-      time = this.setAMorPM(time);
-      return time;
+      return this.setAMorPM(time);
     });
     const result = formattedTime.join('-');
     return result;
@@ -69,9 +68,8 @@ export class ScheduleDoctorVisitComponent implements OnInit{
           number = number.slice(1);
           number += 'am';
         }
-    return number
+    return time;
   }
-
   setApptDetails(date?: string, time?: string) {
     this.apptService.setScheduleDetails(this.datePipe.transform(this.selectedDate,'dd/MM/yyyy'), this.selectedTime);
   }
@@ -90,7 +88,6 @@ export class ScheduleDoctorVisitComponent implements OnInit{
         break;
       }
     }
-
   }
 }
 

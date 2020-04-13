@@ -18,8 +18,8 @@ import { CompareQuotesConstant, } from '../../../properties/compare-quotes.const
 })
 export class HealthQuestionsComponent implements OnInit {
 
-  today = new Date();
-  dateBefore18Years = new Date(this.today.getFullYear() - 18, this.today.getMonth() - 1, this.today.getDate());
+   today = new Date();
+   dateBefore18Years = new Date(this.today.getFullYear() - 18, this.today.getMonth() - 1, this.today.getDate());
   birthDate = new Date();
   birthdaterror = false;
   insuranceText: string;

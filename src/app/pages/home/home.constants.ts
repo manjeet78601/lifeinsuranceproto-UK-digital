@@ -65,7 +65,7 @@ export class HomeConstants {
          SUBTITLE: '',
          PROGRESS: 25,
          TOTAL_TEXT: 'Total Liabilities',
-         isAllQuestionsAnswered: true,
+         isAllQuestionsAnswered: false,
          TYPE: 'Expense',
          QUESTIONS: [
             {
@@ -75,7 +75,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'Monthly utilities (water, electricity, etc.) ',
@@ -84,7 +84,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'Monthly home maintenance fees',
@@ -93,7 +93,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'Monthly property tax',
@@ -102,7 +102,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
          ]
       },
@@ -112,7 +112,7 @@ export class HomeConstants {
          SUBTITLE: '',
          PROGRESS: 50,
          TOTAL_TEXT: 'Monthly Expenses',
-         isAllQuestionsAnswered: true,
+         isAllQuestionsAnswered: false,
          TYPE: 'Expense',
          QUESTIONS: [
             {
@@ -122,7 +122,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'Monthly lease, car payments, insurance',
@@ -131,7 +131,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'Monthly gas / oil',
@@ -140,7 +140,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'Monthly entertainment bills (cell phone, internet, etc.)',
@@ -149,7 +149,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'Additional expected monthly expenses',
@@ -158,7 +158,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
          ]
       },
@@ -168,7 +168,7 @@ export class HomeConstants {
          SUBTITLE: '',
          PROGRESS: 75,
          TOTAL_TEXT: 'Monthly Income',
-         isAllQuestionsAnswered: true,
+         isAllQuestionsAnswered: false,
          TYPE: 'Income',
          QUESTIONS: [
             {
@@ -178,7 +178,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'What is your yearly income/salary?',
@@ -187,7 +187,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'Additional sources of annual income (side job, rental, stipends, passive income, etc.)',
@@ -196,7 +196,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'Expected annual bonuses',
@@ -205,7 +205,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
          ]
       },
@@ -215,7 +215,7 @@ export class HomeConstants {
          SUBTITLE: '',
          PROGRESS: 100,
          TOTAL_TEXT: 'Total assets',
-         isAllQuestionsAnswered: true,
+         isAllQuestionsAnswered: false,
          TYPE: 'Liabillities',
          QUESTIONS: [
             {
@@ -225,7 +225,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'Outstanding student loan debt',
@@ -234,7 +234,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
             {
                QUESTIONTEXT: 'Other outstanding loans',
@@ -243,7 +243,7 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 50000,
+               VALUE: 0,
             },
          ]
       },
@@ -318,8 +318,9 @@ export class HomeConstants {
    // Insurance calculator
    public static PAGE_SUBTITLE = 'LIFE INSURANCE CALCULATOR';
    public static LIFE_INSURANCE_HEADER = `Calculate the coverage you need for your family's future.`;
-   public static LIFE_INSURANCE_SUB_HEADER = `By calculating you long term financial obligations.
-and subtracting your assets you an estimate what your loved ones will need in coming years. Take a few minutes to help start`;
+   public static LIFE_INSURANCE_SUB_HEADER = `By calculating your long-term financial obligations
+   , and subtracting your assets, you can estimate what your loved ones will need in coming years
+   . Take a few minutes to help start your planning journey.`;
    public static PAGE_CONTENT_QUERIES = `Does anyone in your family depend on you financially`;
 
    public static BTTN = {
@@ -333,7 +334,7 @@ and subtracting your assets you an estimate what your loved ones will need in co
    public static PAGE_CONTENT_US = 'Are You a US Citizen or Residents';
    public static PAGE_CONTENT_US1 = 'Are You a US Citizen or Residents';
    public static LETS_GETS_TARTED = 'Great let s get Started ';
-   public static PAGE_BOTTOM1 = 'By our calculation You will need this total coverage:';
+   public static PAGE_BOTTOM1 = 'By our calculations, you will need this total coverage:';
    public static STEP1_BOTTOM = 'Ready to figure out your budget ?';
    public static INSURANCE_CALCULATOR = {
       TITLE: 'Basic Health',
