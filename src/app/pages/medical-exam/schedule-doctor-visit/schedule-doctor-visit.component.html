@@ -35,9 +35,9 @@
           <mat-card-title class="title">{{ DOM_CONSTATNTS.AVAL_TIME}}</mat-card-title>
           <mat-card-content>
             <mat-chip-list #chipList>
-              <mat-chip *ngFor="let appt of availTimeslot" [ngClass]="{ 'colorRed' :flag }">
+              <mat-chip class="time-slot-list" *ngFor="let appt of availTimeslot" [ngClass]="selectedTime === appt ? 'selected-time-slot' : ''">
                 {{appt}}
-              </mat-chip>
+                </mat-chip>
             </mat-chip-list>
           </mat-card-content>
         </div>
