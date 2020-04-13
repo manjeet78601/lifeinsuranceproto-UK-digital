@@ -20,11 +20,7 @@ export class AppointmentsService {
     this.apptDetails.time = time;
   }
   getApptScheduleDetails(): Appointments {
-<<<<<<< HEAD
-    console.log("returning the value", this.apptDetails);
-=======
     console.log('returning the value', this.apptDetails);
->>>>>>> a8a0b76a50d16fb6c7960f094dd3c21f4826432e
     return this.apptDetails;
   }
 }
