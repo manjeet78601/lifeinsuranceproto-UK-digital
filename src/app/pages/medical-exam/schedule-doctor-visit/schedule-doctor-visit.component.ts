@@ -71,7 +71,7 @@ export class ScheduleDoctorVisitComponent implements OnInit{
     return number;
   }
   setApptDetails(date?: string, time?: string) {
-    this.apptService.setScheduleDetails(this.datePipe.transform(this.selectedDate,'dd/MM/yyyy'), this.selectedTime);
+    this.apptService.setScheduleDetails(this.datePipe.transform(this.selectedDate,'dd MMMM yyyy'), this.selectedTime);
   }
   // To select the avialabel appointment
   onChangedSort(event: MatSelectChange) {
@@ -82,7 +82,7 @@ export class ScheduleDoctorVisitComponent implements OnInit{
       if (name == event.value) {
         this.flag = true;
         console.log('exist', event.value);
-        console.log('current selected date', this.datePipe.transform(this.selectedDate,'dd/MM/yyyy'));
+        console.log('current selected date', this.datePipe.transform(this.selectedDate,'dd MMMM yyyy'));
         console.log('current selected time', this.selectedTime);
         this.setApptDetails();
         break;

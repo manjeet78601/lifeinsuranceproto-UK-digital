@@ -9,71 +9,70 @@
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center app-name">
-      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<!--Header Section-->
 <ion-content>
-  <!--Quotes Header-->
   <section class="content">
-    <div  class="wrapper"  fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <header class="page-header" fxLayout="column" fxLayoutAlign="center center">
-        <h2 class="subtitle">{{ DOM_CONSTATNTS.HEADER }}</h2>
+    <div class="wrapper ion-text-center" fxLayout="column" fxLayoutAlign="center center">
+      <header>
+        <p class="subtitle">{{ DOM_CONSTATNTS.HEADER }}</p>
       </header>
-      <div fxLayout="row" fxLayoutAlign="center center">
-          <mat-card>
-          <mat-calendar #calendar   [(selected)]="selectedDate"  (selectedChange)="onSelect($event)"></mat-calendar>
+      <div fxLayout="row" fxLayoutAlign="center center" >
+        <mat-card class="calendar-display">
+          <mat-calendar #calendar [minDate]="minDate" [(selected)]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
         </mat-card>
-      
+      </div>
+      <!--TimeSlot section-->
+      <section class="mt-20">
+        <div fxLayout="column">
+          <mat-card>
+            <mat-card-title fxLayoutAlign="start" class="title">{{ DOM_CONSTATNTS.AVAL_TIME}}</mat-card-title>
+            <mat-card-content>
+              <mat-chip-list #chipList>
+                <mat-chip class="time-slot-list" *ngFor="let appt of availTimeslot" [ngClass]="selectedTime === appt ? 'selected-time-slot' : ''">
+                  {{appt}}
+                </mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+
+            <mat-label fxLayoutAlign="start" class="title mt-20">{{DOM_CONSTATNTS.CHOOSE_TIME}}</mat-label>
+            <mat-card-content>
+              <mat-form-field appearance="outline" style="width:300px">
+                <mat-select (selectionChange)="onChangedSort($event)">
+                  <mat-option *ngFor="let timing of backendData" [value]="timing">
+                    {{timing}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </section>
+      <!-- bottom section -->
+      <div fxLayout="column">
+        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+          <button mat-button>
+          <span>
+            <ion-icon name="mail"></ion-icon>
+          </span>
+        </button>
+          <!-- need an anchor tag -->
+          <p class="title">{{DOM_CONSTATNTS.EMAIL}}</p>
+        </div>
+        <div fxLayout="row">
+          <p class="title note">{{DOM_CONSTATNTS.NOTE}}</p>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="mt-20">
+          <button mat-stroked-button class="btn-color" routerLink="/medical-exam/sechdule-appointment">{{DOM_CONSTATNTS.BTN.BACK| uppercase}}</button>
+          <button mat-flat-button color="primary" routerLink="/medical-exam/appointment-details">{{DOM_CONSTATNTS.BTN.BOOK| uppercase}}</button>
+        </div>
       </div>
     </div>
-
-    <!-- appointment badges -->
-    <div class="wrapper" fxLayout="column" fxLayoutAlign="start" >
-      <mat-card>
-        <div>
-          <mat-card-title class="title">{{ DOM_CONSTATNTS.AVAL_TIME}}</mat-card-title>
-          <mat-card-content>
-            <mat-chip-list #chipList>
-              <mat-chip class="time-slot-list" *ngFor="let appt of availTimeslot" [ngClass]="selectedTime === appt ? 'selected-time-slot' : ''">
-                {{appt}}
-                </mat-chip>
-            </mat-chip-list>
-          </mat-card-content>
-        </div>
-        <mat-label class="title mt-20">{{DOM_CONSTATNTS.CHOOSE_TIME}}</mat-label>
-        <mat-card-content>
-          <mat-form-field appearance="outline" style="width:300px">
-            <mat-select (selectionChange)="onChangedSort($event)">
-              <mat-option *ngFor="let timing of backendData" [value]="timing">
-                {{timing}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <div class="wrapper ion-text-center" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-            <div fxLayout="row" fxLayoutGap="10px" class="mr-10">
-              <button mat-button>
-              <span>
-                <ion-icon name="mail"></ion-icon>
-              </span>
-            </button>
-              <!-- need an anchor tag -->
-              <p class="title">{{DOM_CONSTATNTS.EMAIL}}</p>
-            </div>
-            <div fxLayout="row">
-              <p class="title note">{{DOM_CONSTATNTS.NOTE}}</p>
-            </div>
-            <div fxLayout="row" fxLayoutGap="10px">
-              <button mat-stroked-button routerLink="/medical-exam/sechdule-appointment" color="primary">BACK</button>
-              <button mat-flat-button routerLink="/medical-exam/appointment-details" class="black_color">BOOK</button>
-            </div>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <!--  -->
   </section>
-  <!--Footer-->
+  <!-- footer -->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">
@@ -87,3 +86,4 @@
     </ion-text>
   </footer>
 </ion-content>
+<!-- Footer -->
