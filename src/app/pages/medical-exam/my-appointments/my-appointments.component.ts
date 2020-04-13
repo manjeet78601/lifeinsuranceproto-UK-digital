@@ -17,21 +17,29 @@ export class MyAppointmentsComponent implements OnInit {
   constructor(private router: Router, private apptService: AppointmentsService) { }
 
   ngOnInit() {
+  }
+  ionViewDidEnter() {
+    this.DOM_CONSTANTS = AppointmentsConstant.APPT;
     this.schHeader = AppointmentsConstant.APPT.SCHD_HEADER;
     this.schdData = this.getScheduleDetails();
   }
   goToSchedule() {
+    this.apptService.apptDetails = {};
+    this.getScheduleDetails();
     this.router.navigate(['/medical-exam']);
   }
   // Get Scheduled Appts
   getScheduleDetails() {
     this.schdData = this.apptService.getApptScheduleDetails();
+    console.log("get Schedule Details", this.schdData);
     if (Object.keys(this.schdData).length === 0) {
       AppointmentsConstant.APPT.SCHD_HEADER = this.schHeader;
       AppointmentsConstant.APPT.SCH_DETAILS = '';
+      console.log('AppointmentsConstant.APPT.SCHD_HEADER', AppointmentsConstant.APPT.SCHD_HEADER);
     } else {
+      this.schdData.location = 'Quest Diagnostics';
       AppointmentsConstant.APPT.SCHD_HEADER = this.schdData.location;
-      AppointmentsConstant.APPT.SCH_DETAILS = AppointmentsConstant.APPT.SCH_DETAILS + this.schdData.location + ' for '
+      AppointmentsConstant.APPT.SCH_DETAILS = AppointmentsConstant.APPT.SCH_DETAILS_BOOKED + this.schdData.location + ' for '
         + this.schdData.date + ' at ' + this.schdData.time;
     }
   }
