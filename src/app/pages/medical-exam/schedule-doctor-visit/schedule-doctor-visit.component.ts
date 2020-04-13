@@ -8,21 +8,19 @@ import { ThemePalette } from '@angular/material/core';
 import { SchedularCustomDirective } from './schedular.validator';
 import { AppointmentsService } from 'src/app/services/appointments.service';
 import { Appointments } from 'src/app/models/appointments.model';
+import { DatePipe } from '@angular/common';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-schedule-doctor-visit',
   templateUrl: './schedule-doctor-visit.component.html',
-  styleUrls: [
-    './schedule-doctor-visit.component.scss'],
+  styleUrls: ['./schedule-doctor-visit.component.scss'],
+  providers: [DatePipe]
 })
 
-export class ScheduleDoctorVisitComponent implements OnInit {
+export class ScheduleDoctorVisitComponent implements OnInit{
+  calendar: any;
 
-  DaterForm: FormGroup;
-  minFromDate = new Date();
-  maxToDate = new Date().setDate(2);
-  apptDetails: Observable<Appointments>;
   date: any;
   selectedDate: any;
   selectedTime: any;
@@ -38,16 +36,9 @@ export class ScheduleDoctorVisitComponent implements OnInit {
   disabled = false;
 
 
-  constructor(private fb: FormBuilder, private apptService: AppointmentsService) { }
-
-
-  onSelect(event) {
-    console.log("selected date>>", event);
+  constructor(private fb: FormBuilder, private apptService: AppointmentsService,private datePipe: DatePipe) { }
+   onSelect(event) {
     this.selectedDate = event;
-  }
-
-  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-    this.events.push(`${type}: ${event.value}`);
   }
 
   ngOnInit() {
@@ -57,7 +48,7 @@ export class ScheduleDoctorVisitComponent implements OnInit {
     });
     console.log('timeSlot>>>', this.appt_timeslots);
   }
-
+  
   getTextFromValue(value: string) {
     const timeSlots = value.split('-');
     const formattedTime = timeSlots.map(time => {
@@ -68,7 +59,6 @@ export class ScheduleDoctorVisitComponent implements OnInit {
     return result;
   }
   setAMorPM(number: string) {
-
     if (parseInt(number) > 12)
       number = (parseInt(number) - 12).toString() + '' + 'PM';
     else
@@ -81,12 +71,9 @@ export class ScheduleDoctorVisitComponent implements OnInit {
         }
     return number
   }
-  onclick(event) {
-    this.butnSelcted = event.text;
-    console.log("button selected>>", this.butnSelcted);
-  }
+
   setApptDetails(date?: string, time?: string) {
-    this.apptService.setScheduleDetails(this.selectedDate, this.selectedTime);
+    this.apptService.setScheduleDetails(this.datePipe.transform(this.selectedDate,'dd/MM/yyyy'), this.selectedTime);
   }
   // To select the avialabel appointment
   onChangedSort(event: MatSelectChange) {
@@ -97,7 +84,7 @@ export class ScheduleDoctorVisitComponent implements OnInit {
       if (name == event.value) {
         this.flag = true;
         console.log('exist', event.value);
-        console.log('current selected date', this.selectedDate);
+        console.log('current selected date', this.datePipe.transform(this.selectedDate,'dd/MM/yyyy'));
         console.log('current selected time', this.selectedTime);
         this.setApptDetails();
         break;
