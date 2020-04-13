@@ -11,7 +11,12 @@ export class MedicalExamConstants {
        CHOOSE_TIME:'Choose Time',
        AVAL_TIME:'Available Times',
        EMAIL:'Email',
-       NOTE:'At the appointment, you are required to present documentation with your prescription.'
+       NOTE:'At the appointment, you are required to present documentation with your prescription.',
+       BTN :{
+        BOOK:'Book',
+        BACK:'Back'
+      
+     },
       
     };
 

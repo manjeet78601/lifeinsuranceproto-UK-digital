@@ -78,6 +78,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
   --ion-color-danger-contrast-rgb: 255, 255, 255;
   --ion-color-danger-shade: #cf3c4f;
   --ion-color-danger-tint: #ed576b;
+  --ion-color-danger-light: #F08080;
 
   /** dark **/
   --ion-color-dark: #222428;
@@ -102,6 +103,24 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** coral **/
+  --ion-color-coral: #F08080;
+  --ion-color-coral-rgb: 247, 106, 113;
+  --ion-color-coral-contrast: #ffffff;
+  --ion-color-coral-contrast-rgb: 205, 92, 92;
+  --ion-color-coral-shade: #de5f65;
+  --ion-color-coral-tint: #f76a71;
+  --ion-color-coral-light: #faa5a9;
+
+}
+.ion-color-coral {
+  --ion-color-base: var(--ion-color-coral) !important;
+  --ion-color-base-rgb: var(--ion-color-coral-rgb) !important;
+  --ion-color-contrast: var(--ion-color-coral-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-coral-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-coral-shade) !important;
+  --ion-color-tint: var(--ion-color-coral-tint) !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -173,6 +192,15 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
     --ion-color-light-contrast-rgb: 255,255,255;
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
+
+    --ion-color-coral: #F08080;
+    --ion-color-coral-rgb: 247, 106, 113;
+    --ion-color-coral-contrast: #ffffff;
+    --ion-color-coral-contrast-rgb: 205, 92, 92;
+    --ion-color-coral-shade: #de5f65;
+    --ion-color-coral-tint: #f76a71;
+    --ion-color-coral-light: #faa5a9;
+
   }
 
   /*
