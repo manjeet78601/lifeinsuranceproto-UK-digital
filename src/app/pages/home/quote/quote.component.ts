@@ -39,7 +39,7 @@ export class QuoteComponent implements OnInit {
   goToNext() {
     this.menuService.setCompletedMenu('Compare Quotes');
     if (this.auth.isUserLoggedIn === true) {
-      this.router.navigate(['/medical-exam']);
+      this.router.navigate(['/medical-test']);
     } else {
       this.router.navigate(['/auth/signup']);
     }
