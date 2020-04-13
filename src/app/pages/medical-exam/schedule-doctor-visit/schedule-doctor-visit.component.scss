@@ -112,3 +112,12 @@ padding: 3px 8px !important;
   outline: 1px solid gray;
   height: 30px;
 }
+
+
+/* Highlight on hover */
+.activity-day:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+/* Highlight */
+.activity-day>div:not(.mat-calendar-body-selected) {
+border-radius: 999px;
+background-color: rgba(14, 152, 5, 0.25);
+}
