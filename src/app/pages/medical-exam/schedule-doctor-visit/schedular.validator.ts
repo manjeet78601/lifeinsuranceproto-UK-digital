@@ -6,8 +6,7 @@ export class SchedularCustomDirective extends Validators{
     const date = fdValue.value;
     console.log('x');
     if (date ===null || date==='') return { requiredFromDate: true };
-  
-  }
+   }
 
    static ToDateValidator(todValue: FormControl) {
     const date = todValue.value;
