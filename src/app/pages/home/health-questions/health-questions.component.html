@@ -47,7 +47,7 @@
                 </div>
                 <div *ngSwitchCase="'GENDERBTN'">
                     <mat-button-toggle-group aria-label="Font Style"
-                    class="custom-mat-btn-toggle-group mt-10" [(ngModel)] = "que.value" name="gender + {{healthIndex+''+quesIndex}}">
+                    class="custom-mat-btn-toggle-group mt-10" [(ngModel)] = "que.value" name="gender + {{healthIndex+''+quesIndex}}" required>
                     <mat-button-toggle value="male" class="yes-btn">Male</mat-button-toggle>
                     <span class="circle">or</span>
                     <mat-button-toggle value="female" class="no-btn">Female</mat-button-toggle>
@@ -55,7 +55,7 @@
                 </div>
                 <div *ngSwitchCase="'TOGGLEBTN'">
                   <mat-button-toggle-group aria-label="Font Style"
-                  class="custom-mat-btn-toggle-group mt-10" [(ngModel)] = "que.value" name=" health + {{healthIndex+''+quesIndex}}">
+                  class="custom-mat-btn-toggle-group mt-10" [(ngModel)] = "que.value" name=" health + {{healthIndex+''+quesIndex}}" required>
                   <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
                   <span class="circle">or</span>
                   <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
@@ -67,7 +67,7 @@
               </div>
                 <div *ngSwitchCase="'HEIGHTDROPDOWN'">
                     <mat-form-field class="example-full-width" appearance="outline">
-                      <input type="number" matInput placeholder="0.00" name="ht + {{healthIndex+''+quesIndex}}" ngModel required>
+                      <input type="number" matInput placeholder="0.00" name="ht + {{healthIndex+''+quesIndex}}" required>
                     </mat-form-field>
                     <mat-form-field class="example-full-width" appearance="outline">
                       <select matNativeControl>
@@ -77,11 +77,11 @@
                     </mat-form-field>
                 </div>
                 <div *ngSwitchCase="'WEIGHTDROPDOWN'">
-                  <mat-form-field class="example-full-width" appearance="outline">
-                    <input type="number" matInput placeholder="0.00" name="wt + {{healthIndex+''+quesIndex}}" ngModel required>
+                  <mat-form-field class="example-full-width" appearance="outline" >
+                    <input type="number" matInput placeholder="0.00" name="wt + {{healthIndex+''+quesIndex}}" required>
                   </mat-form-field>
                   <mat-form-field class="example-full-width" appearance="outline">
-                    <select matNativeControl required>
+                    <select matNativeControl>
                       <option value="cm">lbs</option>
                       <option value="feet">kg</option>
                     </select>
