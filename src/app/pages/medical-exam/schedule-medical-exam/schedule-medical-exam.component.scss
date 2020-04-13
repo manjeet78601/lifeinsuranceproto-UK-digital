@@ -7,6 +7,7 @@
 .card {
     padding: 0 !important;
 }
+
 .mat-card-image{
     margin: 0 !important;
 }
@@ -22,3 +23,7 @@
 .mat-card>.mat-card-actions:last-child {
     margin-bottom: 0px !important;
 }
+.mat-card {
+    transition: none !important;
+    box-shadow: none !important;
+   }
