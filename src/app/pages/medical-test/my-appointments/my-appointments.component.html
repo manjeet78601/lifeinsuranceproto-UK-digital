@@ -28,8 +28,8 @@
       </mat-card-content>
       <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
         <div class="mt-10">
-          <button mat-stroked-button class="bg-blk col-wht" (click)="goToSchedule()">{{BTN.RESCHEDULE}}</button>
-          <button mat-flat-button (click)="cancelAppt()" class="pink_color">{{BTN.CANCEL}}</button>
+          <button mat-stroked-button class="bg-blk col-wht" (click)="goToReScheduleLab()">{{BTN.RESCHEDULE}}</button>
+          <button mat-flat-button (click)="cancelLabAppt()" class="pink_color">{{BTN.CANCEL}}</button>
         </div>
       </mat-card-actions>
     </mat-card>
@@ -37,13 +37,13 @@
     <mat-card class="w1-40 mt-30">
       <p><img src="../../../../assets/icon/Group_2433.png" alt="Medical Test"></p>
       <mat-card-content class="header-subtitle">
-        <h2 class="header-subtitle">{{DOM_CONSTANTS.DOC_SCHD_HEADER}}</h2>
-        <p>{{DOM_CONSTANTS.DOC_SCHD_DETAILS}}</p>
+        <h2 class="header-subtitle">{{DOM_CONSTANTS.CLINIC_SCHD_HEADER}}</h2>
+        <p>{{DOM_CONSTANTS.CLINIC_SCHD_DETAILS_BL}}</p>
       </mat-card-content>
       <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
         <div class="mt-10">
-          <button mat-stroked-button class="bg-blk col-wht" (click)="goToSchedule()">{{BTN.RESCHEDULE}}</button>
-          <button mat-flat-button (click)="goToNext()" class="pink_color">{{BTN.CANCEL}}</button>
+          <button mat-stroked-button class="bg-blk col-wht" (click)="goToRescheduleClinic()">{{BTN.RESCHEDULE}}</button>
+          <button mat-flat-button (click)="cancelClinicAppt()" class="pink_color">{{BTN.CANCEL}}</button>
         </div>
       </mat-card-actions>
     </mat-card>
