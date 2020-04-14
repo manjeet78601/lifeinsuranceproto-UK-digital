@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MedicalExamConstants } from 'src/app/properties/medical-test.constant';
 import { MatSelectChange } from '@angular/material';
 import { AppointmentsService } from 'src/app/services/appointments.service';
@@ -29,7 +29,7 @@ export class BookLabComponent implements OnInit {
   disabled = false;
 
 
-  constructor(private fb: FormBuilder, private apptService: AppointmentsService, private datePipe: DatePipe) {
+  constructor(private router: Router, private labApptService: AppointmentsService, private datePipe: DatePipe) {
     this.onSelect(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'));
   }
   onSelect(event) {
@@ -61,15 +61,26 @@ export class BookLabComponent implements OnInit {
     }
     return timeSlot;
   }
-  setApptDetails(date?: string, time?: string) {
-    this.apptService.setScheduleDetails(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'), this.selectedTime);
+  setLabApptDetails(labDate?: string, labTime?: string) {
+    this.labApptService.setScheduleDetails(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'),
+     this.selectedTime);
   }
   // To select the avialabel appointment
   onChangedSort(event: MatSelectChange) {
     this.selectedTime = event.value;
     if (this.availTimeslot.indexOf(event.value) !== -1) {
-      this.setApptDetails();
+      this.setLabApptDetails();
     }
+  }
+  
+  goToNext() {
+    this.router.navigate(['/medical-test/lab-details']);
+  }
+  getPrevious() {
+    this.router.navigate(['/medical-test/locate-lab']);
+  }
+  gotoHomePage() {
+    this.router.navigate(['/home']);
   }
 }
 

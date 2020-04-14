@@ -7,7 +7,8 @@ export class MedicalExamConstants {
         IN_PERSON_TEXT: 'Schedule an appointment for bloodwork and a doctor’s visit.'
     };
     public static Schedule_CALANDER = {
-        HEADER: 'Schedule Bloodwork',
+        BLOOD_SCH_HEADER: 'Schedule Bloodwork',
+        DOCTOR_SCH_HEADER: 'Schedule Doctor’s Visit',
         CHOOSE_TIME: 'Choose Time',
         AVAL_TIME: 'Available Times',
         EMAIL: 'Email',

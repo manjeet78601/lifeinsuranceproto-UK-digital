@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { MedicalExamConstants } from 'src/app/properties/medical-test.constant';
 import { MatSelectChange } from '@angular/material';
 import { AppointmentsService } from 'src/app/services/appointments.service';
@@ -20,7 +19,7 @@ export class BookClinicComponent implements OnInit {
   minDate = new Date();
   date: any;
   selectedTime: any;
- name: string;
+  name: string;
   DOM_CONSTATNTS = MedicalExamConstants.Schedule_CALANDER;
   availTimeslot = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM'];
   backendData = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM']; // Data from the backend
@@ -28,7 +27,7 @@ export class BookClinicComponent implements OnInit {
   disabled = false;
 
 
-  constructor(private fb: FormBuilder, private apptService: AppointmentsService, private datePipe: DatePipe) {
+  constructor(private router: Router, private clinicApptService: AppointmentsService, private datePipe: DatePipe) {
     this.onSelect(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'));
   }
   onSelect(event) {
@@ -60,16 +59,28 @@ export class BookClinicComponent implements OnInit {
     }
     return timeSlot;
   }
-  setApptDetails(date?: string, time?: string) {
-    this.apptService.setScheduleDetails(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'), this.selectedTime);
+  setClinicApptDetails(clinicDate?: string, clinicTime?: string) {
+    this.clinicApptService.setClinicSchedule(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'),
+      this.selectedTime);
   }
   // To select the avialabel appointment
   onChangedSort(event: MatSelectChange) {
     this.selectedTime = event.value;
     if (this.availTimeslot.indexOf(event.value) !== -1) {
-      console.log("selected Date",this.selectedDate);
-      console.log("selcted Time",this.selectedTime);
-      this.setApptDetails();
+      console.log("selected Date", this.selectedDate);
+      console.log("selcted Time", this.selectedTime);
+      this.setClinicApptDetails();
     }
+  }
+
+  goToNext() {
+    this.router.navigate(['/medical-test/clinic-details']);
+  }
+
+  getPrevious() {
+    this.router.navigate(['/medical-test/locate-clinic']);
+  }
+  gotoHomePage() {
+    this.router.navigate(['/home']);
   }
 }
