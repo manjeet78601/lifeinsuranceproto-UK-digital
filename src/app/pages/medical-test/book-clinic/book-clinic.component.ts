@@ -68,6 +68,8 @@ export class BookClinicComponent implements OnInit {
   onChangedSort(event: MatSelectChange) {
     this.selectedTime = event.value;
     if (this.availTimeslot.indexOf(event.value) !== -1) {
+      console.log("selected Date",this.selectedDate);
+      console.log("selcted Time",this.selectedTime);
       this.setApptDetails();
     }
   }
