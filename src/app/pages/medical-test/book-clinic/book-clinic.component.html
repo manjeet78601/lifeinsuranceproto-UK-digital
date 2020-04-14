@@ -18,7 +18,7 @@
   <section class="content">
     <div class="wrapper ion-text-center" fxLayout="column" fxLayoutAlign="center center">
       <header>
-        <p class="subtitle">{{ DOM_CONSTATNTS.HEADER }}</p>
+        <p class="subtitle">{{ DOM_CONSTATNTS.DOCTOR_SCH_HEADER }}</p>
       </header>
       <div fxLayout="row" fxLayoutAlign="center center">
         <mat-card class="calendar-display">
@@ -53,8 +53,8 @@
       </section>
       <!-- bottom section -->
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="mt-20">
-        <button mat-stroked-button class="btn-color" routerLink="/medical-test/locate-clinic">{{DOM_CONSTATNTS.BTN.BACK| uppercase}}</button>
-        <button mat-flat-button color="primary" routerLink="/medical-test/clinic-details">{{DOM_CONSTATNTS.BTN.BOOK| uppercase}}</button>
+        <button mat-stroked-button class="btn-color" (click)="getPrevious()">{{DOM_CONSTATNTS.BTN.BACK| uppercase}}</button>
+        <button mat-flat-button color="primary" (click)="goToNext()">{{DOM_CONSTATNTS.BTN.BOOK| uppercase}}</button>
       </div>
     </div>
   </section>

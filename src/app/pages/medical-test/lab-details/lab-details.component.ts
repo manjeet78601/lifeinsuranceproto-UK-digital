@@ -37,7 +37,6 @@ export class LabDetailsComponent implements OnInit {
   }
   // Get Scheduled Appts
   getScheduleDetails() {
-    this.apptService.setLocation('Quest Diagnostics');
     this.schdData = this.apptService.getApptScheduleDetails();
     if (Object.keys(this.schdData).length > 0) {
       AppointmentsConstant.APPT.SCH_DETAILS = AppointmentsConstant.APPT.SCH_DETAILS_BOOKED + this.schdData.location + ' for '
