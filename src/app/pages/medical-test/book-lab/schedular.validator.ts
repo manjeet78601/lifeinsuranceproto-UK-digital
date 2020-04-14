@@ -5,14 +5,9 @@ export class SchedularCustomDirective extends Validators {
    static fromDateValidator(fdValue: FormControl) {
     const date = fdValue.value;
     console.log('x');
-<<<<<<< HEAD:src/app/pages/medical-exam/schedule-doctor-visit/schedular.validator.ts
-    if (date ===null || date==='') return { requiredFromDate: true };
-   }
-=======
     if (date === null || date === '') { return { requiredFromDate: true }; }
 
   }
->>>>>>> deb35ca03ab7c8bc05e4ab254be1d053bf2d9b9e:src/app/pages/medical-test/book-lab/schedular.validator.ts
 
    static ToDateValidator(todValue: FormControl) {
     const date = todValue.value;
