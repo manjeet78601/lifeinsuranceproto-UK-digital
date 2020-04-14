@@ -15,11 +15,6 @@ export class LabDetailsComponent implements OnInit {
   schHeader: string;
   constructor(private router: Router, private apptService: AppointmentsService) { }
 
-<<<<<<< HEAD
-  constructor( private router: Router) { }
-  goToNext() {
-    this.router.navigate(['/medical-test/locate-clinic']);
-=======
   ngOnInit() {
   }
   ionViewDidEnter() {
@@ -27,7 +22,6 @@ export class LabDetailsComponent implements OnInit {
     this.schHeader = AppointmentsConstant.APPT.SCHD_HEADER;
     this.schdData = this.getScheduleDetails();
   }
->>>>>>> da57567a45315f91a3598cd919fd0e56e23c817d
 
   goToNext() {
     this.router.navigate(['/medical-test/locate-clinic']);

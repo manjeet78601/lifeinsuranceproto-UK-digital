@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MedicalExamConstants } from 'src/app/properties/medical-test.constant';
 import { MatSelectChange } from '@angular/material';
-import { SchedularCustomDirective } from './schedular.validator';
+// import { SchedularCustomDirective } from './schedular.validator';
 import { AppointmentsService } from 'src/app/services/appointments.service';
 import { Appointments } from 'src/app/models/appointments.model';
 import { DatePipe } from '@angular/common';
