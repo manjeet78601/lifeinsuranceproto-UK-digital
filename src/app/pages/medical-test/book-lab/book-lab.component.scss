@@ -103,10 +103,14 @@ mat-chip.time-slot-list {
   border: 1px solid black;
   background-color: white;
   padding: 3px 8px;
+  &::after {
+    background-color: white;
+  }
    &.selected-time-slot {
    color: #fff;
    background-color: #707070;
    }
+
   }
 
 .btn-color{
