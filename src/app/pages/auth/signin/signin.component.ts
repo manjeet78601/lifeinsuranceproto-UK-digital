@@ -31,7 +31,7 @@ export class SigninComponent implements OnInit {
       this.menu.enable(true, 'afterLogin');
       this.loader.showAutoHideLoader('', 2000);
       if (this.authService.quotesGenerated === true) {
-        this.router.navigate(['/medical-exam']);
+        this.router.navigate(['/medical-test']);
       } else {
         this.router.navigate(['/auth/profile']);
       }

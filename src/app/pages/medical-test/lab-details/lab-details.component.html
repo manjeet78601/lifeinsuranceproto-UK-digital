@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!--Quotes Header-->
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header class="page-header" fxLayout="column" fxLayoutAlign="center center">
+      <h1>You're Booked</h1>
+      <h5 class="header-title">At the point you are required to present documentation  with your prescription  </h5>
+    </header>
+    <mat-card class="wdth-40">
+      <p>
+      <img src="../../../../assets/icon/Group_2433.png"  alt="Medical Test">
+      </p>
+      <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+        <h5>Appointment Details</h5>
+        <p  class="txt-cntr">
+         You are booked  an appointment with Quest Diagnostics  for January 2020 to 10AM
+        </p> 
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+<<<<<<< HEAD:src/app/pages/medical-exam/appointment-details/appointment-details.component.html
+        <button mat-flat-button routerLink="/medical-exam/schedule-doctor-visit"  class="pink_color">SCHEDULE</button>
+=======
+        <button mat-flat-button routerLink="/medical-test/schedule-doctor-visit" class="pink_color">SCHEDULE</button>
+>>>>>>> deb35ca03ab7c8bc05e4ab254be1d053bf2d9b9e:src/app/pages/medical-test/lab-details/lab-details.component.html
+      </mat-card-actions>
+    </mat-card>
+ <section fxLayout="row"  class="bttn-bottm" fxLayoutAlign="center center" fxLayoutGap="30px">
+        <button mat-stroked-button routerLink="/medical-test/book-lab" color="primary">BACK</button>
+        <button mat-flat-button routerLink="/medical-test/email-appt" class="black_color">BOOK</button>
+      </section>
+  </section>
+  <!--Footer-->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+</ion-content>
