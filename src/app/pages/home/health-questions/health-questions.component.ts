@@ -10,6 +10,8 @@ import { FormGroup, Validator, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { CompareQuotesConstant, } from '../../../properties/compare-quotes.constant';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
+import { HeadsupAccountComponent } from 'src/app/components/headsup-account/headsup-account.component';
 
 @Component({
   selector: 'app-health-questions',
@@ -41,7 +43,8 @@ export class HealthQuestionsComponent implements OnInit {
     private navigationService: MenuService,
     private userService: UserService,
     private actRoute: ActivatedRoute,
-    private dataAnalytics: DataAnalyticsService
+    private dataAnalytics: DataAnalyticsService,
+    public dialog: MatDialog
   ) {
     this.isUerLoggedIn = this.auth.isUserLoggedIn;
   }
@@ -49,7 +52,20 @@ export class HealthQuestionsComponent implements OnInit {
   ngOnInit() {
     console.log('dob is ' + this.dob);
   }
-
+  ionViewDidEnter() {
+    this.openDialog();
+  }
+  openDialog() {
+    this.dialog.open(HeadsupAccountComponent, {
+      data: {
+        accountName: 'headsup'
+      },
+      closeOnNavigation : true,
+      disableClose: true,
+      minWidth: '90%',
+      maxHeight: '600px'
+    });
+  }
   Submit(healthQuesForm) {
     console.log(healthQuesForm);
     const totalbudget = [];

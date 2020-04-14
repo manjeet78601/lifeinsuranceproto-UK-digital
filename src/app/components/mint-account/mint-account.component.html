@@ -11,23 +11,23 @@
       <img src="../../../assets/img/account-logos.png" class="intuit-logo">
     </div>
     <div class="mint-form-container">
-      <header class="fs-16">Sign In</header>
+      <header class="fs-24">Sign In</header>
       <p class="fs-14 mb-5">One account for everything Intuit, including Mint.</p>
       <p class="fs-14 m-0"><a href="javascript:void(0);" class="rm-line">Learn More</a></p>
       <form class="text-left fs-14" [formGroup]="mintAcctForm">
         <p class="form-label mb-0"><label for="uname">Email or User ID</label></p>
         <mat-form-field appearance="outline" class="form-input-control">
-          <input formControlName="userName" matInput type="text" value="" id="uname">
+          <input formControlName="userName" matInput type="text" value="" id="uname" autofocus>
         </mat-form-field>
-        <p class="form-label m-0"><label for="uname">Password</label></p>
+        <p class="form-label m-0"><label for="pwd">Password</label></p>
         <mat-form-field appearance="outline" class="form-input-control">
-          <input formControlName="pwd" matInput type="password" value="">
+          <input formControlName="pwd" matInput type="password" value="" id="pwd">
         </mat-form-field>
         <div>
           <mat-checkbox class="terms-cond" formControlName="rememberMe">Remember me</mat-checkbox>
         </div>
         <div class="ion-text-center mt-10">
-          <button type="submit" class="btn signin" mat-stroked-button [disabled]="!mintAcctForm.valid">
+          <button type="submit" class="btn signin" mat-stroked-button [disabled]="!mintAcctForm.valid"  (click)="onFormsubmit()">
             <ion-icon name="lock-closed" class="lock-icon"></ion-icon>
             <strong>Sign In</strong>
           </button>
