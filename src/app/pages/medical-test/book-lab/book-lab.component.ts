@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MedicalExamConstants } from 'src/app/properties/medical-test.constant';
-// import { Calendar } from '@ionic-native/calendar';
 import { MatSelectChange } from '@angular/material';
-import { ThemePalette } from '@angular/material/core';
 import { SchedularCustomDirective } from './schedular.validator';
 import { AppointmentsService } from 'src/app/services/appointments.service';
 import { Appointments } from 'src/app/models/appointments.model';
@@ -19,10 +16,11 @@ import { Observable } from 'rxjs';
 })
 
 export class BookLabComponent implements OnInit {
-  calendar: any;
 
+  selectedDate = new Date();
+  startAt = new Date();
+  minDate = new Date();
   date: any;
-  selectedDate: any;
   selectedTime: any;
   events: string[] = [];
   // chip
@@ -36,8 +34,10 @@ export class BookLabComponent implements OnInit {
   disabled = false;
 
 
-  constructor(private fb: FormBuilder, private apptService: AppointmentsService, private datePipe: DatePipe) { }
-   onSelect(event) {
+  constructor(private fb: FormBuilder, private apptService: AppointmentsService, private datePipe: DatePipe) {
+    this.onSelect(this.selectedDate);
+  }
+  onSelect(event) {
     this.selectedDate = event;
   }
 
@@ -60,7 +60,7 @@ export class BookLabComponent implements OnInit {
     let timeSlot = slot;
     if (parseInt(timeSlot) === 0) {
       timeSlot = '12am';
-     }
+    }
     if (parseInt(timeSlot) > 12) {
       timeSlot = (parseInt(timeSlot) - 12).toString() + '' + 'PM';
     }
