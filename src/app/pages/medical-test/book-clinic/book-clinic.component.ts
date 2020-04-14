@@ -30,7 +30,7 @@ export class BookClinicComponent implements OnInit {
 
 
   constructor(private fb: FormBuilder, private apptService: AppointmentsService, private datePipe: DatePipe) {
-    this.onSelect(this.selectedDate);
+    this.onSelect(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'));
   }
   onSelect(event) {
     this.selectedDate = event;

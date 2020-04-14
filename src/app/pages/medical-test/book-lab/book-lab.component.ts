@@ -22,11 +22,7 @@ export class BookLabComponent implements OnInit {
   minDate = new Date();
   date: any;
   selectedTime: any;
-  events: string[] = [];
-  // chip
-  flag: any = false;
   name: string;
-  chipColor: ThemePalette;
   DOM_CONSTATNTS = MedicalExamConstants.Schedule_CALANDER;
   availTimeslot = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM'];
   backendData = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM']; // Data from the backend
@@ -35,7 +31,7 @@ export class BookLabComponent implements OnInit {
 
 
   constructor(private fb: FormBuilder, private apptService: AppointmentsService, private datePipe: DatePipe) {
-    this.onSelect(this.selectedDate);
+    this.onSelect(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'));
   }
   onSelect(event) {
     this.selectedDate = event;
