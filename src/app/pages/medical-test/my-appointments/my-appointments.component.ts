@@ -31,7 +31,6 @@ export class MyAppointmentsComponent implements OnInit {
   // Get Scheduled Appts
   getScheduleDetails() {
     this.schdData = this.apptService.getApptScheduleDetails();
-    console.log("get Schedule Details", this.schdData);
     if (Object.keys(this.schdData).length === 0) {
       AppointmentsConstant.APPT.SCHD_HEADER = this.schHeader;
       AppointmentsConstant.APPT.SCH_DETAILS = '';
