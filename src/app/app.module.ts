@@ -15,17 +15,21 @@ import { MaterialModule } from './sharedModules/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Camera } from '@ionic-native/camera/ngx';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChatComponent } from './components/chat/chat.component';
+import { MintAccountComponent } from './components/mint-account/mint-account.component';
+import { HeadsupAccountComponent } from './components/headsup-account/headsup-account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     HeaderComponent,
-    ChatComponent
+    ChatComponent,
+    MintAccountComponent,
+    HeadsupAccountComponent
   ],
-  entryComponents: [HeaderComponent, ChatComponent],
+  entryComponents: [HeaderComponent, ChatComponent, MintAccountComponent, HeadsupAccountComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -34,7 +38,8 @@ import { ChatComponent } from './components/chat/chat.component';
     MaterialModule,
     FlexLayoutModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     StatusBar,
