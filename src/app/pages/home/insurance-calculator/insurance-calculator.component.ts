@@ -3,6 +3,8 @@ import { HomeConstants } from '../../home/home.constants';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 import { AuthService } from 'src/app/services/auth.service';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MintAccountComponent } from 'src/app/components/mint-account/mint-account.component';
 
 @Component({
   selector: 'app-insurance-calculator',
@@ -22,12 +24,25 @@ export class InsuranceCalculatorComponent implements OnInit {
   totalCoverage = 0;
   INSURANCE_CALCULATOR = HomeConstants.INSURANCE_CALCULATOR;
   isUerLoggedIn: boolean;
-  constructor(private router: Router, private navigationService: MenuService, private auth: AuthService) {
+  constructor(private router: Router, private navigationService: MenuService, private auth: AuthService, public dialog: MatDialog) {
     this.isUerLoggedIn = this.auth.isUserLoggedIn;
   }
 
   ngOnInit() { }
-
+  ionViewDidEnter() {
+    this.openDialog();
+  }
+  openDialog() {
+    this.dialog.open(MintAccountComponent, {
+      data: {
+        accountName: 'mint'
+      },
+      closeOnNavigation : true,
+      disableClose: true,
+      minWidth: '90%',
+      minHeight: '500px'
+    });
+  }
   InsuranceBudget() {
     this.navigationService.setCompletedMenu('Life Insurance Calculator');
     this.router.navigate(['/home/budget']);
