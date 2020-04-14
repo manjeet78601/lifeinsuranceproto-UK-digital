@@ -14,10 +14,30 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <section class="wrapper content" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10px">
-    <h1>Clinic Details</h1>
+  <!--Quotes Header-->
+  <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <header class="page-header" fxLayout="column" fxLayoutAlign="center center">
+      <h2 class="header-title">{{DOM_CONSTANTS.DETAILS_HEADER}}</h2>
+      <h5 class="header-subtitle">{{DOM_CONSTANTS.APPT_SUB_HEADER}} </h5>
+    </header>
+    <mat-card class="wdth-40">
+      <p><img src="../../../../assets/icon/Group_2433.png" alt="Lab details"></p>
+      <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+        <h5 class="header-subtitle">{{DOM_CONSTANTS.DETAILS_SUB_HEADER}}</h5>
+        <p class="txt-cntr header-subtitle">{{DOM_CONSTANTS.SCH_DETAILS}}</p>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <div class="mb-20">
+          <button mat-flat-button (click)="goToReschedule()" class="pink_color">{{BTN.RESCHEDULE}}</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="mt-50">
+      <button mat-stroked-button class="btn btn-border" (click)="getPrevious()">{{BTN.BACK}}</button>
+      <button class="btn bg-blk col-wht" mat-stroked-button (click)="goToNext()">
+        {{BTN.BOOK}}</button>
+    </div>
   </section>
-
   <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
