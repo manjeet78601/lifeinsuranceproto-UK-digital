@@ -14,16 +14,20 @@ export class MyAppointmentsComponent implements OnInit {
   BTN = AppointmentsConstant.BTN;
   schdData: any;
   schHeader: string;
+  clinicData: any;
+  clinicHeader: string;
   constructor(private router: Router, private apptService: AppointmentsService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
+
   ionViewDidEnter() {
     this.DOM_CONSTANTS = AppointmentsConstant.APPT;
     this.schHeader = AppointmentsConstant.APPT.SCHD_HEADER;
+    this.clinicHeader = AppointmentsConstant.APPT.CLINIC_SCHD_HEADER;
     this.schdData = this.getScheduleDetails();
+    this.clinicData = this.getClinicDetails();
   }
-  goToSchedule() {
+  goToReScheduleLab() {
     this.apptService.apptDetails = {};
     this.getScheduleDetails();
     this.router.navigate(['/medical-test']);
@@ -42,8 +46,33 @@ export class MyAppointmentsComponent implements OnInit {
         + this.schdData.date + ' at ' + this.schdData.time;
     }
   }
-  // cancelling Appt
-  cancelAppt() {
+  // Get Scheduled Clinic details
+  getClinicDetails() {
+    this.clinicData = this.apptService.getClinicSchedule();
+    if (Object.keys(this.clinicData).length > 0) {
+      this.clinicData.location = 'Manhattan Health';
+      AppointmentsConstant.APPT.CLINIC_SCHD_HEADER = this.clinicData.location;
+      AppointmentsConstant.APPT.CLINIC_SCHD_DETAILS_BL = AppointmentsConstant.APPT.CLINIC_SCHD_DETAILS +
+        this.clinicData.date + ' at ' + this.clinicData.time + ' at ' + this.clinicData.location;
+    } else {
+      AppointmentsConstant.APPT.CLINIC_SCHD_HEADER = this.clinicHeader;
+      AppointmentsConstant.APPT.CLINIC_SCHD_DETAILS_BL = '';
+    }
+  }
+
+  // Reschedule Clinic appt
+  goToRescheduleClinic() {
+    this.apptService.clinicDetails = {};
+    this.getClinicDetails();
+    this.router.navigate(['/medical-test/locate-clinic']);
+  }
+  // cancelling Clinic Appt
+  cancelClinicAppt() {
+    this.apptService.clinicDetails = {};
+    this.getClinicDetails();
+  }
+  // cancelling Lab Appt
+  cancelLabAppt() {
     this.apptService.apptDetails = {};
     this.getScheduleDetails();
   }

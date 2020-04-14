@@ -9,7 +9,7 @@ import { Appointments } from '../models/appointments.model';
 })
 export class AppointmentsService {
   apptDetails: Appointments = {};
-  docApptDerails = {};
+  clinicDetails: Appointments = {};
   constructor(private http: HttpClient) { }
 
   setLocation(location: string) {
@@ -22,6 +22,19 @@ export class AppointmentsService {
   getApptScheduleDetails(): Appointments {
     console.log('returning the value', this.apptDetails);
     return this.apptDetails;
+  }
+
+  // GET, SET Clinic details
+  setClinicLocation(location: string) {
+    this.clinicDetails.location = location;
+  }
+  setClinicSchedule(date: string, time: string) {
+    this.clinicDetails.date = date;
+    this.clinicDetails.time = time;
+  }
+  getClinicSchedule(): Appointments {
+    console.log('returning the value', this.clinicDetails);
+    return this.clinicDetails;
   }
 }
 

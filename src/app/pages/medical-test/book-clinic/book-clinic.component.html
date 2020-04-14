@@ -13,12 +13,52 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<!--Header Section-->
 <ion-content>
-  <section class="wrapper content" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10px">
-    <h1>Book clinic</h1>
-  </section>
+  <section class="content">
+    <div class="wrapper ion-text-center" fxLayout="column" fxLayoutAlign="center center">
+      <header>
+        <p class="subtitle">{{ DOM_CONSTATNTS.HEADER }}</p>
+      </header>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="calendar-display">
+          <mat-calendar #calendar [selected]="selectedDate" [startAt]="startAt" [minDate]="minDate" (selectedChange)="onSelect($event)"></mat-calendar>
+        </mat-card>
+      </div>
+      <!--TimeSlot section-->
+      <section class="mt-20">
+        <div fxLayout="column">
+          <mat-card>
+            <mat-card-title fxLayoutAlign="start" class="title">{{ DOM_CONSTATNTS.AVAL_TIME}}</mat-card-title>
+            <mat-card-content>
+              <mat-chip-list #chipList>
+                <mat-chip class="time-slot-list" *ngFor="let appt of availTimeslot" [ngClass]="selectedTime === appt ? 'selected-time-slot' : ''">
+                  {{appt}}
+                </mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
 
-  <!--Footer-->
+            <mat-label fxLayoutAlign="start" class="title mt-20">{{DOM_CONSTATNTS.CHOOSE_TIME}}</mat-label>
+            <mat-card-content>
+              <mat-form-field appearance="outline" style="width:300px">
+                <mat-select (selectionChange)="onChangedSort($event)">
+                  <mat-option *ngFor="let timing of backendData" [value]="timing">
+                    {{timing}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </section>
+      <!-- bottom section -->
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="mt-20">
+        <button mat-stroked-button class="btn-color" routerLink="/medical-test/locate-clinic">{{DOM_CONSTATNTS.BTN.BACK| uppercase}}</button>
+        <button mat-flat-button color="primary" routerLink="/medical-test/clinic-details">{{DOM_CONSTATNTS.BTN.BOOK| uppercase}}</button>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">
@@ -32,3 +72,4 @@
     </ion-text>
   </footer>
 </ion-content>
+<!-- Footer -->
