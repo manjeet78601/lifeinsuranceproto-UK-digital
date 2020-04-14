@@ -10,7 +10,7 @@ export class LabDetailsComponent implements OnInit {
 
   constructor( private router: Router) { }
   goToNext() {
-    this.router.navigate(['/medical-test/email-appt']);
+    this.router.navigate(['/medical-test/locate-clinic']);
 
   }
   ngOnInit() {}
