@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { MedicalExamPage } from './medical-exam.page';
+import { MedicalExamPage } from './medical-test.page';
 
 describe('MedicalExamPage', () => {
   let component: MedicalExamPage;
