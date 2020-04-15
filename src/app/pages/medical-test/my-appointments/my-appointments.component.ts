@@ -40,7 +40,6 @@ export class MyAppointmentsComponent implements OnInit {
       AppointmentsConstant.APPT.SCH_DETAILS = '';
       console.log('AppointmentsConstant.APPT.SCHD_HEADER', AppointmentsConstant.APPT.SCHD_HEADER);
     } else {
-      this.schdData.location = 'Quest Diagnostics';
       AppointmentsConstant.APPT.SCHD_HEADER = this.schdData.location;
       AppointmentsConstant.APPT.SCH_DETAILS = AppointmentsConstant.APPT.SCH_DETAILS_BOOKED + this.schdData.location + ' for '
         + this.schdData.date + ' at ' + this.schdData.time;
@@ -50,7 +49,6 @@ export class MyAppointmentsComponent implements OnInit {
   getClinicDetails() {
     this.clinicData = this.apptService.getClinicSchedule();
     if (Object.keys(this.clinicData).length > 0) {
-      this.clinicData.location = 'Manhattan Health';
       AppointmentsConstant.APPT.CLINIC_SCHD_HEADER = this.clinicData.location;
       AppointmentsConstant.APPT.CLINIC_SCHD_DETAILS_BL = AppointmentsConstant.APPT.CLINIC_SCHD_DETAILS +
         this.clinicData.date + ' at ' + this.clinicData.time + ' at ' + this.clinicData.location;

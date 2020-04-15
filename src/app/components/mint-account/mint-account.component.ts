@@ -17,6 +17,9 @@ export class MintAccountComponent implements OnInit {
               public dialogRef: MatDialogRef<MintAccountComponent>) { }
 
   ngOnInit() {}
+  onFormsubmit() {
+    this.closeDialog();
+  }
   closeDialog() {
     this.dialogRef.close();
   }

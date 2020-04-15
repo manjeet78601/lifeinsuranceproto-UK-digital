@@ -40,7 +40,7 @@ export class InsuranceCalculatorComponent implements OnInit {
       closeOnNavigation : true,
       disableClose: true,
       minWidth: '90%',
-      minHeight: '500px'
+      maxHeight: '600px'
     });
   }
   InsuranceBudget() {

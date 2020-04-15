@@ -1,0 +1,49 @@
+.lh-1 {
+    line-height: 1.3;
+}
+.headsup-account-section {
+    width: 100%;
+}
+.signin {
+    background: #0418bc;
+    color: white;
+    width: 100%;
+    &[disabled] {
+        color: white;
+        opacity: 0.5;
+    }
+    .lock-icon {
+        padding-right: 5px;
+        padding-bottom: 2px;
+    }
+}
+.form-input-control {
+    width: 100%;
+    color: #242e42;
+}
+.col-blue-shade{
+    color: #0418bc;
+}
+.rm-line {
+    text-decoration: none;
+}
+.headsup-form-container {
+    text-align: left;
+    background-color: #ffffff;
+    padding: 15px 15px;
+    border: 1px solid #e0e6ff;
+}
+.heads-up-form {
+    font-size: 12px;
+}
+.close-modal { 
+    font-size: 25px;
+    display: block;
+    height: 10px;
+}
+.float-r {
+    float: right;
+    &::after {
+        clear: right;
+    }
+}

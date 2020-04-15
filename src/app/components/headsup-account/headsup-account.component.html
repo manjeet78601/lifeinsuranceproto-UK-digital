@@ -1,3 +1,46 @@
-<p>
-  headsup-account works!
-</p>
+<span class="close-modal"><ion-icon name="close-outline" (click) ="closeDialog()"></ion-icon></span>
+<section class="ion-text-center" fxLayout="column" fxLayoutAlign="center center">
+  <div mat-dialog-title>
+    <p class="fs-24"><strong>Would you like to link your Heads Up account?</strong></p>
+    <p class="fs-16 lh-1">By giving Life+ access to your Heads Up account, you won’t have to answer as many health
+      questions.</p>
+  </div>
+
+  <section mat-dialog-content class="headsup-account-section">
+   
+    <div class="headsup-form-container">
+      <div class="mb-0">
+        <img src="../../../assets/img/headsup-acct-logo.png" class="headsup-logo">
+      </div>
+      <header class="fs-24 text-left">Sign In</header>
+      <p class="fs-14 mb-0 mt-5">Please enter your credentials to proceed.</p>
+      <form class="text-left mt-20 heads-up-form" [formGroup]="headsupAcctForm">
+        <p class="form-label mb-0"><label for="uname">EMAIL ADDRESS</label></p>
+        <mat-form-field appearance="outline" class="form-input-control">
+          <input formControlName="userName" matInput type="text" value="" id="uname" placeholder="example@example.com" autofocus>
+        </mat-form-field>
+        <p class="form-label mt-20 mb-0"><label for="pwd">PASSWORD</label>
+        <span class="float-r">Forgot password?</span>
+        </p>
+        <mat-form-field appearance="outline" class="form-input-control">
+          <input formControlName="pwd" matInput type="password" value="" id="pwd">
+        </mat-form-field>
+        <p class="form-label mt-20 mb-0"><label for="select-box">KEEP ME SIGNED IN FOR</label></p>
+        <mat-form-field class="form-input-control" appearance="outline">
+          <select matNativeControl id="select-box" >
+            <option value="1" selected>1 day</option>
+            <option value="7">7 Days</option>
+            <option value="14">14 Days</option>
+            <option value="30">30 Days</option>
+          </select>
+        </mat-form-field>
+        <div class="ion-text-center mt-20">
+          <button type="submit" class="btn signin" mat-stroked-button [disabled]="!headsupAcctForm.valid" (click)="onFormsubmit()">
+            <strong>Login</strong>
+          </button>
+          <p> Don't have an account? <span class="col-blue-shade">Sign Up</span></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</section>
