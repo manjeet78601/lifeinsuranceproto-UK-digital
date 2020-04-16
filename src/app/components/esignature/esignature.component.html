@@ -1,0 +1,50 @@
+<ion-header>  
+  <ion-toolbar>  
+    <ion-buttons slot="start" >
+      <ion-back-button text="" color='dark'><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">  
+      <ion-menu-button color="dark"></ion-menu-button>  
+    </ion-buttons>  
+   <ion-title class="ion-text-center app-name">  
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
+    </ion-title>  
+  </ion-toolbar>
+</ion-header> 
+<ion-content>
+  <section  class="content">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <h1>Third Party Permissions</h1>
+      <div class="esign-text">
+        <p class="mt-5 col-blk">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl vel pretium lectus quam id Leo in vitae turpis. Pellentesque sit amet porttitor eget dolor morbi non. Tellus at urna condimentum mattis pellentesque id nibh tortor. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl.</p>
+        <p class="col-blk">Massa sed elementum tempus egestas sed sed risus pretium quam. Sed enim ut sem viverra aliquet eget sit amet tellus. Dignissim diam quis enim lobortis scelerisque fermentum. Tellus rutrum tellus pellentesque eu tincidunt. Duis at tellus at urna condimentum. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Integer eget aliquet nibh praesent tristique. Tristique et egestas quis ipsum suspendisse ultrices gravida. </p>
+        <p class="col-blk">Eget nunc scelerisque viverra mauris in aliquam sem fringilla ut. Tellus in hac habitasse platea. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Lacus sed turpis tincidunt id aliquet risus. Sit amet cursus sit amet dictum sit amet justo donec. Malesuada pellentesque elit eget gravida cum.</p>
+        <p class="col-blk">Condimentum id venenatis a condimentum vitae sapien. Diam in arcu cursus euismod quis viverra nibh. Pharetra diam sit amet nisl suscipit adipiscing bibendum est. Ornare quam viverra orci sagittis eu. Arcu dui vivamus arcu felis bibendum ut. Elementum pulvinar etiam non quam. Massa tempor nec feugiat nisl pretium fusce id. Consequat mauris nunc congue nisi vitae. Tortor dignissim convallis aenean et tortor. Integer malesuada nunc vel risus commodo. Ultrices eros in cursus turpis massa tincidunt dui ut. Ut tortor pretium viverra suspendisse. Non blandit massa enim nec dui nunc mattis enim. Ornare aenean euismod elementum nisi quis eleifend quam. Tortor aliquam nulla facilisi cras. Eget nulla facilisi etiam dignissim. Purus in massa tempor nec feugiat. Sit amet luctus venenatis lectus magna fringilla. Enim nec dui nunc mattis enim ut tellus elementum.</p>
+      </div>
+    </div>
+    <p class="form-label"><label for="name">eSignature</label></p>
+    <mat-form-field appearance="outline" class="form-input-control mb-20">
+      <input [(ngModel)]="userNname" matInput type="text" placeholder="name@domain.com" value="" id="name">
+      <!-- <mat-error>Invalid username</mat-error> -->
+    </mat-form-field>
+    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px" class="mt-20">
+      <button mat-stroked-button (click) = "onCancel()">CANCEL</button>
+      <button mat-flat-button color="primary"  (click) = "onESign()" [disabled]="!userNname">Submit</button>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br />
+        Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+  <!-- End of footer -->
+</ion-content>
