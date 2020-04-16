@@ -16,15 +16,16 @@
 
 <ion-content>
   <!--Quotes Header-->
-  <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <section class="wrapper-plan quotesSec" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <h2 class="exp-header">Compare Quotes</h2>
     <header fxLayoutAlign="center center">
       <h2 class="header-title">{{DOM_CONSTANTS.QUOTE_HEADER }}</h2>
     </header>
     <p fxLayoutAlign="center center" class="plan-sub-header">{{DOM_CONSTANTS.QUOTE_SUB_HEADER }}</p>
-
-    <!--Quotes-->
-    <mat-card class="plan-card mat-elevation-z0 " *ngFor="let quo of quotes; let i = index">
+     <!--Quotes-->  
+    <ngb-carousel *ngIf="quotes">
+    <ng-template ngbSlide *ngFor="let quo of quotes; let i = index" [id]="quo.productId">  
+    <mat-card class="plan-card mat-elevation-z0 ">
       <div fxLayout="column" class="quote-img">
         <img [src]="quo.prodImg" alt="dummy-image">
       </div>
@@ -84,6 +85,8 @@
         </div>
       </mat-card-content>
     </mat-card>
+  </ng-template>
+  </ngb-carousel>
 
     <!--Comparision Tool-->
     <div class="mt-50 exp-header">{{DOM_CONSTANTS.QUOTE_COMP}}</div>
