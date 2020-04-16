@@ -24,17 +24,17 @@ export class CompareQuotesConstant {
                     },
                     {
                         QUESTIONTEXT: 'Height',
-                        INPUT_TYPE: 'HEIGHTDROPDOWN',
-                        HEIGHTVALUE:1,
-                        HEIGHTUNIT_FT:'ft',
-                        HEIGHTUNIT_INCH:'in',
+                        INPUT_TYPE: 'HEIGHTSLIDER',
+                        HEIGHTVALUE: 1,
+                        HEIGHTUNIT_FT: 'ft',
+                        HEIGHTUNIT_INCH: 'in',
                         ICON: false,
                     },
                     {
                         QUESTIONTEXT: 'Weight',
-                        INPUT_TYPE: 'WEIGHTDROPDOWN',
-                        WEIGHTVALUE:1,
-                        WEIGHTUNIT:'lbs',
+                        INPUT_TYPE: 'WEIGHTSLIDER',
+                        WEIGHTVALUE: 1,
+                        WEIGHTUNIT: 'lbs',
                         ICON: false
                     },
                     {

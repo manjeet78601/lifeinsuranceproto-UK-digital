@@ -32,18 +32,12 @@
           </mat-expansion-panel-header>
           <ng-container *ngFor="let que of item.QUESTIONS; let quesIndex = index;">
             <mat-label class="que-header2">{{ que.QUESTIONTEXT }}
-              <span *ngIf="que.QUESTIONTEXT==='Height'">
-                <mat-form-field appearance="none">
-                  <input matInput type="number" class="healthInp" [(ngModel)]="heightValue" name="heightValue"/>
-                  <span class="heightUnit">{{que.HEIGHTUNIT_FT}}</span>
-                  </mat-form-field> 
-              </span>
-              <span *ngIf="que.QUESTIONTEXT==='Weight'">
-                  <mat-form-field appearance="none">
-                    <input matInput type="number" class="healthInp" [(ngModel)]="weightValue" name="weightValue"/> 
-                    <span class="healthUnit">{{que.WEIGHTUNIT}}</span> 
-              </mat-form-field> 
-              </span>
+              <ng-container *ngIf="que.INPUT_TYPE==='HEIGHTSLIDER' && heightValue > 0">
+                <span class="val">{{heightValue+ ' '}}</span> <span>ft</span>
+              </ng-container>
+              <ng-container *ngIf="que.INPUT_TYPE==='WEIGHTSLIDER' && weightValue > 0">
+                <span class="val">{{weightValue+ ' '}}</span> <span>lbs</span>
+              </ng-container>
             </mat-label>
             <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
             <div [ngSwitch]="que.INPUT_TYPE">
@@ -80,12 +74,12 @@
                   </mat-form-field>
                 </ng-container>
               </div>
-              <div *ngSwitchCase="'HEIGHTDROPDOWN'">
+              <div *ngSwitchCase="'HEIGHTSLIDER'">
                 <mat-slider [max]="max" [min]="min" [step]="step" [tickInterval]="tickInterval" name="heightValue" (change)="updateHeight($event)" [value]="heightValue" [(ngModel)]="heightValue">
                 </mat-slider> 
                 
               </div>
-              <div *ngSwitchCase="'WEIGHTDROPDOWN'">
+              <div *ngSwitchCase="'WEIGHTSLIDER'">
                <mat-slider [max]="maxWeight" [min]="minWeight" [step]="weightStep" [tickInterval]="weightTickInterval" name="weightValue" (change)="updateWeight($event)"
                 [value]="weightValue" [(ngModel)]="weightValue">
                 </mat-slider>
