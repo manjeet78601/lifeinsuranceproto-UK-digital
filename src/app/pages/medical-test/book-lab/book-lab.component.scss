@@ -108,19 +108,11 @@ span.time-slot-list {
   font-size: 12px;
   // color: black;
   border: 1px solid black;
-<<<<<<< HEAD
   // background-color: white;
   width: 70px;
   height:25px;
   padding: 5px 8px;
   margin: 5px;
-=======
-  background-color: white;
-  padding: 3px 8px;
-  &::after {
-    background-color: white;
-  }
->>>>>>> d4b74fe1a43d7ea691b05adf7a3e5746ab8dd55e
    &.selected-time-slot {
    color: #fff;
    background-color: #707070;

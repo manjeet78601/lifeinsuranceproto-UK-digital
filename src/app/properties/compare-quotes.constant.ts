@@ -25,11 +25,16 @@ export class CompareQuotesConstant {
                     {
                         QUESTIONTEXT: 'Height',
                         INPUT_TYPE: 'HEIGHTDROPDOWN',
-                        ICON: false
+                        HEIGHTVALUE:1,
+                        HEIGHTUNIT_FT:'ft',
+                        HEIGHTUNIT_INCH:'in',
+                        ICON: false,
                     },
                     {
                         QUESTIONTEXT: 'Weight',
                         INPUT_TYPE: 'WEIGHTDROPDOWN',
+                        WEIGHTVALUE:1,
+                        WEIGHTUNIT:'lbs',
                         ICON: false
                     },
                     {

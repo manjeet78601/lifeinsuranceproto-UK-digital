@@ -31,7 +31,20 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <ng-container *ngFor="let que of item.QUESTIONS; let quesIndex = index;">
-              <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
+              <mat-label class="que-header2">{{ que.QUESTIONTEXT }}
+                <span *ngIf="que.QUESTIONTEXT==='Height'">
+                  <mat-form-field appearance="none">
+                  <input matInput type="number" class="healthInp" [(ngModel)]="heightValue" name="heightValue"/>
+                  <span class="heightUnit">{{que.HEIGHTUNIT_FT}}</span>
+                  </mat-form-field>
+                  </span>
+                  <span *ngIf="que.QUESTIONTEXT==='Weight'">
+                    <mat-form-field appearance="none">
+                    <input matInput type="number" class="healthInp" [(ngModel)]="weightValue" name="weightValue"/>
+                    <span class="healthUnit">{{que.WEIGHTUNIT}}</span>
+                  </mat-form-field>
+                  </span>
+              </mat-label>
               <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
               <div [ngSwitch]="que.INPUT_TYPE">
                 <div *ngSwitchCase="'Datepicker'">
@@ -69,7 +82,7 @@
                 </ng-container>
               </div>
                 <div *ngSwitchCase="'HEIGHTDROPDOWN'">
-                    <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-form-field class="example-full-width" appearance="outline">
                       <input type="number" matInput placeholder="0.00" name="ht + {{healthIndex+''+quesIndex}}" required>
                     </mat-form-field>
                     <mat-form-field class="example-full-width" appearance="outline">
@@ -77,10 +90,12 @@
                         <option value="cm">cm</option>
                         <option value="feet">feet</option>
                       </select>
-                    </mat-form-field>
+                    </mat-form-field> -->
+                    <mat-slider [max]="max" [min]="min" [step]="step" [tickInterval]="tickInterval" name="heightValue" [(ngModel)]="heightValue">
+                    </mat-slider>
                 </div>
                 <div *ngSwitchCase="'WEIGHTDROPDOWN'">
-                  <mat-form-field class="example-full-width" appearance="outline" >
+                  <!-- <mat-form-field class="example-full-width" appearance="outline" >
                     <input type="number" matInput placeholder="0.00" name="wt + {{healthIndex+''+quesIndex}}" required>
                   </mat-form-field>
                   <mat-form-field class="example-full-width" appearance="outline">
@@ -88,7 +103,10 @@
                       <option value="cm">lbs</option>
                       <option value="feet">kg</option>
                     </select>
-                  </mat-form-field>
+                  </mat-form-field> -->
+                  <mat-slider [max]="maxWeight" [min]="minWeight" [step]="weightStep" [tickInterval]="weightTickInterval" name="weightValue"
+                  [(ngModel)]="weightValue">
+                </mat-slider>
                 </div>
               </div>
             </ng-container>

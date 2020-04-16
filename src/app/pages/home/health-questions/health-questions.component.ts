@@ -34,6 +34,18 @@ export class HealthQuestionsComponent implements OnInit {
   BTN = CompareQuotesConstant.BTTN;
   progress = 0;
   isUerLoggedIn: boolean;
+  // height
+  max = 12;
+  min = 3;
+  step = 1;
+  tickInterval = 1
+  // 
+  // weight
+  maxWeight = 1000;
+  minWeight = 80;
+  weightStep = 5;
+  weightTickInterval = 1
+  // 
   constructor(
     private toast: ToastService,
     private formBuilder: FormBuilder,
