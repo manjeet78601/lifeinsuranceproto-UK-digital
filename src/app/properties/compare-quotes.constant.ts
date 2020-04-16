@@ -25,16 +25,16 @@ export class CompareQuotesConstant {
                     {
                         QUESTIONTEXT: 'Height',
                         INPUT_TYPE: 'HEIGHTDROPDOWN',
-                        HEIGHTVALUE:1,
-                        HEIGHTUNIT_FT:'ft',
-                        HEIGHTUNIT_INCH:'in',
+                        HEIGHTVALUE: 1,
+                        HEIGHTUNIT_FT: 'ft',
+                        HEIGHTUNIT_INCH: 'in',
                         ICON: false,
                     },
                     {
                         QUESTIONTEXT: 'Weight',
                         INPUT_TYPE: 'WEIGHTDROPDOWN',
-                        WEIGHTVALUE:1,
-                        WEIGHTUNIT:'lbs',
+                        WEIGHTVALUE: 1,
+                        WEIGHTUNIT: 'lbs',
                         ICON: false
                     },
                     {
@@ -142,13 +142,13 @@ export class CompareQuotesConstant {
                 QUESTIONS: [
                     {
                         QUESTIONTEXT: 'Do you have any parents or siblings who had heart attacks,' +
-                            'strokes, cancer, diabetes, or kidney disease before age 70?',
+                        'strokes, cancer, diabetes, or kidney disease before age 70?',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true
                     },
                     {
                         QUESTIONTEXT: 'Has your driver’s license been suspended or revoked,' +
-                            ' or had more than one traffic ticket or accident in the past five years?',
+                        ' or had more than one traffic ticket or accident in the past five years?',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true
                     }
