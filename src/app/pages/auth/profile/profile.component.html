@@ -15,7 +15,6 @@
 </ion-header>
 <ion-content>
   <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-
     <section class='user-info'>
       <ion-list>
         <ion-item>
@@ -27,7 +26,7 @@
               <strong>{{userName}}</strong>
               <ion-icon name="create-outline"></ion-icon>
             </p>
-            <p class="label">Birthday</p>
+          <p class="label">Birthday</p>
             <p class="bdate">{{ birthDate | date: 'dd/MM/yyyy' }}</p>
             <p class="label policy">Policy Status</p>
             <p class="policy-status">We’re looking to make sure</p>
@@ -37,7 +36,7 @@
         </ion-item>
       </ion-list>
       <div class="progress-indicator">
-        <mat-label>{{ progress + '%' }}</mat-label> 
+        <mat-label>{{ progress + '%' }}</mat-label>
       </div>
       <mat-progress-bar mode="determinate" color="secondary" [value]="progress"></mat-progress-bar>
     </section>
@@ -48,8 +47,8 @@
       </ion-card-header>
       <ion-card-content>
         <!-- <canvas #userFinancialAssets></canvas> -->
-        <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
-          [options]="donutOptions" [colors]="doughnutChartLegendColors"></canvas>
+        <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [options]="donutOptions"
+          [colors]="doughnutChartLegendColors"></canvas>
       </ion-card-content>
     </ion-card>
 
@@ -60,26 +59,21 @@
 
     <mat-accordion class="user-financial-info">
       <ng-container *ngFor="let financeDetails of userFinancialInfo; let itemIndex = index; trackBy: trackByIndex">
-        <mat-expansion-panel
-          [ngStyle]="{'background':financeDetails.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
+        <mat-expansion-panel [ngStyle]="{'background':financeDetails.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
           <mat-expansion-panel-header class="mat-accordian-header">
             <mat-panel-title>
               {{ financeDetails.title }}
             </mat-panel-title>
-            <ion-icon name="person" class="user-icon"
-              [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
-            <ion-icon name="checkmark" class="tick-icon"
-              [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
+            <ion-icon name="person" class="user-icon" [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
+            <ion-icon name="checkmark" class="tick-icon" [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
           </mat-expansion-panel-header>
           <p class="header-txt" *ngIf="financeDetails.quesHeader">{{financeDetails.quesHeader}}</p>
-          <ng-container
-            *ngFor="let quesDetails of financeDetails.questions; let quesIndex = index; trackBy: trackByIndex">
+          <ng-container *ngFor="let quesDetails of financeDetails.questions; let quesIndex = index; trackBy: trackByIndex">
             <div [ngSwitch]="quesDetails.element">
               <div class="ques-details my-15" *ngSwitchCase="'toggleButton'">
                 <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
-                <mat-button-toggle-group name="{{'question' + quesIndex}}" ngDefaultControl aria-label="Font Style"
-                  class="custom-mat-btn-toggle-group" [(ngModel)]="quesDetails.value"
-                  (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
+                <mat-button-toggle-group name="{{'question' + quesIndex}}" ngDefaultControl aria-label="Font Style" class="custom-mat-btn-toggle-group"
+                  [(ngModel)]="quesDetails.value" (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
                   <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
                   <span class="circle">or</span>
                   <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
@@ -89,9 +83,8 @@
                 <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
                 <mat-form-field appearance="outline" class="form-input-control text-right">
                   <span matPrefix class="col-dull-grey">$ &nbsp;</span>
-                  <input matInput type="number" name="{{'question' + quesIndex}}" ngDefaultControl
-                    [placeholder]="quesDetails.placeholder" value="" [(ngModel)]="quesDetails.value"
-                    (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
+                  <input matInput type="number" name="{{'question' + quesIndex}}" ngDefaultControl [placeholder]="quesDetails.placeholder"
+                    value="" [(ngModel)]="quesDetails.value" (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
                 </mat-form-field>
                 <mat-icon matTooltip={{quesDetails.name}} class="tooltip">help_outline</mat-icon>
               </div>
