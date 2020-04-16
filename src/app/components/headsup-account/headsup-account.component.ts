@@ -17,13 +17,19 @@ export class HeadsupAccountComponent implements OnInit {
               public dialogRef: MatDialogRef<HeadsupAccountComponent>, private router: Router) { }
 
   ngOnInit() {}
+  ionViewWillLeave() {
+    this.closeDialog();
+  }
   onFormsubmit() {
     let pName: string;
     this.closeDialog();
     if (this.router.url.indexOf('health') !== -1) {
-      pName = 'health';
+      pName = 'home/health';
     }
-    this.router.navigate(['/home/esign'], { queryParams: { page: pName } });
+    if (this.router.url.indexOf('otheracct') !== -1) {
+      pName = 'auth/otheracct';
+    }
+    this.router.navigate(['/home/esign'], { queryParams: { page: pName, accountName: 'headsUpAccount'} });
   }
   closeDialog() {
     this.dialogRef.close();

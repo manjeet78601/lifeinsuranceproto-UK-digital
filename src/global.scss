@@ -30,7 +30,7 @@
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
 
 .wrapper {
-  padding: 20px;
+  padding: 0 20px;
 }
 header {
   text-align: center;
@@ -261,6 +261,9 @@ h6 {
 }
 .text-left {
   text-align: left;
+}
+.text-center {
+  text-align: center;
 }
 
 // footer

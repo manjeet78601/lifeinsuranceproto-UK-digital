@@ -34,14 +34,14 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
   BTN = CompareQuotesConstant.BTTN;
   progress = 0;
   isUerLoggedIn: boolean;
-  heightValue:any;
-  weightValue:any;
+  heightValue: any;
+  weightValue: any;
   // height
   max = 12;
   min = 3;
   step = 1;
-  tickInterval = 1
-  // 
+  tickInterval = 1;
+  //
   // weight
   maxWeight = 1000;
   minWeight = 80;
@@ -79,6 +79,9 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
         this.prefillQuestions();
       }
     });
+  }
+  ionViewWillLeave() {
+    this.routeSub.unsubscribe();
   }
   openDialog() {
     this.dialog.open(HeadsupAccountComponent, {
@@ -126,10 +129,10 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
       return true;
     }
   }
-  updateHeight(event){
+  updateHeight(event) {
     this.heightValue = event.value;
   }
-  updateWeight(event){
+  updateWeight(event) {
     this.weightValue = event.value;
   }
   gotoHomePage() {

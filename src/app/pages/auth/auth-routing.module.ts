@@ -5,6 +5,7 @@ import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ExternalAccountsComponent } from './external-accounts/external-accounts.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'otheracct',
+    component: ExternalAccountsComponent
   },
   {
     path: 'forgotpassword',

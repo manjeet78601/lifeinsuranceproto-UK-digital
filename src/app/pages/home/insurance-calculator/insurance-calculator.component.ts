@@ -44,6 +44,9 @@ export class InsuranceCalculatorComponent implements OnInit, OnDestroy {
       }
     });
   }
+  ionViewWillLeave() {
+    this.routeSub.unsubscribe();
+  }
   openDialog() {
     this.dialog.open(MintAccountComponent, {
       data: {
