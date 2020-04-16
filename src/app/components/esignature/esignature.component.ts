@@ -8,19 +8,21 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EsignatureComponent implements OnInit {
   pageName: string;
+  accountName: string;
   constructor(private router: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {}
   ionViewDidEnter() {
     this.activeRoute.queryParams.subscribe((data) => {
       this.pageName = data.page || '';
+      this.accountName = data.accountName || '';
     });
   }
   onESign() {
-    this.router.navigate([`/home/${this.pageName}`], { queryParams: { esign: 'verified' } });
+    this.router.navigate([`/${this.pageName}`], { queryParams: { accountName: this.accountName, esign: 'verified' } });
   }
   onCancel() {
-    this.router.navigate([`/home/${this.pageName}`], { queryParams: { esign: 'notverified' } });
+    this.router.navigate([`/${this.pageName}`], { queryParams: { accountName: this.accountName, esign: 'notverified' } });
   }
   gotoHomePage() {
     this.router.navigate(['/home']);

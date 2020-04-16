@@ -18,14 +18,20 @@ export class MintAccountComponent implements OnInit {
               public dialogRef: MatDialogRef<MintAccountComponent>, private router: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {}
+  ionViewWillLeave() {
+    this.closeDialog();
+  }
   onFormsubmit() {
     let pName;
     this.closeDialog();
     console.log('Route name: ' + this.router.url);
     if (this.router.url.indexOf('insurance-calculator') !== -1) {
-      pName = 'insurance-calculator';
+      pName = 'home/insurance-calculator';
     }
-    this.router.navigate(['/home/esign'], { queryParams: { page: pName } });
+    if (this.router.url.indexOf('otheracct') !== -1) {
+      pName = 'auth/otheracct';
+    }
+    this.router.navigate(['/home/esign'], { queryParams: { page: pName, accountName: 'mintAccount' } });
   }
   closeDialog() {
     this.dialogRef.close();

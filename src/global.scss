@@ -30,7 +30,7 @@
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
 
 .wrapper {
-  padding: 20px;
+  padding: 0 20px;
 }
 header {
   text-align: center;
@@ -261,6 +261,9 @@ h6 {
 }
 .text-left {
   text-align: left;
+}
+.text-center {
+  text-align: center;
 }
 
 // footer
@@ -736,4 +739,24 @@ float: left;
   color: #000000;
   height: 36px;
   border-color: #00B5AD !important;
+}
+.quotesSec{
+  .carousel-indicators{
+    bottom: -50px;
+  }
+  .carousel-indicators li {
+    margin-top: 20px;
+    height: 8px;
+    width : 8px ;
+    border-radius: 100%;
+    background-color: #fff;
+    border: 1px solid #707070;
+  }
+  .carousel-indicators li.active {
+    background-color: #707070;
+    border: 1px solid #707070;  
+  }
+  .carousel-control-next, .carousel-control-prev {
+    opacity: 0;
+  }
 }

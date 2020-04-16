@@ -18,7 +18,7 @@ import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-
 import { QuoteComponent } from './quote/quote.component';
 import { ChatService } from '../../services/chat.service';
 import { EsignatureComponent } from 'src/app/components/esignature/esignature.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -26,7 +26,8 @@ import { EsignatureComponent } from 'src/app/components/esignature/esignature.co
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ],
   declarations: [
     HomePage,
