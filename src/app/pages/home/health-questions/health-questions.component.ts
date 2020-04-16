@@ -34,6 +34,8 @@ export class HealthQuestionsComponent implements OnInit {
   BTN = CompareQuotesConstant.BTTN;
   progress = 0;
   isUerLoggedIn: boolean;
+  heightValue:any;
+  weightValue:any;
   // height
   max = 12;
   min = 3;
@@ -109,6 +111,12 @@ export class HealthQuestionsComponent implements OnInit {
       this.birthdaterror = false;
       return true;
     }
+  }
+  updateHeight(event){
+    this.heightValue = event.value;
+  }
+  updateWeight(event){
+    this.weightValue = event.value;
   }
   gotoHomePage() {
     this.router.navigate(['/home']);
