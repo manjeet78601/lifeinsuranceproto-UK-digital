@@ -62,7 +62,5 @@ export class HealthDetailsPage implements OnInit {
     } else {
       this.router.navigate(['/personal-details/1']);
     }
-
   }
-
 }

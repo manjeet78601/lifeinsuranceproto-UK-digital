@@ -19,7 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChatComponent } from './components/chat/chat.component';
 import { MintAccountComponent } from './components/mint-account/mint-account.component';
 import { HeadsupAccountComponent } from './components/headsup-account/headsup-account.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +39,8 @@ import { HeadsupAccountComponent } from './components/headsup-account/headsup-ac
     FlexLayoutModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [
     StatusBar,

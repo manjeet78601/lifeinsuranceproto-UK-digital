@@ -23,104 +23,97 @@
       <p class="plan-content-health">{{ DOM_CONSTANTS.PAGE_LINE }}</p>
     </header>
     <form #health1="ngForm" name="healthDetails" class="w-90">
-        <mat-accordion>
-          <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS.HEALTHQUESTIONS; let healthIndex = index;">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                {{ item.TITLE }}
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <ng-container *ngFor="let que of item.QUESTIONS; let quesIndex = index;">
-              <mat-label class="que-header2">{{ que.QUESTIONTEXT }}</mat-label>
-              <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
-              <div [ngSwitch]="que.INPUT_TYPE">
-                <div *ngSwitchCase="'Datepicker'">
-                   <!--DOB-->
-                    <mat-form-field class="f-w" appearance="outline">
-                      <input [max]="dateBefore18Years" matInput [matDatepicker]="picker" id="birthDate"
-                        placeholder="mm/dd/yyyy" [(ngModel)]="que.birthDate" name="DOBhealth + {{healthIndex+''+quesIndex}}"
-                        (dateChange)="getDOB(que.birthDate)" required>
-                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                      <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-                    <span *ngIf="birthdaterror"> Age must be greater than 18 </span>
-                </div>
-                <div *ngSwitchCase="'GENDERBTN'">
-                    <mat-button-toggle-group aria-label="Font Style"
-                    class="custom-mat-btn-toggle-group mt-10" [(ngModel)] = "que.value" name="gender + {{healthIndex+''+quesIndex}}" required>
-                    <mat-button-toggle value="male" class="yes-btn">Male</mat-button-toggle>
-                    <span class="circle">or</span>
-                    <mat-button-toggle value="female" class="no-btn">Female</mat-button-toggle>
-                  </mat-button-toggle-group>
-                </div>
-                <div *ngSwitchCase="'TOGGLEBTN'">
-                  <mat-button-toggle-group aria-label="Font Style"
-                  class="custom-mat-btn-toggle-group mt-10" [(ngModel)] = "que.value" name=" health + {{healthIndex+''+quesIndex}}" required>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let item of DOM_CONSTANTS.HEALTHQUESTIONS; let healthIndex = index;">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ item.TITLE }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ng-container *ngFor="let que of item.QUESTIONS; let quesIndex = index;">
+            <mat-label class="que-header2">{{ que.QUESTIONTEXT }}
+              <ng-container *ngIf="que.INPUT_TYPE==='HEIGHTSLIDER' && heightValue > 0">
+                <span class="val">{{heightValue+ ' '}}</span> <span>ft</span>
+              </ng-container>
+              <ng-container *ngIf="que.INPUT_TYPE==='WEIGHTSLIDER' && weightValue > 0">
+                <span class="val">{{weightValue+ ' '}}</span> <span>lbs</span>
+              </ng-container>
+            </mat-label>
+            <mat-icon *ngIf="que.ICON">help_outline</mat-icon>
+            <div [ngSwitch]="que.INPUT_TYPE">
+              <div *ngSwitchCase="'Datepicker'">
+                <!--DOB-->
+                <mat-form-field class="f-w" appearance="outline">
+                  <input [max]="dateBefore18Years" matInput [matDatepicker]="picker" id="birthDate" placeholder="mm/dd/yyyy" [(ngModel)]="que.birthDate"
+                    name="DOBhealth + {{healthIndex+''+quesIndex}}" (dateChange)="getDOB(que.birthDate)" required>
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <span *ngIf="birthdaterror"> Age must be greater than 18 </span>
+              </div>
+              <div *ngSwitchCase="'GENDERBTN'">
+                <mat-button-toggle-group aria-label="Font Style" class="custom-mat-btn-toggle-group mt-10" [(ngModel)]="que.value" name="gender + {{healthIndex+''+quesIndex}}"
+                  required>
+                  <mat-button-toggle value="male" class="yes-btn">Male</mat-button-toggle>
+                  <span class="circle">or</span>
+                  <mat-button-toggle value="female" class="no-btn">Female</mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>
+              <div *ngSwitchCase="'TOGGLEBTN'">
+                <mat-button-toggle-group aria-label="Font Style" class="custom-mat-btn-toggle-group mt-10" [(ngModel)]="que.value" name=" health + {{healthIndex+''+quesIndex}}"
+                  required>
                   <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
                   <span class="circle">or</span>
                   <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
                 </mat-button-toggle-group>
-                <ng-container *ngIf= "(healthIndex === 1 || healthIndex === 2) && que.value === 'yes'">
-                  <mat-label class="que-header2" >If you answered yes to any of these questions, please explain.</mat-label>
-                  <mat-form-field  class="full-width" appearance="outline">
-                    <textarea type="text" name="insuranceText + {{healthIndex+''+quesIndex}}"
-                      class="mat-form-field-flex form-control notes" matInput placeholder="Write a response" required [(ngModel)] = "que.note"></textarea>
+                <ng-container *ngIf="(healthIndex === 1 || healthIndex === 2) && que.value === 'yes'">
+                  <mat-label class="que-header2">If you answered yes to any of these questions, please explain.</mat-label>
+                  <mat-form-field class="full-width" appearance="outline">
+                    <textarea type="text" name="insuranceText + {{healthIndex+''+quesIndex}}" class="mat-form-field-flex form-control notes"
+                      matInput placeholder="Write a response" required [(ngModel)]="que.note"></textarea>
                   </mat-form-field>
                 </ng-container>
               </div>
-                <div *ngSwitchCase="'HEIGHTDROPDOWN'">
-                    <mat-form-field class="example-full-width" appearance="outline">
-                      <input type="number" matInput placeholder="0.00" name="ht + {{healthIndex+''+quesIndex}}" required>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                      <select matNativeControl>
-                        <option value="cm">cm</option>
-                        <option value="feet">feet</option>
-                      </select>
-                    </mat-form-field>
-                </div>
-                <div *ngSwitchCase="'WEIGHTDROPDOWN'">
-                  <mat-form-field class="example-full-width" appearance="outline" >
-                    <input type="number" matInput placeholder="0.00" name="wt + {{healthIndex+''+quesIndex}}" required>
-                  </mat-form-field>
-                  <mat-form-field class="example-full-width" appearance="outline">
-                    <select matNativeControl>
-                      <option value="cm">lbs</option>
-                      <option value="feet">kg</option>
-                    </select>
-                  </mat-form-field>
-                </div>
+              <div *ngSwitchCase="'HEIGHTSLIDER'">
+                <mat-slider [max]="max" [min]="min" [step]="step" [tickInterval]="tickInterval" name="heightValue" (change)="updateHeight($event)" [value]="heightValue" [(ngModel)]="heightValue">
+                </mat-slider> 
+                
               </div>
-            </ng-container>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </form>
-    </section>
-    <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class="mb-70 mt-50">
-      <div>
-        <button mat-stroked-button class="btn btn-border" (click)="getPrevious()">{{BTN.BACK}}</button>
-        <button mat-flat-button color="primary" (click)="Submit(health1)" [disabled] ="!health1.valid">
+              <div *ngSwitchCase="'WEIGHTSLIDER'">
+               <mat-slider [max]="maxWeight" [min]="minWeight" [step]="weightStep" [tickInterval]="weightTickInterval" name="weightValue" (change)="updateWeight($event)"
+                [value]="weightValue" [(ngModel)]="weightValue">
+                </mat-slider>
+              </div>
+            </div>
+          </ng-container>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </form>
+  </section>
+  <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class="mb-70 mt-50">
+    <div>
+      <button mat-stroked-button class="btn btn-border" (click)="getPrevious()">{{BTN.BACK}}</button>
+      <button mat-flat-button color="primary" (click)="Submit(health1)" [disabled]="!health1.valid">
           {{ BTN.SUBMIT }}
         </button>
-      </div>
-      <a *ngIf="!isUerLoggedIn" [routerLink]="['./']" (click)="createAccount()" class="btn-acc" mat-menu-item>Create
+    </div>
+    <a *ngIf="!isUerLoggedIn" [routerLink]="['./']" (click)="createAccount()" class="btn-acc" mat-menu-item>Create
         account</a>
-    </section>
-  
-    <!-- Footer -->
-    <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
-      <ion-text class="align-item-bottom">
-        <ion-label class="fl-footer-content">
-          77 Water St 8th Floor,<br />
-          Manhattan, NY 10005
-        </ion-label>
-      </ion-text>
-      <ion-text class="align-item-bottom">
-        <ion-label class="fl-footer-content">
-          Copyright Life+ © 2020
-        </ion-label>
-      </ion-text>
-    </footer>
-    <!-- End of footer -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+  <!-- End of footer -->
 </ion-content>
 <!-- end of section 1 -->

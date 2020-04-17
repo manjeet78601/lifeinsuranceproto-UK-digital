@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color='dark'>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" color="dark">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center app-name">
+      <img src="./../../../assets/img/lifePlusLogo.png" alt="Life+ Logo" (click)="gotoHomePage()">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ng-container *ngIf= "!isBothAccountLinked">
+  <section class="wrapper content" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <h1><strong>App Integrations</strong></h1>
+    <p class="fs-16 lh-1 text-center">By giving Life+ access to your Mint and Heads Up accounts, you won’t have to answer as many financial and health-related questions.</p>
+    <div>
+      <ion-card>
+        <ion-card-content class="card-content">
+          <img src="./../../../assets/img/ext-account-logo.png" alt="Mint & Heads Up account" class="img">
+        </ion-card-content>
+      </ion-card>
+     
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px" class="mt-20">
+      <button mat-stroked-button (click) = "onCancel()">SKIP</button>
+      <button mat-flat-button color="primary"  (click) = "onLogIn()">LOG IN</button>
+    </div>
+  </section>
+</ng-container>
+<ng-container *ngIf="isBothAccountLinked === true">
+  <section class="content">
+  <img src="./../../../assets/img/account-linked.png" alt="Mint & Heads  account linked" class="w-100">
+  <div class="ion-text-center">
+    <h1><strong>Your Account is Linked!</strong></h1>
+    <p class="fs-16 lh-1 text-center">Watch us do our magic.</p>
+    <div class="ion-text-center">
+      <button mat-flat-button color="primary"  (click) = "onContinue()">CONTINUE</button>
+    </div>
+  </div>
+</section>
+</ng-container>
+  <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        77 Water St 8th Floor,<br /> Manhattan, NY 10005
+      </ion-label>
+    </ion-text>
+    <ion-text class="align-item-bottom">
+      <ion-label class="fl-footer-content">
+        Copyright Life+ © 2020
+      </ion-label>
+    </ion-text>
+  </footer>
+</ion-content>

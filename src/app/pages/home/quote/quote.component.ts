@@ -6,7 +6,7 @@ import { MenuService } from 'src/app/services/menu.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 // Datasource for table
-export interface TermInsComparision {
+export interface QuoteComparision {
   comparison: string;
   prudential: string;
   nyLife: string;
@@ -14,7 +14,7 @@ export interface TermInsComparision {
   libertyMutual: string;
 }
 
-const ELEMENT_DATA: TermInsComparision[] = [
+const ELEMENT_DATA: QuoteComparision[] = [
   { comparison: 'Monthly premium', prudential: '$25', nyLife: '$30', massMutual: '$35', libertyMutual: '$50' },
   { comparison: 'Policy Coverage', prudential: '$500k', nyLife: '$500k', massMutual: '$500k', libertyMutual: '$500k' },
   { comparison: 'Policy Duration', prudential: '10 years', nyLife: '20 years', massMutual: '30 years', libertyMutual: 'Whole life' },
@@ -26,9 +26,7 @@ const ELEMENT_DATA: TermInsComparision[] = [
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.scss'],
 })
-
 export class QuoteComponent implements OnInit {
-
   // Initialize expandable card to false
   collapse = [];
   DOM_CONSTANTS = CompareQuotesConstant.QUOTE;

@@ -11,6 +11,7 @@ import { HelpComponent } from './help/help.component';
 import { HealthQuestionsComponent } from './health-questions/health-questions.component';
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
 import { QuoteComponent } from './quote/quote.component';
+import { EsignatureComponent } from 'src/app/components/esignature/esignature.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
     component: ContactComponent
   },
   {
+    path: 'esign',
+    component: EsignatureComponent
+  },
+  {
     path: 'help',
     component: HelpComponent
   },
@@ -38,16 +43,16 @@ const routes: Routes = [
     component: TotalBudgetCalculatorComponent
   },
   {
-    path: '',
-    component: LandingComponent
-  },
-  {
     path: 'health',
     component: HealthQuestionsComponent
   },
   {
     path: 'quote',
     component: QuoteComponent
+  },
+  {
+    path: '',
+    component: LandingComponent
   }
 ];
 

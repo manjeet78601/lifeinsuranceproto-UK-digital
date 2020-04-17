@@ -7,6 +7,8 @@ import { DatePipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-book-clinic',
   templateUrl: './book-clinic.component.html',
@@ -14,24 +16,31 @@ import { Router } from '@angular/router';
   providers: [DatePipe]
 })
 export class BookClinicComponent implements OnInit {
-  selectedDate = new Date();
-  startAt = new Date();
-  minDate = new Date();
-  date: any;
+  selectedDate: any;
   selectedTime: any;
+  minDate = new Date();
+
+  date: any;
   name: string;
   DOM_CONSTATNTS = MedicalExamConstants.Schedule_CALANDER;
   availTimeslot = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM'];
   backendData = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM']; // Data from the backend
   appointmentTimeslots = [];
-  disabled = false;
-
-
-  constructor(private router: Router, private clinicApptService: AppointmentsService, private datePipe: DatePipe) {
-    this.onSelect(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'));
-  }
+  labData = this.clinicApptService.getApptScheduleDetails();
+  constructor(private router: Router, private clinicApptService: AppointmentsService, private datePipe: DatePipe) { }
   onSelect(event) {
-    this.selectedDate = event;
+
+    this.selectedDate = this.datePipe.transform(event, 'dd MMMM yyyy');
+    if (this.selectedDate < this.labData.date) {
+      console.log("the date cannot be the past date");
+      return this.selectedDate;
+    }
+  }
+
+  myDateFilter = (d: Date): boolean => {
+    const day = d.getDay();
+    // Prevent Saturday and Sunday from being selected.
+    return day !== 0 && day !== 6;
   }
 
   ngOnInit() {
@@ -39,7 +48,6 @@ export class BookClinicComponent implements OnInit {
       const text = this.getTextFromValue(e);
       this.appointmentTimeslots.push({ value: e, text });
     });
-    console.log('timeSlot>>>', this.appointmentTimeslots);
   }
   getTextFromValue(value: string) {
     const timeSlots = value.split(':');
@@ -66,12 +74,16 @@ export class BookClinicComponent implements OnInit {
   // To select the avialabel appointment
   onChangedSort(event: MatSelectChange) {
     this.selectedTime = event.value;
-    if (this.availTimeslot.indexOf(event.value) !== -1) {
-      console.log("selected Date", this.selectedDate);
-      console.log("selcted Time", this.selectedTime);
-      this.setClinicApptDetails();
-    }
+    if (this.selectedDate === this.labData.date && this.selectedTime < this.labData.time) {
+     console.log("selected time cannot be before the lab time");
+      } 
+    else {
+      if (this.availTimeslot.indexOf(event.value) !== -1) {
+        this.setClinicApptDetails();
+        }
+      }
   }
+
 
   goToNext() {
     this.router.navigate(['/medical-test/clinic-details']);

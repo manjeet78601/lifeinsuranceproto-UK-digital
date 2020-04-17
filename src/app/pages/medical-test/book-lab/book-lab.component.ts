@@ -16,8 +16,8 @@ import { Observable } from 'rxjs';
 
 export class BookLabComponent implements OnInit {
 
-  selectedDate = new Date();
-  startAt = new Date();
+  selectedDate :any;
+  // startAt = new Date();
   minDate = new Date();
   date: any;
   selectedTime: any;
@@ -30,10 +30,10 @@ export class BookLabComponent implements OnInit {
 
 
   constructor(private router: Router, private labApptService: AppointmentsService, private datePipe: DatePipe) {
-    this.onSelect(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'));
+
   }
   onSelect(event) {
-    this.selectedDate = event;
+  this.selectedDate = this.datePipe.transform(event, 'dd MMMM yyyy');
   }
 
   ngOnInit() {

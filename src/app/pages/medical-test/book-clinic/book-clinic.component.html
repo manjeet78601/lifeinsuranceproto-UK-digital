@@ -22,20 +22,18 @@
       </header>
       <div fxLayout="row" fxLayoutAlign="center center">
         <mat-card class="calendar-display">
-          <mat-calendar #calendar [selected]="selectedDate" [startAt]="startAt" [minDate]="minDate" (selectedChange)="onSelect($event)"></mat-calendar>
+          <mat-calendar #calendar [selected]="selectedDate"  [minDate]="minDate" (selectedChange)="onSelect($event)"></mat-calendar>
         </mat-card>
       </div>
       <!--TimeSlot section-->
       <section class="mt-20">
-        <div fxLayout="column">
-          <mat-card>
+        <div fxLayout="column" >
+        <mat-card>
             <mat-card-title fxLayoutAlign="start" class="title">{{ DOM_CONSTATNTS.AVAL_TIME}}</mat-card-title>
-            <mat-card-content>
-              <mat-chip-list #chipList>
-                <mat-chip class="time-slot-list" *ngFor="let appt of availTimeslot" [ngClass]="selectedTime === appt ? 'selected-time-slot' : ''">
+            <mat-card-content fxLayout="row warp"  fxLayoutGap="10px">
+            <span class="time-slot-list" *ngFor="let appt of availTimeslot" matRippleDisabled="disabled"  [ngClass]="selectedTime === appt ? 'selected-time-slot' : ''">
                   {{appt}}
-                </mat-chip>
-              </mat-chip-list>
+            </span>
             </mat-card-content>
 
             <mat-label fxLayoutAlign="start" class="title mt-20">{{DOM_CONSTATNTS.CHOOSE_TIME}}</mat-label>
