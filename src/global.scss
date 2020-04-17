@@ -753,4 +753,8 @@ float: left;
   .carousel-control-next, .carousel-control-prev {
     opacity: 0;
   }
+  *:focus {
+    outline: none !important;
+    border: 0 !important;
+  }
 }
