@@ -69,7 +69,6 @@ export class UserService {
     },
   ];
 
-
   quotes = [
     {
       productId: 1,

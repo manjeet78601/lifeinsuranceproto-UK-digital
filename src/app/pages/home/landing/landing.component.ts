@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeConstants} from './../home.constants';
+import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -14,7 +15,7 @@ export class LandingComponent  {
     { name: 'Single Parent' },
     { name: 'Divorced' },
   ];
-  constructor() { }
+  constructor( private userService: UserService) { }
 
 
 }
