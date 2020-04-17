@@ -16,11 +16,17 @@ export class MyAppointmentsComponent implements OnInit {
   schHeader: string;
   clinicData: any;
   clinicHeader: string;
+  noApptClinic: boolean;
+  noApptLab: boolean;
+  schApptLab: boolean;
   constructor(private router: Router, private apptService: AppointmentsService) { }
 
   ngOnInit() { }
 
   ionViewDidEnter() {
+    this.noApptClinic = false;
+    this.noApptLab = false;
+    this.schApptLab = false;
     this.DOM_CONSTANTS = AppointmentsConstant.APPT;
     this.schHeader = AppointmentsConstant.APPT.SCHD_HEADER;
     this.clinicHeader = AppointmentsConstant.APPT.CLINIC_SCHD_HEADER;
@@ -32,14 +38,22 @@ export class MyAppointmentsComponent implements OnInit {
     this.getScheduleDetails();
     this.router.navigate(['/medical-test']);
   }
+  goToHealthPage() {
+    this.getScheduleDetails();
+    this.router.navigate(['/home/health']);
+  }
   // Get Scheduled Appts
   getScheduleDetails() {
     this.schdData = this.apptService.getApptScheduleDetails();
     if (Object.keys(this.schdData).length === 0) {
+      this.noApptLab = false;
+      this.schApptLab = true;
       AppointmentsConstant.APPT.SCHD_HEADER = this.schHeader;
       AppointmentsConstant.APPT.SCH_DETAILS = '';
       console.log('AppointmentsConstant.APPT.SCHD_HEADER', AppointmentsConstant.APPT.SCHD_HEADER);
     } else {
+      this.noApptLab = true;
+      this.schApptLab = false;
       AppointmentsConstant.APPT.SCHD_HEADER = this.schdData.location;
       AppointmentsConstant.APPT.SCH_DETAILS = AppointmentsConstant.APPT.SCH_DETAILS_BOOKED + this.schdData.location + ' for '
         + this.schdData.date + ' at ' + this.schdData.time;
@@ -49,10 +63,12 @@ export class MyAppointmentsComponent implements OnInit {
   getClinicDetails() {
     this.clinicData = this.apptService.getClinicSchedule();
     if (Object.keys(this.clinicData).length > 0) {
+      this.noApptClinic = true;
       AppointmentsConstant.APPT.CLINIC_SCHD_HEADER = this.clinicData.location;
       AppointmentsConstant.APPT.CLINIC_SCHD_DETAILS_BL = AppointmentsConstant.APPT.CLINIC_SCHD_DETAILS +
         this.clinicData.date + ' at ' + this.clinicData.time + ' at ' + this.clinicData.location;
     } else {
+      this.noApptClinic = false;
       AppointmentsConstant.APPT.CLINIC_SCHD_HEADER = this.clinicHeader;
       AppointmentsConstant.APPT.CLINIC_SCHD_DETAILS_BL = '';
     }

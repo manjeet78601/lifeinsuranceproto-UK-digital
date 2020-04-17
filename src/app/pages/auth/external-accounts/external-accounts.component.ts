@@ -41,8 +41,6 @@ export class ExternalAccountsComponent implements OnInit, OnDestroy {
   onLogIn() {
     this.openMintAccountModal();
   }
-  onContinue() {
-  }
   openMintAccountModal() {
     this.dialog.open(MintAccountComponent, {
       data: {
@@ -51,7 +49,7 @@ export class ExternalAccountsComponent implements OnInit, OnDestroy {
       closeOnNavigation : true,
       disableClose: true,
       minWidth: '90%',
-      maxHeight: '600px'
+      maxHeight: '80%'
     });
   }
   openHeadsUpAccountModal() {
@@ -62,7 +60,7 @@ export class ExternalAccountsComponent implements OnInit, OnDestroy {
       closeOnNavigation : true,
       disableClose: true,
       minWidth: '90%',
-      maxHeight: '600px'
+      maxHeight: '80%'
     });
   }
   ngOnDestroy() {

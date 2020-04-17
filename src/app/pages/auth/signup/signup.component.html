@@ -14,7 +14,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <section class="wrapper-auth content signup-section" fxLayout="column" fxLayoutAlign="center center" *ngIf="!isSignup">
+  <section class="wrapper-auth pt-2 content signup-section" fxLayout="column" fxLayoutAlign="center center" *ngIf="!isSignup">
       <header>
         <p class="header">{{htmlText.signup_header}}</p>
       </header>
@@ -49,7 +49,7 @@
   
     <section *ngIf ="isAccountVerified === true" class="ion-text-center">
       <img class="wel-img" [src]="'../../../../assets/img/welcome-signin.png'">
-      <header>
+      <header class="pt-4">
         <p class="header">{{htmlText.welcome_header}}</p>
         <p class="subheader mb-0">{{htmlText.welcome_subheader}}</p>
         <p class="subheader mt-0">{{htmlText.welcome_subheader1}}</p>

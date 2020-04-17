@@ -14,7 +14,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <!--Quotes Header-->
+  <!--My Appts LAB-->
   <section class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <header class="page-header">
       <h2 class="header-title">{{DOM_CONSTANTS.APPT_HEADER}}</h2>
@@ -27,14 +27,17 @@
         <p>{{DOM_CONSTANTS.SCH_DETAILS}}</p>
       </mat-card-content>
       <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
-        <div class="mt-10">
+        <div class="mt-10" *ngIf="noApptLab">
           <button mat-stroked-button class="bg-blk col-wht" (click)="goToReScheduleLab()">{{BTN.RESCHEDULE}}</button>
           <button mat-flat-button (click)="cancelLabAppt()" class="pink_color">{{BTN.CANCEL}}</button>
         </div>
+        <div class="mt-10" *ngIf="schApptLab">
+          <button mat-stroked-button class="bg-blk col-wht" (click)="goToHealthPage()">SCHEDULE</button>
+        </div>
       </mat-card-actions>
     </mat-card>
-
-    <mat-card class="w1-40 mt-30">
+    <!--My Appt Clinic-->
+    <mat-card class="w1-40 mt-30" *ngIf="noApptClinic">
       <p><img src="../../../../assets/icon/Group_2433.png" alt="Medical Test"></p>
       <mat-card-content class="header-subtitle">
         <h2 class="header-subtitle">{{DOM_CONSTANTS.CLINIC_SCHD_HEADER}}</h2>
