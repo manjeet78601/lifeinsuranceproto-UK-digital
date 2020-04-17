@@ -17,7 +17,8 @@ import { HealthQuestionsComponent } from './health-questions/health-questions.co
 import { TotalBudgetCalculatorComponent } from './total-budget-calculator/total-budget-calculator.component';
 import { QuoteComponent } from './quote/quote.component';
 import { ChatService } from '../../services/chat.service';
-
+import { EsignatureComponent } from 'src/app/components/esignature/esignature.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { ChatService } from '../../services/chat.service';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ],
   declarations: [
     HomePage,
@@ -37,7 +39,8 @@ import { ChatService } from '../../services/chat.service';
     HealthQuestionsComponent,
     HelpComponent,
     TotalBudgetCalculatorComponent,
-    QuoteComponent
+    QuoteComponent,
+    EsignatureComponent
   ],
   providers: [ChatService]
 })

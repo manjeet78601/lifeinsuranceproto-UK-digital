@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { HomeConstants } from './../home.constants';
 import { LoaderService } from 'src/app/services/loader.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,13 +10,15 @@ import { FormGroup, Validator, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { CompareQuotesConstant, } from '../../../properties/compare-quotes.constant';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
+import { HeadsupAccountComponent } from 'src/app/components/headsup-account/headsup-account.component';
 
 @Component({
   selector: 'app-health-questions',
   templateUrl: './health-questions.component.html',
   styleUrls: ['./health-questions.component.scss'],
 })
-export class HealthQuestionsComponent implements OnInit {
+export class HealthQuestionsComponent implements OnInit, OnDestroy {
 
    today = new Date();
    dateBefore18Years = new Date(this.today.getFullYear() - 18, this.today.getMonth() - 1, this.today.getDate());
@@ -32,6 +34,22 @@ export class HealthQuestionsComponent implements OnInit {
   BTN = CompareQuotesConstant.BTTN;
   progress = 0;
   isUerLoggedIn: boolean;
+  heightValue: any;
+  weightValue: any;
+  // height
+  max = 12;
+  min = 3;
+  step = 1;
+  tickInterval = 1;
+  //
+  // weight
+  maxWeight = 1000;
+  minWeight = 80;
+  weightStep = 5;
+  weightTickInterval = 1;
+  isHeadsUpAccountVerified: string;
+  routeSub: any;
+  //
   constructor(
     private toast: ToastService,
     private formBuilder: FormBuilder,
@@ -41,7 +59,9 @@ export class HealthQuestionsComponent implements OnInit {
     private navigationService: MenuService,
     private userService: UserService,
     private actRoute: ActivatedRoute,
-    private dataAnalytics: DataAnalyticsService
+    private dataAnalytics: DataAnalyticsService,
+    public dialog: MatDialog,
+    private activeRoute: ActivatedRoute
   ) {
     this.isUerLoggedIn = this.auth.isUserLoggedIn;
   }
@@ -49,7 +69,34 @@ export class HealthQuestionsComponent implements OnInit {
   ngOnInit() {
     console.log('dob is ' + this.dob);
   }
-
+  ionViewDidEnter() {
+    this.routeSub = this.activeRoute.queryParams.subscribe((data) => {
+      this.isHeadsUpAccountVerified =  data.esign || 'showHeadsUpModal';
+      if (this.isHeadsUpAccountVerified === 'showHeadsUpModal') {
+        this.openDialog();
+      }
+      if (this.isHeadsUpAccountVerified === 'verified') {
+        this.prefillQuestions();
+      }
+    });
+  }
+  ionViewWillLeave() {
+    this.routeSub.unsubscribe();
+  }
+  openDialog() {
+    this.dialog.open(HeadsupAccountComponent, {
+      data: {
+        accountName: 'headsup'
+      },
+      closeOnNavigation : true,
+      disableClose: true,
+      minWidth: '90%',
+      maxHeight: '80%'
+    });
+  }
+  prefillQuestions() {
+    console.log('lod health questions');
+  }
   Submit(healthQuesForm) {
     console.log(healthQuesForm);
     const totalbudget = [];
@@ -82,10 +129,19 @@ export class HealthQuestionsComponent implements OnInit {
       return true;
     }
   }
+  updateHeight(event) {
+    this.heightValue = event.value;
+  }
+  updateWeight(event) {
+    this.weightValue = event.value;
+  }
   gotoHomePage() {
     this.router.navigate(['/home']);
   }
   getPrevious() {
     this.router.navigate(['/home/budget']);
+  }
+  ngOnDestroy() {
+    this.routeSub.unsubscribe();
   }
 }

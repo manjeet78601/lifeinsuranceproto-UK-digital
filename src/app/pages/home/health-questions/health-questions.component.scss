@@ -78,3 +78,43 @@ mat-icon {
 .w-90 {
   width: 90%;
 }
+.healthInp{
+  font-family: Proxima Soft;
+  font-size: 16px;
+  color:#F76A71;
+  position: absolute;
+  top: 2px;
+  left: 5px;
+}
+.heightUnit{
+  font-family: Proxima Soft;
+  font-size: 16px;
+  position: absolute;
+  left: 16px;
+  top: 2px;
+}
+.healthUnit{
+  font-family: Proxima Soft;
+  font-size: 16px;
+  position: absolute;
+  left: 30px;
+  top: 1px;
+}
+::ng-deep .mat-slider .mat-slider-thumb {
+  width: 25px;
+  height: 25px;
+  background-color: ghostwhite;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.23);
+  position: absolute;
+  right: -15px;
+  bottom: -11px;
+}
+.val {
+color: #F76A71;
+}
+.mat-form-field-appearance-outline .mat-form-field-flex {
+  &.notes {
+    padding: 0;
+  }
+}

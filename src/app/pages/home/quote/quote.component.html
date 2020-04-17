@@ -16,15 +16,16 @@
 
 <ion-content>
   <!--Quotes Header-->
-  <section class="wrapper-plan" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <section class="wrapper-plan quotesSec" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <h2 class="exp-header">Compare Quotes</h2>
-    <header fxLayoutAlign="center center">     
+    <header fxLayoutAlign="center center">
       <h2 class="header-title">{{DOM_CONSTANTS.QUOTE_HEADER }}</h2>
     </header>
     <p fxLayoutAlign="center center" class="plan-sub-header">{{DOM_CONSTANTS.QUOTE_SUB_HEADER }}</p>
-
-    <!--Quotes-->
-    <mat-card class="plan-card mat-elevation-z0 " *ngFor="let quo of quotes; let i = index">
+     <!--Quotes-->  
+    <ngb-carousel *ngIf="quotes">
+    <ng-template ngbSlide *ngFor="let quo of quotes; let i = index" [id]="quo.productId">  
+    <mat-card class="plan-card mat-elevation-z0 ">
       <div fxLayout="column" class="quote-img">
         <img [src]="quo.prodImg" alt="dummy-image">
       </div>
@@ -55,8 +56,9 @@
         <div class="mt-10" fxLayout="column" fxLayoutAlign="center center">
           <button mat-stroked-button class="quo-btn bg-blk col-wht" (click)="goToNext()">{{BTN.GET_QUOTE}}</button>
         </div>
-        </mat-card-content>
-      <mat-card-content [hidden]="!collapse[i]"> <ion-grid>
+      </mat-card-content>
+      <mat-card-content [hidden]="!collapse[i]">
+        <ion-grid>
           <ion-row *ngFor="let cus of quo.customerRatings">
             <ion-col size="9">
               <ion-row>
@@ -83,14 +85,57 @@
         </div>
       </mat-card-content>
     </mat-card>
-  </section>
-  <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class="mb-70 mt-50">
-    <div>
-      <button mat-stroked-button  class="btn btn-border"(click)="getPrevious()">{{BTN.BACK}}</button>
+  </ng-template>
+  </ngb-carousel>
+
+    <!--Comparision Tool-->
+    <div class="mt-50 exp-header">{{DOM_CONSTANTS.QUOTE_COMP}}</div>
+
+    <mat-table [dataSource]="dataSource" *ngIf="dataSource.length > 0" class="mat-elevation-z0 mt-30 quo-tbl">
+      <ng-container matColumnDef="comparison">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="mat-cell-content"> {{element.comparison}} </mat-cell>
+      </ng-container>
+
+      <!-- Prudential Column -->
+      <ng-container matColumnDef="prudential">
+        <mat-header-cell *matHeaderCellDef> Prudential </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.prudential}}
+        </mat-cell>
+      </ng-container>
+
+      <!-- New York Life Column -->
+      <ng-container matColumnDef="nyLife">
+        <mat-header-cell *matHeaderCellDef> New York Life </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.nyLife}}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Mass Mutual Column -->
+      <ng-container matColumnDef="massMutual">
+        <mat-header-cell *matHeaderCellDef> Mass Mutual </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.massMutual}}
+        </mat-cell>
+      </ng-container>
+
+      <!--  Liberty Mutual Column -->
+      <ng-container matColumnDef="libertyMutual">
+        <mat-header-cell *matHeaderCellDef> Liberty Mutual </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.libertyMutual}}
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns" class="mat-cell-content"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <div class="mb-70 mt-50">
+      <button mat-stroked-button class="btn btn-border" (click)="getPrevious()">{{BTN.BACK}}</button>
       <button class="btn bg-blk col-wht" mat-stroked-button (click)="goToNext()">
-        {{BTN.GET_QUOTE}}</button>
+        {{BTN.NEXT}}</button>
     </div>
-    <a *ngIf="!isUerLoggedIn" [routerLink]="['./']" (click)="createAccount()" class="btn-acc" mat-menu-item>Create account</a>
+    <a *ngIf="!isUerLoggedIn" [routerLink]="['./']" (click)="createAccount()" class="btn-acc" mat-menu-item>Create
+      account</a>
   </section>
   <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">

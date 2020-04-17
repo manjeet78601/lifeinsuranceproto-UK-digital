@@ -30,7 +30,7 @@
 @import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
 
 .wrapper {
-  padding: 20px;
+  padding: 0 20px;
 }
 header {
   text-align: center;
@@ -164,6 +164,9 @@ h6 {
 .pl-35{
   padding-left: 35px;
 }
+.fs-10 {
+  font-size: 10px;
+}
 .fs-12 {
   font-size: 12px;
 }
@@ -179,14 +182,26 @@ h6 {
 .fs-18 {
   font-size: 18px;
 }
+.fs-24 {
+  font-size: 24px;
+}
 .lh-05 {
   line-height: 0.5;
 }
 .font-bold {
   font-weight: 500;
 }
+.m-5{
+  margin:5px
+}
+.m-10{
+  margin:10px
+}
 .m-15{
   margin:15px
+}
+.mt-5 {
+  margin-top: 5px;
 }
 .mr-5 {
   margin-right: 5px !important;
@@ -206,6 +221,9 @@ h6 {
 .mt-30 {
   margin-top: 30px;
 }
+.mt-40 {
+  margin-top: 40px;
+}
 .mt-50 {
   margin-top: 50px;
 }
@@ -224,6 +242,9 @@ h6 {
 .mb-0{
   margin-bottom: 0;
 }
+.m-0 {
+  margin: 0;
+}
 .align-item-bottom {
   align-self: flex-end;
   margin-top: auto;
@@ -237,9 +258,6 @@ h6 {
 }
 .pt-13 {
   padding-top: 13px;
-}
-.text-right{
-  text-align: right;
 }
 
 // footer
@@ -272,7 +290,7 @@ h6 {
 
 //content
 .content {
-  min-height: calc(100vh - 197px);
+  min-height: calc(95vh - 197px);
   //padding: 40px 40px 0 40px;
 }
 .err-msg {
@@ -715,4 +733,28 @@ float: left;
   color: #000000;
   height: 36px;
   border-color: #00B5AD !important;
+}
+.quotesSec{
+  .carousel-indicators{
+    bottom: -50px;
+  }
+  .carousel-indicators li {
+    margin-top: 20px;
+    height: 8px;
+    width : 8px ;
+    border-radius: 100%;
+    background-color: #fff;
+    border: 1px solid #707070;
+  }
+  .carousel-indicators li.active {
+    background-color: #707070;
+    border: 1px solid #707070;  
+  }
+  .carousel-control-next, .carousel-control-prev {
+    opacity: 0;
+  }
+  *:focus {
+    outline: none !important;
+    border: 0 !important;
+  }
 }

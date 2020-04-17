@@ -24,12 +24,17 @@ export class CompareQuotesConstant {
                     },
                     {
                         QUESTIONTEXT: 'Height',
-                        INPUT_TYPE: 'HEIGHTDROPDOWN',
-                        ICON: false
+                        INPUT_TYPE: 'HEIGHTSLIDER',
+                        HEIGHTVALUE: 1,
+                        HEIGHTUNIT_FT: 'ft',
+                        HEIGHTUNIT_INCH: 'in',
+                        ICON: false,
                     },
                     {
                         QUESTIONTEXT: 'Weight',
-                        INPUT_TYPE: 'WEIGHTDROPDOWN',
+                        INPUT_TYPE: 'WEIGHTSLIDER',
+                        WEIGHTVALUE: 1,
+                        WEIGHTUNIT: 'lbs',
                         ICON: false
                     },
                     {
@@ -137,13 +142,13 @@ export class CompareQuotesConstant {
                 QUESTIONS: [
                     {
                         QUESTIONTEXT: 'Do you have any parents or siblings who had heart attacks,' +
-                            'strokes, cancer, diabetes, or kidney disease before age 70?',
+                        'strokes, cancer, diabetes, or kidney disease before age 70?',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true
                     },
                     {
                         QUESTIONTEXT: 'Has your driver’s license been suspended or revoked,' +
-                            ' or had more than one traffic ticket or accident in the past five years?',
+                        ' or had more than one traffic ticket or accident in the past five years?',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true
                     }
@@ -154,12 +159,14 @@ export class CompareQuotesConstant {
 
     // Step 4 : Quote
     public static QUOTE = {
+        QUOTE_COMP: 'Quote Comparison Chart',
         QUOTE_HEADER: 'Quote Results',
         QUOTE_SUB_HEADER: 'The actual cost for you may be different after your application is processed.',
         CUST_HEADER: 'Customer Rating'
     };
     public static BTTN = {
         READ_MORE: 'Read More',
+        NEXT: 'NEXT',
         CLOSE: 'Close',
         GET_QUOTE: 'GET QUOTE',
         BACK: 'BACK',
@@ -172,4 +179,5 @@ export class CompareQuotesConstant {
         APPT_SUB_HEADER: 'Thank you for working with us! <br/>We sent you an email.',
     };
 }
+
 

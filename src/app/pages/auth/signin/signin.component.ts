@@ -31,7 +31,7 @@ export class SigninComponent implements OnInit {
       this.menu.enable(true, 'afterLogin');
       this.loader.showAutoHideLoader('', 2000);
       if (this.authService.quotesGenerated === true) {
-        this.router.navigate(['/medical-exam']);
+        this.router.navigate(['/medical-test']);
       } else {
         this.router.navigate(['/auth/profile']);
       }
@@ -40,7 +40,7 @@ export class SigninComponent implements OnInit {
     });
   }
   signup(event) {
-    this.router.navigate(['/auth/signup']);
+    this.router.navigate(['/auth/otheracct']);
   }
   gotoHomePage() {
     this.router.navigate(['/home']);

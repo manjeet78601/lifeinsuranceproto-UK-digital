@@ -17,4 +17,5 @@ export class AppointmentDetailsComponent implements OnInit {
   gotoHomePage() {
     this.router.navigate(['/home']);
   }
+  
 }

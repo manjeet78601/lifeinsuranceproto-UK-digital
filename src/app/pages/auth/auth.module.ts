@@ -13,6 +13,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ChartsModule } from 'ng2-charts';
+import { ExternalAccountsComponent } from './external-accounts/external-accounts.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { ChartsModule } from 'ng2-charts';
     SigninComponent,
     SignupComponent,
     ProfileComponent,
+    ExternalAccountsComponent,
     ForgotpasswordComponent]
 })
 export class AuthPageModule { }

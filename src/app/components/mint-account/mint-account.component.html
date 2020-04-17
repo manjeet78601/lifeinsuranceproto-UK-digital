@@ -1,0 +1,51 @@
+<span class="close-modal"><ion-icon name="close-outline" (click) ="closeDialog()"></ion-icon></span>
+<section class="ion-text-center pt-4" fxLayout="column" fxLayoutAlign="center center">
+  <div mat-dialog-title>
+    <p class="fs-24"><strong>Would you like to link your mint account?</strong></p>
+    <p class="fs-16 lh-1">By giving Life+ access to your Mint account, you won’t have to answer as many financial
+      questions.</p>
+  </div>
+
+  <section mat-dialog-content class="mint-account-section">
+    <div class="mb-0">
+      <img src="../../../assets/img/account-logos.png" class="intuit-logo">
+    </div>
+    <div class="mint-form-container">
+      <header class="fs-24">Sign In</header>
+      <p class="fs-14 mb-5">One account for everything Intuit, including Mint.</p>
+      <p class="fs-14 m-0"><a href="javascript:void(0);" class="rm-line">Learn More</a></p>
+      <form class="text-left fs-14" [formGroup]="mintAcctForm">
+        <p class="form-label mb-0"><label for="uname">Email or User ID</label></p>
+        <mat-form-field appearance="outline" class="form-input-control">
+          <input formControlName="userName" matInput type="text" value="" id="uname">
+        </mat-form-field>
+        <p class="form-label m-0"><label for="pwd">Password</label></p>
+        <mat-form-field appearance="outline" class="form-input-control">
+          <input formControlName="pwd" matInput type="password" value="" id="pwd">
+        </mat-form-field>
+        <div>
+          <mat-checkbox class="terms-cond" formControlName="rememberMe">Remember me</mat-checkbox>
+        </div>
+        <div class="ion-text-center mt-10">
+          <button type="submit" class="btn signin" mat-stroked-button [disabled]="!mintAcctForm.valid"  (click)="onFormsubmit()">
+            <ion-icon name="lock-closed" class="lock-icon"></ion-icon>
+            <strong>Sign In</strong>
+          </button>
+        </div>
+      </form>
+      <div class="font-talic ion-text-center">
+        <p class="fs-14">
+          By clicking Sign In, you agree to our <span class="col-blue-shade">Terms</span> and have read and acknowledge
+          our <span class="col-blue-shade">US Privacy Statement.</span>
+        </p>
+        <p class="fs-14"> <strong>Updated on January 1, 2020</strong></p>
+      </div>
+      <hr class="hr">
+      <p class="fs-14"><a href="javascript:void(0);" class="col-blue-shade rm-line">I forgot my user ID or password</a>
+      </p>
+      <p class="fs-14"> New to Intuit? <span class="col-blue-shade">Create an account.</span></p>
+    </div>
+    <p class="policy">Invisible reCAPTCHA by Google <span class="col-blue-shade">Privacy Policy </span>and <span
+        class="col-blue-shade">Terms of Use</span></p>
+  </section>
+</section>
