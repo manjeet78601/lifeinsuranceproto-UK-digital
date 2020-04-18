@@ -13,6 +13,8 @@ isLoggedIn = false;
 isQuotesGenerated = false;
 subj = new BehaviorSubject<any>('');
 bDate: string;
+isMinAccountLinked = false;
+isHeadsUpAccountLinked = false;
   constructor(private http: HttpClient) { }
   login(loginObj: Signin): Observable<boolean> {
     if (loginObj.userName === this.userInfo.userName && loginObj.password === this.userInfo.password) {

@@ -343,47 +343,55 @@ export class HomeConstants {
          {
             INPUT_TYPE: '1. How much annual income would you need to replace if something were to happen to you?',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
          },
          {
             INPUT_TYPE: '2. How many years would your family need to ' +
                'replace your income and the services you provide if you died suddenly?',
             VALUE: 0,
+            isVisited: false,
             isAmt: false
          },
 
          {
             INPUT_TYPE: '3. How debt do you have?',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
 
          },
          {
             INPUT_TYPE: '4. How much money do you want to provide for your children’s education or future needs?',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
 
          },
          {
             INPUT_TYPE: '5. How much would your family need to pay for your funeral?',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
          },
          {
             INPUT_TYPE: '6. How much money do you have in savings and investment accounts? ',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
          },
 
          {
             INPUT_TYPE: '7. How much life insurance do you already have? ',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
 
          },
          {
             INPUT_TYPE: '8. How much after-tax income does your family have annually in addition to your income?',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
 
          },

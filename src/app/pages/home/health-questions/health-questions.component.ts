@@ -70,15 +70,20 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
     console.log('dob is ' + this.dob);
   }
   ionViewDidEnter() {
-    this.routeSub = this.activeRoute.queryParams.subscribe((data) => {
-      this.isHeadsUpAccountVerified =  data.esign || 'showHeadsUpModal';
-      if (this.isHeadsUpAccountVerified === 'showHeadsUpModal') {
-        this.openDialog();
-      }
-      if (this.isHeadsUpAccountVerified === 'verified') {
-        this.prefillQuestions();
-      }
-    });
+    if (this.auth.isHeadsUpAccountLinked === false) {
+      this.routeSub = this.activeRoute.queryParams.subscribe((data) => {
+        this.isHeadsUpAccountVerified =  data.esign || 'showHeadsUpModal';
+        if (this.isHeadsUpAccountVerified === 'showHeadsUpModal') {
+          this.openDialog();
+        }
+        if (this.isHeadsUpAccountVerified === 'verified') {
+          this.auth.isHeadsUpAccountLinked = true;
+          this.prefillQuestions();
+        }
+      });
+    } else {
+      this.prefillQuestions();
+    }
   }
   ionViewWillLeave() {
     this.routeSub.unsubscribe();

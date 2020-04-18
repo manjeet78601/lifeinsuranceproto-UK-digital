@@ -28,21 +28,26 @@ export class InsuranceCalculatorComponent implements OnInit, OnDestroy {
   isMintAccountVerified: string;
   routeSub: any;
   constructor(private router: Router, private navigationService: MenuService,
-              private auth: AuthService, public dialog: MatDialog, private activeRoute: ActivatedRoute) {
+              private auth: AuthService, public dialog: MatDialog, private activeRoute: ActivatedRoute, private authService: AuthService) {
     this.isUerLoggedIn = this.auth.isUserLoggedIn;
   }
 
   ngOnInit() { }
   ionViewDidEnter() {
-    this.routeSub = this.activeRoute.queryParams.subscribe((data) => {
-      this.isMintAccountVerified =  data.esign || 'showMintModal';
-      if (this.isMintAccountVerified === 'showMintModal') {
-        this.openDialog();
-      }
-      if (this.isMintAccountVerified === 'verified') {
-        this.prefillQuestions();
-      }
-    });
+    if (this.authService.isMinAccountLinked === false) {
+      this.routeSub = this.activeRoute.queryParams.subscribe((data) => {
+        this.isMintAccountVerified =  data.esign || 'showMintModal';
+        if (this.isMintAccountVerified === 'showMintModal') {
+          this.openDialog();
+        }
+        if (this.isMintAccountVerified === 'verified') {
+          this.authService.isMinAccountLinked = true;
+          this.prefillQuestions();
+        }
+      });
+    } else {
+      this.prefillQuestions();
+    }
   }
   ionViewWillLeave() {
     this.routeSub.unsubscribe();
@@ -59,11 +64,13 @@ export class InsuranceCalculatorComponent implements OnInit, OnDestroy {
     });
   }
   prefillQuestions() {
-    const valArr = [50000, 10, 10300, 10000, 800, 1500, 0, 3000];
+    const valArr = [50000, 10, 10300, 10000, 800, 1500, 2800, 3000];
     this.INSURANCE_CALCULATOR.QUESTIONS.forEach((element, index) => {
       element.VALUE = valArr[index] || 0;
+      element.isVisited = true;
     });
     this.calculateCoverage();
+    this.trackProgressBar();
   }
   InsuranceBudget() {
     this.navigationService.setCompletedMenu('Life Insurance Calculator');
