@@ -43,7 +43,7 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
   tickInterval = 1;
   //
   // weight
-  maxWeight = 1000;
+  maxWeight = 500;
   minWeight = 80;
   weightStep = 5;
   weightTickInterval = 1;
@@ -96,6 +96,23 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
   }
   prefillQuestions() {
     console.log('lod health questions');
+    this.DOM_CONSTANTS.HEALTHQUESTIONS.forEach(data => {
+      data.QUESTIONS.forEach(ques => {
+        if (ques.INPUT_TYPE === 'Datepicker') {
+          ques.value = new Date('02/21/1978');
+        } else if (ques.INPUT_TYPE === 'GENDERBTN') {
+          ques.value = 'male';
+        } else if (ques.INPUT_TYPE === 'HEIGHTSLIDER') {
+          ques.value = 6;
+        } else if (ques.INPUT_TYPE === 'WEIGHTSLIDER') {
+          ques.value = 160;
+        } else {
+          ques.value = 'no';
+        }
+      });
+    });
+    this.updateHeight(6);
+    this.updateWeight(160);
   }
   Submit(healthQuesForm) {
     console.log(healthQuesForm);
@@ -129,11 +146,11 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
       return true;
     }
   }
-  updateHeight(event) {
-    this.heightValue = event.value;
+  updateHeight(val: string | number) {
+    this.heightValue = val || '';
   }
-  updateWeight(event) {
-    this.weightValue = event.value;
+  updateWeight(val: string | number) {
+    this.weightValue = val || '';
   }
   gotoHomePage() {
     this.router.navigate(['/home']);

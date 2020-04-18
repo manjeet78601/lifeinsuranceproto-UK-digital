@@ -44,7 +44,7 @@
               <div *ngSwitchCase="'Datepicker'">
                 <!--DOB-->
                 <mat-form-field class="f-w" appearance="outline">
-                  <input [max]="dateBefore18Years" matInput [matDatepicker]="picker" id="birthDate" placeholder="mm/dd/yyyy" [(ngModel)]="que.birthDate"
+                  <input [max]="dateBefore18Years" matInput [matDatepicker]="picker" id="birthDate" placeholder="mm/dd/yyyy" [(ngModel)]="que.value"
                     name="DOBhealth + {{healthIndex+''+quesIndex}}" (dateChange)="getDOB(que.birthDate)" required>
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
@@ -75,13 +75,13 @@
                 </ng-container>
               </div>
               <div *ngSwitchCase="'HEIGHTSLIDER'">
-                <mat-slider [max]="max" [min]="min" [step]="step" [tickInterval]="tickInterval" name="heightValue" (change)="updateHeight($event)" [value]="heightValue" [(ngModel)]="heightValue">
+                <mat-slider [max]="max" [min]="min" [step]="step" [tickInterval]="tickInterval" name="heightValue" (change)="updateHeight($event.value)" [value]="que.value" [(ngModel)]="que.value">
                 </mat-slider> 
                 
               </div>
               <div *ngSwitchCase="'WEIGHTSLIDER'">
-               <mat-slider [max]="maxWeight" [min]="minWeight" [step]="weightStep" [tickInterval]="weightTickInterval" name="weightValue" (change)="updateWeight($event)"
-                [value]="weightValue" [(ngModel)]="weightValue">
+               <mat-slider [max]="maxWeight" [min]="minWeight" [step]="weightStep" [tickInterval]="weightTickInterval" name="weightValue" (change)="updateWeight($event.value)"
+                [value]="que.value" [(ngModel)]="que.value">
                 </mat-slider>
               </div>
             </div>

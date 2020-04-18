@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Profile } from '../properties/auth.constant';
-import { of, Observable, throwError } from 'rxjs';
+import { of, Observable, throwError, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Signup, Signin} from '../models/auth.model';
 @Injectable({
@@ -11,6 +11,7 @@ financeURL =  '../../assets/json/profile/financial-details.json';
 userInfo: Signup = new Signup('', '', '', '', '');
 isLoggedIn = false;
 isQuotesGenerated = false;
+subj = new BehaviorSubject<any>('');
 bDate: string;
   constructor(private http: HttpClient) { }
   login(loginObj: Signin): Observable<boolean> {
@@ -31,6 +32,9 @@ bDate: string;
   }
   setQuotesGeneratedFlag() {
     this.isQuotesGenerated = true;
+  }
+  saveUserNameForSignup(userNname: string) {
+    this.subj.next({name: userNname});
   }
   get quotesGenerated() {
     return this.isQuotesGenerated;

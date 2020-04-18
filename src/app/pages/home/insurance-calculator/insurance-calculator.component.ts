@@ -59,7 +59,11 @@ export class InsuranceCalculatorComponent implements OnInit, OnDestroy {
     });
   }
   prefillQuestions() {
-    console.log('load questions');
+    const valArr = [50000, 10, 10300, 10000, 800, 1500, 0, 3000];
+    this.INSURANCE_CALCULATOR.QUESTIONS.forEach((element, index) => {
+      element.VALUE = valArr[index] || 0;
+    });
+    this.calculateCoverage();
   }
   InsuranceBudget() {
     this.navigationService.setCompletedMenu('Life Insurance Calculator');
