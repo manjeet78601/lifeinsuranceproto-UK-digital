@@ -1,7 +1,7 @@
 export class HomeConstants {
 
    public static HOME_PAGE = {
-      PLAN_HEADER1: `<p>Life Insurance For The </br>Morden Family.</p>`,
+      PLAN_HEADER1: `<p class="col-blk">Life Insurance For The </br>Morden Family.</p>`,
       PLAN_BODY: `<p>To help protect your family and prepare your
                       family for life’s events, you need coverage that
                       fits comfortably in your budget and adapts to
@@ -18,7 +18,7 @@ export class HomeConstants {
                           we got you covered. </p>`,
 
       PLAN_HEADER3: 'SIMPLIFIED, PERSONALIZED',
-      PLAN_SUB_HEADER3: `<p>Let Us Help You Plan Your
+      PLAN_SUB_HEADER3: `<p class="col-blk">Let Us Help You Plan Your
                            Family’s Future.</p>`,
       PLAN_BODY3: `<p>We’ll walk you through the process and help
                        you prioritze what’s best for you and
@@ -27,7 +27,7 @@ export class HomeConstants {
 
 
       PLAN_HEADER4: 'EVERY FAMILY IS DIFFERENT',
-      PLAN_SUB_HEADER4: `<p>SEE How We've Helped
+      PLAN_SUB_HEADER4: `<p class="col-blk">SEE How We've Helped
                             Families Like Yours.</p>`,
       PLAN_HEADER_4: 'I am a : ',
       PLAN_SUB_HEADER_4: 'Select Marital/Parental Status',
@@ -37,19 +37,19 @@ export class HomeConstants {
       },
       PLAN_STEP_ONE: {
          TITLE: 'STEP ONE',
-         CONTENT: `<p>Insurance 101</p>`,
+         CONTENT: `<p class="col-blk">Insurance 101</p>`,
       },
       PLAN_STEP_TWO: {
          TITLE: 'STEP TWO',
-         CONTENT: `<p>Insurance</br> Calculator.</p>`,
+         CONTENT: `<p class="col-blk">Insurance</br> Calculator.</p>`,
       },
       PLAN_STEP_THREE: {
          TITLE: 'STEP THREE',
-         CONTENT: `<p>Financial Budget</p>`,
+         CONTENT: `<p class="col-blk">Financial Budget</p>`,
       },
       PLAN_STEP_FOUR: {
          TITLE: 'STEP FOUR',
-         CONTENT: `<p>Compare Quotess
+         CONTENT: `<p class="col-blk">Compare Quotess
                       </p>`,
       },
       PLAN_READ_MORE: {

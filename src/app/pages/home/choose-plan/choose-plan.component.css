@@ -78,5 +78,6 @@ mat-cell {
   font-family: Proxima Soft;
   font-size: 16px;
   color: #CCCCCC;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=choose-plan.component.css.map */

@@ -6,8 +6,10 @@ ion-content.menu-bar {
         color: #fff;
     }
     .menu-list {
+        &:first-child {
+            padding-top: 30px;
+        }
         margin-top: 0;
-        margin-bottom: 0;
         padding-bottom: 0;
     }
     .menu-step {
