@@ -75,7 +75,7 @@ export class UserService {
       productId: 1,
       prodImg: './../../../../assets/img/quote-img.svg',
       quoteHeader: 'Quote Details',
-      quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies. ',
+      quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies.',
       custAvgRatings: 4,
       customerRatings: [
         {
@@ -106,7 +106,7 @@ export class UserService {
       productId: 2,
       prodImg: './../../../../assets/img/quote-img.svg',
       quoteHeader: 'Quote Details',
-      quoteDetails: 'This plan includes the best life insurance for anyone who needs flexible term policies.  ',
+      quoteDetails: 'This plan includes the best life insurance for anyone who needs permanent life insurance policies.',
       custAvgRatings: 3,
       customerRatings: [
         {
@@ -131,7 +131,69 @@ export class UserService {
           timestamp: 'Today at 5:42PM'
         }
       ]
-    }
+    },
+    {
+      productId: 3,
+      prodImg: './../../../../assets/img/quote-img.svg',
+      quoteHeader: 'Quote Details',
+      quoteDetails: `This plan includes the best life insurance for anyone who needs flexible term
+       policies with a cash payment at regular intervals.`,
+      custAvgRatings: 3,
+      customerRatings: [
+        {
+          id: 11,
+          name: 'Michael',
+          ratings: 2,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        },
+        {
+          id: 12,
+          name: 'Victor',
+          ratings: 4,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        },
+        {
+          id: 13,
+          name: 'Potter',
+          ratings: 2,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        }
+      ]
+    },
+    {
+      productId: 4,
+      prodImg: './../../../../assets/img/quote-img.svg',
+      quoteHeader: 'Quote Details',
+      quoteDetails: 'This plan includes the best life insurance for anyone who needs simple term policies.',
+      custAvgRatings: 3,
+      customerRatings: [
+        {
+          id: 14,
+          name: 'Mike',
+          ratings: 2,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        },
+        {
+          id: 15,
+          name: 'Louis',
+          ratings: 4,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        },
+        {
+          id: 16,
+          name: 'Potter',
+          ratings: 2,
+          comment: 'Seriously love this plan!',
+          timestamp: 'Today at 5:42PM'
+        }
+      ]
+    },
+
   ];
 
   getUsersList() {
