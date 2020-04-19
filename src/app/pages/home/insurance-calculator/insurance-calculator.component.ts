@@ -60,7 +60,7 @@ export class InsuranceCalculatorComponent implements OnInit, OnDestroy {
       closeOnNavigation : true,
       disableClose: true,
       minWidth: '90%',
-      maxHeight: '80%'
+      minHeight: '80%'
     });
   }
   prefillQuestions() {
