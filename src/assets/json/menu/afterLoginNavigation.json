@@ -24,19 +24,15 @@
         "isCompleted": false
     },
     {
-        "title": "My Appointments",
-        "url": "medical-test/my-appointments"
-    },
-    {
         "title": "Contact",
         "url": "home/contact"
     },
     {
-        "title": "Help",
-        "url": "home/help"
-    },
-    {
         "title": "My Profile",
         "url": "/auth/profile"
+    },
+    {
+        "title": "My Appointments",
+        "url": "medical-test/my-appointments"
     }
 ]

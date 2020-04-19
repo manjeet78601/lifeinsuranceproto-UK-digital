@@ -1,7 +1,7 @@
 export class HomeConstants {
 
    public static HOME_PAGE = {
-      PLAN_HEADER1: `<p>Life Insurance For The </br>Morden Family.</p>`,
+      PLAN_HEADER1: `<p class="col-blk">Life Insurance For The </br>Morden Family.</p>`,
       PLAN_BODY: `<p>To help protect your family and prepare your
                       family for life’s events, you need coverage that
                       fits comfortably in your budget and adapts to
@@ -18,7 +18,7 @@ export class HomeConstants {
                           we got you covered. </p>`,
 
       PLAN_HEADER3: 'SIMPLIFIED, PERSONALIZED',
-      PLAN_SUB_HEADER3: `<p>Let Us Help You Plan Your
+      PLAN_SUB_HEADER3: `<p class="col-blk">Let Us Help You Plan Your
                            Family’s Future.</p>`,
       PLAN_BODY3: `<p>We’ll walk you through the process and help
                        you prioritze what’s best for you and
@@ -27,7 +27,7 @@ export class HomeConstants {
 
 
       PLAN_HEADER4: 'EVERY FAMILY IS DIFFERENT',
-      PLAN_SUB_HEADER4: `<p>SEE How We've Helped
+      PLAN_SUB_HEADER4: `<p class="col-blk">SEE How We've Helped
                             Families Like Yours.</p>`,
       PLAN_HEADER_4: 'I am a : ',
       PLAN_SUB_HEADER_4: 'Select Marital/Parental Status',
@@ -37,19 +37,19 @@ export class HomeConstants {
       },
       PLAN_STEP_ONE: {
          TITLE: 'STEP ONE',
-         CONTENT: `<p>Insurance 101</p>`,
+         CONTENT: `<p class="col-blk">Insurance 101</p>`,
       },
       PLAN_STEP_TWO: {
          TITLE: 'STEP TWO',
-         CONTENT: `<p>Insurance</br> Calculator.</p>`,
+         CONTENT: `<p class="col-blk">Insurance</br> Calculator.</p>`,
       },
       PLAN_STEP_THREE: {
          TITLE: 'STEP THREE',
-         CONTENT: `<p>Financial Budget</p>`,
+         CONTENT: `<p class="col-blk">Financial Budget</p>`,
       },
       PLAN_STEP_FOUR: {
          TITLE: 'STEP FOUR',
-         CONTENT: `<p>Compare Quotess
+         CONTENT: `<p class="col-blk">Compare Quotess
                       </p>`,
       },
       PLAN_READ_MORE: {
@@ -343,47 +343,55 @@ export class HomeConstants {
          {
             INPUT_TYPE: '1. How much annual income would you need to replace if something were to happen to you?',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
          },
          {
             INPUT_TYPE: '2. How many years would your family need to ' +
                'replace your income and the services you provide if you died suddenly?',
             VALUE: 0,
+            isVisited: false,
             isAmt: false
          },
 
          {
             INPUT_TYPE: '3. How debt do you have?',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
 
          },
          {
             INPUT_TYPE: '4. How much money do you want to provide for your children’s education or future needs?',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
 
          },
          {
             INPUT_TYPE: '5. How much would your family need to pay for your funeral?',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
          },
          {
             INPUT_TYPE: '6. How much money do you have in savings and investment accounts? ',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
          },
 
          {
             INPUT_TYPE: '7. How much life insurance do you already have? ',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
 
          },
          {
             INPUT_TYPE: '8. How much after-tax income does your family have annually in addition to your income?',
             VALUE: 0,
+            isVisited: false,
             isAmt: true
 
          },

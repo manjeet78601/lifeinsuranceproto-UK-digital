@@ -16,24 +16,24 @@
 </ion-header>
 <!-- End of Header -->
 <ion-content>
-  <img class="login-img" [src]="'../../../../assets/img/login-img.png'">
+  <img class="login-img" [src]="'../../../../assets/img/signin.svg'">
   <section  class="wrapper-auth signin-section" fxLayout="column" fxLayoutAlign="center center">
-      <header>
+      <header class="mt-4">
         <p class="header">{{htmlText.login_welcome_header}}</p>
         <p class="sub-header">{{htmlText.login_welcome_subheader}}</p>
       </header>
               <form class="signin" [formGroup]="loginForm">
-                <p class="form-label"><label for="uname">{{htmlText.username}}</label></p>
+                <p class="form-label mb-0"><label for="uname">{{htmlText.username}}</label></p>
                 <mat-form-field appearance="outline" class="form-input-control mb-20">
                   <input formControlName="lname" matInput type="text" placeholder="name@domain.com" value="" id="uname">
                   <!-- <mat-error>Invalid username</mat-error> -->
                 </mat-form-field>
-                <p class="form-label"><label for="uname">{{htmlText.password}}</label></p>
+                <p class="form-label mb-0 mt-3"><label for="uname">{{htmlText.password}}</label></p>
                 <mat-form-field appearance="outline" class="form-input-control mb-20">
                   <input formControlName="password" matInput type="password" placeholder="Password" value="">
                   <!-- <mat-error>Invalid password</mat-error> -->
                 </mat-form-field>
-                <div class="mt-30"> 
+                <div class="mt-3"> 
                   <a mat-button class="fs-14 col-blk f-weight-n" routerLink=".">{{htmlText.rememberme_link}}</a>
                   <a mat-button class="fs-14 col-dull-grey text-underline" routerLink=".">{{htmlText.forgot_pwd}}</a>
               </div>

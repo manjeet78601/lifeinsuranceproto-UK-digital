@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
     firstName: ['', [Validators.required]],
     userName: ['', [Validators.required, Validators.email]],
     signupPwd: ['', Validators.required],
-    location: ['', Validators.required],
+    location: ['', [Validators.required, Validators.maxLength(5)]],
     termsAndCond: ['', [Validators.required, Validators.requiredTrue]]
   });
   constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService, private loader: LoaderService) { }
@@ -27,6 +27,16 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.isSignup = false;
     this.isAccountVerified = false;
+    this.getUserName();
+  }
+  getUserName() {
+    this.authService.subj.subscribe((data) => {
+      if (!!data.name) {
+        this.signupForm.patchValue({
+          firstName: data.name
+        });
+      }
+    });
   }
   onFormsubmit() {
     this.isSignup = true;

@@ -21,17 +21,17 @@
   <!-- Landing page starts from here -->
   <section class="content">
     <div fxLayout="row" fxLayoutAlign="center center">
-      <img src="../../assets/img/homePage_Img/svg/Welcome_To_Life_Plus-01.svg" alt="Welcome_Img" />
+      <img src="../../assets/img/welcome-lifeplus.svg" alt="Welcome_Img" />
     </div>
     <div class="wrapper ion-text-center" fxLayout="column">
       <mat-card>
         <mat-card-title [innerHtml]=DOM_CONSTANTS.PLAN_HEADER1></mat-card-title>
         <mat-card-content>
-          <p [innerHtml]=DOM_CONSTANTS.PLAN_BODY></p>
+          <p [innerHtml]=DOM_CONSTANTS.PLAN_BODY ></p>
         </mat-card-content>
         <div>
-          <mat-card-subtitle>{{DOM_CONSTANTS.PLAN_HEADER2}} </mat-card-subtitle>
-          <mat-card-title>{{DOM_CONSTANTS.PLAN_SUB_HEADER2}}</mat-card-title>
+          <mat-card-subtitle class="col-blk">{{DOM_CONSTANTS.PLAN_HEADER2}} </mat-card-subtitle>
+          <mat-card-title class="col-blk">{{DOM_CONSTANTS.PLAN_SUB_HEADER2}}</mat-card-title>
         </div>
         <mat-card-content>
           <p [innerHtml]=DOM_CONSTANTS.PLAN_BODY2></p>
@@ -41,11 +41,11 @@
     </div>
     <!--  -->
     <div fxLayout="row" fxLayoutAlign="center center">
-      <img src="../../assets/img/homePage_Img/svg/Plan_Ahead-02.svg" alt="Plan_Ahead_Img" />
+      <img src="../../assets/img/Plan_Ahead-02.svg" alt="Plan_Ahead_Img" />
     </div>
     <div class="wrapper ion-text-center" fxLayout="column">
       <mat-card>
-        <mat-card-subtitle>{{DOM_CONSTANTS.PLAN_HEADER3}}</mat-card-subtitle>
+        <mat-card-subtitle class="col-blk">{{DOM_CONSTANTS.PLAN_HEADER3}}</mat-card-subtitle>
         <mat-card-title [innerHtml]=DOM_CONSTANTS.PLAN_SUB_HEADER3></mat-card-title>
         <mat-card-content>
           <p [innerHtml]=DOM_CONSTANTS.PLAN_BODY3></p>
@@ -55,7 +55,7 @@
 
     <!--  -->
     <div fxLayout="row" fxLayoutAlign="center center">
-      <img src="../../assets/img/homePage_Img/svg/Life_Plus_Collaboration-01-01.svg" alt="Life_Plus_Img" />
+      <img src="../../assets/img/Life_Plus_Collaboration-01-01.svg" alt="Life_Plus_Img" />
     </div>
     <div class="wrapper ion-text-center" fxLayout="column ">
       <div class="mt-40">
@@ -65,7 +65,7 @@
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px" class="mt-50">
         <div fxLayout="column" fxLayoutGap="10px">
           <div fxLayoutAlign="center center">
-            <img src="../../assets/img/homePage_Img/svg/step1.svg" alt="Winner_Img" />
+            <img src="../../assets/img/step1.svg" alt="Winner_Img" />
           </div>
           <div>
             <button mat-flat-button class="black_color" [routerLink]="['/home/chooseplan']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_STEP_ONE.TITLE}}</button>
@@ -76,7 +76,7 @@
         </div>
         <div fxLayout="column" fxLayoutGap="10px" class="mt-20">
           <div fxLayoutAlign="center center">
-            <img src="../../assets/img/homePage_Img/svg/step2.svg" alt="Stroke_Img" />
+            <img src="../../assets/img/step2.svg" alt="Stroke_Img" />
           </div>
           <div>
             <button mat-flat-button class="black_color" [routerLink]="['/home/insurance-calculator']">
@@ -91,7 +91,7 @@
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px">
         <div fxLayout="column" fxLayoutGap="10px">
           <div fxLayoutAlign="center center">
-            <img src="../../assets/img/homePage_Img/svg/step3.svg" alt="Star_Img" />
+            <img src="../../assets/img/step3.svg" alt="Star_Img" />
           </div>
           <div>
             <button mat-flat-button class="black_color" [routerLink]="['/home/budget']" routerLinkActive="router-link-active">{{DOM_CONSTANTS.PLAN_STEP_THREE.TITLE}}</button>
@@ -102,7 +102,7 @@
         </div>
         <div fxLayout="column" fxLayoutGap="10px">
           <div fxLayoutAlign="center center">
-            <img src="../../assets/img/homePage_Img/svg/step4.svg" alt="SpotLight_Img" />
+            <img src="../../assets/img/step4.svg" alt="SpotLight_Img" />
           </div>
           <div>
             <button mat-flat-button class="mt-50 black_color" [routerLink]="['/home/health']">
@@ -118,7 +118,7 @@
       <div class="20px">
         <mat-card>
           <div>
-            <mat-card-subtitle>{{DOM_CONSTANTS.PLAN_HEADER4}}</mat-card-subtitle>
+            <mat-card-subtitle class="col-blk">{{DOM_CONSTANTS.PLAN_HEADER4}}</mat-card-subtitle>
             <mat-card-title [innerHtml]=DOM_CONSTANTS.PLAN_SUB_HEADER4></mat-card-title>
           </div>
           <mat-card-content>
@@ -133,7 +133,7 @@
           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px">
             <div fxLayout="column" fxLayoutGap="2px">
               <div>
-                <img src="../../assets/img/homePage_Img/svg/female.svg" alt="Female_Img"/>
+                <img src="../../assets/img/female.svg" alt="Female_Img"/>
               </div>
               <div>
                 <button mat-flat-button class="black_color" [routerLink]="['/home/insurance-calculator']" >
@@ -142,7 +142,7 @@
             </div>
             <div fxLayout="column" fxLayoutGap="27px">
               <div>
-                <img src="../../assets/img/homePage_Img/svg/male.svg" alt="male_Img" />
+                <img src="../../assets/img/male.svg" alt="male_Img" />
               </div>
               <div>
                 <button mat-flat-button class="black_color" [routerLink]="['/home/insurance-calculator']" >

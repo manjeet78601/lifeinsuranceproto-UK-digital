@@ -70,15 +70,20 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
     console.log('dob is ' + this.dob);
   }
   ionViewDidEnter() {
-    this.routeSub = this.activeRoute.queryParams.subscribe((data) => {
-      this.isHeadsUpAccountVerified =  data.esign || 'showHeadsUpModal';
-      if (this.isHeadsUpAccountVerified === 'showHeadsUpModal') {
-        this.openDialog();
-      }
-      if (this.isHeadsUpAccountVerified === 'verified') {
-        this.prefillQuestions();
-      }
-    });
+    if (this.auth.isHeadsUpAccountLinked === false) {
+      this.routeSub = this.activeRoute.queryParams.subscribe((data) => {
+        this.isHeadsUpAccountVerified =  data.esign || 'showHeadsUpModal';
+        if (this.isHeadsUpAccountVerified === 'showHeadsUpModal') {
+          this.openDialog();
+        }
+        if (this.isHeadsUpAccountVerified === 'verified') {
+          this.auth.isHeadsUpAccountLinked = true;
+          this.prefillQuestions();
+        }
+      });
+    } else {
+      this.prefillQuestions();
+    }
   }
   ionViewWillLeave() {
     this.routeSub.unsubscribe();
@@ -91,11 +96,28 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
       closeOnNavigation : true,
       disableClose: true,
       minWidth: '90%',
-      maxHeight: '80%'
+      minHeight: '80%'
     });
   }
   prefillQuestions() {
     console.log('lod health questions');
+    this.DOM_CONSTANTS.HEALTHQUESTIONS.forEach(data => {
+      data.QUESTIONS.forEach(ques => {
+        if (ques.INPUT_TYPE === 'Datepicker') {
+          ques.value = new Date('02/21/1978');
+        } else if (ques.INPUT_TYPE === 'GENDERBTN') {
+          ques.value = 'male';
+        } else if (ques.INPUT_TYPE === 'HEIGHTSLIDER') {
+          ques.value = 6;
+        } else if (ques.INPUT_TYPE === 'WEIGHTSLIDER') {
+          ques.value = 160;
+        } else {
+          ques.value = 'no';
+        }
+      });
+    });
+    this.updateHeight(6);
+    this.updateWeight(160);
   }
   Submit(healthQuesForm) {
     console.log(healthQuesForm);
@@ -129,11 +151,11 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
       return true;
     }
   }
-  updateHeight(event) {
-    this.heightValue = event.value;
+  updateHeight(val: string | number) {
+    this.heightValue = val || '';
   }
-  updateWeight(event) {
-    this.weightValue = event.value;
+  updateWeight(val: string | number) {
+    this.weightValue = val || '';
   }
   gotoHomePage() {
     this.router.navigate(['/home']);

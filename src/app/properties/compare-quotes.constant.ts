@@ -14,7 +14,8 @@ export class CompareQuotesConstant {
                     {
                         QUESTIONTEXT: 'Date of Birth',
                         INPUT_TYPE: 'Datepicker',
-                        ICON: false
+                        ICON: false,
+                        value: ''
                     },
                     {
                         QUESTIONTEXT: 'Sex',
@@ -29,23 +30,27 @@ export class CompareQuotesConstant {
                         HEIGHTUNIT_FT: 'ft',
                         HEIGHTUNIT_INCH: 'in',
                         ICON: false,
+                        value: ''
                     },
                     {
                         QUESTIONTEXT: 'Weight',
                         INPUT_TYPE: 'WEIGHTSLIDER',
                         WEIGHTVALUE: 1,
                         WEIGHTUNIT: 'lbs',
-                        ICON: false
+                        ICON: false,
+                        value: ''
                     },
                     {
                         QUESTIONTEXT: 'Have you used any tobacco products in the last 5 years?',
                         INPUT_TYPE: 'TOGGLEBTN',
-                        ICON: true
+                        ICON: true,
+                        value: ''
                     },
                     {
                         QUESTIONTEXT: 'Have you used any marijuana products in the last 5 years?',
                         INPUT_TYPE: 'TOGGLEBTN',
-                        ICON: true
+                        ICON: true,
+                        value: ''
                     },
 
                 ]
@@ -61,53 +66,62 @@ export class CompareQuotesConstant {
                         QUESTIONTEXT: 'Alchol Abuse',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                     {
                         QUESTIONTEXT: 'Anxiety',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                     {
                         QUESTIONTEXT: 'Asthma',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                     {
                         QUESTIONTEXT: 'Cancer',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                     {
                         QUESTIONTEXT: 'Depression',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                     {
                         QUESTIONTEXT: 'Diabetes',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                     {
                         QUESTIONTEXT: 'Drug Abuse',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                     {
                         QUESTIONTEXT: 'Heart Attack',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                     {
                         QUESTIONTEXT: 'High Blood Pressure',
                         INPUT_TYPE: 'TOGGLEBTN',
+                        value: '',
                         ICON: true,
                         note: ''
                     },
@@ -115,24 +129,28 @@ export class CompareQuotesConstant {
                         QUESTIONTEXT: 'High Cholesterol',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                     {
                         QUESTIONTEXT: 'Sleep Apnea',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                     {
                         QUESTIONTEXT: 'Stroke',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                     {
                         QUESTIONTEXT: 'Other serious Conditions',
                         INPUT_TYPE: 'TOGGLEBTN',
                         ICON: true,
+                        value: '',
                         note: ''
                     },
                 ]
@@ -144,12 +162,14 @@ export class CompareQuotesConstant {
                         QUESTIONTEXT: 'Do you have any parents or siblings who had heart attacks,' +
                         'strokes, cancer, diabetes, or kidney disease before age 70?',
                         INPUT_TYPE: 'TOGGLEBTN',
+                        value: '',
                         ICON: true
                     },
                     {
                         QUESTIONTEXT: 'Has your driver’s license been suspended or revoked,' +
                         ' or had more than one traffic ticket or accident in the past five years?',
                         INPUT_TYPE: 'TOGGLEBTN',
+                        value: '',
                         ICON: true
                     }
                 ]

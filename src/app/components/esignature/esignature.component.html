@@ -24,7 +24,7 @@
     </div>
     <p class="form-label"><label for="name">eSignature</label></p>
     <mat-form-field appearance="outline" class="form-input-control mb-20">
-      <input [(ngModel)]="userNname" matInput type="text" placeholder="First and last name" value="" id="name">
+      <input [(ngModel)]="userNname" matInput type="text" placeholder="First and last name" value="" id="name" (blur)="saveName()">
       <!-- <mat-error>Invalid username</mat-error> -->
     </mat-form-field>
     <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px" class="mt-20">
