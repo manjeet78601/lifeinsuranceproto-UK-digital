@@ -37,13 +37,13 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
   heightValue: any;
   weightValue: any;
   // height
-  max = 12;
-  min = 3;
+  max = 8;
+  min = 0;
   step = 1;
   tickInterval = 1;
   //
   // weight
-  maxWeight = 1000;
+  maxWeight = 500;
   minWeight = 80;
   weightStep = 5;
   weightTickInterval = 1;

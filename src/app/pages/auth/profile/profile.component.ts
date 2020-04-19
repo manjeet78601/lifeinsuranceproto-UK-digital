@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   doughnutChartLabels = [
     'Home(s)', 'Mortgage', 'Vehicle(s)', 'Valuables', 'Fixed Income'
   ];
+  
   doughnutChartData = [12, 3, 4, 8, 19];
   doughnutChartType = 'doughnut';
   doughnutChartLegendColors = [{
@@ -27,6 +28,18 @@ export class ProfileComponent implements OnInit, AfterViewInit {
       '#FF6D75',
       '#00B5AD'
     ]
+  }];
+  public pieChartPlugins = [{
+    afterLayout: function (chart) {
+      chart.legend.legendItems.forEach(
+        (label) => {
+          let value = chart.data.datasets[0].data[label.index];
+
+          label.text += ' ' + value;
+          return label;
+        }
+      )
+    }
   }];
   donutOptions: any = {
     legend: {
