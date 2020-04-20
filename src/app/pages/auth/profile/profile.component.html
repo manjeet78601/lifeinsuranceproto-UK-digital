@@ -19,7 +19,7 @@
     <div fxLayout="row" fxLayoutAlign="center center">
       <mat-card class="user-info">
         <mat-card-header>
-          <div fxLayout="column">
+          <div fxLayout="column" fxLayoutAlign="center center">
             <div fxLayout="row" fxLayoutGap="30px">
               <div slot="start" class="profile-pic">
                 <img src="../../../../assets/img/auth_Profile_Img/profile-icon.svg" alt="profil-pic">
@@ -90,7 +90,7 @@
         <h2 class="cap-first-letter">{{userName +"'s "+ htmltext.profile_header }}</h2>
       </header>
       <!--  -->
-      <mat-accordion class="user-financial-info">
+      <mat-accordion class="user-financial-info" >
         <ng-container *ngFor="let financeDetails of userFinancialInfo; let itemIndex = index; trackBy: trackByIndex">
           <mat-expansion-panel [ngStyle]="{'background':financeDetails.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
             <mat-expansion-panel-header class="mat-accordian-header">

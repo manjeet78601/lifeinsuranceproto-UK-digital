@@ -78,7 +78,7 @@ export class BookLabComponent implements OnInit {
   goToNext() {
     if (this.labApptService.apptDetails.date===null){
       this.snackBar.open('Please select the Date ','ok', {
-        duration: 2000,
+        duration: 5000,
         panelClass: 'custom-css-class',
       });
       console.log("selected date:",this.date);
