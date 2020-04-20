@@ -297,12 +297,6 @@ a:not([href]) {
     margin-left: 5px;
   }
 }
-
-//content
-.content {
-  min-height: calc(95vh - 197px);
-  //padding: 40px 40px 0 40px;
-}
 .err-msg {
   font-size: 12px;
   text-align: left;
@@ -781,4 +775,8 @@ float: left;
         padding: 0 !important;
     }
   }
+}
+.content {
+  min-height: calc(95vh - 197px);
+  //padding: 40px 40px 0 40px;
 }
