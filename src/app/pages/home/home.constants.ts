@@ -27,7 +27,7 @@ export class HomeConstants {
 
 
       PLAN_HEADER4: 'EVERY FAMILY IS DIFFERENT',
-      PLAN_SUB_HEADER4: `<p class="col-blk">SEE How We've Helped
+      PLAN_SUB_HEADER4: `<p class="col-blk">See How We've Helped
                             Families Like Yours.</p>`,
       PLAN_HEADER_4: 'I am a : ',
       PLAN_SUB_HEADER_4: 'Select Marital/Parental Status',
