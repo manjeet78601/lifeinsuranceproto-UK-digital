@@ -768,3 +768,17 @@ float: left;
     border: 0 !important;
   }
 }
+.mint-account-section {
+  .mat-form-field-appearance-outline {
+    .mat-form-field-wrapper {
+      padding-bottom: 10px;
+    }
+    .mat-form-field-infix{
+        height: 35px !important;
+    }
+    .mat-form-field-infix{
+        margin: 0;
+        padding: 0 !important;
+    }
+  }
+}
