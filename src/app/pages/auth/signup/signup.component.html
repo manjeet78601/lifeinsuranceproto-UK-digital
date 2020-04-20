@@ -14,7 +14,8 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <section class="wrapper-auth pt-2 content signup-section" fxLayout="column" fxLayoutAlign="center center" *ngIf="!isSignup">
+  <ng-template [ngIf]="!isSignup">
+    <section class="wrapper-auth pt-2 content signup-section" fxLayout="column" fxLayoutAlign="center center">
       <header class="my-3">
         <p class="header">{{htmlText.signup_header}}</p>
       </header>
@@ -45,9 +46,11 @@
             [disabled]="!signupForm.valid"><strong>{{htmlText.submit_btn}}</strong></button>
         </div>
       </form>
-  </section>
-  
-    <section *ngIf ="isAccountVerified === true" class="ion-text-center">
+    </section>
+  </ng-template>
+
+  <ng-template [ngIf]="isAccountVerified === true">
+    <section class="content ion-text-center">
       <img class="wel-img" [src]="'../../../../assets/img/welcome-lifeplus.svg'">
       <header class="pt-4">
         <p class="header">{{htmlText.welcome_header}}</p>
@@ -63,7 +66,8 @@
           routerLink=".">{{htmlText.resent_verification_link}}</a>
       </div>
     </section>
-  
+  </ng-template>
+
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">
