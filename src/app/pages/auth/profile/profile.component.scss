@@ -1,110 +1,139 @@
+// ion-content > main {
+// height:880px;
+// }
+.mat-card {
+    transition: none !important;
+    box-shadow: none !important;
+    width:100% !important;
+    background-color: #d3d9db33;
+}
 .user-info {
-    width: 100%;
-    .profile-pic {
-        width: 123px;
-        height:123px;
-        margin-right: 15px;
-    }
-    .profile-desc {
-        margin-top: 0;
-        margin-right: 0;
-        .uname {
-            font-size: 18px;
-            color: #000000;
-            line-height: 2;
-            ::after {
-                clear: right;
-            }
-            ion-icon {
-                float: right;
-            }
-        }
-        .label {
-            color: #707070;
-            font-size: 14px;
-            font-weight: 600;
-            &.policy {
-                line-height: 2;
-            }
-        }
-        .bdate, .policy-status {
-            color: #333333;
-            font-size: 12px;
-            line-height: 1.2;
-        }
-    }
-    .mat-progress-bar {
-        width: 100% !important;
-        padding: 0 18px;
-    }
-}
-.user-financial-info {
-    width: 85%;
-    .header-txt {
-        color:#333333;
-        padding: 0 10px;
-        margin:0;
-    }
-    .ques-details {
-        width: 100%;
-        padding: 0 10px;
-        &.my-15 {
-            margin: 15px 0;
-        }
-        .que-header {
-            line-height: 23px;
-        }
-        .tooltip {
-            color:#6e6e6e;
-            padding-left: 15px;
-            vertical-align: middle;
-        }
-        &.input-box{
-            .que-header {
-                font-weight: normal;
-            }
-        }
-    }
-    .mat-expansion-panel-body{
-        padding-left: 35px;
-    }
-    .form-input-control {
-        text-align: right;
-        font-size: 14px;
-        width: 65%;
-        color: #333333;
-        .mat-form-field-wrapper {
-            padding-bottom: 0 !important;
+  width: 100%;
+  .profile-pic {
+      width: 123px;
+      height: 123px;
+      margin-right: 15px;
+      line-height: 1;
+  }
+  .profile-desc {
+      position: relative;
+      left: 9px;
+      top: -6px;
+      .uname {
+        font-family: lato;
+          font-size: 18px;
+          font-weight: bold;
+          color: #000000;
+          line-height: 1;
+          ::after {
+              clear: right;
           }
-    }
-    .mat-accordian-header {
-        position: relative;
-        .user-icon {
-            position: absolute;
-            right: 20px;
-            vertical-align: middle;
-            top: 18px;
-            color: #767676;
-            &.complete {
-                color: #21BA45;
+          ion-icon {
+             float:right;
+          }
+      }
+      .user_details {
+          position: relative;
+          left: 33px;
+          
+      }
+      .label {
+          font-family: Proxima Soft;
+          font-size: 14px;
+          font-weight: bold;
+          margin:1px;
+      }
+        .label_desc {
+            font-family: Proxima Soft;
+             font-size: 14px;
+           
             }
-        }
-        .tick-icon {
-            position: absolute;
-            right: 14px;
-            top: 16px;
-            width: 10px;
-            color: #767676;
-            &.complete {
-                color: #21BA45;
-            }
-        }
-    }
-   
+     
+      .bdate,
+      .policy-status {
+          color: #333333;
+          font-size: 12px;
+         
+      }
+  }
 }
+ion-card {
+  transition: none !important;
+  box-shadow: none !important;
+  width:100% !important;
+}
+.mat-progress-bar {
+  width: 100% !important;
+  padding: 0 18px;
+}
+
+.user-financial-info {
+  .header-txt {
+      color: #333333;
+      padding: 0 10px;
+      margin: 0;
+  }
+  .ques-details {
+      width: 100%;
+      padding: 0 10px;
+      &.my-15 {
+          margin: 15px 0;
+      }
+      .que-header {
+          line-height: 23px;
+      }
+      .tooltip {
+          color: #6e6e6e;
+          padding-left: 15px;
+          vertical-align: middle;
+      }
+      &.input-box {
+          .que-header {
+              font-weight: normal;
+          }
+      }
+  }
+  .mat-expansion-panel-body {
+      padding-left: 35px;
+  }
+  .form-input-control {
+      text-align: right;
+      font-size: 14px;
+      width: 65%;
+      color: #333333;
+      .mat-form-field-wrapper {
+          padding-bottom: 0 !important;
+      }
+  }
+  .mat-accordian-header {
+      position: relative;
+      .user-icon {
+          position: absolute;
+          right: 20px;
+          vertical-align: middle;
+          top: 18px;
+          color: #767676;
+          &.complete {
+              color: #21BA45;
+          }
+      }
+      .tick-icon {
+          position: absolute;
+          right: 14px;
+          top: 16px;
+          width: 10px;
+          color: #767676;
+          &.complete {
+              color: #21BA45;
+          }
+      }
+  }
+}
+
 .cap-first-letter::first-letter {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -112,14 +141,17 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
+
 input[type=number] {
   -moz-appearance: textfield;
 }
+
 .chart {
-    width: 100%;
+  width: 100%;
 }
-.recommend-text{
-    font-size: 14px;
-    text-align: center;
-    line-height: 1;
+
+.recommend-text {
+  font-size: 14px;
+  text-align: center;
+  line-height: 1;
 }

@@ -28,10 +28,6 @@
         "url": "home/contact"
     },
     {
-        "title": "Help",
-        "url": "home/help"
-    },
-    {
         "title": "Sign In",
         "url": "/auth"
     }

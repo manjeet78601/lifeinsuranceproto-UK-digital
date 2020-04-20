@@ -84,7 +84,7 @@ export class DataAnalyticsService {
       delete data.tags.field;
       delete data.tags.value;
     }
-    this.http.post(this.url, data, { headers: this.analyticHeaders }).subscribe();
+   // this.http.post(this.url, data, { headers: this.analyticHeaders }).subscribe();
   }
   public trackAnalyticData(categoryName: string, eventAction: string, eventLabel: string = '', eventValue: string = '' ) {
     this.emitEventToGoogleCloud(categoryName, eventAction, eventLabel, eventValue);

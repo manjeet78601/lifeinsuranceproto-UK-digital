@@ -14,41 +14,44 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <section class="wrapper-auth pt-2 content signup-section" fxLayout="column" fxLayoutAlign="center center" *ngIf="!isSignup">
-      <header>
+  <ng-template [ngIf]="!isSignup">
+    <section class="wrapper-auth pt-2 content signup-section" fxLayout="column" fxLayoutAlign="center center">
+      <header class="my-3">
         <p class="header">{{htmlText.signup_header}}</p>
       </header>
       <form [formGroup]="signupForm" (ngSubmit)="onFormsubmit()">
-        <p class="form-label"><label for="fname">{{htmlText.firstName}}</label></p>
+        <p class="form-label mb-0"><label for="fname">{{htmlText.firstName}}</label></p>
         <mat-form-field appearance="outline" class="form-input-control mb-20">
           <input formControlName="firstName" matInput placeholder="First Name" id="fname">
           <!-- <mat-error>Invalid email</mat-error> -->
         </mat-form-field>
-        <p class="form-label"><label for="uname">{{htmlText.username}}</label></p>
+        <p class="form-label mb-0 mt-3"><label for="uname">{{htmlText.username}}</label></p>
         <mat-form-field appearance="outline" class="form-input-control mb-20">
           <input formControlName="userName" matInput placeholder="Username" id="uname">
         </mat-form-field>
-        <p class="form-label"><label for="pwd">{{htmlText.password}}</label></p>
+        <p class="form-label mb-0 mt-3"><label for="pwd">{{htmlText.password}}</label></p>
         <mat-form-field appearance="outline" class="form-input-control mb-20">
           <input formControlName="signupPwd" type="password" matInput placeholder="8-25 characters" id="pwd">
         </mat-form-field>
-        <p class="form-label"><label for="location">{{htmlText.location}}</label></p>
+        <p class="form-label mb-0 mt-3"><label for="location">{{htmlText.location}}</label></p>
         <mat-form-field appearance="outline" class="form-input-control mb-20">
           <input type="number" formControlName="location" matInput placeholder="Zip code" id="location">
           <!-- <mat-error>Invalid email</mat-error> -->
         </mat-form-field>
-        <div class="mt-20 text-left">
+        <div class="mt-3 text-left">
           <mat-checkbox class="terms-cond" formControlName="termsAndCond">{{htmlText.terms_cond}}</mat-checkbox>
         </div>
-        <div class="mt-20 text-left">
+        <div class="mt-4 text-center">
           <button type="submit" class="btn bg-blk col-wht" mat-stroked-button
            ><strong>{{htmlText.submit_btn}}</strong></button>
         </div>
       </form>
-  </section>
-  
-    <section *ngIf ="isAccountVerified === true" class="ion-text-center">
-      <img class="wel-img" [src]="'../../../../assets/img/welcome-signin.png'">
+    </section>
+  </ng-template>
+
+  <ng-template [ngIf]="isAccountVerified === true">
+    <section class="content ion-text-center">
+      <img class="wel-img" [src]="'../../../../assets/img/welcome-lifeplus.svg'">
       <header class="pt-4">
         <p class="header">{{htmlText.welcome_header}}</p>
         <p class="subheader mb-0">{{htmlText.welcome_subheader}}</p>
@@ -63,7 +66,8 @@
           routerLink=".">{{htmlText.resent_verification_link}}</a>
       </div>
     </section>
-  
+  </ng-template>
+
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">

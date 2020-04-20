@@ -16,4 +16,7 @@ export class EmailApptComponent implements OnInit {
   gotoHomePage() {
     this.router.navigate(['/home']);
   }
+  goToProfile() {
+    this.router.navigate(['/auth/profile']);
+  }
 }

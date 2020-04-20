@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-esignature',
@@ -9,7 +10,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class EsignatureComponent implements OnInit {
   pageName: string;
   accountName: string;
-  constructor(private router: Router, private activeRoute: ActivatedRoute) { }
+  userNname: string;
+  constructor(private router: Router, private activeRoute: ActivatedRoute, private authService: AuthService) { }
 
   ngOnInit() {}
   ionViewDidEnter() {
@@ -23,6 +25,9 @@ export class EsignatureComponent implements OnInit {
   }
   onCancel() {
     this.router.navigate([`/${this.pageName}`], { queryParams: { accountName: this.accountName, esign: 'notverified' } });
+  }
+  saveName() {
+    this.authService.saveUserNameForSignup(this.userNname);
   }
   gotoHomePage() {
     this.router.navigate(['/home']);
