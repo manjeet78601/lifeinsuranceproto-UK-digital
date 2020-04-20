@@ -80,4 +80,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   gotoHomePage() {
     this.router.navigate(['/home']);
   }
+  logOut() {
+    this.router.navigate(['/auth/signin']);
+  }
 }

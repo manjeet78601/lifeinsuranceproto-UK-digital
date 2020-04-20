@@ -22,7 +22,7 @@
           <div fxLayout="column">
             <div fxLayout="row" fxLayoutGap="30px">
               <div slot="start" class="profile-pic">
-                <img src="../../../../assets/img/profile-icon.png" alt="profil-pic">
+                <img src="../../../../assets/img/auth_Profile_Img/profile-icon.svg" alt="profil-pic">
               </div>
               <div fxLayout="column" class="profile-desc ">
                 <div>
@@ -128,7 +128,7 @@
       </mat-accordion>
       <!-- -->
       <div class="mt-50" fxLayoutAlign="center center">
-        <button mat-stroked-button class="btn-color">Log Out</button>
+          <a *ngIf="!isUerLoggedIn" [routerLink]="['./']" (click)="LogOut()" class="btn-acc" mat-menu-item>Log Out</a>
       </div>
     </div>
   </section>
