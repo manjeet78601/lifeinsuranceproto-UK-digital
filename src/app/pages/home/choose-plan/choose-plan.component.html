@@ -90,12 +90,12 @@
     </mat-table>
   </section>
 
-  <section div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" class=" mb-70">
     <p class="plan-content txt-align">{{DOM_CONSTANTS.COVG_HEADER}}</p>
     <button class="btn bg-blk col-wht" mat-stroked-button (click)="getInsCal()">
       {{BTN.INS_CAL}}</button>
-    <a *ngIf="!isUerLoggedIn" [routerLink]="['./']" (click)="createAccount()" class="btn-acc" mat-menu-item>Create account</a>
-  </section>
+      <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()" class="btn-acc">Create account</a>
+    </div>
 
   <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
