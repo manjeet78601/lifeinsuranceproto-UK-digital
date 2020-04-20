@@ -1,4 +1,10 @@
 export class MedicalExamConstants {
+    public static Locate_Lab={
+        HEADER:'Medical Testing',
+        SUBHEADER:'Schedule Bloodwork',
+        TEXT:`<p>At the appointment, you are required to</br>present documentation with your</br>prescription.</p>`,
+        PICK_LOCATION:'Pick Location',
+    }
     public static MEDICAL_EXAM = {
         HEADER: 'Medical Testing',
         SUBHEADER: 'Get Your Results',

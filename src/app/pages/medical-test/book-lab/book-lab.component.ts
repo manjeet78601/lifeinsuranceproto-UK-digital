@@ -7,6 +7,8 @@ import { AppointmentsService } from 'src/app/services/appointments.service';
 import { Appointments } from 'src/app/models/appointments.model';
 import { DatePipe } from '@angular/common';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { MatCalendarCellCssClasses } from '@angular/material';
 
 @Component({
   selector: 'app-schedule-doctor-visit',
@@ -29,6 +31,7 @@ export class BookLabComponent implements OnInit {
   backendData = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM']; // Data from the backend
   appointmentTimeslots = [];
   disabled = false;
+  dateClass=this.selectedDate;
 
 
   constructor(private router: Router, private labApptService: AppointmentsService, private datePipe: DatePipe,private snackBar: MatSnackBar) {
@@ -37,7 +40,7 @@ export class BookLabComponent implements OnInit {
   onSelect(event) {
   this.selectedDate = this.datePipe.transform(event, 'dd MMMM yyyy');
   }
-
+  
   ngOnInit() {
     this.backendData.forEach(e => {
       const text = this.getTextFromValue(e);
@@ -76,12 +79,11 @@ export class BookLabComponent implements OnInit {
   }
   
   goToNext() {
-    if (this.labApptService.apptDetails.date===null){
-      this.snackBar.open('Please select the Date ','ok', {
+    if (this.labApptService.apptDetails.date==null && this.labApptService.apptDetails.location==null){
+      this.snackBar.open('Please fill the data ','ok', {
         duration: 5000,
         panelClass: 'custom-css-class',
       });
-      console.log("selected date:",this.date);
     }
     else{
     this.router.navigate(['/medical-test/lab-details']);

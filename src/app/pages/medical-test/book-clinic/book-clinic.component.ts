@@ -95,9 +95,18 @@ export class BookClinicComponent implements OnInit {
 
 
   goToNext() {
-
-   this.router.navigate(['/medical-test/clinic-details']);
+    if (this.clinicApptService.clinicDetails.date!=null && this.clinicApptService.clinicDetails.time!=null){
+  
+        this.router.navigate(['/medical-test/clinic-details']);
   }
+  else{
+    this.snackBar.open('Please fill the data. ', 'ok', {
+      duration: 3000,
+      panelClass: 'custom-css-class',
+    });
+  }
+}
+ 
 
 
   getPrevious() {

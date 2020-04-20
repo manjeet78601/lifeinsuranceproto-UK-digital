@@ -16,12 +16,14 @@
 <!--Header Section-->
 <ion-content>
   <section class="content">
+  
     <div class="wrapper ion-text-center" fxLayout="column" fxLayoutAlign="center center">
-      <header>
+      <header class="mt-50">
         <p class="subtitle">{{ DOM_CONSTATNTS.DOCTOR_SCH_HEADER }}</p>
       </header>
+      
       <div fxLayout="row" fxLayoutAlign="center center">
-        <mat-card class="calendar-display">
+        <mat-card class="calendar-display mt-20">
           <mat-calendar #calendar [selected]="selectedDate"  [minDate]="minDate" (selectedChange)="onSelect($event)"></mat-calendar>
         </mat-card>
       </div>
@@ -38,8 +40,8 @@
 
             <mat-label fxLayoutAlign="start" class="title mt-20">{{DOM_CONSTATNTS.CHOOSE_TIME}}</mat-label>
             <mat-card-content>
-              <mat-form-field appearance="outline" style="width:300px">
-                <mat-select (selectionChange)="onChangedSort($event)">
+              <mat-form-field  #timeinput appearance="outline" style="width:300px">
+                <mat-select (selectionChange)="onChangedSort($event)" >
                   <mat-option *ngFor="let timing of backendData" [value]="timing">
                     {{timing}}
                   </mat-option>
@@ -52,9 +54,10 @@
       <!-- bottom section -->
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="mt-20">
         <button mat-stroked-button class="btn-color" (click)="getPrevious()">{{DOM_CONSTATNTS.BTN.BACK| uppercase}}</button>
-        <button mat-flat-button color="primary" (click)="goToNext()">{{DOM_CONSTATNTS.BTN.BOOK| uppercase}}</button>
+        <button mat-flat-button color="primary" type="submit"  (click)="goToNext()">{{DOM_CONSTATNTS.BTN.BOOK| uppercase}}</button>
       </div>
     </div>
+  
   </section>
   <!-- Footer -->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">

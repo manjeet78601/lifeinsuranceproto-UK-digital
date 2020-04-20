@@ -19,7 +19,6 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   doughnutChartLabels = [
     'Home(s)', 'Mortgage', 'Vehicle(s)', 'Valuables', 'Fixed Income'
   ];
-  
   doughnutChartData = [12, 3, 4, 8, 19];
   doughnutChartType = 'doughnut';
   doughnutChartLegendColors = [{
@@ -32,15 +31,15 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     ]
   }];
   public pieChartPlugins = [{
-    afterLayout: function (chart) {
+    afterLayout(chart) {
       chart.legend.legendItems.forEach(
         (label) => {
-          let value = chart.data.datasets[0].data[label.index];
+          const value = chart.data.datasets[0].data[label.index];
 
           label.text += ' ' + value;
           return label;
         }
-      )
+      );
     }
   }];
   donutOptions: any = {
@@ -84,6 +83,8 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/home']);
   }
   logOut() {
-    this.router.navigate(['/auth/signin']);
+    this.auth.logout().subscribe((data) => {
+      this.router.navigate(['/auth/signin']);
+    });
   }
 }
