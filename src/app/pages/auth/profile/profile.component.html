@@ -86,33 +86,6 @@
   </section>
   <section class="ion-text-center px-4">
       <h2 class="cap-first-letter pb-2">{{userName +"'s "+ htmltext.profile_header }}</h2>
-   <!-- financial details  -->
-   <!-- <mat-accordion>
-    <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        One
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <span>first</span>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Two
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <span>second</span>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Three
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <span>third</span>
-        </mat-expansion-panel>
-   </mat-accordion> -->
       <mat-accordion class="text-left user-financial-info">
         <ng-container *ngFor="let financeDetails of userFinancialInfo; let itemIndex = index; trackBy: trackByIndex">
           <mat-expansion-panel

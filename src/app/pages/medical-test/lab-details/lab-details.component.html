@@ -32,10 +32,9 @@
         </div>
       </mat-card-actions>
     </mat-card>
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" class="mt-50">
-      <button mat-stroked-button class="btn btn-border" (click)="getPrevious()">{{BTN.BACK}}</button>
-      <button class="btn bg-blk col-wht" mat-stroked-button (click)="goToNext()">
-        {{BTN.BOOK}}</button>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="mt-50">
+      <button mat-stroked-button class="btn-color" (click)="getPrevious()">{{BTN.BACK}}</button>
+      <button mat-flat-button color="primary" (click)="goToNext()">{{BTN.BOOK}}</button>
     </div>
   </section>
   <!--Footer-->
