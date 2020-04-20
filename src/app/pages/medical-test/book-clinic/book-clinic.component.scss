@@ -138,3 +138,14 @@
   border-radius: 999px;
   background-color: rgba(14, 152, 5, 0.25);
   }
+  .custom-css-class {
+    background-color: #F05252;
+  }
+  ::ng-deep .mat-snack-bar-container{
+    color: white !important;
+    background-color: #F05252 !important;
+    border-color: bisque !important;
+  }
+  ::ng-deep .mat-simple-snackbar-action {
+    color: white;
+  }

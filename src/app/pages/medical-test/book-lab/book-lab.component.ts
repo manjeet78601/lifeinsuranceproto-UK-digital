@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { MedicalExamConstants } from 'src/app/properties/medical-test.constant';
 import { MatSelectChange } from '@angular/material';
+import { VERSION, MatDialogRef, MatDialog, MatSnackBar } from '@angular/material';
 import { AppointmentsService } from 'src/app/services/appointments.service';
 import { Appointments } from 'src/app/models/appointments.model';
 import { DatePipe } from '@angular/common';
@@ -11,7 +12,8 @@ import { Observable } from 'rxjs';
   selector: 'app-schedule-doctor-visit',
   templateUrl: './book-lab.component.html',
   styleUrls: ['./book-lab.component.scss'],
-  providers: [DatePipe]
+  providers: [DatePipe],
+ 
 })
 
 export class BookLabComponent implements OnInit {
@@ -29,7 +31,7 @@ export class BookLabComponent implements OnInit {
   disabled = false;
 
 
-  constructor(private router: Router, private labApptService: AppointmentsService, private datePipe: DatePipe) {
+  constructor(private router: Router, private labApptService: AppointmentsService, private datePipe: DatePipe,private snackBar: MatSnackBar) {
 
   }
   onSelect(event) {
@@ -74,8 +76,17 @@ export class BookLabComponent implements OnInit {
   }
   
   goToNext() {
+    if (this.labApptService.apptDetails.date===null){
+      this.snackBar.open('Please select the Date ','ok', {
+        duration: 2000,
+        panelClass: 'custom-css-class',
+      });
+      console.log("selected date:",this.date);
+    }
+    else{
     this.router.navigate(['/medical-test/lab-details']);
   }
+}
   getPrevious() {
     this.router.navigate(['/medical-test/locate-lab']);
   }

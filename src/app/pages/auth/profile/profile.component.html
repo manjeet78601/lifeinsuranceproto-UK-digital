@@ -15,124 +15,159 @@
 </ion-header>
 <!--Header Section-->
 <ion-content>
-  <section class="content">
-    <div fxLayout="row" fxLayoutAlign="center center">
-      <mat-card class="user-info">
-        <mat-card-header>
-          <div fxLayout="column">
-            <div fxLayout="row" fxLayoutGap="30px">
-              <div slot="start" class="profile-pic">
-                <img src="../../../../assets/img/profile-icon.png" alt="profil-pic">
-              </div>
-              <div fxLayout="column" class="profile-desc ">
-                <div>
-                  <mat-card-title class="uname">{{userName}}
-                    <ion-icon name="create-outline"></ion-icon>
-                  </mat-card-title>
-                </div>
-                <div>
-                  <mat-card-title class="label">Coverage</mat-card-title>
-                  <p class="label_desc">30-years term policy</p>
-                </div>
-                <div>
-                  <mat-card-title class="label">Service</mat-card-title>
-                  <p class="label_desc">Prudential</p>
-                </div>
-              </div>
-            </div>
-            <!-- column -->
-            <div class="profile-desc">
-              <div fxLayout="row" fxLayoutGap="100px">
-                <div>
-                  <mat-card-title class="label">Policy</mat-card-title>
-                  <p class="label_desc">$500,000</p>
-                </div>
-                <div>
-                  <mat-card-title class="label">Monthly Premium</mat-card-title>
-                  <p class="label_desc">$25</p>
-                </div>
-              </div>
-              <div fxLayout="row" fxLayoutGap="60px">
-                <div>
-                  <mat-card-title class="label">Payment Made</mat-card-title>
-                  <p class="label_desc">2</p>
-                </div>
-                <div>
-                  <mat-card-title class="label">Payments Left</mat-card-title>
-                  <p class="label_desc">358</p>
-                </div>
-              </div>
-            </div>
-            <!-- colum -->
+  <mat-card class="user-info pt-4">
+    <mat-card-header>
+      <div fxLayout="column">
+        <div fxLayout="row" fxLayoutGap="30px">
+          <div slot="start" class="profile-pic">
+            <img src="../../../../assets/img/auth_Profile_Img/profile-icon.svg" alt="profil-pic">
           </div>
-        </mat-card-header>
-        <mat-card-content>
-          <div class="progress-indicator">
-            <mat-label>{{ progress + '%' }}</mat-label>
+          <div fxLayout="column" class="profile-desc ">
+            <div>
+              <mat-card-title class="uname">{{userName}}
+                <ion-icon name="create-outline"></ion-icon>
+              </mat-card-title>
+            </div>
+            <div>
+              <mat-card-title class="label">Coverage</mat-card-title>
+              <p class="label_desc mb-2">30-years term policy</p>
+            </div>
+            <div>
+              <mat-card-title class="label">Service</mat-card-title>
+              <p class="label_desc mb-2">Prudential</p>
+            </div>
           </div>
-          <mat-progress-bar mode="determinate" color="secondary" [value]="progress"></mat-progress-bar>
-        </mat-card-content>
-      </mat-card>
-    </div>
+        </div>
+        <!-- column -->
+        <div class="profile-desc pt-2">
+          <div fxLayout="row" fxLayoutGap="100px">
+            <div>
+              <mat-card-title class="label">Policy</mat-card-title>
+              <p class="label_desc mb-2">$500,000</p>
+            </div>
+            <div>
+              <mat-card-title class="label">Monthly Premium</mat-card-title>
+              <p class="label_desc mb-2">$25</p>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutGap="60px">
+            <div>
+              <mat-card-title class="label">Payment Made</mat-card-title>
+              <p class="label_desc">2</p>
+            </div>
+            <div>
+              <mat-card-title class="label">Payments Left</mat-card-title>
+              <p class="label_desc">358</p>
+            </div>
+          </div>
+        </div>
+        <!-- colum -->
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="progress-indicator">
+        <mat-label>{{ progress + '%' }}</mat-label>
+      </div>
+      <mat-progress-bar mode="determinate" color="secondary" [value]="progress"></mat-progress-bar>
+    </mat-card-content>
+  </mat-card>
+
+  <section class="ion-text-center px-3">
     <!-- chart -->
-    <div class="wrapper">
-      <ion-card class="chart">
+      <ion-card class="chart mx-0">
         <ion-card-header>
         </ion-card-header>
         <ion-card-content>
           <!-- <canvas #userFinancialAssets></canvas> -->
-          <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [options]="donutOptions"
-            [colors]="doughnutChartLegendColors" [plugins]="pieChartPlugins"></canvas>
+          <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+            [options]="donutOptions" [colors]="doughnutChartLegendColors" [plugins]="pieChartPlugins"></canvas>
         </ion-card-content>
       </ion-card>
-      <!-- financial details  -->
-      <header>
-        <h2 class="cap-first-letter">{{userName +"'s "+ htmltext.profile_header }}</h2>
-      </header>
-      <!--  -->
-      <mat-accordion class="user-financial-info">
+  </section>
+  <section class="ion-text-center px-4">
+      <h2 class="cap-first-letter pb-2">{{userName +"'s "+ htmltext.profile_header }}</h2>
+   <!-- financial details  -->
+   <!-- <mat-accordion>
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        One
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <span>first</span>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Two
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <span>second</span>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Three
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <span>third</span>
+        </mat-expansion-panel>
+   </mat-accordion> -->
+      <mat-accordion class="text-left user-financial-info">
         <ng-container *ngFor="let financeDetails of userFinancialInfo; let itemIndex = index; trackBy: trackByIndex">
-          <mat-expansion-panel [ngStyle]="{'background':financeDetails.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
+          <mat-expansion-panel
+            [ngStyle]="{'background':financeDetails.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
             <mat-expansion-panel-header class="mat-accordian-header">
               <mat-panel-title>
                 {{ financeDetails.title }}
               </mat-panel-title>
-              <ion-icon name="person" class="user-icon" [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
-              <ion-icon name="checkmark" class="tick-icon" [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
+              <ion-icon name="person" class="user-icon"
+                [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}">
+              </ion-icon>
+              <ion-icon name="checkmark" class="tick-icon"
+                [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}">
+              </ion-icon>
             </mat-expansion-panel-header>
-            <p class="header-txt" *ngIf="financeDetails.quesHeader">{{financeDetails.quesHeader}}</p>
-            <ng-container *ngFor="let quesDetails of financeDetails.questions; let quesIndex = index; trackBy: trackByIndex">
+            <ng-template [ngIf]="financeDetails.quesHeader">
+              <p class="header-txt" >{{financeDetails.quesHeader}}</p>
+            </ng-template>
+           
+            <div *ngFor="let quesDetails of financeDetails.questions; let quesIndex = index; trackBy: trackByIndex">
               <div [ngSwitch]="quesDetails.element">
-                <div class="ques-details my-15" *ngSwitchCase="'toggleButton'">
-                  <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
-                  <mat-button-toggle-group name="{{'question' + quesIndex}}" ngDefaultControl aria-label="Font Style" class="custom-mat-btn-toggle-group"
-                    [(ngModel)]="quesDetails.value" (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
-                    <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
-                    <span class="circle">or</span>
-                    <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
-                  </mat-button-toggle-group>
-                </div>
-                <div class="ques-details input-box" *ngSwitchCase="'inputNumber'">
-                  <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
-                  <mat-form-field appearance="outline" class="form-input-control text-right">
-                    <span matPrefix class="col-dull-grey">$ &nbsp;</span>
-                    <input matInput type="number" name="{{'question' + quesIndex}}" ngDefaultControl [placeholder]="quesDetails.placeholder"
-                      value="" [(ngModel)]="quesDetails.value" (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
-                  </mat-form-field>
-                  <mat-icon matTooltip={{quesDetails.name}} class="tooltip">help_outline</mat-icon>
-                </div>
+                <ng-template [ngSwitchCase] = "'toggleButton'">
+                  <div class="ques-details my-15">
+                    <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
+                    <mat-button-toggle-group name="{{'question' + quesIndex}}" ngDefaultControl aria-label="Font Style"
+                      class="custom-mat-btn-toggle-group" [(ngModel)]="quesDetails.value"
+                      (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
+                      <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
+                      <span class="circle">or</span>
+                      <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </div>
+                </ng-template>
+                <ng-template [ngSwitchCase] = "'inputNumber'">
+                  <div class="ques-details input-box">
+                    <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
+                    <mat-form-field appearance="outline" class="form-input-control text-right">
+                      <span matPrefix class="col-dull-grey">$ &nbsp;</span>
+                      <input matInput type="number" name="{{'question' + quesIndex}}" ngDefaultControl
+                        [placeholder]="quesDetails.placeholder" value="" [(ngModel)]="quesDetails.value"
+                        (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
+                    </mat-form-field>
+                  </div>
+                </ng-template>
               </div>
-            </ng-container>
+            </div>
           </mat-expansion-panel>
         </ng-container>
       </mat-accordion>
-      <!-- -->
-      <div class="mt-50" fxLayoutAlign="center center">
-        <button mat-stroked-button class="btn-color">Log Out</button>
-      </div>
-    </div>
   </section>
-
+  <ng-template [ngIf]="!isUerLoggedIn">
+    <div class="text-center mt-4">
+      <a (click)="logOut()" class="btn-acc">Log Out</a>
+    </div>
+  </ng-template>
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
       <ion-label class="fl-footer-content">
@@ -145,5 +180,5 @@
       </ion-label>
     </ion-text>
   </footer>
+  <!-- Footer -->
 </ion-content>
-<!-- Footer -->

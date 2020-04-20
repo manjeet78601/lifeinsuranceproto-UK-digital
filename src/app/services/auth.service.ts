@@ -24,6 +24,12 @@ isHeadsUpAccountLinked = false;
       return throwError('Invalid Credentials');
     }
   }
+  logout(): Observable<boolean> {
+    this.isLoggedIn = false;
+    this.isMinAccountLinked = false;
+    this.isHeadsUpAccountLinked = false;
+    return of(true);
+  }
   signup(user: Signup): Observable<boolean>  {
     for (const key in user) {
       if (user.hasOwnProperty(key)) {
