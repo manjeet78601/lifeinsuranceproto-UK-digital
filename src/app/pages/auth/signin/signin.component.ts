@@ -40,7 +40,11 @@ export class SigninComponent implements OnInit {
     });
   }
   signup(event) {
-    this.router.navigate(['/auth/otheracct']);
+    if (this.authService.isMinAccountLinked && this.authService.isHeadsUpAccountLinked) {
+      this.router.navigate(['/auth/signup']);
+    } else {
+      this.router.navigate(['/auth/otheracct']);
+    }
   }
   gotoHomePage() {
     this.router.navigate(['/home']);
