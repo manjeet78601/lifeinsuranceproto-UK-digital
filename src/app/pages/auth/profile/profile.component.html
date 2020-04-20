@@ -87,6 +87,32 @@
   <section class="ion-text-center px-4">
       <h2 class="cap-first-letter pb-2">{{userName +"'s "+ htmltext.profile_header }}</h2>
    <!-- financial details  -->
+   <!-- <mat-accordion>
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        One
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <span>first</span>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Two
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <span>second</span>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Three
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <span>third</span>
+        </mat-expansion-panel>
+   </mat-accordion> -->
       <mat-accordion class="text-left user-financial-info">
         <ng-container *ngFor="let financeDetails of userFinancialInfo; let itemIndex = index; trackBy: trackByIndex">
           <mat-expansion-panel
@@ -102,9 +128,11 @@
                 [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}">
               </ion-icon>
             </mat-expansion-panel-header>
-            <p class="header-txt" *ngIf="financeDetails.quesHeader">{{financeDetails.quesHeader}}</p>
-            <ng-container
-              *ngFor="let quesDetails of financeDetails.questions; let quesIndex = index; trackBy: trackByIndex">
+            <ng-template [ngIf]="financeDetails.quesHeader">
+              <p class="header-txt" >{{financeDetails.quesHeader}}</p>
+            </ng-template>
+           
+            <div *ngFor="let quesDetails of financeDetails.questions; let quesIndex = index; trackBy: trackByIndex">
               <div [ngSwitch]="quesDetails.element">
                 <ng-template [ngSwitchCase] = "'toggleButton'">
                   <div class="ques-details my-15">
@@ -127,11 +155,10 @@
                         [placeholder]="quesDetails.placeholder" value="" [(ngModel)]="quesDetails.value"
                         (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
                     </mat-form-field>
-                    <mat-icon matTooltip={{quesDetails.name}} class="tooltip">help_outline</mat-icon>
                   </div>
                 </ng-template>
               </div>
-            </ng-container>
+            </div>
           </mat-expansion-panel>
         </ng-container>
       </mat-accordion>
