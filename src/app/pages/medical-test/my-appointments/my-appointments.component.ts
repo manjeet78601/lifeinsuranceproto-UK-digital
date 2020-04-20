@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppointmentsConstant, } from '../../../properties/appointments.constant';
 import { Router } from '@angular/router';
 import { AppointmentsService } from 'src/app/services/appointments.service';
-
+import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-my-appointments',
   templateUrl: './my-appointments.component.html',
@@ -19,8 +19,8 @@ export class MyAppointmentsComponent implements OnInit {
   noApptClinic: boolean;
   noApptLab: boolean;
   schApptLab: boolean;
-  constructor(private router: Router, private apptService: AppointmentsService) { }
-
+  isUerLoggedIn: boolean;
+  constructor(private router: Router, private apptService: AppointmentsService, private userService: UserService) { }
   ngOnInit() { }
 
   ionViewDidEnter() {
@@ -38,9 +38,14 @@ export class MyAppointmentsComponent implements OnInit {
     this.getScheduleDetails();
     this.router.navigate(['/medical-test']);
   }
+
   goToHealthPage() {
     this.getScheduleDetails();
-    this.router.navigate(['/home/health']);
+    if (this.userService.getQuotesCompleted() === true) {
+      this.router.navigate(['/medical-test']);
+    } else {
+      this.router.navigate(['/home/health']);
+    }
   }
   // Get Scheduled Appts
   getScheduleDetails() {
