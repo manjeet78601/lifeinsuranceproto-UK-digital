@@ -17,7 +17,7 @@ export class LocateLabComponent implements OnInit {
   constructor(private router: Router, private loader: LoaderService, private labApptService: AppointmentsService) { }
 
   ngOnInit() {
-    this.location = this.loc.split("-")[1].trim();
+    this.location = this.loc.split('-')[1].trim();
   }
   goToNext() {
     this.setLabLocDetails(this.location);
@@ -29,7 +29,7 @@ export class LocateLabComponent implements OnInit {
   }
   // To select loc of lab
   onChangedLoc(event: MatSelectChange) {
-    this.location = event.value.split("-")[1].trim();
+    this.location = event.value.split('-')[1].trim();
     console.log('this.selectedClinic.value ::', this.location);
   }
 }
