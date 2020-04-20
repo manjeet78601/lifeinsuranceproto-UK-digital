@@ -29,6 +29,10 @@ export class SignupComponent implements OnInit {
     this.isAccountVerified = false;
     this.getUserName();
   }
+  ionViewDidEnter() {
+    this.isSignup = false;
+    this.isAccountVerified = false;
+  }
   getUserName() {
     this.authService.subj.subscribe((data) => {
       if (!!data.name) {

@@ -27,13 +27,11 @@
         </mat-card-content>
       </mat-card>
     </div>
-  </section>
-  <div div fxLayout="column" fxLayoutAlign="center center">
-    <div>
-      <button class="btn bg-blk col-wht" mat-stroked-button>{{BTN.FINISH}}</button>
-    </div>
+  <div fxLayout="column" fxLayoutAlign="center center" class="mt-10">
+      <button class="btn bg-blk col-wht" (click)="goToProfile()" mat-stroked-button>{{BTN.FINISH}}</button>
     <a [routerLink]="['./']" (click)="createAccount()" class="btn-acc col-dull-grey mt-10" mat-menu-item>{{BTN.DOC}}</a>
   </div>
+</section>
   <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">
