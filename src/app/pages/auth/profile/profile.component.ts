@@ -5,10 +5,12 @@ import { LoaderService } from 'src/app/services/loader.service';
 import { DataAnalyticsService } from 'src/app/services/data-analytics.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
+
 })
 export class ProfileComponent implements OnInit, AfterViewInit {
   htmltext = properties;
@@ -50,6 +52,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   userName: string;
   birthDate: string;
   progress = 0;
+
   constructor(private auth: AuthService, private router: Router) { }
   ngOnInit() {
     this.userName = this.auth.userName;

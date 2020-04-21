@@ -95,13 +95,7 @@ color:black !important;
 ::ng-host .mat-chip {
 border-radius: 0px;
 }
-::ng-deep .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover,
-.mat-calendar-body-active,
-.mat-calendar-body-active {
-  & > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
-    background-color: rgba(94, 83, 83, 0.29);
-  }
-}
+
 
 span.time-slot-list {
   border-radius: 3px;

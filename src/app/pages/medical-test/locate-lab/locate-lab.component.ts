@@ -3,13 +3,14 @@ import { Router } from '@angular/router';
 import { LoaderService } from 'src/app/services/loader.service';
 import { MatSelectChange } from '@angular/material';
 import { AppointmentsService } from 'src/app/services/appointments.service';
+import { MedicalExamConstants } from 'src/app/properties/medical-test.constant';
 @Component({
   selector: 'app-locate-lab-appointment',
   templateUrl: './locate-lab.component.html',
   styleUrls: ['./locate-lab.component.scss'],
 })
 export class LocateLabComponent implements OnInit {
-
+  DOM_CONSTATNTS = MedicalExamConstants.Locate_Lab;
   locations = ['Newton - Lab Corp', 'Chealsea - Lab Corp', 'Battery park - Quest Diagnostics',
     'New London - Quest Diagnostics', 'West Haven - Quest Diagnostics', 'Hartford - Lab Corp'];
   loc = 'Newton - Lab Corp';

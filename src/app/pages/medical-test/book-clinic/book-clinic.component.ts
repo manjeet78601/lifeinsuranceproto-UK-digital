@@ -32,8 +32,13 @@ export class BookClinicComponent implements OnInit {
   constructor(private router: Router, private clinicApptService: AppointmentsService, private datePipe: DatePipe, private snackBar: MatSnackBar) { }
   onSelect(event) {
    this.selectedDate = this.datePipe.transform(event, 'dd MMMM yyyy');
-    if (this.selectedDate < this.labData.date) {
-      console.log("the date cannot be the past date");
+    if (this.selectedDate < this.clinicApptService.apptDetails.date) {
+      this.snackBar.open('Selected Date cannot be less than lab booked Date ', 'ok', {
+        duration: 3000,
+        panelClass: 'custom-css-class',
+      });
+}
+    else{
       return this.selectedDate;
     }
   }
@@ -75,8 +80,11 @@ export class BookClinicComponent implements OnInit {
   // To select the avialabel appointment
   onChangedSort(event: MatSelectChange) {
     this.selectedTime = event.value;
-    if (this.selectedDate === this.labData.date && this.selectedTime < this.labData.time) {
-      console.log("selected time cannot be before the lab time");
+    if (this.selectedDate === this.clinicApptService.apptDetails.date && this.selectedTime <= this.clinicApptService.apptDetails.time) {
+      this.snackBar.open('Selected Time cannot be earlier than the lab booked time. ', 'ok', {
+        duration: 3000,
+        panelClass: 'custom-css-class',
+      });
     }
     else {
       if (this.availTimeslot.indexOf(event.value) !== -1) {
@@ -87,21 +95,19 @@ export class BookClinicComponent implements OnInit {
 
 
   goToNext() {
-    if (this.clinicApptService.clinicDetails.date < this.clinicApptService.apptDetails.date) {
-      if (this.clinicApptService.clinicDetails.date === this.clinicApptService.apptDetails.date && this.clinicApptService.clinicDetails.time < this.clinicApptService.apptDetails.time){
-        this.snackBar.open('change the time ', 'ok', {
-          duration: 2000,
-          panelClass: 'custom-css-class',
-        });
-      }
-      this.snackBar.open('change the date ', 'ok', {
-        duration: 2000,
-        panelClass: 'custom-css-class',
-      });
-    }    else {
-      this.router.navigate(['/medical-test/clinic-details']);
-    }
+    if (this.clinicApptService.clinicDetails.date!=null && this.clinicApptService.clinicDetails.time!=null){
+  
+        this.router.navigate(['/medical-test/clinic-details']);
   }
+  else{
+    this.snackBar.open('Please fill the data. ', 'ok', {
+      duration: 3000,
+      panelClass: 'custom-css-class',
+    });
+  }
+}
+ 
+
 
   getPrevious() {
     this.router.navigate(['/medical-test/locate-clinic']);

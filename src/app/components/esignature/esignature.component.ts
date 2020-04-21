@@ -27,7 +27,7 @@ export class EsignatureComponent implements OnInit {
     this.router.navigate([`/${this.pageName}`], { queryParams: { accountName: this.accountName, esign: 'notverified' } });
   }
   saveName() {
-    this.authService.saveUserNameForSignup(this.userNname);
+    this.authService.saveUserNameForSignup('name', this.userNname);
   }
   gotoHomePage() {
     this.router.navigate(['/home']);

@@ -17,12 +17,12 @@
 <ion-content>
 <section class="content">
   <div class="wrapper ion-text-center" fxLayout="column" fxLayoutAlign="center center">
-    <header>
+    <header class="mt-50">
       <p class="subtitle">{{ DOM_CONSTATNTS.BLOOD_SCH_HEADER }}</p>
     </header>
     <div fxLayout="row" fxLayoutAlign="center center" >
-      <mat-card  class="calendar-display">
-        <mat-calendar #calendar  [selected]="selectedDate"  [minDate]="minDate" 
+      <mat-card  class="calendar-display mt-20">
+        <mat-calendar #calendar [dateClass]="dateClass"  [selected]="selectedDate"  [minDate]="minDate" 
       (selectedChange)="onSelect($event)"></mat-calendar>
       </mat-card>
     </div>
