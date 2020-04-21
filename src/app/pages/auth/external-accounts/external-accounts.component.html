@@ -27,8 +27,8 @@
      
     </div>
     <div class="text-center pt-2">
-      <button mat-flat-button color="primary" (click)="openMintAccountModal()" class="mr-2">Mint Account</button>
-      <button mat-flat-button color="primary"  (click) = "openHeadsUpAccountModal()">Heads Up Account</button>
+      <button mat-flat-button color="primary" (click)="openMintAccountModal()" class="mr-2" [disabled]="authService.isMinAccountLinked === true">Mint Account</button>
+      <button mat-flat-button color="primary"  (click) = "openHeadsUpAccountModal()" [disabled]="authService.isHeadsUpAccountLinked === true">Heads Up Account</button>
     </div>
     <div class="text-center pt-2">
       <button mat-stroked-button (click) = "onCancel()">SKIP</button>

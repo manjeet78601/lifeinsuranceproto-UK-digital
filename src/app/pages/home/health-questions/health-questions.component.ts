@@ -77,6 +77,7 @@ export class HealthQuestionsComponent implements OnInit, OnDestroy {
           this.openDialog();
         }
         if (this.isHeadsUpAccountVerified === 'verified') {
+          this.toast.presentToast('Heads Up account has been linked successfully');
           this.auth.isHeadsUpAccountLinked = true;
           this.prefillQuestions();
         }

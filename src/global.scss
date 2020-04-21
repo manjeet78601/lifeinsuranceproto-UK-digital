@@ -60,6 +60,16 @@ a:not([href]) {
     font-size: 16px;
     color: #ccc;
 }
+button:focus {
+  outline: none;
+}
+.custom-toast {
+  .toast-wrapper {
+    color: #fff;
+    background: #28a745;
+    border-color: #28a745;
+  }
+}
 .black_color{
   background-color: black;
   color:white
@@ -84,7 +94,6 @@ a:not([href]) {
   padding-top: 0.5em !important;
   
 }
-
 .que-label {
   font-size: 18px;
   font-weight: bold;
