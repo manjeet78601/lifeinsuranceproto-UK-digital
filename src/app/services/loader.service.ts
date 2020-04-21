@@ -35,7 +35,7 @@ export class LoaderService {
         console.log('Loading dismissed!');
       });
     });
-    this.hideLoader();
+    // this.hideLoader();
   }
 
   hideLoader() {

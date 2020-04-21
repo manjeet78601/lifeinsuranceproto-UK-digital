@@ -23,13 +23,12 @@ export class ExternalAccountsComponent implements OnInit, OnDestroy {
       if (data && data.accountName && data.esign) {
         if (data.accountName === 'mintAccount' && data.esign === 'verified') {
           this.authService.isMinAccountLinked = true;
-          this.openHeadsUpAccountModal();
         }
         if (data.accountName === 'headsUpAccount' && data.esign === 'verified') {
           this.authService.isHeadsUpAccountLinked = true;
-          this.isBothAccountLinked = true;
         }
       }
+      this.isBothAccountLinked = !!this.authService.isMinAccountLinked && !!this.authService.isHeadsUpAccountLinked ? true : false;
     });
   }
   ionViewWillLeave() {

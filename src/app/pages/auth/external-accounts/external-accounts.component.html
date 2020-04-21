@@ -26,9 +26,12 @@
       </ion-card>
      
     </div>
-    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px" class="mt-20">
+    <div class="text-center pt-2">
+      <button mat-flat-button color="primary" (click)="openMintAccountModal()" class="mr-2">Mint Account</button>
+      <button mat-flat-button color="primary"  (click) = "openHeadsUpAccountModal()">Heads Up Account</button>
+    </div>
+    <div class="text-center pt-2">
       <button mat-stroked-button (click) = "onCancel()">SKIP</button>
-      <button mat-flat-button color="primary"  (click) = "onLogIn()">LOG IN</button>
     </div>
   </section>
 </ng-container>

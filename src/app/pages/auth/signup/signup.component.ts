@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
     firstName: ['', [Validators.required]],
     userName: ['', [Validators.required, Validators.email]],
     signupPwd: ['', Validators.required],
-    location: ['', [Validators.required, Validators.maxLength(5)]],
+    location: ['10001', [Validators.required, Validators.maxLength(5)]],
     termsAndCond: ['', [Validators.required, Validators.requiredTrue]]
   });
   constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService, private loader: LoaderService) { }
@@ -35,9 +35,10 @@ export class SignupComponent implements OnInit {
   }
   getUserName() {
     this.authService.subj.subscribe((data) => {
-      if (!!data.name) {
+      if (!!data.name || !!data.emailId) {
         this.signupForm.patchValue({
-          firstName: data.name
+          firstName: data.name || '',
+          userName: data.emailId || ''
         });
       }
     });

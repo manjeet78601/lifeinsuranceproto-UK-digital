@@ -7,6 +7,7 @@ import { DataAnalyticsService, PageLoadLabel } from './services/data-analytics.s
 import { Router, NavigationEnd } from '@angular/router';
 import { ChatService } from './services/chat.service';
 import { ModalController } from '@ionic/angular';
+import { LoaderService } from 'src/app/services/loader.service';
 import { ChatComponent } from './components/chat/chat.component';
 
 @Component({
@@ -45,8 +46,10 @@ export class AppComponent implements OnInit {
     private router: Router,
     private analytic: DataAnalyticsService,
     public chat: ChatService,
-    public modalController: ModalController
+    public modalController: ModalController,
+    private loader: LoaderService,
   ) {
+    this.loader.showAutoHideLoader('');
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.analytic.emitEventPageNavigateToGoogleCloud(event.urlAfterRedirects, PageLoadLabel.PAGE_LOAD);

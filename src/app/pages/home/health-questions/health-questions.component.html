@@ -69,7 +69,7 @@
                 <ng-container *ngIf="(healthIndex === 1 || healthIndex === 2) && que.value === 'yes'">
                   <mat-label class="que-header2">If you answered yes to any of these questions, please explain.</mat-label>
                   <mat-form-field class="full-width" appearance="outline">
-                    <textarea type="text" name="insuranceText + {{healthIndex+''+quesIndex}}" class="mat-form-field-flex form-control notes"
+                    <textarea type="text" name="insuranceText + {{healthIndex+''+quesIndex}}" class="mat-form-field-flex notes"
                       matInput placeholder="Write a response" required [(ngModel)]="que.note"></textarea>
                   </mat-form-field>
                 </ng-container>

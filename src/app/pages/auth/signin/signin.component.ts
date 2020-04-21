@@ -29,7 +29,7 @@ export class SigninComponent implements OnInit {
     const loginObj = new Signin(this.loginForm.controls.lname.value, this.loginForm.controls.password.value);
     this.authService.login(loginObj).subscribe((data) => {
       this.menu.enable(true, 'afterLogin');
-      this.loader.showAutoHideLoader('', 2000);
+      this.loader.showAutoHideLoader('', 1000);
       if (this.authService.quotesGenerated === true) {
         this.router.navigate(['/medical-test']);
       } else {
