@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MintAccountComponent } from 'src/app/components/mint-account/mint-account.component';
 import { Observable } from 'rxjs';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-insurance-calculator',
@@ -27,7 +28,7 @@ export class InsuranceCalculatorComponent implements OnInit, OnDestroy {
   isUerLoggedIn: boolean;
   isMintAccountVerified: string;
   routeSub: any;
-  constructor(private router: Router, private navigationService: MenuService,
+  constructor(private router: Router, private navigationService: MenuService, private toast: ToastService,
               private auth: AuthService, public dialog: MatDialog, private activeRoute: ActivatedRoute, private authService: AuthService) {
     this.isUerLoggedIn = this.auth.isUserLoggedIn;
   }
@@ -41,6 +42,7 @@ export class InsuranceCalculatorComponent implements OnInit, OnDestroy {
           this.openDialog();
         }
         if (this.isMintAccountVerified === 'verified') {
+          this.toast.presentToast('Intuit Mint account has been linked successfully');
           this.authService.isMinAccountLinked = true;
           this.prefillQuestions();
         }

@@ -95,7 +95,22 @@ color:black !important;
 ::ng-host .mat-chip {
 border-radius: 0px;
 }
-
+::ng-deep .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover,
+.cdk-keyboard-focused .mat-calendar-body-active,
+.cdk-program-focused .mat-calendar-body-active {
+  & > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+    background-color: rgba(255, 0, 212, 0.63);
+    color:white;
+  }
+}
+.email{
+  color:black;
+  text-decoration: none;
+  margin: 20px;
+  & .email_text{
+    padding:40px;
+  }
+}
 
 span.time-slot-list {
   border-radius: 3px;

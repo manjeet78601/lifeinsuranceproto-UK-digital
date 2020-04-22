@@ -33,13 +33,28 @@ export class FinancialBudgetComponent implements OnInit {
 
   ngOnInit() {
     // console.log(this.CONSTANTS.FINANCIALBUDGET);
-
   }
-  calculateBudget(f) {
-    console.log(f);
+  ionViewDidEnter() {
+    if (this.auth.isMinAccountLinked === true) {
+      this.prefillQuestions();
+    }
+  }
+  prefillQuestions() {
+    const dummyData = [[2000, 170, 1500, 4000], [470, 1500, 100, 120, 200], [2524, 900000, 2000, 1000], [1200, 170, 1500, 4000]];
+    this.DOM_CONSTANTS.forEach((data, index) => {
+      data.isAllQuestionsAnswered = true;
+      data.QUESTIONS.forEach((quesData, quesIndex) => {
+        quesData.VALUE =  Number(dummyData[index][quesIndex]);
+        quesData.isVisited = true;
+      });
+    });
+    const filledQues = this.DOM_CONSTANTS.filter(data => {
+      return data.isAllQuestionsAnswered === true;
+    });
+    this.progress = Math.floor(25 * filledQues.length);
+  }
+  calculateBudget() {
     const totalBudget = [];
-    // for (const iterator of this.DOM_CONSTANTS) {
-    //   totalBudget.push(this.sum(iterator.QUESTIONS));
     this.userService.setCalculatedBudget(this.DOM_CONSTANTS)
       .subscribe(res => console.log(res));
     this.analytic.trackAnalyticData(CategoryName.BUDGET_CALCULATOR, Action.CLICK, 'Calculate');

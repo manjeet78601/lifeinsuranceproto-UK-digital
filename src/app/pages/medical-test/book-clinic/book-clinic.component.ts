@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MedicalExamConstants } from 'src/app/properties/medical-test.constant';
 import { MatSelectChange } from '@angular/material';
 import { VERSION, MatDialogRef, MatDialog, MatSnackBar } from '@angular/material';
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   templateUrl: './book-clinic.component.html',
   styleUrls: ['./book-clinic.component.scss'],
   providers: [DatePipe],
- 
+
 })
 export class BookClinicComponent implements OnInit {
   selectedDate: any;
@@ -31,14 +31,14 @@ export class BookClinicComponent implements OnInit {
   labData = this.clinicApptService.getApptScheduleDetails();
   constructor(private router: Router, private clinicApptService: AppointmentsService, private datePipe: DatePipe, private snackBar: MatSnackBar) { }
   onSelect(event) {
-   this.selectedDate = this.datePipe.transform(event, 'dd MMMM yyyy');
+    this.selectedDate = this.datePipe.transform(event, 'dd MMMM yyyy');
     if (this.selectedDate < this.clinicApptService.apptDetails.date) {
       this.snackBar.open('Selected Date cannot be less than lab booked Date ', 'ok', {
         duration: 3000,
         panelClass: 'custom-css-class',
       });
-}
-    else{
+    }
+    else {
       return this.selectedDate;
     }
   }
@@ -95,18 +95,18 @@ export class BookClinicComponent implements OnInit {
 
 
   goToNext() {
-    if (this.clinicApptService.clinicDetails.date!=null && this.clinicApptService.clinicDetails.time!=null){
-  
-        this.router.navigate(['/medical-test/clinic-details']);
+    if ((this.clinicApptService.clinicDetails.date == null) && (this.clinicApptService.clinicDetails.time == null)) {
+      this.snackBar.open('Please fill the data. ', 'ok', {
+        duration: 3000,
+        panelClass: 'custom-css-class',
+      });
+    }
+    else {
+
+      this.router.navigate(['/medical-test/clinic-details']);
+    }
   }
-  else{
-    this.snackBar.open('Please fill the data. ', 'ok', {
-      duration: 3000,
-      panelClass: 'custom-css-class',
-    });
-  }
-}
- 
+
 
 
   getPrevious() {

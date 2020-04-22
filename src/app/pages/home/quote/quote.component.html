@@ -23,7 +23,7 @@
     </header>
     <p fxLayoutAlign="center center" class="plan-sub-header">{{DOM_CONSTANTS.QUOTE_SUB_HEADER }}</p>
     <!--Quotes-->
-    <ngb-carousel *ngIf="quotes">
+    <ngb-carousel #currSlide (click)="onSlideClicked(currSlide)">
       <ng-template ngbSlide *ngFor="let quo of quotes; let i = index" [id]="quo.productId">
         <mat-card class="plan-card mat-elevation-z0 ">
           <div fxLayout="column" class="quote-img">
@@ -41,8 +41,7 @@
                 <div>
                   <ion-icon class='heart-icon' *ngFor="let r of ' '.repeat(quo.custAvgRatings).split('')" name="heart">
                   </ion-icon>
-                  <ion-icon class="heart-grey-icon" *ngFor="let r of ' '.repeat(5-quo.custAvgRatings).split('')"
-                    name="heart">
+                  <ion-icon class="heart-grey-icon" *ngFor="let r of ' '.repeat(5-quo.custAvgRatings).split('')" name="heart">
                   </ion-icon>
                 </div>
               </ion-col>
@@ -51,12 +50,10 @@
           <mat-card-content>
             <div [hidden]="collapse[i]">
               <div fxLayout="column" fxLayoutAlign="center start">
-                <button mat-flat-button (click)="collapse[i] = !collapse[i]" fxFlex="20"
-                  class="btn-mat-card">{{BTN.READ_MORE}}</button>
+                <button mat-flat-button (click)="collapse[i] = !collapse[i];showDetails(quo.productId)" fxFlex="20" class="btn-mat-card">{{BTN.READ_MORE}}</button>
               </div>
               <div class="mt-10" fxLayout="column" fxLayoutAlign="center center">
-                <button mat-stroked-button class="quo-btn bg-blk col-wht"
-                  (click)="goToNext()">{{BTN.GET_QUOTE}}</button>
+                <button mat-stroked-button class="quo-btn bg-blk col-wht" (click)="goToNext()">{{BTN.GET_QUOTE}}</button>
               </div>
             </div>
             <div [hidden]="!collapse[i]">
@@ -75,24 +72,22 @@
                     <div>
                       <ion-icon class='heart-icon' *ngFor="let r of ' '.repeat(cus.ratings).split('')" name="heart">
                       </ion-icon>
-                      <ion-icon class="heart-grey-icon" *ngFor="let r of ' '.repeat(5-cus.ratings).split('')"
-                        name="heart">
+                      <ion-icon class="heart-grey-icon" *ngFor="let r of ' '.repeat(5-cus.ratings).split('')" name="heart">
                       </ion-icon>
                     </div>
                   </ion-col>
                 </ion-row>
               </ion-grid>
-              <div fxLayout="column" fxLayoutAlign="center center">
-                <button mat-stroked-button class="quo-btn bg-blk col-wht"
-                  (click)="goToNext()">{{BTN.GET_QUOTE}}</button>
-                <button mat-flat-button (click)="collapse[i] = !collapse[i]"
-                  class="btn-mat-card mt-10">{{BTN.CLOSE}}</button>
-              </div>
+              <div [hidden]="!showHideDiv" fxLayout="column" fxLayoutAlign="center center">
+                  <button mat-stroked-button class="quo-btn bg-blk col-wht" (click)="goToNext()">{{BTN.GET_QUOTE}}</button>
+                  <button mat-flat-button (click)="collapse[i] = !collapse[i]" class="btn-mat-card mt-10">{{BTN.CLOSE}}</button>
+                </div>
             </div>
-          </mat-card-content>
+           </mat-card-content>
         </mat-card>
       </ng-template>
     </ngb-carousel>
+
 
     <!--Comparision Tool-->
     <div class="mt-50 exp-header">{{DOM_CONSTANTS.QUOTE_COMP}}</div>
