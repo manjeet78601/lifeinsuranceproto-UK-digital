@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { MedicalExamConstants } from 'src/app/properties/medical-test.constant';
 import { MatSelectChange } from '@angular/material';
@@ -15,12 +15,12 @@ import { MatCalendarCellCssClasses } from '@angular/material';
   templateUrl: './book-lab.component.html',
   styleUrls: ['./book-lab.component.scss'],
   providers: [DatePipe],
- 
+
 })
 
 export class BookLabComponent implements OnInit {
 
-  selectedDate :any;
+  selectedDate: any;
   // startAt = new Date();
   minDate = new Date();
   date: any;
@@ -31,16 +31,16 @@ export class BookLabComponent implements OnInit {
   backendData = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '13:00 PM']; // Data from the backend
   appointmentTimeslots = [];
   disabled = false;
-  dateClass=this.selectedDate;
 
 
-  constructor(private router: Router, private labApptService: AppointmentsService, private datePipe: DatePipe,private snackBar: MatSnackBar) {
+
+  constructor(private router: Router, private labApptService: AppointmentsService, private datePipe: DatePipe, private snackBar: MatSnackBar) {
 
   }
   onSelect(event) {
-  this.selectedDate = this.datePipe.transform(event, 'dd MMMM yyyy');
+    this.selectedDate = this.datePipe.transform(event, 'dd MMMM yyyy');
   }
-  
+
   ngOnInit() {
     this.backendData.forEach(e => {
       const text = this.getTextFromValue(e);
@@ -68,7 +68,7 @@ export class BookLabComponent implements OnInit {
   }
   setLabApptDetails(labDate?: string, labTime?: string) {
     this.labApptService.setScheduleDetails(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'),
-     this.selectedTime);
+      this.selectedTime);
   }
   // To select the avialabel appointment
   onChangedSort(event: MatSelectChange) {
@@ -77,18 +77,20 @@ export class BookLabComponent implements OnInit {
       this.setLabApptDetails();
     }
   }
-  
+
+ 
+
   goToNext() {
-    if (this.labApptService.apptDetails.date==null && this.labApptService.apptDetails.location==null){
-      this.snackBar.open('Please fill the data ','ok', {
+    if (this.labApptService.apptDetails.date == null && this.labApptService.apptDetails.time == null) {
+      this.snackBar.open('Please fill the data ', 'ok', {
         duration: 5000,
         panelClass: 'custom-css-class',
       });
     }
-    else{
-    this.router.navigate(['/medical-test/lab-details']);
+    else {
+      this.router.navigate(['/medical-test/lab-details']);
+    }
   }
-}
   getPrevious() {
     this.router.navigate(['/medical-test/locate-lab']);
   }

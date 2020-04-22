@@ -22,7 +22,7 @@
     </header>
     <div fxLayout="row" fxLayoutAlign="center center" >
       <mat-card  class="calendar-display mt-20">
-        <mat-calendar #calendar [dateClass]="dateClass"  [selected]="selectedDate"  [minDate]="minDate" 
+        <mat-calendar #calendar  [selected]="selectedDate"  [minDate]="minDate" 
       (selectedChange)="onSelect($event)"></mat-calendar>
       </mat-card>
     </div>
@@ -53,13 +53,14 @@
     <!-- bottom section -->
     <div fxLayout="column">
       <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
-        <button mat-button>
-        <span>
+        <a class="email">
+        <span class="email_text">
           <ion-icon name="mail"></ion-icon>
         </span>
-      </button>
+        {{DOM_CONSTATNTS.EMAIL}}
+      </a>
         <!-- need an anchor tag -->
-        <p class="title">{{DOM_CONSTATNTS.EMAIL}}</p>
+        <!-- <p class="title">{{DOM_CONSTATNTS.EMAIL}}</p> -->
       </div>
       <div fxLayout="row">
         <p class="title note">{{DOM_CONSTATNTS.NOTE}}</p>

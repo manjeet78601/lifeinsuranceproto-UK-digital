@@ -93,10 +93,11 @@
   color:black !important;
   }
   ::ng-deep .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover,
-  .mat-calendar-body-active,
-  .mat-calendar-body-active {
+  .cdk-keyboard-focused .mat-calendar-body-active,
+  .cdk-program-focused .mat-calendar-body-active {
     & > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
-      background-color: rgba(94, 83, 83, 0.29);
+      background-color: rgba(255, 0, 212, 0.63);
+      color:white;
     }
   }
   ::ng-host .mat-chip {

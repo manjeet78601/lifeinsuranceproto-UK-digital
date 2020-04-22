@@ -36,6 +36,8 @@ export class QuoteComponent implements OnInit {
   quotes: any;
   isLoading = true;
   isUerLoggedIn: boolean;
+  details: any;
+  showHideDiv: boolean = false;
   constructor(
     private router: Router,
     private userService: UserService,
@@ -51,6 +53,20 @@ export class QuoteComponent implements OnInit {
     this.quotes = this.getQuotes();
     this.auth.setQuotesGeneratedFlag();
     console.log(this.quotes);
+  }
+  onSlideClicked(value: any) {
+    if (this.details === value.activeId) {
+      this.showHideDiv = true;
+    }
+    else {
+      this.showHideDiv = false;
+      console.log(this.showHideDiv);
+    }
+  }
+  showDetails(prodId) {
+    this.details = prodId;
+    console.log("prodId", prodId);
+
   }
 
   goToNext() {
