@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class UserService {
   financialBudget: any = [];
+  isCompletedQuotes: boolean;
   constructor(private router: Router, private http: HttpClient) { }
 
   users = [
@@ -301,4 +302,12 @@ export class UserService {
   createAccount() {
     this.router.navigate(['/auth/signup']);
   }
+  setQuotesCompleted() {
+    this.isCompletedQuotes = true;
+  }
+  getQuotesCompleted() {
+    return this.isCompletedQuotes;
+  }
 }
+
+

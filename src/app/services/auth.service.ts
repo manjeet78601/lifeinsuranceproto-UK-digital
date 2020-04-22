@@ -3,6 +3,11 @@ import { Profile } from '../properties/auth.constant';
 import { of, Observable, throwError, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Signup, Signin} from '../models/auth.model';
+
+export interface ExternalAcct {
+  name: string;
+  emailId: string;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +20,7 @@ subj = new BehaviorSubject<any>('');
 bDate: string;
 isMinAccountLinked = false;
 isHeadsUpAccountLinked = false;
+exterAcctDetails: ExternalAcct = { name: '', emailId: ''};
   constructor(private http: HttpClient) { }
   login(loginObj: Signin): Observable<boolean> {
     if (loginObj.userName === this.userInfo.userName && loginObj.password === this.userInfo.password) {
@@ -41,8 +47,9 @@ isHeadsUpAccountLinked = false;
   setQuotesGeneratedFlag() {
     this.isQuotesGenerated = true;
   }
-  saveUserNameForSignup(userNname: string) {
-    this.subj.next({name: userNname});
+  saveUserNameForSignup(key: string, val: string) {
+    this.exterAcctDetails[key] = val;
+    this.subj.next(this.exterAcctDetails);
   }
   get quotesGenerated() {
     return this.isQuotesGenerated;

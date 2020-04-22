@@ -4,6 +4,7 @@ import {MatDialog, MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dia
 import { HeadsupAccountComponent } from 'src/app/components/headsup-account/headsup-account.component';
 import { MintAccountComponent } from 'src/app/components/mint-account/mint-account.component';
 import { AuthService } from 'src/app/services/auth.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-external-accounts',
@@ -14,7 +15,8 @@ export class ExternalAccountsComponent implements OnInit, OnDestroy {
   routeSub: any;
   isMintAccountVerified: string;
   isBothAccountLinked: boolean;
-  constructor(private router: Router, private activeRoute: ActivatedRoute , public dialog: MatDialog, private authService: AuthService) { }
+  constructor(private router: Router, private activeRoute: ActivatedRoute , public dialog: MatDialog, private toast: ToastService,
+              private authService: AuthService) { }
 
   ngOnInit() {}
   ionViewDidEnter() {
@@ -22,14 +24,15 @@ export class ExternalAccountsComponent implements OnInit, OnDestroy {
     this.routeSub = this.activeRoute.queryParams.subscribe((data) => {
       if (data && data.accountName && data.esign) {
         if (data.accountName === 'mintAccount' && data.esign === 'verified') {
+          this.toast.presentToast('Intuit Mint account has been linked successfully');
           this.authService.isMinAccountLinked = true;
-          this.openHeadsUpAccountModal();
         }
         if (data.accountName === 'headsUpAccount' && data.esign === 'verified') {
+          this.toast.presentToast('Heads Up account has been linked successfully');
           this.authService.isHeadsUpAccountLinked = true;
-          this.isBothAccountLinked = true;
         }
       }
+      this.isBothAccountLinked = !!this.authService.isMinAccountLinked && !!this.authService.isHeadsUpAccountLinked ? true : false;
     });
   }
   ionViewWillLeave() {

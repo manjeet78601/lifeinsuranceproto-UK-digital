@@ -10,7 +10,7 @@ export class LoaderService {
 
   constructor(public loadingController: LoadingController) { }
 
-  showAutoHideLoader(message: string, duration: number = 3000) {
+  showAutoHideLoader(message: string, duration: number = 2000) {
     this.loadingController.create({
       message,
       duration,

@@ -59,7 +59,8 @@
                 <mat-form-field appearance="outline" class="w-50">
                   <span matPrefix>$</span>
                   <input type="number" matInput class="align-end" [name]="'que'+ panelIndex + ' ' + quesIndex " [(ngModel)]="que.VALUE"
-                    (click)="que.isVisited = true" (ngModelChange)="checkQuestionStatus(item.ID)">
+                    (click)="que.isVisited = true" (ngModelChange)="checkQuestionStatus(item.ID)" placeholder="{{que.placeholder
+                    }}">
                 </mat-form-field>
                 <mat-icon class="pos-rel t-l-7">help_outline</mat-icon>
               </div>

@@ -75,7 +75,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'Monthly utilities (water, electricity, etc.) ',
@@ -84,7 +86,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'Monthly home maintenance fees',
@@ -93,7 +97,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'Monthly property tax',
@@ -102,7 +108,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
          ]
       },
@@ -122,7 +130,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'Monthly lease, car payments, insurance',
@@ -131,7 +141,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'Monthly gas / oil',
@@ -140,7 +152,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'Monthly entertainment bills (cell phone, internet, etc.)',
@@ -149,7 +163,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'Additional expected monthly expenses',
@@ -158,7 +174,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
          ]
       },
@@ -178,7 +196,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'What is your yearly income/salary?',
@@ -187,7 +207,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'Additional sources of annual income (side job, rental, stipends, passive income, etc.)',
@@ -196,7 +218,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'Expected annual bonuses',
@@ -205,7 +229,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
          ]
       },
@@ -225,7 +251,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'Outstanding student loan debt',
@@ -234,7 +262,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
             {
                QUESTIONTEXT: 'Other outstanding loans',
@@ -243,7 +273,9 @@ export class HomeConstants {
                MIN: 10000,
                MAX: 100000,
                STEP: 10000,
-               VALUE: 0,
+               VALUE: '',
+               placeholder: '00.00',
+               isVisited: false
             },
          ]
       },

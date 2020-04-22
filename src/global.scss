@@ -60,6 +60,16 @@ a:not([href]) {
     font-size: 16px;
     color: #ccc;
 }
+button:focus {
+  outline: none;
+}
+.custom-toast {
+  .toast-wrapper {
+    color: #fff;
+    background: #28a745;
+    border-color: #28a745;
+  }
+}
 .black_color{
   background-color: black;
   color:white
@@ -84,7 +94,6 @@ a:not([href]) {
   padding-top: 0.5em !important;
   
 }
-
 .que-label {
   font-size: 18px;
   font-weight: bold;
@@ -650,47 +659,50 @@ float: left;
   height: 38px;
   width: 161px;
   border: none !important;
-  .mat-button-toggle {
-  background-color: #e0e0e0;
-  color: #5a5a5a;
-  width: 100px;
-  border: none;
-  font-size: 14px;
-  font-weight: 500;
-  .mat-button-toggle-label-content {
-  line-height: 36px;
-  }
-  &.yes-btn {
-  margin-right: 2px;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  }
-  &.no-btn {
-  margin-left: 2px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  }
-  &.mat-button-toggle-checked {
-  background-color: #21ba45;
-  color: #ffffff;
-  }
-  }
-  .circle {
-  display: block;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 1.6;
-  left: 45%;
-  z-index: 9;
-  top: 23%;
-  color: #5a5a5a;
-  font-weight: 500;
-  font-size: 12px;
-  }
+    .mat-button-toggle {
+      background-color: #e0e0e0;
+      color: #5a5a5a;
+      width: 100px;
+      border: none;
+      font-size: 14px;
+      font-weight: 500;
+      .mat-button-toggle-button {
+        outline: none;
+      }
+      .mat-button-toggle-label-content {
+      line-height: 36px;
+    }
+    &.yes-btn {
+      margin-right: 2px;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    &.no-btn {
+      margin-left: 2px;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+    &.mat-button-toggle-checked {
+      background-color: #21ba45;
+      color: #ffffff;
+    }
+    }
+    .circle {
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 1.6;
+      left: 45%;
+      z-index: 9;
+      top: 23%;
+      color: #5a5a5a;
+      font-weight: 500;
+      font-size: 12px;
+    }
  }
 .mat-accordion.user-financial-info, .financial-accordion {
   .mat-expansion-indicator {

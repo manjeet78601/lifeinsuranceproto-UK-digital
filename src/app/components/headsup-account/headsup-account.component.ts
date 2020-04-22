@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-headsup-account',
@@ -14,7 +15,7 @@ export class HeadsupAccountComponent implements OnInit {
     pwd: ['', Validators.required]
   });
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private formBuilder: FormBuilder,
-              public dialogRef: MatDialogRef<HeadsupAccountComponent>, private router: Router) { }
+              public dialogRef: MatDialogRef<HeadsupAccountComponent>, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {}
   ionViewWillLeave() {
@@ -23,6 +24,7 @@ export class HeadsupAccountComponent implements OnInit {
   onFormsubmit() {
     let pName: string;
     this.closeDialog();
+    this.authService.saveUserNameForSignup('emailId', this.headsupAcctForm.controls.userName.value);
     if (this.router.url.indexOf('health') !== -1) {
       pName = 'home/health';
     }
