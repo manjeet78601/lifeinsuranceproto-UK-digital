@@ -95,7 +95,7 @@ export class BookClinicComponent implements OnInit {
 
 
   goToNext() {
-    if ((this.clinicApptService.clinicDetails.date == null) && (this.clinicApptService.clinicDetails.time == null)) {
+    if (this.clinicApptService.clinicDetails.date == null && this.clinicApptService.clinicDetails.time == null) {
       this.snackBar.open('Please fill the data. ', 'ok', {
         duration: 3000,
         panelClass: 'custom-css-class',

@@ -77,10 +77,7 @@ export class BookLabComponent implements OnInit {
       this.setLabApptDetails();
     }
   }
-
- 
-
-  goToNext() {
+ goToNext() {
     if (this.labApptService.apptDetails.date == null && this.labApptService.apptDetails.time == null) {
       this.snackBar.open('Please fill the data ', 'ok', {
         duration: 5000,
