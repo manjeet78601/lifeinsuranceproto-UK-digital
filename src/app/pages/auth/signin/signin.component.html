@@ -37,9 +37,9 @@
                   <a mat-button class="fs-14 col-blk f-weight-n" routerLink=".">{{htmlText.rememberme_link}}</a>
                   <a mat-button class="fs-14 col-dull-grey text-underline" routerLink=".">{{htmlText.forgot_pwd}}</a>
               </div>
-                <div class="mt-20"> 
-                    <button type="submit" class="btn bg-blk col-wht" mat-stroked-button [disabled]="!loginForm.valid" (click)="onFormsubmit()">{{htmlText.login_btn}}</button>
-                    <button class="btn bg-white col-blk" mat-stroked-button (click)="signup($event)" >{{htmlText.signup_btn}}</button>
+                <div class="mt-20" fxLayout="row" fxLayoutAlign="center center"> 
+                    <button type="submit" class="btn bg-blk col-wht ml-10" mat-stroked-button [disabled]="!loginForm.valid" (click)="onFormsubmit()">{{htmlText.login_btn | uppercase}}</button>
+                    <button class="btn bg-white col-blk" mat-stroked-button (click)="signup($event)" >{{htmlText.signup_btn | uppercase}}</button>
                 </div>
             </form>
     </section>
