@@ -44,7 +44,7 @@ export class FinancialBudgetComponent implements OnInit {
     this.DOM_CONSTANTS.forEach((data, index) => {
       data.isAllQuestionsAnswered = true;
       data.QUESTIONS.forEach((quesData, quesIndex) => {
-        quesData.VALUE =  Number(dummyData[index][quesIndex]);
+        quesData.VALUE =  String((dummyData[index][quesIndex]));
         quesData.isVisited = true;
       });
     });
