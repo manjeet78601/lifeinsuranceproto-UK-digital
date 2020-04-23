@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,WAAW,CAAC;EACR,KAAK,EAAE,IAAI;CACd",
-    "sources": [
-        "coverage-details.page.scss"
-    ],
-    "names": [],
-    "file": "coverage-details.page.css"
-}
