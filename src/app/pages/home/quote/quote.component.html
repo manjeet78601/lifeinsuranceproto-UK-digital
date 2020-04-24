@@ -13,9 +13,8 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <!--Quotes Header-->
+  <!--qoute page start here  -->
   <section class="wrapper-plan quotesSec" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <h2 class="exp-header">Compare Quotes</h2>
     <header fxLayoutAlign="center center">
@@ -78,64 +77,99 @@
                   </ion-col>
                 </ion-row>
               </ion-grid>
-              <div [hidden]="!showHideDiv" fxLayout="column" fxLayoutAlign="center center">
+              <div [ngClass]="showDiv === false ? 'no-indicators' : ''">
+                <div fxLayout="column" fxLayoutAlign="center center">
                   <button mat-stroked-button class="quo-btn bg-blk col-wht" (click)="goToNext()">{{BTN.GET_QUOTE}}</button>
                   <button mat-flat-button (click)="collapse[i] = !collapse[i]" class="btn-mat-card mt-10">{{BTN.CLOSE}}</button>
                 </div>
+              </div>
             </div>
-           </mat-card-content>
+          </mat-card-content>
         </mat-card>
       </ng-template>
     </ngb-carousel>
+  </section>
+  <!--Comparision Tool-->
+  <!-- chart sections -->
 
-
-    <!--Comparision Tool-->
-    <div class="mt-50 exp-header">{{DOM_CONSTANTS.QUOTE_COMP}}</div>
-
-    <mat-table [dataSource]="dataSource" *ngIf="dataSource.length > 0" class="mat-elevation-z0 mt-30 quo-tbl">
-      <ng-container matColumnDef="comparison">
-        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-        <mat-cell *matCellDef="let element" class="mat-cell-content"> {{element.comparison}} </mat-cell>
-      </ng-container>
-
-      <!-- Prudential Column -->
-      <ng-container matColumnDef="prudential">
-        <mat-header-cell *matHeaderCellDef> Prudential </mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.prudential}}
-        </mat-cell>
-      </ng-container>
-
-      <!-- New York Life Column -->
-      <ng-container matColumnDef="nyLife">
-        <mat-header-cell *matHeaderCellDef> New York Life </mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.nyLife}}
-        </mat-cell>
-      </ng-container>
-
-      <!-- Mass Mutual Column -->
-      <ng-container matColumnDef="massMutual">
-        <mat-header-cell *matHeaderCellDef> Mass Mutual </mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.massMutual}}
-        </mat-cell>
-      </ng-container>
-
-      <!--  Liberty Mutual Column -->
-      <ng-container matColumnDef="libertyMutual">
-        <mat-header-cell *matHeaderCellDef> Liberty Mutual </mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.libertyMutual}}
-        </mat-cell>
-      </ng-container>
-
-      <mat-header-row *matHeaderRowDef="displayedColumns" class="mat-cell-content"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
-
+  <section class="ion-text-center">
+    <p class="mt-50 header-title">{{DOM_CONSTANTS.QUOTE_COMP}}</p>
+    <!-- Monthly bar chart -->
+    <section>
+      <ion-card>
+        <ion-card-header>
+          <h2 class="quo-sub-header" style="float:left">Monthly</h2>
+        </ion-card-header>
+        <ion-card-content>
+            <canvas baseChart 
+            [datasets]="barChartDataMonthly"
+            [labels]="barChartLabelsMonthly"
+            [legend]="true"
+            chartType="bar"
+            [options]="chartOption"
+            [colors]="barChartLegendColors"
+            ></canvas>
+        </ion-card-content>
+      </ion-card>
+    </section>
+    <!-- $Policy bar chart -->
+    <section>
+      <ion-card >
+        <ion-card-header>
+          <h2 class="quo-sub-header" style="float:left">Policy</h2>
+        </ion-card-header>
+        <ion-card-content>
+            <canvas baseChart
+            [datasets]="barChartDataPolicy"
+            [labels]="barChartLabelsPolicy"
+            [legend]="true"
+            chartType="bar"
+            [options]="chartOption"
+            [colors]="barChartLegendColors"
+            ></canvas>
+        </ion-card-content>
+      </ion-card>
+    </section>
+    <!-- Policy bar chart -->
+    <section>
+      <ion-card class="chart mx-0">
+        <ion-card-header>
+          <h2 class="quo-sub-header" style="float:left">Policy</h2>
+        </ion-card-header>
+        <ion-card-content>
+            <canvas baseChart 
+            [datasets]="barChartDataYears"
+            [labels]="barChartLabelsYears"
+            [legend]="true"
+            chartType="bar"
+            [options]="chartOption"
+            [colors]="barChartLegendColors"
+            ></canvas>
+        </ion-card-content>
+      </ion-card>
+    </section>
+    <!-- Pie chart -->
+    <section>
+      <!-- chart -->
+      <ion-card class="chart mx-0">
+        <ion-card-header fxLayoutAlign="center center">
+          <h2 class="quo-sub-header">Cash value</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas baseChart  [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [options]="donutOptions"
+            [colors]="doughnutChartLegendColors"></canvas>
+        </ion-card-content>
+      </ion-card>
+    </section>
     <div class="mb-70 mt-50" fxLayoutGap="10px">
       <button mat-stroked-button class="btn-color" (click)="getPrevious()">{{BTN.BACK}}</button>
       <button mat-flat-button color="primary" (click)="goToNext()">{{BTN.NEXT}}</button>
     </div>
     <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()" class="btn-acc">Create account</a>
   </section>
+
+
+  <!--Quotes Header-->
   <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
     <ion-text class="align-item-bottom">

@@ -19,6 +19,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { ChatService } from '../../services/chat.service';
 import { EsignatureComponent } from 'src/app/components/esignature/esignature.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     IonicModule,
     HomePageRoutingModule,
     SharedModule,
-    NgbModule
+    NgbModule,
+    ChartsModule
   ],
   declarations: [
     HomePage,

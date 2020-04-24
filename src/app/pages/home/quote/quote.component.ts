@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { MenuService } from 'src/app/services/menu.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { Label } from 'ng2-charts';
 
 // Datasource for table
 export interface QuoteComparision {
@@ -38,6 +40,91 @@ export class QuoteComponent implements OnInit {
   isUerLoggedIn: boolean;
   details: any;
   showHideDiv: boolean = false;
+  // DoughnutChart
+  doughnutChartLabels = [
+    'Prudential', 'Liberty Mutual', 'Mass Mutual', 'New York Life'
+  ];
+  doughnutChartData = [0, 10, 90, 0];
+  doughnutChartType = 'doughnut';
+  doughnutChartLegendColors = [{
+    backgroundColor: [
+      ' #cc0066',
+      '#000000',
+      ' #cc0066',
+      ' #cc0066',
+    ]
+  }];
+  donutOptions: any = {
+    legend: {
+      display: true,
+      position: 'bottom',
+      align: 'center',
+    },
+    lables: {
+      padding: 40,
+      boxWidth: 40,
+    },
+    plugins: {
+      anchor: 'percentage',
+      align: 'center',
+    }
+  };
+  // bar charts
+  public barChartType: ChartType = 'bar';
+  public barChartLabelsMonthly: Label[] = ['$25', '$30', '$35', '$50'];
+  public barChartLabelsPolicy: Label[] = ['$500K', '$250K', '$500k', '$250K'];
+  public barChartLabelsYears: Label[] = ['2 yrs', '30 yrs', '35 yrs', 'Life'];
+  public barChartLegendColors = [{
+    backgroundColor: [
+      '#009999',
+      '#ff6666',
+      '#ffcc00',
+      '#cc0066',
+    ]
+  }];
+  public chartOption = {
+    responsive: true,
+    scales: {
+      xAxes: [{
+        barPercentage: 3,
+        gridLines: {
+          drawBorder: true,
+          display: false
+      }
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero: false,
+          display: false
+        }
+      }]
+    },
+    legend: {
+      display: true,
+      position: 'bottom',
+    },
+  }
+  
+  public barChartDataMonthly: ChartDataSets[] = [
+    { label: "Prudential", data: [10000, 0, 0, 0], backgroundColor: '#FFF3D6', },
+    { label: "Liberty Mutual", data: [0, 15000, 0, 0], backgroundColor: '#ff6666', },
+    { label: "Mass Mutual", data: [0, 0, 20000, 0], backgroundColor: '#ffcc00', },
+    { label: "New York Life", data: [0, 0, 0, 25000], backgroundColor: '#cc0066', }
+  ];
+  public barChartDataPolicy: ChartDataSets[] = [
+    { label: "Prudential", data: [15000, 0, 0, 0], backgroundColor: '#FFF3D6', },
+    { label: "Liberty Mutual", data: [0, 10000, 0, 0], backgroundColor: '#ff6666', },
+    { label: "Mass Mutual", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', },
+    { label: "New York Life", data: [0, 0, 0, 10000], backgroundColor: '#cc0066', }
+  ];
+  public barChartDataYears: ChartDataSets[] =
+  [
+    { label: "Prudential", data: [5000, 0, 0, 0], backgroundColor: '#FFF3D6', },
+    { label: "Liberty Mutual", data: [0, 10000, 0, 0], backgroundColor: '#ff6666', },
+    { label: "Mass Mutual", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', },
+    { label: "New York Life", data: [0, 0, 0, 20000], backgroundColor: '#cc0066', }
+  ];
+ // *******
   constructor(
     private router: Router,
     private userService: UserService,
