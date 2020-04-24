@@ -7,6 +7,11 @@
 top: 7px;
 left: 7px;
 }
+.w-70{
+    width:70%;
+}
+
+
 .header-title{
     font-family: Playfair Display;
     font-weight: bold;
@@ -36,4 +41,7 @@ left: 7px;
             color: #21BA45;
         }
     }
+}
+.mat-expansion-panel-body{
+    padding:0px 30px 0px;
 }
