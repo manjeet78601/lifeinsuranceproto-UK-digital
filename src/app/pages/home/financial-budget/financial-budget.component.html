@@ -45,7 +45,7 @@
                 <ion-icon name="checkmark" class="tick-icon"
                   [ngStyle]="{'color':item.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}"></ion-icon>
               </mat-expansion-panel-header>
-              <div *ngFor="let que of item.QUESTIONS; let quesIndex = index;">
+              <div  class="mat-expansion-panel-body"  *ngFor="let que of item.QUESTIONS; let quesIndex = index;">
                 <!-- <mat-label class="que-header">{{ que.QUESTIONTEXT }}</mat-label> -->
                 <mat-label class="que-subheader" [ngClass]="{'txt-black': que.isVisited}">{{ que.QUESTIONTEXT }}
                 </mat-label>
@@ -56,7 +56,7 @@
               [(ngModel)]="que.VALUE"
             >
             </mat-slider> -->
-                <mat-form-field appearance="outline" class="w-50">
+                <mat-form-field  appearance="outline" class="w-70">
                   <span matPrefix>$</span>
                   <input type="number" matInput class="align-end" [name]="'que'+ panelIndex + ' ' + quesIndex " [(ngModel)]="que.VALUE"
                     (click)="que.isVisited = true" (ngModelChange)="checkQuestionStatus(item.ID)" placeholder="{{que.placeholder

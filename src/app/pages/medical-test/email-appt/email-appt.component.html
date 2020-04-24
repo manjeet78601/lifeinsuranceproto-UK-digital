@@ -23,14 +23,13 @@
       <mat-card>
         <mat-card-title [innerHtml]=DOM_CONSTANTS.APPT_HEADER></mat-card-title>
         <mat-card-content>
-          <p class="sub-header" [innerHtml]=DOM_CONSTANTS.APPT_SUB_HEADER></p>
+          <p class="ff sub-header" [innerHtml]=DOM_CONSTANTS.APPT_SUB_HEADER></p>
         </mat-card-content>
       </mat-card>
     </div>
     <div fxLayout="column" fxLayoutAlign="center center" class="mt-10">
       <button mat-flat-button color="primary" (click)="goToProfile()">{{BTN.FINISH}}</button>
-      <a [routerLink]="['./']" (click)="createAccount()" class="btn-acc col-dull-grey mt-10"
-        mat-menu-item>{{BTN.DOC}}</a>
+        <a class="link" (click)="createAccount()" class="fs-16 ff btn-acc col-dull-grey mt-20">{{BTN.DOC}}</a>
     </div>
   </section>
   <!--Footer-->

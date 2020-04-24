@@ -4,7 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { DataAnalyticsService } from 'src/app/services/data-analytics.service';
 import { Router } from '@angular/router';
-
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-profile',
@@ -13,6 +13,14 @@ import { Router } from '@angular/router';
 
 })
 export class ProfileComponent implements OnInit, AfterViewInit {
+  capturedSnapURL = '../../../../assets/img/auth_Profile_Img/profile-icon.svg';
+  cameraOptions = {
+    quality: 20,
+    destinationType: this.camera.DestinationType.DATA_URL,
+    encodingType: this.camera.EncodingType.JPEG,
+    mediaType: this.camera.MediaType.PICTURE,
+    correctOrientation: true
+  };
   htmltext = properties;
   userInfo: any;
   userFinancialInfo: any;
@@ -35,8 +43,6 @@ export class ProfileComponent implements OnInit, AfterViewInit {
       chart.legend.legendItems.forEach(
         (label) => {
           const value = chart.data.datasets[0].data[label.index];
-
-          label.text += ' ' + value;
           return label;
         }
       );
@@ -53,7 +59,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   birthDate: string;
   progress = 0;
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router, private camera: Camera) { }
   ngOnInit() {
     this.userName = this.auth.userName;
     this.birthDate = this.auth.userBirthDate;
@@ -87,4 +93,16 @@ export class ProfileComponent implements OnInit, AfterViewInit {
       this.router.navigate(['/auth/signin']);
     });
   }
+  // Camera integration
+  onScan() {
+    this.camera.getPicture(this.cameraOptions).then((imageData) => {
+      const base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.capturedSnapURL = base64Image;
+      this.router.navigate(['/auth/profile']);
+    }, (err) => {
+      console.log(err);
+      this.router.navigate(['/auth/profile']);
+    });
+  }
 }
+
