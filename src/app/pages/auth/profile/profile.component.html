@@ -20,9 +20,11 @@
       <div fxLayout="column">
         <div fxLayout="row" fxLayoutGap="30px">
           <div slot="start" class="profile-pic">
-            <img src="../../../../assets/img/auth_Profile_Img/profile-icon.svg" alt="profil-pic">
+            <img class="cam-icon" src="../../../../assets/img/auth_Profile_Img/camera.svg" alt="scan"
+              (click)="onScan($event)">
+            <img class="capture-img" [src]="capturedSnapURL">
           </div>
-          <div fxLayout="column" class="profile-desc ">
+          <div fxLayout="column" class="profile-desc mt-10 ">
             <div>
               <mat-card-title class="uname">{{userName}}
                 <ion-icon name="create-outline"></ion-icon>
@@ -74,67 +76,67 @@
 
   <section class="ion-text-center px-3">
     <!-- chart -->
-      <ion-card class="chart mx-0">
-        <ion-card-header>
-        </ion-card-header>
-        <ion-card-content>
-          <!-- <canvas #userFinancialAssets></canvas> -->
-          <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
-            [options]="donutOptions" [colors]="doughnutChartLegendColors" [plugins]="pieChartPlugins"></canvas>
-        </ion-card-content>
-      </ion-card>
+    <ion-card class="chart mx-0">
+      <ion-card-header>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- <canvas #userFinancialAssets></canvas> -->
+        <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+          [options]="donutOptions" [colors]="doughnutChartLegendColors" [plugins]="pieChartPlugins"></canvas>
+      </ion-card-content>
+    </ion-card>
   </section>
   <section class="ion-text-center px-4">
-      <h2 class="cap-first-letter pb-2">{{userName +"'s "+ htmltext.profile_header }}</h2>
-      <mat-accordion class="text-left user-financial-info">
-        <ng-container *ngFor="let financeDetails of userFinancialInfo; let itemIndex = index; trackBy: trackByIndex">
-          <mat-expansion-panel
-            [ngStyle]="{'background':financeDetails.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
-            <mat-expansion-panel-header class="mat-accordian-header">
-              <mat-panel-title>
-                {{ financeDetails.title }}
-              </mat-panel-title>
-              <ion-icon name="person" class="user-icon"
-                [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}">
-              </ion-icon>
-              <ion-icon name="checkmark" class="tick-icon"
-                [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}">
-              </ion-icon>
-            </mat-expansion-panel-header>
-            <ng-template [ngIf]="financeDetails.quesHeader">
-              <p class="header-txt" >{{financeDetails.quesHeader}}</p>
-            </ng-template>
-           
-            <div *ngFor="let quesDetails of financeDetails.questions; let quesIndex = index; trackBy: trackByIndex">
-              <div [ngSwitch]="quesDetails.element">
-                <ng-template [ngSwitchCase] = "'toggleButton'">
-                  <div class="ques-details my-15">
-                    <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
-                    <mat-button-toggle-group name="{{'question' + quesIndex}}" ngDefaultControl aria-label="Font Style"
-                      class="custom-mat-btn-toggle-group" [(ngModel)]="quesDetails.value"
+    <h2 class="cap-first-letter pb-2">{{userName +"'s "+ htmltext.profile_header }}</h2>
+    <mat-accordion class="text-left user-financial-info">
+      <ng-container *ngFor="let financeDetails of userFinancialInfo; let itemIndex = index; trackBy: trackByIndex">
+        <mat-expansion-panel
+          [ngStyle]="{'background':financeDetails.isAllQuestionsAnswered === true ? '#FFFFFF' : '#F4F4F4'}">
+          <mat-expansion-panel-header class="mat-accordian-header">
+            <mat-panel-title>
+              {{ financeDetails.title }}
+            </mat-panel-title>
+            <ion-icon name="person" class="user-icon"
+              [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}">
+            </ion-icon>
+            <ion-icon name="checkmark" class="tick-icon"
+              [ngStyle]="{'color':financeDetails.isAllQuestionsAnswered === true ?'#21BA45' : '#767676'}">
+            </ion-icon>
+          </mat-expansion-panel-header>
+          <ng-template [ngIf]="financeDetails.quesHeader">
+            <p class="header-txt">{{financeDetails.quesHeader}}</p>
+          </ng-template>
+
+          <div *ngFor="let quesDetails of financeDetails.questions; let quesIndex = index; trackBy: trackByIndex">
+            <div [ngSwitch]="quesDetails.element">
+              <ng-template [ngSwitchCase]="'toggleButton'">
+                <div class="ques-details my-15">
+                  <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
+                  <mat-button-toggle-group name="{{'question' + quesIndex}}" ngDefaultControl aria-label="Font Style"
+                    class="custom-mat-btn-toggle-group" [(ngModel)]="quesDetails.value"
+                    (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
+                    <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
+                    <span class="circle">or</span>
+                    <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
+                  </mat-button-toggle-group>
+                </div>
+              </ng-template>
+              <ng-template [ngSwitchCase]="'inputNumber'">
+                <div class="ques-details input-box">
+                  <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
+                  <mat-form-field appearance="outline" class="form-input-control text-right">
+                    <span matPrefix class="col-dull-grey">$ &nbsp;</span>
+                    <input matInput type="number" name="{{'question' + quesIndex}}" ngDefaultControl
+                      [placeholder]="quesDetails.placeholder" value="" [(ngModel)]="quesDetails.value"
                       (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
-                      <mat-button-toggle value="yes" class="yes-btn">Yes</mat-button-toggle>
-                      <span class="circle">or</span>
-                      <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
-                    </mat-button-toggle-group>
-                  </div>
-                </ng-template>
-                <ng-template [ngSwitchCase] = "'inputNumber'">
-                  <div class="ques-details input-box">
-                    <mat-label class="que-header">{{ quesDetails.name }}</mat-label>
-                    <mat-form-field appearance="outline" class="form-input-control text-right">
-                      <span matPrefix class="col-dull-grey">$ &nbsp;</span>
-                      <input matInput type="number" name="{{'question' + quesIndex}}" ngDefaultControl
-                        [placeholder]="quesDetails.placeholder" value="" [(ngModel)]="quesDetails.value"
-                        (ngModelChange)="trackQuesProgress($event, financeDetails.id)">
-                    </mat-form-field>
-                  </div>
-                </ng-template>
-              </div>
+                  </mat-form-field>
+                </div>
+              </ng-template>
             </div>
-          </mat-expansion-panel>
-        </ng-container>
-      </mat-accordion>
+          </div>
+        </mat-expansion-panel>
+      </ng-container>
+    </mat-accordion>
   </section>
   <ng-template [ngIf]="!isUerLoggedIn">
     <div class="text-center mt-4">
