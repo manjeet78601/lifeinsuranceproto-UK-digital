@@ -14,26 +14,26 @@
 <ion-content>
   <section  class="wrapper-auth content contact-us" fxLayout="column" fxLayoutAlign="center center">
     <header>
-      <p class="header">Contact Us</p>
+      <p class="ff-header mt-40 header">Contact Us</p>
     </header>
-    <form class="contactus" [formGroup]="contactForm">
+    <form class="contactus ff-content mt-20" [formGroup]="contactForm">
       <p class="form-label"><label for="uname">Name</label></p>
       <mat-form-field appearance="outline" class="form-input-control mb-20">
         <input formControlName="name" matInput type="text" placeholder="Firstname" value="" id="uname">
         <!-- <mat-error>Invalid username</mat-error> -->
       </mat-form-field>
-      <p class="form-label"><label for="email">Email address</label></p>
+      <p class="form-label mt-10"><label for="email">Email address</label></p>
       <mat-form-field appearance="outline" class="form-input-control mb-20">
         <input formControlName="email" matInput type="text" placeholder="" value="" id="email">
         <!-- <mat-error>Invalid password</mat-error> -->   
       </mat-form-field>
-      <p class="form-label"><label for="notes">How can we help?</label></p>
+      <p class="form-label mt-10"><label for="notes">How can we help?</label></p>
       <!-- <textarea formControlName="note" rows="8" cols="50" id="notes" class="form-input-control"></textarea> -->
       <mat-form-field appearance="outline" class="form-input-control text-note mb-20">
-        <textarea formControlName="note" matInput type="text" placeholder="" value="" id="notes" class="mat-form-field-flex"></textarea>
+        <textarea formControlName="note" matInput type="text" placeholder="300 characters" value="" id="notes" class="mat-form-field-flex txt-ht"></textarea>
       </mat-form-field>
       <div class="mt-50 ion-text-center"> 
-          <button type="submit" class="btn bg-blk col-wht" mat-stroked-button [disabled]="!contactForm.valid" (click)="onFormsubmit()">Submit</button>
+          <button type="submit" class="btn bg-blk col-wht" mat-stroked-button [disabled]="!contactForm.valid" (click)="onFormsubmit()">SUBMIT</button>
       </div>
   </form>
   </section>

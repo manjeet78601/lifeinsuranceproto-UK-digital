@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import { ReactiveFormsModule, FormBuilder, FormsModule } from '@angular/forms';
+import { BrowserModule, By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 import { SigninComponent } from './signin.component';
 
 describe('SigninComponent', () => {
@@ -10,7 +12,11 @@ describe('SigninComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SigninComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(),
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(SigninComponent);

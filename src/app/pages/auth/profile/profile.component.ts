@@ -35,8 +35,6 @@ export class ProfileComponent implements OnInit, AfterViewInit {
       chart.legend.legendItems.forEach(
         (label) => {
           const value = chart.data.datasets[0].data[label.index];
-
-          label.text += ' ' + value;
           return label;
         }
       );

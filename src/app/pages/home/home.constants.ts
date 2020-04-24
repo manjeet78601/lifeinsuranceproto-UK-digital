@@ -41,7 +41,7 @@ export class HomeConstants {
       },
       PLAN_STEP_TWO: {
          TITLE: 'STEP TWO',
-         CONTENT: `<p class="col-blk">Insurance</br> Calculator.</p>`,
+         CONTENT: `<p class="col-blk">Insurance</br> Calculator</p>`,
       },
       PLAN_STEP_THREE: {
          TITLE: 'STEP THREE',
@@ -49,7 +49,7 @@ export class HomeConstants {
       },
       PLAN_STEP_FOUR: {
          TITLE: 'STEP FOUR',
-         CONTENT: `<p class="col-blk">Compare Quotess
+         CONTENT: `<p class="col-blk">Compare Quotes
                       </p>`,
       },
       PLAN_READ_MORE: {

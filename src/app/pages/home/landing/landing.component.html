@@ -123,9 +123,8 @@
           </div>
           <mat-card-content>
             <mat-label class="que-label">{{DOM_CONSTANTS.PLAN_HEADER_4}}</mat-label>
-            <mat-form-field appearance="outline">
-                <mat-label>{{DOM_CONSTANTS.PLAN_SUB_HEADER_4}}</mat-label>
-              <mat-select matNativeControl [(value)]="none">
+            <mat-form-field appearance="outline" class="status">
+              <mat-select matNativeControl [(value)]="none" placeholder="{{DOM_CONSTANTS.PLAN_SUB_HEADER_4}}">
                  <mat-option *ngFor="let status of maritalStaus" [value]="status.name">{{status.name}}</mat-option>
               </mat-select>
             </mat-form-field>
