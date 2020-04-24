@@ -100,7 +100,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
       this.capturedSnapURL = base64Image;
       this.router.navigate(['/auth/profile']);
     }, (err) => {
-      alert(err);
+      console.log(err);
       this.router.navigate(['/auth/profile']);
     });
   }
