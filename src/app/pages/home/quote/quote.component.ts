@@ -5,7 +5,7 @@ import { UserService } from 'src/app/services/user.service';
 import { MenuService } from 'src/app/services/menu.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { Label } from 'ng2-charts';
+import { Label, PluginServiceGlobalRegistrationAndOptions } from 'ng2-charts';
 
 // Datasource for table
 export interface QuoteComparision {
@@ -55,6 +55,7 @@ export class QuoteComponent implements OnInit {
     ]
   }];
   donutOptions: any = {
+    cutoutPercentage: 70,
     legend: {
       display: true,
       position: 'bottom',
@@ -69,6 +70,36 @@ export class QuoteComponent implements OnInit {
       align: 'center',
     }
   };
+  public doughnutChartPlugins: PluginServiceGlobalRegistrationAndOptions[] = [{
+    afterDraw(chart) {
+      const ctx = chart.ctx;
+      var txt1 = '';
+      var txt2 = '';
+      //Get options from the center object in options
+      const sidePadding = 60;
+      const sidePaddingCalculated = (sidePadding / 100) * (chart['innerRadius'] * 2)
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      const centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+      const centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+      //Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+      const stringWidth = ctx.measureText(txt1).width;
+      const elementWidth = (chart['innerRadius'] * 2) - sidePaddingCalculated;
+      // Find out how much the font can grow in width.
+      const widthRatio = elementWidth / stringWidth;
+      const newFontSize = Math.floor(15 * widthRatio);
+      const elementHeight = (chart['innerRadius'] * 2);
+      // Pick a new font size so it will not be larger than the height of label.
+      const fontSizeToUse = 15;
+      ctx.font = fontSizeToUse + 'px Arial';
+      ctx.fillStyle = 'black';
+      // Draw text in center
+      ctx.fillText("90" + "%" + "No", centerX, centerY - 10);
+      var fontSizeToUse1 = 15;
+      ctx.font = fontSizeToUse1 + 'px Arial';
+      ctx.fillText("10" + "%" + "Yes", centerX, centerY + 10);
+    }
+  }];
   // bar charts
   public barChartType: ChartType = 'bar';
   public barChartLabelsMonthly: Label[] = ['$25', '$30', '$35', '$50'];
@@ -86,11 +117,11 @@ export class QuoteComponent implements OnInit {
     responsive: true,
     scales: {
       xAxes: [{
-        barPercentage: 3,
+
         gridLines: {
           drawBorder: true,
           display: false
-      }
+        }
       }],
       yAxes: [{
         ticks: {
@@ -104,27 +135,27 @@ export class QuoteComponent implements OnInit {
       position: 'bottom',
     },
   }
-  
+
   public barChartDataMonthly: ChartDataSets[] = [
-    { label: "Prudential", data: [10000, 0, 0, 0], backgroundColor: '#FFF3D6', },
-    { label: "Liberty Mutual", data: [0, 15000, 0, 0], backgroundColor: '#ff6666', },
-    { label: "Mass Mutual", data: [0, 0, 20000, 0], backgroundColor: '#ffcc00', },
-    { label: "New York Life", data: [0, 0, 0, 25000], backgroundColor: '#cc0066', }
+    { label: "Prudential", data: [10000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "Liberty Mutual", data: [0, 15000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "Mass Mutual", data: [0, 0, 20000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "New York Life", data: [0, 0, 0, 25000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
   ];
   public barChartDataPolicy: ChartDataSets[] = [
-    { label: "Prudential", data: [15000, 0, 0, 0], backgroundColor: '#FFF3D6', },
-    { label: "Liberty Mutual", data: [0, 10000, 0, 0], backgroundColor: '#ff6666', },
-    { label: "Mass Mutual", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', },
-    { label: "New York Life", data: [0, 0, 0, 10000], backgroundColor: '#cc0066', }
+    { label: "Prudential", data: [15000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "Liberty Mutual", data: [0, 10000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "Mass Mutual", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12, },
+    { label: "New York Life", data: [0, 0, 0, 10000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
   ];
   public barChartDataYears: ChartDataSets[] =
   [
-    { label: "Prudential", data: [5000, 0, 0, 0], backgroundColor: '#FFF3D6', },
-    { label: "Liberty Mutual", data: [0, 10000, 0, 0], backgroundColor: '#ff6666', },
-    { label: "Mass Mutual", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', },
-    { label: "New York Life", data: [0, 0, 0, 20000], backgroundColor: '#cc0066', }
+    { label: "Prudential", data: [5000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "Liberty Mutual", data: [0, 10000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "Mass Mutual", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "New York Life", data: [0, 0, 0, 20000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
   ];
- // *******
+  // *******
   constructor(
     private router: Router,
     private userService: UserService,
@@ -147,6 +178,12 @@ export class QuoteComponent implements OnInit {
     }
     else {
       this.showHideDiv = false;
+      console.log(this.showHideDiv);
+    }
+  }
+  onSlide(value: any){
+    if (this.details === value.activeId) {
+      this.showHideDiv = true;
       console.log(this.showHideDiv);
     }
   }
