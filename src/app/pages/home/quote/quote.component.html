@@ -22,7 +22,7 @@
     </header>
     <p fxLayoutAlign="center center" class="plan-sub-header">{{DOM_CONSTANTS.QUOTE_SUB_HEADER }}</p>
     <!--Quotes-->
-    <ngb-carousel #currSlide  (slide)="onSlide($event)">
+    <ngb-carousel #currSlide  (click)="onSlideClicked(currSlide)">
       <ng-template ngbSlide *ngFor="let quo of quotes; let i = index" [id]="quo.productId">
         <mat-card class="plan-card mat-elevation-z0 ">
           <div fxLayout="column" class="quote-img">
