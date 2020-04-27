@@ -22,7 +22,7 @@
     </header>
     <p fxLayoutAlign="center center" class="plan-sub-header">{{DOM_CONSTANTS.QUOTE_SUB_HEADER }}</p>
     <!--Quotes-->
-    <ngb-carousel #currSlide (click)="onSlideClicked(currSlide)">
+    <ngb-carousel #currSlide  (slide)="onSlide($event)">
       <ng-template ngbSlide *ngFor="let quo of quotes; let i = index" [id]="quo.productId">
         <mat-card class="plan-card mat-elevation-z0 ">
           <div fxLayout="column" class="quote-img">
@@ -77,7 +77,7 @@
                   </ion-col>
                 </ion-row>
               </ion-grid>
-              <div [ngClass]="showDiv === false ? 'no-indicators' : ''">
+              <div>
                 <div fxLayout="column" fxLayoutAlign="center center">
                   <button mat-stroked-button class="quo-btn bg-blk col-wht" (click)="goToNext()">{{BTN.GET_QUOTE}}</button>
                   <button mat-flat-button (click)="collapse[i] = !collapse[i]" class="btn-mat-card mt-10">{{BTN.CLOSE}}</button>
@@ -92,72 +92,53 @@
   <!--Comparision Tool-->
   <!-- chart sections -->
 
-  <section class="ion-text-center">
+  <section class="wrapper ion-text-center">
     <p class="mt-50 header-title">{{DOM_CONSTANTS.QUOTE_COMP}}</p>
     <!-- Monthly bar chart -->
-    <section>
+    <section fxLayoutAlign="center center">
       <ion-card>
         <ion-card-header>
           <h2 class="quo-sub-header" style="float:left">Monthly</h2>
         </ion-card-header>
         <ion-card-content>
-            <canvas baseChart 
-            [datasets]="barChartDataMonthly"
-            [labels]="barChartLabelsMonthly"
-            [legend]="true"
-            chartType="bar"
-            [options]="chartOption"
-            [colors]="barChartLegendColors"
-            ></canvas>
+          <canvas baseChart width="180" height="180" [datasets]="barChartDataMonthly" [labels]="barChartLabelsMonthly" [legend]="true"
+            chartType="bar" [options]="chartOption" [colors]="barChartLegendColors"></canvas>
         </ion-card-content>
       </ion-card>
     </section>
     <!-- $Policy bar chart -->
-    <section>
-      <ion-card >
+    <section fxLayoutAlign="center center">
+      <ion-card>
         <ion-card-header>
           <h2 class="quo-sub-header" style="float:left">Policy</h2>
         </ion-card-header>
         <ion-card-content>
-            <canvas baseChart
-            [datasets]="barChartDataPolicy"
-            [labels]="barChartLabelsPolicy"
-            [legend]="true"
-            chartType="bar"
-            [options]="chartOption"
-            [colors]="barChartLegendColors"
-            ></canvas>
+          <canvas baseChart width="180" height="180" [datasets]="barChartDataPolicy" [labels]="barChartLabelsPolicy" [legend]="true"
+            chartType="bar" [options]="chartOption" [colors]="barChartLegendColors"></canvas>
         </ion-card-content>
       </ion-card>
     </section>
     <!-- Policy bar chart -->
-    <section>
+    <section fxLayoutAlign="center center">
       <ion-card class="chart mx-0">
         <ion-card-header>
           <h2 class="quo-sub-header" style="float:left">Policy</h2>
         </ion-card-header>
         <ion-card-content>
-            <canvas baseChart 
-            [datasets]="barChartDataYears"
-            [labels]="barChartLabelsYears"
-            [legend]="true"
-            chartType="bar"
-            [options]="chartOption"
-            [colors]="barChartLegendColors"
-            ></canvas>
+          <canvas baseChart width="180" height="180" [datasets]="barChartDataYears" [labels]="barChartLabelsYears" [legend]="true"
+            chartType="bar" [options]="chartOption" [colors]="barChartLegendColors"></canvas>
         </ion-card-content>
       </ion-card>
     </section>
     <!-- Pie chart -->
-    <section>
-      <!-- chart -->
+    <section class="ion-text-center px-3">
       <ion-card class="chart mx-0">
         <ion-card-header fxLayoutAlign="center center">
           <h2 class="quo-sub-header">Cash value</h2>
         </ion-card-header>
         <ion-card-content>
-          <canvas baseChart  [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [options]="donutOptions"
-            [colors]="doughnutChartLegendColors"></canvas>
+          <canvas baseChart width="180" height="180" [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+            [options]="donutOptions" [colors]="doughnutChartLegendColors" [plugins]="doughnutChartPlugins"></canvas>
         </ion-card-content>
       </ion-card>
     </section>
@@ -167,8 +148,6 @@
     </div>
     <a *ngIf="!isUerLoggedIn" class="link" (click)="createAccount()" class="btn-acc">Create account</a>
   </section>
-
-
   <!--Quotes Header-->
   <!--Footer-->
   <footer class="footer" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="40px">
