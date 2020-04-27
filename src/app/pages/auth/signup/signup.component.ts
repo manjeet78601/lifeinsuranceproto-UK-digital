@@ -15,11 +15,12 @@ export class SignupComponent implements OnInit {
   htmlText = properties;
   isSignup = false;
   isAccountVerified = false;
+  prevZipcodeVal = 10001;
   signupForm: FormGroup = this.formBuilder.group({
     firstName: ['', [Validators.required]],
     userName: ['', [Validators.required, Validators.email]],
     signupPwd: ['', Validators.required],
-    location: ['10001', [Validators.required, Validators.pattern('^[0-9]{5}$')]],
+    location: [10001, [Validators.required, Validators.pattern('^[0-9]{5}$')]],
     termsAndCond: ['', [Validators.required, Validators.requiredTrue]]
   });
   constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService, private loader: LoaderService) { }
@@ -42,6 +43,14 @@ export class SignupComponent implements OnInit {
         });
       }
     });
+  }
+  checkZipCode(event: any) {
+    if (this.signupForm.controls.location.value && this.signupForm.controls.location.value.toString().length > 5) {
+      this.signupForm.patchValue({location: this.prevZipcodeVal});
+      event.preventDefault();
+      return false;
+    }
+    this.prevZipcodeVal = this.signupForm.controls.location.value;
   }
   onFormsubmit() {
     this.isSignup = true;
