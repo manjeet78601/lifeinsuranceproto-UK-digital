@@ -42,8 +42,8 @@
           <mat-checkbox class="terms-cond" formControlName="termsAndCond">{{htmlText.terms_cond}}</mat-checkbox>
         </div>
         <div class="mt-4 text-center">
-          <button type="submit" class="btn bg-blk col-wht" mat-stroked-button
-           ><strong>{{htmlText.submit_btn}}</strong></button>
+          <button type="submit" class="btn bg-blk col-wht" mat-stroked-button [disabled] = "signupForm.invalid">
+           <strong>{{htmlText.submit_btn}}</strong></button>
         </div>
       </form>
     </section>
