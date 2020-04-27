@@ -39,7 +39,8 @@ export class QuoteComponent implements OnInit {
   isLoading = true;
   isUerLoggedIn: boolean;
   details: any;
-  showHideDiv: boolean = false;
+  showDiv: boolean = false;
+  hideDiv = [];
   // DoughnutChart
   doughnutChartLabels = [
     'Prudential', 'Liberty Mutual', 'Mass Mutual', 'New York Life'
@@ -133,26 +134,30 @@ export class QuoteComponent implements OnInit {
     legend: {
       display: true,
       position: 'bottom',
+      labels: {
+        padding: 10,
+        boxWidth: 20
+      }
     },
   }
 
   public barChartDataMonthly: ChartDataSets[] = [
-    { label: "Prudential", data: [10000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "Prudential       ", data: [10000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
     { label: "Liberty Mutual", data: [0, 15000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
-    { label: "Mass Mutual", data: [0, 0, 20000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "Mass Mutual  ", data: [0, 0, 20000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12 },
     { label: "New York Life", data: [0, 0, 0, 25000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
   ];
   public barChartDataPolicy: ChartDataSets[] = [
-    { label: "Prudential", data: [15000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "Prudential       ", data: [15000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
     { label: "Liberty Mutual", data: [0, 10000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
-    { label: "Mass Mutual", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12, },
+    { label: "Mass Mutual  ", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12, },
     { label: "New York Life", data: [0, 0, 0, 10000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
   ];
   public barChartDataYears: ChartDataSets[] =
   [
-    { label: "Prudential", data: [5000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "Prudential       ", data: [5000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
     { label: "Liberty Mutual", data: [0, 10000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
-    { label: "Mass Mutual", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: "Mass Mutual  ", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12 },
     { label: "New York Life", data: [0, 0, 0, 20000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
   ];
   // *******
@@ -173,24 +178,19 @@ export class QuoteComponent implements OnInit {
     console.log(this.quotes);
   }
   onSlideClicked(value: any) {
-    if (this.details === value.activeId) {
-      this.showHideDiv = true;
-    }
-    else {
-      this.showHideDiv = false;
-      console.log(this.showHideDiv);
+    this.showDiv = this.hideDiv[value.activeId];
+  }
+  showDetails(prodId, value: any) {
+    if (prodId === value.activeId) {
+      this.hideDiv[prodId] = true;
+      this.showDiv = true;
     }
   }
-  onSlide(value: any){
-    if (this.details === value.activeId) {
-      this.showHideDiv = true;
-      console.log(this.showHideDiv);
+  hideDetails(prodId, value: any) {
+    if (prodId === value.activeId) {
+      this.hideDiv[prodId] = false;
+      this.showDiv = false;
     }
-  }
-  showDetails(prodId) {
-    this.details = prodId;
-    console.log("prodId", prodId);
-
   }
 
   goToNext() {

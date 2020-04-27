@@ -25,6 +25,29 @@
 [hidden] {
   display: none !important;
 }
+.no-indicators .carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 116px;
+  left: 0;
+  z-index: 15;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+.chartjsLegend li span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border-radius: 25px;
+}
+
 
 .wrapper-plan {
   padding: 10px 20px;
