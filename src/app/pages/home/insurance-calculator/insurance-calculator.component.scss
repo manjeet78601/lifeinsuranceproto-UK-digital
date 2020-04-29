@@ -29,10 +29,8 @@ white-space:pre-line;
    display:block;
 }
 .insurance_input{
-  width: 75%;
+  width: 100%;
   height:95px;
-  position:realtive;
-  left:30px;
 }
 .hgt{
   padding:10px;
@@ -42,8 +40,6 @@ white-space:pre-line;
 }
 .pos-rel {
   position: relative;
-  top: 7px;
-  left: 7px;
   z-index: 1000;
   overflow: hidden;
 }
