@@ -77,7 +77,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Your most recent monthly amount.'
             },
             {
                QUESTIONTEXT: 'Monthly utilities (water, electricity, etc.) ',
@@ -88,7 +89,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Considering the cost fluctuates throughout the year, estimate the average cost.'
             },
             {
                QUESTIONTEXT: 'Monthly home maintenance fees',
@@ -99,7 +101,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Considering the cost fluctuates throughout the year, estimate the average cost.'
             },
             {
                QUESTIONTEXT: 'Monthly property tax',
@@ -110,7 +113,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'This number is important because property taxes vary locally.'
             },
          ]
       },
@@ -132,7 +136,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Considering the cost fluctuates throughout the year, estimate the average total cost. Include how much you normally spend on alcohol on a monthly basis.'
             },
             {
                QUESTIONTEXT: 'Monthly lease, car payments, insurance',
@@ -143,7 +148,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Include all car-related expenses, except for gas/oil'
             },
             {
                QUESTIONTEXT: 'Monthly gas / oil',
@@ -154,7 +160,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Considering the cost fluctuates throughout the year, estimate the average cost.'
             },
             {
                QUESTIONTEXT: 'Monthly entertainment bills (cell phone, internet, etc.)',
@@ -165,7 +172,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Include recurring payments for entertainment, such as Hulu, Netflix, Amazon, etc.'
             },
             {
                QUESTIONTEXT: 'Additional expected monthly expenses',
@@ -176,7 +184,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Include all other recurring payments, such as LinkedIn, online courses, professional memberships, etc.'
             },
          ]
       },
@@ -198,7 +207,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Estimate your profits for the year. Profits is how much money you take home after all business-related expenses.'
             },
             {
                QUESTIONTEXT: 'What is your yearly income/salary?',
@@ -209,7 +219,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Your annual take-home after taxes, and pre-tax benefit deductions such as health insurance, transportation, etc.'
             },
             {
                QUESTIONTEXT: 'Additional sources of annual income (side job, rental, stipends, passive income, etc.)',
@@ -220,7 +231,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Money you take home after taxes for side gigs, side jobs, any other form of supplemental income.'
             },
             {
                QUESTIONTEXT: 'Expected annual bonuses',
@@ -231,7 +243,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Approximate how much you would take home this year after taxes.'
             },
          ]
       },
@@ -253,7 +266,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Include debt from all personal cards, including debt from retail credit cards.'
             },
             {
                QUESTIONTEXT: 'Outstanding student loan debt',
@@ -264,7 +278,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Include all federal and private loans student loans.'
             },
             {
                QUESTIONTEXT: 'Other outstanding loans',
@@ -275,7 +290,8 @@ export class HomeConstants {
                STEP: 10000,
                VALUE: '',
                placeholder: '00.00',
-               isVisited: false
+               isVisited: false,
+               toolTipContent: 'Include all other loans subject to interest.'
             },
          ]
       },
@@ -376,56 +392,59 @@ export class HomeConstants {
             INPUT_TYPE: '1. How much annual income would you need to replace if something were to happen to you?',
             VALUE: 0,
             isVisited: false,
-            isAmt: true
+            isAmt: true,
+            toolTipContent: 'Your annual income (include salary, estimated 1099 wages, etc.'
          },
          {
             INPUT_TYPE: '2. How many years would your family need to ' +
                'replace your income and the services you provide if you died suddenly?',
             VALUE: 0,
             isVisited: false,
-            isAmt: false
+            isAmt: false,
+            toolTipContent: 'Estimate how many years your family would rely on you financially?'
          },
-
          {
             INPUT_TYPE: '3. How debt do you have?',
             VALUE: 0,
             isVisited: false,
-            isAmt: true
-
+            isAmt: true,
+            toolTipContent: 'This estimate is determined using app integration with mint.com'
          },
          {
             INPUT_TYPE: '4. How much money do you want to provide for your children’s education or future needs?',
             VALUE: 0,
             isVisited: false,
-            isAmt: true
-
+            isAmt: true,
+            toolTipContent: 'Include education, camps, family activities, anticipated family medical expenses, etc.'
          },
          {
             INPUT_TYPE: '5. How much would your family need to pay for your funeral?',
             VALUE: 0,
             isVisited: false,
-            isAmt: true
+            isAmt: true,
+            toolTipContent: 'The average cost is $7,000-$12,000, depending on your locale and the services you choose.'
          },
          {
             INPUT_TYPE: '6. How much money do you have in savings and investment accounts? ',
             VALUE: 0,
             isVisited: false,
-            isAmt: true
+            isAmt: true,
+            toolTipContent: 'This includes personal savings accounts, investments, bonds, etc.'
          },
 
          {
             INPUT_TYPE: '7. How much life insurance do you already have? ',
             VALUE: 0,
             isVisited: false,
-            isAmt: true
-
+            isAmt: true,
+            toolTipContent: 'This includes previously purchased life insurance policies outside of Life+.'
          },
          {
             INPUT_TYPE: '8. How much after-tax income does your family have annually in addition to your income?',
             VALUE: 0,
             isVisited: false,
-            isAmt: true
-
+            isAmt: true,
+            toolTipContent: 'This includes income from part-time jobs, income from rent, etc.'
          },
       ]
    };
