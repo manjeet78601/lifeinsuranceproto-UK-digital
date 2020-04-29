@@ -393,11 +393,7 @@ export class HomeConstants {
             VALUE: 0,
             isVisited: false,
             isAmt: true,
-<<<<<<< HEAD
-           
-=======
             toolTipContent: 'Your annual income (include salary, estimated 1099 wages, etc.'
->>>>>>> ec6fb9044cabb5f12cd1ce62383ecad2d393d45d
          },
          {
             INPUT_TYPE: '2. How many years would your family need to ' +
@@ -405,11 +401,7 @@ export class HomeConstants {
             VALUE: 0,
             isVisited: false,
             isAmt: false,
-<<<<<<< HEAD
-          
-=======
             toolTipContent: 'Estimate how many years your family would rely on you financially?'
->>>>>>> ec6fb9044cabb5f12cd1ce62383ecad2d393d45d
          },
          {
             INPUT_TYPE: '3. How debt do you have?',
