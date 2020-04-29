@@ -40,7 +40,7 @@
               </ng-container>
             </mat-label>
           
-            <mat-icon *ngIf="que.ICON" container='body' placement="left" ngbTooltip="{{que.tooltip}}">
+            <mat-icon *ngIf="que.ICON" placement="left" ngbTooltip="{{que.tooltip}}">
              help_outline
            </mat-icon>
         
@@ -49,7 +49,7 @@
                 <!--DOB-->
                 <mat-form-field class="f-w" appearance="outline">
                   <input [max]="dateBefore18Years" matInput [matDatepicker]="picker" id="birthDate" placeholder="mm/dd/yyyy" [(ngModel)]="que.value"
-                    name="DOBhealth + {{healthIndex+''+quesIndex}}" (dateChange)="getDOB(que.birthDate)"  container='body' placement="right" ngbTooltip="{{que.tooltip}}" required>
+                    name="DOBhealth + {{healthIndex+''+quesIndex}}" (dateChange)="getDOB(que.birthDate)" required>
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
@@ -70,7 +70,7 @@
                   <span class="circle">or</span>
                   <mat-button-toggle value="no" class="no-btn">No</mat-button-toggle>
                 </mat-button-toggle-group>
-                <ng-container *ngIf="(healthIndex === 1 || healthIndex === 2) && que.value === 'yes'">
+                <ng-container *ngIf="que.value === 'yes'">
                   <mat-label class="que-header2">If you answered yes to any of these questions, please explain.</mat-label>
                   <mat-form-field class="full-width" appearance="outline">
                     <textarea type="text" name="insuranceText + {{healthIndex+''+quesIndex}}" class="mat-form-field-flex notes"
@@ -78,12 +78,12 @@
                   </mat-form-field>
                 </ng-container>
               </div>
-              <div *ngSwitchCase="'HEIGHTSLIDER'" container='body' placement="right" ngbTooltip="{{que.tooltip}}">
+              <div *ngSwitchCase="'HEIGHTSLIDER'">
                 <mat-slider [max]="max" [min]="min" [step]="step" [tickInterval]="tickInterval" name="heightValue" (change)="updateHeight($event.value)" [value]="que.value" [(ngModel)]="que.value">
                 </mat-slider> 
                 
               </div>
-              <div *ngSwitchCase="'WEIGHTSLIDER'" container='body' placement="right" ngbTooltip="{{que.tooltip}}">
+              <div *ngSwitchCase="'WEIGHTSLIDER'">
                <mat-slider [max]="maxWeight" [min]="minWeight" [step]="weightStep" [tickInterval]="weightTickInterval" name="weightValue" (change)="updateWeight($event.value)"
                 [value]="que.value" [(ngModel)]="que.value">
                 </mat-slider>

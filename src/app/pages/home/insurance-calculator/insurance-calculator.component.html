@@ -35,21 +35,19 @@
       <mat-progress-bar mode="determinate" [value]="progress" class="mt-10 mb-20"></mat-progress-bar>
       <!--Question & Answer-->
       <section>
-        <div fxLayout="row" fxLayoutGap="10px" *ngFor="let item of INSURANCE_CALCULATOR.QUESTIONS">
-
-          <div class="text">
+        <div *ngFor="let item of INSURANCE_CALCULATOR.QUESTIONS" class="position-relative row my-4">
+          <div class="text col-6">
             <mat-label class="que-subheader" [ngClass]="{'txt-black': item.isVisited}">{{ item.INPUT_TYPE }}</mat-label>
-            <mat-icon class="pos-rel" container="body" placement="right" 
+            <mat-icon class="pos-rel" placement="right" 
             ngbTooltip="{{item.toolTipContent}}">help_outline</mat-icon>
           </div>
-          <div>
+          <div class="col-6">
             <mat-form-field appearance="outline" class="insurance_input">
               <span matPrefix *ngIf="item.isAmt">$</span>
               <input type="number" matInput [(ngModel)]="item.VALUE" (click)="item.isVisited = true"
                 (blur)="calculateCoverage()" class="ipt" (ngModelChange)="trackProgressBar()">
             </mat-form-field>
           </div>
-
         </div>
         <p class="subtitle">{{PAGE_BOTTOM1}}</p>
         <mat-form-field class="w-100" appearance="outline">
