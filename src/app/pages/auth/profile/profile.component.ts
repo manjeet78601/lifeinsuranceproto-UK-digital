@@ -98,10 +98,9 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     this.camera.getPicture(this.cameraOptions).then((imageData) => {
       const base64Image = 'data:image/jpeg;base64,' + imageData;
       this.capturedSnapURL = base64Image;
-      this.router.navigate(['/auth/profile']);
+      this.auth.setProfileImage(base64Image);
     }, (err) => {
       console.log(err);
-      this.router.navigate(['/auth/profile']);
     });
   }
 }

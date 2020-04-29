@@ -20,5 +20,13 @@ ion-content.menu-bar {
         text-align: center;
     }
   }
+  .img-container {
+    width: 25px;
+    height: 25px;
+    .profile-img {
+        background-size: cover;
+        border-radius: 50%;
+    }
+}
 
   

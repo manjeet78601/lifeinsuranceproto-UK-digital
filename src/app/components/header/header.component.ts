@@ -12,12 +12,21 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  profileImgIcon = '';
   navigateBeforeSignin$: Observable<NavigationMenu[]>;
   navigateAfterSignin$: Observable<NavigationMenu[]>;
   constructor(private menu: MenuController, private navigationService: MenuService, private auth: AuthService) { }
   ngOnInit() {
+    this.getProfileImage();
     this.menu.enable(true, 'beforeLogin');
     this.navigateBeforeSignin$ = this.navigationService.getNavigationMenuBeforeSignin();
     this.navigateAfterSignin$ = this.navigationService.getNavigationMenuAfterSignin();
+  }
+  getProfileImage() {
+    this.auth.subj.subscribe( img => {
+      if (typeof img !== 'object') {
+        this.profileImgIcon = img;
+      }
+    });
   }
 }

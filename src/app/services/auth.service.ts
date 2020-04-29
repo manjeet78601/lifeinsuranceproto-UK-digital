@@ -66,4 +66,7 @@ exterAcctDetails: ExternalAcct = { name: '', emailId: ''};
   get isUserLoggedIn() {
     return this.isLoggedIn;
   }
+  setProfileImage(img: string) {
+    this.subj.next(img);
+  }
 }
