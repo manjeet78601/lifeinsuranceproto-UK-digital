@@ -820,3 +820,6 @@ float: left;
   min-height: calc(95vh - 197px);
   //padding: 40px 40px 0 40px;
 }
+.mat-expansion-panel-body {
+  position: relative;
+}
