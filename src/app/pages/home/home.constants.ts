@@ -377,7 +377,7 @@ export class HomeConstants {
             VALUE: 0,
             isVisited: false,
             isAmt: true,
-            tooltip:'Your annual income (include salary, estimated 1099 wages, etc.)'
+           
          },
          {
             INPUT_TYPE: '2. How many years would your family need to ' +
@@ -385,7 +385,7 @@ export class HomeConstants {
             VALUE: 0,
             isVisited: false,
             isAmt: false,
-            tooltip:'Estimate how many years your family would rely on you financially?'
+          
          },
 
          {
