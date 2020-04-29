@@ -137,7 +137,8 @@ export class HomeConstants {
                VALUE: '',
                placeholder: '00.00',
                isVisited: false,
-               toolTipContent: 'Considering the cost fluctuates throughout the year, estimate the average total cost. Include how much you normally spend on alcohol on a monthly basis.'
+               toolTipContent: `Considering the cost fluctuates throughout the year, estimate
+                the average total cost. Include how much you normally spend on alcohol on a monthly basis.`
             },
             {
                QUESTIONTEXT: 'Monthly lease, car payments, insurance',
@@ -208,7 +209,8 @@ export class HomeConstants {
                VALUE: '',
                placeholder: '00.00',
                isVisited: false,
-               toolTipContent: 'Estimate your profits for the year. Profits is how much money you take home after all business-related expenses.'
+               toolTipContent: `Estimate your profits for the year. Profits is how much money you take
+                home after all business-related expenses.`
             },
             {
                QUESTIONTEXT: 'What is your yearly income/salary?',
@@ -220,7 +222,8 @@ export class HomeConstants {
                VALUE: '',
                placeholder: '00.00',
                isVisited: false,
-               toolTipContent: 'Your annual take-home after taxes, and pre-tax benefit deductions such as health insurance, transportation, etc.'
+               toolTipContent: `Your annual take-home after taxes, and pre-tax benefit deductions such as
+                health insurance, transportation, etc.`
             },
             {
                QUESTIONTEXT: 'Additional sources of annual income (side job, rental, stipends, passive income, etc.)',
