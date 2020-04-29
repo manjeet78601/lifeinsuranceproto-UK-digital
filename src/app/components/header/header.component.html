@@ -44,8 +44,13 @@
             </strong>
           </span>
           <mat-icon *ngIf="pages.isStep && pages.isCompleted" class="mr-5">check_circle_outline</mat-icon>
-          <ng-template [ngIf] ="pages.title === 'My Profile'">
-            <img src="./../../../assets/img/profile-menu-icon.png" alt="Profile" class="pr-2">
+          <ng-template [ngIf] ="pages.title === 'My Profile' && !profileImgIcon">
+            <img src="../../../assets/img/profile-menu-icon.png" class="pr-2">
+          </ng-template>
+          <ng-template [ngIf] ="pages.title === 'My Profile' && !!profileImgIcon">
+            <div class="img-container mr-2">
+              <img [src]="profileImgIcon" class="profile-img">
+            </div>
           </ng-template>
           <strong>
             {{pages.title}}
