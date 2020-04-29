@@ -40,5 +40,13 @@ white-space:pre-line;
 .wrapper1{
   padding:3px 6px
 }
+.pos-rel {
+  position: relative;
+  top: 7px;
+  left: 7px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
 
         

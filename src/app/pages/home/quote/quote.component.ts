@@ -16,10 +16,16 @@ export interface QuoteComparision {
   libertyMutual: string;
 }
 
-const ELEMENT_DATA: QuoteComparision[] = [
-  { comparison: 'Monthly premium', prudential: '$25', nyLife: '$30', massMutual: '$35', libertyMutual: '$50' },
+const monthlyPremium: QuoteComparision[] = [
+  { comparison: 'Monthly Premium', prudential: '$25', nyLife: '$30', massMutual: '$35', libertyMutual: '$50' },
+];
+const policyCov: QuoteComparision[] = [
   { comparison: 'Policy Coverage', prudential: '$500k', nyLife: '$500k', massMutual: '$500k', libertyMutual: '$500k' },
+];
+const policyDuration: QuoteComparision[] = [
   { comparison: 'Policy Duration', prudential: '10 years', nyLife: '20 years', massMutual: '30 years', libertyMutual: 'Whole life' },
+];
+const cashvalue: QuoteComparision[] = [
   { comparison: 'Cash value', prudential: 'No', nyLife: 'No', massMutual: 'No', libertyMutual: 'Yes' },
 ];
 
@@ -33,13 +39,17 @@ export class QuoteComponent implements OnInit {
   collapse = [];
   DOM_CONSTANTS = CompareQuotesConstant.QUOTE;
   displayedColumns: string[] = ['comparison', 'prudential', 'nyLife', 'massMutual', 'libertyMutual'];
-  dataSource = ELEMENT_DATA;
+  dsMonthlyPremium = monthlyPremium;
+  dsPolicyCov = policyCov;
+  dsPolicyDuration = policyDuration;
+  dsCashvalue = cashvalue;
   BTN = CompareQuotesConstant.BTTN;
   quotes: any;
   isLoading = true;
   isUerLoggedIn: boolean;
   details: any;
-  showHideDiv: boolean = false;
+  showDiv: boolean = false;
+  hideDiv = [];
   // DoughnutChart
   doughnutChartLabels = [
     'Prudential', 'Liberty Mutual', 'Mass Mutual', 'New York Life'
@@ -60,6 +70,10 @@ export class QuoteComponent implements OnInit {
       display: true,
       position: 'bottom',
       align: 'center',
+      labels: {
+        padding: 10,
+        boxWidth: 20
+      }
     },
     lables: {
       padding: 40,
@@ -94,10 +108,10 @@ export class QuoteComponent implements OnInit {
       ctx.font = fontSizeToUse + 'px Arial';
       ctx.fillStyle = 'black';
       // Draw text in center
-      ctx.fillText("90" + "%" + "No", centerX, centerY - 10);
+      ctx.fillText('90' + '%' + 'No', centerX, centerY - 10);
       var fontSizeToUse1 = 15;
       ctx.font = fontSizeToUse1 + 'px Arial';
-      ctx.fillText("10" + "%" + "Yes", centerX, centerY + 10);
+      ctx.fillText('10' + '%' + 'Yes', centerX, centerY + 10);
     }
   }];
   // bar charts
@@ -133,28 +147,32 @@ export class QuoteComponent implements OnInit {
     legend: {
       display: true,
       position: 'bottom',
+      labels: {
+        padding: 10,
+        boxWidth: 20
+      }
     },
   }
 
   public barChartDataMonthly: ChartDataSets[] = [
-    { label: "Prudential", data: [10000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
-    { label: "Liberty Mutual", data: [0, 15000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
-    { label: "Mass Mutual", data: [0, 0, 20000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12 },
-    { label: "New York Life", data: [0, 0, 0, 25000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
+    { label: 'Prudential       ', data: [10000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: 'Liberty Mutual', data: [0, 15000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: 'Mass Mutual  ', data: [0, 0, 20000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: 'New York Life', data: [0, 0, 0, 25000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
   ];
   public barChartDataPolicy: ChartDataSets[] = [
-    { label: "Prudential", data: [15000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
-    { label: "Liberty Mutual", data: [0, 10000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
-    { label: "Mass Mutual", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12, },
-    { label: "New York Life", data: [0, 0, 0, 10000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
+    { label: 'Prudential       ', data: [15000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: 'Liberty Mutual', data: [0, 10000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
+    { label: 'Mass Mutual  ', data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12, },
+    { label: 'New York Life', data: [0, 0, 0, 10000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
   ];
   public barChartDataYears: ChartDataSets[] =
-  [
-    { label: "Prudential", data: [5000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
-    { label: "Liberty Mutual", data: [0, 10000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
-    { label: "Mass Mutual", data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12 },
-    { label: "New York Life", data: [0, 0, 0, 20000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
-  ];
+    [
+      { label: 'Prudential       ', data: [5000, 0, 0, 0], backgroundColor: '#FFF3D6', barPercentage: 15, categoryPercentage: 0.12 },
+      { label: 'Liberty Mutual', data: [0, 10000, 0, 0], backgroundColor: '#ff6666', barPercentage: 15, categoryPercentage: 0.12 },
+      { label: 'Mass Mutual  ', data: [0, 0, 15000, 0], backgroundColor: '#ffcc00', barPercentage: 15, categoryPercentage: 0.12 },
+      { label: 'New York Life', data: [0, 0, 0, 20000], backgroundColor: '#cc0066', barPercentage: 15, categoryPercentage: 0.12 }
+    ];
   // *******
   constructor(
     private router: Router,
@@ -173,24 +191,19 @@ export class QuoteComponent implements OnInit {
     console.log(this.quotes);
   }
   onSlideClicked(value: any) {
-    if (this.details === value.activeId) {
-      this.showHideDiv = true;
-    }
-    else {
-      this.showHideDiv = false;
-      console.log(this.showHideDiv);
+    this.showDiv = this.hideDiv[value.activeId];
+  }
+  showDetails(prodId, value: any) {
+    if (prodId === value.activeId) {
+      this.hideDiv[prodId] = true;
+      this.showDiv = true;
     }
   }
-  onSlide(value: any){
-    if (this.details === value.activeId) {
-      this.showHideDiv = true;
-      console.log(this.showHideDiv);
+  hideDetails(prodId, value: any) {
+    if (prodId === value.activeId) {
+      this.hideDiv[prodId] = false;
+      this.showDiv = false;
     }
-  }
-  showDetails(prodId) {
-    this.details = prodId;
-    console.log("prodId", prodId);
-
   }
 
   goToNext() {
