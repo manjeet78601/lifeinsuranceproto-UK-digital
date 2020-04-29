@@ -376,14 +376,16 @@ export class HomeConstants {
             INPUT_TYPE: '1. How much annual income would you need to replace if something were to happen to you?',
             VALUE: 0,
             isVisited: false,
-            isAmt: true
+            isAmt: true,
+            tooltip:'Your annual income (include salary, estimated 1099 wages, etc.)'
          },
          {
             INPUT_TYPE: '2. How many years would your family need to ' +
                'replace your income and the services you provide if you died suddenly?',
             VALUE: 0,
             isVisited: false,
-            isAmt: false
+            isAmt: false,
+            tooltip:'Estimate how many years your family would rely on you financially?'
          },
 
          {

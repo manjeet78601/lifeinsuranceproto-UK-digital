@@ -61,6 +61,10 @@ export class QuoteComponent implements OnInit {
       display: true,
       position: 'bottom',
       align: 'center',
+      labels: {
+        padding: 10,
+        boxWidth: 20
+      }
     },
     lables: {
       padding: 40,
