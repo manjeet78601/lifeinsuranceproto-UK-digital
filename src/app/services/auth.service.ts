@@ -20,6 +20,7 @@ subj = new BehaviorSubject<any>('');
 bDate: string;
 isMinAccountLinked = false;
 isHeadsUpAccountLinked = false;
+profileImg  = '';
 exterAcctDetails: ExternalAcct = { name: '', emailId: ''};
   constructor(private http: HttpClient) { }
   login(loginObj: Signin): Observable<boolean> {
@@ -67,6 +68,7 @@ exterAcctDetails: ExternalAcct = { name: '', emailId: ''};
     return this.isLoggedIn;
   }
   setProfileImage(img: string) {
+    this.profileImg = img;
     this.subj.next(img);
   }
 }

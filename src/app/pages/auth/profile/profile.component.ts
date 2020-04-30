@@ -63,6 +63,9 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.userName = this.auth.userName;
     this.birthDate = this.auth.userBirthDate;
+    if (!!this.auth.profileImg) {
+      this.capturedSnapURL = this.auth.profileImg;
+    }
     const unsub = this.auth.getUserFinancialDetails().subscribe((data) => {
       this.userFinancialInfo = data;
     }, err => {
@@ -70,7 +73,11 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     });
   }
   ngAfterViewInit() { }
-  ionViewDidLoad() { }
+  ionViewDidLoad() {
+    if (!!this.auth.profileImg) {
+      this.capturedSnapURL = this.auth.profileImg;
+    }
+  }
 
   trackByIndex(index, item) {
     return index;
