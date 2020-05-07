@@ -38,7 +38,7 @@ export class BookLabComponent implements OnInit {
 
   }
   onSelect(event) {
-    this.selectedDate = this.datePipe.transform(event, 'dd MMMM yyyy');
+    this.selectedDate = event;
   }
 
   ngOnInit() {
