@@ -19,6 +19,7 @@ import { Router } from '@angular/router';
 })
 export class BookClinicComponent implements OnInit {
   selectedDate: any;
+  seleDate:any;
   selectedTime: any;
   minDate = new Date();
 
@@ -31,15 +32,16 @@ export class BookClinicComponent implements OnInit {
   labData = this.clinicApptService.getApptScheduleDetails();
   constructor(private router: Router, private clinicApptService: AppointmentsService, private datePipe: DatePipe, private snackBar: MatSnackBar) { }
   onSelect(event) {
-    this.selectedDate = this.datePipe.transform(event, 'dd MMMM yyyy');
-    if (this.selectedDate < this.clinicApptService.apptDetails.date) {
+    this.selectedDate = event;
+    this.seleDate = this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy');
+    if (this.seleDate < this.clinicApptService.apptDetails.date) {
       this.snackBar.open('Selected Date cannot be less than lab booked Date ', 'ok', {
         duration: 3000,
         panelClass: 'custom-css-class',
       });
     }
     else {
-      return this.selectedDate;
+      return this.seleDate;
     }
   }
 
@@ -74,13 +76,15 @@ export class BookClinicComponent implements OnInit {
     return timeSlot;
   }
   setClinicApptDetails(clinicDate?: string, clinicTime?: string) {
-    this.clinicApptService.setClinicSchedule(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'),
+    // this.clinicApptService.setClinicSchedule(this.datePipe.transform(this.selectedDate, 'dd MMMM yyyy'),
+    //   this.selectedTime);
+    this.clinicApptService.setClinicSchedule(this.seleDate,
       this.selectedTime);
   }
   // To select the avialabel appointment
   onChangedSort(event: MatSelectChange) {
     this.selectedTime = event.value;
-    if (this.selectedDate === this.clinicApptService.apptDetails.date && this.selectedTime <= this.clinicApptService.apptDetails.time) {
+    if (this.seleDate === this.clinicApptService.apptDetails.date && this.selectedTime <= this.clinicApptService.apptDetails.time) {
       this.snackBar.open('Selected Time cannot be earlier than the lab booked time. ', 'ok', {
         duration: 3000,
         panelClass: 'custom-css-class',
