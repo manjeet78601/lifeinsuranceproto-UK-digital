@@ -4,13 +4,12 @@ import { AuthService } from 'src/app/services/auth.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { DataAnalyticsService } from 'src/app/services/data-analytics.service';
 import { Router } from '@angular/router';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
-
 })
 export class ProfileComponent implements OnInit, AfterViewInit {
   capturedSnapURL = '../../../../assets/img/auth_Profile_Img/profile-icon.svg';
@@ -111,4 +110,3 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     });
   }
 }
-
